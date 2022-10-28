@@ -1,0 +1,102 @@
+# Site Settings
+name: hugs4bugs
+title: hugs4bugs
+description: hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.
+tags:
+  - blog
+  - template
+  - jekyll
+  - theme
+  - netlify
+show_hero: true
+menu:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: Contact
+    url: /contact
+email: myblackcat420@gmail.com
+# See: https://disqus.com/
+disqus_username: hugs4bugs
+# Contact Form Setting
+# See: https://formspree.io/
+formspree_form_id: formspree_form_id
+
+mailchimp-list: "https://hugs4bugs.us1.list-manage.com/subscribe?u=867b91e0eabcef08a2107847c&id=791d7284d0"
+
+# Social Media Settings
+# Remove the item if you don't need it
+github_username: sivolko
+# facebook_username: facebook_username
+twitter_username: myselfshubhendu
+# instagram_username: shubhendushubham
+linkedin_username: shubhendu-shubham
+medium_username: shubhendushubham
+
+# Posts Settings
+show_time_bar: true
+show_modal_on_exit: false
+show_modal_on_finish_post: true
+two_columns_layout: true
+
+# Advanced Settings
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://hugs4bugs.me" # the base hostname & protocol for your site
+google_analytics: "G-0FMLF6JCFT"
+language: "en"
+categories_folder: category
+sent_message_url: "/contact/message-sent/"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+collections:
+  authors:
+    output: true
+paginate_path: "/page/:num/"
+show_get_theme_btn: true
+use_logo: false
+
+# Content paginator
+paginate_content:
+  enabled: true
+  debug: false
+  collections:
+    - posts
+  auto: false
+  separator: "--page-break--"
+  permalink: "/:num/"
+  seo_canonical: true
+  properties:
+    part:
+      is_generated: true
+    last:
+      is_generated: true
+    single:
+      is_generated: true
+
+# SASS
+sass:
+  style: compressed
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-paginate-content
+
+# Exclude my node related stuff
+exclude:
+  [
+    "package.json",
+    "package-lock.json",
+    "src",
+    "node_modules",
+    "initpost.sh",
+    "Gemfile",
+    "Gemfile.lock",
+    "gulpfile.js",
+    "README.md",
+  ]
+# Theme
