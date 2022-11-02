@@ -211,10 +211,17 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/difference-between-WAF-and-IPS/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2022-11-02</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/waf-vs-firewall/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2022-10-26</lastmod>
+            <lastmod>2022-10-31</lastmod>
         </url>
     
         <url>

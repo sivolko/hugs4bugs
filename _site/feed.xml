@@ -5,15 +5,34 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 28 Oct 2022 18:02:25 +0530</pubDate>
-    <lastBuildDate>Fri, 28 Oct 2022 18:02:25 +0530</lastBuildDate>
+    <pubDate>Wed, 02 Nov 2022 13:55:42 +0530</pubDate>
+    <lastBuildDate>Wed, 02 Nov 2022 13:55:42 +0530</lastBuildDate>
     <generator>Jekyll v3.9.1</generator>
     
       <item>
+        <title>WAF vs IPS</title>
+        <description>&lt;p&gt;Before we start, you must be confused or there might be a question in your mind “why do we need so many things as security?” We do have firewalls, Antivirus though .&lt;/p&gt; &lt;p&gt;Lemme explain this situation in simpler use case. Suppose you have plan for long road trip for a week with your family and you have decided to leave home at early morning to avoid city traffic . You set alarm, and leave home as early as you can . While boarding to car, you &lt;strong&gt;locked your main gate, but in rush you have forgotten to close balcony french...</description>
+        <pubDate>Wed, 02 Nov 2022 00:00:00 +0530</pubDate>
+        <link>https://hugs4bugs.me/difference-between-WAF-and-IPS/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/difference-between-WAF-and-IPS/</guid>
+        
+        <category>cloud</category>
+        
+        <category>security</category>
+        
+        <category>hacking</category>
+        
+        <category>offensive security</category>
+        
+        <category>troubleshooter Club</category>
+        
+        <category>security</category>
+      </item>
+    
+      <item>
         <title>WAF vs Firewall</title>
-        <description>
-</description>
-        <pubDate>Wed, 26 Oct 2022 00:00:00 +0530</pubDate>
+        <description>&lt;p&gt;Before start differences, let’s understand the WAF. WAF stands for the &lt;strong&gt;Web Application Firewall&lt;/strong&gt; that operates as application firewall for the HTTPS applications. It implements set of rules for a HTTP conversation and due to these rules, WAF prevents from XSS (Cross site scripting) and SQL injections.&lt;/p&gt; &lt;p&gt;WAF is more focused on &lt;strong&gt;Web Applications&lt;/strong&gt; .A WAF is a firewall primarily used for protecting applications, APIs to Webhooks, providing protection by assessing what the traffic is trying to do and blocking it if necessary, especially if the actions in the traffic are deemed malicious.&lt;/p&gt; &lt;p&gt;General view of WAF&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://firewallauthority.com/wp-content/uploads/2022/02/WAF.png&quot; alt=&quot;WAF&quot;...</description>
+        <pubDate>Mon, 31 Oct 2022 00:00:00 +0530</pubDate>
         <link>https://hugs4bugs.me/waf-vs-firewall/</link>
         <guid isPermaLink="true">https://hugs4bugs.me/waf-vs-firewall/</guid>
         

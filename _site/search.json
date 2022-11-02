@@ -3,11 +3,19 @@
   
   
     {
+      "title"    : "WAF vs IPS",
+      "tags"     : "cloud, security, hacking, offensive security, and troubleshooter Club",
+      "categories" : "security",
+      "url"      : "/difference-between-WAF-and-IPS/",
+      "date"     : "11/02/2022"
+    } ,
+  
+    {
       "title"    : "WAF vs Firewall",
       "tags"     : "cloud, security, hacking, offensive security, and troubleshooter Club",
       "categories" : "security",
       "url"      : "/waf-vs-firewall/",
-      "date"     : "10/26/2022"
+      "date"     : "10/31/2022"
     } ,
   
     {
