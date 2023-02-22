@@ -1,0 +1,205 @@
+[
+  
+  
+  
+    {
+      "title"    : "What is chatGpt? How to use it?",
+      "tags"     : "cloud, security, hacking, offensive security, and troubleshooter Club",
+      "categories" : "security",
+      "url"      : "/what-is-chat-gpt/",
+      "date"     : "12/25/2022"
+    } ,
+  
+    {
+      "title"    : "Do you use ls -lrt?",
+      "tags"     : "security, hacking, offensive security, and troubleshooter Club",
+      "categories" : "linux",
+      "url"      : "/what-is-difference-between-ls-and-ls-lrt-command/",
+      "date"     : "12/11/2022"
+    } ,
+  
+    {
+      "title"    : "Kali Linux vs Parrot OS",
+      "tags"     : "cloud, security, hacking, offensive security, and troubleshooter Club",
+      "categories" : "security",
+      "url"      : "/kali-linux-vs-parrot-linux/",
+      "date"     : "12/10/2022"
+    } ,
+  
+    {
+      "title"    : "Blue Team vs Red Team",
+      "tags"     : "cloud, security, hacking, offensive security, and troubleshooter Club",
+      "categories" : "security",
+      "url"      : "/blue-team-vs-red-team-in-cyber-security/",
+      "date"     : "11/04/2022"
+    } ,
+  
+    {
+      "title"    : "WAF vs IPS",
+      "tags"     : "cloud, security, hacking, offensive security, and troubleshooter Club",
+      "categories" : "security",
+      "url"      : "/difference-between-WAF-and-IPS/",
+      "date"     : "11/02/2022"
+    } ,
+  
+    {
+      "title"    : "WAF vs Firewall",
+      "tags"     : "cloud, security, hacking, offensive security, and troubleshooter Club",
+      "categories" : "security",
+      "url"      : "/waf-vs-firewall/",
+      "date"     : "10/31/2022"
+    } ,
+  
+    {
+      "title"    : "College to Cyber Security Journey",
+      "tags"     : "cloud, security, hacking, offensive security, and troubleshooter Club",
+      "categories" : "security",
+      "url"      : "/college-to-cyber-security/",
+      "date"     : "10/07/2022"
+    } ,
+  
+    {
+      "title"    : "Metasploit Framework vs Metasploit Pro",
+      "tags"     : "cloud, security, hacking, and offensive security",
+      "categories" : "security",
+      "url"      : "/metasploitFramework-vs-metasploit-pro/",
+      "date"     : "08/21/2022"
+    } ,
+  
+    {
+      "title"    : "Building and Deploying PWA on Azure Cloud.",
+      "tags"     : "PWA, node.js, and COSMOS DB",
+      "categories" : "webapps",
+      "url"      : "/Progressive-webapps-on-azure/",
+      "date"     : "02/18/2022"
+    } ,
+  
+    {
+      "title"    : "Access Management 101.",
+      "tags"     : "Access Management, Vulnerability, and Cyber Security",
+      "categories" : "security",
+      "url"      : "/access-management-101/",
+      "date"     : "02/06/2022"
+    } ,
+  
+    {
+      "title"    : "Automate Twitter via github Actions.",
+      "tags"     : "Automation, CI/CD, and GitHub Actions",
+      "categories" : "automation",
+      "url"      : "/how-to-automate-tweets-via-github-actions/",
+      "date"     : "11/03/2021"
+    } ,
+  
+    {
+      "title"    : "Progressive WebApp.",
+      "tags"     : "WebApps, PWA, and Progressive WebApp",
+      "categories" : "webapps",
+      "url"      : "/Progressive-web-app/",
+      "date"     : "11/03/2021"
+    } ,
+  
+    {
+      "title"    : "The Blue Team.☠️",
+      "tags"     : "networking and security",
+      "categories" : "security",
+      "url"      : "/the-blue-team-protecting-you/",
+      "date"     : "08/03/2021"
+    } ,
+  
+    {
+      "title"    : "Managing and Storing Secrets:Azure Vault.🙆",
+      "tags"     : "networking and security",
+      "categories" : "azure",
+      "url"      : "/storing-and-managing-secrets-using-azure-vault/",
+      "date"     : "08/03/2021"
+    } ,
+  
+    {
+      "title"    : "Protection against Security threat on Azure.☠️",
+      "tags"     : "networking and security",
+      "categories" : "security",
+      "url"      : "/Understanding-basics-of-security/",
+      "date"     : "08/03/2021"
+    } ,
+  
+    {
+      "title"    : "Fundamentals of Network Security.☠️",
+      "tags"     : "networking and security",
+      "categories" : "networking",
+      "url"      : "/Fundamentals-of-Network-security/",
+      "date"     : "05/16/2021"
+    } ,
+  
+    {
+      "title"    : "Computer Networking 101",
+      "tags"     : "networking and system Admin",
+      "categories" : "networking",
+      "url"      : "/computer-networking-basics/",
+      "date"     : "04/05/2021"
+    } ,
+  
+    {
+      "title"    : "Anyone can build: node.js+ Cosmos DB in Azure ",
+      "tags"     : "azure and microsoft",
+      "categories" : "azure",
+      "url"      : "/bulid-and-deploy-MERN-stack-in-Azure-cosmos-DB/",
+      "date"     : "03/18/2021"
+    } ,
+  
+    {
+      "title"    : "Linux Cheat Sheet 101",
+      "tags"     : "linux and system Admin",
+      "categories" : "linux",
+      "url"      : "/best-linux-cheatsheet-101/",
+      "date"     : "01/02/2021"
+    } ,
+  
+    {
+      "title"    : "Azure Networking 101",
+      "tags"     : "docker and devops",
+      "categories" : "azure",
+      "url"      : "/azure-networking-101/",
+      "date"     : "12/01/2020"
+    } ,
+  
+    {
+      "title"    : "Docker 101",
+      "tags"     : "docker and devops",
+      "categories" : "docker",
+      "url"      : "/Docker-101/",
+      "date"     : "12/01/2020"
+    } ,
+  
+    {
+      "title"    : "Benifits of CI/CD",
+      "tags"     : "devops and CI/CD",
+      "categories" : "devops",
+      "url"      : "/benifits-of-CI/",
+      "date"     : "10/12/2020"
+    } ,
+  
+    {
+      "title"    : "Automation with Jenkins and GitHub",
+      "tags"     : "devops, jenkins, automation, and github",
+      "categories" : "devops",
+      "url"      : "/Automation-with-Jenkins-and-Github/",
+      "date"     : "05/01/2020"
+    } ,
+  
+    {
+      "title"    : "How to like Instagram posts with JavaScript?",
+      "tags"     : "automation, instagram, and javascript",
+      "categories" : "automation",
+      "url"      : "/how-to-like-instagram-post-with-javascript/",
+      "date"     : "03/02/2020"
+    } ,
+  
+    {
+      "title"    : "How to install JENKINS on Linux ?",
+      "tags"     : "devops, jenkins, and linux",
+      "categories" : "devops",
+      "url"      : "/How-to-install-Jenkins-on-Linux/",
+      "date"     : "01/12/2020"
+    } 
+  
+]

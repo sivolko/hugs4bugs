@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "me.hugs4bugs.twa",
+                     "sha256_cert_fingerprints": ["A8:10:92:09:72:E2:5A:06:1F:F0:99:48:E0:EC:C0:B0:65:24:68:B3:BE:56:17:2E:CB:8E:23:AF:26:22:99:B4"] }
+      }
+]

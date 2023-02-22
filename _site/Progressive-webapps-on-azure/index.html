@@ -1,0 +1,2511 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    <title>Building and Deploying PWA on Azure Cloud. | hugs4bugs</title>
+    <meta name="description" content="Let's build and deploy PWA over azure cloud from Scratch.">
+    
+    <meta name="keywords" content="PWA, node.js, COSMOS DB">
+    
+
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Building and Deploying PWA on Azure Cloud. | hugs4bugs">
+    <meta name="twitter:description" content="Let's build and deploy PWA over azure cloud from Scratch.">
+
+    
+    <meta property="twitter:image" content="https://th.bing.com/th/id/R.49bd0ccbb9e904407116b65ce6a50d41?rik=1KXzdiLejsH2eA&riu=http%3a%2f%2fclipground.com%2fimages%2fcoder-clipart-1.jpg&ehk=xl5oxtd6bHoDW1%2f3HB007zg97209vFB75YXyIskHtPg%3d&risl=&pid=ImgRaw&r=0">
+    
+
+    
+    <meta name="twitter:site" content="@myselfshubhendu">
+    
+
+    <!-- Social: Facebook / Open Graph -->
+    <meta property="og:url" content="https://hugs4bugs.me/Progressive-webapps-on-azure/">
+    <meta property="og:title" content="Building and Deploying PWA on Azure Cloud. | hugs4bugs">
+    <meta property="og:image" content="https://th.bing.com/th/id/R.49bd0ccbb9e904407116b65ce6a50d41?rik=1KXzdiLejsH2eA&riu=http%3a%2f%2fclipground.com%2fimages%2fcoder-clipart-1.jpg&ehk=xl5oxtd6bHoDW1%2f3HB007zg97209vFB75YXyIskHtPg%3d&risl=&pid=ImgRaw&r=0">
+    <meta property="og:description" content="Let's build and deploy PWA over azure cloud from Scratch.">
+    <meta property="og:site_name" content="hugs4bugs">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
+
+    <!-- Windows 8 Tile Icons -->
+    <!-- <meta name="application-name" content="hugs4bugs">
+    <meta name="msapplication-TileColor" content="#141414">
+    <meta name="msapplication-square70x70logo" content="smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="widetile.png" />
+    <meta name="msapplication-square310x310logo" content="largetile.png" /> -->
+
+    <!-- Android Lolipop Theme Color -->
+    <meta name="theme-color" content="#141414">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="canonical" href="https://hugs4bugs.me/Progressive-webapps-on-azure/">
+    <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
+        href="https://hugs4bugs.me/feed.xml" />
+    <link rel='manifest' href='/manifest.json'>
+    <link rel='wellknown' href='.well-known/assetlinks.json'>
+    <link rel='ads' href='/ads.txt'>
+
+
+    <!-- Include extra styles -->
+    
+
+
+    <link rel="alternate" hreflang="en" href="https://hugs4bugs.me">
+    <link rel="alternate" hreflang="hi" href="https://hi.hugs4bugs.me">
+    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+    <script>
+        Weglot.initialize({
+            api_key: 'wg_3517bf871d8b37ee8f37481a72de4cb77'
+        });
+    </script>
+    <!-- JavaScript enabled/disabled -->
+    <script>
+        document.querySelector('html').classList.remove('no-js');
+    </script>
+    <script type="module">import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+        const el = document.createElement('pwa-update');
+        document.body.appendChild(el);
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5165937973513449"
+        crossorigin="anonymous"></script>
+</head>
+    <body class="has-push-menu">
+        
+
+
+
+
+
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1"><defs><symbol id="icon-menu" viewBox="0 0 1024 1024"><path class="path1" d="M128 213.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 725.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"/></symbol><symbol id="icon-search" viewBox="0 0 951 1024"><path class="path1" d="M658.286 475.429q0-105.714-75.143-180.857t-180.857-75.143-180.857 75.143-75.143 180.857 75.143 180.857 180.857 75.143 180.857-75.143 75.143-180.857zM950.857 950.857q0 29.714-21.714 51.429t-51.429 21.714q-30.857 0-51.429-21.714l-196-195.429q-102.286 70.857-228 70.857-81.714 0-156.286-31.714t-128.571-85.714-85.714-128.571-31.714-156.286 31.714-156.286 85.714-128.571 128.571-85.714 156.286-31.714 156.286 31.714 128.571 85.714 85.714 128.571 31.714 156.286q0 125.714-70.857 228l196 196q21.143 21.143 21.143 51.429z"/></symbol><symbol id="icon-close" viewBox="0 0 1000 1000"><path d="M969.8,870.3c27,27.7,27,71.8,0,99.1C955.7,983,937.9,990,920,990c-17.9,0-35.7-7-49.7-20.7L500,599L129.6,969.4C115.6,983,97.8,990,79.9,990s-35.7-7-49.7-20.7c-27-27.3-27-71.4,0-99.1L400.9,500L30.3,129.3c-27-27.3-27-71.4,0-99.1c27.3-27,71.8-27,99.4,0L500,400.9L870.4,30.2c27.7-27,71.8-27,99.4,0c27,27.7,27,71.8,0,99.1L599.1,500L969.8,870.3z"/></symbol><symbol id="icon-twitter" viewBox="0 0 951 1024"><path class="path1" d="M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"/></symbol><symbol id="icon-facebook" viewBox="0 0 585 1024"><path class="path1" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"/></symbol><symbol id="icon-clock" viewBox="0 0 1000 1000"><path d="M500,10C229.8,10,10,229.8,10,500c0,270.2,219.8,490,490,490c270.2,0,490-219.8,490-490C990,229.8,770.2,10,500,10z M500,910.2c-226.2,0-410.2-184-410.2-410.2c0-226.2,184-410.2,410.2-410.2c226.2,0,410.2,184,410.2,410.2C910.2,726.1,726.2,910.2,500,910.2z M753.1,374c8.2,11.9,5.2,28.1-6.6,36.3L509.9,573.7c-4.4,3.1-9.6,4.6-14.8,4.6c-4.1,0-8.3-1-12.1-3c-8.6-4.5-14-13.4-14-23.1V202.5c0-14.4,11.7-26.1,26.1-26.1c14.4,0,26.1,11.7,26.1,26.1v300l195.6-135.1C728.7,359.2,744.9,362.1,753.1,374z"/></symbol><symbol id="icon-calendar" viewBox="0 0 1000 1000"><path d="M920,500v420H80V500H920 M990,430H10v490c0,38.7,31.3,70,70,70h840c38.7,0,70-31.3,70-70V430L990,430z"/><path d="M850,80v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80H360v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80C72.8,80,10,142.7,10,220v140h980V220C990,142.7,927.2,80,850,80z"/><path d="M255,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C290,25.8,274.3,10,255,10z"/><path d="M745,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C780,25.8,764.3,10,745,10z"/></symbol><symbol id="icon-github" viewBox="0 0 12 14"><path d="M6 1q1.633 0 3.012 0.805t2.184 2.184 0.805 3.012q0 1.961-1.145 3.527t-2.957 2.168q-0.211 0.039-0.312-0.055t-0.102-0.234q0-0.023 0.004-0.598t0.004-1.051q0-0.758-0.406-1.109 0.445-0.047 0.801-0.141t0.734-0.305 0.633-0.52 0.414-0.82 0.16-1.176q0-0.93-0.617-1.609 0.289-0.711-0.062-1.594-0.219-0.070-0.633 0.086t-0.719 0.344l-0.297 0.187q-0.727-0.203-1.5-0.203t-1.5 0.203q-0.125-0.086-0.332-0.211t-0.652-0.301-0.664-0.105q-0.352 0.883-0.062 1.594-0.617 0.68-0.617 1.609 0 0.664 0.16 1.172t0.41 0.82 0.629 0.523 0.734 0.305 0.801 0.141q-0.305 0.281-0.383 0.805-0.164 0.078-0.352 0.117t-0.445 0.039-0.512-0.168-0.434-0.488q-0.148-0.25-0.379-0.406t-0.387-0.187l-0.156-0.023q-0.164 0-0.227 0.035t-0.039 0.090 0.070 0.109 0.102 0.094l0.055 0.039q0.172 0.078 0.34 0.297t0.246 0.398l0.078 0.18q0.102 0.297 0.344 0.48t0.523 0.234 0.543 0.055 0.434-0.027l0.18-0.031q0 0.297 0.004 0.691t0.004 0.426q0 0.141-0.102 0.234t-0.312 0.055q-1.812-0.602-2.957-2.168t-1.145-3.527q0-1.633 0.805-3.012t2.184-2.184 3.012-0.805zM2.273 9.617q0.023-0.055-0.055-0.094-0.078-0.023-0.102 0.016-0.023 0.055 0.055 0.094 0.070 0.047 0.102-0.016zM2.516 9.883q0.055-0.039-0.016-0.125-0.078-0.070-0.125-0.023-0.055 0.039 0.016 0.125 0.078 0.078 0.125 0.023zM2.75 10.234q0.070-0.055 0-0.148-0.062-0.102-0.133-0.047-0.070 0.039 0 0.141t0.133 0.055zM3.078 10.562q0.062-0.062-0.031-0.148-0.094-0.094-0.156-0.023-0.070 0.062 0.031 0.148 0.094 0.094 0.156 0.023zM3.523 10.758q0.023-0.086-0.102-0.125-0.117-0.031-0.148 0.055t0.102 0.117q0.117 0.047 0.148-0.047zM4.016 10.797q0-0.102-0.133-0.086-0.125 0-0.125 0.086 0 0.102 0.133 0.086 0.125 0 0.125-0.086zM4.469 10.719q-0.016-0.086-0.141-0.070-0.125 0.023-0.109 0.117t0.141 0.062 0.109-0.109z"></path></symbol><symbol id="icon-medium" viewBox="0 0 1000 1000"><path d="M336.5,240.2v641.5c0,9.1-2.3,16.9-6.8,23.2s-11.2,9.6-20,9.6c-6.2,0-12.2-1.5-18-4.4L37.3,782.7c-7.7-3.6-14.1-9.8-19.4-18.3S10,747.4,10,739V115.5c0-7.3,1.8-13.5,5.5-18.6c3.6-5.1,8.9-7.7,15.9-7.7c5.1,0,13.1,2.7,24.1,8.2l279.5,140C335.9,238.6,336.5,239.5,336.5,240.2L336.5,240.2z M371.5,295.5l292,473.6l-292-145.5V295.5z M990,305.3v576.4c0,9.1-2.6,16.5-7.7,22.1c-5.1,5.7-12,8.5-20.8,8.5s-17.3-2.4-25.7-7.1L694.7,784.9L990,305.3z M988.4,239.7c0,1.1-46.8,77.6-140.3,229.4C754.6,621,699.8,709.8,683.8,735.7L470.5,389l177.2-288.2c6.2-10.2,15.7-15.3,28.4-15.3c5.1,0,9.8,1.1,14.2,3.3l295.9,147.7C987.6,237.1,988.4,238.2,988.4,239.7L988.4,239.7z"/></symbol><symbol id="icon-instagram" viewBox="0 0 489.84 489.84"><path d="M249.62,50.46c65.4,0,73.14.25,99,1.43C372.47,53,385.44,57,394.07,60.32a75.88,75.88,0,0,1,28.16,18.32,75.88,75.88,0,0,1,18.32,28.16c3.35,8.63,7.34,21.6,8.43,45.48,1.18,25.83,1.43,33.57,1.43,99s-0.25,73.14-1.43,99c-1.09,23.88-5.08,36.85-8.43,45.48a81.11,81.11,0,0,1-46.48,46.48c-8.63,3.35-21.6,7.34-45.48,8.43-25.82,1.18-33.57,1.43-99,1.43s-73.15-.25-99-1.43c-23.88-1.09-36.85-5.08-45.48-8.43A75.88,75.88,0,0,1,77,423.86,75.88,75.88,0,0,1,58.69,395.7c-3.35-8.63-7.34-21.6-8.43-45.48-1.18-25.83-1.43-33.57-1.43-99s0.25-73.14,1.43-99c1.09-23.88,5.08-36.85,8.43-45.48A75.88,75.88,0,0,1,77,78.64a75.88,75.88,0,0,1,28.16-18.32c8.63-3.35,21.6-7.34,45.48-8.43,25.83-1.18,33.57-1.43,99-1.43m0-44.13c-66.52,0-74.86.28-101,1.47s-43.87,5.33-59.45,11.38A120.06,120.06,0,0,0,45.81,47.44,120.06,120.06,0,0,0,17.56,90.82C11.5,106.4,7.36,124.2,6.17,150.27s-1.47,34.46-1.47,101,0.28,74.86,1.47,101,5.33,43.87,11.38,59.45a120.06,120.06,0,0,0,28.25,43.38,120.06,120.06,0,0,0,43.38,28.25c15.58,6.05,33.38,10.19,59.45,11.38s34.46,1.47,101,1.47,74.86-.28,101-1.47,43.87-5.33,59.45-11.38a125.24,125.24,0,0,0,71.63-71.63c6.05-15.58,10.19-33.38,11.38-59.45s1.47-34.46,1.47-101-0.28-74.86-1.47-101-5.33-43.87-11.38-59.45a120.06,120.06,0,0,0-28.25-43.38,120.06,120.06,0,0,0-43.38-28.25C394.47,13.13,376.67,9,350.6,7.8s-34.46-1.47-101-1.47h0Z" transform="translate(-4.7 -6.33)" /><path d="M249.62,125.48A125.77,125.77,0,1,0,375.39,251.25,125.77,125.77,0,0,0,249.62,125.48Zm0,207.41a81.64,81.64,0,1,1,81.64-81.64A81.64,81.64,0,0,1,249.62,332.89Z" transform="translate(-4.7 -6.33)"/><circle cx="375.66" cy="114.18" r="29.39" /></symbol><symbol id="icon-linkedin" viewBox="0 0 12 14"><path d="M2.727 4.883v7.742h-2.578v-7.742h2.578zM2.891 2.492q0.008 0.57-0.395 0.953t-1.059 0.383h-0.016q-0.641 0-1.031-0.383t-0.391-0.953q0-0.578 0.402-0.957t1.051-0.379 1.039 0.379 0.398 0.957zM12 8.187v4.437h-2.57v-4.141q0-0.82-0.316-1.285t-0.988-0.465q-0.492 0-0.824 0.27t-0.496 0.668q-0.086 0.234-0.086 0.633v4.32h-2.57q0.016-3.117 0.016-5.055t-0.008-2.313l-0.008-0.375h2.57v1.125h-0.016q0.156-0.25 0.32-0.438t0.441-0.406 0.68-0.34 0.895-0.121q1.336 0 2.148 0.887t0.813 2.598z"></path></symbol><symbol id="icon-heart" viewBox="0 0 34 30"><path d="M17,29.7 L16.4,29.2 C3.5,18.7 0,15 0,9 C0,4 4,0 9,0 C13.1,0 15.4,2.3 17,4.1 C18.6,2.3 20.9,0 25,0 C30,0 34,4 34,9 C34,15 30.5,18.7 17.6,29.2 L17,29.7 Z M9,2 C5.1,2 2,5.1 2,9 C2,14.1 5.2,17.5 17,27.1 C28.8,17.5 32,14.1 32,9 C32,5.1 28.9,2 25,2 C21.5,2 19.6,4.1 18.1,5.8 L17,7.1 L15.9,5.8 C14.4,4.1 12.5,2 9,2 Z" id="Shape"></path></symbol><symbol id="icon-arrow-right" viewBox="0 0 25.452 25.452"><path d="M4.471,24.929v-2.004l12.409-9.788c0.122-0.101,0.195-0.251,0.195-0.411c0-0.156-0.073-0.31-0.195-0.409L4.471,2.526V0.522c0-0.2,0.115-0.384,0.293-0.469c0.18-0.087,0.396-0.066,0.552,0.061l15.47,12.202c0.123,0.1,0.195,0.253,0.195,0.409c0,0.16-0.072,0.311-0.195,0.411L5.316,25.34c-0.155,0.125-0.372,0.147-0.552,0.061C4.586,25.315,4.471,25.13,4.471,24.929z"/></symbol><symbol id="icon-star" viewBox="0 0 48 48"><path fill="currentColor" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"/><path fill="#ffffff" d="M24,11l3.898,7.898l8.703,1.301l-6.301,6.102l1.5,8.699L24,30.898L16.199,35l1.5-8.699l-6.301-6.102  l8.703-1.301L24,11z"/></symbol><symbol id="icon-read" viewBox="0 0 32 32"><path fill="currentColor" d="M29,4H3C1.343,4,0,5.343,0,7v18c0,1.657,1.343,3,3,3h10c0,0.552,0.448,1,1,1h4c0.552,0,1-0.448,1-1h10  c1.657,0,3-1.343,3-3V7C32,5.343,30.657,4,29,4z M29,5v20H18.708c-0.618,0-1.236,0.146-1.789,0.422l-0.419,0.21V5H29z M15.5,5  v20.632l-0.419-0.21C14.528,25.146,13.91,25,13.292,25H3V5H15.5z M31,25c0,1.103-0.897,2-2,2H18v1h-4v-1H3c-1.103,0-2-0.897-2-2V7  c0-0.737,0.405-1.375,1-1.722V25c0,0.552,0.448,1,1,1h10.292c0.466,0,0.925,0.108,1.342,0.317l0.919,0.46  c0.141,0.07,0.294,0.106,0.447,0.106c0.153,0,0.306-0.035,0.447-0.106l0.919-0.46C17.783,26.108,18.242,26,18.708,26H29  c0.552,0,1-0.448,1-1V5.278C30.595,5.625,31,6.263,31,7V25z M6,12.5C6,12.224,6.224,12,6.5,12h5c0.276,0,0.5,0.224,0.5,0.5  S11.776,13,11.5,13h-5C6.224,13,6,12.776,6,12.5z M6,14.5C6,14.224,6.224,14,6.5,14h5c0.276,0,0.5,0.224,0.5,0.5S11.776,15,11.5,15  h-5C6.224,15,6,14.776,6,14.5z M6,16.5C6,16.224,6.224,16,6.5,16h5c0.276,0,0.5,0.224,0.5,0.5S11.776,17,11.5,17h-5  C6.224,17,6,16.776,6,16.5z M20,12.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,13,25.5,13h-5  C20.224,13,20,12.776,20,12.5z M20,14.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,15,25.5,15h-5  C20.224,15,20,14.776,20,14.5z M20,16.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,17,25.5,17h-5  C20.224,17,20,16.776,20,16.5z"></path></symbol></defs></svg>
+
+        <header class="bar-header">
+    <a id="menu" role="button">
+        <svg id="open" class="icon-menu">
+            <use xlink:href="#icon-menu"></use>
+        </svg>
+    </a>
+    <h1 class="logo">
+        <a href="/">
+            
+            hugs4bugs <span class="version"></span>
+            
+        </a>
+    </h1>
+    <a id="search" class="dosearch" role="button">
+        <svg class="icon-search">
+            <use xlink:href="#icon-search"></use>
+        </svg>
+    </a>
+
+</header>
+
+<div id="mask" class="overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+    <nav id="navigation">
+      <h2>Menu</h2>
+      <ul>
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/">Home</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/about">About</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/contact">Contact</a>
+      </li>
+    
+  
+</ul>
+
+    </nav>
+</aside>
+
+<div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search">
+        <svg class="icon-remove-sign"><use xlink:href="#icon-close"></use></svg>
+        <ul class="search-results search-list"></ul>
+    </div>
+</div>
+
+
+        <section class="post two-columns">
+            <article role="article" class="post-content">
+                <p class="post-info">
+                    
+                        <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
+                        <time class="date" datetime="2022-02-18T04:34:08+05:30">
+                            
+
+
+February 18, 2022
+
+                        </time>
+                    
+                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
+                    <span>21 min to read</span>
+                </p>
+                <h1 class="post-title">Building and Deploying PWA on Azure Cloud.</h1>
+                <p class="post-subtitle">Using node.js & COSMOS DB.</p>
+
+                
+                    <img src="https://th.bing.com/th/id/R.49bd0ccbb9e904407116b65ce6a50d41?rik=1KXzdiLejsH2eA&riu=http%3a%2f%2fclipground.com%2fimages%2fcoder-clipart-1.jpg&ehk=xl5oxtd6bHoDW1%2f3HB007zg97209vFB75YXyIskHtPg%3d&risl=&pid=ImgRaw&r=0" alt="Featured image" class="post-cover">
+                
+
+                <!-- Pagination links -->
+
+
+
+                <!-- Add your table of contents here -->
+
+
+                <p>let’s start with <strong>PWA</strong>, PWA are apps built with web technologies like Js, Css, React,or HTMl with feel and functionality of an actual native app.</p>
+
+<p>They have service worker and manifest.json file to make it work offline and installable.
+Web apps can reach anyone,anywhere, on any device with a single codebase.When it comes to the platform specific applications, PWA are known for being incredibly rich and reliable.They’re present, on home screens, on the home screens, docks and the taskbars. They work regardless of network connection.They can launch in their standalone experience,can read &amp; write files from the local file system,access hardware connected via USB,serial or bluetooth, and even interact with data stored on your device, like contacts,calendar,photos,music,videos,etc.</p>
+
+<p><strong>Why PWA?</strong></p>
+
+<ol>
+  <li>Installable : It can be installed on any device.</li>
+  <li>Offline : It can be used offline.+ can be used as custom offline page.</li>
+  <li>Responsive : It can be used on any device.</li>
+  <li>Discoverable : It can be discovered by search engines, Better for SEO.</li>
+  <li>Push Notifications : It can be used to send push notifications, like native apps.</li>
+</ol>
+
+<p>Before starting to build PWA, let’s understand the concepts of Service Worker and Manifest.json file, and why we need them.Apart from these, we need to understand the concepts of <strong>COSMOS DB</strong>, which are gonna use for this project and node.js .</p>
+
+<p><strong>Why COSMOS DB?</strong></p>
+
+<p>Cosmos DB is a planet scale DB, No SQL JSON DB with multi API support provided by <a href="https://azure.microsoft.com/en-in/">Microsoft Azure</a></p>
+
+<p>Features of COSMOS DB :-</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1616362364/Azure/23_sqxpoz.jpg" alt="Features" /></p>
+
+<ul>
+  <li><strong>Planet Scale DB</strong> :-</li>
+</ul>
+
+<p>It means that we can build our primary DataBase in one region and setup different secondary Databases in different geo locations to avoid much latency and smoother user experiences. Whenever our primary Database goes down, any one these secondary Database can come as primary Database</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1616362726/Azure/25_yxlnqu.jpg" alt="Planet Scale DB" /></p>
+
+<p><strong>Multi API Support</strong> :-</p>
+
+<p>Cosmos DB stores Data iin JSON Format having multiple API support, which means that Data stores in JSON Format can be used as any API format.</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1616362726/Azure/24_hpsotg.jpg" alt="API" /></p>
+
+<p>Now we might be confused why Cosmos DB instead of Amazon Dynamo DB. So here are the few features of Cosmos DB with Amazon Dynamo DB comparison. In Cosmos DB server reads and writes locally for low latency and 99.999% high availability around the world. It avoids extreme tradeofs in consistency, performance,and availability with five consistency models. Apart from these, it’s multi-model with wire protocol-compatible API endpoints for cassandra, MongoDB, SQL, Gremlin and Table along with built-in support for Apache spark and Jupyter notebooks.</p>
+
+<p><strong>Quick Comparision with Amazon Dynamo DB</strong></p>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#9ABAD9;border-spacing:0;}
+.tg td{background-color:#EBF5FF;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#444;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#409cff;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#fff;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-phtq{background-color:#D2E4FC;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-eqm3{border-color:inherit;font-size:20px;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-c4qv{background-color:#F0F0F0;border-color:inherit;color:#222;text-align:left;vertical-align:top}
+</style>
+
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-eqm3"><span style="font-weight:bold">Name</span></th>
+    <th class="tg-eqm3"><span style="font-weight:bold">Azure Cosmos DB</span></th>
+    <th class="tg-eqm3"><span style="font-weight:bold;font-style:normal">Amazon DynamoDB</span><br /></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:bold">Database Model</span></td>
+    <td class="tg-phtq">Document Store<br />Graph DBMS<br />Key-value Store<br />wide-column Store</td>
+    <td class="tg-0pky">Document Store<br />key-value Store</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:bold">Data Scheme</span></td>
+    <td class="tg-phtq">Schema-free</td>
+    <td class="tg-0pky">Schema-free</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:bold">SQL</span></td>
+    <td class="tg-phtq">SQL-like Query language</td>
+    <td class="tg-0pky">NO</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:bold">API &amp; Access Method </span></td>
+    <td class="tg-phtq"><span style="font-weight:400;font-style:normal">DocumentDB API</span><br /><br /><span style="font-weight:400;font-style:normal">Graph API (Gremlin)</span><br /><br /><span style="font-weight:400;font-style:normal">MongoDB API</span><br /><br /><span style="font-weight:400;font-style:normal">RESTful HTTP API</span><br /><br /><span style="font-weight:400;font-style:normal">Table API</span></td>
+    <td class="tg-0pky">RESTful HTTP API</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:bold">Supported programming languages</span></td>
+    <td class="tg-phtq"><span style="font-weight:400;font-style:normal">.Net</span><br /><br /><span style="font-weight:400;font-style:normal">C#</span><br /><br /><span style="font-weight:400;font-style:normal">Java</span><br /><br /><span style="font-weight:400;font-style:normal">JavaScript</span><br /><br /><span style="font-weight:400;font-style:normal">JavaScript (Node.js)</span><br /><br /><span style="font-weight:400;font-style:normal">MongoDB client drivers written for various programming languages</span><br /><br /><span style="font-weight:400;font-style:normal">Python</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal">.Net</span><br /><br /><span style="font-weight:400;font-style:normal">ColdFusion</span><br /><br /><span style="font-weight:400;font-style:normal">Erlang</span><br /><br /><span style="font-weight:400;font-style:normal">Groovy</span><br /><br /><span style="font-weight:400;font-style:normal">Java</span><br /><br /><span style="font-weight:400;font-style:normal">JavaScript</span><br /><br /><span style="font-weight:400;font-style:normal">Perl</span><br /><br /><span style="font-weight:400;font-style:normal">PHP</span><br /><br /><span style="font-weight:400;font-style:normal">Python</span><br /><br /><span style="font-weight:400;font-style:normal">Ruby</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:bold;font-style:normal">Server-side scripts</span></td>
+    <td class="tg-phtq">JavaScript</td>
+    <td class="tg-0pky">NO</td>
+  </tr>
+  <tr>
+    <td class="tg-c4qv"><span style="font-weight:bold">Triggers</span></td>
+    <td class="tg-phtq">JavaScript</td>
+    <td class="tg-0pky">Yes ( AWS lambda)</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:bold">Partitioning methods</span></td>
+    <td class="tg-phtq">Sharding</td>
+    <td class="tg-0pky">Sharding</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:bold">Replication methods</span></td>
+    <td class="tg-phtq">Yes</td>
+    <td class="tg-0pky">yes</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:bold">MapReduce</span></td>
+    <td class="tg-phtq">with Hadoop integration</td>
+    <td class="tg-0pky">NO</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:bold">Consistency concepts</span></td>
+    <td class="tg-phtq"><span style="font-weight:400;font-style:normal">Bounded Staleness</span><br /><br /><span style="font-weight:400;font-style:normal">Consistent Prefix</span><br /><br /><span style="font-weight:400;font-style:normal">Eventual Consistency</span><br /><br /><span style="font-weight:400;font-style:normal">Immediate Consistency</span><br /><span style="font-weight:400;font-style:normal"> </span><br />Session Consistency</td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal">Eventual Consistency</span><br /><br /><span style="font-weight:400;font-style:normal">Immediate Consistency</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:bold;font-style:normal">Transaction concepts</span></td>
+    <td class="tg-phtq"><span style="font-weight:400;font-style:normal">Multi-item ACID transactions with snapshot isolation within a partition</span></td>
+    <td class="tg-0pky">ACID</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:bold;font-style:normal">Foreign keys</span></td>
+    <td class="tg-phtq">NO</td>
+    <td class="tg-0pky">NO</td>
+  </tr>
+</tbody>
+</table>
+
+<p>Now directly jumps over Our coding part to build UI for project.
+It’ll have basic <strong>CRUD</strong> and PWA features, which means one could create, read, update and delete data from database(here COSMOS DB).</p>
+
+<p>Let’s start Our Project :-</p>
+
+<p>Step 0:-</p>
+
+<ul>
+  <li>Open terminal and make a folder/workspace Project.</li>
+</ul>
+
+<pre><code class="language-folder"> cd Desktop
+ mkdir Project
+</code></pre>
+
+<p>Setp 1:-</p>
+
+<p>Open Project folder in your favourite editor mine is Vs Code
+create two separte folders inside your project for client and server side</p>
+
+<pre><code class="language-client">mkdir client
+mkdir server
+</code></pre>
+
+<p>step 2:-</p>
+
+<p>change directory to client and create a react App</p>
+
+<pre><code class="language-commands">cd client
+npx create-react-app ./
+</code></pre>
+
+<p>step 3:-
+In Server folder create a file named as index.js</p>
+
+<pre><code class="language-command">cd server
+touch index.js
+</code></pre>
+
+<p>step 4:-</p>
+
+<p>To install dependencies we need a file called package.json inside server folder</p>
+
+<pre><code class="language-command">npm init -y
+</code></pre>
+
+<p>step 5:-</p>
+
+<ul>
+  <li>Dependencies are :-</li>
+</ul>
+
+<pre><code class="language-Dependency">npm install body-parser cors express mongoose nodemon
+</code></pre>
+
+<p>step 6:-</p>
+
+<p>After installation add <strong>“type” : “module”,</strong> And
+package.json file will look like :-</p>
+
+<pre><code class="language-JSON">{
+  "name": "mern-stack-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.29"
+  }
+}
+</code></pre>
+
+<p>step 7:-</p>
+
+<p>Now go to <strong>client</strong> folder and install these dependencies</p>
+
+<pre><code class="language-code">cd client
+import express from 'express';
+import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
+import cors from 'cors';
+</code></pre>
+
+<p>step 8:-</p>
+
+<p>Install dependencies for client side</p>
+
+<pre><code class="language-code">npm install axios momet react-file-base64 redux redux-thunk
+</code></pre>
+
+<p>Now Building <strong>UI</strong> for our project.</p>
+
+<p><strong><em>index.js</em></strong></p>
+
+<pre><code class="language-index.js">import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+
+import { reducers } from './reducers';
+import App from './App';
+import './index.css';
+
+const store = createStore(reducers, compose(applyMiddleware(thunk)));
+
+ReactDOM.render(
+  &lt;Provider store={store}&gt;
+    &lt;App /&gt;
+  &lt;/Provider&gt;,
+  document.getElementById('root'),
+);
+
+</code></pre>
+
+<h2 id="adding-styles">Adding Styles</h2>
+
+<p><strong><em>styles.js</em></strong></p>
+
+<pre><code class="language-style">import { makeStyles } from '@material-ui/core/styles';
+
+export default makeStyles(() =&gt; ({
+  appBar: {
+    borderRadius: 15,
+    margin: '30px 0',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  heading: {
+    color: 'rgba(0,183,255, 1)',
+  },
+  image: {
+    marginLeft: '15px',
+  },
+}));
+</code></pre>
+
+<pre><code class="language-index.css">body {
+    background-color: rgba(0,183,255, 1);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='540' height='450' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='.1'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/svg%3E");
+}
+</code></pre>
+
+<h2 id="adding-constants">Adding Constants</h2>
+
+<pre><code class="language-actionType.js">export const CREATE = 'CREATE';
+export const UPDATE = 'UPDATE';
+export const DELETE = 'DELETE';
+export const FETCH_ALL = 'FETCH_ALL';
+export const LIKE = 'LIKE';
+</code></pre>
+
+<h2 id="adding-form-components">Adding Form Components</h2>
+
+<pre><code class="language-form">
+import React, { useState, useEffect } from 'react';
+import { TextField, Button, Typography, Paper } from '@material-ui/core';
+import { useDispatch, useSelector } from 'react-redux';
+import FileBase from 'react-file-base64';
+
+import useStyles from './styles';
+import { createPost, updatePost } from '../../actions/posts';
+
+const Form = ({ currentId, setCurrentId }) =&gt; {
+  const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
+  const post = useSelector((state) =&gt; (currentId ? state.posts.find((message) =&gt; message._id === currentId) : null));
+  const dispatch = useDispatch();
+  const classes = useStyles();
+
+  useEffect(() =&gt; {
+    if (post) setPostData(post);
+  }, [post]);
+
+  const clear = () =&gt; {
+    setCurrentId(0);
+    setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
+  };
+
+  const handleSubmit = async (e) =&gt; {
+    e.preventDefault();
+
+    if (currentId === 0) {
+      dispatch(createPost(postData));
+      clear();
+    } else {
+      dispatch(updatePost(currentId, postData));
+      clear();
+    }
+  };
+
+  return (
+    &lt;Paper className={classes.paper}&gt;
+      &lt;form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}&gt;
+        &lt;Typography variant="h6"&gt;{currentId ? `Editing "${post.title}"` : 'Creating a FUN EVENT'}&lt;/Typography&gt;
+        &lt;TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator} onChange={(e) =&gt; setPostData({ ...postData, creator: e.target.value })} /&gt;
+        &lt;TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) =&gt; setPostData({ ...postData, title: e.target.value })} /&gt;
+        &lt;TextField name="message" variant="outlined" label="Message" fullWidth multiline rows={4} value={postData.message} onChange={(e) =&gt; setPostData({ ...postData, message: e.target.value })} /&gt;
+        &lt;TextField name="tags" variant="outlined" label="Tags (coma separated)" fullWidth value={postData.tags} onChange={(e) =&gt; setPostData({ ...postData, tags: e.target.value.split(',') })} /&gt;
+        &lt;div className={classes.fileInput}&gt;&lt;FileBase type="file" multiple={false} onDone={({ base64 }) =&gt; setPostData({ ...postData, selectedFile: base64 })} /&gt;&lt;/div&gt;
+        &lt;Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth&gt;Submit&lt;/Button&gt;
+        &lt;Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth&gt;Clear&lt;/Button&gt;
+      &lt;/form&gt;
+    &lt;/Paper&gt;
+  );
+};
+
+export default Form;
+</code></pre>
+
+<h2 id="styling-form">Styling Form</h2>
+
+<pre><code class="language-style">
+import { makeStyles } from '@material-ui/core/styles';
+
+export default makeStyles((theme) =&gt; ({
+  root: {
+    '&amp; .MuiTextField-root': {
+      margin: theme.spacing(1),
+    },
+  },
+  paper: {
+    padding: theme.spacing(2),
+  },
+  form: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  },
+  fileInput: {
+    width: '97%',
+    margin: '10px 0',
+  },
+  buttonSubmit: {
+    marginBottom: 10,
+  },
+}));
+</code></pre>
+
+<h2 id="api-call">API Call</h2>
+
+<pre><code class="language-API">import axios from 'axios';
+
+const url = 'http://localhost:10255/posts';
+
+export const fetchPosts = () =&gt; axios.get(url);
+export const createPost = (newPost) =&gt; axios.post(url, newPost);
+export const likePost = (id) =&gt; axios.patch(`${url}/${id}/likePost`);
+export const updatePost = (id, updatedPost) =&gt; axios.patch(`${url}/${id}`, updatedPost);
+export const deletePost = (id) =&gt; axios.delete(`${url}/${id}`);
+</code></pre>
+
+<h2 id="action">Action</h2>
+
+<pre><code class="language-post">
+import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes';
+
+import * as api from '../api/index.js';
+
+export const getPosts = () =&gt; async (dispatch) =&gt; {
+  try {
+    const { data } = await api.fetchPosts();
+
+    dispatch({ type: FETCH_ALL, payload: data });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+export const createPost = (post) =&gt; async (dispatch) =&gt; {
+  try {
+    const { data } = await api.createPost(post);
+
+    dispatch({ type: CREATE, payload: data });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+export const updatePost = (id, post) =&gt; async (dispatch) =&gt; {
+  try {
+    const { data } = await api.updatePost(id, post);
+
+    dispatch({ type: UPDATE, payload: data });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+export const likePost = (id) =&gt; async (dispatch) =&gt; {
+  try {
+    const { data } = await api.likePost(id);
+
+    dispatch({ type: LIKE, payload: data });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+export const deletePost = (id) =&gt; async (dispatch) =&gt; {
+  try {
+    await api.deletePost(id);
+
+    dispatch({ type: DELETE, payload: id });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+</code></pre>
+
+<p><strong>In server side</strong></p>
+
+<h2 id="creating-controllers">Creating Controllers</h2>
+
+<pre><code class="language-post">import express from 'express';
+import mongoose from 'mongoose';
+
+import PostMessage from '../models/postMessage.js';
+
+const router = express.Router();
+
+export const getPosts = async (req, res) =&gt; {
+    try {
+        const postMessages = await PostMessage.find();
+
+        res.status(200).json(postMessages);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}
+
+export const getPost = async (req, res) =&gt; {
+    const { id } = req.params;
+
+    try {
+        const post = await PostMessage.findById(id);
+
+        res.status(200).json(post);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}
+
+export const createPost = async (req, res) =&gt; {
+    const { title, message, selectedFile, creator, tags } = req.body;
+
+    const newPostMessage = new PostMessage({ title, message, selectedFile, creator, tags })
+
+    try {
+        await newPostMessage.save();
+
+        res.status(201).json(newPostMessage );
+    } catch (error) {
+        res.status(409).json({ message: error.message });
+    }
+}
+
+export const updatePost = async (req, res) =&gt; {
+    const { id } = req.params;
+    const { title, message, creator, selectedFile, tags } = req.body;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+
+    const updatedPost = { creator, title, message, tags, selectedFile, _id: id };
+
+    await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true });
+
+    res.json(updatedPost);
+}
+
+export const deletePost = async (req, res) =&gt; {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+
+    await PostMessage.findByIdAndRemove(id);
+
+    res.json({ message: "Post deleted successfully." });
+}
+
+export const likePost = async (req, res) =&gt; {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+
+    const post = await PostMessage.findById(id);
+
+    const updatedPost = await PostMessage.findByIdAndUpdate(id, { likeCount: post.likeCount + 1 }, { new: true });
+
+    res.json(updatedPost);
+}
+
+
+export default router;
+</code></pre>
+
+<h2 id="creating-models">Creating models</h2>
+
+<pre><code class="language-postMessage">import mongoose from 'mongoose';
+
+const postSchema = mongoose.Schema({
+    title: String,
+    message: String,
+    creator: String,
+    tags: [String],
+    selectedFile: String,
+    likeCount: {
+        type: Number,
+        default: 0,
+    },
+    createdAt: {
+        type: Date,
+        default: new Date(),
+    },
+})
+
+var PostMessage = mongoose.model('PostMessage', postSchema);
+
+export default PostMessage;
+</code></pre>
+
+<h2 id="creating-routes">Creating Routes</h2>
+
+<p>Adding Post.js</p>
+
+<pre><code class="language-posts">import express from 'express';
+
+import { getPosts, getPost, createPost, updatePost, likePost, deletePost } from '../controllers/posts.js';
+
+const router = express.Router();
+
+router.get('/', getPosts);
+router.post('/', createPost);
+router.get('/:id', getPost);
+router.patch('/:id', updatePost);
+router.delete('/:id', deletePost);
+router.patch('/:id/likePost', likePost);
+
+export default router;
+
+</code></pre>
+
+<p><strong>Now let’s move to Azure Portal</strong> for creating resource group and storage account</p>
+
+<p><strong>Creating a Resource Group</strong></p>
+
+<ol>
+  <li>Login to to Microsoft Azure portal.</li>
+  <li>
+    <p>Click on Resource group to build a resource group
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1616223591/Azure/4_cpomxq.jpg" alt="first" /></p>
+  </li>
+  <li>Fill all the details in 3 tabs respectively and Feel free to choose Region according to your use case.</li>
+</ol>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1616226067/Azure/5_b2pn4x.jpg" alt="Image" /></p>
+
+<ol>
+  <li>After Filling all details, click on Create button.</li>
+</ol>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1616226424/Azure/6_umv9uf.jpg" alt="Create" /></p>
+
+<ol>
+  <li>Click on notification icon to see all activites and visit resource Group by simply clicking on Go to Resource Group button.</li>
+</ol>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1616226768/Azure/7_mwm78n.jpg" alt="5th" /></p>
+
+<p><strong>Creating Cosmos DB</strong></p>
+
+<p>steps:-</p>
+
+<ul>
+  <li>Click on search bar, and type Cosmos DB.</li>
+  <li>Create Azure Cosmos DB Account page will appear.</li>
+  <li>Fill all the deatils and in Resource section select the exsisting you’ll find all your resources there.</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1616227464/Azure/8_i3hpal.jpg" alt="Image" /></p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1616276671/Azure/15_ngay19.jpg" alt="Image" /></p>
+
+<ul>
+  <li>In Networking section we can select what kind of network we wanna to allow on our DB. It can be either Private, Public and All types. Here I’ll choose All kind of Network.</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1616227964/Azure/9_rvh026.jpg" alt="image" /></p>
+
+<ul>
+  <li>In Back up Policy We can set our policy too, but here I am going for Default one.</li>
+  <li>In Encryption and Tags I’ll go for Default.</li>
+  <li>Click on Create in Review + Create tab.</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1616278561/Azure/16_jil7sf.jpg" alt="Image" /></p>
+
+<ul>
+  <li>As soon as We create, Deployment in progress message will display. Even We can check it out from notification icon.</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1616228855/Azure/11_q6lybf.jpg" alt="Image" /></p>
+
+<ul>
+  <li>After Successful deploy it will show like this</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1616230242/Azure/12_zzhr5l.jpg" alt="Image" /></p>
+
+<ul>
+  <li>Click on Go to the resource.</li>
+  <li>Click on Overview section , it’ll display all informations like Status : Online/ offline , URL, Subscription.</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1616230848/Azure/13_jvlspl.jpg" alt="image" /></p>
+
+<ul>
+  <li>In activity log it’ll display all our recent activities like:-</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1616231401/Azure/14_htpaad.jpg" alt="image" /></p>
+
+<p><strong>Connect our Node.js application to the database</strong></p>
+
+<p>Replace the two <cosmosdb-name> placeholders with your Cosmos account name.</cosmosdb-name></p>
+
+<pre><code class="language-Js">'use strict';
+
+module.exports = {
+  db: {
+    uri: 'mongodb://&lt;cosmosdb-name&gt;:&lt;primary_master_key&gt;@&lt;cosmosdb-name&gt;.documents.azure.com:10255/mean-dev?ssl=true&amp;sslverifycertificate=false'
+  }
+};
+</code></pre>
+
+<h2 id="retrieve-the-key">Retrieve the key</h2>
+
+<p>In Order to connect our Cosmos DB, we need DB Key.Here we can use the <strong>az cosmosdb</strong> keys list command to retrieve the primary key.</p>
+
+<pre><code class="language-az">
+az cosmosdb keys list --name &lt;cosmosdb-name&gt; --resource-group myResourceGroup --query "primaryMasterKey"
+</code></pre>
+
+<p><strong><em>Output</em></strong></p>
+
+<pre><code class="language-JSON">"RUayjYjixJDWG5xTqIiXjC..."
+</code></pre>
+
+<h2 id="run-application-locally">Run application locally</h2>
+
+<pre><code class="language-Locally">cd client
+npm start
+and in other terminal
+cd server
+npm start
+</code></pre>
+
+<p>Go to the browser and type <strong>http://localhost:3000</strong></p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1616309489/Azure/17_f12hld.jpg" alt="Running Locally" /></p>
+
+<h2 id="retrieve-data-in-data-explorer">Retrieve data in Data Explorer</h2>
+
+<p>Data stored in a Cosmos database is available to view and query in the Azure portal.</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1616310475/Azure/18_xxwwtj.jpg" alt="Data" /></p>
+
+<p><strong>Now Adding Features of PWA to our Application</strong></p>
+
+<p>Installation criteria.</p>
+
+<p>In chrome, your progressive Web App must the following criteria before it will fire the beforeinstallprompt event and show the in-browser install prompt.</p>
+
+<ul>
+  <li>The Web App is not already installed</li>
+  <li>Meets a user engaquement heuristic</li>
+  <li>Be served over HTTPS</li>
+  <li>Must includes a web APP manifest that includes:-
+short_name or name</li>
+  <li>icons -must include a 192px and a 512px icon</li>
+  <li>start_url</li>
+  <li>display - must be one of fullsecreen ,standalone or minimal-ui</li>
+  <li>prefer_related_applications - must be false</li>
+</ul>
+
+<p><strong>Manifest.json</strong></p>
+
+<p>now a create a manifest.json file in root directory of your project.</p>
+
+<p>The manifest file can have any name, but is commonly named manifest.json and served from the root (your website’s top-level directory). The specification suggests the extension should be .webmanifest, but browsers also support .json extensions, which is may be easier for developers to understand.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "name": "My App",
+  "short_name": "My App",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color":'#ffffff',
+  "icons": [
+    {
+      "src": "/images/icons-vector.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/images/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+</code></pre></div></div>
+
+<p><strong>start_url</strong></p>
+
+<p>The start_url is required and tells the browser where your application should start when it is launched, and prevents the app from starting on whatever page the user was on when they added your app to their home screen.</p>
+
+<p>Your start_url should direct the user straight into your app, rather than a product landing page. Think about what the user will want to do once they open your app, and place them there.</p>
+
+<p><strong>background_color</strong> :-</p>
+
+<p>The background_color property is used on the splash screen when the application is first launched on mobile.</p>
+
+<p><strong>display</strong></p>
+
+<p>You can customize what browser UI is shown when your app is launched. For example, you can hide the address bar and browser chrome. Games can even be made to launch full screen.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Property</td>
+      <td>Use</td>
+    </tr>
+    <tr>
+      <td>Fullscreen</td>
+      <td>fullscreen Opens the web application without any browser UI and takes up the entirety of the available display area.</td>
+    </tr>
+    <tr>
+      <td>Standalone</td>
+      <td>standalone Opens the web application in a standalone window.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Minimal-ui</td>
+      <td>minimal-ui Hides the browser UI, such as the address bar and the browser chrome.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Browser</td>
+      <td>A standard browser experience.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Creating Service Worker</strong></p>
+
+<p>Create a file called service-worker.js in the root directory of your project.</p>
+
+<p><strong>Service Worker</strong> is a type of web worker essentially a JavaScript file that runs separately from the main browser thread, intercepting network requests, caching or retrieving resources from the cache, and delivering push messages.</p>
+
+<p>Because the service worker is not blocking (it’s designed to be fully asynchronous) synchronous XHR and localStorage cannot be used in a service worker.
+The service worker can receive push messages from a server when the app is not active. This lets your app show push notifications to the user, even when it is not open in the browser.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// service-worker.js
+
+// This is the "Offline page" service worker
+
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
+
+const CACHE = "pwabuilder-page";
+
+// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
+const offlineFallbackPage = "index.html";
+
+self.addEventListener("message", (event) =&gt; {
+  if (event.data &amp;&amp; event.data.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
+});
+
+self.addEventListener('install', async (event) =&gt; {
+  event.waitUntil(
+    caches.open(CACHE)
+      .then((cache) =&gt; cache.add(offlineFallbackPage))
+  );
+});
+
+if (workbox.navigationPreload.isSupported()) {
+  workbox.navigationPreload.enable();
+}
+
+self.addEventListener('fetch', (event) =&gt; {
+  if (event.request.mode === 'navigate') {
+    event.respondWith((async () =&gt; {
+      try {
+        const preloadResp = await event.preloadResponse;
+
+        if (preloadResp) {
+          return preloadResp;
+        }
+
+        const networkResp = await fetch(event.request);
+        return networkResp;
+      } catch (error) {
+
+        const cache = await caches.open(CACHE);
+        const cachedResp = await cache.match(offlineFallbackPage);
+        return cachedResp;
+      }
+    })());
+  }
+});
+
+
+</code></pre></div></div>
+
+<p><strong>Last Part</strong></p>
+
+<p>Linking our service workers and manifest.json files to main base project code.</p>
+
+<p>Simply we have to add the following code in the index.js /home.js file.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;link rel='manifest' href='/manifest.json'&gt;
+
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- JavaScript enabled/disabled --&gt;
+    &lt;script&gt;
+        document.querySelector('html').classList.remove('no-js');
+    &lt;/script&gt;
+    &lt;script type="module"&gt;import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+        const el = document.createElement('pwa-update');
+        document.body.appendChild(el);
+    &lt;/script&gt;
+</code></pre></div></div>
+
+<p>After successful link,one could find + icon at the top right corner of the browser, aor add to home screen pop up at the bottom of the page.</p>
+
+<p><img src="/assets/img/22.jpg" alt="installable" /></p>
+
+<h2 id="creating-static-azure-web-app">Creating Static Azure Web App</h2>
+
+<ul>
+  <li>click on the search console and Type <strong>Azure static web Apps</strong></li>
+  <li>select Static web App preview Option</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1616359384/Azure/19_b4pc9v.jpg" alt="static Web App" /></p>
+
+<ul>
+  <li>Connect with Github Repository for CI/CD build.</li>
+  <li>Edit workflow.yml file to setup CI/CD</li>
+</ul>
+
+<pre><code class="language-workflow">
+ name: Azure Static Web Apps CI/CD
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - master
+
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' &amp;&amp; github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v0.0.1-preview
+        with:
+          azure_static_web_apps_api_token: $
+          repo_token: $
+          action: "upload"
+          app_location: "client" # App source code path
+          api_location: "client/src/api" # Api source code path - optional
+          output_location: "build" # Built app content directory - optional
+
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' &amp;&amp; github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request Job
+    steps:
+      - name: Close Pull Request
+        id: closepullrequest
+        uses: Azure/static-web-apps-deploy@v0.0.1-preview
+        with:
+          azure_static_web_apps_api_token: $
+          action: "close"
+
+</code></pre>
+
+<p><strong>Before Deployment make sure to change uri in the <em>db</em> object</strong> like :-</p>
+
+<pre><code class="language-env">
+'mongodb://&lt;cosmosdb-name&gt;:&lt;primary_master_key&gt;@&lt;cosmosdb-name&gt;.documents.azure.com:10255/mean?ssl=true&amp;sslverifycertificate=false',
+</code></pre>
+
+<p>Thanks for reading this article!</p>
+
+
+                <!-- Pagination links -->
+
+
+            </article>
+
+            
+                <aside class="see-also">
+                    <h2>See also</h2>
+                    <ul>
+                        
+                        
+                        
+                            <li>
+                                <a href="/computer-networking-basics/">
+                                    
+                                        <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1620918379/Networking/photo_2021-04-04_23-19-26_ylhetf.jpg">
+                                    
+                                    <h3>Computer Networking 101</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/college-to-cyber-security/">
+                                    
+                                        <img src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80">
+                                    
+                                    <h3>College to Cyber Security Journey</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/access-management-101/">
+                                    
+                                        <img src="https://d3nn873nee648n.cloudfront.net/900x600/16347/120-SM692126.jpg">
+                                    
+                                    <h3>Access Management 101.</h3>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </aside>
+            
+
+        </section>
+
+        <!-- Add time bar only for pages without pagination -->
+        
+            <div class="time-bar" data-minutes="21">
+    <span class="time-completed"></span>
+    <span class="time-remaining"></span>
+    <div class="bar">
+        <span class="completed" style="width:0%;"></span>
+        <span class="remaining" style="width:100%;"></span>
+    </div>
+</div>
+
+            <div class="recommendation">
+    <div class="message">
+        <strong>Why don't you read something next?</strong>
+        <div>
+            <button>
+                <svg><use xlink:href="#icon-arrow-right"></use></svg>
+                <span>Go back to top</span>
+            </button>
+        </div>
+    </div>
+    
+    <a href="/metasploitFramework-vs-metasploit-pro/" class="post-preview">
+        <div class="image">
+            
+                <img src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80">
+            
+        </div>
+        <h3 class="title">Metasploit Framework vs Metasploit Pro</h3>
+    </a>
+</div>
+
+        
+
+        <!-- Show modal if the post is the last one -->
+        
+
+        <!-- Show modal before user leaves the page -->
+        
+
+        <!-- Add your newsletter subscription form here -->
+
+        <section class="share">
+    <h3>Share</h3>
+    <a aria-label="Share on Twitter"
+        href="https://twitter.com/intent/tweet?text=&quot;Let's build and deploy PWA over azure cloud from Scratch.&quot;%20https://hugs4bugs.me/Progressive-webapps-on-azure/%20via%20&#64;myselfshubhendu&hashtags=PWA,node.js,COSMOS DB"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
+        title="Share on Twitter">
+        <svg class="icon icon-twitter">
+            <use xlink:href="#icon-twitter"></use>
+        </svg>
+    </a>
+    <a aria-label="Share on WhatsApp"
+        href="https://twitter.com/intent/tweet?text=&quot;Let's build and deploy PWA over azure cloud from Scratch.&quot;%20https://hugs4bugs.me/Progressive-webapps-on-azure/%20via%20&#64;myselfshubhendu&hashtags=PWA,node.js,COSMOS DB"
+        onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
+        title="Share on Twitter">
+        <svg class="icon icon-twitter">
+            <use xlink:href="#icon-twitter"></use>
+        </svg>
+    </a>
+    <a aria-label="Share on Facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/Progressive-webapps-on-azure/"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
+        title="Share on Facebook">
+        <svg class="icon icon-facebook">
+            <use xlink:href="#icon-facebook"></use>
+        </svg>
+    </a>
+</section>
+        
+
+  <section class="author">
+    <div class="details">
+      
+        <img class="img-rounded" src="/assets/img/s.png" alt="Shubhendu">
+      
+      <p class="def">Author</p>
+      <h3 class="name">
+        <a href="/authors/shubhendu/">Shubhendu</a>
+      </h3>
+      <p class="desc">A guy who survived after watching Bear Grylls shows,Now He writes code for survial.</p>
+      <p>
+        
+          <a href="https://github.com/sivolko" title="Github">
+            <svg><use xlink:href="#icon-github"></use></svg>
+          </a>
+        
+        
+        
+          <a href="https://twitter.com/myselfshubhendu" title="Twitter">
+            <svg><use xlink:href="#icon-twitter"></use></svg>
+          </a>
+        
+        
+          <a href="https://medium.com/@shubhendushubham" title="Medium">
+            <svg><use xlink:href="#icon-medium"></use></svg>
+          </a>
+        
+        
+          <a href="https://www.instagram.com/shubhendushubham" title="Instagram">
+            <svg><use xlink:href="#icon-instagram"></use></svg>
+          </a>
+        
+        
+          <a href="https://www.linkedin.com/in/shubhendu-shubham" title="LinkedIn">
+            <svg><use xlink:href="#icon-linkedin"></use></svg>
+          </a>
+        
+      </p>
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+  
+  
+
+  <script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Shubhendu",
+      
+      "image": "/assets/img/s.png",
+      
+      "jobTitle": "",
+      "url": "https://hugs4bugs.me/authors/shubhendu/",
+      "sameAs": [
+        "https://github.com/sivolko","https://twitter.com/myselfshubhendu","https://medium.com/@shubhendushubham","https://www.instagram.com/shubhendushubham","https://www.linkedin.com/in/shubhendu-shubham"
+      ]
+  }
+  </script>
+
+
+        
+
+<section class="comments">
+    <h3>Comments</h3>
+    <div id="disqus_thread"></div>
+</section>
+<script type="text/javascript">
+    var disqus_loaded = false;
+
+    function load_disqus()
+    {
+        disqus_loaded = true;
+        var disqus_shortname = 'hugs4bugs';
+        var disqus_title = '';
+        var disqus_url = '/Progressive-webapps-on-azure/';
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        var ldr = document.getElementById('disqus_loader');
+    };
+    window.onscroll = function(e) {
+        if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
+            //hit bottom of page
+            if (disqus_loaded==false)
+                load_disqus()
+        }
+    };
+</script>
+
+
+
+        <footer>
+  <p>
+    
+    <a href="https://github.com/sivolko" title="Github">
+      <svg>
+        <use xlink:href="#icon-github"></use>
+      </svg>
+    </a>
+    
+    
+    
+    <a href="https://twitter.com/myselfshubhendu" title="Twitter">
+      <svg>
+        <use xlink:href="#icon-twitter"></use>
+      </svg>
+    </a>
+    
+    
+    <a href="https://medium.com/@shubhendushubham" title="Medium">
+      <svg>
+        <use xlink:href="#icon-medium"></use>
+      </svg>
+    </a>
+    
+    
+    
+    <a href="https://www.linkedin.com/in/shubhendu-shubham" title="LinkedIn">
+      <svg>
+        <use xlink:href="#icon-linkedin"></use>
+      </svg>
+    </a>
+    
+  </p>
+
+  <ul>
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/">Home</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/about">About</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/contact">Contact</a>
+      </li>
+    
+  
+</ul>
+
+
+  <p>
+    <span>hugs4bugs</span> was made with <svg class="love">
+      <use xlink:href="#icon-heart"></use>
+    </svg> by <a href="https://hugs4bugs.me" target="_blank" class="creator">Shubhendu Shubham</a>
+  </p>
+</footer>
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "hugs4bugs",
+  "description": "hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.",
+  "url": "https://hugs4bugs.me/",
+  "logo": {
+      "@type": "ImageObject",
+      "url": "https://hugs4bugs.me/assets/img/icons/mediumtile.png",
+      "width": "600",
+      "height": "315"
+  },
+  "sameAs": [
+    "https://github.com/sivolko","https://twitter.com/myselfshubhendu","https://medium.com/@shubhendushubham","https://www.linkedin.com/in/shubhendu-shubham"
+  ]
+}
+</script>
+
+<!-- Include the script that allows Netlify CMS login -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<!-- Include the website scripts -->
+<script src="/assets/js/scripts.min.js"></script>
+
+<!-- Include Google Analytics script -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0FMLF6JCFT"></script>
+<script>
+  var host = window.location.hostname;
+  if (host != 'localhost') {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-0FMLF6JCFT');
+  }
+</script>
+  
+
+
+<!-- Include extra scripts -->
+
+
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "name": "Building and Deploying PWA on Azure Cloud.",
+            "headline": "Using node.js & COSMOS DB.",
+            "description": "Let's build and deploy PWA over azure cloud from Scratch.",
+            "image": "https://th.bing.com/th/id/R.49bd0ccbb9e904407116b65ce6a50d41?rik=1KXzdiLejsH2eA&riu=http%3a%2f%2fclipground.com%2fimages%2fcoder-clipart-1.jpg&ehk=xl5oxtd6bHoDW1%2f3HB007zg97209vFB75YXyIskHtPg%3d&risl=&pid=ImgRaw&r=0",
+            "url": "https://hugs4bugs.me/Progressive-webapps-on-azure/",
+            "articleBody": "let’s start with PWA, PWA are apps built with web technologies like Js, Css, React,or HTMl with feel and functionality of an actual native app.
+
+They have service worker and manifest.json file to make it work offline and installable.
+Web apps can reach anyone,anywhere, on any device with a single codebase.When it comes to the platform specific applications, PWA are known for being incredibly rich and reliable.They’re present, on home screens, on the home screens, docks and the taskbars. They work regardless of network connection.They can launch in their standalone experience,can read &amp;amp; write files from the local file system,access hardware connected via USB,serial or bluetooth, and even interact with data stored on your device, like contacts,calendar,photos,music,videos,etc.
+
+Why PWA?
+
+
+  Installable : It can be installed on any device.
+  Offline : It can be used offline.+ can be used as custom offline page.
+  Responsive : It can be used on any device.
+  Discoverable : It can be discovered by search engines, Better for SEO.
+  Push Notifications : It can be used to send push notifications, like native apps.
+
+
+Before starting to build PWA, let’s understand the concepts of Service Worker and Manifest.json file, and why we need them.Apart from these, we need to understand the concepts of COSMOS DB, which are gonna use for this project and node.js .
+
+Why COSMOS DB?
+
+Cosmos DB is a planet scale DB, No SQL JSON DB with multi API support provided by Microsoft Azure
+
+Features of COSMOS DB :-
+
+
+
+
+  Planet Scale DB :-
+
+
+It means that we can build our primary DataBase in one region and setup different secondary Databases in different geo locations to avoid much latency and smoother user experiences. Whenever our primary Database goes down, any one these secondary Database can come as primary Database
+
+
+
+Multi API Support :-
+
+Cosmos DB stores Data iin JSON Format having multiple API support, which means that Data stores in JSON Format can be used as any API format.
+
+
+
+Now we might be confused why Cosmos DB instead of Amazon Dynamo DB. So here are the few features of Cosmos DB with Amazon Dynamo DB comparison. In Cosmos DB server reads and writes locally for low latency and 99.999% high availability around the world. It avoids extreme tradeofs in consistency, performance,and availability with five consistency models. Apart from these, it’s multi-model with wire protocol-compatible API endpoints for cassandra, MongoDB, SQL, Gremlin and Table along with built-in support for Apache spark and Jupyter notebooks.
+
+Quick Comparision with Amazon Dynamo DB
+
+
+
+
+
+  
+    Name
+    Azure Cosmos DB
+    Amazon DynamoDB
+  
+
+
+  
+    Database Model
+    Document StoreGraph DBMSKey-value Storewide-column Store
+    Document Storekey-value Store
+  
+  
+    Data Scheme
+    Schema-free
+    Schema-free
+  
+  
+    SQL
+    SQL-like Query language
+    NO
+  
+  
+    API &amp;amp; Access Method 
+    DocumentDB APIGraph API (Gremlin)MongoDB APIRESTful HTTP APITable API
+    RESTful HTTP API
+  
+  
+    Supported programming languages
+    .NetC#JavaJavaScriptJavaScript (Node.js)MongoDB client drivers written for various programming languagesPython
+    .NetColdFusionErlangGroovyJavaJavaScriptPerlPHPPythonRuby
+  
+  
+    Server-side scripts
+    JavaScript
+    NO
+  
+  
+    Triggers
+    JavaScript
+    Yes ( AWS lambda)
+  
+  
+    Partitioning methods
+    Sharding
+    Sharding
+  
+  
+    Replication methods
+    Yes
+    yes
+  
+  
+    MapReduce
+    with Hadoop integration
+    NO
+  
+  
+    Consistency concepts
+    Bounded StalenessConsistent PrefixEventual ConsistencyImmediate Consistency Session Consistency
+    Eventual ConsistencyImmediate Consistency
+  
+  
+    Transaction concepts
+    Multi-item ACID transactions with snapshot isolation within a partition
+    ACID
+  
+  
+    Foreign keys
+    NO
+    NO
+  
+
+
+
+Now directly jumps over Our coding part to build UI for project.
+It’ll have basic CRUD and PWA features, which means one could create, read, update and delete data from database(here COSMOS DB).
+
+Let’s start Our Project :-
+
+Step 0:-
+
+
+  Open terminal and make a folder/workspace Project.
+
+
+ cd Desktop
+ mkdir Project
+
+
+Setp 1:-
+
+Open Project folder in your favourite editor mine is Vs Code
+create two separte folders inside your project for client and server side
+
+mkdir client
+mkdir server
+
+
+step 2:-
+
+change directory to client and create a react App
+
+cd client
+npx create-react-app ./
+
+
+step 3:-
+In Server folder create a file named as index.js
+
+cd server
+touch index.js
+
+
+step 4:-
+
+To install dependencies we need a file called package.json inside server folder
+
+npm init -y
+
+
+step 5:-
+
+
+  Dependencies are :-
+
+
+npm install body-parser cors express mongoose nodemon
+
+
+step 6:-
+
+After installation add “type” : “module”, And
+package.json file will look like :-
+
+{
+  &quot;name&quot;: &quot;mern-stack-api&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;main&quot;: &quot;index.js&quot;,
+  &quot;type&quot;: &quot;module&quot;,
+  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;nodemon index.js&quot;
+  },
+  &quot;author&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;ISC&quot;,
+  &quot;dependencies&quot;: {
+    &quot;body-parser&quot;: &quot;^1.19.0&quot;,
+    &quot;cors&quot;: &quot;^2.8.5&quot;,
+    &quot;dotenv&quot;: &quot;^8.2.0&quot;,
+    &quot;express&quot;: &quot;^4.17.1&quot;,
+    &quot;mongoose&quot;: &quot;^5.9.29&quot;
+  }
+}
+
+
+step 7:-
+
+Now go to client folder and install these dependencies
+
+cd client
+import express from 'express';
+import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
+import cors from 'cors';
+
+
+step 8:-
+
+Install dependencies for client side
+
+npm install axios momet react-file-base64 redux redux-thunk
+
+
+Now Building UI for our project.
+
+index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+
+import { reducers } from './reducers';
+import App from './App';
+import './index.css';
+
+const store = createStore(reducers, compose(applyMiddleware(thunk)));
+
+ReactDOM.render(
+  &amp;lt;Provider store={store}&amp;gt;
+    &amp;lt;App /&amp;gt;
+  &amp;lt;/Provider&amp;gt;,
+  document.getElementById('root'),
+);
+
+
+
+Adding Styles
+
+styles.js
+
+import { makeStyles } from '@material-ui/core/styles';
+
+export default makeStyles(() =&amp;gt; ({
+  appBar: {
+    borderRadius: 15,
+    margin: '30px 0',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  heading: {
+    color: 'rgba(0,183,255, 1)',
+  },
+  image: {
+    marginLeft: '15px',
+  },
+}));
+
+
+body {
+    background-color: rgba(0,183,255, 1);
+    background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='540' height='450' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='.1'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/svg%3E&quot;);
+}
+
+
+Adding Constants
+
+export const CREATE = 'CREATE';
+export const UPDATE = 'UPDATE';
+export const DELETE = 'DELETE';
+export const FETCH_ALL = 'FETCH_ALL';
+export const LIKE = 'LIKE';
+
+
+Adding Form Components
+
+
+import React, { useState, useEffect } from 'react';
+import { TextField, Button, Typography, Paper } from '@material-ui/core';
+import { useDispatch, useSelector } from 'react-redux';
+import FileBase from 'react-file-base64';
+
+import useStyles from './styles';
+import { createPost, updatePost } from '../../actions/posts';
+
+const Form = ({ currentId, setCurrentId }) =&amp;gt; {
+  const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
+  const post = useSelector((state) =&amp;gt; (currentId ? state.posts.find((message) =&amp;gt; message._id === currentId) : null));
+  const dispatch = useDispatch();
+  const classes = useStyles();
+
+  useEffect(() =&amp;gt; {
+    if (post) setPostData(post);
+  }, [post]);
+
+  const clear = () =&amp;gt; {
+    setCurrentId(0);
+    setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
+  };
+
+  const handleSubmit = async (e) =&amp;gt; {
+    e.preventDefault();
+
+    if (currentId === 0) {
+      dispatch(createPost(postData));
+      clear();
+    } else {
+      dispatch(updatePost(currentId, postData));
+      clear();
+    }
+  };
+
+  return (
+    &amp;lt;Paper className={classes.paper}&amp;gt;
+      &amp;lt;form autoComplete=&quot;off&quot; noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}&amp;gt;
+        &amp;lt;Typography variant=&quot;h6&quot;&amp;gt;{currentId ? `Editing &quot;${post.title}&quot;` : 'Creating a FUN EVENT'}&amp;lt;/Typography&amp;gt;
+        &amp;lt;TextField name=&quot;creator&quot; variant=&quot;outlined&quot; label=&quot;Creator&quot; fullWidth value={postData.creator} onChange={(e) =&amp;gt; setPostData({ ...postData, creator: e.target.value })} /&amp;gt;
+        &amp;lt;TextField name=&quot;title&quot; variant=&quot;outlined&quot; label=&quot;Title&quot; fullWidth value={postData.title} onChange={(e) =&amp;gt; setPostData({ ...postData, title: e.target.value })} /&amp;gt;
+        &amp;lt;TextField name=&quot;message&quot; variant=&quot;outlined&quot; label=&quot;Message&quot; fullWidth multiline rows={4} value={postData.message} onChange={(e) =&amp;gt; setPostData({ ...postData, message: e.target.value })} /&amp;gt;
+        &amp;lt;TextField name=&quot;tags&quot; variant=&quot;outlined&quot; label=&quot;Tags (coma separated)&quot; fullWidth value={postData.tags} onChange={(e) =&amp;gt; setPostData({ ...postData, tags: e.target.value.split(',') })} /&amp;gt;
+        &amp;lt;div className={classes.fileInput}&amp;gt;&amp;lt;FileBase type=&quot;file&quot; multiple={false} onDone={({ base64 }) =&amp;gt; setPostData({ ...postData, selectedFile: base64 })} /&amp;gt;&amp;lt;/div&amp;gt;
+        &amp;lt;Button className={classes.buttonSubmit} variant=&quot;contained&quot; color=&quot;primary&quot; size=&quot;large&quot; type=&quot;submit&quot; fullWidth&amp;gt;Submit&amp;lt;/Button&amp;gt;
+        &amp;lt;Button variant=&quot;contained&quot; color=&quot;secondary&quot; size=&quot;small&quot; onClick={clear} fullWidth&amp;gt;Clear&amp;lt;/Button&amp;gt;
+      &amp;lt;/form&amp;gt;
+    &amp;lt;/Paper&amp;gt;
+  );
+};
+
+export default Form;
+
+
+Styling Form
+
+
+import { makeStyles } from '@material-ui/core/styles';
+
+export default makeStyles((theme) =&amp;gt; ({
+  root: {
+    '&amp;amp; .MuiTextField-root': {
+      margin: theme.spacing(1),
+    },
+  },
+  paper: {
+    padding: theme.spacing(2),
+  },
+  form: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  },
+  fileInput: {
+    width: '97%',
+    margin: '10px 0',
+  },
+  buttonSubmit: {
+    marginBottom: 10,
+  },
+}));
+
+
+API Call
+
+import axios from 'axios';
+
+const url = 'http://localhost:10255/posts';
+
+export const fetchPosts = () =&amp;gt; axios.get(url);
+export const createPost = (newPost) =&amp;gt; axios.post(url, newPost);
+export const likePost = (id) =&amp;gt; axios.patch(`${url}/${id}/likePost`);
+export const updatePost = (id, updatedPost) =&amp;gt; axios.patch(`${url}/${id}`, updatedPost);
+export const deletePost = (id) =&amp;gt; axios.delete(`${url}/${id}`);
+
+
+Action
+
+
+import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes';
+
+import * as api from '../api/index.js';
+
+export const getPosts = () =&amp;gt; async (dispatch) =&amp;gt; {
+  try {
+    const { data } = await api.fetchPosts();
+
+    dispatch({ type: FETCH_ALL, payload: data });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+export const createPost = (post) =&amp;gt; async (dispatch) =&amp;gt; {
+  try {
+    const { data } = await api.createPost(post);
+
+    dispatch({ type: CREATE, payload: data });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+export const updatePost = (id, post) =&amp;gt; async (dispatch) =&amp;gt; {
+  try {
+    const { data } = await api.updatePost(id, post);
+
+    dispatch({ type: UPDATE, payload: data });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+export const likePost = (id) =&amp;gt; async (dispatch) =&amp;gt; {
+  try {
+    const { data } = await api.likePost(id);
+
+    dispatch({ type: LIKE, payload: data });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+export const deletePost = (id) =&amp;gt; async (dispatch) =&amp;gt; {
+  try {
+    await api.deletePost(id);
+
+    dispatch({ type: DELETE, payload: id });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+
+In server side
+
+Creating Controllers
+
+import express from 'express';
+import mongoose from 'mongoose';
+
+import PostMessage from '../models/postMessage.js';
+
+const router = express.Router();
+
+export const getPosts = async (req, res) =&amp;gt; {
+    try {
+        const postMessages = await PostMessage.find();
+
+        res.status(200).json(postMessages);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}
+
+export const getPost = async (req, res) =&amp;gt; {
+    const { id } = req.params;
+
+    try {
+        const post = await PostMessage.findById(id);
+
+        res.status(200).json(post);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}
+
+export const createPost = async (req, res) =&amp;gt; {
+    const { title, message, selectedFile, creator, tags } = req.body;
+
+    const newPostMessage = new PostMessage({ title, message, selectedFile, creator, tags })
+
+    try {
+        await newPostMessage.save();
+
+        res.status(201).json(newPostMessage );
+    } catch (error) {
+        res.status(409).json({ message: error.message });
+    }
+}
+
+export const updatePost = async (req, res) =&amp;gt; {
+    const { id } = req.params;
+    const { title, message, creator, selectedFile, tags } = req.body;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+
+    const updatedPost = { creator, title, message, tags, selectedFile, _id: id };
+
+    await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true });
+
+    res.json(updatedPost);
+}
+
+export const deletePost = async (req, res) =&amp;gt; {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+
+    await PostMessage.findByIdAndRemove(id);
+
+    res.json({ message: &quot;Post deleted successfully.&quot; });
+}
+
+export const likePost = async (req, res) =&amp;gt; {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+
+    const post = await PostMessage.findById(id);
+
+    const updatedPost = await PostMessage.findByIdAndUpdate(id, { likeCount: post.likeCount + 1 }, { new: true });
+
+    res.json(updatedPost);
+}
+
+
+export default router;
+
+
+Creating models
+
+import mongoose from 'mongoose';
+
+const postSchema = mongoose.Schema({
+    title: String,
+    message: String,
+    creator: String,
+    tags: [String],
+    selectedFile: String,
+    likeCount: {
+        type: Number,
+        default: 0,
+    },
+    createdAt: {
+        type: Date,
+        default: new Date(),
+    },
+})
+
+var PostMessage = mongoose.model('PostMessage', postSchema);
+
+export default PostMessage;
+
+
+Creating Routes
+
+Adding Post.js
+
+import express from 'express';
+
+import { getPosts, getPost, createPost, updatePost, likePost, deletePost } from '../controllers/posts.js';
+
+const router = express.Router();
+
+router.get('/', getPosts);
+router.post('/', createPost);
+router.get('/:id', getPost);
+router.patch('/:id', updatePost);
+router.delete('/:id', deletePost);
+router.patch('/:id/likePost', likePost);
+
+export default router;
+
+
+
+Now let’s move to Azure Portal for creating resource group and storage account
+
+Creating a Resource Group
+
+
+  Login to to Microsoft Azure portal.
+  
+    Click on Resource group to build a resource group
+
+  
+  Fill all the details in 3 tabs respectively and Feel free to choose Region according to your use case.
+
+
+
+
+
+  After Filling all details, click on Create button.
+
+
+
+
+
+  Click on notification icon to see all activites and visit resource Group by simply clicking on Go to Resource Group button.
+
+
+
+
+Creating Cosmos DB
+
+steps:-
+
+
+  Click on search bar, and type Cosmos DB.
+  Create Azure Cosmos DB Account page will appear.
+  Fill all the deatils and in Resource section select the exsisting you’ll find all your resources there.
+
+
+
+
+
+
+
+  In Networking section we can select what kind of network we wanna to allow on our DB. It can be either Private, Public and All types. Here I’ll choose All kind of Network.
+
+
+
+
+
+  In Back up Policy We can set our policy too, but here I am going for Default one.
+  In Encryption and Tags I’ll go for Default.
+  Click on Create in Review + Create tab.
+
+
+
+
+
+  As soon as We create, Deployment in progress message will display. Even We can check it out from notification icon.
+
+
+
+
+
+  After Successful deploy it will show like this
+
+
+
+
+
+  Click on Go to the resource.
+  Click on Overview section , it’ll display all informations like Status : Online/ offline , URL, Subscription.
+
+
+
+
+
+  In activity log it’ll display all our recent activities like:-
+
+
+
+
+Connect our Node.js application to the database
+
+Replace the two  placeholders with your Cosmos account name.
+
+'use strict';
+
+module.exports = {
+  db: {
+    uri: 'mongodb://&amp;lt;cosmosdb-name&amp;gt;:&amp;lt;primary_master_key&amp;gt;@&amp;lt;cosmosdb-name&amp;gt;.documents.azure.com:10255/mean-dev?ssl=true&amp;amp;sslverifycertificate=false'
+  }
+};
+
+
+Retrieve the key
+
+In Order to connect our Cosmos DB, we need DB Key.Here we can use the az cosmosdb keys list command to retrieve the primary key.
+
+
+az cosmosdb keys list --name &amp;lt;cosmosdb-name&amp;gt; --resource-group myResourceGroup --query &quot;primaryMasterKey&quot;
+
+
+Output
+
+&quot;RUayjYjixJDWG5xTqIiXjC...&quot;
+
+
+Run application locally
+
+cd client
+npm start
+and in other terminal
+cd server
+npm start
+
+
+Go to the browser and type http://localhost:3000
+
+
+
+Retrieve data in Data Explorer
+
+Data stored in a Cosmos database is available to view and query in the Azure portal.
+
+
+
+Now Adding Features of PWA to our Application
+
+Installation criteria.
+
+In chrome, your progressive Web App must the following criteria before it will fire the beforeinstallprompt event and show the in-browser install prompt.
+
+
+  The Web App is not already installed
+  Meets a user engaquement heuristic
+  Be served over HTTPS
+  Must includes a web APP manifest that includes:-
+short_name or name
+  icons -must include a 192px and a 512px icon
+  start_url
+  display - must be one of fullsecreen ,standalone or minimal-ui
+  prefer_related_applications - must be false
+
+
+Manifest.json
+
+now a create a manifest.json file in root directory of your project.
+
+The manifest file can have any name, but is commonly named manifest.json and served from the root (your website’s top-level directory). The specification suggests the extension should be .webmanifest, but browsers also support .json extensions, which is may be easier for developers to understand.
+
+{
+  &quot;name&quot;: &quot;My App&quot;,
+  &quot;short_name&quot;: &quot;My App&quot;,
+  &quot;start_url&quot;: &quot;/&quot;,
+  &quot;display&quot;: &quot;standalone&quot;,
+  &quot;background_color&quot;: &quot;#ffffff&quot;,
+  &quot;theme_color&quot;:'#ffffff',
+  &quot;icons&quot;: [
+    {
+      &quot;src&quot;: &quot;/images/icons-vector.svg&quot;,
+      &quot;type&quot;: &quot;image/svg+xml&quot;,
+      &quot;sizes&quot;: &quot;512x512&quot;
+    },
+    {
+      &quot;src&quot;: &quot;/images/icons-192.png&quot;,
+      &quot;type&quot;: &quot;image/png&quot;,
+      &quot;sizes&quot;: &quot;192x192&quot;
+    },
+    {
+      &quot;src&quot;: &quot;/images/icons-512.png&quot;,
+      &quot;type&quot;: &quot;image/png&quot;,
+      &quot;sizes&quot;: &quot;512x512&quot;
+    }
+  ],
+
+
+start_url
+
+The start_url is required and tells the browser where your application should start when it is launched, and prevents the app from starting on whatever page the user was on when they added your app to their home screen.
+
+Your start_url should direct the user straight into your app, rather than a product landing page. Think about what the user will want to do once they open your app, and place them there.
+
+background_color :-
+
+The background_color property is used on the splash screen when the application is first launched on mobile.
+
+display
+
+You can customize what browser UI is shown when your app is launched. For example, you can hide the address bar and browser chrome. Games can even be made to launch full screen.
+
+
+  
+    
+      Property
+      Use
+    
+    
+      Fullscreen
+      fullscreen Opens the web application without any browser UI and takes up the entirety of the available display area.
+    
+    
+      Standalone
+      standalone Opens the web application in a standalone window.
+    
+  
+
+
+
+  
+    
+      Minimal-ui
+      minimal-ui Hides the browser UI, such as the address bar and the browser chrome.
+    
+  
+
+
+
+  
+    
+      Browser
+      A standard browser experience.
+    
+  
+
+
+Creating Service Worker
+
+Create a file called service-worker.js in the root directory of your project.
+
+Service Worker is a type of web worker essentially a JavaScript file that runs separately from the main browser thread, intercepting network requests, caching or retrieving resources from the cache, and delivering push messages.
+
+Because the service worker is not blocking (it’s designed to be fully asynchronous) synchronous XHR and localStorage cannot be used in a service worker.
+The service worker can receive push messages from a server when the app is not active. This lets your app show push notifications to the user, even when it is not open in the browser.
+
+// service-worker.js
+
+// This is the &quot;Offline page&quot; service worker
+
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
+
+const CACHE = &quot;pwabuilder-page&quot;;
+
+// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = &quot;offline.html&quot;;
+const offlineFallbackPage = &quot;index.html&quot;;
+
+self.addEventListener(&quot;message&quot;, (event) =&amp;gt; {
+  if (event.data &amp;amp;&amp;amp; event.data.type === &quot;SKIP_WAITING&quot;) {
+    self.skipWaiting();
+  }
+});
+
+self.addEventListener('install', async (event) =&amp;gt; {
+  event.waitUntil(
+    caches.open(CACHE)
+      .then((cache) =&amp;gt; cache.add(offlineFallbackPage))
+  );
+});
+
+if (workbox.navigationPreload.isSupported()) {
+  workbox.navigationPreload.enable();
+}
+
+self.addEventListener('fetch', (event) =&amp;gt; {
+  if (event.request.mode === 'navigate') {
+    event.respondWith((async () =&amp;gt; {
+      try {
+        const preloadResp = await event.preloadResponse;
+
+        if (preloadResp) {
+          return preloadResp;
+        }
+
+        const networkResp = await fetch(event.request);
+        return networkResp;
+      } catch (error) {
+
+        const cache = await caches.open(CACHE);
+        const cachedResp = await cache.match(offlineFallbackPage);
+        return cachedResp;
+      }
+    })());
+  }
+});
+
+
+
+
+Last Part
+
+Linking our service workers and manifest.json files to main base project code.
+
+Simply we have to add the following code in the index.js /home.js file.
+
+    &amp;lt;link rel='manifest' href='/manifest.json'&amp;gt;
+
+
+
+&amp;lt;!-- JavaScript enabled/disabled --&amp;gt;
+    &amp;lt;script&amp;gt;
+        document.querySelector('html').classList.remove('no-js');
+    &amp;lt;/script&amp;gt;
+    &amp;lt;script type=&quot;module&quot;&amp;gt;import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+        const el = document.createElement('pwa-update');
+        document.body.appendChild(el);
+    &amp;lt;/script&amp;gt;
+
+
+After successful link,one could find + icon at the top right corner of the browser, aor add to home screen pop up at the bottom of the page.
+
+
+
+Creating Static Azure Web App
+
+
+  click on the search console and Type Azure static web Apps
+  select Static web App preview Option
+
+
+
+
+
+  Connect with Github Repository for CI/CD build.
+  Edit workflow.yml file to setup CI/CD
+
+
+
+ name: Azure Static Web Apps CI/CD
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - master
+
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' &amp;amp;&amp;amp; github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v0.0.1-preview
+        with:
+          azure_static_web_apps_api_token: $
+          repo_token: $
+          action: &quot;upload&quot;
+          app_location: &quot;client&quot; # App source code path
+          api_location: &quot;client/src/api&quot; # Api source code path - optional
+          output_location: &quot;build&quot; # Built app content directory - optional
+
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' &amp;amp;&amp;amp; github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request Job
+    steps:
+      - name: Close Pull Request
+        id: closepullrequest
+        uses: Azure/static-web-apps-deploy@v0.0.1-preview
+        with:
+          azure_static_web_apps_api_token: $
+          action: &quot;close&quot;
+
+
+
+Before Deployment make sure to change uri in the db object like :-
+
+
+'mongodb://&amp;lt;cosmosdb-name&amp;gt;:&amp;lt;primary_master_key&amp;gt;@&amp;lt;cosmosdb-name&amp;gt;.documents.azure.com:10255/mean?ssl=true&amp;amp;sslverifycertificate=false',
+
+
+Thanks for reading this article!
+",
+            "wordcount": "3862",
+            "inLanguage": "en",
+            "dateCreated": "2022-02-18/",
+            "datePublished": "2022-02-18/",
+            "dateModified": "2022-02-18/",
+            "author": {
+                "@type": "Person",
+                "name": "Shubhendu",
+                
+                "image": "/assets/img/s.png",
+                
+                "jobTitle": "",
+                "url": "https://hugs4bugs.me/authors/shubhendu/",
+                "sameAs": [
+                    "https://github.com/sivolko","https://twitter.com/myselfshubhendu","https://medium.com/@shubhendushubham","https://www.instagram.com/shubhendushubham","https://www.linkedin.com/in/shubhendu-shubham"
+                ]
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "hugs4bugs",
+                "url": "https://hugs4bugs.me/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://hugs4bugs.me/assets/img/s.png",
+                    "width": "600",
+                    "height": "315"
+                }
+            },
+            "mainEntityOfPage": "True",
+            "genre": "webapps",
+            "articleSection": "webapps",
+            "keywords": ["PWA","node.js","COSMOS DB"]
+        }
+        </script>
+    </body>
+</html>

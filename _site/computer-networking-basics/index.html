@@ -1,0 +1,2106 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    <title>Computer Networking 101 | hugs4bugs</title>
+    <meta name="description" content="Learn basics of Computer Netoworking with hugs4bugs.The best beginers computer networking solution. ">
+    
+    <meta name="keywords" content="networking, system Admin">
+    
+
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Computer Networking 101 | hugs4bugs">
+    <meta name="twitter:description" content="Learn basics of Computer Netoworking with hugs4bugs.The best beginers computer networking solution. ">
+
+    
+    <meta property="twitter:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1620918379/Networking/photo_2021-04-04_23-19-26_ylhetf.jpg">
+    
+
+    
+    <meta name="twitter:site" content="@myselfshubhendu">
+    
+
+    <!-- Social: Facebook / Open Graph -->
+    <meta property="og:url" content="https://hugs4bugs.me/computer-networking-basics/">
+    <meta property="og:title" content="Computer Networking 101 | hugs4bugs">
+    <meta property="og:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1620918379/Networking/photo_2021-04-04_23-19-26_ylhetf.jpg">
+    <meta property="og:description" content="Learn basics of Computer Netoworking with hugs4bugs.The best beginers computer networking solution. ">
+    <meta property="og:site_name" content="hugs4bugs">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
+
+    <!-- Windows 8 Tile Icons -->
+    <!-- <meta name="application-name" content="hugs4bugs">
+    <meta name="msapplication-TileColor" content="#141414">
+    <meta name="msapplication-square70x70logo" content="smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="widetile.png" />
+    <meta name="msapplication-square310x310logo" content="largetile.png" /> -->
+
+    <!-- Android Lolipop Theme Color -->
+    <meta name="theme-color" content="#141414">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="canonical" href="https://hugs4bugs.me/computer-networking-basics/">
+    <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
+        href="https://hugs4bugs.me/feed.xml" />
+    <link rel='manifest' href='/manifest.json'>
+    <link rel='wellknown' href='.well-known/assetlinks.json'>
+    <link rel='ads' href='/ads.txt'>
+
+
+    <!-- Include extra styles -->
+    
+
+
+    <link rel="alternate" hreflang="en" href="https://hugs4bugs.me">
+    <link rel="alternate" hreflang="hi" href="https://hi.hugs4bugs.me">
+    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+    <script>
+        Weglot.initialize({
+            api_key: 'wg_3517bf871d8b37ee8f37481a72de4cb77'
+        });
+    </script>
+    <!-- JavaScript enabled/disabled -->
+    <script>
+        document.querySelector('html').classList.remove('no-js');
+    </script>
+    <script type="module">import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+        const el = document.createElement('pwa-update');
+        document.body.appendChild(el);
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5165937973513449"
+        crossorigin="anonymous"></script>
+</head>
+    <body class="has-push-menu">
+        
+
+
+
+
+
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1"><defs><symbol id="icon-menu" viewBox="0 0 1024 1024"><path class="path1" d="M128 213.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 725.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"/></symbol><symbol id="icon-search" viewBox="0 0 951 1024"><path class="path1" d="M658.286 475.429q0-105.714-75.143-180.857t-180.857-75.143-180.857 75.143-75.143 180.857 75.143 180.857 180.857 75.143 180.857-75.143 75.143-180.857zM950.857 950.857q0 29.714-21.714 51.429t-51.429 21.714q-30.857 0-51.429-21.714l-196-195.429q-102.286 70.857-228 70.857-81.714 0-156.286-31.714t-128.571-85.714-85.714-128.571-31.714-156.286 31.714-156.286 85.714-128.571 128.571-85.714 156.286-31.714 156.286 31.714 128.571 85.714 85.714 128.571 31.714 156.286q0 125.714-70.857 228l196 196q21.143 21.143 21.143 51.429z"/></symbol><symbol id="icon-close" viewBox="0 0 1000 1000"><path d="M969.8,870.3c27,27.7,27,71.8,0,99.1C955.7,983,937.9,990,920,990c-17.9,0-35.7-7-49.7-20.7L500,599L129.6,969.4C115.6,983,97.8,990,79.9,990s-35.7-7-49.7-20.7c-27-27.3-27-71.4,0-99.1L400.9,500L30.3,129.3c-27-27.3-27-71.4,0-99.1c27.3-27,71.8-27,99.4,0L500,400.9L870.4,30.2c27.7-27,71.8-27,99.4,0c27,27.7,27,71.8,0,99.1L599.1,500L969.8,870.3z"/></symbol><symbol id="icon-twitter" viewBox="0 0 951 1024"><path class="path1" d="M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"/></symbol><symbol id="icon-facebook" viewBox="0 0 585 1024"><path class="path1" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"/></symbol><symbol id="icon-clock" viewBox="0 0 1000 1000"><path d="M500,10C229.8,10,10,229.8,10,500c0,270.2,219.8,490,490,490c270.2,0,490-219.8,490-490C990,229.8,770.2,10,500,10z M500,910.2c-226.2,0-410.2-184-410.2-410.2c0-226.2,184-410.2,410.2-410.2c226.2,0,410.2,184,410.2,410.2C910.2,726.1,726.2,910.2,500,910.2z M753.1,374c8.2,11.9,5.2,28.1-6.6,36.3L509.9,573.7c-4.4,3.1-9.6,4.6-14.8,4.6c-4.1,0-8.3-1-12.1-3c-8.6-4.5-14-13.4-14-23.1V202.5c0-14.4,11.7-26.1,26.1-26.1c14.4,0,26.1,11.7,26.1,26.1v300l195.6-135.1C728.7,359.2,744.9,362.1,753.1,374z"/></symbol><symbol id="icon-calendar" viewBox="0 0 1000 1000"><path d="M920,500v420H80V500H920 M990,430H10v490c0,38.7,31.3,70,70,70h840c38.7,0,70-31.3,70-70V430L990,430z"/><path d="M850,80v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80H360v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80C72.8,80,10,142.7,10,220v140h980V220C990,142.7,927.2,80,850,80z"/><path d="M255,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C290,25.8,274.3,10,255,10z"/><path d="M745,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C780,25.8,764.3,10,745,10z"/></symbol><symbol id="icon-github" viewBox="0 0 12 14"><path d="M6 1q1.633 0 3.012 0.805t2.184 2.184 0.805 3.012q0 1.961-1.145 3.527t-2.957 2.168q-0.211 0.039-0.312-0.055t-0.102-0.234q0-0.023 0.004-0.598t0.004-1.051q0-0.758-0.406-1.109 0.445-0.047 0.801-0.141t0.734-0.305 0.633-0.52 0.414-0.82 0.16-1.176q0-0.93-0.617-1.609 0.289-0.711-0.062-1.594-0.219-0.070-0.633 0.086t-0.719 0.344l-0.297 0.187q-0.727-0.203-1.5-0.203t-1.5 0.203q-0.125-0.086-0.332-0.211t-0.652-0.301-0.664-0.105q-0.352 0.883-0.062 1.594-0.617 0.68-0.617 1.609 0 0.664 0.16 1.172t0.41 0.82 0.629 0.523 0.734 0.305 0.801 0.141q-0.305 0.281-0.383 0.805-0.164 0.078-0.352 0.117t-0.445 0.039-0.512-0.168-0.434-0.488q-0.148-0.25-0.379-0.406t-0.387-0.187l-0.156-0.023q-0.164 0-0.227 0.035t-0.039 0.090 0.070 0.109 0.102 0.094l0.055 0.039q0.172 0.078 0.34 0.297t0.246 0.398l0.078 0.18q0.102 0.297 0.344 0.48t0.523 0.234 0.543 0.055 0.434-0.027l0.18-0.031q0 0.297 0.004 0.691t0.004 0.426q0 0.141-0.102 0.234t-0.312 0.055q-1.812-0.602-2.957-2.168t-1.145-3.527q0-1.633 0.805-3.012t2.184-2.184 3.012-0.805zM2.273 9.617q0.023-0.055-0.055-0.094-0.078-0.023-0.102 0.016-0.023 0.055 0.055 0.094 0.070 0.047 0.102-0.016zM2.516 9.883q0.055-0.039-0.016-0.125-0.078-0.070-0.125-0.023-0.055 0.039 0.016 0.125 0.078 0.078 0.125 0.023zM2.75 10.234q0.070-0.055 0-0.148-0.062-0.102-0.133-0.047-0.070 0.039 0 0.141t0.133 0.055zM3.078 10.562q0.062-0.062-0.031-0.148-0.094-0.094-0.156-0.023-0.070 0.062 0.031 0.148 0.094 0.094 0.156 0.023zM3.523 10.758q0.023-0.086-0.102-0.125-0.117-0.031-0.148 0.055t0.102 0.117q0.117 0.047 0.148-0.047zM4.016 10.797q0-0.102-0.133-0.086-0.125 0-0.125 0.086 0 0.102 0.133 0.086 0.125 0 0.125-0.086zM4.469 10.719q-0.016-0.086-0.141-0.070-0.125 0.023-0.109 0.117t0.141 0.062 0.109-0.109z"></path></symbol><symbol id="icon-medium" viewBox="0 0 1000 1000"><path d="M336.5,240.2v641.5c0,9.1-2.3,16.9-6.8,23.2s-11.2,9.6-20,9.6c-6.2,0-12.2-1.5-18-4.4L37.3,782.7c-7.7-3.6-14.1-9.8-19.4-18.3S10,747.4,10,739V115.5c0-7.3,1.8-13.5,5.5-18.6c3.6-5.1,8.9-7.7,15.9-7.7c5.1,0,13.1,2.7,24.1,8.2l279.5,140C335.9,238.6,336.5,239.5,336.5,240.2L336.5,240.2z M371.5,295.5l292,473.6l-292-145.5V295.5z M990,305.3v576.4c0,9.1-2.6,16.5-7.7,22.1c-5.1,5.7-12,8.5-20.8,8.5s-17.3-2.4-25.7-7.1L694.7,784.9L990,305.3z M988.4,239.7c0,1.1-46.8,77.6-140.3,229.4C754.6,621,699.8,709.8,683.8,735.7L470.5,389l177.2-288.2c6.2-10.2,15.7-15.3,28.4-15.3c5.1,0,9.8,1.1,14.2,3.3l295.9,147.7C987.6,237.1,988.4,238.2,988.4,239.7L988.4,239.7z"/></symbol><symbol id="icon-instagram" viewBox="0 0 489.84 489.84"><path d="M249.62,50.46c65.4,0,73.14.25,99,1.43C372.47,53,385.44,57,394.07,60.32a75.88,75.88,0,0,1,28.16,18.32,75.88,75.88,0,0,1,18.32,28.16c3.35,8.63,7.34,21.6,8.43,45.48,1.18,25.83,1.43,33.57,1.43,99s-0.25,73.14-1.43,99c-1.09,23.88-5.08,36.85-8.43,45.48a81.11,81.11,0,0,1-46.48,46.48c-8.63,3.35-21.6,7.34-45.48,8.43-25.82,1.18-33.57,1.43-99,1.43s-73.15-.25-99-1.43c-23.88-1.09-36.85-5.08-45.48-8.43A75.88,75.88,0,0,1,77,423.86,75.88,75.88,0,0,1,58.69,395.7c-3.35-8.63-7.34-21.6-8.43-45.48-1.18-25.83-1.43-33.57-1.43-99s0.25-73.14,1.43-99c1.09-23.88,5.08-36.85,8.43-45.48A75.88,75.88,0,0,1,77,78.64a75.88,75.88,0,0,1,28.16-18.32c8.63-3.35,21.6-7.34,45.48-8.43,25.83-1.18,33.57-1.43,99-1.43m0-44.13c-66.52,0-74.86.28-101,1.47s-43.87,5.33-59.45,11.38A120.06,120.06,0,0,0,45.81,47.44,120.06,120.06,0,0,0,17.56,90.82C11.5,106.4,7.36,124.2,6.17,150.27s-1.47,34.46-1.47,101,0.28,74.86,1.47,101,5.33,43.87,11.38,59.45a120.06,120.06,0,0,0,28.25,43.38,120.06,120.06,0,0,0,43.38,28.25c15.58,6.05,33.38,10.19,59.45,11.38s34.46,1.47,101,1.47,74.86-.28,101-1.47,43.87-5.33,59.45-11.38a125.24,125.24,0,0,0,71.63-71.63c6.05-15.58,10.19-33.38,11.38-59.45s1.47-34.46,1.47-101-0.28-74.86-1.47-101-5.33-43.87-11.38-59.45a120.06,120.06,0,0,0-28.25-43.38,120.06,120.06,0,0,0-43.38-28.25C394.47,13.13,376.67,9,350.6,7.8s-34.46-1.47-101-1.47h0Z" transform="translate(-4.7 -6.33)" /><path d="M249.62,125.48A125.77,125.77,0,1,0,375.39,251.25,125.77,125.77,0,0,0,249.62,125.48Zm0,207.41a81.64,81.64,0,1,1,81.64-81.64A81.64,81.64,0,0,1,249.62,332.89Z" transform="translate(-4.7 -6.33)"/><circle cx="375.66" cy="114.18" r="29.39" /></symbol><symbol id="icon-linkedin" viewBox="0 0 12 14"><path d="M2.727 4.883v7.742h-2.578v-7.742h2.578zM2.891 2.492q0.008 0.57-0.395 0.953t-1.059 0.383h-0.016q-0.641 0-1.031-0.383t-0.391-0.953q0-0.578 0.402-0.957t1.051-0.379 1.039 0.379 0.398 0.957zM12 8.187v4.437h-2.57v-4.141q0-0.82-0.316-1.285t-0.988-0.465q-0.492 0-0.824 0.27t-0.496 0.668q-0.086 0.234-0.086 0.633v4.32h-2.57q0.016-3.117 0.016-5.055t-0.008-2.313l-0.008-0.375h2.57v1.125h-0.016q0.156-0.25 0.32-0.438t0.441-0.406 0.68-0.34 0.895-0.121q1.336 0 2.148 0.887t0.813 2.598z"></path></symbol><symbol id="icon-heart" viewBox="0 0 34 30"><path d="M17,29.7 L16.4,29.2 C3.5,18.7 0,15 0,9 C0,4 4,0 9,0 C13.1,0 15.4,2.3 17,4.1 C18.6,2.3 20.9,0 25,0 C30,0 34,4 34,9 C34,15 30.5,18.7 17.6,29.2 L17,29.7 Z M9,2 C5.1,2 2,5.1 2,9 C2,14.1 5.2,17.5 17,27.1 C28.8,17.5 32,14.1 32,9 C32,5.1 28.9,2 25,2 C21.5,2 19.6,4.1 18.1,5.8 L17,7.1 L15.9,5.8 C14.4,4.1 12.5,2 9,2 Z" id="Shape"></path></symbol><symbol id="icon-arrow-right" viewBox="0 0 25.452 25.452"><path d="M4.471,24.929v-2.004l12.409-9.788c0.122-0.101,0.195-0.251,0.195-0.411c0-0.156-0.073-0.31-0.195-0.409L4.471,2.526V0.522c0-0.2,0.115-0.384,0.293-0.469c0.18-0.087,0.396-0.066,0.552,0.061l15.47,12.202c0.123,0.1,0.195,0.253,0.195,0.409c0,0.16-0.072,0.311-0.195,0.411L5.316,25.34c-0.155,0.125-0.372,0.147-0.552,0.061C4.586,25.315,4.471,25.13,4.471,24.929z"/></symbol><symbol id="icon-star" viewBox="0 0 48 48"><path fill="currentColor" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"/><path fill="#ffffff" d="M24,11l3.898,7.898l8.703,1.301l-6.301,6.102l1.5,8.699L24,30.898L16.199,35l1.5-8.699l-6.301-6.102  l8.703-1.301L24,11z"/></symbol><symbol id="icon-read" viewBox="0 0 32 32"><path fill="currentColor" d="M29,4H3C1.343,4,0,5.343,0,7v18c0,1.657,1.343,3,3,3h10c0,0.552,0.448,1,1,1h4c0.552,0,1-0.448,1-1h10  c1.657,0,3-1.343,3-3V7C32,5.343,30.657,4,29,4z M29,5v20H18.708c-0.618,0-1.236,0.146-1.789,0.422l-0.419,0.21V5H29z M15.5,5  v20.632l-0.419-0.21C14.528,25.146,13.91,25,13.292,25H3V5H15.5z M31,25c0,1.103-0.897,2-2,2H18v1h-4v-1H3c-1.103,0-2-0.897-2-2V7  c0-0.737,0.405-1.375,1-1.722V25c0,0.552,0.448,1,1,1h10.292c0.466,0,0.925,0.108,1.342,0.317l0.919,0.46  c0.141,0.07,0.294,0.106,0.447,0.106c0.153,0,0.306-0.035,0.447-0.106l0.919-0.46C17.783,26.108,18.242,26,18.708,26H29  c0.552,0,1-0.448,1-1V5.278C30.595,5.625,31,6.263,31,7V25z M6,12.5C6,12.224,6.224,12,6.5,12h5c0.276,0,0.5,0.224,0.5,0.5  S11.776,13,11.5,13h-5C6.224,13,6,12.776,6,12.5z M6,14.5C6,14.224,6.224,14,6.5,14h5c0.276,0,0.5,0.224,0.5,0.5S11.776,15,11.5,15  h-5C6.224,15,6,14.776,6,14.5z M6,16.5C6,16.224,6.224,16,6.5,16h5c0.276,0,0.5,0.224,0.5,0.5S11.776,17,11.5,17h-5  C6.224,17,6,16.776,6,16.5z M20,12.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,13,25.5,13h-5  C20.224,13,20,12.776,20,12.5z M20,14.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,15,25.5,15h-5  C20.224,15,20,14.776,20,14.5z M20,16.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,17,25.5,17h-5  C20.224,17,20,16.776,20,16.5z"></path></symbol></defs></svg>
+
+        <header class="bar-header">
+    <a id="menu" role="button">
+        <svg id="open" class="icon-menu">
+            <use xlink:href="#icon-menu"></use>
+        </svg>
+    </a>
+    <h1 class="logo">
+        <a href="/">
+            
+            hugs4bugs <span class="version"></span>
+            
+        </a>
+    </h1>
+    <a id="search" class="dosearch" role="button">
+        <svg class="icon-search">
+            <use xlink:href="#icon-search"></use>
+        </svg>
+    </a>
+
+</header>
+
+<div id="mask" class="overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+    <nav id="navigation">
+      <h2>Menu</h2>
+      <ul>
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/">Home</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/about">About</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/contact">Contact</a>
+      </li>
+    
+  
+</ul>
+
+    </nav>
+</aside>
+
+<div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search">
+        <svg class="icon-remove-sign"><use xlink:href="#icon-close"></use></svg>
+        <ul class="search-results search-list"></ul>
+    </div>
+</div>
+
+
+        <section class="post two-columns">
+            <article role="article" class="post-content">
+                <p class="post-info">
+                    
+                        <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
+                        <time class="date" datetime="2021-04-05T04:34:08+05:30">
+                            
+
+
+April 5, 2021
+
+                        </time>
+                    
+                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
+                    <span>41 min to read</span>
+                </p>
+                <h1 class="post-title">Computer Networking 101</h1>
+                <p class="post-subtitle">Fundamentals of Computer Networking.</p>
+
+                
+                    <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1620918379/Networking/photo_2021-04-04_23-19-26_ylhetf.jpg" alt="Featured image" class="post-cover">
+                
+
+                <!-- Pagination links -->
+
+
+
+                <!-- Add your table of contents here -->
+
+
+                <p>In the era of Cloud, having basic understanding of computer networking, how it’s work and use cases to build network is essential. Apart form it’s structure one should also keep in mind there are various ascepts of networking too like <strong>Network communication Protocols</strong> <strong>security of our Network</strong> …</p>
+
+<p>In this we are gonna cover all the basic fundamentals of Networking.</p>
+
+<p>Although all the networks are built on the same principles, but let’s consider them separetely for better understandings. so first thing first start with what comes in our mind when we think about “Networking”..</p>
+
+<h2 id="what-is-a-network">What is a Network?</h2>
+
+<p>A network is a collection of network-enabled devices like computer, switches, routers, printers &amp; servers. Basic networks can be a part of our day-to-day life in homes, offices and public areas. Networks allow all types of network-enabled devices to communicate.</p>
+
+<h2 id="types-of-network">Types of Network</h2>
+
+<p>In layman’s term it can be categorized into followings :-</p>
+<ul>
+  <li>Personal area networks     (PAN)</li>
+  <li>Local area networks        (LAN)</li>
+  <li>Metropolitan area networks (MAN)</li>
+  <li>Wide area networks         (WAN)</li>
+</ul>
+
+<h2 id="personal-area-network">Personal Area Network</h2>
+
+<p>PAN is a group of a computer network around an individual. eg:- Smartphone,smartwatch,tablet and laptop all are connect and share data without the need to connect to an access point or third-party network services. 
+PAN networks typically use Bluetooth to communicate because it provides a low-power,short-range data-sharing capability. The network standards associated with a PAN are Bluetooth and IEEE 802.15.</p>
+
+<h2 id="local-area-network">Local Area Network</h2>
+
+<p>LAN is a group of computers around a single location. This location might be an organization’s office, a school, a university, a hospital, an airport, and many others. A LAN is usually privately owned and needs authentication and authorization to access. Of the different classifications of a network, a LAN is by far the most commonly used.</p>
+
+<h2 id="metropolitan-area-network">Metropolitan Area Network</h2>
+
+<p>MAN is a group of computer networks which provides networking capabilities between two different locations within a city or metropolitan area to provide a single extensive network. Typically, a MAN requires a dedicated and source connection b/w each LAN joined to the MAN.</p>
+
+<p><img src="https://docs.microsoft.com/en-us/learn/modules/network-fundamentals/media/2-man-diagram.svg" alt="MAN" /></p>
+
+<h2 id="wide-area-network">Wide Area Network</h2>
+
+<p>A wide area network (WAN) provides networking capabilities between two different geographical locations locally or worldwide. For example, a WAN is used to connect an organization’s head office with branch offices all over the country. A WAN links multiple LANs together to create one super network. As a MAN, you use a virtual private network (VPN) to manage the connection between different LANs.</p>
+
+<h2 id="differences-between-lan-and-wan-networks">Differences between LAN and WAN networks</h2>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#bbb;border-spacing:0;}
+.tg td{background-color:#E0FFEB;border-color:#bbb;border-style:solid;border-width:1px;color:#594F4F;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#9DE0AD;border-color:#bbb;border-style:solid;border-width:1px;color:#493F3F;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0pky">LAN</th>
+    <th class="tg-0pky">WAN</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">A LAN is a privately operated network typically contained in a single building.</td>
+    <td class="tg-0pky">A WAN is used to connected geographically separate offices to each other. Multiple organizations might operate WANs.</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">A LAN operates at speeds of 10 Gbps or higher.</td>
+    <td class="tg-0pky">A WAN typically operates at speeds of less than 1 Gbps.</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">A LAN is less congested compared to other network types.</td>
+    <td class="tg-0pky">A WAN is more congested compared to other network types.</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">A LAN can be managed and administrated in-house.</td>
+    <td class="tg-0pky">A WAN typically requires the use of a third party to configure and set up, which increases cost.</td>
+  </tr>
+</tbody>
+</table>
+
+<h2 id="network-topologies">Network Topologies</h2>
+
+<p>A network topology describes the physical composition of a network. Let’s look at four topologies you can choose from when you design a LAN. They are:</p>
+
+<ul>
+  <li>Bus</li>
+  <li>Ring</li>
+  <li>Mesh</li>
+  <li>Star</li>
+</ul>
+
+<h2 id="bus-topology">Bus Topology</h2>
+
+<p><img src="https://docs.microsoft.com/en-us/learn/modules/network-fundamentals/media/2-bus-network.svg" alt="bustopology" /></p>
+
+<p>In a bus topology, each network device is connected to a single network cable. Even though it’s the simplest type of network to implement, there are limitations to it. The first limitation is the length of the main cable or bus. The longer it gets, the higher the chance of signal dropout. This limitation constrains the physical layout of the network. All devices have to be physically located near each other, for example, in the same room. Finally, if there’s a break in the bus cable, the whole network fails.</p>
+
+<h2 id="ring-topology">Ring Topology</h2>
+
+<p><img src="https://docs.microsoft.com/en-us/learn/modules/network-fundamentals/media/2-ring-network.svg" alt="ring topology" /></p>
+
+<p>In a ring topology, each network device is connected to its neighbor to form a ring. This form of network is more resilient than the bus topology. A break in the cable ring also affects the performance of the network.</p>
+
+<h2 id="mesh-topology">Mesh Topology</h2>
+<p><img src="https://docs.microsoft.com/en-us/learn/modules/network-fundamentals/media/2-mesh-network.svg" alt="Mesh Topology" /></p>
+
+<p>The mesh topology is described as either a physical mesh or a logical mesh. In a physical mesh, each network device connects to every other network device in the network. It dramatically increases the resilience of a network but has the physical overhead of connecting all devices. Few networks today are built as a full mesh. Most networks use a partial mesh, where some machines interconnect, but others connect through one device.</p>
+
+<p>There’s a subtle difference between a physical mesh network and a logical one. The perception is that most modern networks are mesh based, since each device can see and communicate with any other device on the network. This description is of a logical mesh network and is primarily made possible through the use of network protocols.</p>
+
+<h2 id="star-topology">Star Topology</h2>
+
+<p><img src="https://docs.microsoft.com/en-us/learn/modules/network-fundamentals/media/2-star-network.svg" alt="star Toplogy" /></p>
+
+<p>The star topology is the most commonly used network topology. Each network device connects to a centralized hub or switch. Switches and hubs can be linked together to extend and build more extensive networks. This type of typology is, by far, the most robust and scalable.</p>
+
+<h2 id="ethernet">Ethernet</h2>
+
+<p>Ethernet is a networking standard that’s synonymous with wire-based LAN networks and also used in MAN and WAN networks. Ethernet has replaced other wired LAN technologies like ARCNET and Token Ring and is an industry standard.</p>
+
+<p>While Ethernet is associated with wired networks, one should keep in mind that it’s not limited to wire, since it’s used over fiber-optic links as well.</p>
+
+<p>The Ethernet standard defines a framework for data transmission, error handling, and performance thresholds. It describes the rules for configuring an Ethernet network and how each element in the network interacts with each other.</p>
+
+<blockquote>
+  <p>Ethernet is used in the OSI model at the data link and physical layers. It formed the basis for the 
+IEEE 802.3 Standard. This standard helped to unify network and hardware development.</p>
+</blockquote>
+
+<p>In early days ethernet supported a data transmission rate of only 2.94 Mbps. In recent years, several iterations were released to keep up with the demands for increased speed. Today, rates extend up to 400 Gbps.</p>
+
+<h2 id="types-of-ethernet">Types of Ethernet</h2>
+
+<ul>
+  <li>Fast Ethernet</li>
+  <li>Gigabit Ethernet</li>
+  <li>10 Gigabit Ethernet</li>
+  <li>Terabit Ethernet</li>
+</ul>
+
+<h2 id="fast-ethernet">Fast Ethernet</h2>
+<p>Fast Ethernet (IEEE 802.3u) was developed to support data transmission speeds of up to 100 Mbps. Faster Ethernet is also referred to as the 100BASE-TX standard.</p>
+
+<h2 id="gigabit-ethernet">Gigabit Ethernet</h2>
+
+<p>Gigabit Ethernet (IEEE 802.3ab) was developed to support faster communication networks that can support services like streaming multimedia and Voice over IP (VoIP). The 1000BASE-T standard runs 10 times faster than the 100BASE-TX standard. Gigabit Ethernet is now included in the 802.3 standards and recommended for enterprise networks. The new standard is backward compatible with the 100BASE-T and the older 10BASE-T standards.</p>
+
+<h2 id="10-gigabit-ethernet">10 Gigabit Ethernet</h2>
+
+<p>The 10 Gigabit Ethernet (IEEE 802.3ae) standard has a nominal data transfer speed of 10 Gbps, which is 10 times faster than its predecessor. This speed improvement is made possible only by using fiber optics. The standard now requires that 10 Gigabit Ethernet networks use area-based routing rather than broadcasting data to all nodes. In that way, network noise and traffic are reduced.</p>
+
+<h2 id="terabit-ethernet">Terabit Ethernet</h2>
+
+<p>Terabit Ethernet offers data transfer speeds of 200 Gbps and 400 Gbps. It’s expected that Terabit Ethernet will offer speeds of 800 Gbps and 1.6 Tbps in the future.</p>
+
+<h2 id="what-is-network-standards">What is Network standards?</h2>
+
+<p>While network protocols provide a unified method for communication, network standards govern the hardware and software that uses them.</p>
+
+<p>Today, there are hundreds of thousands of hardware suppliers, yet all of their technology seamlessly integrates with your computer or network with minimal effort. Network standards provide a framework that enables the interoperability between devices.</p>
+
+<p>Network standards improve the interoperability of different network-enabled devices and provide backward compatibility between product revisions and differing vendors. Official bodies that publish regulated standards are the International Telecommunication Union (ITU), the American National Standards Institute (ANSI), and the Institute of Electrical and Electronics Engineers (IEEE).</p>
+
+<h2 id="the-802-family-of-standards">The 802 family of standards</h2>
+
+<p>The 802 specification covers all the physical networking standards for both Ethernet and wireless. The following table shows some of the more widely used standards.</p>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#bbb;border-spacing:0;border-style:solid;border-width:1px;}
+.tg td{background-color:#E0FFEB;border-color:#bbb;border-style:solid;border-width:0px;color:#594F4F;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#9DE0AD;border-color:#bbb;border-style:solid;border-width:0px;color:#493F3F;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-q8ud{background-color:#C2FFD6;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0pky"><span style="font-weight:bold">802</span></th>
+    <th class="tg-0pky"><span style="font-weight:bold">Overview</span></th>
+    <th class="tg-0pky"><span style="font-weight:bold">Basics of physical and logical networking concepts</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-q8ud">802.1</td>
+    <td class="tg-q8ud">Bridging</td>
+    <td class="tg-q8ud">LAN/MAN bridging and management of the lower sublayers of OSI Layer 2</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">802.2</td>
+    <td class="tg-0pky">Logical Link</td>
+    <td class="tg-0pky">Commonly referred to as the logical link control (LLC) specification</td>
+  </tr>
+  <tr>
+    <td class="tg-q8ud">802.3<br /></td>
+    <td class="tg-q8ud">Ethernet<br /></td>
+    <td class="tg-q8ud">Provides asynchronous networking by using carrier sense, multiple accesses with collision detect (CSMA/CD) over coaxial cable, twisted-pair copper cable, and fiber media</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">802.5</td>
+    <td class="tg-0pky">Token ring</td>
+    <td class="tg-0pky">The token-passing standard for shielded copper cables and twisted-pair cable</td>
+  </tr>
+  <tr>
+    <td class="tg-q8ud">802.11</td>
+    <td class="tg-q8ud">Wi-Fi</td>
+    <td class="tg-q8ud">Wireless local area network (WLAN) media access control (MAC) and physical layer (PHY) specification</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">802.11a</td>
+    <td class="tg-0pky">Wi-Fi</td>
+    <td class="tg-0pky">Specifies a PHY that operates in 5 GHz</td>
+  </tr>
+  <tr>
+    <td class="tg-q8ud">802.11b</td>
+    <td class="tg-q8ud">Wi-Fi</td>
+    <td class="tg-q8ud">Enhances 802.11, adds higher data rate modes</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">802.11d</td>
+    <td class="tg-0pky">Wi-Fi</td>
+    <td class="tg-0pky">Enhances 802.11a/b, allows for global roaming</td>
+  </tr>
+  <tr>
+    <td class="tg-q8ud">802.11e</td>
+    <td class="tg-q8ud">Wi-Fi</td>
+    <td class="tg-q8ud">Enhances 802.11, adds Quality of Service (QoS) features</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">802.11g</td>
+    <td class="tg-0pky">Wi-Fi</td>
+    <td class="tg-0pky">Extends WLAN maximum data rate</td>
+  </tr>
+  <tr>
+    <td class="tg-q8ud">802.11 h</td>
+    <td class="tg-q8ud">Wi-Fi</td>
+    <td class="tg-q8ud">Enhances 802.11a, now resolves interference issues</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">802.11i</td>
+    <td class="tg-0pky">Wi-Fi</td>
+    <td class="tg-0pky">Enhances 802.11, adds security for WLAN applications</td>
+  </tr>
+  <tr>
+    <td class="tg-q8ud">802.11j</td>
+    <td class="tg-q8ud">Wi-Fi</td>
+    <td class="tg-q8ud">Enhances 802.11a for Japanese regulatory extensions</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">802.11n</td>
+    <td class="tg-0pky">Wi-Fi</td>
+    <td class="tg-0pky">Higher-speed standards</td>
+  </tr>
+  <tr>
+    <td class="tg-q8ud">802.12</td>
+    <td class="tg-q8ud">Demand Priority</td>
+    <td class="tg-q8ud">Ethernet data rate increased to 100 Mbps</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">802.15</td>
+    <td class="tg-0pky">Wireless personal area networks</td>
+    <td class="tg-0pky">Support for wireless personal area networks (WPANs)</td>
+  </tr>
+  <tr>
+    <td class="tg-q8ud">802.15.1</td>
+    <td class="tg-q8ud">Bluetooth</td>
+    <td class="tg-q8ud">Short-range (10 m) wireless technology</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">802.15.3a</td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal">UWB</span></td>
+    <td class="tg-0pky">Short-range, high-bandwidth ultra-wideband (UWB) link</td>
+  </tr>
+  <tr>
+    <td class="tg-q8ud">802.15.4</td>
+    <td class="tg-q8ud">ZigBee</td>
+    <td class="tg-q8ud">Short-range wireless sensor networks</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">802.16</td>
+    <td class="tg-0pky">Wireless metropolitan area networks</td>
+    <td class="tg-0pky">Covers mobile and wireless broadband access in wireless metropolitan area networks (WMANs)</td>
+  </tr>
+</tbody>
+</table>
+
+<h2 id="network-infrastructure">Network Infrastructure</h2>
+
+<p>There are several network standard-compliant devices that make up the structure of your networks. Depending on the network’s size, you might use several of these devices to build the backbone of your network. These devices are:</p>
+
+<ul>
+  <li>Repeaters</li>
+  <li>Hubs</li>
+  <li>Bridges</li>
+  <li>Switches</li>
+  <li>Routers</li>
+</ul>
+
+<h2 id="what-is-a-media-access-control-address">What is a media access control address?</h2>
+
+<p>The media access control (MAC) address is a unique identifier assigned to every network-enabled device at the time of manufacture. It’s sometimes referred to as the burned-in address, the Ethernet hardware address, or a physical address.</p>
+
+<p>The MAC address has a standard composition of six hexadecimal numbers separated by a colon or dash. The first three numbers of the MAC address define the manufacturer’s organizationally unique identifier (OUI) and the remaining three numbers uniquely identify the device. For example, if the MAC address is AA-6A-BA-2B-68-C1 then the OUI is AA-6A-BA and 2B-68-C1 is the device ID.</p>
+
+<p><img src="https://docs.microsoft.com/en-us/learn/modules/network-fundamentals/media/3-mac-address.png" alt="MAC" /></p>
+
+<h2 id="repeater">Repeater</h2>
+
+<p>A repeater is a two-port device that repeats network signals. Repeaters are used when network devices are some distance from each other. The repeater doesn’t modify or interpret data packets before it resends them, and it doesn’t amplify the signal. Instead, it regenerates the data packet at the original strength, bit by bit.</p>
+
+<h2 id="bridge">Bridge</h2>
+
+<p>A bridge divides a network into network segments and can filter and forward data packets between these segments. Bridges use the network device’s MAC address to decide the data package’s destination. Typically, a bridge is used to improve network performance by reducing unnecessary network traffic on network segments.</p>
+
+<h2 id="hub">Hub</h2>
+
+<p>A hub acts as a multiport repeater on a network. Hubs are used to connect more than one device and structure the layout of a network. For example, you can cascade hubs to create network branches or as an endpoint to create a star layout with multiple user type devices. Hubs contain multiple ports that act as an input/output Ethernet connection between the hub and a network device. A hub can operate at only one speed, which is the speed of the slowest network device on the network. It doesn’t interpret or filter data packets and sends copies of each data packet to all attached devices.</p>
+
+<h2 id="types-of-hubs">Types of hubs</h2>
+
+<ul>
+  <li>
+    <p><strong>Fast Ethernet</strong> : This hub is used for 100-Mbps networks and comes as Class I and Class II type hubs. The primary difference between the two is the amount of delay in data transmission. A Class I hub introduces a signal delay of up to 140-bit times. A Class II hub has a delay of up to 96-bit times. The delay allows for the transcoding of data between different base types. Only two Class II hubs can be used in a hub-based network. Class II hubs increase the likelihood of packet collisions because of their higher speeds.</p>
+  </li>
+  <li>
+    <p><strong>Dual Speed</strong> : With a traditional hub network, the speed of the network was governed by the slowest network device attached. For example, if you had 10-Mbps and 100-Mbps devices connected to a network, the speed of the whole network was only 10 Mbps. Dual-speed hubs solve the problem by acting as a bridge between the two different-speed devices.</p>
+  </li>
+</ul>
+
+<p>Hubs are used for small ad-hoc networks of a few devices, but they’re rarely used at an enterprise level.</p>
+
+<h2 id="switch">Switch</h2>
+
+<p>A switch combines the functionality of a bridge and a hub. It segments networks and can interpret and filter packet data to send it directly to an attached network device. Switches use the network device’s MAC address to decide the data package’s destination. A switch operates in full-duplex mode, which means it can send and receive data to and from network devices at the same time.</p>
+
+<h2 id="features">Features</h2>
+
+<p>Modern Ethernet-based switches offer more functionality and capabilities than an Ethernet hub.</p>
+
+<ul>
+  <li>An Ethernet switch can adjust the connection speed of an inbound packet to match the connection speed of the destination network.</li>
+  <li>Many switches now support Power over Ethernet (PoE). PoE enables network devices like Voice over IP (VoIP) phones to get power from the switch, without needing a separate power supply.</li>
+  <li>Other modules can be attached to the switch to enable functions like port mirroring, packet sniffers, and intrusion detection systems.</li>
+</ul>
+
+<h2 id="types-of-ethernet-switch">Types of Ethernet switch</h2>
+
+<p>The two distinct types of switch are unmanaged and managed.</p>
+
+<h2 id="unmanaged">Unmanaged</h2>
+<p>This type of switch has no configuration capability and is designed for small office or home office environments. Packet switching occurs automatically.</p>
+
+<h2 id="managed">Managed</h2>
+<p>This type of switch offers the means to adjust the configuration, behavior, and operation of the switch. Access to the switch configuration is either through a command-line interface (CLI) that uses Telnet or Secure Shell (SSH), Remote Console, or via a web interface.</p>
+
+<p>Here’s a list of the more commonly available options to configure on a managed switch.</p>
+
+<ul>
+  <li>Quality of Service :-  Manage LAN traffic so that critical systems are given higher priority. An example is voice-data packets, which need to be delivered quickly.</li>
+  <li>Virtual LANs :- Create logical groups of devices in their own virtual LAN. Traffic in one virtual LAN doesn’t cross over into another virtual LAN. This logical group of devices can improve the security and performance of the network.</li>
+  <li>Spanning Tree Protocol (STP):- Build resilience into your network by defining alternative network routes in case a cable or device fails.</li>
+  <li>Port mirroring: Use with a network analyzer to diagnose network issues and problems. During setup, the switch exports a copy of the network traffic to a single port.</li>
+  <li>Bandwidth rate-limiting: Allow fine control of the bandwidth used by specific ports, such as high bandwidth for ports handling database or VoIP and lower bandwidths for email.</li>
+  <li>MAC address filtering: Provide the ability to control which network devices can be used or have access through the switch.</li>
+  <li>SNMP client : Set up and configure SNMP with your network monitoring tools.</li>
+</ul>
+
+<p><em>There are two subtypes of managed switch</em>:</p>
+<ul>
+  <li>Smart: A smart switch is a halfway point between an unmanaged and a managed switch. They tend to offer only a web-based interface to manage the configuration. The available options are virtual LANs, port mirroring, and bandwidth rate limiting.</li>
+  <li>Enterprise: The fully managed switch service previously described.</li>
+</ul>
+
+<h2 id="router">Router</h2>
+
+<p>Routers link networks with different ranged addresses together. They can interpret and filter data packets, and then forward them to the correct network. Routers use the network device’s IP address information to route the data package to its destination. Most routers can now detect issues with data traffic that flows to any attached network and route or reroute it around the issue. A router is also called a gateway. When you configure network devices, you’ll usually configure it with a default gateway IP address.</p>
+
+<h2 id="interconnectivity">Interconnectivity</h2>
+
+<p>Routers in an interconnected network maintain a routing table that lists the preferred route between each of the networks. The router acts as the start of authority for all the network devices on its network. Routing information is shared between routers by using a routing protocol like the Border Gateway Protocol (BGP).</p>
+
+<h2 id="types">Types</h2>
+
+<p>There are several distinct classifications or types of routers available to service different network needs.</p>
+
+<ul>
+  <li>
+    <p><strong>Access routers</strong>: Typically used in a home or small satellite offices, these routers tend to be low-cost devices with a simple routing need.</p>
+  </li>
+  <li>
+    <p><strong>Distribution routers</strong>: These routers compile traffic routing data from multiple routers. Distribution routers come with more significant memory and processing power. This type of router is designed to hold vast quantities of routing information. It’s often used to manage and control the quality of service across a WAN.</p>
+  </li>
+  <li>
+    <p><strong>Edge routers</strong>: An edge router operates at the boundary between your network and other networks, for example, your local network and the internet. They act as gateways to filter traffic and route it internally or forward it based on the packet header. An edge router often comes with access control or firewalls to improve the security. It might also handle DHCP and DNS services.</p>
+  </li>
+  <li>
+    <p><strong>Core routers</strong>: Sometimes called enterprise routers, these routers are designed for higher bandwidths. They’re used to connect different buildings or geographic locations together. Core routers tend to have fewer features than edge routers because their primary focus is on minimizing packet loss and preventing congestion. They tend to do packet forwarding to edge routers.</p>
+  </li>
+</ul>
+
+<h2 id="wireless-router">Wireless router</h2>
+
+<p>This network device provides all the routing capabilities of a regular access router, but it also offers wireless access point functions. A wireless router or wireless access point is designed to provide a non-wired connection to your network. Any provision to access the internet or other networks is handled by an edge router associated with your network. A wireless router lets you build a different type of network called a wireless local area network.</p>
+
+<p>A wireless router shouldn’t be confused with a wireless modem. A wireless modem is what you receive from your ISP for your home or office and is the device that converts the signal from the ISP into one that’s usable on a computer network. Wireless modems are typically combined with routers to allow you to create a private home or office network.</p>
+
+<h2 id="network-protocols">Network protocols</h2>
+
+<p>A network protocol is a set of conditions and rules that specify how network devices communicate on a given network. It provides a common framework for establishing and maintaining a communications channel, and how to handle errors or faults should they occur. Network protocols allow communication between different network-enabled devices, for example, laptops, tablets, smartphones, desktops, servers, and other network-enabled devices.</p>
+
+<p><img src="https://docs.microsoft.com/en-us/learn/modules/network-fundamentals/media/4-network-devices.svg" alt="portocol" /></p>
+
+<p>The network protocol is an essential building block in the design of an organization’s network architecture. There are many network protocols available. Each network protocol has many properties that govern its use and implementation.</p>
+
+<h2 id="what-is-a-network-address">What is a network address?</h2>
+
+<p>A network address is a unique identifier that identifies a network-enabled device. A network-enabled device might have more than one address type. Although there are more address types, for this discussion, we’ll focus on only two of these address types.</p>
+
+<p>The first type is a media access control (MAC) address that identifies the network interface on the hardware level. The second type is an Internet Protocol (IP) address that identifies the network interface on a software level.</p>
+
+<h2 id="what-is-a-data-packet">What is a data packet?</h2>
+
+<p>A data packet is a unit that’s used to describe the message two devices on a network send each other. A data packet consists of raw data, headers, and potentially also a trailer. The header contains several information items. For example, it includes the sender and destination device addresses, the size of the packet, the protocol used, and the packet number. The trailer in a data packet deals with error checking.</p>
+
+<p>The concept is similar to sending someone a letter in the mail. But instead of sending several pages in one envelope, each page is sent in a separate envelope. Enough information is sent in each envelope to allow the recipient to piece together the complete message after they have all the pages.</p>
+
+<h2 id="what-is-a-datagram">What is a datagram?</h2>
+
+<p>A datagram is considered the same as a data packet. Datagrams commonly refer to data packets of an unreliable service, where delivery can’t be guaranteed.</p>
+
+<h2 id="what-is-routing">What is routing?</h2>
+
+<p>Routing, in the context of networks, refers to the mechanism used to make sure that data packets follow the correct delivery path between the sending and receiving devices on different networks.</p>
+
+<p>For example, think about the PC you’re using and the server that’s serving the page you’re currently reading. Multiple networks might connect your PC and the server, and various paths might be available between these two devices.</p>
+
+<h2 id="protocol-categories">Protocol categories</h2>
+
+<p>Several types of applications and hardware devices depend on specific network protocols on a typical network. For example, browsing the internet by using a web browser relies on a different protocol than sending or receiving an email. Converting the data that you see in the browser and sending this information over the network requires another protocol.</p>
+
+<p>Protocols fall into three categories:</p>
+
+<ul>
+  <li>Network communication protocols</li>
+  <li>Network security protocols</li>
+  <li>Network management protocols</li>
+</ul>
+
+<h2 id="network-communication-protocols">Network communication protocols</h2>
+
+<p>Communication protocols focus on establishing and maintaining a connection between devices. As you work with different devices and network services, you’ll make use of various network communication protocols.</p>
+
+<p>First, we need to define three foundational protocols of all internet-based networks. These three protocols are Transmission Control Protocol (TCP), Internet Protocol (IP), and User Datagram Protocol (UDP). These protocols are concerned with the logical transmission of data over the network.</p>
+
+<ul>
+  <li>
+    <p><strong>Transmission Control Protocol</strong> :TCP chunks up data into data packets that can be sent securely and quickly while minimizing the chance of data loss. It provides a stable and reliable mechanism for the delivery of data packets across an IP-based network. Even though TCP is an effective connection-oriented protocol, it has overhead.</p>
+  </li>
+  <li>
+    <p><strong>Internet Protocol</strong> : IP is responsible for the addressing of a data packet. IP encapsulates the data packet to be delivered and adds an address header. The header contains information on the sender and recipient IP addresses. This protocol isn’t concerned about the order in which the packets are sent or received. It also doesn’t guarantee that a packet will be delivered, only the address.</p>
+  </li>
+  <li>
+    <p><strong>User Datagram Protocol</strong> : UDP is a connectionless protocol that offers a low-latency and loss-tolerant implementation. UDP is used with processes that don’t need to verify that the recipient device received a datagram.</p>
+  </li>
+  <li>
+    <p><strong>Hypertext Transfer Protocol (HTTP)</strong> : The HTTP protocol uses TCP/IP to deliver web page content from a server to your browser. HTTP can also handle the download and upload of files from remote servers.</p>
+  </li>
+  <li>
+    <p><strong>File Transfer Protocol (FTP)</strong> : FTP is used to transfer files between different computers on a network. Typically, FTP is used to upload files to a server from a remote location. While you can use FTP to download files, web-based downloads are typically handled through HTTP.</p>
+  </li>
+  <li>
+    <p><strong>Post Office Protocol 3 (POP3)</strong> : POP3 is one of three email protocols. It’s most commonly used by an email client to allow you to receive emails. This protocol uses TCP for the management and delivery of an email.</p>
+  </li>
+  <li>
+    <p><strong>Simple Mail Transfer Protocol (SMTP)</strong> : SMTP is another one of the three email protocols. It’s most commonly used to send emails from an email client via an email server. This protocol uses the TCP for management and transmission of the email.</p>
+  </li>
+  <li>
+    <p><strong>Interactive Mail Access Protocol (IMAP)</strong> : IMAP is the more powerful of the three email protocols. With IMAP and an email client, you can manage a single mailbox on an email server in your organization.</p>
+  </li>
+</ul>
+
+<h2 id="network-security-protocols">Network security protocols</h2>
+<p>Network security protocols are designed to maintain the security and network of data across your network. These protocols encrypt in-transmission messages between users, services, and applications.</p>
+
+<p>Network security protocols use encryption and cryptographic principles to secure messages.</p>
+
+<ul>
+  <li><strong>Secure Socket Layer (SSL)</strong> : SSL is a standard encryption and security protocol. It provides a secure and encrypted connection between your computer and the target server or device that you accessed over the internet.</li>
+  <li>
+    <p><strong>Transport Layer Security (TLS)</strong> : TLS is the successor to SSL and provides a stronger and more robust security encryption protocol. Based on the Internet Engineering Task Force (IETF) standard, it’s designed to stop message forgery and tampering and eavesdropping. It’s typically used to protect web browser communications, email, VoIP, and instant messaging. While TLS is now used, the replacement security protocol is often still called SSL.</p>
+  </li>
+  <li>
+    <p><strong>Hypertext Transfer Protocol Secure (HTTPS)</strong> : HTTPS provides a more secure version of the standard HTTP protocol by using the TLS or SSL encryption standard. This combination of protocols ensures that all data transmitted between the server and the web browser is encrypted and secure from eavesdropping or data packet sniffing. The same principle is applied to the POP, SMTP, and IMAP protocols listed previously to create secure versions known as POPS, SMTPS, and IMAPS.</p>
+  </li>
+  <li>
+    <p><strong>Secure Shell (SSH)</strong> : SSH is a cryptographic network security protocol that provides a secure data connection across a network. SSH is designed to support command-line execution of instructions, which includes remote authentication to servers. FTP uses many of the SSH functions to provide a secure file transfer mechanism.</p>
+  </li>
+  <li><strong>Kerberos</strong> : This validation protocol provides a robust authentication for client-server-based applications through secret-key cryptography. Kerberos assumes that all endpoints in the network are insecure. It enforces strong encryption for all communications and data at all times.</li>
+</ul>
+
+<h2 id="network-management-protocols">Network management protocols</h2>
+
+<p>Network administrators need to monitor their networks and any devices attached to them. Each device in your network exposes some indicators about the state and health of the device. These indicators are requested by the network administrator tool and can be used for monitoring and reporting.</p>
+
+<p>Two network management protocols are available:</p>
+
+<ul>
+  <li>
+    <p><strong>Simple Network Management Protocol (SNMP)</strong> : SNMP is an internet protocol that allows for the collection of data from devices on your network and the management of those devices. The device has to support SNMP to gather information. Devices that typically support SNMP include switches, routers, servers, laptops, desktops, and printers.</p>
+  </li>
+  <li>
+    <p><strong>Internet Control Message Protocol (ICMP)</strong> : ICMP is one of the protocols included within the Internet Protocol suite (IPS). It allows network-connected devices to send warning and error messages, along with operation information about the success or failure of a connection request, or if a service is unavailable. Unlike other network transport protocols like UDP and TCP, ICMP isn’t used to send or receive data from devices on the network.</p>
+  </li>
+</ul>
+
+<h2 id="ports">Ports</h2>
+
+<p>A port is a logical construct that allows the routing of incoming messages to specific processes. There’s a particular port for every type of IPS. A port is an unsigned 16-bit number in the range 0 to 65535 and is also known as a port number. Ports are assigned by the sending TCP or UDP layer based on the communications protocol used.</p>
+
+<p>There are specific port numbers reserved for every service. The first 1,024 ports, called the well-known port numbers, are reserved for the commonly used services. The high-numbered ports, called the ephemeral ports, are unreserved and used by dedicated applications.</p>
+
+<p>Every port links to a specific service or communications protocol. It means that the target network device, say a server, can receive multiple requests on each port and service each of them without conflict.</p>
+
+<h2 id="well-known-port-numbers">Well-known port numbers</h2>
+
+<p>The Internet Assigned Numbers Authority (IANA) manages the allocation of port numbers, the regional assignment of IP addresses, and Domain Name System (DNS) root zones. IANA also manages a central repository for protocol names and the registry used in internet protocols.</p>
+
+<style type="text/css">
+.tg  {border:none;border-collapse:collapse;border-color:#9ABAD9;border-spacing:0;}
+.tg td{background-color:#EBF5FF;border-color:#9ABAD9;border-style:solid;border-width:0px;color:#444;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#409cff;border-color:#9ABAD9;border-style:solid;border-width:0px;color:#fff;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-hmp3{background-color:#D2E4FC;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-0lax"><span style="font-weight:bold">Port Number</span></th>
+    <th class="tg-0lax"><span style="font-weight:bold">Assignment</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-hmp3">20</td>
+    <td class="tg-hmp3">File Transfer Protocol for data transfer</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">21</td>
+    <td class="tg-0lax">File Transfer Protocol for command control</td>
+  </tr>
+  <tr>
+    <td class="tg-hmp3">22</td>
+    <td class="tg-hmp3">Secure Shell for secure authentication</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">23</td>
+    <td class="tg-0lax">Telnet remote authentication service for unencrypted text messages</td>
+  </tr>
+  <tr>
+    <td class="tg-hmp3">25</td>
+    <td class="tg-hmp3">Simple Mail Transfer Protocol for email routing</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">53</td>
+    <td class="tg-0lax">Domain Name System service</td>
+  </tr>
+  <tr>
+    <td class="tg-hmp3">80</td>
+    <td class="tg-hmp3">Hypertext Transfer Protocol for use in the web</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">110</td>
+    <td class="tg-0lax">Post Office Protocol</td>
+  </tr>
+  <tr>
+    <td class="tg-hmp3">119</td>
+    <td class="tg-hmp3">Network News Transfer Protocol (NNTP)</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">123</td>
+    <td class="tg-0lax">Network Time Protocol (NTP)</td>
+  </tr>
+  <tr>
+    <td class="tg-hmp3">143</td>
+    <td class="tg-hmp3">Internet Message Access Protocol for management of digital mail</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">161</td>
+    <td class="tg-0lax">Simple Network Management Protocol</td>
+  </tr>
+  <tr>
+    <td class="tg-hmp3">194</td>
+    <td class="tg-hmp3">Internet Relay Chat (IRC)</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">443</td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">HTTP Secure HTTP over TLS/SSL</span></td>
+  </tr>
+</tbody>
+</table>
+
+<h2 id="internet-protocol-suite">Internet Protocol suite</h2>
+
+<p>The Internet Protocol suite is a collection of communication protocols, also called a protocol stack. It’s also sometimes referred to as the TCP/IP protocol suite since both TCP and IP are primary protocols used in the suite.</p>
+
+<p>The IPS is an abstract, layered networking reference model. The IPS describes the different layered protocols used to send and receive data on the internet and similar networks.</p>
+
+<p>The IPS model is one of several similar networking models that varies between three and seven layers. The best-known model is the Open Systems Interconnection (OSI) networking reference model. We’re not going to cover the OSI model here. A documentation link is available in the “Learn more” section at the end of this module.</p>
+
+<p><img src="https://docs.microsoft.com/en-us/learn/modules/network-fundamentals/media/4-internet-protocol-suite-layers.svg" alt="internet" /></p>
+
+<ul>
+  <li>
+    <p><strong>Application layer</strong> : The top layer of this stack is concerned with application or process communication. The application layer is responsible for determining which communication protocols to use based on what type of message is transmitted. For example, the layer assigns the correct email protocols such as POP, SMTP, or IMAP if the message is email content.</p>
+  </li>
+  <li>
+    <p><strong>Transport layer</strong> : This layer is responsible for host-to-host communication on the network. The protocols associated with this layer are TCP and UDP. TCP is responsible for flow control. UDP is responsible for providing a datagram service.</p>
+  </li>
+  <li>
+    <p><strong>Internet layer</strong> : This layer is responsible for exchanging datagrams. A datagram contains the data from the transport layer and adds in the origin and recipient IP addresses. The protocols associated with this layer are IP, ICMP, and the Internet Protocol Security (IPsec) suite.</p>
+  </li>
+  <li>
+    <p><strong>Network access layer</strong> : The bottom layer of this stack is responsible for defining how the data is sent across the network. The protocols associated with this layer are ARP, MAC, Ethernet, DSL, and ISDN.</p>
+  </li>
+</ul>
+
+<h2 id="what-is-the-address-resolution-protocol">What is the Address Resolution Protocol?</h2>
+
+<p>The Address Resolution Protocol (ARP) is a communications protocol within the Internet Protocol suite. It’s a request-response protocol used to resolve the media access control (MAC) address for a given IP address. ARP supports many data link layer technologies, such as Internet Protocol version 4 (IPv4), DECnet, and PUP. When an Internet Protocol version 6 (IPv6) address is resolved, the Neighbor Discovery Protocol (NDP) is used instead of ARP. Without ARP, there would be no means to resolve an IP address to a physical device address.</p>
+
+<p>There’s also the Reverse Address Resolution Protocol (RARP), which retrieves an IP address based on the given MAC address.</p>
+
+<h2 id="what-is-tcpip">What is TCP/IP?</h2>
+
+<p>The Transmission Control Protocol/Internet Protocol is a collection of different communication protocols that support and define how network-enabled devices interconnect with each other over an IP-based network. At its heart are two key protocols: TCP and IP. TCP/IP makes the internet possible, as well as private and public networks like intranets and extranets.</p>
+
+<p>TCP/IP defines the way data is shared between network-enabled devices by defining the end-to-end communication process. It manages how the message is broken down into packets of data, which are sometimes known as datagrams. TCP/IP also determines how the packet is addressed and transmitted, routed, and received. TCP/IP can determine the most efficient route across a network.</p>
+
+<p>The TCP/IP model is designed to be stateless. This design means the network stack treats each request as new because it isn’t related to the previous request. One part of the TCP/IP model isn’t stateless. The transport layer operates in a stateful mode because it maintains a connection until all the packets in the message are received.</p>
+
+<p>TCP/IP is an open standard. It’s governed, but it’s not owned by any one organization, so it works with all operating systems, networks, and hardware.</p>
+
+<h2 id="tcpip-model-layers">TCP/IP model layers</h2>
+
+<p>The TCP/IP model is made up of four distinct layers. Each layer uses a different type of protocol. Notice how the TCP/IP model is similar to the Internet Protocol suite discussed earlier.</p>
+
+<ul>
+  <li>
+    <p><strong>Application layer</strong> : The application layer is responsible for determining which communication protocols are used. This layer includes HyperText Transfer Protocol (HTTP), DNS, File Transfer Protocol (FTP), Internet Message Access Protocol (IMAP), Lightweight Directory Access Protocol (LDAP), Post Office Protocol (POP), Simple Mail Transfer Protocol (SMTP), Simple Network Management Protocol (SNMP), Secure Shell (SSH), Telnet, and TLS/SSL.</p>
+  </li>
+  <li><strong>Transport layer</strong> : This layer splits the application data into manageable ordered chunks by using the right port for the application protocol that’s used. The protocols associated with this layer are TCP and the User Datagram Protocol (UDP).</li>
+  <li><strong>Internet layer</strong> : Also known as the network layer, this layer ensures the data packet gets to its destination. The protocols associated with this layer are IP, IPv4, IPv6, Internet Control Message Protocol (ICMP), and Internet Protocol Security (IPsec).</li>
+  <li><strong>Network access layer</strong> : This layer is responsible for defining how the data is sent across the network. The protocols associated with this layer are ARP, MAC, Ethernet, digital subscriber line (DSL), and Integrated Services Digital Network (ISDN).</li>
+</ul>
+
+<h2 id="internet-protocol-standards">Internet Protocol standards</h2>
+
+<p>The Internet Protocol only provides a logical addressing system that’s used to route and forward messages to their destinations.</p>
+
+<p>Today, there are two Internet Protocol versions that work within networks.</p>
+
+<h2 id="ipv4">IPv4</h2>
+
+<p>Internet Protocol version 4 was released in 1983 and is the standard for all packet-switch-based networks in use today. IPv4 uses a 32-bit address space that gives an upper limit of 4,294,967,296 (4.3 billion) unique logical IP addresses. A large number of these available IP addresses are reserved for a specific purpose, for example, private networks, local hosts, internet relays, documentation, and subnets.</p>
+
+<h2 id="structure-of-an-ipv4-address">Structure of an IPv4 address</h2>
+
+<p>The structure of an IPv4 address is four decimal numbers in the range of 0 to 255, each separated with a dot. It’s also known as the dotted-decimal format. An example of an IP address is 192.168.0.1.</p>
+
+<h2 id="parts-of-an-ipv4-address">Parts of an IPv4 address</h2>
+
+<p>There are two parts to an IP address, the network and the host. Let’s use the address 192.168.0.1 as an example.</p>
+
+<p>The network part of an IP address covers the first set of decimal numbers. In the example, that’s 192.168.0. This number is unique to the network and specifies the class of the network. There are a number of network classes available, described next.</p>
+
+<p>The host part of the IP address covers the next set of decimal numbers. In the example, that’s 1. This number represents the device and has to be unique within the network to avoid address conflicts. Each device on a network segment must have a unique address.</p>
+
+<h2 id="ipv4-address-classes">IPv4 address classes</h2>
+
+<p>The Internet Protocol’s local address space is split into five logical classes or ranges of IP addresses, each represented by a letter of the alphabet.</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1617643436/Web_capture_5-4-2021_225020_docs.microsoft.com_xeeksp.webp" alt="IP4" /></p>
+
+<p>For classes A, B, and C, the start and end IP addresses are reserved and shouldn’t be used. Class D is reserved for multicast traffic only. Class E is reserved and can’t be used on public networks, like the internet.</p>
+
+<p>In the previous table, the last column is marked as a subnet mask. The subnet mask uses the same format of the IP address. But its purpose is to identify valid IP addresses in an IP range.</p>
+
+<p>For example, assume you have an IP address range that starts at 192.168.0.1, and you have a subnet of 255.255.255.0.You’ll apply the subnet mask in the following way. For each address segment value specified as 255 in the mask, the corresponding address segment is static. When you want to pick an IP address, you have to pick an address that matches 192.168.0. Where the segment has a value of 0, you’re allowed to use any value between 0 to 255. A subnet mask of 255.255.255.0 gives an IP address range of 192.168.0.0 to 192.168.0.255, which are valid values to select.</p>
+
+<h2 id="what-is-a-subnet">What is a subnet?</h2>
+
+<p>A subnet defines one or more logical networks within the class A, B, or C network. Without subnets, you’re restricted to a single network in each of the class A, B, or C networks.</p>
+
+<p>An IP address, also known as a network address or routing prefix, represents the address of the device or computer to send the packet of data. A subnet, or host address, represents which network or subnetwork to use. A subnet is a 32-bit number framed by using the dotted-decimal format. For example, 255.255.255.0 is a standard subnet mask.</p>
+
+<p>In an IPv4 network, for a packet of data to be routed to the correct network and the right network device, a routing prefix is needed. A routing prefix is created by taking the subnet mask and applying a bitwise AND to the IP address.</p>
+
+<p>A more common way to define the subnet and the routing prefix is to use the Classless Interdomain Routing (CIDR) notation. CIDR applies to the IP address as the number of bits you want to allocate to your subnet. Using CIDR notation, at the end of the IP address, add a “/” and then the number of bits. For example, 198.51.100.0/24 is the same as using the dotted-decimal format subnet mask 255.255.255.0. It offers an address range of 198.51.100.0 to 198.51.100.255.</p>
+
+<p><img src="https://docs.microsoft.com/en-us/learn/modules/network-fundamentals/media/5-subnet-diagram.svg" alt="Images" /></p>
+
+<p>Subnets allow multiple subnetworks to exist within one network. They can be used to enhance routing performance. Subnets can be arranged hierarchically to create routing trees.</p>
+
+<h2 id="special-use-addresses-">Special-use addresses :</h2>
+
+<p>Each of the classes has restrictions on the ranges of IP addresses that can be used. This table shows the more common ones.</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1617643766/sunet_ztbfta.webp" alt="Subnet" /></p>
+
+<h2 id="ipv4-address-space-exhaustion">IPv4 address space exhaustion</h2>
+
+<p>Soon after the introduction of IPv4, it became apparent that the pool of available IP addresses was being consumed faster than was expected. For example, think about the number of mobile devices that have been released in the last couple of years.</p>
+
+<p>Several solutions were introduced to mitigate the threat of running out of IP addresses. These ideas included network address translation (NAT), classful networks, and CIDR. In the 1990s, IPv6 was created to increase the number of IP address spaces to 128 bits. IPv6 was introduced commercially in 2006.</p>
+
+<h2 id="private-ip-addressing">Private IP addressing</h2>
+
+<p>In classes A, B, and C, a range of IP addresses are set aside for private networks. These IP ranges aren’t accessible via the internet. All public routers ignore any packets sent to them that contain such an address.</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1617643916/private_qyphem.webp" alt="Private Ip" /></p>
+
+<p>Network devices on a private network can’t communicate with devices on a public network. Communication can happen only through network address translation at a routing gateway.</p>
+
+<p>The only way to connect two private networks in different geographical areas is to use a virtual private network (VPN). A VPN encapsulates each private network packet. The VPN can further encrypt the packet before it sends it across a public network from one private network to another private network.</p>
+
+<h2 id="ipv6">IPv6</h2>
+
+<p>Internet Protocol version 6 is the latest version of the IP standard. IPv6 was designed and developed by the Internet Engineering Task Force (IETF) to address the problem of IPv4 logical address exhaustion and to eventually replace the IPv4 standard. It was adopted as a recognized internet standard in July 2017.</p>
+
+<p>IPv6 uses a 128-bit address space, which allows 2128 addresses. This amount is approximately 7.9x1028 times more than IPv4.</p>
+
+<p>IPv4 and IPv6 weren’t designed to be interoperable, which has slowed down the transition to the newer IPv6 standard.</p>
+
+<p>IPv6 also introduced several benefits:</p>
+
+<ul>
+  <li><strong>Simplified network configuration</strong>: IPv6 has address autoconfiguration built into the protocol. For example, a router broadcasts the network prefix and the network device can append its MAC address to self-assign a unique IPv6 address.</li>
+  <li><strong>Security</strong>: IPsec is built into IPv6.</li>
+  <li><strong>New service support</strong>: IPv6 eliminates the need for NAT, which makes it easier to create peer-to-peer networks.</li>
+  <li><strong>Multicast and anycast functionality</strong>: Multicast allows for the broadcast of messages in a one-to-many fashion. Anycast allows a single destination to have multiple routing paths to two or more endpoint destinations.</li>
+</ul>
+
+<h2 id="structure-of-an-ipv6-address">Structure of an IPv6 address</h2>
+
+<p>The structure of IPv6 is different from IPv4. Instead of four decimal numbers, it uses eight groups of four hexadecimal numbers called a hexadectet. Each hexadectet is separated with a colon. A full IPv6 address looks like this: 2001:0db8:0000:0000:0000:8a2e:0370:7334.</p>
+
+<p>The new standard allows for the address to be simplified by using the following rules:</p>
+
+<ul>
+  <li>One or more leading zeros from any group can be removed, so 0042 becomes 42.</li>
+  <li>Consecutive sections of zeros are replaced with a double colon (::), which can be used only once in an address.</li>
+</ul>
+
+<p>The shortened version of the IPv6 example is 2001:db8::8a2e:370:7334. Notice that all the instances of 0000 are removed.</p>
+
+<h2 id="dns">DNS</h2>
+
+<p>The Domain Name System is a decentralized lookup service that translates a human-readable domain name or URL into the IP address of the server that’s hosting the site or service. The worldwide distributed nature of DNS is a vital component of the internet. DNS has been in use since its inception in 1985.</p>
+
+<p>A DNS server serves two purposes. The first is to maintain a cache of recently searched-for domain names, which improves performance and reduces network traffic. The second is to act as the start of authority (SOA) for all the domains under it. When a DNS server is looking to resolve a domain name that isn’t held in its cache, it starts with the highest level, the dot, and then works down the subdomains until it finds the DNS server acting as the SOA. Once found, it stores the IP address of the domain in its local cache.</p>
+
+<p>The DNS also holds specific records that relate to the domain. These records include the SOA, IP addressing (A and AAAA), SMTP email (MX), name servers (NS), and domain name alias (CNAME) records.</p>
+
+
+
+                <!-- Pagination links -->
+
+
+            </article>
+
+            
+                <aside class="see-also">
+                    <h2>See also</h2>
+                    <ul>
+                        
+                        
+                        
+                            <li>
+                                <a href="/Fundamentals-of-Network-security/">
+                                    
+                                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80">
+                                    
+                                    <h3>Fundamentals of Network Security.☠️</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/what-is-chat-gpt/">
+                                    
+                                        <img src="https://images.pexels.com/photos/7108/notebook-computer-chill-relax.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                    
+                                    <h3>What is chatGpt? How to use it?</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/difference-between-WAF-and-IPS/">
+                                    
+                                        <img src="https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                    
+                                    <h3>WAF vs IPS</h3>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </aside>
+            
+
+        </section>
+
+        <!-- Add time bar only for pages without pagination -->
+        
+            <div class="time-bar" data-minutes="41">
+    <span class="time-completed"></span>
+    <span class="time-remaining"></span>
+    <div class="bar">
+        <span class="completed" style="width:0%;"></span>
+        <span class="remaining" style="width:100%;"></span>
+    </div>
+</div>
+
+            <div class="recommendation">
+    <div class="message">
+        <strong>Why don't you read something next?</strong>
+        <div>
+            <button>
+                <svg><use xlink:href="#icon-arrow-right"></use></svg>
+                <span>Go back to top</span>
+            </button>
+        </div>
+    </div>
+    
+    <a href="/Fundamentals-of-Network-security/" class="post-preview">
+        <div class="image">
+            
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80">
+            
+        </div>
+        <h3 class="title">Fundamentals of Network Security.☠️</h3>
+    </a>
+</div>
+
+        
+
+        <!-- Show modal if the post is the last one -->
+        
+
+        <!-- Show modal before user leaves the page -->
+        
+
+        <!-- Add your newsletter subscription form here -->
+
+        <section class="share">
+    <h3>Share</h3>
+    <a aria-label="Share on Twitter"
+        href="https://twitter.com/intent/tweet?text=&quot;Learn basics of Computer Netoworking with hugs4bugs.The best beginers computer networking solution. &quot;%20https://hugs4bugs.me/computer-networking-basics/%20via%20&#64;myselfshubhendu&hashtags=networking,system Admin"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
+        title="Share on Twitter">
+        <svg class="icon icon-twitter">
+            <use xlink:href="#icon-twitter"></use>
+        </svg>
+    </a>
+    <a aria-label="Share on WhatsApp"
+        href="https://twitter.com/intent/tweet?text=&quot;Learn basics of Computer Netoworking with hugs4bugs.The best beginers computer networking solution. &quot;%20https://hugs4bugs.me/computer-networking-basics/%20via%20&#64;myselfshubhendu&hashtags=networking,system Admin"
+        onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
+        title="Share on Twitter">
+        <svg class="icon icon-twitter">
+            <use xlink:href="#icon-twitter"></use>
+        </svg>
+    </a>
+    <a aria-label="Share on Facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/computer-networking-basics/"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
+        title="Share on Facebook">
+        <svg class="icon icon-facebook">
+            <use xlink:href="#icon-facebook"></use>
+        </svg>
+    </a>
+</section>
+        
+
+  <section class="author">
+    <div class="details">
+      
+        <img class="img-rounded" src="/assets/img/s.png" alt="Shubhendu">
+      
+      <p class="def">Author</p>
+      <h3 class="name">
+        <a href="/authors/shubhendu/">Shubhendu</a>
+      </h3>
+      <p class="desc">A guy who survived after watching Bear Grylls shows,Now He writes code for survial.</p>
+      <p>
+        
+          <a href="https://github.com/sivolko" title="Github">
+            <svg><use xlink:href="#icon-github"></use></svg>
+          </a>
+        
+        
+        
+          <a href="https://twitter.com/myselfshubhendu" title="Twitter">
+            <svg><use xlink:href="#icon-twitter"></use></svg>
+          </a>
+        
+        
+          <a href="https://medium.com/@shubhendushubham" title="Medium">
+            <svg><use xlink:href="#icon-medium"></use></svg>
+          </a>
+        
+        
+          <a href="https://www.instagram.com/shubhendushubham" title="Instagram">
+            <svg><use xlink:href="#icon-instagram"></use></svg>
+          </a>
+        
+        
+          <a href="https://www.linkedin.com/in/shubhendu-shubham" title="LinkedIn">
+            <svg><use xlink:href="#icon-linkedin"></use></svg>
+          </a>
+        
+      </p>
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+  
+  
+
+  <script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Shubhendu",
+      
+      "image": "/assets/img/s.png",
+      
+      "jobTitle": "",
+      "url": "https://hugs4bugs.me/authors/shubhendu/",
+      "sameAs": [
+        "https://github.com/sivolko","https://twitter.com/myselfshubhendu","https://medium.com/@shubhendushubham","https://www.instagram.com/shubhendushubham","https://www.linkedin.com/in/shubhendu-shubham"
+      ]
+  }
+  </script>
+
+
+        
+
+<section class="comments">
+    <h3>Comments</h3>
+    <div id="disqus_thread"></div>
+</section>
+<script type="text/javascript">
+    var disqus_loaded = false;
+
+    function load_disqus()
+    {
+        disqus_loaded = true;
+        var disqus_shortname = 'hugs4bugs';
+        var disqus_title = '';
+        var disqus_url = '/computer-networking-basics/';
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        var ldr = document.getElementById('disqus_loader');
+    };
+    window.onscroll = function(e) {
+        if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
+            //hit bottom of page
+            if (disqus_loaded==false)
+                load_disqus()
+        }
+    };
+</script>
+
+
+
+        <footer>
+  <p>
+    
+    <a href="https://github.com/sivolko" title="Github">
+      <svg>
+        <use xlink:href="#icon-github"></use>
+      </svg>
+    </a>
+    
+    
+    
+    <a href="https://twitter.com/myselfshubhendu" title="Twitter">
+      <svg>
+        <use xlink:href="#icon-twitter"></use>
+      </svg>
+    </a>
+    
+    
+    <a href="https://medium.com/@shubhendushubham" title="Medium">
+      <svg>
+        <use xlink:href="#icon-medium"></use>
+      </svg>
+    </a>
+    
+    
+    
+    <a href="https://www.linkedin.com/in/shubhendu-shubham" title="LinkedIn">
+      <svg>
+        <use xlink:href="#icon-linkedin"></use>
+      </svg>
+    </a>
+    
+  </p>
+
+  <ul>
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/">Home</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/about">About</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/contact">Contact</a>
+      </li>
+    
+  
+</ul>
+
+
+  <p>
+    <span>hugs4bugs</span> was made with <svg class="love">
+      <use xlink:href="#icon-heart"></use>
+    </svg> by <a href="https://hugs4bugs.me" target="_blank" class="creator">Shubhendu Shubham</a>
+  </p>
+</footer>
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "hugs4bugs",
+  "description": "hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.",
+  "url": "https://hugs4bugs.me/",
+  "logo": {
+      "@type": "ImageObject",
+      "url": "https://hugs4bugs.me/assets/img/icons/mediumtile.png",
+      "width": "600",
+      "height": "315"
+  },
+  "sameAs": [
+    "https://github.com/sivolko","https://twitter.com/myselfshubhendu","https://medium.com/@shubhendushubham","https://www.linkedin.com/in/shubhendu-shubham"
+  ]
+}
+</script>
+
+<!-- Include the script that allows Netlify CMS login -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<!-- Include the website scripts -->
+<script src="/assets/js/scripts.min.js"></script>
+
+<!-- Include Google Analytics script -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0FMLF6JCFT"></script>
+<script>
+  var host = window.location.hostname;
+  if (host != 'localhost') {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-0FMLF6JCFT');
+  }
+</script>
+  
+
+
+<!-- Include extra scripts -->
+
+
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "name": "Computer Networking 101",
+            "headline": "Fundamentals of Computer Networking.",
+            "description": "Learn basics of Computer Netoworking with hugs4bugs.The best beginers computer networking solution. ",
+            "image": "https://res.cloudinary.com/hugs4bugs/image/upload/v1620918379/Networking/photo_2021-04-04_23-19-26_ylhetf.jpg",
+            "url": "https://hugs4bugs.me/computer-networking-basics/",
+            "articleBody": "In the era of Cloud, having basic understanding of computer networking, how it’s work and use cases to build network is essential. Apart form it’s structure one should also keep in mind there are various ascepts of networking too like Network communication Protocols security of our Network …
+
+In this we are gonna cover all the basic fundamentals of Networking.
+
+Although all the networks are built on the same principles, but let’s consider them separetely for better understandings. so first thing first start with what comes in our mind when we think about “Networking”..
+
+What is a Network?
+
+A network is a collection of network-enabled devices like computer, switches, routers, printers &amp;amp; servers. Basic networks can be a part of our day-to-day life in homes, offices and public areas. Networks allow all types of network-enabled devices to communicate.
+
+Types of Network
+
+In layman’s term it can be categorized into followings :-
+
+  Personal area networks     (PAN)
+  Local area networks        (LAN)
+  Metropolitan area networks (MAN)
+  Wide area networks         (WAN)
+
+
+Personal Area Network
+
+PAN is a group of a computer network around an individual. eg:- Smartphone,smartwatch,tablet and laptop all are connect and share data without the need to connect to an access point or third-party network services. 
+PAN networks typically use Bluetooth to communicate because it provides a low-power,short-range data-sharing capability. The network standards associated with a PAN are Bluetooth and IEEE 802.15.
+
+Local Area Network
+
+LAN is a group of computers around a single location. This location might be an organization’s office, a school, a university, a hospital, an airport, and many others. A LAN is usually privately owned and needs authentication and authorization to access. Of the different classifications of a network, a LAN is by far the most commonly used.
+
+Metropolitan Area Network
+
+MAN is a group of computer networks which provides networking capabilities between two different locations within a city or metropolitan area to provide a single extensive network. Typically, a MAN requires a dedicated and source connection b/w each LAN joined to the MAN.
+
+
+
+Wide Area Network
+
+A wide area network (WAN) provides networking capabilities between two different geographical locations locally or worldwide. For example, a WAN is used to connect an organization’s head office with branch offices all over the country. A WAN links multiple LANs together to create one super network. As a MAN, you use a virtual private network (VPN) to manage the connection between different LANs.
+
+Differences between LAN and WAN networks
+
+
+
+
+
+  
+    LAN
+    WAN
+  
+
+
+  
+    A LAN is a privately operated network typically contained in a single building.
+    A WAN is used to connected geographically separate offices to each other. Multiple organizations might operate WANs.
+  
+  
+    A LAN operates at speeds of 10 Gbps or higher.
+    A WAN typically operates at speeds of less than 1 Gbps.
+  
+  
+    A LAN is less congested compared to other network types.
+    A WAN is more congested compared to other network types.
+  
+  
+    A LAN can be managed and administrated in-house.
+    A WAN typically requires the use of a third party to configure and set up, which increases cost.
+  
+
+
+
+Network Topologies
+
+A network topology describes the physical composition of a network. Let’s look at four topologies you can choose from when you design a LAN. They are:
+
+
+  Bus
+  Ring
+  Mesh
+  Star
+
+
+Bus Topology
+
+
+
+In a bus topology, each network device is connected to a single network cable. Even though it’s the simplest type of network to implement, there are limitations to it. The first limitation is the length of the main cable or bus. The longer it gets, the higher the chance of signal dropout. This limitation constrains the physical layout of the network. All devices have to be physically located near each other, for example, in the same room. Finally, if there’s a break in the bus cable, the whole network fails.
+
+Ring Topology
+
+
+
+In a ring topology, each network device is connected to its neighbor to form a ring. This form of network is more resilient than the bus topology. A break in the cable ring also affects the performance of the network.
+
+Mesh Topology
+
+
+The mesh topology is described as either a physical mesh or a logical mesh. In a physical mesh, each network device connects to every other network device in the network. It dramatically increases the resilience of a network but has the physical overhead of connecting all devices. Few networks today are built as a full mesh. Most networks use a partial mesh, where some machines interconnect, but others connect through one device.
+
+There’s a subtle difference between a physical mesh network and a logical one. The perception is that most modern networks are mesh based, since each device can see and communicate with any other device on the network. This description is of a logical mesh network and is primarily made possible through the use of network protocols.
+
+Star Topology
+
+
+
+The star topology is the most commonly used network topology. Each network device connects to a centralized hub or switch. Switches and hubs can be linked together to extend and build more extensive networks. This type of typology is, by far, the most robust and scalable.
+
+Ethernet
+
+Ethernet is a networking standard that’s synonymous with wire-based LAN networks and also used in MAN and WAN networks. Ethernet has replaced other wired LAN technologies like ARCNET and Token Ring and is an industry standard.
+
+While Ethernet is associated with wired networks, one should keep in mind that it’s not limited to wire, since it’s used over fiber-optic links as well.
+
+The Ethernet standard defines a framework for data transmission, error handling, and performance thresholds. It describes the rules for configuring an Ethernet network and how each element in the network interacts with each other.
+
+
+  Ethernet is used in the OSI model at the data link and physical layers. It formed the basis for the 
+IEEE 802.3 Standard. This standard helped to unify network and hardware development.
+
+
+In early days ethernet supported a data transmission rate of only 2.94 Mbps. In recent years, several iterations were released to keep up with the demands for increased speed. Today, rates extend up to 400 Gbps.
+
+Types of Ethernet
+
+
+  Fast Ethernet
+  Gigabit Ethernet
+  10 Gigabit Ethernet
+  Terabit Ethernet
+
+
+Fast Ethernet
+Fast Ethernet (IEEE 802.3u) was developed to support data transmission speeds of up to 100 Mbps. Faster Ethernet is also referred to as the 100BASE-TX standard.
+
+Gigabit Ethernet
+
+Gigabit Ethernet (IEEE 802.3ab) was developed to support faster communication networks that can support services like streaming multimedia and Voice over IP (VoIP). The 1000BASE-T standard runs 10 times faster than the 100BASE-TX standard. Gigabit Ethernet is now included in the 802.3 standards and recommended for enterprise networks. The new standard is backward compatible with the 100BASE-T and the older 10BASE-T standards.
+
+10 Gigabit Ethernet
+
+The 10 Gigabit Ethernet (IEEE 802.3ae) standard has a nominal data transfer speed of 10 Gbps, which is 10 times faster than its predecessor. This speed improvement is made possible only by using fiber optics. The standard now requires that 10 Gigabit Ethernet networks use area-based routing rather than broadcasting data to all nodes. In that way, network noise and traffic are reduced.
+
+Terabit Ethernet
+
+Terabit Ethernet offers data transfer speeds of 200 Gbps and 400 Gbps. It’s expected that Terabit Ethernet will offer speeds of 800 Gbps and 1.6 Tbps in the future.
+
+What is Network standards?
+
+While network protocols provide a unified method for communication, network standards govern the hardware and software that uses them.
+
+Today, there are hundreds of thousands of hardware suppliers, yet all of their technology seamlessly integrates with your computer or network with minimal effort. Network standards provide a framework that enables the interoperability between devices.
+
+Network standards improve the interoperability of different network-enabled devices and provide backward compatibility between product revisions and differing vendors. Official bodies that publish regulated standards are the International Telecommunication Union (ITU), the American National Standards Institute (ANSI), and the Institute of Electrical and Electronics Engineers (IEEE).
+
+The 802 family of standards
+
+The 802 specification covers all the physical networking standards for both Ethernet and wireless. The following table shows some of the more widely used standards.
+
+
+
+
+
+  
+    802
+    Overview
+    Basics of physical and logical networking concepts
+  
+
+
+  
+    802.1
+    Bridging
+    LAN/MAN bridging and management of the lower sublayers of OSI Layer 2
+  
+  
+    802.2
+    Logical Link
+    Commonly referred to as the logical link control (LLC) specification
+  
+  
+    802.3
+    Ethernet
+    Provides asynchronous networking by using carrier sense, multiple accesses with collision detect (CSMA/CD) over coaxial cable, twisted-pair copper cable, and fiber media
+  
+  
+    802.5
+    Token ring
+    The token-passing standard for shielded copper cables and twisted-pair cable
+  
+  
+    802.11
+    Wi-Fi
+    Wireless local area network (WLAN) media access control (MAC) and physical layer (PHY) specification
+  
+  
+    802.11a
+    Wi-Fi
+    Specifies a PHY that operates in 5 GHz
+  
+  
+    802.11b
+    Wi-Fi
+    Enhances 802.11, adds higher data rate modes
+  
+  
+    802.11d
+    Wi-Fi
+    Enhances 802.11a/b, allows for global roaming
+  
+  
+    802.11e
+    Wi-Fi
+    Enhances 802.11, adds Quality of Service (QoS) features
+  
+  
+    802.11g
+    Wi-Fi
+    Extends WLAN maximum data rate
+  
+  
+    802.11 h
+    Wi-Fi
+    Enhances 802.11a, now resolves interference issues
+  
+  
+    802.11i
+    Wi-Fi
+    Enhances 802.11, adds security for WLAN applications
+  
+  
+    802.11j
+    Wi-Fi
+    Enhances 802.11a for Japanese regulatory extensions
+  
+  
+    802.11n
+    Wi-Fi
+    Higher-speed standards
+  
+  
+    802.12
+    Demand Priority
+    Ethernet data rate increased to 100 Mbps
+  
+  
+    802.15
+    Wireless personal area networks
+    Support for wireless personal area networks (WPANs)
+  
+  
+    802.15.1
+    Bluetooth
+    Short-range (10 m) wireless technology
+  
+  
+    802.15.3a
+    UWB
+    Short-range, high-bandwidth ultra-wideband (UWB) link
+  
+  
+    802.15.4
+    ZigBee
+    Short-range wireless sensor networks
+  
+  
+    802.16
+    Wireless metropolitan area networks
+    Covers mobile and wireless broadband access in wireless metropolitan area networks (WMANs)
+  
+
+
+
+Network Infrastructure
+
+There are several network standard-compliant devices that make up the structure of your networks. Depending on the network’s size, you might use several of these devices to build the backbone of your network. These devices are:
+
+
+  Repeaters
+  Hubs
+  Bridges
+  Switches
+  Routers
+
+
+What is a media access control address?
+
+The media access control (MAC) address is a unique identifier assigned to every network-enabled device at the time of manufacture. It’s sometimes referred to as the burned-in address, the Ethernet hardware address, or a physical address.
+
+The MAC address has a standard composition of six hexadecimal numbers separated by a colon or dash. The first three numbers of the MAC address define the manufacturer’s organizationally unique identifier (OUI) and the remaining three numbers uniquely identify the device. For example, if the MAC address is AA-6A-BA-2B-68-C1 then the OUI is AA-6A-BA and 2B-68-C1 is the device ID.
+
+
+
+Repeater
+
+A repeater is a two-port device that repeats network signals. Repeaters are used when network devices are some distance from each other. The repeater doesn’t modify or interpret data packets before it resends them, and it doesn’t amplify the signal. Instead, it regenerates the data packet at the original strength, bit by bit.
+
+Bridge
+
+A bridge divides a network into network segments and can filter and forward data packets between these segments. Bridges use the network device’s MAC address to decide the data package’s destination. Typically, a bridge is used to improve network performance by reducing unnecessary network traffic on network segments.
+
+Hub
+
+A hub acts as a multiport repeater on a network. Hubs are used to connect more than one device and structure the layout of a network. For example, you can cascade hubs to create network branches or as an endpoint to create a star layout with multiple user type devices. Hubs contain multiple ports that act as an input/output Ethernet connection between the hub and a network device. A hub can operate at only one speed, which is the speed of the slowest network device on the network. It doesn’t interpret or filter data packets and sends copies of each data packet to all attached devices.
+
+Types of hubs
+
+
+  
+    Fast Ethernet : This hub is used for 100-Mbps networks and comes as Class I and Class II type hubs. The primary difference between the two is the amount of delay in data transmission. A Class I hub introduces a signal delay of up to 140-bit times. A Class II hub has a delay of up to 96-bit times. The delay allows for the transcoding of data between different base types. Only two Class II hubs can be used in a hub-based network. Class II hubs increase the likelihood of packet collisions because of their higher speeds.
+  
+  
+    Dual Speed : With a traditional hub network, the speed of the network was governed by the slowest network device attached. For example, if you had 10-Mbps and 100-Mbps devices connected to a network, the speed of the whole network was only 10 Mbps. Dual-speed hubs solve the problem by acting as a bridge between the two different-speed devices.
+  
+
+
+Hubs are used for small ad-hoc networks of a few devices, but they’re rarely used at an enterprise level.
+
+Switch
+
+A switch combines the functionality of a bridge and a hub. It segments networks and can interpret and filter packet data to send it directly to an attached network device. Switches use the network device’s MAC address to decide the data package’s destination. A switch operates in full-duplex mode, which means it can send and receive data to and from network devices at the same time.
+
+Features
+
+Modern Ethernet-based switches offer more functionality and capabilities than an Ethernet hub.
+
+
+  An Ethernet switch can adjust the connection speed of an inbound packet to match the connection speed of the destination network.
+  Many switches now support Power over Ethernet (PoE). PoE enables network devices like Voice over IP (VoIP) phones to get power from the switch, without needing a separate power supply.
+  Other modules can be attached to the switch to enable functions like port mirroring, packet sniffers, and intrusion detection systems.
+
+
+Types of Ethernet switch
+
+The two distinct types of switch are unmanaged and managed.
+
+Unmanaged
+This type of switch has no configuration capability and is designed for small office or home office environments. Packet switching occurs automatically.
+
+Managed
+This type of switch offers the means to adjust the configuration, behavior, and operation of the switch. Access to the switch configuration is either through a command-line interface (CLI) that uses Telnet or Secure Shell (SSH), Remote Console, or via a web interface.
+
+Here’s a list of the more commonly available options to configure on a managed switch.
+
+
+  Quality of Service :-  Manage LAN traffic so that critical systems are given higher priority. An example is voice-data packets, which need to be delivered quickly.
+  Virtual LANs :- Create logical groups of devices in their own virtual LAN. Traffic in one virtual LAN doesn’t cross over into another virtual LAN. This logical group of devices can improve the security and performance of the network.
+  Spanning Tree Protocol (STP):- Build resilience into your network by defining alternative network routes in case a cable or device fails.
+  Port mirroring: Use with a network analyzer to diagnose network issues and problems. During setup, the switch exports a copy of the network traffic to a single port.
+  Bandwidth rate-limiting: Allow fine control of the bandwidth used by specific ports, such as high bandwidth for ports handling database or VoIP and lower bandwidths for email.
+  MAC address filtering: Provide the ability to control which network devices can be used or have access through the switch.
+  SNMP client : Set up and configure SNMP with your network monitoring tools.
+
+
+There are two subtypes of managed switch:
+
+  Smart: A smart switch is a halfway point between an unmanaged and a managed switch. They tend to offer only a web-based interface to manage the configuration. The available options are virtual LANs, port mirroring, and bandwidth rate limiting.
+  Enterprise: The fully managed switch service previously described.
+
+
+Router
+
+Routers link networks with different ranged addresses together. They can interpret and filter data packets, and then forward them to the correct network. Routers use the network device’s IP address information to route the data package to its destination. Most routers can now detect issues with data traffic that flows to any attached network and route or reroute it around the issue. A router is also called a gateway. When you configure network devices, you’ll usually configure it with a default gateway IP address.
+
+Interconnectivity
+
+Routers in an interconnected network maintain a routing table that lists the preferred route between each of the networks. The router acts as the start of authority for all the network devices on its network. Routing information is shared between routers by using a routing protocol like the Border Gateway Protocol (BGP).
+
+Types
+
+There are several distinct classifications or types of routers available to service different network needs.
+
+
+  
+    Access routers: Typically used in a home or small satellite offices, these routers tend to be low-cost devices with a simple routing need.
+  
+  
+    Distribution routers: These routers compile traffic routing data from multiple routers. Distribution routers come with more significant memory and processing power. This type of router is designed to hold vast quantities of routing information. It’s often used to manage and control the quality of service across a WAN.
+  
+  
+    Edge routers: An edge router operates at the boundary between your network and other networks, for example, your local network and the internet. They act as gateways to filter traffic and route it internally or forward it based on the packet header. An edge router often comes with access control or firewalls to improve the security. It might also handle DHCP and DNS services.
+  
+  
+    Core routers: Sometimes called enterprise routers, these routers are designed for higher bandwidths. They’re used to connect different buildings or geographic locations together. Core routers tend to have fewer features than edge routers because their primary focus is on minimizing packet loss and preventing congestion. They tend to do packet forwarding to edge routers.
+  
+
+
+Wireless router
+
+This network device provides all the routing capabilities of a regular access router, but it also offers wireless access point functions. A wireless router or wireless access point is designed to provide a non-wired connection to your network. Any provision to access the internet or other networks is handled by an edge router associated with your network. A wireless router lets you build a different type of network called a wireless local area network.
+
+A wireless router shouldn’t be confused with a wireless modem. A wireless modem is what you receive from your ISP for your home or office and is the device that converts the signal from the ISP into one that’s usable on a computer network. Wireless modems are typically combined with routers to allow you to create a private home or office network.
+
+Network protocols
+
+A network protocol is a set of conditions and rules that specify how network devices communicate on a given network. It provides a common framework for establishing and maintaining a communications channel, and how to handle errors or faults should they occur. Network protocols allow communication between different network-enabled devices, for example, laptops, tablets, smartphones, desktops, servers, and other network-enabled devices.
+
+
+
+The network protocol is an essential building block in the design of an organization’s network architecture. There are many network protocols available. Each network protocol has many properties that govern its use and implementation.
+
+What is a network address?
+
+A network address is a unique identifier that identifies a network-enabled device. A network-enabled device might have more than one address type. Although there are more address types, for this discussion, we’ll focus on only two of these address types.
+
+The first type is a media access control (MAC) address that identifies the network interface on the hardware level. The second type is an Internet Protocol (IP) address that identifies the network interface on a software level.
+
+What is a data packet?
+
+A data packet is a unit that’s used to describe the message two devices on a network send each other. A data packet consists of raw data, headers, and potentially also a trailer. The header contains several information items. For example, it includes the sender and destination device addresses, the size of the packet, the protocol used, and the packet number. The trailer in a data packet deals with error checking.
+
+The concept is similar to sending someone a letter in the mail. But instead of sending several pages in one envelope, each page is sent in a separate envelope. Enough information is sent in each envelope to allow the recipient to piece together the complete message after they have all the pages.
+
+What is a datagram?
+
+A datagram is considered the same as a data packet. Datagrams commonly refer to data packets of an unreliable service, where delivery can’t be guaranteed.
+
+What is routing?
+
+Routing, in the context of networks, refers to the mechanism used to make sure that data packets follow the correct delivery path between the sending and receiving devices on different networks.
+
+For example, think about the PC you’re using and the server that’s serving the page you’re currently reading. Multiple networks might connect your PC and the server, and various paths might be available between these two devices.
+
+Protocol categories
+
+Several types of applications and hardware devices depend on specific network protocols on a typical network. For example, browsing the internet by using a web browser relies on a different protocol than sending or receiving an email. Converting the data that you see in the browser and sending this information over the network requires another protocol.
+
+Protocols fall into three categories:
+
+
+  Network communication protocols
+  Network security protocols
+  Network management protocols
+
+
+Network communication protocols
+
+Communication protocols focus on establishing and maintaining a connection between devices. As you work with different devices and network services, you’ll make use of various network communication protocols.
+
+First, we need to define three foundational protocols of all internet-based networks. These three protocols are Transmission Control Protocol (TCP), Internet Protocol (IP), and User Datagram Protocol (UDP). These protocols are concerned with the logical transmission of data over the network.
+
+
+  
+    Transmission Control Protocol :TCP chunks up data into data packets that can be sent securely and quickly while minimizing the chance of data loss. It provides a stable and reliable mechanism for the delivery of data packets across an IP-based network. Even though TCP is an effective connection-oriented protocol, it has overhead.
+  
+  
+    Internet Protocol : IP is responsible for the addressing of a data packet. IP encapsulates the data packet to be delivered and adds an address header. The header contains information on the sender and recipient IP addresses. This protocol isn’t concerned about the order in which the packets are sent or received. It also doesn’t guarantee that a packet will be delivered, only the address.
+  
+  
+    User Datagram Protocol : UDP is a connectionless protocol that offers a low-latency and loss-tolerant implementation. UDP is used with processes that don’t need to verify that the recipient device received a datagram.
+  
+  
+    Hypertext Transfer Protocol (HTTP) : The HTTP protocol uses TCP/IP to deliver web page content from a server to your browser. HTTP can also handle the download and upload of files from remote servers.
+  
+  
+    File Transfer Protocol (FTP) : FTP is used to transfer files between different computers on a network. Typically, FTP is used to upload files to a server from a remote location. While you can use FTP to download files, web-based downloads are typically handled through HTTP.
+  
+  
+    Post Office Protocol 3 (POP3) : POP3 is one of three email protocols. It’s most commonly used by an email client to allow you to receive emails. This protocol uses TCP for the management and delivery of an email.
+  
+  
+    Simple Mail Transfer Protocol (SMTP) : SMTP is another one of the three email protocols. It’s most commonly used to send emails from an email client via an email server. This protocol uses the TCP for management and transmission of the email.
+  
+  
+    Interactive Mail Access Protocol (IMAP) : IMAP is the more powerful of the three email protocols. With IMAP and an email client, you can manage a single mailbox on an email server in your organization.
+  
+
+
+Network security protocols
+Network security protocols are designed to maintain the security and network of data across your network. These protocols encrypt in-transmission messages between users, services, and applications.
+
+Network security protocols use encryption and cryptographic principles to secure messages.
+
+
+  Secure Socket Layer (SSL) : SSL is a standard encryption and security protocol. It provides a secure and encrypted connection between your computer and the target server or device that you accessed over the internet.
+  
+    Transport Layer Security (TLS) : TLS is the successor to SSL and provides a stronger and more robust security encryption protocol. Based on the Internet Engineering Task Force (IETF) standard, it’s designed to stop message forgery and tampering and eavesdropping. It’s typically used to protect web browser communications, email, VoIP, and instant messaging. While TLS is now used, the replacement security protocol is often still called SSL.
+  
+  
+    Hypertext Transfer Protocol Secure (HTTPS) : HTTPS provides a more secure version of the standard HTTP protocol by using the TLS or SSL encryption standard. This combination of protocols ensures that all data transmitted between the server and the web browser is encrypted and secure from eavesdropping or data packet sniffing. The same principle is applied to the POP, SMTP, and IMAP protocols listed previously to create secure versions known as POPS, SMTPS, and IMAPS.
+  
+  
+    Secure Shell (SSH) : SSH is a cryptographic network security protocol that provides a secure data connection across a network. SSH is designed to support command-line execution of instructions, which includes remote authentication to servers. FTP uses many of the SSH functions to provide a secure file transfer mechanism.
+  
+  Kerberos : This validation protocol provides a robust authentication for client-server-based applications through secret-key cryptography. Kerberos assumes that all endpoints in the network are insecure. It enforces strong encryption for all communications and data at all times.
+
+
+Network management protocols
+
+Network administrators need to monitor their networks and any devices attached to them. Each device in your network exposes some indicators about the state and health of the device. These indicators are requested by the network administrator tool and can be used for monitoring and reporting.
+
+Two network management protocols are available:
+
+
+  
+    Simple Network Management Protocol (SNMP) : SNMP is an internet protocol that allows for the collection of data from devices on your network and the management of those devices. The device has to support SNMP to gather information. Devices that typically support SNMP include switches, routers, servers, laptops, desktops, and printers.
+  
+  
+    Internet Control Message Protocol (ICMP) : ICMP is one of the protocols included within the Internet Protocol suite (IPS). It allows network-connected devices to send warning and error messages, along with operation information about the success or failure of a connection request, or if a service is unavailable. Unlike other network transport protocols like UDP and TCP, ICMP isn’t used to send or receive data from devices on the network.
+  
+
+
+Ports
+
+A port is a logical construct that allows the routing of incoming messages to specific processes. There’s a particular port for every type of IPS. A port is an unsigned 16-bit number in the range 0 to 65535 and is also known as a port number. Ports are assigned by the sending TCP or UDP layer based on the communications protocol used.
+
+There are specific port numbers reserved for every service. The first 1,024 ports, called the well-known port numbers, are reserved for the commonly used services. The high-numbered ports, called the ephemeral ports, are unreserved and used by dedicated applications.
+
+Every port links to a specific service or communications protocol. It means that the target network device, say a server, can receive multiple requests on each port and service each of them without conflict.
+
+Well-known port numbers
+
+The Internet Assigned Numbers Authority (IANA) manages the allocation of port numbers, the regional assignment of IP addresses, and Domain Name System (DNS) root zones. IANA also manages a central repository for protocol names and the registry used in internet protocols.
+
+
+
+
+
+  
+    Port Number
+    Assignment
+  
+
+
+  
+    20
+    File Transfer Protocol for data transfer
+  
+  
+    21
+    File Transfer Protocol for command control
+  
+  
+    22
+    Secure Shell for secure authentication
+  
+  
+    23
+    Telnet remote authentication service for unencrypted text messages
+  
+  
+    25
+    Simple Mail Transfer Protocol for email routing
+  
+  
+    53
+    Domain Name System service
+  
+  
+    80
+    Hypertext Transfer Protocol for use in the web
+  
+  
+    110
+    Post Office Protocol
+  
+  
+    119
+    Network News Transfer Protocol (NNTP)
+  
+  
+    123
+    Network Time Protocol (NTP)
+  
+  
+    143
+    Internet Message Access Protocol for management of digital mail
+  
+  
+    161
+    Simple Network Management Protocol
+  
+  
+    194
+    Internet Relay Chat (IRC)
+  
+  
+    443
+    HTTP Secure HTTP over TLS/SSL
+  
+
+
+
+Internet Protocol suite
+
+The Internet Protocol suite is a collection of communication protocols, also called a protocol stack. It’s also sometimes referred to as the TCP/IP protocol suite since both TCP and IP are primary protocols used in the suite.
+
+The IPS is an abstract, layered networking reference model. The IPS describes the different layered protocols used to send and receive data on the internet and similar networks.
+
+The IPS model is one of several similar networking models that varies between three and seven layers. The best-known model is the Open Systems Interconnection (OSI) networking reference model. We’re not going to cover the OSI model here. A documentation link is available in the “Learn more” section at the end of this module.
+
+
+
+
+  
+    Application layer : The top layer of this stack is concerned with application or process communication. The application layer is responsible for determining which communication protocols to use based on what type of message is transmitted. For example, the layer assigns the correct email protocols such as POP, SMTP, or IMAP if the message is email content.
+  
+  
+    Transport layer : This layer is responsible for host-to-host communication on the network. The protocols associated with this layer are TCP and UDP. TCP is responsible for flow control. UDP is responsible for providing a datagram service.
+  
+  
+    Internet layer : This layer is responsible for exchanging datagrams. A datagram contains the data from the transport layer and adds in the origin and recipient IP addresses. The protocols associated with this layer are IP, ICMP, and the Internet Protocol Security (IPsec) suite.
+  
+  
+    Network access layer : The bottom layer of this stack is responsible for defining how the data is sent across the network. The protocols associated with this layer are ARP, MAC, Ethernet, DSL, and ISDN.
+  
+
+
+What is the Address Resolution Protocol?
+
+The Address Resolution Protocol (ARP) is a communications protocol within the Internet Protocol suite. It’s a request-response protocol used to resolve the media access control (MAC) address for a given IP address. ARP supports many data link layer technologies, such as Internet Protocol version 4 (IPv4), DECnet, and PUP. When an Internet Protocol version 6 (IPv6) address is resolved, the Neighbor Discovery Protocol (NDP) is used instead of ARP. Without ARP, there would be no means to resolve an IP address to a physical device address.
+
+There’s also the Reverse Address Resolution Protocol (RARP), which retrieves an IP address based on the given MAC address.
+
+What is TCP/IP?
+
+The Transmission Control Protocol/Internet Protocol is a collection of different communication protocols that support and define how network-enabled devices interconnect with each other over an IP-based network. At its heart are two key protocols: TCP and IP. TCP/IP makes the internet possible, as well as private and public networks like intranets and extranets.
+
+TCP/IP defines the way data is shared between network-enabled devices by defining the end-to-end communication process. It manages how the message is broken down into packets of data, which are sometimes known as datagrams. TCP/IP also determines how the packet is addressed and transmitted, routed, and received. TCP/IP can determine the most efficient route across a network.
+
+The TCP/IP model is designed to be stateless. This design means the network stack treats each request as new because it isn’t related to the previous request. One part of the TCP/IP model isn’t stateless. The transport layer operates in a stateful mode because it maintains a connection until all the packets in the message are received.
+
+TCP/IP is an open standard. It’s governed, but it’s not owned by any one organization, so it works with all operating systems, networks, and hardware.
+
+TCP/IP model layers
+
+The TCP/IP model is made up of four distinct layers. Each layer uses a different type of protocol. Notice how the TCP/IP model is similar to the Internet Protocol suite discussed earlier.
+
+
+  
+    Application layer : The application layer is responsible for determining which communication protocols are used. This layer includes HyperText Transfer Protocol (HTTP), DNS, File Transfer Protocol (FTP), Internet Message Access Protocol (IMAP), Lightweight Directory Access Protocol (LDAP), Post Office Protocol (POP), Simple Mail Transfer Protocol (SMTP), Simple Network Management Protocol (SNMP), Secure Shell (SSH), Telnet, and TLS/SSL.
+  
+  Transport layer : This layer splits the application data into manageable ordered chunks by using the right port for the application protocol that’s used. The protocols associated with this layer are TCP and the User Datagram Protocol (UDP).
+  Internet layer : Also known as the network layer, this layer ensures the data packet gets to its destination. The protocols associated with this layer are IP, IPv4, IPv6, Internet Control Message Protocol (ICMP), and Internet Protocol Security (IPsec).
+  Network access layer : This layer is responsible for defining how the data is sent across the network. The protocols associated with this layer are ARP, MAC, Ethernet, digital subscriber line (DSL), and Integrated Services Digital Network (ISDN).
+
+
+Internet Protocol standards
+
+The Internet Protocol only provides a logical addressing system that’s used to route and forward messages to their destinations.
+
+Today, there are two Internet Protocol versions that work within networks.
+
+IPv4
+
+Internet Protocol version 4 was released in 1983 and is the standard for all packet-switch-based networks in use today. IPv4 uses a 32-bit address space that gives an upper limit of 4,294,967,296 (4.3 billion) unique logical IP addresses. A large number of these available IP addresses are reserved for a specific purpose, for example, private networks, local hosts, internet relays, documentation, and subnets.
+
+Structure of an IPv4 address
+
+The structure of an IPv4 address is four decimal numbers in the range of 0 to 255, each separated with a dot. It’s also known as the dotted-decimal format. An example of an IP address is 192.168.0.1.
+
+Parts of an IPv4 address
+
+There are two parts to an IP address, the network and the host. Let’s use the address 192.168.0.1 as an example.
+
+The network part of an IP address covers the first set of decimal numbers. In the example, that’s 192.168.0. This number is unique to the network and specifies the class of the network. There are a number of network classes available, described next.
+
+The host part of the IP address covers the next set of decimal numbers. In the example, that’s 1. This number represents the device and has to be unique within the network to avoid address conflicts. Each device on a network segment must have a unique address.
+
+IPv4 address classes
+
+The Internet Protocol’s local address space is split into five logical classes or ranges of IP addresses, each represented by a letter of the alphabet.
+
+
+
+For classes A, B, and C, the start and end IP addresses are reserved and shouldn’t be used. Class D is reserved for multicast traffic only. Class E is reserved and can’t be used on public networks, like the internet.
+
+In the previous table, the last column is marked as a subnet mask. The subnet mask uses the same format of the IP address. But its purpose is to identify valid IP addresses in an IP range.
+
+For example, assume you have an IP address range that starts at 192.168.0.1, and you have a subnet of 255.255.255.0.You’ll apply the subnet mask in the following way. For each address segment value specified as 255 in the mask, the corresponding address segment is static. When you want to pick an IP address, you have to pick an address that matches 192.168.0. Where the segment has a value of 0, you’re allowed to use any value between 0 to 255. A subnet mask of 255.255.255.0 gives an IP address range of 192.168.0.0 to 192.168.0.255, which are valid values to select.
+
+What is a subnet?
+
+A subnet defines one or more logical networks within the class A, B, or C network. Without subnets, you’re restricted to a single network in each of the class A, B, or C networks.
+
+An IP address, also known as a network address or routing prefix, represents the address of the device or computer to send the packet of data. A subnet, or host address, represents which network or subnetwork to use. A subnet is a 32-bit number framed by using the dotted-decimal format. For example, 255.255.255.0 is a standard subnet mask.
+
+In an IPv4 network, for a packet of data to be routed to the correct network and the right network device, a routing prefix is needed. A routing prefix is created by taking the subnet mask and applying a bitwise AND to the IP address.
+
+A more common way to define the subnet and the routing prefix is to use the Classless Interdomain Routing (CIDR) notation. CIDR applies to the IP address as the number of bits you want to allocate to your subnet. Using CIDR notation, at the end of the IP address, add a “/” and then the number of bits. For example, 198.51.100.0/24 is the same as using the dotted-decimal format subnet mask 255.255.255.0. It offers an address range of 198.51.100.0 to 198.51.100.255.
+
+
+
+Subnets allow multiple subnetworks to exist within one network. They can be used to enhance routing performance. Subnets can be arranged hierarchically to create routing trees.
+
+Special-use addresses :
+
+Each of the classes has restrictions on the ranges of IP addresses that can be used. This table shows the more common ones.
+
+
+
+IPv4 address space exhaustion
+
+Soon after the introduction of IPv4, it became apparent that the pool of available IP addresses was being consumed faster than was expected. For example, think about the number of mobile devices that have been released in the last couple of years.
+
+Several solutions were introduced to mitigate the threat of running out of IP addresses. These ideas included network address translation (NAT), classful networks, and CIDR. In the 1990s, IPv6 was created to increase the number of IP address spaces to 128 bits. IPv6 was introduced commercially in 2006.
+
+Private IP addressing
+
+In classes A, B, and C, a range of IP addresses are set aside for private networks. These IP ranges aren’t accessible via the internet. All public routers ignore any packets sent to them that contain such an address.
+
+
+
+Network devices on a private network can’t communicate with devices on a public network. Communication can happen only through network address translation at a routing gateway.
+
+The only way to connect two private networks in different geographical areas is to use a virtual private network (VPN). A VPN encapsulates each private network packet. The VPN can further encrypt the packet before it sends it across a public network from one private network to another private network.
+
+IPv6
+
+Internet Protocol version 6 is the latest version of the IP standard. IPv6 was designed and developed by the Internet Engineering Task Force (IETF) to address the problem of IPv4 logical address exhaustion and to eventually replace the IPv4 standard. It was adopted as a recognized internet standard in July 2017.
+
+IPv6 uses a 128-bit address space, which allows 2128 addresses. This amount is approximately 7.9x1028 times more than IPv4.
+
+IPv4 and IPv6 weren’t designed to be interoperable, which has slowed down the transition to the newer IPv6 standard.
+
+IPv6 also introduced several benefits:
+
+
+  Simplified network configuration: IPv6 has address autoconfiguration built into the protocol. For example, a router broadcasts the network prefix and the network device can append its MAC address to self-assign a unique IPv6 address.
+  Security: IPsec is built into IPv6.
+  New service support: IPv6 eliminates the need for NAT, which makes it easier to create peer-to-peer networks.
+  Multicast and anycast functionality: Multicast allows for the broadcast of messages in a one-to-many fashion. Anycast allows a single destination to have multiple routing paths to two or more endpoint destinations.
+
+
+Structure of an IPv6 address
+
+The structure of IPv6 is different from IPv4. Instead of four decimal numbers, it uses eight groups of four hexadecimal numbers called a hexadectet. Each hexadectet is separated with a colon. A full IPv6 address looks like this: 2001:0db8:0000:0000:0000:8a2e:0370:7334.
+
+The new standard allows for the address to be simplified by using the following rules:
+
+
+  One or more leading zeros from any group can be removed, so 0042 becomes 42.
+  Consecutive sections of zeros are replaced with a double colon (::), which can be used only once in an address.
+
+
+The shortened version of the IPv6 example is 2001:db8::8a2e:370:7334. Notice that all the instances of 0000 are removed.
+
+DNS
+
+The Domain Name System is a decentralized lookup service that translates a human-readable domain name or URL into the IP address of the server that’s hosting the site or service. The worldwide distributed nature of DNS is a vital component of the internet. DNS has been in use since its inception in 1985.
+
+A DNS server serves two purposes. The first is to maintain a cache of recently searched-for domain names, which improves performance and reduces network traffic. The second is to act as the start of authority (SOA) for all the domains under it. When a DNS server is looking to resolve a domain name that isn’t held in its cache, it starts with the highest level, the dot, and then works down the subdomains until it finds the DNS server acting as the SOA. Once found, it stores the IP address of the domain in its local cache.
+
+The DNS also holds specific records that relate to the domain. These records include the SOA, IP addressing (A and AAAA), SMTP email (MX), name servers (NS), and domain name alias (CNAME) records.
+
+",
+            "wordcount": "7415",
+            "inLanguage": "en",
+            "dateCreated": "2021-04-05/",
+            "datePublished": "2021-04-05/",
+            "dateModified": "2021-04-05/",
+            "author": {
+                "@type": "Person",
+                "name": "Shubhendu",
+                
+                "image": "/assets/img/s.png",
+                
+                "jobTitle": "",
+                "url": "https://hugs4bugs.me/authors/shubhendu/",
+                "sameAs": [
+                    "https://github.com/sivolko","https://twitter.com/myselfshubhendu","https://medium.com/@shubhendushubham","https://www.instagram.com/shubhendushubham","https://www.linkedin.com/in/shubhendu-shubham"
+                ]
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "hugs4bugs",
+                "url": "https://hugs4bugs.me/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://hugs4bugs.me/assets/img/s.png",
+                    "width": "600",
+                    "height": "315"
+                }
+            },
+            "mainEntityOfPage": "True",
+            "genre": "networking",
+            "articleSection": "networking",
+            "keywords": ["networking","system Admin"]
+        }
+        </script>
+    </body>
+</html>
