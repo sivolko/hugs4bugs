@@ -1,17 +1,20 @@
 ---
-layout: post
 title: What is chatGpt? How to use it?
+date: 2022-12-25 00:00:00 Z
+categories:
+- security
+tags:
+- cloud
+- security
+- hacking
+- offensive security
+- troubleshooter Club
+layout: post
 subtitle: A Friend who never lies!
-description: What is the difference between Kali Linux and Parrot os. Which is good for beginers and pro in cyber security and why do we need both?
+description: What is the difference between Kali Linux and Parrot os. Which is good
+  for beginers and pro in cyber security and why do we need both?
 image: https://images.pexels.com/photos/7108/notebook-computer-chill-relax.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 optimized_image: https://images.pexels.com/photos/7108/notebook-computer-chill-relax.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
-category: security
-tags:
-  - cloud
-  - security
-  - hacking
-  - offensive security
-  - troubleshooter Club
 author: Shubhendu Shubham
 comment: false
 ---

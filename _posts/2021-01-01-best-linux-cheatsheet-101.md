@@ -1,15 +1,16 @@
 ---
-date: 2021-01-01 22:55:45
-layout: post
 title: Linux Cheat Sheet 101
+date: 2021-01-01 22:55:45 Z
+categories:
+- linux
+tags:
+- linux
+- system Admin
+layout: post
 subtitle: Linux,where a true freedom is !
 description: Best Linux cheat sheet for begineer to advance level.
 image: https://www.iihglobal.com/wp-content/uploads/2019/02/dcsad.gif
 optimized_image: https://www.iihglobal.com/wp-content/uploads/2019/02/dcsad.gif
-category: linux
-tags:
-  - linux
-  - system Admin
 author: Shubhendu Shubham
 ---
 

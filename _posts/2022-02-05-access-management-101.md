@@ -1,17 +1,17 @@
 ---
-date: 2022-02-5 23:04:08
-layout: post
 title: Access Management 101.
+date: 2022-02-05 23:04:08 Z
+categories:
+- security
+tags:
+- Access Management
+- Vulnerability
+- Cyber Security
+layout: post
 subtitle: Know it before you need it.
-description: >-
-  Beasic understandings of Access Management and AAA concept.
+description: Beasic understandings of Access Management and AAA concept.
 image: https://d3nn873nee648n.cloudfront.net/900x600/16347/120-SM692126.jpg
 optimized_image: https://d3nn873nee648n.cloudfront.net/900x600/16347/120-SM692126.jpg
-category: security
-tags:
-  - Access Management
-  - Vulnerability
-  - Cyber Security
 author: Shubhendu Shubham
 ---
 

@@ -1,17 +1,20 @@
 ---
-layout: post
 title: Kali Linux vs Parrot OS
+date: 2022-12-10 00:00:00 Z
+categories:
+- security
+tags:
+- cloud
+- security
+- hacking
+- offensive security
+- troubleshooter Club
+layout: post
 subtitle: still confused for Penetration Testing?
-description: What is the difference between Kali Linux and Parrot os. Which is good for beginers and pro in cyber security and why do we need both?
+description: What is the difference between Kali Linux and Parrot os. Which is good
+  for beginers and pro in cyber security and why do we need both?
 image: https://cdn.pixabay.com/photo/2018/04/22/22/57/hacker-3342696_960_720.jpg
 optimized_image: https://cdn.pixabay.com/photo/2018/04/22/22/57/hacker-3342696_960_720.jpg
-category: security
-tags:
-  - cloud
-  - security
-  - hacking
-  - offensive security
-  - troubleshooter Club
 author: Shubhendu Shubham
 comment: false
 ---

@@ -1,19 +1,18 @@
 ---
-date: 2021-03-17T23:48:05.000Z
-layout: post
-title: "Anyone can build: node.js+ Cosmos DB in Azure "
-subtitle: >-
-  Let's Learn and Build simple web application using Azure functions and Cosmos DB.
-description: >-
-  How to build and deploy A MERN stack application on Microsoft azure from scratch step-by-step.Best Steps for beginers 101.
-image: >-
-  https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80
-optimized_image: >-
-  https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80
-category: azure
+title: 'Anyone can build: node.js+ Cosmos DB in Azure '
+date: 2021-03-17 23:48:05 Z
+categories:
+- azure
 tags:
-  - azure
-  - microsoft
+- azure
+- microsoft
+layout: post
+subtitle: Let's Learn and Build simple web application using Azure functions and Cosmos
+  DB.
+description: How to build and deploy A MERN stack application on Microsoft azure from
+  scratch step-by-step.Best Steps for beginers 101.
+image: https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80
+optimized_image: https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80
 author: Shubhendu Shubham
 paginate: true
 ---

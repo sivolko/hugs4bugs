@@ -1,18 +1,21 @@
 ---
-date: 2021-05-15 23:04:08
-layout: post
 title: Fundamentals of Network Security.☠️
+date: 2021-05-15 23:04:08 Z
+categories:
+- networking
+tags:
+- networking
+- security
+layout: post
 subtitle: Network Security 101.
-description: >- 
- This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of networking. 
+description: 'This is fundamental blog of network security 101 with role as an azure
+  developer,solution architect,administrator requires knowledge of the foundations
+  of networking. '
 image: https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80
 optimized_image: https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80
-category: networking
-tags:
-  - networking
-  - security
 author: Shubhendu Shubham
 ---
+
 Either one is taking role as an azure developer,solution architech or administrator, all requires basic of the foundation of the networking.
 
 In this blog, we'll learn the client-server network model, difference b/w authentication and authorization, firewall types and many more related topics.

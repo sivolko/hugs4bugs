@@ -1,17 +1,20 @@
 ---
-layout: post
 title: College to Cyber Security Journey
+date: 2022-10-07 00:00:00 Z
+categories:
+- security
+tags:
+- cloud
+- security
+- hacking
+- offensive security
+- troubleshooter Club
+layout: post
 subtitle: Learn to Earn .
-description: This is the series of cloud security . Anyone can learn this series, start exploring and learn cloud security.
+description: This is the series of cloud security . Anyone can learn this series,
+  start exploring and learn cloud security.
 image: https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80
 optimized_image: https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80
-category: security
-tags:
-  - cloud
-  - security
-  - hacking
-  - offensive security
-  - troubleshooter Club
 author: Shubhendu Shubham
 comment: true
 ---

@@ -1,16 +1,18 @@
 ---
-date: 2021-08-2 23:04:08
-layout: post
 title: The Blue Team.☠️
+date: 2021-08-02 23:04:08 Z
+categories:
+- security
+tags:
+- networking
+- security
+layout: post
 subtitle: Proceting You.
-description: >- 
- In cybersecurity, we have our own form of tackel box. We have our own versions of wiggly things.Let's learn few of the frameworks,tools and term from the cybersecurity together.
+description: In cybersecurity, we have our own form of tackel box. We have our own
+  versions of wiggly things.Let's learn few of the frameworks,tools and term from
+  the cybersecurity together.
 image: https://cdn.pixabay.com/photo/2017/11/19/23/56/hacking-2964100_960_720.jpg
 optimized_image: https://cdn.pixabay.com/photo/2017/11/19/23/56/hacking-2964100_960_720.jpg
-category: security
-tags:
-  - networking
-  - security
 author: Shubhendu Shubham
 ---
 

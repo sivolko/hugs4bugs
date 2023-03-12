@@ -1,8 +1,8 @@
 ---
-layout: page
 title: About
+permalink: "/about/"
+layout: page
 description: Some description.
-permalink: /about/
 ---
 
 <img class="img-rounded" src="/assets/img/s.png" alt="Shubhendu" width="200">

@@ -1,16 +1,16 @@
 ---
-date: 2020-10-12 12:26:40
-layout: post
 title: Benifits of CI/CD
+date: 2020-10-12 12:26:40 Z
+categories:
+- devops
+tags:
+- devops
+- CI/CD
+layout: post
 subtitle: Continuous integration and Delivery
 description: How to use Continuous integration and Delivery in our project.
 image: https://cdn-images-1.medium.com/max/1600/1*-eHRhJcg-QPUws99xEDh6w.png
 optimized_image: https://cdn-images-1.medium.com/max/1600/1*-eHRhJcg-QPUws99xEDh6w.png
-category: devops
-tags:
-  - devops
-  - CI/CD
-
 author: Shubhendu Shubham
 ---
 

@@ -1,16 +1,17 @@
 ---
-date: 2020-03-02 12:26:40
-layout: post
 title: How to like Instagram posts with JavaScript?
+date: 2020-03-02 12:26:40 Z
+categories:
+- automation
+tags:
+- automation
+- instagram
+- javascript
+layout: post
 subtitle: ye Aaram ka Mamala hai !
 description: how to increase instagram follower using script to add like counts.
 image: https://media.giphy.com/media/cmqnzFK17DO4vKCscd/giphy.gif
 optimized_image: https://media.giphy.com/media/cmqnzFK17DO4vKCscd/giphy.gif
-category: automation
-tags:
-  - automation
-  - instagram
-  - javascript
 author: Shubhendu Shubham
 ---
 

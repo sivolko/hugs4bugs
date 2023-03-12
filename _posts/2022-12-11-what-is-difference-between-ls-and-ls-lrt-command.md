@@ -1,16 +1,18 @@
 ---
-layout: post
 title: Do you use ls -lrt?
+date: 2022-12-11 00:00:00 Z
+categories:
+- linux
+tags:
+- security
+- hacking
+- offensive security
+- troubleshooter Club
+layout: post
 subtitle: Bro, You're pro!
 description: What is the use of ls -lrt?
 image: https://images.pexels.com/photos/4709289/pexels-photo-4709289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 optimized_image: https://images.pexels.com/photos/4709289/pexels-photo-4709289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
-category: linux
-tags:
-  - security
-  - hacking
-  - offensive security
-  - troubleshooter Club
 author: Shubhendu Shubham
 comment: false
 ---

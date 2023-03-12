@@ -1,17 +1,20 @@
 ---
-layout: post
 title: WAF vs Firewall
+date: 2022-10-31 00:00:00 Z
+categories:
+- security
+tags:
+- cloud
+- security
+- hacking
+- offensive security
+- troubleshooter Club
+layout: post
 subtitle: We both are not same bruhh .
-description: This is the series of cloud security . Anyone can learn this series, start exploring and learn cloud security.
+description: This is the series of cloud security . Anyone can learn this series,
+  start exploring and learn cloud security.
 image: https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 optimized_image: https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
-category: security
-tags:
-  - cloud
-  - security
-  - hacking
-  - offensive security
-  - troubleshooter Club
 author: Shubhendu Shubham
 comment: false
 ---

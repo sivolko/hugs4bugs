@@ -1,17 +1,17 @@
 ---
-date: 2021-11-2 23:04:08
-layout: post
 title: Progressive WebApp.
+date: 2021-11-02 23:04:08 Z
+categories:
+- webapps
+tags:
+- WebApps
+- PWA
+- Progressive WebApp
+layout: post
 subtitle: Code Once,Install Everywhere.
-description: >-
-  How you ever seen add to home screen or install popup on .
+description: How you ever seen add to home screen or install popup on .
 image: https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80
 optimized_image: https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80
-category: webapps
-tags:
-  - WebApps
-  - PWA
-  - Progressive WebApp
 author: Shubhendu Shubham
 ---
 

@@ -1,16 +1,17 @@
 ---
-date: 2021-08-2 23:04:08
+title: "Managing and Storing Secrets:Azure Vault.\U0001F646"
+date: 2021-08-02 23:04:08 Z
+categories:
+- azure
+tags:
+- networking
+- security
 layout: post
-title: Managing and Storing Secrets:Azure Vault.🙆
 subtitle: Hiding:The Secrets
-description: >-
-  This is fundamental blog of how to manage and store secrets like certificates, passwords using Azure vault .
+description: This is fundamental blog of how to manage and store secrets like certificates,
+  passwords using Azure vault .
 image: https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80
 optimized_image: https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80
-category: azure
-tags:
-  - networking
-  - security
 author: Shubhendu Shubham
 ---
 

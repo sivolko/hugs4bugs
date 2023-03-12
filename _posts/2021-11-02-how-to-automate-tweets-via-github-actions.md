@@ -1,17 +1,17 @@
 ---
-date: 2021-11-2 23:04:08
-layout: post
 title: Automate Twitter via github Actions.
+date: 2021-11-02 23:04:08 Z
+categories:
+- automation
+tags:
+- Automation
+- CI/CD
+- GitHub Actions
+layout: post
 subtitle: because why not!
-description: >-
-  How you ever seen add to home screen or install popup on .
+description: How you ever seen add to home screen or install popup on .
 image: https://images.pexels.com/photos/5744251/pexels-photo-5744251.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
 optimized_image: https://images.pexels.com/photos/5744251/pexels-photo-5744251.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
-category: automation
-tags:
-  - Automation
-  - CI/CD
-  - GitHub Actions
 author: Shubhendu Shubham
 ---
 

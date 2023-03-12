@@ -1,17 +1,18 @@
 ---
-date: 2020-05-01 12:26:40
-layout: post
 title: Automation with Jenkins and GitHub
+date: 2020-05-01 12:26:40 Z
+categories:
+- devops
+tags:
+- devops
+- jenkins
+- automation
+- github
+layout: post
 subtitle: Applying CI/CD in project with Jenkins and GitHub.
 description: How to automate a project with Jenkins and Github
 image: https://miro.medium.com/max/700/1*QTmgOmxLr78Ty_evSD_Riw.gif
 optimized_image: https://miro.medium.com/max/700/1*QTmgOmxLr78Ty_evSD_Riw.gif
-category: "devops"
-tags:
-  - devops
-  - jenkins
-  - automation
-  - github
 author: Shubhendu Shubham
 ---
 

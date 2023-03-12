@@ -1,17 +1,20 @@
 ---
-layout: post
 title: WAF vs IPS
+date: 2022-11-02 00:00:00 Z
+categories:
+- security
+tags:
+- cloud
+- security
+- hacking
+- offensive security
+- troubleshooter Club
+layout: post
 subtitle: Are you still confused?
-description: What is the difference between WAF and IPS system and why do we need both?
+description: What is the difference between WAF and IPS system and why do we need
+  both?
 image: https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 optimized_image: https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
-category: security
-tags:
-  - cloud
-  - security
-  - hacking
-  - offensive security
-  - troubleshooter Club
 author: Shubhendu Shubham
 comment: false
 ---

@@ -1,17 +1,17 @@
 ---
-date: 2022-02-17 23:04:08
-layout: post
 title: Building and Deploying PWA on Azure Cloud.
+date: 2022-02-17 23:04:08 Z
+categories:
+- webapps
+tags:
+- PWA
+- node.js
+- COSMOS DB
+layout: post
 subtitle: Using node.js & COSMOS DB.
-description: >-
-  Let's build and deploy PWA over azure cloud from Scratch.
+description: Let's build and deploy PWA over azure cloud from Scratch.
 image: https://th.bing.com/th/id/R.49bd0ccbb9e904407116b65ce6a50d41?rik=1KXzdiLejsH2eA&riu=http%3a%2f%2fclipground.com%2fimages%2fcoder-clipart-1.jpg&ehk=xl5oxtd6bHoDW1%2f3HB007zg97209vFB75YXyIskHtPg%3d&risl=&pid=ImgRaw&r=0
 optimized_image: https://th.bing.com/th/id/R.49bd0ccbb9e904407116b65ce6a50d41?rik=1KXzdiLejsH2eA&riu=http%3a%2f%2fclipground.com%2fimages%2fcoder-clipart-1.jpg&ehk=xl5oxtd6bHoDW1%2f3HB007zg97209vFB75YXyIskHtPg%3d&risl=&pid=ImgRaw&r=0
-category: webapps
-tags:
-  - PWA
-  - node.js
-  - COSMOS DB
 author: Shubhendu Shubham
 ---
 

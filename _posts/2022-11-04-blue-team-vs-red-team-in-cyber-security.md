@@ -1,17 +1,20 @@
 ---
-layout: post
 title: Blue Team vs Red Team
+date: 2022-11-04 00:00:00 Z
+categories:
+- security
+tags:
+- cloud
+- security
+- hacking
+- offensive security
+- troubleshooter Club
+layout: post
 subtitle: Two sides of a coin!
-description: What is the difference between Blue and Red Team in cyber security and why do we need both?
+description: What is the difference between Blue and Red Team in cyber security and
+  why do we need both?
 image: https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 optimized_image: https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
-category: security
-tags:
-  - cloud
-  - security
-  - hacking
-  - offensive security
-  - troubleshooter Club
 author: Shubhendu Shubham
 comment: false
 ---

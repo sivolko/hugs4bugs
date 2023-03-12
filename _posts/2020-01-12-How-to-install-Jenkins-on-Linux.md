@@ -1,16 +1,18 @@
 ---
-date: 2020-01-12 12:26:40
-layout: post
 title: How to install JENKINS on Linux ?
+date: 2020-01-12 12:26:40 Z
+categories:
+- devops
+tags:
+- devops
+- jenkins
+- linux
+layout: post
 subtitle: Learn Jenkins and it's installation
-description: what is jenkins and how to install in our system.How to use it in our project
+description: what is jenkins and how to install in our system.How to use it in our
+  project
 image: https://www.jenkins.io/images/logos/needs-you/Jenkins_Needs_You-02.png
 optimized_image: https://www.jenkins.io/images/logos/needs-you/Jenkins_Needs_You-02.png
-category: devops
-tags:
-  - devops
-  - jenkins
-  - linux
 author: Shubhendu Shubham
 ---
 
