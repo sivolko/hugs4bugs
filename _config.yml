@@ -40,7 +40,7 @@ show_time_bar: true
 show_modal_on_exit: false
 show_modal_on_finish_post: true
 two_columns_layout: true
-baseurl: ''
+baseurl: 
 url: https://hugs4bugs.me
 google_analytics: G-0FMLF6JCFT
 language: en
