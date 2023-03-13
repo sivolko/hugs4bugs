@@ -3,18 +3,18 @@
   <channel>
     <title>hugs4bugs</title>
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 13 Mar 2023 14:51:52 +0530</pubDate>
-    <lastBuildDate>Mon, 13 Mar 2023 14:51:52 +0530</lastBuildDate>
+    <link>https://hugs4bugs.me/</link>
+    <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 13 Mar 2023 09:42:55 +0000</pubDate>
+    <lastBuildDate>Mon, 13 Mar 2023 09:42:55 +0000</lastBuildDate>
     <generator>Jekyll v3.9.1</generator>
     
       <item>
         <title>Search engines one should know as a CyberSecurity enthausist!</title>
         <description>&lt;p&gt;Before jumping to the topic,lemme tell you some interesting thing about this blog. It’s was hot sunny day and I was enjoying my holiday vaccation at &lt;a href=&quot;https://www.keralatourism.org/destination/varkala-beach/328/&quot;&gt;Varkala Beach&lt;/a&gt; in Kerela Midway I opened my linkedin profile, &lt;a href=&quot;https://en.wikipedia.org/wiki/Daniel_Kelley_(hacker)&quot;&gt;&lt;strong&gt;Daniel Kelley&lt;/strong&gt;&lt;/a&gt; former black hat hacker post pops up! . It was the curated list of all top 30 cool search engines , so here is the deatailed blog about it.&lt;/p&gt; &lt;p&gt;Here are the list of must try search engines as a cyber security researcher!&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;h2 id=&quot;dehashed--leaked-credentials&quot;&gt;DeHashed : Leaked credentials&lt;/h2&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/s/1.png&quot; alt=&quot;Dehashed&quot; /&gt;&lt;/p&gt; &lt;p&gt;Dehashed provides free deep-web...</description>
-        <pubDate>Mon, 27 Feb 2023 00:00:00 +0530</pubDate>
-        <link>http://localhost:4000/useful-cybersecurity-search-engines/</link>
-        <guid isPermaLink="true">http://localhost:4000/useful-cybersecurity-search-engines/</guid>
+        <pubDate>Mon, 27 Feb 2023 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/useful-cybersecurity-search-engines/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/useful-cybersecurity-search-engines/</guid>
         
         <category>search engine</category>
         
@@ -32,9 +32,9 @@
       <item>
         <title>What is chatGpt? How to use it?</title>
         <description>&lt;p&gt;One day I woke up and saw my &lt;a href=&quot;https://twitter.com/myselfshubhendu&quot;&gt;twitter&lt;/a&gt; timeline was filled with all funny conversation with &lt;a href=&quot;&quot;&gt;&lt;strong&gt;Chat-gpt&lt;/strong&gt;&lt;/a&gt;.Hence being a curious troubleshooter, I just google and did some handson chat-gpt open AI tool. So, here are my few insights what I learnt from it.&lt;/p&gt; &lt;p&gt;let’s understand in layman terms. First thing first is what is &lt;strong&gt;GPT&lt;/strong&gt;?&lt;/p&gt; &lt;p&gt;&lt;strong&gt;GPT&lt;/strong&gt; stands for the Generative Pre-trained Transformer.it uses &lt;a href=&quot;https://huggingface.co/blog/rlhf&quot;&gt;RLHF&lt;/a&gt; i.e Reinforcement Learning with Human Feedback which means a method that uses human demonstrations to guide the model towards desired behaviours.&lt;/p&gt; &lt;p&gt;It was created by &lt;a href=&quot;https://openai.com&quot;&gt;OpenAI&lt;/a&gt;, a San Francisco-based AI and...</description>
-        <pubDate>Sun, 25 Dec 2022 00:00:00 +0530</pubDate>
-        <link>http://localhost:4000/what-is-chat-gpt/</link>
-        <guid isPermaLink="true">http://localhost:4000/what-is-chat-gpt/</guid>
+        <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/what-is-chat-gpt/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/what-is-chat-gpt/</guid>
         
         <category>cloud</category>
         
@@ -46,15 +46,15 @@
         
         <category>troubleshooter Club</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
         <title>Do you use ls -lrt?</title>
         <description>&lt;p&gt;Hey folks, as a coder or techie we often do use &lt;strong&gt;terminal&lt;/strong&gt; to interact with our files. And we all are familiar with &lt;strong&gt;ls&lt;/strong&gt; command.Basically we use ls command for listing the contents of a directory.&lt;/p&gt; &lt;p&gt;ls command :&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hugs4bugs/image/upload/v1670738418/linux/1_ig8j6w.png&quot; alt=&quot;ls&quot; /&gt;&lt;/p&gt; &lt;p&gt;But what about if there are thousands of files inside a folder and we have to pick or sort a particular file within time frame? In such case using ls command and going line by line doesn’t makes sense?&lt;/p&gt; &lt;p&gt;So here we do have &lt;strong&gt;lrt&lt;/strong&gt; option which is bascially combo three different options which provide us extra...</description>
-        <pubDate>Sun, 11 Dec 2022 00:00:00 +0530</pubDate>
-        <link>http://localhost:4000/what-is-difference-between-ls-and-ls-lrt-command/</link>
-        <guid isPermaLink="true">http://localhost:4000/what-is-difference-between-ls-and-ls-lrt-command/</guid>
+        <pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/what-is-difference-between-ls-and-ls-lrt-command/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/what-is-difference-between-ls-and-ls-lrt-command/</guid>
         
         <category>security</category>
         
@@ -64,15 +64,15 @@
         
         <category>troubleshooter Club</category>
         
-        <category>linux</category>
+        <category></category>
       </item>
     
       <item>
         <title>Kali Linux vs Parrot OS</title>
         <description>&lt;p&gt;Hey Folks,All loves word &lt;strong&gt;Hacker&lt;/strong&gt; or pretend to be or wish to be a hacker’s friend ? .But technically there is no hacker is this IT world.Anyone who have a common sense and curiosity we call them hacker. I know you might be thinking what nonsense he has written but that’s true ..&lt;/p&gt; &lt;p&gt;Anyway Jokes apart, if these cyber security world fascinates you and you wanna start your journey, then &lt;em&gt;A stupid Question might be bothering you&lt;/em&gt; :- “Which OS should be suitable for Cyber Security?”.&lt;/p&gt; &lt;p&gt;Well there is no right and wrong answer for this, it again depends upon...</description>
-        <pubDate>Sat, 10 Dec 2022 00:00:00 +0530</pubDate>
-        <link>http://localhost:4000/kali-linux-vs-parrot-linux/</link>
-        <guid isPermaLink="true">http://localhost:4000/kali-linux-vs-parrot-linux/</guid>
+        <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/kali-linux-vs-parrot-linux/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/kali-linux-vs-parrot-linux/</guid>
         
         <category>cloud</category>
         
@@ -84,15 +84,15 @@
         
         <category>troubleshooter Club</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
         <title>Blue Team vs Red Team</title>
         <description>&lt;p&gt;Hold on, before I start lemme clear it those teams are called Blue and Red not because they hold Blue or Red colour uniforms….&lt;/p&gt; &lt;p&gt;Jokes apart&lt;/p&gt; &lt;p&gt;Let’s start, in the ocean of Cybersecurity &lt;strong&gt;Information Security&lt;/strong&gt; plays an important role.And officially we do divide Infosec teams into 2 category i.e &lt;em&gt;Blue Teaming&lt;/em&gt; and &lt;em&gt;Red Teaming&lt;/em&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Blue Team&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;They are the boarder Security force for any organisation. They act like defender,responsible for establishing a defense mechanism for any corporate environment or infrastructure.&lt;/p&gt; &lt;p&gt;When an attacker, or Red Team guys try to break down into system and gain access, blue teams put their...</description>
-        <pubDate>Fri, 04 Nov 2022 00:00:00 +0530</pubDate>
-        <link>http://localhost:4000/blue-team-vs-red-team-in-cyber-security/</link>
-        <guid isPermaLink="true">http://localhost:4000/blue-team-vs-red-team-in-cyber-security/</guid>
+        <pubDate>Fri, 04 Nov 2022 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/blue-team-vs-red-team-in-cyber-security/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/blue-team-vs-red-team-in-cyber-security/</guid>
         
         <category>cloud</category>
         
@@ -104,15 +104,15 @@
         
         <category>troubleshooter Club</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
         <title>WAF vs IPS</title>
         <description>&lt;p&gt;Before we start, you must be confused or there might be a question in your mind “why do we need so many things as security?” We do have firewalls, Antivirus though .&lt;/p&gt; &lt;p&gt;Lemme explain this situation in simpler use case. Suppose you have plan for long road trip for a week with your family and you have decided to leave home at early morning to avoid city traffic . You set alarm, and leave home as early as you can . While boarding to car, you &lt;strong&gt;locked your main gate, but in rush you have forgotten to close balcony french...</description>
-        <pubDate>Wed, 02 Nov 2022 00:00:00 +0530</pubDate>
-        <link>http://localhost:4000/difference-between-WAF-and-IPS/</link>
-        <guid isPermaLink="true">http://localhost:4000/difference-between-WAF-and-IPS/</guid>
+        <pubDate>Wed, 02 Nov 2022 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/difference-between-WAF-and-IPS/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/difference-between-WAF-and-IPS/</guid>
         
         <category>cloud</category>
         
@@ -124,15 +124,15 @@
         
         <category>troubleshooter Club</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
         <title>WAF vs Firewall</title>
         <description>&lt;p&gt;Before start differences, let’s understand the WAF. WAF stands for the &lt;strong&gt;Web Application Firewall&lt;/strong&gt; that operates as application firewall for the HTTPS applications. It implements set of rules for a HTTP conversation and due to these rules, WAF prevents from XSS (Cross site scripting) and SQL injections.&lt;/p&gt; &lt;p&gt;WAF is more focused on &lt;strong&gt;Web Applications&lt;/strong&gt; .A WAF is a firewall primarily used for protecting applications, APIs to Webhooks, providing protection by assessing what the traffic is trying to do and blocking it if necessary, especially if the actions in the traffic are deemed malicious.&lt;/p&gt; &lt;p&gt;General view of WAF&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://firewallauthority.com/wp-content/uploads/2022/02/WAF.png&quot; alt=&quot;WAF&quot;...</description>
-        <pubDate>Mon, 31 Oct 2022 00:00:00 +0530</pubDate>
-        <link>http://localhost:4000/waf-vs-firewall/</link>
-        <guid isPermaLink="true">http://localhost:4000/waf-vs-firewall/</guid>
+        <pubDate>Mon, 31 Oct 2022 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/waf-vs-firewall/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/waf-vs-firewall/</guid>
         
         <category>cloud</category>
         
@@ -144,15 +144,15 @@
         
         <category>troubleshooter Club</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
         <title>College to Cyber Security Journey</title>
         <description>&lt;p&gt;We have been raised by watching Sci-Fi hollywood movies and hacking series. We often heard xyz company site has been compromised, hackers has released sensitive user data to the public ? But lemme clear one thing in the beginning of the block &lt;strong&gt;Hacking&lt;/strong&gt; is the word for non tech or media people. And anyone who writes code, makes policy, debug code all are hackers in tech.&lt;/p&gt; &lt;p&gt;Now point is what actual name of those professionals who do such thing in cyber security world? Hold on…..&lt;/p&gt; &lt;p&gt;Before Jumping to the fancy words , let’s understand why security is important and what...</description>
-        <pubDate>Fri, 07 Oct 2022 00:00:00 +0530</pubDate>
-        <link>http://localhost:4000/college-to-cyber-security/</link>
-        <guid isPermaLink="true">http://localhost:4000/college-to-cyber-security/</guid>
+        <pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/college-to-cyber-security/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/college-to-cyber-security/</guid>
         
         <category>cloud</category>
         
@@ -164,15 +164,15 @@
         
         <category>troubleshooter Club</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
         <title>Metasploit Framework vs Metasploit Pro</title>
         <description>&lt;p&gt;In the tug of war game of tools, we always confused with community edition and Pro. Both have their own separate use cases, we can’t compare. But let’s talk about what’s the difference between them in the case of &lt;strong&gt; “Metasploit” &lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;History of Metasploit&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;HD Moore began working on Metasploit in the early oughts, and released 1.0, written in Perl, in 2003. The project has grown dramatically since then, from the original 11 exploits the project came with to more than 1,500 now, plus around 500 payloads, with a switch to Ruby under the hood along the way.&lt;/p&gt; &lt;p&gt;Security...</description>
-        <pubDate>Sun, 21 Aug 2022 00:00:00 +0530</pubDate>
-        <link>http://localhost:4000/metasploitFramework-vs-metasploit-pro/</link>
-        <guid isPermaLink="true">http://localhost:4000/metasploitFramework-vs-metasploit-pro/</guid>
+        <pubDate>Sun, 21 Aug 2022 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/metasploitFramework-vs-metasploit-pro/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/metasploitFramework-vs-metasploit-pro/</guid>
         
         <category>cloud</category>
         
@@ -182,15 +182,15 @@
         
         <category>offensive security</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
         <title>Building and Deploying PWA on Azure Cloud.</title>
         <description>&lt;p&gt;let’s start with &lt;strong&gt;PWA&lt;/strong&gt;, PWA are apps built with web technologies like Js, Css, React,or HTMl with feel and functionality of an actual native app.&lt;/p&gt; &lt;p&gt;They have service worker and manifest.json file to make it work offline and installable. Web apps can reach anyone,anywhere, on any device with a single codebase.When it comes to the platform specific applications, PWA are known for being incredibly rich and reliable.They’re present, on home screens, on the home screens, docks and the taskbars. They work regardless of network connection.They can launch in their standalone experience,can read &amp;amp; write files from the local file system,access...</description>
-        <pubDate>Fri, 18 Feb 2022 04:34:08 +0530</pubDate>
-        <link>http://localhost:4000/Progressive-webapps-on-azure/</link>
-        <guid isPermaLink="true">http://localhost:4000/Progressive-webapps-on-azure/</guid>
+        <pubDate>Thu, 17 Feb 2022 23:04:08 +0000</pubDate>
+        <link>https://hugs4bugs.me/Progressive-webapps-on-azure/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/Progressive-webapps-on-azure/</guid>
         
         <category>PWA</category>
         
@@ -198,15 +198,15 @@
         
         <category>COSMOS DB</category>
         
-        <category>webapps</category>
+        <category></category>
       </item>
     
       <item>
         <title>Access Management 101.</title>
         <description>&lt;p&gt;Access management that sounds like we all know about it, and even we are practicing it, but are we fundamentally aware of it ? Do our concepts of access management and security are correct? &lt;img src=&quot;https://d3nn873nee648n.cloudfront.net/900x600/19772/1-SM961450.jpg&quot; alt=&quot;OMG&quot; /&gt;&lt;/p&gt; &lt;p&gt;Let’s do start….&lt;/p&gt; &lt;p&gt;First of let’s go thoroughly &lt;strong&gt;AAA&lt;/strong&gt; concept.&lt;/p&gt; &lt;p&gt;AAA : Access, Authentication, Authorization. When we talk about security, two most confusing terms are &lt;strong&gt;Authentication&lt;/strong&gt; and &lt;strong&gt;Authorization&lt;/strong&gt;, but don’t worry, after this you will not confuse again.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Authentication&lt;/strong&gt; :- It means confirmation of who you are.It generally consists of Usernames, ID, passwords, tokens, fingerprints, etc.&lt;/p&gt; &lt;p&gt;Types of Authentication:-&lt;/p&gt; &lt;p&gt;&lt;strong&gt;1 Single-Factor&lt;/strong&gt;: easiest...</description>
-        <pubDate>Sun, 06 Feb 2022 04:34:08 +0530</pubDate>
-        <link>http://localhost:4000/access-management-101/</link>
-        <guid isPermaLink="true">http://localhost:4000/access-management-101/</guid>
+        <pubDate>Sat, 05 Feb 2022 23:04:08 +0000</pubDate>
+        <link>https://hugs4bugs.me/access-management-101/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/access-management-101/</guid>
         
         <category>Access Management</category>
         
@@ -214,15 +214,15 @@
         
         <category>Cyber Security</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
         <title>Automate Twitter via github Actions.</title>
         <description>&lt;p&gt;We are used to the way we work, but we are also used to the way we work.Hahahah, Sounds confusing, right? I know, but it is not.Lemme explain.&lt;/p&gt; &lt;p&gt;We are used to tweet via either twitter webApps or Native apps.But hold on, in the era of Devops where every things reliable on CI/CD, then why not automate our twitter too.&lt;/p&gt; &lt;p&gt;We gonna call this &lt;strong&gt;Twitter-Together&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;basically twitter-together is a &lt;a href=&quot;https://github.com/features/actions&quot;&gt;&lt;strong&gt;Github Action&lt;/strong&gt;&lt;/a&gt; that utilizes text files to publish tweets from a GitHub repository. Rather than tweeting directly, GitHub’s pull request review process encourages more collaboration, Twitter activity and editorial contributions...</description>
-        <pubDate>Wed, 03 Nov 2021 04:34:08 +0530</pubDate>
-        <link>http://localhost:4000/how-to-automate-tweets-via-github-actions/</link>
-        <guid isPermaLink="true">http://localhost:4000/how-to-automate-tweets-via-github-actions/</guid>
+        <pubDate>Tue, 02 Nov 2021 23:04:08 +0000</pubDate>
+        <link>https://hugs4bugs.me/how-to-automate-tweets-via-github-actions/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/how-to-automate-tweets-via-github-actions/</guid>
         
         <category>Automation</category>
         
@@ -230,15 +230,15 @@
         
         <category>GitHub Actions</category>
         
-        <category>automation</category>
+        <category></category>
       </item>
     
       <item>
         <title>Progressive WebApp.</title>
         <description>&lt;h2 id=&quot;what-are-progressive-webapps&quot;&gt;What are Progressive WebApps?&lt;/h2&gt; &lt;p&gt;In a straight forward way, Progressive WebApps are a new way to install web apps on mobile devices and are the just the next step in the evolution of the web.&lt;/p&gt; &lt;p&gt;Web apps can reach anyone,anywhere, on any device with a single codebase.When it comes to the platform specific applications, PWA are known for being incredibly rich and reliable.They’re present, on home screens, on the home screens, docks and the taskbars. They work regardless of network connection.They can launch in their standalone experience,can read &amp;amp; write files from the local file system,access hardware connected via...</description>
-        <pubDate>Wed, 03 Nov 2021 04:34:08 +0530</pubDate>
-        <link>http://localhost:4000/Progressive-web-app/</link>
-        <guid isPermaLink="true">http://localhost:4000/Progressive-web-app/</guid>
+        <pubDate>Tue, 02 Nov 2021 23:04:08 +0000</pubDate>
+        <link>https://hugs4bugs.me/Progressive-web-app/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/Progressive-web-app/</guid>
         
         <category>WebApps</category>
         
@@ -246,35 +246,35 @@
         
         <category>Progressive WebApp</category>
         
-        <category>webapps</category>
+        <category></category>
       </item>
     
       <item>
         <title>The Blue Team.☠️</title>
         <description>&lt;p&gt;Before I start telling fancy stories of CyberSecurity, let me explain a few common used terms,so that whenever I use these words,one have clear picturisation of the terminology.Too many times in the many years, I’ve been in IT, I have seen people forget these basics terms.So, let’s start…..&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Fundamental Networking and Security Tools&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt;Ping&lt;/li&gt; &lt;li&gt;IPConfig&lt;/li&gt; &lt;li&gt;NSLookUp&lt;/li&gt; &lt;li&gt;Tracert&lt;/li&gt; &lt;li&gt;NetStat&lt;/li&gt; &lt;li&gt;Putty&lt;/li&gt; &lt;/ol&gt; &lt;p&gt;&lt;strong&gt;Ping&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Ping = Packet InterNet Groper&lt;/p&gt; &lt;p&gt;Ping is a networking utility,used to test whether a host is &lt;em&gt;alive&lt;/em&gt; on an Internet Protocol (IP) network.A host could be a computer or other device that is connected to a network.Ping measure...</description>
-        <pubDate>Tue, 03 Aug 2021 04:34:08 +0530</pubDate>
-        <link>http://localhost:4000/the-blue-team-protecting-you/</link>
-        <guid isPermaLink="true">http://localhost:4000/the-blue-team-protecting-you/</guid>
+        <pubDate>Mon, 02 Aug 2021 23:04:08 +0000</pubDate>
+        <link>https://hugs4bugs.me/the-blue-team-protecting-you/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/the-blue-team-protecting-you/</guid>
         
         <category>networking</category>
         
         <category>security</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
         <title>Managing and Storing Secrets:Azure Vault.🙆</title>
         <description>&lt;p&gt;As we deploy our production to the cloud, we need to be very consious about the sensitive informations eg:- passwords,encryption keys and certificates, which needs to be available to function. Apart from authorised use case, one should take care for &lt;strong&gt;unauthorised&lt;/strong&gt; access.&lt;/p&gt; &lt;p&gt;Hence, comes the &lt;strong&gt;Azure Key Vault&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;What is Azure key vault&lt;/strong&gt;?&lt;/p&gt; &lt;p&gt;Azure Key Vault is a centrilized cloud service for securely storing and accessing secrets.Hold on what does &lt;em&gt;Secret&lt;/em&gt; means? it could be anythings that one want to tightly control access to eg- API keys, passwords, certificates.&lt;/p&gt; &lt;p&gt;Key value services supports 2 types of containers:-&lt;/p&gt; &lt;ol&gt; &lt;li&gt;&lt;strong&gt;Vaults&lt;/strong&gt; :...</description>
-        <pubDate>Tue, 03 Aug 2021 04:34:08 +0530</pubDate>
-        <link>http://localhost:4000/storing-and-managing-secrets-using-azure-vault/</link>
-        <guid isPermaLink="true">http://localhost:4000/storing-and-managing-secrets-using-azure-vault/</guid>
+        <pubDate>Mon, 02 Aug 2021 23:04:08 +0000</pubDate>
+        <link>https://hugs4bugs.me/storing-and-managing-secrets-using-azure-vault/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/storing-and-managing-secrets-using-azure-vault/</guid>
         
         <category>networking</category>
         
         <category>security</category>
         
-        <category>azure</category>
+        <category></category>
       </item>
     
       <item>
@@ -284,122 +284,122 @@
 &lt;p&gt;&lt;strong&gt;Security Posture&lt;/strong&gt;:- Security policies and controls along with the how well one could predict, prevent,and responds to security threats.&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 03 Aug 2021 04:34:08 +0530</pubDate>
-        <link>http://localhost:4000/Understanding-basics-of-security/</link>
-        <guid isPermaLink="true">http://localhost:4000/Understanding-basics-of-security/</guid>
+        <pubDate>Mon, 02 Aug 2021 23:04:08 +0000</pubDate>
+        <link>https://hugs4bugs.me/2021-08-2-Understanding-basics-of-security/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/2021-08-2-Understanding-basics-of-security/</guid>
         
         <category>networking</category>
         
         <category>security</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
         <title>Fundamentals of Network Security.☠️</title>
         <description>&lt;p&gt;Either one is taking role as an azure developer,solution architech or administrator, all requires basic of the foundation of the networking.&lt;/p&gt; &lt;p&gt;In this blog, we’ll learn the client-server network model, difference b/w authentication and authorization, firewall types and many more related topics.&lt;/p&gt; &lt;h1 id=&quot;network-clients&quot;&gt;Network Clients&lt;/h1&gt; &lt;p&gt;According to traditionnal sense, a network client is a lightweight computer/device that can’t run program on its own.But now-a-days the client has transformed from a simple terminal which can represent any hardware or software system that interects with services made available on a server.&lt;/p&gt; &lt;h2 id=&quot;types-of-clients-&quot;&gt;Types of clients:-&lt;/h2&gt; &lt;table&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td&gt;&lt;strong&gt;Client&lt;/strong&gt;&lt;/td&gt; &lt;td&gt;&lt;strong&gt;Local storage&lt;/strong&gt;&lt;/td&gt; &lt;td&gt;&lt;strong&gt;Local...</description>
-        <pubDate>Sun, 16 May 2021 04:34:08 +0530</pubDate>
-        <link>http://localhost:4000/Fundamentals-of-Network-security/</link>
-        <guid isPermaLink="true">http://localhost:4000/Fundamentals-of-Network-security/</guid>
+        <pubDate>Sat, 15 May 2021 23:04:08 +0000</pubDate>
+        <link>https://hugs4bugs.me/Fundamentals-of-Network-security/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/Fundamentals-of-Network-security/</guid>
         
         <category>networking</category>
         
         <category>security</category>
         
-        <category>networking</category>
+        <category></category>
       </item>
     
       <item>
         <title>Computer Networking 101</title>
         <description>&lt;p&gt;In the era of Cloud, having basic understanding of computer networking, how it’s work and use cases to build network is essential. Apart form it’s structure one should also keep in mind there are various ascepts of networking too like &lt;strong&gt;Network communication Protocols&lt;/strong&gt; &lt;strong&gt;security of our Network&lt;/strong&gt; …&lt;/p&gt; &lt;p&gt;In this we are gonna cover all the basic fundamentals of Networking.&lt;/p&gt; &lt;p&gt;Although all the networks are built on the same principles, but let’s consider them separetely for better understandings. so first thing first start with what comes in our mind when we think about “Networking”..&lt;/p&gt; &lt;h2 id=&quot;what-is-a-network&quot;&gt;What is a Network?&lt;/h2&gt; &lt;p&gt;A...</description>
-        <pubDate>Mon, 05 Apr 2021 04:34:08 +0530</pubDate>
-        <link>http://localhost:4000/computer-networking-basics/</link>
-        <guid isPermaLink="true">http://localhost:4000/computer-networking-basics/</guid>
+        <pubDate>Sun, 04 Apr 2021 23:04:08 +0000</pubDate>
+        <link>https://hugs4bugs.me/computer-networking-basics/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/computer-networking-basics/</guid>
         
         <category>networking</category>
         
         <category>system Admin</category>
         
-        <category>networking</category>
+        <category></category>
       </item>
     
       <item>
         <title>Anyone can build: node.js+ Cosmos DB in Azure </title>
         <description>&lt;p&gt;Before Starting our project let’s Quickly learn about &lt;strong&gt;Cosmos DB&lt;/strong&gt;&lt;/p&gt; &lt;h2 id=&quot;what-is-cosmos-db-&quot;&gt;What is Cosmos DB ?&lt;/h2&gt; &lt;p&gt;Cosmos DB is a planet scale DB, No SQL JSON DB with multi API support provided by &lt;a href=&quot;https://azure.microsoft.com/en-us/&quot;&gt;Microsoft Azure&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hugs4bugs/image/upload/v1616362364/Azure/23_sqxpoz.jpg&quot; alt=&quot;cosmos DB&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;planet-scale-db-means&quot;&gt;Planet scale DB means?&lt;/h2&gt; &lt;p&gt;It means that we can build our primary DataBase in one region and setup different secondary Databases in different geo locations to avoid much latency and smoother user experiences. Whenever our primary Database goes down, any one these secondary Database can come as primary Database.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hugs4bugs/image/upload/v1616362726/Azure/25_yxlnqu.jpg&quot; alt=&quot;planet Scale&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;multi-api-support&quot;&gt;Multi API Support&lt;/h2&gt;...</description>
-        <pubDate>Thu, 18 Mar 2021 05:18:05 +0530</pubDate>
-        <link>http://localhost:4000/bulid-and-deploy-MERN-stack-in-Azure-cosmos-DB/</link>
-        <guid isPermaLink="true">http://localhost:4000/bulid-and-deploy-MERN-stack-in-Azure-cosmos-DB/</guid>
+        <pubDate>Wed, 17 Mar 2021 23:48:05 +0000</pubDate>
+        <link>https://hugs4bugs.me/bulid-and-deploy-MERN-stack-in-Azure-cosmos-DB/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/bulid-and-deploy-MERN-stack-in-Azure-cosmos-DB/</guid>
         
         <category>azure</category>
         
         <category>microsoft</category>
         
-        <category>azure</category>
+        <category></category>
       </item>
     
       <item>
         <title>Linux Cheat Sheet 101</title>
         <description>&lt;p&gt;Linux is a kernel, on which lots of Operating systems like andriod, Debian, Arch are runnig.&lt;/p&gt; &lt;p&gt;The Linux “core” (called a kernel) was born in 1991 in Finland, and it has come a really long way from its humble beginnings. It went on to be the kernel of the GNU Operating System, creating the duo GNU/Linux.&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;What makes Linux special is,Distro !&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;Eg of linux distro are:-Ubuntu, Debian, kali, Parrot,openSUSE,Fedora&lt;/p&gt; &lt;p&gt;&lt;strong&gt;System&lt;/strong&gt;&lt;/p&gt; &lt;style type=&quot;text/css&quot;&gt; .tg {border:none;border-collapse:collapse;border-color:#9ABAD9;border-spacing:0;} .tg td{background-color:#EBF5FF;border-color:#9ABAD9;border-style:solid;border-width:0px;color:#444; font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;} .tg th{background-color:#409cff;border-color:#9ABAD9;border-style:solid;border-width:0px;color:#fff; font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;} .tg .tg-ng5i{background-color:#000000;border-color:inherit;font-size:24px;text-align:left;vertical-align:top} .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top} &lt;/style&gt; &lt;div class=&quot;table-responsive text-nowrap&quot;&gt; &lt;table class=&quot;tg&quot;&gt; &lt;colgroup&gt; &lt;col style=&quot;width:...</description>
-        <pubDate>Sat, 02 Jan 2021 04:25:45 +0530</pubDate>
-        <link>http://localhost:4000/best-linux-cheatsheet-101/</link>
-        <guid isPermaLink="true">http://localhost:4000/best-linux-cheatsheet-101/</guid>
+        <pubDate>Fri, 01 Jan 2021 22:55:45 +0000</pubDate>
+        <link>https://hugs4bugs.me/best-linux-cheatsheet-101/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/best-linux-cheatsheet-101/</guid>
         
         <category>linux</category>
         
         <category>system Admin</category>
         
-        <category>linux</category>
+        <category></category>
       </item>
     
       <item>
         <title>Azure Networking 101</title>
         <description>
 </description>
-        <pubDate>Tue, 01 Dec 2020 17:56:40 +0530</pubDate>
-        <link>http://localhost:4000/azure-networking-101/</link>
-        <guid isPermaLink="true">http://localhost:4000/azure-networking-101/</guid>
+        <pubDate>Tue, 01 Dec 2020 12:26:40 +0000</pubDate>
+        <link>https://hugs4bugs.me/azure-networking-101/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/azure-networking-101/</guid>
         
         <category>docker</category>
         
         <category>devops</category>
         
-        <category>azure</category>
+        <category></category>
       </item>
     
       <item>
         <title>Docker 101</title>
         <description>&lt;p&gt;Before staring Docker containers, let’s understand how a team develops and deploy applications. The process of developing and managing application in a company typically includes one or more teams.There’s a development team that creates the software, and an operations team responsible for the deployment of these applications. The operations team is also responsible for the management of the application hosting infrastructure.&lt;/p&gt; &lt;h2 id=&quot;considerable-challanges--&quot;&gt;Considerable Challanges :-&lt;/h2&gt; &lt;ol&gt; &lt;li&gt; &lt;p&gt;&lt;strong&gt;Management of hosting environments&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;The different environments all require both software and hardware management. We have to ensure that both the installed software and configured hardware in each is the same. We also...</description>
-        <pubDate>Tue, 01 Dec 2020 17:56:40 +0530</pubDate>
-        <link>http://localhost:4000/Docker-101/</link>
-        <guid isPermaLink="true">http://localhost:4000/Docker-101/</guid>
+        <pubDate>Tue, 01 Dec 2020 12:26:40 +0000</pubDate>
+        <link>https://hugs4bugs.me/Docker-101/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/Docker-101/</guid>
         
         <category>docker</category>
         
         <category>devops</category>
         
-        <category>docker</category>
+        <category></category>
       </item>
     
       <item>
         <title>Benifits of CI/CD</title>
         <description>&lt;p&gt;Continuous Integration and Delivery (CI/CD) changed the way we build, test, and deploy software. CI/CD tools automate these processes, reducing error rates and optimizing workflows. Code moves through each development stage while automated testing throughout the process ensures errors are caught and rolled back before they ever reach production.&lt;/p&gt; &lt;p&gt;The use of CI/CD tools will continue to rise and improve the way software is developed. Deployments no longer need to be an annual, quarterly, or even a monthly event. With CI/CD, DevOps teams can deploy several times a day.&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;DevOps is future&lt;/p&gt; &lt;/blockquote&gt; &lt;h2 id=&quot;10-advantages-of-cicd--&quot;&gt;10 Advantages of CI/CD :-&lt;/h2&gt;...</description>
-        <pubDate>Mon, 12 Oct 2020 17:56:40 +0530</pubDate>
-        <link>http://localhost:4000/benifits-of-CI/</link>
-        <guid isPermaLink="true">http://localhost:4000/benifits-of-CI/</guid>
+        <pubDate>Mon, 12 Oct 2020 12:26:40 +0000</pubDate>
+        <link>https://hugs4bugs.me/benifits-of-CI/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/benifits-of-CI/</guid>
         
         <category>devops</category>
         
         <category>CI/CD</category>
         
-        <category>devops</category>
+        <category></category>
       </item>
     
       <item>
         <title>Automation with Jenkins and GitHub</title>
         <description>&lt;h1 id=&quot;why-automation&quot;&gt;Why Automation?&lt;/h1&gt; &lt;p&gt;Automation is one of the key aspects of DevOps and agile development.Internet, connectivity and software technologies have raised customer expectations for service performance, reliability and quality. And since every organization is a software organization, businesses are forced to respond faster than ever before when it comes to improving product features, fixing issues, delivering customer service or even to market competition and trends.&lt;/p&gt; &lt;p&gt;Organizations have responded by embracing modern Software Development Lifecycle (SDLC) strategies such as DevOps that streamline the organizational, process and tooling workflows to push quality software features to end-users faster and effectively. Fast response to...</description>
-        <pubDate>Fri, 01 May 2020 17:56:40 +0530</pubDate>
-        <link>http://localhost:4000/Automation-with-Jenkins-and-Github/</link>
-        <guid isPermaLink="true">http://localhost:4000/Automation-with-Jenkins-and-Github/</guid>
+        <pubDate>Fri, 01 May 2020 12:26:40 +0000</pubDate>
+        <link>https://hugs4bugs.me/Automation-with-Jenkins-and-Github/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/Automation-with-Jenkins-and-Github/</guid>
         
         <category>devops</category>
         
@@ -409,15 +409,15 @@
         
         <category>github</category>
         
-        <category>devops</category>
+        <category></category>
       </item>
     
       <item>
         <title>How to like Instagram posts with JavaScript?</title>
         <description>&lt;p&gt;Before starting let’s recall &lt;strong&gt;what JavaScript is and How it works&lt;/strong&gt; ?&lt;/p&gt; &lt;p&gt;JavaScript is a scripting or programming language that allows us to implement complex features on web pages.&lt;/p&gt; &lt;p&gt;JavaScript is a scripting language that enables us to create dynamically updating content,control multimedia,animate images and pretty much everything else.&lt;/p&gt; &lt;p&gt;JavaScript is both &lt;strong&gt;client side&lt;/strong&gt; and &lt;strong&gt;server side&lt;/strong&gt; language. Like node.js could be used on server side and vanilla Js for client side .&lt;/p&gt; &lt;p&gt;In this process we’ll use JavaScript Client side behaviour to execute our script in browser .&lt;/p&gt; &lt;p&gt;This script will use execute itself in client side browser and...</description>
-        <pubDate>Mon, 02 Mar 2020 17:56:40 +0530</pubDate>
-        <link>http://localhost:4000/how-to-like-instagram-post-with-javascript/</link>
-        <guid isPermaLink="true">http://localhost:4000/how-to-like-instagram-post-with-javascript/</guid>
+        <pubDate>Mon, 02 Mar 2020 12:26:40 +0000</pubDate>
+        <link>https://hugs4bugs.me/how-to-like-instagram-post-with-javascript/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/how-to-like-instagram-post-with-javascript/</guid>
         
         <category>automation</category>
         
@@ -425,15 +425,15 @@
         
         <category>javascript</category>
         
-        <category>automation</category>
+        <category></category>
       </item>
     
       <item>
         <title>How to install JENKINS on Linux ?</title>
         <description>&lt;h1 id=&quot;what-is-jenkins&quot;&gt;What is Jenkins?&lt;/h1&gt; &lt;p&gt;Jenkins is an open source automation tool written in Java with plugins built for Continuous Integration purpose. Jenkins is used to build and test your software projects continuously making it easier for developers to integrate changes to the project, and making it easier for users to obtain a fresh build. It also allows you to continuously deliver your software by integrating with a large number of testing and deployment technologies.&lt;/p&gt; &lt;p&gt;It is a server-based system that runs in servlet containers such as Apache Tomcat&lt;/p&gt; &lt;h2 id=&quot;how-to-install-it-&quot;&gt;How To Install it ?&lt;/h2&gt; &lt;p&gt;Here,I am using my own Linux...</description>
-        <pubDate>Sun, 12 Jan 2020 17:56:40 +0530</pubDate>
-        <link>http://localhost:4000/How-to-install-Jenkins-on-Linux/</link>
-        <guid isPermaLink="true">http://localhost:4000/How-to-install-Jenkins-on-Linux/</guid>
+        <pubDate>Sun, 12 Jan 2020 12:26:40 +0000</pubDate>
+        <link>https://hugs4bugs.me/How-to-install-Jenkins-on-Linux/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/How-to-install-Jenkins-on-Linux/</guid>
         
         <category>devops</category>
         
@@ -441,7 +441,7 @@
         
         <category>linux</category>
         
-        <category>devops</category>
+        <category></category>
       </item>
     
   </channel>
