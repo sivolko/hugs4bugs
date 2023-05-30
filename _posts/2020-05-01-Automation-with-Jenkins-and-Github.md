@@ -1,8 +1,7 @@
 ---
 title: Automation with Jenkins and GitHub
 date: 2020-05-01 12:26:40 Z
-categories:
-- devops
+category: devops
 tags:
 - devops
 - jenkins

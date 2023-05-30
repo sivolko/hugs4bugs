@@ -1,8 +1,7 @@
 ---
 title: Metasploit Framework vs Metasploit Pro
 date: 2022-08-21 00:00:00 Z
-categories:
-- security
+category: security
 tags:
 - cloud
 - security
@@ -16,6 +15,7 @@ image: https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&
 optimized_image: https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80
 author: Shubhendu Shubham
 comment: true
+paginate: true
 ---
 
 In the tug of war game of tools, we always confused with community edition and Pro. Both have their own separate use cases, we can't compare. But let's talk about what's the difference between them in the case of <strong> "Metasploit" </strong>

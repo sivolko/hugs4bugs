@@ -5,9 +5,30 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Mar 2023 09:58:03 +0000</pubDate>
-    <lastBuildDate>Sat, 25 Mar 2023 09:58:03 +0000</lastBuildDate>
+    <pubDate>Tue, 30 May 2023 18:00:55 +0000</pubDate>
+    <lastBuildDate>Tue, 30 May 2023 18:00:55 +0000</lastBuildDate>
     <generator>Jekyll v3.9.1</generator>
+    
+      <item>
+        <title>Auto close False Positive Incidents in Microsoft Sentinel.</title>
+        <description>&lt;p&gt;this is just a testing line for my github action workflow&lt;/p&gt;
+</description>
+        <pubDate>Mon, 15 May 2023 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/how-to-auto-close-false-positive-incidents-in-microsoft-sentinel/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/how-to-auto-close-false-positive-incidents-in-microsoft-sentinel/</guid>
+        
+        <category>Mircrosoft sentinel</category>
+        
+        <category>security</category>
+        
+        <category>hacking</category>
+        
+        <category>offensive security</category>
+        
+        <category>troubleshooter Club</category>
+        
+        <category>security</category>
+      </item>
     
       <item>
         <title>Search engines one should know as a CyberSecurity enthausist!</title>
@@ -46,7 +67,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category></category>
+        <category>automation</category>
       </item>
     
       <item>
@@ -64,7 +85,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category></category>
+        <category>linux</category>
       </item>
     
       <item>
@@ -84,7 +105,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category></category>
+        <category>security</category>
       </item>
     
       <item>
@@ -104,7 +125,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category></category>
+        <category>security</category>
       </item>
     
       <item>
@@ -124,7 +145,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category></category>
+        <category>cloud</category>
       </item>
     
       <item>
@@ -144,7 +165,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category></category>
+        <category>security</category>
       </item>
     
       <item>
@@ -164,7 +185,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category></category>
+        <category>security</category>
       </item>
     
       <item>
@@ -182,7 +203,7 @@
         
         <category>offensive security</category>
         
-        <category></category>
+        <category>security</category>
       </item>
     
       <item>
@@ -198,7 +219,7 @@
         
         <category>COSMOS DB</category>
         
-        <category></category>
+        <category>webapps</category>
       </item>
     
       <item>
@@ -214,7 +235,7 @@
         
         <category>Cyber Security</category>
         
-        <category></category>
+        <category>security</category>
       </item>
     
       <item>
@@ -230,7 +251,7 @@
         
         <category>GitHub Actions</category>
         
-        <category></category>
+        <category>automation</category>
       </item>
     
       <item>
@@ -246,7 +267,7 @@
         
         <category>Progressive WebApp</category>
         
-        <category></category>
+        <category>webapps</category>
       </item>
     
       <item>
@@ -260,7 +281,7 @@
         
         <category>security</category>
         
-        <category></category>
+        <category>security</category>
       </item>
     
       <item>
@@ -274,7 +295,7 @@
         
         <category>security</category>
         
-        <category></category>
+        <category>azure</category>
       </item>
     
       <item>
@@ -292,7 +313,7 @@
         
         <category>security</category>
         
-        <category></category>
+        <category>security</category>
       </item>
     
       <item>
@@ -306,7 +327,7 @@
         
         <category>security</category>
         
-        <category></category>
+        <category>networking</category>
       </item>
     
       <item>
@@ -320,7 +341,7 @@
         
         <category>system Admin</category>
         
-        <category></category>
+        <category>networking</category>
       </item>
     
       <item>
@@ -334,7 +355,7 @@
         
         <category>microsoft</category>
         
-        <category></category>
+        <category>azure</category>
       </item>
     
       <item>
@@ -348,7 +369,7 @@
         
         <category>system Admin</category>
         
-        <category></category>
+        <category>linux</category>
       </item>
     
       <item>
@@ -363,7 +384,7 @@
         
         <category>devops</category>
         
-        <category></category>
+        <category>azure</category>
       </item>
     
       <item>
@@ -377,7 +398,7 @@
         
         <category>devops</category>
         
-        <category></category>
+        <category>docker</category>
       </item>
     
       <item>
@@ -391,7 +412,7 @@
         
         <category>CI/CD</category>
         
-        <category></category>
+        <category>devops</category>
       </item>
     
       <item>
@@ -409,7 +430,7 @@
         
         <category>github</category>
         
-        <category></category>
+        <category>devops</category>
       </item>
     
       <item>
@@ -425,7 +446,7 @@
         
         <category>javascript</category>
         
-        <category></category>
+        <category>automation</category>
       </item>
     
       <item>
@@ -441,7 +462,7 @@
         
         <category>linux</category>
         
-        <category></category>
+        <category>devops</category>
       </item>
     
   </channel>

@@ -1,8 +1,7 @@
 ---
 title: Access Management 101.
 date: 2022-02-05 23:04:08 Z
-categories:
-- security
+category: security
 tags:
 - Access Management
 - Vulnerability
@@ -13,6 +12,7 @@ description: Beasic understandings of Access Management and AAA concept.
 image: https://d3nn873nee648n.cloudfront.net/900x600/16347/120-SM692126.jpg
 optimized_image: https://d3nn873nee648n.cloudfront.net/900x600/16347/120-SM692126.jpg
 author: Shubhendu Shubham
+paginate: true
 ---
 
 Access management that sounds like we all know about it, and even we are practicing it, but are we fundamentally aware of it ? Do our concepts of access management and security are correct?

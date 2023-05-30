@@ -1,8 +1,7 @@
 ---
 title: Blue Team vs Red Team
 date: 2022-11-04 00:00:00 Z
-categories:
-- security
+category: security
 tags:
 - cloud
 - security
@@ -17,6 +16,7 @@ image: https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=c
 optimized_image: https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 author: Shubhendu Shubham
 comment: false
+paginate: true
 ---
 
 Hold on, before I start lemme clear it those teams are called Blue and Red not because they hold Blue or Red colour uniforms....

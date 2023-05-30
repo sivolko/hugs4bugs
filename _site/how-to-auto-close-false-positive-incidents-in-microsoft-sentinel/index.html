@@ -17,19 +17,19 @@
     
     
 
-    <title>Managing and Storing Secrets:Azure Vault.🙆 | hugs4bugs</title>
-    <meta name="description" content="This is fundamental blog of how to manage and store secrets like certificates, passwords using Azure vault .">
+    <title>Auto close False Positive Incidents in Microsoft Sentinel. | hugs4bugs</title>
+    <meta name="description" content="Automate your incident tasks and close known false positive incidents automatically with email notified in Microsoft Sentinel">
     
-    <meta name="keywords" content="networking, security">
+    <meta name="keywords" content="Mircrosoft sentinel, security, hacking, offensive security, troubleshooter Club">
     
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Managing and Storing Secrets:Azure Vault.🙆 | hugs4bugs">
-    <meta name="twitter:description" content="This is fundamental blog of how to manage and store secrets like certificates, passwords using Azure vault .">
+    <meta name="twitter:title" content="Auto close False Positive Incidents in Microsoft Sentinel. | hugs4bugs">
+    <meta name="twitter:description" content="Automate your incident tasks and close known false positive incidents automatically with email notified in Microsoft Sentinel">
 
     
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80">
+    <meta property="twitter:image" content="https://th.bing.com/th/id/OIP.4iyoklvcRYZRDAi1HOKt0gHaEW?w=313&h=184&c=7&r=0&o=5&pid=1.7">
     
 
     
@@ -37,10 +37,10 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="https://hugs4bugs.me/storing-and-managing-secrets-using-azure-vault/">
-    <meta property="og:title" content="Managing and Storing Secrets:Azure Vault.🙆 | hugs4bugs">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80">
-    <meta property="og:description" content="This is fundamental blog of how to manage and store secrets like certificates, passwords using Azure vault .">
+    <meta property="og:url" content="https://hugs4bugs.me/how-to-auto-close-false-positive-incidents-in-microsoft-sentinel/">
+    <meta property="og:title" content="Auto close False Positive Incidents in Microsoft Sentinel. | hugs4bugs">
+    <meta property="og:image" content="https://th.bing.com/th/id/OIP.4iyoklvcRYZRDAi1HOKt0gHaEW?w=313&h=184&c=7&r=0&o=5&pid=1.7">
+    <meta property="og:description" content="Automate your incident tasks and close known false positive incidents automatically with email notified in Microsoft Sentinel">
     <meta property="og:site_name" content="hugs4bugs">
 
     <!-- Favicon -->
@@ -76,7 +76,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="canonical" href="https://hugs4bugs.me/storing-and-managing-secrets-using-azure-vault/">
+    <link rel="canonical" href="https://hugs4bugs.me/how-to-auto-close-false-positive-incidents-in-microsoft-sentinel/">
     <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
         href="https://hugs4bugs.me/feed.xml" />
     <link rel='manifest' href='/manifest.json'>
@@ -296,22 +296,22 @@
                 <p class="post-info">
                     
                         <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="2021-08-02T23:04:08+00:00">
+                        <time class="date" datetime="2023-05-15T00:00:00+00:00">
                             
 
 
-August 2, 2021
+May 15, 2023
 
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>5 min to read</span>
+                    <span>1 min to read</span>
                 </p>
-                <h1 class="post-title">Managing and Storing Secrets:Azure Vault.🙆</h1>
-                <p class="post-subtitle">Hiding:The Secrets</p>
+                <h1 class="post-title">Auto close False Positive Incidents in Microsoft Sentinel.</h1>
+                <p class="post-subtitle">Automate your Tasks</p>
 
                 
-                    <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Featured image" class="post-cover">
+                    <img src="https://th.bing.com/th/id/OIP.4iyoklvcRYZRDAi1HOKt0gHaEW?w=313&h=184&c=7&r=0&o=5&pid=1.7" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
@@ -321,269 +321,7 @@ August 2, 2021
                 <!-- Add your table of contents here -->
 
 
-                <p>As we deploy our production to the cloud, we need to be very consious about the sensitive informations eg:- passwords,encryption keys and certificates, which needs to be available to function. Apart from authorised use case, one should take care for <strong>unauthorised</strong> access.</p>
-
-<p>Hence, comes the <strong>Azure Key Vault</strong></p>
-
-<p><strong>What is Azure key vault</strong>?</p>
-
-<p>Azure Key Vault is a centrilized cloud service for securely storing and accessing secrets.Hold on what does <em>Secret</em> means? it could be anythings that one want to tightly control access to eg- API keys, passwords, certificates.</p>
-
-<p>Key value services supports 2 types of containers:-</p>
-
-<ol>
-  <li><strong>Vaults</strong> : Support storing software and HSM-backed keys,secrets and certificates.</li>
-  <li><strong>Managed Hardware Security Modules (HSM) pool</strong> : Only supports <em>HSM-backed</em> keys.</li>
-</ol>
-
-<p><strong>Features of Azure Vault</strong> :-</p>
-
-<ol>
-  <li>
-    <p><strong>Manage Secrets</strong></p>
-
-    <p>Azure Vault is used to store and tightly control access to tokens, passwords, certificates, API keys etc.</p>
-  </li>
-  <li>
-    <p><strong>Manage Encryption Key</strong> :-</p>
-
-    <p>It can be used as a key management solution, key vault makes it easier to create and control the encryption keys that are used to encrypt your data.</p>
-  </li>
-  <li>
-    <p><strong>Manage SSL/TLS certificates</strong> :-</p>
-
-    <p>Key vault enables you to provide,manage and deploy your public and private Secure Sockets layer/Transport Layer Security (SSL/TLS) certificates for both our Azure resources and your internal resources.</p>
-  </li>
-  <li>
-    <p><strong>Store secrets backed by hardware security modules (HSMs)</strong> :-</p>
-
-    <p>These secrets and keys can be protected either by software or by FIPS 140-2 level 2 validated HSMs.</p>
-  </li>
-</ol>
-
-<p><strong>Benifits of Azure Key Vault</strong> :-</p>
-
-<ol>
-  <li>
-    <p>Centralized application secrets</p>
-  </li>
-  <li>
-    <p>Securely stored secrets and keys</p>
-  </li>
-  <li>
-    <p>Access monitoring and Access control</p>
-  </li>
-  <li>
-    <p>Simplified administration of Application secrets</p>
-  </li>
-  <li>
-    <p>Integration with other Azure services</p>
-  </li>
-</ol>
-
-<p><strong>Hands on</strong></p>
-
-<p>Let’s learn how to add password to Azure Key Vault. Password falls under the category of <em>sesitive information</em></p>
-
-<p>Ways to add secrets to and read secrets from Key Vault.</p>
-
-<ol>
-  <li>Using Azure Portal</li>
-  <li>Azure CLI</li>
-  <li>Azure Powershell</li>
-</ol>
-
-<p><strong>Azure CLI</strong> is a way to work with Azure resources from the command line or from scripts.</p>
-
-<p><strong>Cloud Shell</strong> is a browser-based shell experience to manage and develop Azure resources.An interactive shell that runs in the cloud.</p>
-
-<p><strong>Creating a Key Vault</strong> :-</p>
-
-<p>Steps :-</p>
-
-<ul>
-  <li>Go to the Azure portal.</li>
-</ul>
-
-<p><img src="/assets/img/a/01.jpg" alt="Azure Portal" /></p>
-
-<ul>
-  <li>Select Create a resource under Azure services. This Create a resource pane appears.</li>
-</ul>
-
-<p><img src="/assets/img/a/one.jpg" alt="Azure Resource " /></p>
-
-<ul>
-  <li>In the search bar, enter key vault,and then select <em>Key Vault</em> from the results.This will appear Key Vault pane.</li>
-</ul>
-
-<p><img src="/assets/img/a/2.jpg" alt="Search Key vault" /></p>
-
-<ul>
-  <li>Click on the <em>Create</em> and fill these following details. Don’t forget to replace NNN with a series of numbers.This helps ensure that the name of your key vault is <strong>Unique</strong>.</li>
-</ul>
-
-<style type="text/css">
-.tg  {border-collapse:collapse;border-color:#9ABAD9;border-spacing:0;}
-.tg td{background-color:#EBF5FF;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#444;
-  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{background-color:#409cff;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#fff;
-  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-0lax{text-align:left;vertical-align:top}
-</style>
-
-<table class="tg">
-<thead>
-  <tr>
-    <th class="tg-0lax"><span style="font-weight:bold;color:#000">Settings</span></th>
-    <th class="tg-0lax"><span style="font-weight:bold;color:#000">Value</span></th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td class="tg-0lax">Project Details</td>
-    <td class="tg-0lax"></td>
-  </tr>
-  <tr>
-    <td class="tg-0lax">Subscription</td>
-    <td class="tg-0lax">Concierge Subscription</td>
-  </tr>
-  <tr>
-    <td class="tg-0lax">Resource group</td>
-    <td class="tg-0lax">[sandbox resource group name]</td>
-  </tr>
-  <tr>
-    <td class="tg-0lax">Instance details</td>
-    <td class="tg-0lax"></td>
-  </tr>
-  <tr>
-    <td class="tg-0lax">Key vault name</td>
-    <td class="tg-0lax">my-keyvault-NNN where NNN is a unique identifier</td>
-  </tr>
-</tbody>
-</table>
-
-<p><img src="/assets/img/a/3.jpg" alt="details Key vault " /></p>
-
-<p><img src="/assets/img/a/4.jpg" alt="details key vault " /></p>
-
-<p><img src="/assets/img/a/5.jpg" alt="key vault " /></p>
-
-<ul>
-  <li>
-    <p>Select <strong>Review + Create</strong> and after passing validation,select Create.Wait for deployment to successfully complete.</p>
-  </li>
-  <li>
-    <p>Select <em>Go to resource</em></p>
-  </li>
-</ul>
-
-<p><img src="/assets/img/a/6.jpg" alt="details" /></p>
-
-<p><img src="/assets/img/a/7.jpg" alt="details" /></p>
-
-<p><img src="/assets/img/a/8.jpg" alt="details" /></p>
-
-<p>here, will appear some details about your key vault eg, Vault URI field shows the URI that your application can use to access your vault from the REST API.</p>
-
-<p><img src="/assets/img/a/9.jpg" alt="details" /></p>
-
-<ul>
-  <li>As an optional step, on the left menu pane,under <em>Settings</em>, examine some of the other features.</li>
-</ul>
-
-<p><strong>Adding a password to the key vault</strong></p>
-
-<ul>
-  <li>On the left menu pane,under <em>Settings</em>,select <strong>Secrets</strong>. The Secrets pane for your key vault appears.</li>
-</ul>
-
-<p><img src="/assets/img/a/11.jpg" alt="Secrets" /></p>
-
-<ul>
-  <li>From the top menu bar, select <strong>Generate/Import</strong>.The Create a secret pane appears.</li>
-</ul>
-
-<p><img src="/assets/img/a/10.jpg" alt="Secrets" />
-<img src="/assets/img/a/12.jpg" alt="Secrets" /></p>
-
-<p>Fill these details accordingly :-</p>
-
-<style type="text/css">
-.tg  {border-collapse:collapse;border-color:#9ABAD9;border-spacing:0;}
-.tg td{background-color:#EBF5FF;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#444;
-  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{background-color:#409cff;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#fff;
-  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-0lax{text-align:left;vertical-align:top}
-</style>
-
-<table class="tg">
-<thead>
-  <tr>
-    <th class="tg-0lax"><span style="font-weight:bold;color:#000">Settings</span></th>
-    <th class="tg-0lax"><span style="font-weight:bold;color:#000">Value</span></th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td class="tg-0lax">Upload Options</td>
-    <td class="tg-0lax">Manual</td>
-  </tr>
-  <tr>
-    <td class="tg-0lax">Name</td>
-    <td class="tg-0lax">MyPassword</td>
-  </tr>
-  <tr>
-    <td class="tg-0lax">Value</td>
-    <td class="tg-0lax">hVFkk96</td>
-  </tr>
-</tbody>
-</table>
-
-<p>Accept the remaining settings at their default values.Notice that you can specify properties such as the activation date and the expiration date.You can also disable access to the secret.</p>
-
-<ul>
-  <li>Select <strong>Create</strong></li>
-</ul>
-
-<p><strong>Showing the Password</strong></p>
-
-<p>There are the 2 ways to access password from the Key Vault i.e</p>
-
-<ol>
-  <li>from Azure portal</li>
-  <li>Azure CLI</li>
-</ol>
-
-<p>Being a linux distro user and Die hard fan of CLI, here I am gonna use Azure CLI to fetch password from Azure vault.</p>
-
-<ul>
-  <li>Run <strong>Cloud Shell</strong></li>
-  <li>az keyvault secret show <br />
-–name MyPassword <br />
-–vault-name <my-keyvault-NNN> \
---query value \
---output tsv</my-keyvault-NNN></li>
-</ul>
-
-<p>**<my-keyvault-NNN>** replace this with your here for eg my case it's _my-keyvault-0402_</my-keyvault-NNN></p>
-
-<p><img src="/assets/img/a/13.jpg" alt="password" /></p>
-
-<p><strong>Output</strong> :-</p>
-
-<p><strong>hVFkk96</strong></p>
-
-<p><strong>JSON View</strong></p>
-
-<p><img src="/assets/img/a/14.jpg" alt="Resource JSON" /></p>
-
-<p><strong>Cleaning Up</strong></p>
-
-<p>The sandbox automatically cleans up your resources when you’re finished with this module.</p>
-
-<p>When you’re working in your own subscription, it’s a good idea at the end of a project to identify whether you still need the resources you created. Resources left running can cost you money. You can delete resources individually or delete the resource group to delete the entire set of resources.</p>
+                <p>this is just a testing line for my github action workflow</p>
 
 
                 <!-- Pagination links -->
@@ -599,29 +337,29 @@ August 2, 2021
                         
                         
                             <li>
-                                <a href="/Fundamentals-of-Network-security/">
+                                <a href="/benifits-of-CI/">
                                     
-                                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80">
+                                        <img src="https://cdn-images-1.medium.com/max/1600/1*-eHRhJcg-QPUws99xEDh6w.png">
                                     
-                                    <h3>Fundamentals of Network Security.☠️</h3>
+                                    <h3>Benifits of CI/CD</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/waf-vs-firewall/">
+                                <a href="/how-to-automate-tweets-via-github-actions/">
                                     
-                                        <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://images.pexels.com/photos/5744251/pexels-photo-5744251.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
                                     
-                                    <h3>WAF vs Firewall</h3>
+                                    <h3>Automate Twitter via github Actions.</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/difference-between-WAF-and-IPS/">
+                                <a href="/Progressive-web-app/">
                                     
-                                        <img src="https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
                                     
-                                    <h3>WAF vs IPS</h3>
+                                    <h3>Progressive WebApp.</h3>
                                 </a>
                             </li>
                         
@@ -633,7 +371,7 @@ August 2, 2021
 
         <!-- Add time bar only for pages without pagination -->
         
-            <div class="time-bar" data-minutes="5">
+            <div class="time-bar" data-minutes="1">
     <span class="time-completed"></span>
     <span class="time-remaining"></span>
     <div class="bar">
@@ -676,7 +414,7 @@ August 2, 2021
         <section class="share">
     <h3>Share</h3>
     <a aria-label="Share on Twitter"
-        href="https://twitter.com/intent/tweet?text=&quot;This is fundamental blog of how to manage and store secrets like certificates, passwords using Azure vault .&quot;%20https://hugs4bugs.me/storing-and-managing-secrets-using-azure-vault/%20via%20&#64;myselfshubhendu&hashtags=networking,security"
+        href="https://twitter.com/intent/tweet?text=&quot;Automate your incident tasks and close known false positive incidents automatically with email notified in Microsoft Sentinel&quot;%20https://hugs4bugs.me/how-to-auto-close-false-positive-incidents-in-microsoft-sentinel/%20via%20&#64;myselfshubhendu&hashtags=Mircrosoft sentinel,security,hacking,offensive security,troubleshooter Club"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -684,7 +422,7 @@ August 2, 2021
         </svg>
     </a>
     <a aria-label="Share on WhatsApp"
-        href="https://twitter.com/intent/tweet?text=&quot;This is fundamental blog of how to manage and store secrets like certificates, passwords using Azure vault .&quot;%20https://hugs4bugs.me/storing-and-managing-secrets-using-azure-vault/%20via%20&#64;myselfshubhendu&hashtags=networking,security"
+        href="https://twitter.com/intent/tweet?text=&quot;Automate your incident tasks and close known false positive incidents automatically with email notified in Microsoft Sentinel&quot;%20https://hugs4bugs.me/how-to-auto-close-false-positive-incidents-in-microsoft-sentinel/%20via%20&#64;myselfshubhendu&hashtags=Mircrosoft sentinel,security,hacking,offensive security,troubleshooter Club"
         onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -692,7 +430,7 @@ August 2, 2021
         </svg>
     </a>
     <a aria-label="Share on Facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/storing-and-managing-secrets-using-azure-vault/"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/how-to-auto-close-false-positive-incidents-in-microsoft-sentinel/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
         title="Share on Facebook">
         <svg class="icon icon-facebook">
@@ -782,7 +520,7 @@ August 2, 2021
         disqus_loaded = true;
         var disqus_shortname = 'hugs4bugs';
         var disqus_title = '';
-        var disqus_url = '/storing-and-managing-secrets-using-azure-vault/';
+        var disqus_url = '/how-to-auto-close-false-positive-incidents-in-microsoft-sentinel/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -929,266 +667,18 @@ August 2, 2021
         {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
-            "name": "Managing and Storing Secrets:Azure Vault.🙆",
-            "headline": "Hiding:The Secrets",
-            "description": "This is fundamental blog of how to manage and store secrets like certificates, passwords using Azure vault .",
-            "image": "https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80",
-            "url": "https://hugs4bugs.me/storing-and-managing-secrets-using-azure-vault/",
-            "articleBody": "As we deploy our production to the cloud, we need to be very consious about the sensitive informations eg:- passwords,encryption keys and certificates, which needs to be available to function. Apart from authorised use case, one should take care for unauthorised access.
-
-Hence, comes the Azure Key Vault
-
-What is Azure key vault?
-
-Azure Key Vault is a centrilized cloud service for securely storing and accessing secrets.Hold on what does Secret means? it could be anythings that one want to tightly control access to eg- API keys, passwords, certificates.
-
-Key value services supports 2 types of containers:-
-
-
-  Vaults : Support storing software and HSM-backed keys,secrets and certificates.
-  Managed Hardware Security Modules (HSM) pool : Only supports HSM-backed keys.
-
-
-Features of Azure Vault :-
-
-
-  
-    Manage Secrets
-
-    Azure Vault is used to store and tightly control access to tokens, passwords, certificates, API keys etc.
-  
-  
-    Manage Encryption Key :-
-
-    It can be used as a key management solution, key vault makes it easier to create and control the encryption keys that are used to encrypt your data.
-  
-  
-    Manage SSL/TLS certificates :-
-
-    Key vault enables you to provide,manage and deploy your public and private Secure Sockets layer/Transport Layer Security (SSL/TLS) certificates for both our Azure resources and your internal resources.
-  
-  
-    Store secrets backed by hardware security modules (HSMs) :-
-
-    These secrets and keys can be protected either by software or by FIPS 140-2 level 2 validated HSMs.
-  
-
-
-Benifits of Azure Key Vault :-
-
-
-  
-    Centralized application secrets
-  
-  
-    Securely stored secrets and keys
-  
-  
-    Access monitoring and Access control
-  
-  
-    Simplified administration of Application secrets
-  
-  
-    Integration with other Azure services
-  
-
-
-Hands on
-
-Let’s learn how to add password to Azure Key Vault. Password falls under the category of sesitive information
-
-Ways to add secrets to and read secrets from Key Vault.
-
-
-  Using Azure Portal
-  Azure CLI
-  Azure Powershell
-
-
-Azure CLI is a way to work with Azure resources from the command line or from scripts.
-
-Cloud Shell is a browser-based shell experience to manage and develop Azure resources.An interactive shell that runs in the cloud.
-
-Creating a Key Vault :-
-
-Steps :-
-
-
-  Go to the Azure portal.
-
-
-
-
-
-  Select Create a resource under Azure services. This Create a resource pane appears.
-
-
-
-
-
-  In the search bar, enter key vault,and then select Key Vault from the results.This will appear Key Vault pane.
-
-
-
-
-
-  Click on the Create and fill these following details. Don’t forget to replace NNN with a series of numbers.This helps ensure that the name of your key vault is Unique.
-
-
-
-
-
-
-  
-    Settings
-    Value
-  
-
-
-  
-    Project Details
-    
-  
-  
-    Subscription
-    Concierge Subscription
-  
-  
-    Resource group
-    [sandbox resource group name]
-  
-  
-    Instance details
-    
-  
-  
-    Key vault name
-    my-keyvault-NNN where NNN is a unique identifier
-  
-
-
-
-
-
-
-
-
-
-
-  
-    Select Review + Create and after passing validation,select Create.Wait for deployment to successfully complete.
-  
-  
-    Select Go to resource
-  
-
-
-
-
-
-
-
-
-here, will appear some details about your key vault eg, Vault URI field shows the URI that your application can use to access your vault from the REST API.
-
-
-
-
-  As an optional step, on the left menu pane,under Settings, examine some of the other features.
-
-
-Adding a password to the key vault
-
-
-  On the left menu pane,under Settings,select Secrets. The Secrets pane for your key vault appears.
-
-
-
-
-
-  From the top menu bar, select Generate/Import.The Create a secret pane appears.
-
-
-
-
-
-Fill these details accordingly :-
-
-
-
-
-
-  
-    Settings
-    Value
-  
-
-
-  
-    Upload Options
-    Manual
-  
-  
-    Name
-    MyPassword
-  
-  
-    Value
-    hVFkk96
-  
-
-
-
-Accept the remaining settings at their default values.Notice that you can specify properties such as the activation date and the expiration date.You can also disable access to the secret.
-
-
-  Select Create
-
-
-Showing the Password
-
-There are the 2 ways to access password from the Key Vault i.e
-
-
-  from Azure portal
-  Azure CLI
-
-
-Being a linux distro user and Die hard fan of CLI, here I am gonna use Azure CLI to fetch password from Azure vault.
-
-
-  Run Cloud Shell
-  az keyvault secret show 
-–name MyPassword 
-–vault-name  \
---query value \
---output tsv
-
-
-**** replace this with your here for eg my case it's _my-keyvault-0402_
-
-
-
-Output :-
-
-hVFkk96
-
-JSON View
-
-
-
-Cleaning Up
-
-The sandbox automatically cleans up your resources when you’re finished with this module.
-
-When you’re working in your own subscription, it’s a good idea at the end of a project to identify whether you still need the resources you created. Resources left running can cost you money. You can delete resources individually or delete the resource group to delete the entire set of resources.
+            "name": "Auto close False Positive Incidents in Microsoft Sentinel.",
+            "headline": "Automate your Tasks",
+            "description": "Automate your incident tasks and close known false positive incidents automatically with email notified in Microsoft Sentinel",
+            "image": "https://th.bing.com/th/id/OIP.4iyoklvcRYZRDAi1HOKt0gHaEW?w=313&h=184&c=7&r=0&o=5&pid=1.7",
+            "url": "https://hugs4bugs.me/how-to-auto-close-false-positive-incidents-in-microsoft-sentinel/",
+            "articleBody": "this is just a testing line for my github action workflow
 ",
-            "wordcount": "947",
+            "wordcount": "11",
             "inLanguage": "en",
-            "dateCreated": "2021-08-02/",
-            "datePublished": "2021-08-02/",
-            "dateModified": "2021-08-02/",
+            "dateCreated": "2023-05-15/",
+            "datePublished": "2023-05-15/",
+            "dateModified": "2023-05-15/",
             "author": {
                 "@type": "Person",
                 "name": "Shubhendu",
@@ -1213,9 +703,9 @@ When you’re working in your own subscription, it’s a good idea at the end of
                 }
             },
             "mainEntityOfPage": "True",
-            "genre": "azure",
-            "articleSection": "azure",
-            "keywords": ["networking","security"]
+            "genre": "security",
+            "articleSection": "security",
+            "keywords": ["Mircrosoft sentinel","security","hacking","offensive security","troubleshooter Club"]
         }
         </script>
     </body>

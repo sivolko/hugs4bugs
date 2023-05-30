@@ -1,7 +1,7 @@
 ---
-title: Travel
+title: Cloud
 layout: category
-slug: travel
-description: A category for travel related posts.
+slug: cloud
+description: A category for cloud related posts.
 ---
 

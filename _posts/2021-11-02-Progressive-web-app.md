@@ -1,8 +1,7 @@
 ---
 title: Progressive WebApp.
 date: 2021-11-02 23:04:08 Z
-categories:
-- webapps
+category: webapps
 tags:
 - WebApps
 - PWA
@@ -13,6 +12,7 @@ description: How you ever seen add to home screen or install popup on .
 image: https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80
 optimized_image: https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80
 author: Shubhendu Shubham
+paginate: true
 ---
 
 ## What are Progressive WebApps?

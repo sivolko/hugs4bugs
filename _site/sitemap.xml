@@ -211,6 +211,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/how-to-auto-close-false-positive-incidents-in-microsoft-sentinel/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-05-15</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/useful-cybersecurity-search-engines/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>

@@ -1,22 +1,22 @@
 ---
+layout: post
 title: What is chatGpt? How to use it?
-date: 2022-12-25 00:00:00 Z
-categories:
-- security
+
+subtitle: A Friend who never lies!
+description: What is the difference between Kali Linux and Parrot os. Which is good
+  for beginers and pro in cyber security and why do we need both?
+image: https://images.pexels.com/photos/7108/notebook-computer-chill-relax.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+optimized_image: https://images.pexels.com/photos/7108/notebook-computer-chill-relax.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+category: automation
 tags:
 - cloud
 - security
 - hacking
 - offensive security
 - troubleshooter Club
-layout: post
-subtitle: A Friend who never lies!
-description: What is the difference between Kali Linux and Parrot os. Which is good
-  for beginers and pro in cyber security and why do we need both?
-image: https://images.pexels.com/photos/7108/notebook-computer-chill-relax.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
-optimized_image: https://images.pexels.com/photos/7108/notebook-computer-chill-relax.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 author: Shubhendu Shubham
 comment: false
+paginate: true
 ---
 
 One day I woke up and saw my [twitter](https://twitter.com/myselfshubhendu) timeline was filled with all funny conversation with [**Chat-gpt**]().Hence being a curious troubleshooter, I just google and did some handson chat-gpt open AI tool. So, here are my few insights what I learnt from it.

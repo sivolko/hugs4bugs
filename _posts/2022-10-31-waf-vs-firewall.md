@@ -1,8 +1,7 @@
 ---
 title: WAF vs Firewall
 date: 2022-10-31 00:00:00 Z
-categories:
-- security
+category: security
 tags:
 - cloud
 - security
@@ -17,6 +16,7 @@ image: https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=c
 optimized_image: https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 author: Shubhendu Shubham
 comment: false
+
 ---
 
 Before start differences, let's understand the WAF. WAF stands for the **Web Application Firewall** that operates as application firewall for the HTTPS applications. It implements set of rules for a HTTP conversation and due to these rules, WAF prevents from XSS (Cross site scripting) and SQL injections.

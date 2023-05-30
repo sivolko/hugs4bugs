@@ -1,8 +1,7 @@
 ---
 title: College to Cyber Security Journey
 date: 2022-10-07 00:00:00 Z
-categories:
-- security
+category: security
 tags:
 - cloud
 - security
@@ -17,6 +16,7 @@ image: https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&
 optimized_image: https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80
 author: Shubhendu Shubham
 comment: true
+paginate: true
 ---
 
 We have been raised by watching Sci-Fi hollywood movies and hacking series. We often heard xyz company site has been compromised, hackers has released sensitive user data to the public ? But lemme clear one thing in the beginning of the block **Hacking** is the word for non tech or media people. And anyone who writes code, makes policy, debug code all are hackers in tech.

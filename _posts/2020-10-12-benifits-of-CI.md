@@ -1,8 +1,7 @@
 ---
 title: Benifits of CI/CD
 date: 2020-10-12 12:26:40 Z
-categories:
-- devops
+category: devops
 tags:
 - devops
 - CI/CD
