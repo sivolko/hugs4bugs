@@ -5,13 +5,17 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 30 May 2023 18:13:38 +0000</pubDate>
-    <lastBuildDate>Tue, 30 May 2023 18:13:38 +0000</lastBuildDate>
+    <pubDate>Tue, 30 May 2023 19:15:46 +0000</pubDate>
+    <lastBuildDate>Tue, 30 May 2023 19:15:46 +0000</lastBuildDate>
     <generator>Jekyll v3.9.1</generator>
     
       <item>
         <title>Auto close False Positive Incidents in Microsoft Sentinel.</title>
         <description>&lt;p&gt;this is just a testing line for my github action workflow&lt;/p&gt;
+
+&lt;p&gt;Just adding few more lines for satisfaction buddy I hope it’ll work . Jay Bajaranbali !!&lt;/p&gt;
+
+&lt;p&gt;#Troubleshooter&lt;/p&gt;
 </description>
         <pubDate>Mon, 15 May 2023 00:00:00 +0000</pubDate>
         <link>https://hugs4bugs.me/how-to-auto-close-false-positive-incidents-in-microsoft-sentinel/</link>
