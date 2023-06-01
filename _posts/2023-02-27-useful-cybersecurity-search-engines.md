@@ -17,7 +17,7 @@ comment: false
 paginate: true
 ---
 
-Before jumping to the topic,lemme tell you some interesting thing about this blog. It's was hot sunny day and I was enjoying my holiday vaccation at [Varkala Beach](https://www.keralatourism.org/destination/varkala-beach/328/) in Kerela Midway  I opened my linkedin profile, [**Daniel Kelley**](https://en.wikipedia.org/wiki/Daniel_Kelley_(hacker)) former black hat hacker post pops up! . It was the curated list of all top 30 cool search engines , so here is the deatailed blog about it.
+Before jumping to the topic,lemme tell you some interesting thing about this blog. It's was hot sunny day and I was enjoying my holiday vaccation at [Varkala Beach](https://www.keralatourism.org/destination/varkala-beach/328/) in Kerela Midway , In hot summer afternoon I am curating all those list from my resort bed.
 
 Here are the list of must try search engines as a cyber security researcher! 
 

@@ -5,38 +5,32 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 30 May 2023 19:15:46 +0000</pubDate>
-    <lastBuildDate>Tue, 30 May 2023 19:15:46 +0000</lastBuildDate>
-    <generator>Jekyll v3.9.1</generator>
+    <pubDate>Thu, 01 Jun 2023 22:33:56 +0000</pubDate>
+    <lastBuildDate>Thu, 01 Jun 2023 22:33:56 +0000</lastBuildDate>
+    <generator>Jekyll v3.9.3</generator>
     
       <item>
-        <title>Auto close False Positive Incidents in Microsoft Sentinel.</title>
-        <description>&lt;p&gt;this is just a testing line for my github action workflow&lt;/p&gt;
-
-&lt;p&gt;Just adding few more lines for satisfaction buddy I hope it’ll work . Jay Bajaranbali !!&lt;/p&gt;
-
-&lt;p&gt;#Troubleshooter&lt;/p&gt;
+        <title>Automate Firebase hosting with Github Actions and Ruby.</title>
+        <description>
 </description>
-        <pubDate>Mon, 15 May 2023 00:00:00 +0000</pubDate>
-        <link>https://hugs4bugs.me/how-to-auto-close-false-positive-incidents-in-microsoft-sentinel/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/how-to-auto-close-false-positive-incidents-in-microsoft-sentinel/</guid>
+        <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/automation-with-firebase-and-ruby/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/automation-with-firebase-and-ruby/</guid>
         
-        <category>Mircrosoft sentinel</category>
+        <category>webApps</category>
         
-        <category>security</category>
+        <category>jekyll</category>
         
-        <category>hacking</category>
-        
-        <category>offensive security</category>
+        <category>developer</category>
         
         <category>troubleshooter Club</category>
         
-        <category>security</category>
+        <category>automation</category>
       </item>
     
       <item>
         <title>Search engines one should know as a CyberSecurity enthausist!</title>
-        <description>&lt;p&gt;Before jumping to the topic,lemme tell you some interesting thing about this blog. It’s was hot sunny day and I was enjoying my holiday vaccation at &lt;a href=&quot;https://www.keralatourism.org/destination/varkala-beach/328/&quot;&gt;Varkala Beach&lt;/a&gt; in Kerela Midway I opened my linkedin profile, &lt;a href=&quot;https://en.wikipedia.org/wiki/Daniel_Kelley_(hacker)&quot;&gt;&lt;strong&gt;Daniel Kelley&lt;/strong&gt;&lt;/a&gt; former black hat hacker post pops up! . It was the curated list of all top 30 cool search engines , so here is the deatailed blog about it.&lt;/p&gt; &lt;p&gt;Here are the list of must try search engines as a cyber security researcher!&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;h2 id=&quot;dehashed--leaked-credentials&quot;&gt;DeHashed : Leaked credentials&lt;/h2&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/s/1.png&quot; alt=&quot;Dehashed&quot; /&gt;&lt;/p&gt; &lt;p&gt;Dehashed provides free deep-web...</description>
+        <description>&lt;p&gt;Before jumping to the topic,lemme tell you some interesting thing about this blog. It’s was hot sunny day and I was enjoying my holiday vaccation at &lt;a href=&quot;https://www.keralatourism.org/destination/varkala-beach/328/&quot;&gt;Varkala Beach&lt;/a&gt; in Kerela Midway , In hot summer afternoon I am curating all those list from my resort bed.&lt;/p&gt; &lt;p&gt;Here are the list of must try search engines as a cyber security researcher!&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;h2 id=&quot;dehashed--leaked-credentials&quot;&gt;DeHashed : Leaked credentials&lt;/h2&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/s/1.png&quot; alt=&quot;Dehashed&quot; /&gt;&lt;/p&gt; &lt;p&gt;Dehashed provides free deep-web scans and protection against credential leaks.It OFFER TRUE WILDCARD,REGEX SEARCHES, AND A BASIC SEARCH WHICH INCLUDES SEARCH OPERATORS.&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;h2 id=&quot;security-trails--extensive-dns-data&quot;&gt;Security...</description>
         <pubDate>Mon, 27 Feb 2023 00:00:00 +0000</pubDate>
         <link>https://hugs4bugs.me/useful-cybersecurity-search-engines/</link>
         <guid isPermaLink="true">https://hugs4bugs.me/useful-cybersecurity-search-engines/</guid>
