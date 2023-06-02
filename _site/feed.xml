@@ -5,14 +5,13 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 01 Jun 2023 22:33:56 +0000</pubDate>
-    <lastBuildDate>Thu, 01 Jun 2023 22:33:56 +0000</lastBuildDate>
+    <pubDate>Fri, 02 Jun 2023 22:17:40 +0000</pubDate>
+    <lastBuildDate>Fri, 02 Jun 2023 22:17:40 +0000</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
     
       <item>
         <title>Automate Firebase hosting with Github Actions and Ruby.</title>
-        <description>
-</description>
+        <description>&lt;p&gt;Before start, let’s understand why do I need this ? Since I have been working on my blog and deploying it over firebase and again pushing them back to github for version control and keeping source code hosted to reduce the chance of deletion from my location system , which is very common to me! Being a lazy and troubleshooter guy I planned to reduce my workload , and minimalise them. That’s how journey of CI/CD starts.&lt;/p&gt; &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; # USE CASE:- 1. Setup firebase hosting 2. Integrate hosting with Github Repository 3. Setup Workflow inside project...</description>
         <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
         <link>https://hugs4bugs.me/automation-with-firebase-and-ruby/</link>
         <guid isPermaLink="true">https://hugs4bugs.me/automation-with-firebase-and-ruby/</guid>
