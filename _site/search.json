@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "How to create &amp; Manage users and Groups within Azure AD.",
+      "tags"     : "azure, active directory, developer, and cloud",
+      "categories" : "azure",
+      "url"      : "/how-to-manage-azure-active-directory-objects/",
+      "date"     : "04/30/2023"
+    } ,
+  
+    {
       "title"    : "Automate Firebase hosting with Github Actions and Ruby.",
       "tags"     : "webApps, jekyll, developer, and troubleshooter Club",
       "categories" : "automation",

@@ -1298,6 +1298,15 @@ jobs:
                         
                         
                             <li>
+                                <a href="/automation-with-firebase-and-ruby/">
+                                    
+                                        <img src="https://images.pexels.com/photos/4506940/pexels-photo-4506940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                    
+                                    <h3>Automate Firebase hosting with Github Actions and Ruby.</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
                                 <a href="/waf-vs-firewall/">
                                     
                                         <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
@@ -1307,20 +1316,11 @@ jobs:
                             </li>
                         
                             <li>
-                                <a href="/how-to-like-instagram-post-with-javascript/">
+                                <a href="/blue-team-vs-red-team-in-cyber-security/">
                                     
-                                        <img src="https://media.giphy.com/media/cmqnzFK17DO4vKCscd/giphy.gif">
+                                        <img src="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
                                     
-                                    <h3>How to like Instagram posts with JavaScript?</h3>
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="/Progressive-web-app/">
-                                    
-                                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
-                                    
-                                    <h3>Progressive WebApp.</h3>
+                                    <h3>Blue Team vs Red Team</h3>
                                 </a>
                             </li>
                         
@@ -1841,10 +1841,10 @@ step 7:-
 Now go to client folder and install these dependencies
 
 cd client
-import express from 'express';
-import bodyParser from 'body~|-|parser';
-import mongoose from 'mongoose';
-import cors from 'cors';
+import express from &apos;express&apos;;
+import bodyParser from &apos;body~|-|parser&apos;;
+import mongoose from &apos;mongoose&apos;;
+import cors from &apos;cors&apos;;
 
 
 step 8:-
@@ -1858,15 +1858,15 @@ Now Building UI for our project.
 
 index.js
 
-import React from 'react';
-import ReactDOM from 'react~|-|dom';
-import { Provider } from 'react~|-|redux';
-import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux~|-|thunk';
+import React from &apos;react&apos;;
+import ReactDOM from &apos;react~|-|dom&apos;;
+import { Provider } from &apos;react~|-|redux&apos;;
+import { createStore, applyMiddleware, compose } from &apos;redux&apos;;
+import thunk from &apos;redux~|-|thunk&apos;;
 
-import { reducers } from './reducers';
-import App from './App';
-import './index.css';
+import { reducers } from &apos;./reducers&apos;;
+import App from &apos;./App&apos;;
+import &apos;./index.css&apos;;
 
 const store ~|=| createStore(reducers, compose(applyMiddleware(thunk)));
 
@@ -1874,7 +1874,7 @@ ReactDOM.render(
   ~|&amp;lt;|Provider store~|=|{store}&amp;gt;
     ~|&amp;lt;|App /&amp;gt;
   ~|&amp;lt;|/Provider&amp;gt;,
-  document.getElementById('root'),
+  document.getElementById(&apos;root&apos;),
 );
 
 
@@ -1883,54 +1883,54 @@ Adding Styles
 
 styles.js
 
-import { makeStyles } from '@material~|-|ui/core/styles';
+import { makeStyles } from &apos;@material~|-|ui/core/styles&apos;;
 
 export default makeStyles(() ~|=|&amp;gt; ({
   appBar: {
     borderRadius: 15,
-    margin: '30px 0',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    margin: &apos;30px 0&apos;,
+    display: &apos;flex&apos;,
+    flexDirection: &apos;row&apos;,
+    justifyContent: &apos;center&apos;,
+    alignItems: &apos;center&apos;,
   },
   heading: {
-    color: 'rgba(0,183,255, 1)',
+    color: &apos;rgba(0,183,255, 1)&apos;,
   },
   image: {
-    marginLeft: '15px',
+    marginLeft: &apos;15px&apos;,
   },
 }));
 
 
 body {
     background~|-|color: rgba(0,183,255, 1);
-    background~|-|image: url(&quot;data:image/svg+xml,%3Csvg xmlns~|=|'http://www.w3.org/2000/svg' width~|=|'540' height~|=|'450' viewBox~|=|'0 0 1080 900'%3E%3Cg fill~|-|opacity~|=|'.1'%3E%3Cpolygon fill~|=|'%23444' points~|=|'90 150 0 300 180 300'/%3E%3Cpolygon points~|=|'90 150 180 0 0 0'/%3E%3Cpolygon fill~|=|'%23AAA' points~|=|'270 150 360 0 180 0'/%3E%3Cpolygon fill~|=|'%23DDD' points~|=|'450 150 360 300 540 300'/%3E%3Cpolygon fill~|=|'%23999' points~|=|'450 150 540 0 360 0'/%3E%3Cpolygon points~|=|'630 150 540 300 720 300'/%3E%3Cpolygon fill~|=|'%23DDD' points~|=|'630 150 720 0 540 0'/%3E%3Cpolygon fill~|=|'%23444' points~|=|'810 150 720 300 900 300'/%3E%3Cpolygon fill~|=|'%23FFF' points~|=|'810 150 900 0 720 0'/%3E%3Cpolygon fill~|=|'%23DDD' points~|=|'990 150 900 300 1080 300'/%3E%3Cpolygon fill~|=|'%23444' points~|=|'990 150 1080 0 900 0'/%3E%3Cpolygon fill~|=|'%23DDD' points~|=|'90 450 0 600 180 600'/%3E%3Cpolygon points~|=|'90 450 180 300 0 300'/%3E%3Cpolygon fill~|=|'%23666' points~|=|'270 450 180 600 360 600'/%3E%3Cpolygon fill~|=|'%23AAA' points~|=|'270 450 360 300 180 300'/%3E%3Cpolygon fill~|=|'%23DDD' points~|=|'450 450 360 600 540 600'/%3E%3Cpolygon fill~|=|'%23999' points~|=|'450 450 540 300 360 300'/%3E%3Cpolygon fill~|=|'%23999' points~|=|'630 450 540 600 720 600'/%3E%3Cpolygon fill~|=|'%23FFF' points~|=|'630 450 720 300 540 300'/%3E%3Cpolygon points~|=|'810 450 720 600 900 600'/%3E%3Cpolygon fill~|=|'%23DDD' points~|=|'810 450 900 300 720 300'/%3E%3Cpolygon fill~|=|'%23AAA' points~|=|'990 450 900 600 1080 600'/%3E%3Cpolygon fill~|=|'%23444' points~|=|'990 450 1080 300 900 300'/%3E%3Cpolygon fill~|=|'%23222' points~|=|'90 750 0 900 180 900'/%3E%3Cpolygon points~|=|'270 750 180 900 360 900'/%3E%3Cpolygon fill~|=|'%23DDD' points~|=|'270 750 360 600 180 600'/%3E%3Cpolygon points~|=|'450 750 540 600 360 600'/%3E%3Cpolygon points~|=|'630 750 540 900 720 900'/%3E%3Cpolygon fill~|=|'%23444' points~|=|'630 750 720 600 540 600'/%3E%3Cpolygon fill~|=|'%23AAA' points~|=|'810 750 720 900 900 900'/%3E%3Cpolygon fill~|=|'%23666' points~|=|'810 750 900 600 720 600'/%3E%3Cpolygon fill~|=|'%23999' points~|=|'990 750 900 900 1080 900'/%3E%3Cpolygon fill~|=|'%23999' points~|=|'180 0 90 150 270 150'/%3E%3Cpolygon fill~|=|'%23444' points~|=|'360 0 270 150 450 150'/%3E%3Cpolygon fill~|=|'%23FFF' points~|=|'540 0 450 150 630 150'/%3E%3Cpolygon points~|=|'900 0 810 150 990 150'/%3E%3Cpolygon fill~|=|'%23222' points~|=|'0 300 ~|-|90 450 90 450'/%3E%3Cpolygon fill~|=|'%23FFF' points~|=|'0 300 90 150 ~|-|90 150'/%3E%3Cpolygon fill~|=|'%23FFF' points~|=|'180 300 90 450 270 450'/%3E%3Cpolygon fill~|=|'%23666' points~|=|'180 300 270 150 90 150'/%3E%3Cpolygon fill~|=|'%23222' points~|=|'360 300 270 450 450 450'/%3E%3Cpolygon fill~|=|'%23FFF' points~|=|'360 300 450 150 270 150'/%3E%3Cpolygon fill~|=|'%23444' points~|=|'540 300 450 450 630 450'/%3E%3Cpolygon fill~|=|'%23222' points~|=|'540 300 630 150 450 150'/%3E%3Cpolygon fill~|=|'%23AAA' points~|=|'720 300 630 450 810 450'/%3E%3Cpolygon fill~|=|'%23666' points~|=|'720 300 810 150 630 150'/%3E%3Cpolygon fill~|=|'%23FFF' points~|=|'900 300 810 450 990 450'/%3E%3Cpolygon fill~|=|'%23999' points~|=|'900 300 990 150 810 150'/%3E%3Cpolygon points~|=|'0 600 ~|-|90 750 90 750'/%3E%3Cpolygon fill~|=|'%23666' points~|=|'0 600 90 450 ~|-|90 450'/%3E%3Cpolygon fill~|=|'%23AAA' points~|=|'180 600 90 750 270 750'/%3E%3Cpolygon fill~|=|'%23444' points~|=|'180 600 270 450 90 450'/%3E%3Cpolygon fill~|=|'%23444' points~|=|'360 600 270 750 450 750'/%3E%3Cpolygon fill~|=|'%23999' points~|=|'360 600 450 450 270 450'/%3E%3Cpolygon fill~|=|'%23666' points~|=|'540 600 630 450 450 450'/%3E%3Cpolygon fill~|=|'%23222' points~|=|'720 600 630 750 810 750'/%3E%3Cpolygon fill~|=|'%23FFF' points~|=|'900 600 810 750 990 750'/%3E%3Cpolygon fill~|=|'%23222' points~|=|'900 600 990 450 810 450'/%3E%3Cpolygon fill~|=|'%23DDD' points~|=|'0 900 90 750 ~|-|90 750'/%3E%3Cpolygon fill~|=|'%23444' points~|=|'180 900 270 750 90 750'/%3E%3Cpolygon fill~|=|'%23FFF' points~|=|'360 900 450 750 270 750'/%3E%3Cpolygon fill~|=|'%23AAA' points~|=|'540 900 630 750 450 750'/%3E%3Cpolygon fill~|=|'%23FFF' points~|=|'720 900 810 750 630 750'/%3E%3Cpolygon fill~|=|'%23222' points~|=|'900 900 990 750 810 750'/%3E%3Cpolygon fill~|=|'%23222' points~|=|'1080 300 990 450 1170 450'/%3E%3Cpolygon fill~|=|'%23FFF' points~|=|'1080 300 1170 150 990 150'/%3E%3Cpolygon points~|=|'1080 600 990 750 1170 750'/%3E%3Cpolygon fill~|=|'%23666' points~|=|'1080 600 1170 450 990 450'/%3E%3Cpolygon fill~|=|'%23DDD' points~|=|'1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/svg%3E&quot;);
+    background~|-|image: url(&quot;data:image/svg+xml,%3Csvg xmlns~|=|&apos;http://www.w3.org/2000/svg&apos; width~|=|&apos;540&apos; height~|=|&apos;450&apos; viewBox~|=|&apos;0 0 1080 900&apos;%3E%3Cg fill~|-|opacity~|=|&apos;.1&apos;%3E%3Cpolygon fill~|=|&apos;%23444&apos; points~|=|&apos;90 150 0 300 180 300&apos;/%3E%3Cpolygon points~|=|&apos;90 150 180 0 0 0&apos;/%3E%3Cpolygon fill~|=|&apos;%23AAA&apos; points~|=|&apos;270 150 360 0 180 0&apos;/%3E%3Cpolygon fill~|=|&apos;%23DDD&apos; points~|=|&apos;450 150 360 300 540 300&apos;/%3E%3Cpolygon fill~|=|&apos;%23999&apos; points~|=|&apos;450 150 540 0 360 0&apos;/%3E%3Cpolygon points~|=|&apos;630 150 540 300 720 300&apos;/%3E%3Cpolygon fill~|=|&apos;%23DDD&apos; points~|=|&apos;630 150 720 0 540 0&apos;/%3E%3Cpolygon fill~|=|&apos;%23444&apos; points~|=|&apos;810 150 720 300 900 300&apos;/%3E%3Cpolygon fill~|=|&apos;%23FFF&apos; points~|=|&apos;810 150 900 0 720 0&apos;/%3E%3Cpolygon fill~|=|&apos;%23DDD&apos; points~|=|&apos;990 150 900 300 1080 300&apos;/%3E%3Cpolygon fill~|=|&apos;%23444&apos; points~|=|&apos;990 150 1080 0 900 0&apos;/%3E%3Cpolygon fill~|=|&apos;%23DDD&apos; points~|=|&apos;90 450 0 600 180 600&apos;/%3E%3Cpolygon points~|=|&apos;90 450 180 300 0 300&apos;/%3E%3Cpolygon fill~|=|&apos;%23666&apos; points~|=|&apos;270 450 180 600 360 600&apos;/%3E%3Cpolygon fill~|=|&apos;%23AAA&apos; points~|=|&apos;270 450 360 300 180 300&apos;/%3E%3Cpolygon fill~|=|&apos;%23DDD&apos; points~|=|&apos;450 450 360 600 540 600&apos;/%3E%3Cpolygon fill~|=|&apos;%23999&apos; points~|=|&apos;450 450 540 300 360 300&apos;/%3E%3Cpolygon fill~|=|&apos;%23999&apos; points~|=|&apos;630 450 540 600 720 600&apos;/%3E%3Cpolygon fill~|=|&apos;%23FFF&apos; points~|=|&apos;630 450 720 300 540 300&apos;/%3E%3Cpolygon points~|=|&apos;810 450 720 600 900 600&apos;/%3E%3Cpolygon fill~|=|&apos;%23DDD&apos; points~|=|&apos;810 450 900 300 720 300&apos;/%3E%3Cpolygon fill~|=|&apos;%23AAA&apos; points~|=|&apos;990 450 900 600 1080 600&apos;/%3E%3Cpolygon fill~|=|&apos;%23444&apos; points~|=|&apos;990 450 1080 300 900 300&apos;/%3E%3Cpolygon fill~|=|&apos;%23222&apos; points~|=|&apos;90 750 0 900 180 900&apos;/%3E%3Cpolygon points~|=|&apos;270 750 180 900 360 900&apos;/%3E%3Cpolygon fill~|=|&apos;%23DDD&apos; points~|=|&apos;270 750 360 600 180 600&apos;/%3E%3Cpolygon points~|=|&apos;450 750 540 600 360 600&apos;/%3E%3Cpolygon points~|=|&apos;630 750 540 900 720 900&apos;/%3E%3Cpolygon fill~|=|&apos;%23444&apos; points~|=|&apos;630 750 720 600 540 600&apos;/%3E%3Cpolygon fill~|=|&apos;%23AAA&apos; points~|=|&apos;810 750 720 900 900 900&apos;/%3E%3Cpolygon fill~|=|&apos;%23666&apos; points~|=|&apos;810 750 900 600 720 600&apos;/%3E%3Cpolygon fill~|=|&apos;%23999&apos; points~|=|&apos;990 750 900 900 1080 900&apos;/%3E%3Cpolygon fill~|=|&apos;%23999&apos; points~|=|&apos;180 0 90 150 270 150&apos;/%3E%3Cpolygon fill~|=|&apos;%23444&apos; points~|=|&apos;360 0 270 150 450 150&apos;/%3E%3Cpolygon fill~|=|&apos;%23FFF&apos; points~|=|&apos;540 0 450 150 630 150&apos;/%3E%3Cpolygon points~|=|&apos;900 0 810 150 990 150&apos;/%3E%3Cpolygon fill~|=|&apos;%23222&apos; points~|=|&apos;0 300 ~|-|90 450 90 450&apos;/%3E%3Cpolygon fill~|=|&apos;%23FFF&apos; points~|=|&apos;0 300 90 150 ~|-|90 150&apos;/%3E%3Cpolygon fill~|=|&apos;%23FFF&apos; points~|=|&apos;180 300 90 450 270 450&apos;/%3E%3Cpolygon fill~|=|&apos;%23666&apos; points~|=|&apos;180 300 270 150 90 150&apos;/%3E%3Cpolygon fill~|=|&apos;%23222&apos; points~|=|&apos;360 300 270 450 450 450&apos;/%3E%3Cpolygon fill~|=|&apos;%23FFF&apos; points~|=|&apos;360 300 450 150 270 150&apos;/%3E%3Cpolygon fill~|=|&apos;%23444&apos; points~|=|&apos;540 300 450 450 630 450&apos;/%3E%3Cpolygon fill~|=|&apos;%23222&apos; points~|=|&apos;540 300 630 150 450 150&apos;/%3E%3Cpolygon fill~|=|&apos;%23AAA&apos; points~|=|&apos;720 300 630 450 810 450&apos;/%3E%3Cpolygon fill~|=|&apos;%23666&apos; points~|=|&apos;720 300 810 150 630 150&apos;/%3E%3Cpolygon fill~|=|&apos;%23FFF&apos; points~|=|&apos;900 300 810 450 990 450&apos;/%3E%3Cpolygon fill~|=|&apos;%23999&apos; points~|=|&apos;900 300 990 150 810 150&apos;/%3E%3Cpolygon points~|=|&apos;0 600 ~|-|90 750 90 750&apos;/%3E%3Cpolygon fill~|=|&apos;%23666&apos; points~|=|&apos;0 600 90 450 ~|-|90 450&apos;/%3E%3Cpolygon fill~|=|&apos;%23AAA&apos; points~|=|&apos;180 600 90 750 270 750&apos;/%3E%3Cpolygon fill~|=|&apos;%23444&apos; points~|=|&apos;180 600 270 450 90 450&apos;/%3E%3Cpolygon fill~|=|&apos;%23444&apos; points~|=|&apos;360 600 270 750 450 750&apos;/%3E%3Cpolygon fill~|=|&apos;%23999&apos; points~|=|&apos;360 600 450 450 270 450&apos;/%3E%3Cpolygon fill~|=|&apos;%23666&apos; points~|=|&apos;540 600 630 450 450 450&apos;/%3E%3Cpolygon fill~|=|&apos;%23222&apos; points~|=|&apos;720 600 630 750 810 750&apos;/%3E%3Cpolygon fill~|=|&apos;%23FFF&apos; points~|=|&apos;900 600 810 750 990 750&apos;/%3E%3Cpolygon fill~|=|&apos;%23222&apos; points~|=|&apos;900 600 990 450 810 450&apos;/%3E%3Cpolygon fill~|=|&apos;%23DDD&apos; points~|=|&apos;0 900 90 750 ~|-|90 750&apos;/%3E%3Cpolygon fill~|=|&apos;%23444&apos; points~|=|&apos;180 900 270 750 90 750&apos;/%3E%3Cpolygon fill~|=|&apos;%23FFF&apos; points~|=|&apos;360 900 450 750 270 750&apos;/%3E%3Cpolygon fill~|=|&apos;%23AAA&apos; points~|=|&apos;540 900 630 750 450 750&apos;/%3E%3Cpolygon fill~|=|&apos;%23FFF&apos; points~|=|&apos;720 900 810 750 630 750&apos;/%3E%3Cpolygon fill~|=|&apos;%23222&apos; points~|=|&apos;900 900 990 750 810 750&apos;/%3E%3Cpolygon fill~|=|&apos;%23222&apos; points~|=|&apos;1080 300 990 450 1170 450&apos;/%3E%3Cpolygon fill~|=|&apos;%23FFF&apos; points~|=|&apos;1080 300 1170 150 990 150&apos;/%3E%3Cpolygon points~|=|&apos;1080 600 990 750 1170 750&apos;/%3E%3Cpolygon fill~|=|&apos;%23666&apos; points~|=|&apos;1080 600 1170 450 990 450&apos;/%3E%3Cpolygon fill~|=|&apos;%23DDD&apos; points~|=|&apos;1080 900 1170 750 990 750&apos;/%3E%3C/g%3E%3C/svg%3E&quot;);
 }
 
 
 Adding Constants
 
-export const CREATE ~|=| 'CREATE';
-export const UPDATE ~|=| 'UPDATE';
-export const DELETE ~|=| 'DELETE';
-export const FETCH_ALL ~|=| 'FETCH_ALL';
-export const LIKE ~|=| 'LIKE';
+export const CREATE ~|=| &apos;CREATE&apos;;
+export const UPDATE ~|=| &apos;UPDATE&apos;;
+export const DELETE ~|=| &apos;DELETE&apos;;
+export const FETCH_ALL ~|=| &apos;FETCH_ALL&apos;;
+export const LIKE ~|=| &apos;LIKE&apos;;
 
 
 Adding Form Components
 
 
-import React, { useState, useEffect } from 'react';
-import { TextField, Button, Typography, Paper } from '@material~|-|ui/core';
-import { useDispatch, useSelector } from 'react~|-|redux';
-import FileBase from 'react~|-|file~|-|base64';
+import React, { useState, useEffect } from &apos;react&apos;;
+import { TextField, Button, Typography, Paper } from &apos;@material~|-|ui/core&apos;;
+import { useDispatch, useSelector } from &apos;react~|-|redux&apos;;
+import FileBase from &apos;react~|-|file~|-|base64&apos;;
 
-import useStyles from './styles';
-import { createPost, updatePost } from '../../actions/posts';
+import useStyles from &apos;./styles&apos;;
+import { createPost, updatePost } from &apos;../../actions/posts&apos;;
 
 const Form ~|=| ({ currentId, setCurrentId }) ~|=|&amp;gt; {
-  const [postData, setPostData] ~|=| useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
+  const [postData, setPostData] ~|=| useState({ creator: &apos;&apos;, title: &apos;&apos;, message: &apos;&apos;, tags: &apos;&apos;, selectedFile: &apos;&apos; });
   const post ~|=| useSelector((state) ~|=|&amp;gt; (currentId ? state.posts.find((message) ~|=|&amp;gt; message._id ~|=|~|=|~|=| currentId) : null));
   const dispatch ~|=| useDispatch();
   const classes ~|=| useStyles();
@@ -1941,7 +1941,7 @@ const Form ~|=| ({ currentId, setCurrentId }) ~|=|&amp;gt; {
 
   const clear ~|=| () ~|=|&amp;gt; {
     setCurrentId(0);
-    setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
+    setPostData({ creator: &apos;&apos;, title: &apos;&apos;, message: &apos;&apos;, tags: &apos;&apos;, selectedFile: &apos;&apos; });
   };
 
   const handleSubmit ~|=| async (e) ~|=|&amp;gt; {
@@ -1959,11 +1959,11 @@ const Form ~|=| ({ currentId, setCurrentId }) ~|=|&amp;gt; {
   return (
     ~|&amp;lt;|Paper className~|=|{classes.paper}&amp;gt;
       ~|&amp;lt;|form autoComplete~|=|&quot;off&quot; noValidate className~|=|{`${classes.root} ${classes.form}`} onSubmit~|=|{handleSubmit}&amp;gt;
-        ~|&amp;lt;|Typography variant~|=|&quot;h6&quot;&amp;gt;{currentId ? `Editing &quot;${post.title}&quot;` : 'Creating a FUN EVENT'}~|&amp;lt;|/Typography&amp;gt;
+        ~|&amp;lt;|Typography variant~|=|&quot;h6&quot;&amp;gt;{currentId ? `Editing &quot;${post.title}&quot;` : &apos;Creating a FUN EVENT&apos;}~|&amp;lt;|/Typography&amp;gt;
         ~|&amp;lt;|TextField name~|=|&quot;creator&quot; variant~|=|&quot;outlined&quot; label~|=|&quot;Creator&quot; fullWidth value~|=|{postData.creator} onChange~|=|{(e) ~|=|&amp;gt; setPostData({ ...postData, creator: e.target.value })} /&amp;gt;
         ~|&amp;lt;|TextField name~|=|&quot;title&quot; variant~|=|&quot;outlined&quot; label~|=|&quot;Title&quot; fullWidth value~|=|{postData.title} onChange~|=|{(e) ~|=|&amp;gt; setPostData({ ...postData, title: e.target.value })} /&amp;gt;
         ~|&amp;lt;|TextField name~|=|&quot;message&quot; variant~|=|&quot;outlined&quot; label~|=|&quot;Message&quot; fullWidth multiline rows~|=|{4} value~|=|{postData.message} onChange~|=|{(e) ~|=|&amp;gt; setPostData({ ...postData, message: e.target.value })} /&amp;gt;
-        ~|&amp;lt;|TextField name~|=|&quot;tags&quot; variant~|=|&quot;outlined&quot; label~|=|&quot;Tags (coma separated)&quot; fullWidth value~|=|{postData.tags} onChange~|=|{(e) ~|=|&amp;gt; setPostData({ ...postData, tags: e.target.value.split(',') })} /&amp;gt;
+        ~|&amp;lt;|TextField name~|=|&quot;tags&quot; variant~|=|&quot;outlined&quot; label~|=|&quot;Tags (coma separated)&quot; fullWidth value~|=|{postData.tags} onChange~|=|{(e) ~|=|&amp;gt; setPostData({ ...postData, tags: e.target.value.split(&apos;,&apos;) })} /&amp;gt;
         ~|&amp;lt;|div className~|=|{classes.fileInput}&amp;gt;~|&amp;lt;|FileBase type~|=|&quot;file&quot; multiple~|=|{false} onDone~|=|{({ base64 }) ~|=|&amp;gt; setPostData({ ...postData, selectedFile: base64 })} /&amp;gt;~|&amp;lt;|/div&amp;gt;
         ~|&amp;lt;|Button className~|=|{classes.buttonSubmit} variant~|=|&quot;contained&quot; color~|=|&quot;primary&quot; size~|=|&quot;large&quot; type~|=|&quot;submit&quot; fullWidth&amp;gt;Submit~|&amp;lt;|/Button&amp;gt;
         ~|&amp;lt;|Button variant~|=|&quot;contained&quot; color~|=|&quot;secondary&quot; size~|=|&quot;small&quot; onClick~|=|{clear} fullWidth&amp;gt;Clear~|&amp;lt;|/Button&amp;gt;
@@ -1978,11 +1978,11 @@ export default Form;
 Styling Form
 
 
-import { makeStyles } from '@material~|-|ui/core/styles';
+import { makeStyles } from &apos;@material~|-|ui/core/styles&apos;;
 
 export default makeStyles((theme) ~|=|&amp;gt; ({
   root: {
-    '&amp;amp; .MuiTextField~|-|root': {
+    &apos;&amp;amp; .MuiTextField~|-|root&apos;: {
       margin: theme.spacing(1),
     },
   },
@@ -1990,13 +1990,13 @@ export default makeStyles((theme) ~|=|&amp;gt; ({
     padding: theme.spacing(2),
   },
   form: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
+    display: &apos;flex&apos;,
+    flexWrap: &apos;wrap&apos;,
+    justifyContent: &apos;center&apos;,
   },
   fileInput: {
-    width: '97%',
-    margin: '10px 0',
+    width: &apos;97%&apos;,
+    margin: &apos;10px 0&apos;,
   },
   buttonSubmit: {
     marginBottom: 10,
@@ -2006,9 +2006,9 @@ export default makeStyles((theme) ~|=|&amp;gt; ({
 
 API Call
 
-import axios from 'axios';
+import axios from &apos;axios&apos;;
 
-const url ~|=| 'http://localhost:10255/posts';
+const url ~|=| &apos;http://localhost:10255/posts&apos;;
 
 export const fetchPosts ~|=| () ~|=|&amp;gt; axios.get(url);
 export const createPost ~|=| (newPost) ~|=|&amp;gt; axios.post(url, newPost);
@@ -2020,9 +2020,9 @@ export const deletePost ~|=| (id) ~|=|&amp;gt; axios.delete(`${url}/${id}`);
 Action
 
 
-import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes';
+import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from &apos;../constants/actionTypes&apos;;
 
-import * as api from '../api/index.js';
+import * as api from &apos;../api/index.js&apos;;
 
 export const getPosts ~|=| () ~|=|&amp;gt; async (dispatch) ~|=|&amp;gt; {
   try {
@@ -2079,10 +2079,10 @@ In server side
 
 Creating Controllers
 
-import express from 'express';
-import mongoose from 'mongoose';
+import express from &apos;express&apos;;
+import mongoose from &apos;mongoose&apos;;
 
-import PostMessage from '../models/postMessage.js';
+import PostMessage from &apos;../models/postMessage.js&apos;;
 
 const router ~|=| express.Router();
 
@@ -2163,7 +2163,7 @@ export default router;
 
 Creating models
 
-import mongoose from 'mongoose';
+import mongoose from &apos;mongoose&apos;;
 
 const postSchema ~|=| mongoose.Schema({
     title: String,
@@ -2181,7 +2181,7 @@ const postSchema ~|=| mongoose.Schema({
     },
 })
 
-var PostMessage ~|=| mongoose.model('PostMessage', postSchema);
+var PostMessage ~|=| mongoose.model(&apos;PostMessage&apos;, postSchema);
 
 export default PostMessage;
 
@@ -2190,18 +2190,18 @@ Creating Routes
 
 Adding Post.js
 
-import express from 'express';
+import express from &apos;express&apos;;
 
-import { getPosts, getPost, createPost, updatePost, likePost, deletePost } from '../controllers/posts.js';
+import { getPosts, getPost, createPost, updatePost, likePost, deletePost } from &apos;../controllers/posts.js&apos;;
 
 const router ~|=| express.Router();
 
-router.get('/', getPosts);
-router.post('/', createPost);
-router.get('/:id', getPost);
-router.patch('/:id', updatePost);
-router.delete('/:id', deletePost);
-router.patch('/:id/likePost', likePost);
+router.get(&apos;/&apos;, getPosts);
+router.post(&apos;/&apos;, createPost);
+router.get(&apos;/:id&apos;, getPost);
+router.patch(&apos;/:id&apos;, updatePost);
+router.delete(&apos;/:id&apos;, deletePost);
+router.patch(&apos;/:id/likePost&apos;, likePost);
 
 export default router;
 
@@ -2291,11 +2291,11 @@ Connect our Node.js application to the database
 
 Replace the two  placeholders with your Cosmos account name.
 
-'use strict';
+&apos;use strict&apos;;
 
 module.exports ~|=| {
   db: {
-    uri: 'mongodb://~|&amp;lt;|cosmosdb~|-|name&amp;gt;:~|&amp;lt;|primary_master_key&amp;gt;@~|&amp;lt;|cosmosdb~|-|name&amp;gt;.documents.azure.com:10255/mean~|-|dev?ssl~|=|true&amp;amp;sslverifycertificate~|=|false'
+    uri: &apos;mongodb://~|&amp;lt;|cosmosdb~|-|name&amp;gt;:~|&amp;lt;|primary_master_key&amp;gt;@~|&amp;lt;|cosmosdb~|-|name&amp;gt;.documents.azure.com:10255/mean~|-|dev?ssl~|=|true&amp;amp;sslverifycertificate~|=|false&apos;
   }
 };
 
@@ -2362,7 +2362,7 @@ The manifest file can have any name, but is commonly named manifest.json and ser
   &quot;start_url&quot;: &quot;/&quot;,
   &quot;display&quot;: &quot;standalone&quot;,
   &quot;background_color&quot;: &quot;~|#|ffffff&quot;,
-  &quot;theme_color&quot;:'~|#|ffffff',
+  &quot;theme_color&quot;:&apos;~|#|ffffff&apos;,
   &quot;icons&quot;: [
     {
       &quot;src&quot;: &quot;/images/icons~|-|vector.svg&quot;,
@@ -2444,7 +2444,7 @@ The service worker can receive push messages from a server when the app is not a
 
 // This is the &quot;Offline page&quot; service worker
 
-importScripts('https://storage.googleapis.com/workbox~|-|cdn/releases/5.1.2/workbox~|-|sw.js');
+importScripts(&apos;https://storage.googleapis.com/workbox~|-|cdn/releases/5.1.2/workbox~|-|sw.js&apos;);
 
 const CACHE ~|=| &quot;pwabuilder~|-|page&quot;;
 
@@ -2457,7 +2457,7 @@ self.addEventListener(&quot;message&quot;, (event) ~|=|&amp;gt; {
   }
 });
 
-self.addEventListener('install', async (event) ~|=|&amp;gt; {
+self.addEventListener(&apos;install&apos;, async (event) ~|=|&amp;gt; {
   event.waitUntil(
     caches.open(CACHE)
       .then((cache) ~|=|&amp;gt; cache.add(offlineFallbackPage))
@@ -2468,8 +2468,8 @@ if (workbox.navigationPreload.isSupported()) {
   workbox.navigationPreload.enable();
 }
 
-self.addEventListener('fetch', (event) ~|=|&amp;gt; {
-  if (event.request.mode ~|=|~|=|~|=| 'navigate') {
+self.addEventListener(&apos;fetch&apos;, (event) ~|=|&amp;gt; {
+  if (event.request.mode ~|=|~|=|~|=| &apos;navigate&apos;) {
     event.respondWith((async () ~|=|&amp;gt; {
       try {
         const preloadResp ~|=| await event.preloadResponse;
@@ -2499,17 +2499,17 @@ Linking our service workers and manifest.json files to main base project code.
 
 Simply we have to add the following code in the index.js /home.js file.
 
-    ~|&amp;lt;|link rel~|=|'manifest' href~|=|'/manifest.json'&amp;gt;
+    ~|&amp;lt;|link rel~|=|&apos;manifest&apos; href~|=|&apos;/manifest.json&apos;&amp;gt;
 
 
 
 ~|&amp;lt;|!~|-|~|-| JavaScript enabled/disabled ~|-|~|-|&amp;gt;
     ~|&amp;lt;|script&amp;gt;
-        document.querySelector('html').classList.remove('no~|-|js');
+        document.querySelector(&apos;html&apos;).classList.remove(&apos;no~|-|js&apos;);
     ~|&amp;lt;|/script&amp;gt;
-    ~|&amp;lt;|script type~|=|&quot;module&quot;&amp;gt;import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+    ~|&amp;lt;|script type~|=|&quot;module&quot;&amp;gt;import &apos;https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate&apos;;
 
-        const el ~|=| document.createElement('pwa~|-|update');
+        const el ~|=| document.createElement(&apos;pwa~|-|update&apos;);
         document.body.appendChild(el);
     ~|&amp;lt;|/script&amp;gt;
 
@@ -2546,7 +2546,7 @@ on:
 
 jobs:
   build_and_deploy_job:
-    if: github.event_name ~|=|~|=| 'push' || (github.event_name ~|=|~|=| 'pull_request' &amp;amp;&amp;amp; github.event.action !~|=| 'closed')
+    if: github.event_name ~|=|~|=| &apos;push&apos; || (github.event_name ~|=|~|=| &apos;pull_request&apos; &amp;amp;&amp;amp; github.event.action !~|=| &apos;closed&apos;)
     runs~|-|on: ubuntu~|-|latest
     name: Build and Deploy Job
     steps:
@@ -2565,7 +2565,7 @@ jobs:
           output_location: &quot;build&quot; ~|#| Built app content directory ~|-| optional
 
   close_pull_request_job:
-    if: github.event_name ~|=|~|=| 'pull_request' &amp;amp;&amp;amp; github.event.action ~|=|~|=| 'closed'
+    if: github.event_name ~|=|~|=| &apos;pull_request&apos; &amp;amp;&amp;amp; github.event.action ~|=|~|=| &apos;closed&apos;
     runs~|-|on: ubuntu~|-|latest
     name: Close Pull Request Job
     steps:
@@ -2581,7 +2581,7 @@ jobs:
 Before Deployment make sure to change uri in the db object like :-
 
 
-'mongodb://~|&amp;lt;|cosmosdb~|-|name&amp;gt;:~|&amp;lt;|primary_master_key&amp;gt;@~|&amp;lt;|cosmosdb~|-|name&amp;gt;.documents.azure.com:10255/mean?ssl~|=|true&amp;amp;sslverifycertificate~|=|false',
+&apos;mongodb://~|&amp;lt;|cosmosdb~|-|name&amp;gt;:~|&amp;lt;|primary_master_key&amp;gt;@~|&amp;lt;|cosmosdb~|-|name&amp;gt;.documents.azure.com:10255/mean?ssl~|=|true&amp;amp;sslverifycertificate~|=|false&apos;,
 
 
 Thanks for reading this article!

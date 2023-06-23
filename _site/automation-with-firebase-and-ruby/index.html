@@ -475,29 +475,29 @@ jobs:
                         
                         
                             <li>
-                                <a href="/Progressive-webapps-on-azure/">
+                                <a href="/how-to-like-instagram-post-with-javascript/">
                                     
-                                        <img src="https://th.bing.com/th/id/R.49bd0ccbb9e904407116b65ce6a50d41?rik=1KXzdiLejsH2eA&riu=http%3a%2f%2fclipground.com%2fimages%2fcoder-clipart-1.jpg&ehk=xl5oxtd6bHoDW1%2f3HB007zg97209vFB75YXyIskHtPg%3d&risl=&pid=ImgRaw&r=0">
+                                        <img src="https://media.giphy.com/media/cmqnzFK17DO4vKCscd/giphy.gif">
                                     
-                                    <h3>Building and Deploying PWA on Azure Cloud.</h3>
+                                    <h3>How to like Instagram posts with JavaScript?</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/metasploitFramework-vs-metasploit-pro/">
+                                <a href="/bulid-and-deploy-MERN-stack-in-Azure-cosmos-DB/">
                                     
-                                        <img src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80">
+                                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80">
                                     
-                                    <h3>Metasploit Framework vs Metasploit Pro</h3>
+                                    <h3>Anyone can build: node.js+ Cosmos DB in Azure </h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/difference-between-WAF-and-IPS/">
+                                <a href="/2021-08-2-Understanding-basics-of-security/">
                                     
-                                        <img src="https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://cdn.pixabay.com/photo/2017/11/19/23/56/hacking-2964100_960_720.jpg">
                                     
-                                    <h3>WAF vs IPS</h3>
+                                    <h3>Protection against Security threat on Azure.☠️</h3>
                                 </a>
                             </li>
                         
@@ -529,13 +529,13 @@ jobs:
         </div>
     </div>
     
-    <a href="/metasploitFramework-vs-metasploit-pro/" class="post-preview">
+    <a href="/how-to-manage-azure-active-directory-objects/" class="post-preview">
         <div class="image">
             
-                <img src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80">
+                <img src="https://images.pexels.com/photos/3201761/pexels-photo-3201761.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
             
         </div>
-        <h3 class="title">Metasploit Framework vs Metasploit Pro</h3>
+        <h3 class="title">How to create & Manage users and Groups within Azure AD.</h3>
     </a>
 </div>
 
@@ -875,7 +875,7 @@ Now inside local codebase .github/workflows folder will be automatically created
 Code for hosting-merge.yml
 
 name: Deploy to Firebase Hosting on merge
-'on':
+&apos;on&apos;:
   push:
     branches:
       - main
@@ -884,11 +884,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: 'sudo gem install bundler &amp;amp;&amp;amp; sudo bundle install &amp;amp;&amp;amp; bundle exec jekyll build '
+      - run: &apos;sudo gem install bundler &amp;amp;&amp;amp; sudo bundle install &amp;amp;&amp;amp; bundle exec jekyll build &apos;
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: '$'
-          firebaseServiceAccount: '$'
+          repoToken: &apos;$&apos;
+          firebaseServiceAccount: &apos;$&apos;
           channelId: live
           projectId: shubhendu-shubham //replace it with your project ID
 
@@ -897,18 +897,18 @@ jobs:
 Code for hosting-pull-request.yml
 
 name: Deploy to Firebase Hosting on PR
-'on': pull_request
+&apos;on&apos;: pull_request
 jobs:
   build_and_preview:
-    if: '$'
+    if: &apos;$&apos;
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: 'bundle install &amp;amp;&amp;amp; bundle exec jekyll build '
+      - run: &apos;bundle install &amp;amp;&amp;amp; bundle exec jekyll build &apos;
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: '$'
-          firebaseServiceAccount: '$'
+          repoToken: &apos;$&apos;
+          firebaseServiceAccount: &apos;$&apos;
           projectId: shubhendu-shubham
 
 
