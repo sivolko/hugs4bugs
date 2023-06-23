@@ -1,7 +1,8 @@
 ---
 title: Fundamentals of Network Security.☠️
 date: 2021-05-15 23:04:08 Z
-category: networking
+categories:
+- networking
 tags:
 - networking
 - security

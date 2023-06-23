@@ -36,9 +36,6 @@ github_username: sivolko
 twitter_username: myselfshubhendu
 linkedin_username: shubhendu-shubham
 medium_username: shubhendushubham
-
-#posts settings 
-
 show_time_bar: true
 show_modal_on_exit: false
 show_modal_on_finish_post: true

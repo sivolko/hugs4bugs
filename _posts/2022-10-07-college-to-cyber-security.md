@@ -1,7 +1,8 @@
 ---
 title: College to Cyber Security Journey
 date: 2022-10-07 00:00:00 Z
-category: security
+categories:
+- security
 tags:
 - cloud
 - security

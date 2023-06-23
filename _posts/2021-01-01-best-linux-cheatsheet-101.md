@@ -1,7 +1,8 @@
 ---
 title: Linux Cheat Sheet 101
 date: 2021-01-01 22:55:45 Z
-category: linux
+categories:
+- linux
 tags:
 - linux
 - system Admin

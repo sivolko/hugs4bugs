@@ -1,7 +1,8 @@
 ---
 title: 'Anyone can build: node.js+ Cosmos DB in Azure '
 date: 2021-03-17 23:48:05 Z
-category: azure
+categories:
+- azure
 tags:
 - azure
 - microsoft

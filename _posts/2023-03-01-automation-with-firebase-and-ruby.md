@@ -1,16 +1,19 @@
 ---
-layout: post
 title: Automate Firebase hosting with Github Actions and Ruby.
-subtitle: set up CI/CD pipeline 
-description: Atomatically  deploy your webapps with Github actions and firebase hosting with Jekyll templates
+date: 2023-03-01 00:00:00 Z
+categories:
+- automation
+tags:
+- webApps
+- jekyll
+- developer
+- troubleshooter Club
+layout: post
+subtitle: set up CI/CD pipeline
+description: Atomatically  deploy your webapps with Github actions and firebase hosting
+  with Jekyll templates
 image: https://images.pexels.com/photos/4506940/pexels-photo-4506940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 optimized_image: https://images.pexels.com/photos/4506940/pexels-photo-4506940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
-category: automation
-tags:
-  - webApps
-  - jekyll
-  - developer
-  - troubleshooter Club
 author: Shubhendu Shubham
 comment: true
 ---

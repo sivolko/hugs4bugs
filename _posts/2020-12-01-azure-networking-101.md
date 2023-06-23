@@ -1,7 +1,8 @@
 ---
 title: Azure Networking 101
 date: 2020-12-01 12:26:40 Z
-category: azure
+categories:
+- azure
 tags:
 - docker
 - devops

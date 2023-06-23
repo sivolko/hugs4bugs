@@ -1,7 +1,8 @@
 ---
 title: Progressive WebApp.
 date: 2021-11-02 23:04:08 Z
-category: webapps
+categories:
+- webapps
 tags:
 - WebApps
 - PWA

@@ -1,7 +1,8 @@
 ---
 title: Protection against Security threat on Azure.☠️
 date: 2021-08-02 23:04:08 Z
-category: security
+categories:
+- security
 tags:
 - networking
 - security

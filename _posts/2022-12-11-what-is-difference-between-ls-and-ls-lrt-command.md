@@ -1,7 +1,8 @@
 ---
 title: Do you use ls -lrt?
 date: 2022-12-11 00:00:00 Z
-category: linux
+categories:
+- linux
 tags:
 - security
 - hacking
@@ -14,7 +15,6 @@ image: https://images.pexels.com/photos/4709289/pexels-photo-4709289.jpeg?auto=c
 optimized_image: https://images.pexels.com/photos/4709289/pexels-photo-4709289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 author: Shubhendu Shubham
 comment: false
-
 ---
 
 Hey folks, as a coder or techie we often do use **terminal** to interact with our files. And we all are familiar with **ls** command.Basically we use ls command for listing the contents of a directory.

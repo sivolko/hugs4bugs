@@ -1,17 +1,20 @@
 ---
-layout: post
 title: Search engines one should know as a CyberSecurity enthausist!
+date: 2023-02-27 00:00:00 Z
+categories:
+- security
+tags:
+- search engine
+- security
+- hacking
+- offensive security
+- troubleshooter Club
+layout: post
 subtitle: This is not your normal Google
-description: This is a curated list of all types of search engines as a cybersecurity one should explore !
+description: This is a curated list of all types of search engines as a cybersecurity
+  one should explore !
 image: https://cdn.pixabay.com/photo/2018/04/22/22/57/hacker-3342696_960_720.jpg
 optimized_image: https://cdn.pixabay.com/photo/2018/04/22/22/57/hacker-3342696_960_720.jpg
-category: security
-tags:
-  - search engine
-  - security
-  - hacking
-  - offensive security
-  - troubleshooter Club
 author: Shubhendu Shubham
 comment: false
 paginate: true

@@ -1,7 +1,8 @@
 ---
 title: Blue Team vs Red Team
 date: 2022-11-04 00:00:00 Z
-category: security
+categories:
+- security
 tags:
 - cloud
 - security

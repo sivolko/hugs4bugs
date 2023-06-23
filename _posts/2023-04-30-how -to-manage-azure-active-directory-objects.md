@@ -1,16 +1,19 @@
 ---
-layout: post
 title: How to create & Manage users and Groups within Azure AD.
+date: 2023-04-30 00:00:00 Z
+categories:
+- azure
+tags:
+- azure
+- active directory
+- developer
+- cloud
+layout: post
 subtitle: Az Active Directory Objects
-description: Atomatically  deploy your webapps with Github actions and firebase hosting with Jekyll templates
+description: Atomatically  deploy your webapps with Github actions and firebase hosting
+  with Jekyll templates
 image: https://images.pexels.com/photos/3201761/pexels-photo-3201761.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 optimized_image: https://images.pexels.com/photos/3201761/pexels-photo-3201761.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
-category: azure
-tags:
-  - azure
-  - active directory
-  - developer
-  - cloud
 author: Shubhendu Shubham
 comment: true
 toc: true

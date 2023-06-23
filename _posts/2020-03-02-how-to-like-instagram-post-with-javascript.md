@@ -1,7 +1,8 @@
 ---
 title: How to like Instagram posts with JavaScript?
 date: 2020-03-02 12:26:40 Z
-category: automation
+categories:
+- automation
 tags:
 - automation
 - instagram

@@ -1,7 +1,8 @@
 ---
 title: WAF vs IPS
 date: 2022-11-02 00:00:00 Z
-category: cloud
+categories:
+- cloud
 tags:
 - cloud
 - security
@@ -16,7 +17,6 @@ image: https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=c
 optimized_image: https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 author: Shubhendu Shubham
 comment: false
-
 ---
 
 Before we start, you must be confused or there might be a question in your mind "why do we need so many things as security?" We do have firewalls, Antivirus though .

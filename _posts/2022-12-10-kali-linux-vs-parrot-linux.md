@@ -1,7 +1,8 @@
 ---
 title: Kali Linux vs Parrot OS
 date: 2022-12-10 00:00:00 Z
-category: security
+categories:
+- security
 tags:
 - cloud
 - security
@@ -16,7 +17,6 @@ image: https://cdn.pixabay.com/photo/2018/04/22/22/57/hacker-3342696_960_720.jpg
 optimized_image: https://cdn.pixabay.com/photo/2018/04/22/22/57/hacker-3342696_960_720.jpg
 author: Shubhendu Shubham
 comment: false
-
 ---
 
 Hey Folks,All loves word **Hacker** or pretend to be or wish to be a hacker's friend ? .But technically there is no hacker is this IT world.Anyone who have a common sense and curiosity we call them hacker. I know you might be thinking what nonsense he has written but that's true .. 
