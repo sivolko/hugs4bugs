@@ -12,17 +12,8 @@ layout: post
 subtitle: Az Active Directory Objects
 description: Atomatically  deploy your webapps with Github actions and firebase hosting
   with Jekyll templates
-image: https://images.pexels.com/photos/3201761/pexels-photo-3201761.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
-optimized_image: https://images.pexels.com/photos/3201761/pexels-photo-3201761.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
-description: Atomatically  deploy your webapps with Github actions and firebase hosting with Jekyll templates
 image: https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 optimized_image: https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
-category: azure
-tags:
-  - azure
-  - active directory
-  - developer
-  - cloud
 author: Shubhendu Shubham
 comment: true
 toc: true
