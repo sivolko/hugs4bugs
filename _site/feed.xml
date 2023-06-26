@@ -5,8 +5,8 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 23 Jun 2023 21:56:18 +0000</pubDate>
-    <lastBuildDate>Fri, 23 Jun 2023 21:56:18 +0000</lastBuildDate>
+    <pubDate>Mon, 26 Jun 2023 07:20:19 +0000</pubDate>
+    <lastBuildDate>Mon, 26 Jun 2023 07:20:19 +0000</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
     
       <item>
@@ -42,7 +42,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category>automation</category>
+        <category></category>
       </item>
     
       <item>
@@ -62,7 +62,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
@@ -82,7 +82,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category>automation</category>
+        <category></category>
       </item>
     
       <item>
@@ -100,7 +100,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category>linux</category>
+        <category></category>
       </item>
     
       <item>
@@ -120,7 +120,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
@@ -140,7 +140,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
@@ -160,7 +160,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category>cloud</category>
+        <category></category>
       </item>
     
       <item>
@@ -180,7 +180,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
@@ -200,7 +200,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
@@ -218,7 +218,7 @@
         
         <category>offensive security</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
@@ -234,7 +234,7 @@
         
         <category>COSMOS DB</category>
         
-        <category>webapps</category>
+        <category></category>
       </item>
     
       <item>
@@ -250,7 +250,7 @@
         
         <category>Cyber Security</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
@@ -266,7 +266,7 @@
         
         <category>GitHub Actions</category>
         
-        <category>automation</category>
+        <category></category>
       </item>
     
       <item>
@@ -282,7 +282,7 @@
         
         <category>Progressive WebApp</category>
         
-        <category>webapps</category>
+        <category></category>
       </item>
     
       <item>
@@ -296,7 +296,7 @@
         
         <category>security</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
@@ -310,7 +310,7 @@
         
         <category>security</category>
         
-        <category>azure</category>
+        <category></category>
       </item>
     
       <item>
@@ -328,7 +328,7 @@
         
         <category>security</category>
         
-        <category>security</category>
+        <category></category>
       </item>
     
       <item>
@@ -342,7 +342,7 @@
         
         <category>security</category>
         
-        <category>networking</category>
+        <category></category>
       </item>
     
       <item>
@@ -356,7 +356,7 @@
         
         <category>system Admin</category>
         
-        <category>networking</category>
+        <category></category>
       </item>
     
       <item>
@@ -370,7 +370,7 @@
         
         <category>microsoft</category>
         
-        <category>azure</category>
+        <category></category>
       </item>
     
       <item>
@@ -384,7 +384,7 @@
         
         <category>system Admin</category>
         
-        <category>linux</category>
+        <category></category>
       </item>
     
       <item>
@@ -399,7 +399,7 @@
         
         <category>devops</category>
         
-        <category>azure</category>
+        <category></category>
       </item>
     
       <item>
@@ -413,7 +413,7 @@
         
         <category>devops</category>
         
-        <category>docker</category>
+        <category></category>
       </item>
     
       <item>
@@ -427,7 +427,7 @@
         
         <category>CI/CD</category>
         
-        <category>devops</category>
+        <category></category>
       </item>
     
       <item>
@@ -445,7 +445,7 @@
         
         <category>github</category>
         
-        <category>devops</category>
+        <category></category>
       </item>
     
       <item>
@@ -461,7 +461,7 @@
         
         <category>javascript</category>
         
-        <category>automation</category>
+        <category></category>
       </item>
     
       <item>
@@ -477,7 +477,7 @@
         
         <category>linux</category>
         
-        <category>devops</category>
+        <category></category>
       </item>
     
   </channel>

@@ -29,7 +29,7 @@
     <meta name="twitter:description" content="Atomatically  deploy your webapps with Github actions and firebase hosting with Jekyll templates">
 
     
-    <meta property="twitter:image" content="https://images.pexels.com/photos/3201761/pexels-photo-3201761.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+    <meta property="twitter:image" content="https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
     
 
     
@@ -39,7 +39,7 @@
     <!-- Social: Facebook / Open Graph -->
     <meta property="og:url" content="https://hugs4bugs.me/how-to-manage-azure-active-directory-objects/">
     <meta property="og:title" content="How to create & Manage users and Groups within Azure AD. | hugs4bugs">
-    <meta property="og:image" content="https://images.pexels.com/photos/3201761/pexels-photo-3201761.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+    <meta property="og:image" content="https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
     <meta property="og:description" content="Atomatically  deploy your webapps with Github actions and firebase hosting with Jekyll templates">
     <meta property="og:site_name" content="hugs4bugs">
 
@@ -305,13 +305,13 @@ April 30, 2023
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>3 min to read</span>
+                    <span>5 min to read</span>
                 </p>
                 <h1 class="post-title">How to create & Manage users and Groups within Azure AD.</h1>
                 <p class="post-subtitle">Az Active Directory Objects</p>
 
                 
-                    <img src="https://images.pexels.com/photos/3201761/pexels-photo-3201761.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Featured image" class="post-cover">
+                    <img src="https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
@@ -451,6 +451,8 @@ List:-</p>
   <li>Authentication Methods</li>
 </ol>
 
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687726491/Azure/az104/11_gpljsd.jpg" alt="Users Permission" /></p>
+
 <p><strong>For Groups</strong></p>
 
 <p>List:-</p>
@@ -468,6 +470,78 @@ List:-</p>
   <li>Dynamic Membership Rules</li>
 </ol>
 
+<p><strong>Device Management</strong></p>
+
+<p>To meet with the security and compliance standard, we can configure Device based conditional access form Azure AD.</p>
+
+<p>Steps:</p>
+
+<p>1) Signin to <a href="https://portal.azure.com">Azure Portal</a>
+2) Go to Azure Active Directory and select Devices option</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687726881/Azure/az104/12_waeypt.jpg" alt="Devices" /></p>
+
+<p>3) Select Device settings from the left-hand menu and let’s configure following settings:-</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687727020/Azure/az104/13_yw7zxx.jpg" alt="settings" /></p>
+
+<p>For the best security use case make sure enable MFA.</p>
+
+<p>After all settings are done click on the save.</p>
+
+<p>To check all user logs, click on the audit logs</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687727341/Azure/az104/14_ghcsgb.jpg" alt="audit logs" /></p>
+
+<p><strong>Managing Guest Users</strong></p>
+
+<p>Here comes the Azure AD B2B in the role,it is a feature in azure that allows org to connect and work safely with external users.</p>
+
+<ul>
+  <li>External users don’t require a microsoft work and personal account that has been added to an existing Azure AD tenant.</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687727773/Azure/az104/15_lk6nzr.jpg" alt="External User" /></p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687728114/Azure/az104/16_ktn4bp.jpg" alt="Guest" /></p>
+
+<p>Feel free to select users role from assignment tab and be causious too., since it’s external guest user permission. You don’t wanna share critical resources with others.</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687728223/Azure/az104/17_jud2cv.jpg" alt="Guest Access" /></p>
+
+<p>If you put original guest user email . you will get a mail like this</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687729482/Azure/az104/18_mz0hiy.jpg" alt="email" /></p>
+
+<p>After Accepting invitation, it’ll ask for MFA(Multifactor Authenticato App) Registration .</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687729803/Azure/az104/19_bjwc2n.jpg" alt="MFA" /></p>
+
+<p>After 1st successful signin</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687730030/Azure/az104/20_ykiv9h.jpg" alt="Success" /></p>
+
+<p><strong>SSPR</strong></p>
+
+<p>SSPR stands for the self-service password Reset. It allows users to reset password by ownself, which reduces the dependencies on admins.</p>
+
+<p><em>in free Azure AD only cloud users only password change is supported not password reset</em></p>
+
+<p>Steps:</p>
+
+<p>1) Visit Azure Active Directory
+2) Select password reset from the Azure AD overview blade from left hamburger menu.</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687730422/Azure/az104/21_q810ey.jpg" alt="password reset" /></p>
+
+<p>3) In the Password reset overview blade, you can enable SSPR for all your users, by selecting All, or for selected users and groups, by selecting Selected.</p>
+
+<p>Make a slection of methods available to users for password reset.</p>
+
+<p>Click save.</p>
+
+<p>Thanks for Reading, Keep learning keep Troubleshooting together!</p>
+
 
                 <!-- Pagination links -->
 
@@ -482,29 +556,29 @@ List:-</p>
                         
                         
                             <li>
-                                <a href="/what-is-difference-between-ls-and-ls-lrt-command/">
+                                <a href="/How-to-install-Jenkins-on-Linux/">
                                     
-                                        <img src="https://images.pexels.com/photos/4709289/pexels-photo-4709289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://www.jenkins.io/images/logos/needs-you/Jenkins_Needs_You-02.png">
                                     
-                                    <h3>Do you use ls -lrt?</h3>
+                                    <h3>How to install JENKINS on Linux ?</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/best-linux-cheatsheet-101/">
+                                <a href="/storing-and-managing-secrets-using-azure-vault/">
                                     
-                                        <img src="https://www.iihglobal.com/wp-content/uploads/2019/02/dcsad.gif">
+                                        <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80">
                                     
-                                    <h3>Linux Cheat Sheet 101</h3>
+                                    <h3>Managing and Storing Secrets:Azure Vault.🙆</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/what-is-chat-gpt/">
+                                <a href="/azure-networking-101/">
                                     
-                                        <img src="https://images.pexels.com/photos/7108/notebook-computer-chill-relax.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://th.bing.com/th/id/Rb3e6202f5356edebd8c8205623eef0f1?rik=2tDqbcLpDFguLg&riu=http%3a%2f%2fwww.shadowandy.net%2fwp%2fwp-content%2fuploads%2fdocker.png&ehk=d2o4OLvE5SZOjrajjCgOCdzXQ9xmehUy6vTEhPPFi3c%3d&risl=&pid=ImgRaw">
                                     
-                                    <h3>What is chatGpt? How to use it?</h3>
+                                    <h3>Azure Networking 101</h3>
                                 </a>
                             </li>
                         
@@ -516,7 +590,7 @@ List:-</p>
 
         <!-- Add time bar only for pages without pagination -->
         
-            <div class="time-bar" data-minutes="3">
+            <div class="time-bar" data-minutes="5">
     <span class="time-completed"></span>
     <span class="time-remaining"></span>
     <div class="bar">
@@ -536,13 +610,13 @@ List:-</p>
         </div>
     </div>
     
-    <a href="/waf-vs-firewall/" class="post-preview">
+    <a href="/what-is-chat-gpt/" class="post-preview">
         <div class="image">
             
-                <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                <img src="https://images.pexels.com/photos/7108/notebook-computer-chill-relax.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
             
         </div>
-        <h3 class="title">WAF vs Firewall</h3>
+        <h3 class="title">What is chatGpt? How to use it?</h3>
     </a>
 </div>
 
@@ -815,7 +889,7 @@ List:-</p>
             "name": "How to create & Manage users and Groups within Azure AD.",
             "headline": "Az Active Directory Objects",
             "description": "Atomatically  deploy your webapps with Github actions and firebase hosting with Jekyll templates",
-            "image": "https://images.pexels.com/photos/3201761/pexels-photo-3201761.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "image": "https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "url": "https://hugs4bugs.me/how-to-manage-azure-active-directory-objects/",
             "articleBody": "In this blog,let’s learn how to create and manage users &amp;amp; group their properties within Azure AD.
 
@@ -947,6 +1021,8 @@ List:-
   Authentication Methods
 
 
+
+
 For Groups
 
 List:-
@@ -963,8 +1039,80 @@ List:-
   Azure Role Assignments
   Dynamic Membership Rules
 
+
+Device Management
+
+To meet with the security and compliance standard, we can configure Device based conditional access form Azure AD.
+
+Steps:
+
+1) Signin to Azure Portal
+2) Go to Azure Active Directory and select Devices option
+
+
+
+3) Select Device settings from the left-hand menu and let’s configure following settings:-
+
+
+
+For the best security use case make sure enable MFA.
+
+After all settings are done click on the save.
+
+To check all user logs, click on the audit logs
+
+
+
+Managing Guest Users
+
+Here comes the Azure AD B2B in the role,it is a feature in azure that allows org to connect and work safely with external users.
+
+
+  External users don’t require a microsoft work and personal account that has been added to an existing Azure AD tenant.
+
+
+
+
+
+
+Feel free to select users role from assignment tab and be causious too., since it’s external guest user permission. You don’t wanna share critical resources with others.
+
+
+
+If you put original guest user email . you will get a mail like this
+
+
+
+After Accepting invitation, it’ll ask for MFA(Multifactor Authenticato App) Registration .
+
+
+
+After 1st successful signin
+
+
+
+SSPR
+
+SSPR stands for the self-service password Reset. It allows users to reset password by ownself, which reduces the dependencies on admins.
+
+in free Azure AD only cloud users only password change is supported not password reset
+
+Steps:
+
+1) Visit Azure Active Directory
+2) Select password reset from the Azure AD overview blade from left hamburger menu.
+
+
+
+3) In the Password reset overview blade, you can enable SSPR for all your users, by selecting All, or for selected users and groups, by selecting Selected.
+
+Make a slection of methods available to users for password reset.
+
+Click save.
+
+Thanks for Reading, Keep learning keep Troubleshooting together!
 ",
-            "wordcount": "593",
+            "wordcount": "933",
             "inLanguage": "en",
             "dateCreated": "2023-04-30/",
             "datePublished": "2023-04-30/",
