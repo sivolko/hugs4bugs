@@ -19,3 +19,5 @@ comment: true
 ---
 
 Before we start, let's understand what is **Kubernetes** ?
+
+-Deployment scaling and management 
