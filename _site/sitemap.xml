@@ -211,6 +211,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/How-to-create-Kubernetescluster-in-azure/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-05-09</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/how-to-manage-azure-active-directory-objects/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
