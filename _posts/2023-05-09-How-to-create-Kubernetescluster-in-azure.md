@@ -9,10 +9,12 @@ optimized_image: https://images.pexels.com/photos/4506940/pexels-photo-4506940.j
 author: Shubhendu Shubham
 comment: true
 categories:
-- automation
+- devops
 tags:
-- webApps
-- jekyll
-- developer
+- Kubernetes
+- Docker
+- azure
 - troubleshooter Club
 ---
+
+this is another testing 

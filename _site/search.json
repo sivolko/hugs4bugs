@@ -4,7 +4,7 @@
   
     {
       "title"    : "Create Kubernetes Cluster in Azure via Portal",
-      "tags"     : "webApps, jekyll, developer, and troubleshooter Club",
+      "tags"     : "Kubernetes, Docker, azure, and troubleshooter Club",
       "categories" : "",
       "url"      : "/How-to-create-Kubernetescluster-in-azure/",
       "date"     : "05/09/2023"
@@ -13,7 +13,7 @@
     {
       "title"    : "How to create &amp; Manage users and Groups within Azure AD.",
       "tags"     : "azure, active directory, developer, and cloud",
-      "categories" : "azure",
+      "categories" : "",
       "url"      : "/how-to-manage-azure-active-directory-objects/",
       "date"     : "04/30/2023"
     } ,
