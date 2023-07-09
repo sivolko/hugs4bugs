@@ -17,4 +17,4 @@ tags:
 - troubleshooter Club
 ---
 
-this is another testing 
+Before we start, let's understand what is **Kubernetes** ?
