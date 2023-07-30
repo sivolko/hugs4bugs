@@ -211,7 +211,7 @@
     
     
         <url>
-            <loc>https://hugs4bugs.me/Microsoft-sentinel-incident-alert-email-notification/</loc>
+            <loc>https://hugs4bugs.me/send-email-with-Azure-logic-app/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2023-04-30</lastmod>
