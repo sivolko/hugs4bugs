@@ -17,19 +17,19 @@
     
     
 
-    <title>Create Kubernetes Cluster in Azure via Portal | hugs4bugs</title>
-    <meta name="description" content="Atomatically  deploy your webapps with Github actions and firebase hosting with Jekyll templates">
+    <title>Automate Email with Azure Logic App | hugs4bugs</title>
+    <meta name="description" content="Automatically send email with attachment via Microsoft logic apps and Blob storage">
     
-    <meta name="keywords" content="Kubernetes, Docker, azure, troubleshooter Club">
+    <meta name="keywords" content="azure, blob storage, logic app, cloud">
     
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Create Kubernetes Cluster in Azure via Portal | hugs4bugs">
-    <meta name="twitter:description" content="Atomatically  deploy your webapps with Github actions and firebase hosting with Jekyll templates">
+    <meta name="twitter:title" content="Automate Email with Azure Logic App | hugs4bugs">
+    <meta name="twitter:description" content="Automatically send email with attachment via Microsoft logic apps and Blob storage">
 
     
-    <meta property="twitter:image" content="https://images.pexels.com/photos/4506940/pexels-photo-4506940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+    <meta property="twitter:image" content="https://d3nn873nee648n.cloudfront.net/900x600/19765/300-SM960337.jpg">
     
 
     
@@ -37,10 +37,10 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="http://localhost:4000/How-to-create-Kubernetescluster-in-azure/">
-    <meta property="og:title" content="Create Kubernetes Cluster in Azure via Portal | hugs4bugs">
-    <meta property="og:image" content="https://images.pexels.com/photos/4506940/pexels-photo-4506940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-    <meta property="og:description" content="Atomatically  deploy your webapps with Github actions and firebase hosting with Jekyll templates">
+    <meta property="og:url" content="https://hugs4bugs.me/Microsoft-sentinel-incident-alert-email-notification/">
+    <meta property="og:title" content="Automate Email with Azure Logic App | hugs4bugs">
+    <meta property="og:image" content="https://d3nn873nee648n.cloudfront.net/900x600/19765/300-SM960337.jpg">
+    <meta property="og:description" content="Automatically send email with attachment via Microsoft logic apps and Blob storage">
     <meta property="og:site_name" content="hugs4bugs">
 
     <!-- Favicon -->
@@ -76,9 +76,9 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="canonical" href="http://localhost:4000/How-to-create-Kubernetescluster-in-azure/">
+    <link rel="canonical" href="https://hugs4bugs.me/Microsoft-sentinel-incident-alert-email-notification/">
     <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
-        href="http://localhost:4000/feed.xml" />
+        href="https://hugs4bugs.me/feed.xml" />
     <link rel='manifest' href='../manifest.json'>
     <link rel='wellknown' href='.well-known/assetlinks.json'>
     <link rel='ads' href='/ads.txt'>
@@ -261,19 +261,19 @@
   
     
       <li>
-        <a href="http://localhost:4000/">Home</a>
+        <a href="https://hugs4bugs.me/">Home</a>
       </li>
     
   
     
       <li>
-        <a href="http://localhost:4000/about">About</a>
+        <a href="https://hugs4bugs.me/about">About</a>
       </li>
     
   
     
       <li>
-        <a href="http://localhost:4000/contact">Contact</a>
+        <a href="https://hugs4bugs.me/contact">Contact</a>
       </li>
     
   
@@ -296,22 +296,22 @@
                 <p class="post-info">
                     
                         <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="2023-05-09T00:00:00+00:00">
+                        <time class="date" datetime="2023-04-30T00:00:00+00:00">
                             
 
 
-May 9, 2023
+April 30, 2023
 
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>1 min to read</span>
+                    <span>3 min to read</span>
                 </p>
-                <h1 class="post-title">Create Kubernetes Cluster in Azure via Portal</h1>
-                <p class="post-subtitle">Your first cluster</p>
+                <h1 class="post-title">Automate Email with Azure Logic App</h1>
+                <p class="post-subtitle">Automation with playbook</p>
 
                 
-                    <img src="https://images.pexels.com/photos/4506940/pexels-photo-4506940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Featured image" class="post-cover">
+                    <img src="https://d3nn873nee648n.cloudfront.net/900x600/19765/300-SM960337.jpg" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
@@ -321,9 +321,263 @@ May 9, 2023
                 <!-- Add your table of contents here -->
 
 
-                <p>Before we start, let’s understand what is <strong>Kubernetes</strong> ?</p>
+                <p>Before start,let’s understand the usecase of Logic App and our requirements.</p>
 
-<p>-Deployment scaling and management</p>
+<p>We need to create an automated email flow with attachment with particular email group or people. So for this we need to create a logic app with storage account which contains our email attachment. Now let’s divide it into 2 parts</p>
+
+<ol>
+  <li>Storage account creation</li>
+  <li>Logic App</li>
+</ol>
+
+<h2 id="requirements--">Requirements :-</h2>
+
+<ol>
+  <li>Azure Subscription</li>
+  <li>Storage Account access</li>
+  <li>Logic App contributor access</li>
+  <li>Email group either outlook or gmail</li>
+</ol>
+
+<p>Steps :-</p>
+
+<ul>
+  <li>Signin to <a href="https://portal.azure.com">Azure Portal</a> and search storage account and click on create and fill deatails for storage account.</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1690656151/Azure/1_toehv3.jpg" alt="Image" /></p>
+
+<ul>
+  <li>
+    <p>In Redundancy select LRS i.e locally-redundant storage to reduce cost. By default it comes with Geo Redundant storage</p>
+  </li>
+  <li>
+    <p>Under Advance section change blob storage access tier type from Hot to cool unless you are using it for enterprise and you need to store all data for GDPR compliance. And Enable large file share option too . But large file storage option do not have the ability to convert to geo-redundant storage offerings and upgrade is permanent.</p>
+  </li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1690656676/Azure/3_ntlprr.jpg" alt="image" /></p>
+
+<ul>
+  <li>Under networking section enable network for selected VM and IP address for security and avoid unwanted traffic . We can use Private network access too.</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1690656940/Azure/4_by7ygi.jpg" alt="Image" /></p>
+
+<ul>
+  <li>Under Data Protection Tab, enable all features as per your GDPR compliance and requirements.</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1690657417/Azure/5_iuiax0.jpg" alt="Image" /></p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1690657494/Azure/6_ylmyox.jpg" alt="Image" /></p>
+
+<ul>
+  <li>
+    <p>To reduce cost make sure to tick delete icon and set no of days.</p>
+  </li>
+  <li>
+    <p>If one want to encrypt the storage account feel free to use encryption tab.</p>
+  </li>
+  <li>
+    <p>Review and hit create</p>
+  </li>
+</ul>
+
+<h2 id="storage-and-container-creation">Storage and Container creation</h2>
+
+<ul>
+  <li>From left tab select Data storage drop down and click container</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1690657975/Azure/7_iloabc.jpg" alt="Image" /></p>
+
+<ul>
+  <li>Click on create and put unique name, from public access level dropdown select Blob storage</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1690658206/Azure/8_uw60s2.jpg" alt="image" /></p>
+
+<ul>
+  <li>After successful creation , container will look like this</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1690658433/Azure/9_joeltj.jpg" alt="image" /></p>
+
+<p>we’ll be using upload feature to upload attachment there and logic app will fetch it out.</p>
+
+<p>Now jump over 2nd part i.e</p>
+
+<h2 id="logic-app-creation">Logic APP creation</h2>
+
+<ul>
+  <li>While Creating logic app make sure to select consumption based to reduce cost</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1690658739/Azure/10_pd7ow7.jpg" alt="image" /></p>
+
+<ul>
+  <li>Click on blank logic app</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1690697910/Azure/11_brbd2j.jpg" alt="Image" /></p>
+
+<ul>
+  <li>Select trigger as Blob is added or modified properties only v2</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1690698474/Azure/12_ahsnwo.jpg" alt="Image " /></p>
+
+<ul>
+  <li>Fill Azure Blob storage</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1690699111/Azure/13_yir6oj.jpg" alt="image" /></p>
+
+<ul>
+  <li>Select how often blob storage should scan</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1690699629/Azure/14_rbprab.jpg" alt="Image" /></p>
+
+<ul>
+  <li>Fetch Blob storage</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1690699853/Azure/15_s4uuod.jpg" alt="Image" /></p>
+
+<ul>
+  <li>Send Email connect</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1690700255/Azure/16_krj5rl.jpg" alt="Image" /></p>
+
+<ul>
+  <li>After successful run it’ll trigger</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1690701238/Azure/17_p4one2.jpg" alt="Immage" /></p>
+
+<ul>
+  <li>Recipient Mail snapshot</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1690703857/Azure/18_g57tqm.jpg" alt="Image" /></p>
+
+<ul>
+  <li>Senders Mail snapshot</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1690704324/Azure/19_tgp2hj.jpg" alt="Image" /></p>
+
+<h2 id="code-snippet--logic-app">Code Snippet : Logic App</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "Get_blob_content_(V2)": {
+                "inputs": {
+                    "host": {
+                        "connection": {
+                            "name": "@parameters('$connections')['azureblob_1']['connectionId']"
+                        }
+                    },
+                    "method": "get",
+                    "path": "/v2/datasets/@{encodeURIComponent(encodeURIComponent('AccountNameFromSettings'))}/files/@{encodeURIComponent(encodeURIComponent('/email/',triggerBody()?['Name']))}/content"
+                },
+                "runAfter": {},
+                "type": "ApiConnection"
+            },
+            "Send_an_email_(V2)": {
+                "inputs": {
+                    "body": {
+                        "Attachments": [
+                            {
+                                "ContentBytes": "@{base64(body('Get_blob_content_(V2)'))}",
+                                "Name": "@triggerBody()?['Name']"
+                            }
+                        ],
+                        "Body": "&lt;p&gt;Hello ,&lt;br&gt;\n&lt;br&gt;\nThis is automated mail from the &amp;nbsp;Azure logic app&lt;/p&gt;",
+                        "Subject": "Auto Mail from Logic App ",
+                        "To": "shubhendushubham98@gmail.com"
+                    },
+                    "host": {
+                        "connection": {
+                            "name": "@parameters('$connections')['office365']['connectionId']"
+                        }
+                    },
+                    "method": "post",
+                    "path": "/v2/Mail"
+                },
+                "runAfter": {
+                    "Get_blob_content_(V2)": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "ApiConnection"
+            }
+        },
+        "contentVersion": "1.0.0.0",
+        "outputs": {},
+        "parameters": {
+            "$connections": {
+                "defaultValue": {},
+                "type": "Object"
+            }
+        },
+        "triggers": {
+            "When_a_blob_is_added_or_modified_(properties_only)_(V2)": {
+                "evaluatedRecurrence": {
+                    "frequency": "Second",
+                    "interval": 5
+                },
+                "inputs": {
+                    "host": {
+                        "connection": {
+                            "name": "@parameters('$connections')['azureblob_1']['connectionId']"
+                        }
+                    },
+                    "method": "get",
+                    "path": "/v2/datasets/@{encodeURIComponent(encodeURIComponent('AccountNameFromSettings'))}/triggers/batch/onupdatedfile",
+                    "queries": {
+                        "checkBothCreatedAndModifiedDateTime": false,
+                        "folderId": "JTJmZW1haWw=",
+                        "maxFileCount": 1
+                    }
+                },
+                "metadata": {
+                    "JTJmZW1haWw=": "/email"
+                },
+                "recurrence": {
+                    "frequency": "Second",
+                    "interval": 5
+                },
+                "splitOn": "@triggerBody()",
+                "type": "ApiConnection"
+            }
+        }
+    },
+    "parameters": {
+        "$connections": {
+            "value": {
+                "azureblob_1": {
+                    "connectionId": "/subscriptions/d2ce31d1-d98f-41a0-ba3f-9db5b1e7bf9f/resourceGroups/Alert-RG/providers/Microsoft.Web/connections/azureblob-3",
+                    "connectionName": "azureblob-3",
+                    "id": "/subscriptions/d2ce31d1-d98f-41a0-ba3f-9db5b1e7bf9f/providers/Microsoft.Web/locations/eastus/managedApis/azureblob"
+                },
+                "office365": {
+                    "connectionId": "/subscriptions/d2ce31d1-d98f-41a0-ba3f-9db5b1e7bf9f/resourceGroups/Alert-RG/providers/Microsoft.Web/connections/office365-1",
+                    "connectionName": "office365-1",
+                    "id": "/subscriptions/d2ce31d1-d98f-41a0-ba3f-9db5b1e7bf9f/providers/Microsoft.Web/locations/eastus/managedApis/office365"
+                }
+            }
+        }
+    }
+}
+
+</code></pre></div></div>
 
 
                 <!-- Pagination links -->
@@ -339,29 +593,29 @@ May 9, 2023
                         
                         
                             <li>
-                                <a href="/how-to-like-instagram-post-with-javascript/">
+                                <a href="/the-blue-team-protecting-you/">
                                     
-                                        <img src="https://media.giphy.com/media/cmqnzFK17DO4vKCscd/giphy.gif">
+                                        <img src="https://cdn.pixabay.com/photo/2017/11/19/23/56/hacking-2964100_960_720.jpg">
                                     
-                                    <h3>How to like Instagram posts with JavaScript?</h3>
+                                    <h3>The Blue Team.☠️</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/access-management-101/">
+                                <a href="/college-to-cyber-security/">
                                     
-                                        <img src="https://d3nn873nee648n.cloudfront.net/900x600/16347/120-SM692126.jpg">
+                                        <img src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80">
                                     
-                                    <h3>Access Management 101.</h3>
+                                    <h3>College to Cyber Security Journey</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/Progressive-web-app/">
+                                <a href="/benifits-of-CI/">
                                     
-                                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
+                                        <img src="https://cdn-images-1.medium.com/max/1600/1*-eHRhJcg-QPUws99xEDh6w.png">
                                     
-                                    <h3>Progressive WebApp.</h3>
+                                    <h3>Benifits of CI/CD</h3>
                                 </a>
                             </li>
                         
@@ -373,7 +627,7 @@ May 9, 2023
 
         <!-- Add time bar only for pages without pagination -->
         
-            <div class="time-bar" data-minutes="1">
+            <div class="time-bar" data-minutes="3">
     <span class="time-completed"></span>
     <span class="time-remaining"></span>
     <div class="bar">
@@ -393,13 +647,13 @@ May 9, 2023
         </div>
     </div>
     
-    <a href="/azure-networking-101/" class="post-preview">
+    <a href="/Docker-101/" class="post-preview">
         <div class="image">
             
                 <img src="https://th.bing.com/th/id/Rb3e6202f5356edebd8c8205623eef0f1?rik=2tDqbcLpDFguLg&riu=http%3a%2f%2fwww.shadowandy.net%2fwp%2fwp-content%2fuploads%2fdocker.png&ehk=d2o4OLvE5SZOjrajjCgOCdzXQ9xmehUy6vTEhPPFi3c%3d&risl=&pid=ImgRaw">
             
         </div>
-        <h3 class="title">Azure Networking 101</h3>
+        <h3 class="title">Docker 101</h3>
     </a>
 </div>
 
@@ -416,7 +670,7 @@ May 9, 2023
         <section class="share">
     <h3>Share</h3>
     <a aria-label="Share on Twitter"
-        href="https://twitter.com/intent/tweet?text=&quot;Atomatically  deploy your webapps with Github actions and firebase hosting with Jekyll templates&quot;%20http://localhost:4000/How-to-create-Kubernetescluster-in-azure/%20via%20&#64;myselfshubhendu&hashtags=Kubernetes,Docker,azure,troubleshooter Club"
+        href="https://twitter.com/intent/tweet?text=&quot;Automatically send email with attachment via Microsoft logic apps and Blob storage&quot;%20https://hugs4bugs.me/Microsoft-sentinel-incident-alert-email-notification/%20via%20&#64;myselfshubhendu&hashtags=azure,blob storage,logic app,cloud"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -424,7 +678,7 @@ May 9, 2023
         </svg>
     </a>
     <a aria-label="Share on WhatsApp"
-        href="https://twitter.com/intent/tweet?text=&quot;Atomatically  deploy your webapps with Github actions and firebase hosting with Jekyll templates&quot;%20http://localhost:4000/How-to-create-Kubernetescluster-in-azure/%20via%20&#64;myselfshubhendu&hashtags=Kubernetes,Docker,azure,troubleshooter Club"
+        href="https://twitter.com/intent/tweet?text=&quot;Automatically send email with attachment via Microsoft logic apps and Blob storage&quot;%20https://hugs4bugs.me/Microsoft-sentinel-incident-alert-email-notification/%20via%20&#64;myselfshubhendu&hashtags=azure,blob storage,logic app,cloud"
         onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -432,7 +686,7 @@ May 9, 2023
         </svg>
     </a>
     <a aria-label="Share on Facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/How-to-create-Kubernetescluster-in-azure/"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/Microsoft-sentinel-incident-alert-email-notification/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
         title="Share on Facebook">
         <svg class="icon icon-facebook">
@@ -500,7 +754,7 @@ May 9, 2023
       "image": "/assets/img/s.png",
       
       "jobTitle": "",
-      "url": "http://localhost:4000/authors/shubhendu/",
+      "url": "https://hugs4bugs.me/authors/shubhendu/",
       "sameAs": [
         "https://github.com/sivolko","https://twitter.com/myselfshubhendu","https://medium.com/@shubhendushubham","https://www.instagram.com/shubhendushubham","https://www.linkedin.com/in/shubhendu-shubham"
       ]
@@ -522,7 +776,7 @@ May 9, 2023
         disqus_loaded = true;
         var disqus_shortname = 'hugs4bugs';
         var disqus_title = '';
-        var disqus_url = '/How-to-create-Kubernetescluster-in-azure/';
+        var disqus_url = '/Microsoft-sentinel-incident-alert-email-notification/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -577,19 +831,19 @@ May 9, 2023
   
     
       <li>
-        <a href="http://localhost:4000/">Home</a>
+        <a href="https://hugs4bugs.me/">Home</a>
       </li>
     
   
     
       <li>
-        <a href="http://localhost:4000/about">About</a>
+        <a href="https://hugs4bugs.me/about">About</a>
       </li>
     
   
     
       <li>
-        <a href="http://localhost:4000/contact">Contact</a>
+        <a href="https://hugs4bugs.me/contact">Contact</a>
       </li>
     
   
@@ -617,10 +871,10 @@ May 9, 2023
   "@type": "Organization",
   "name": "hugs4bugs",
   "description": "hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.",
-  "url": "http://localhost:4000/",
+  "url": "https://hugs4bugs.me/",
   "logo": {
       "@type": "ImageObject",
-      "url": "http://localhost:4000/assets/img/icons/mediumtile.png",
+      "url": "https://hugs4bugs.me/assets/img/icons/mediumtile.png",
       "width": "600",
       "height": "315"
   },
@@ -669,20 +923,274 @@ May 9, 2023
         {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
-            "name": "Create Kubernetes Cluster in Azure via Portal",
-            "headline": "Your first cluster",
-            "description": "Atomatically  deploy your webapps with Github actions and firebase hosting with Jekyll templates",
-            "image": "https://images.pexels.com/photos/4506940/pexels-photo-4506940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "url": "http://localhost:4000/How-to-create-Kubernetescluster-in-azure/",
-            "articleBody": "Before we start, let’s understand what is Kubernetes ?
+            "name": "Automate Email with Azure Logic App",
+            "headline": "Automation with playbook",
+            "description": "Automatically send email with attachment via Microsoft logic apps and Blob storage",
+            "image": "https://d3nn873nee648n.cloudfront.net/900x600/19765/300-SM960337.jpg",
+            "url": "https://hugs4bugs.me/Microsoft-sentinel-incident-alert-email-notification/",
+            "articleBody": "Before start,let’s understand the usecase of Logic App and our requirements.
 
--Deployment scaling and management
+We need to create an automated email flow with attachment with particular email group or people. So for this we need to create a logic app with storage account which contains our email attachment. Now let’s divide it into 2 parts
+
+
+  Storage account creation
+  Logic App
+
+
+Requirements :-
+
+
+  Azure Subscription
+  Storage Account access
+  Logic App contributor access
+  Email group either outlook or gmail
+
+
+Steps :-
+
+
+  Signin to Azure Portal and search storage account and click on create and fill deatails for storage account.
+
+
+
+
+
+  
+    In Redundancy select LRS i.e locally-redundant storage to reduce cost. By default it comes with Geo Redundant storage
+  
+  
+    Under Advance section change blob storage access tier type from Hot to cool unless you are using it for enterprise and you need to store all data for GDPR compliance. And Enable large file share option too . But large file storage option do not have the ability to convert to geo-redundant storage offerings and upgrade is permanent.
+  
+
+
+
+
+
+  Under networking section enable network for selected VM and IP address for security and avoid unwanted traffic . We can use Private network access too.
+
+
+
+
+
+  Under Data Protection Tab, enable all features as per your GDPR compliance and requirements.
+
+
+
+
+
+
+
+  
+    To reduce cost make sure to tick delete icon and set no of days.
+  
+  
+    If one want to encrypt the storage account feel free to use encryption tab.
+  
+  
+    Review and hit create
+  
+
+
+Storage and Container creation
+
+
+  From left tab select Data storage drop down and click container
+
+
+
+
+
+  Click on create and put unique name, from public access level dropdown select Blob storage
+
+
+
+
+
+  After successful creation , container will look like this
+
+
+
+
+we’ll be using upload feature to upload attachment there and logic app will fetch it out.
+
+Now jump over 2nd part i.e
+
+Logic APP creation
+
+
+  While Creating logic app make sure to select consumption based to reduce cost
+
+
+
+
+
+  Click on blank logic app
+
+
+
+
+
+  Select trigger as Blob is added or modified properties only v2
+
+
+
+
+
+  Fill Azure Blob storage
+
+
+
+
+
+  Select how often blob storage should scan
+
+
+
+
+
+  Fetch Blob storage
+
+
+
+
+
+  Send Email connect
+
+
+
+
+
+  After successful run it’ll trigger
+
+
+
+
+
+  Recipient Mail snapshot
+
+
+
+
+
+  Senders Mail snapshot
+
+
+
+
+Code Snippet : Logic App
+
+
+{
+    &quot;definition&quot;: {
+        &quot;$schema&quot;: &quot;https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#&quot;,
+        &quot;actions&quot;: {
+            &quot;Get_blob_content_(V2)&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;host&quot;: {
+                        &quot;connection&quot;: {
+                            &quot;name&quot;: &quot;@parameters(&apos;$connections&apos;)[&apos;azureblob_1&apos;][&apos;connectionId&apos;]&quot;
+                        }
+                    },
+                    &quot;method&quot;: &quot;get&quot;,
+                    &quot;path&quot;: &quot;/v2/datasets/@{encodeURIComponent(encodeURIComponent(&apos;AccountNameFromSettings&apos;))}/files/@{encodeURIComponent(encodeURIComponent(&apos;/email/&apos;,triggerBody()?[&apos;Name&apos;]))}/content&quot;
+                },
+                &quot;runAfter&quot;: {},
+                &quot;type&quot;: &quot;ApiConnection&quot;
+            },
+            &quot;Send_an_email_(V2)&quot;: {
+                &quot;inputs&quot;: {
+                    &quot;body&quot;: {
+                        &quot;Attachments&quot;: [
+                            {
+                                &quot;ContentBytes&quot;: &quot;@{base64(body(&apos;Get_blob_content_(V2)&apos;))}&quot;,
+                                &quot;Name&quot;: &quot;@triggerBody()?[&apos;Name&apos;]&quot;
+                            }
+                        ],
+                        &quot;Body&quot;: &quot;&amp;lt;p&amp;gt;Hello ,&amp;lt;br&amp;gt;\n&amp;lt;br&amp;gt;\nThis is automated mail from the &amp;amp;nbsp;Azure logic app&amp;lt;/p&amp;gt;&quot;,
+                        &quot;Subject&quot;: &quot;Auto Mail from Logic App &quot;,
+                        &quot;To&quot;: &quot;shubhendushubham98@gmail.com&quot;
+                    },
+                    &quot;host&quot;: {
+                        &quot;connection&quot;: {
+                            &quot;name&quot;: &quot;@parameters(&apos;$connections&apos;)[&apos;office365&apos;][&apos;connectionId&apos;]&quot;
+                        }
+                    },
+                    &quot;method&quot;: &quot;post&quot;,
+                    &quot;path&quot;: &quot;/v2/Mail&quot;
+                },
+                &quot;runAfter&quot;: {
+                    &quot;Get_blob_content_(V2)&quot;: [
+                        &quot;Succeeded&quot;
+                    ]
+                },
+                &quot;type&quot;: &quot;ApiConnection&quot;
+            }
+        },
+        &quot;contentVersion&quot;: &quot;1.0.0.0&quot;,
+        &quot;outputs&quot;: {},
+        &quot;parameters&quot;: {
+            &quot;$connections&quot;: {
+                &quot;defaultValue&quot;: {},
+                &quot;type&quot;: &quot;Object&quot;
+            }
+        },
+        &quot;triggers&quot;: {
+            &quot;When_a_blob_is_added_or_modified_(properties_only)_(V2)&quot;: {
+                &quot;evaluatedRecurrence&quot;: {
+                    &quot;frequency&quot;: &quot;Second&quot;,
+                    &quot;interval&quot;: 5
+                },
+                &quot;inputs&quot;: {
+                    &quot;host&quot;: {
+                        &quot;connection&quot;: {
+                            &quot;name&quot;: &quot;@parameters(&apos;$connections&apos;)[&apos;azureblob_1&apos;][&apos;connectionId&apos;]&quot;
+                        }
+                    },
+                    &quot;method&quot;: &quot;get&quot;,
+                    &quot;path&quot;: &quot;/v2/datasets/@{encodeURIComponent(encodeURIComponent(&apos;AccountNameFromSettings&apos;))}/triggers/batch/onupdatedfile&quot;,
+                    &quot;queries&quot;: {
+                        &quot;checkBothCreatedAndModifiedDateTime&quot;: false,
+                        &quot;folderId&quot;: &quot;JTJmZW1haWw=&quot;,
+                        &quot;maxFileCount&quot;: 1
+                    }
+                },
+                &quot;metadata&quot;: {
+                    &quot;JTJmZW1haWw=&quot;: &quot;/email&quot;
+                },
+                &quot;recurrence&quot;: {
+                    &quot;frequency&quot;: &quot;Second&quot;,
+                    &quot;interval&quot;: 5
+                },
+                &quot;splitOn&quot;: &quot;@triggerBody()&quot;,
+                &quot;type&quot;: &quot;ApiConnection&quot;
+            }
+        }
+    },
+    &quot;parameters&quot;: {
+        &quot;$connections&quot;: {
+            &quot;value&quot;: {
+                &quot;azureblob_1&quot;: {
+                    &quot;connectionId&quot;: &quot;/subscriptions/d2ce31d1-d98f-41a0-ba3f-9db5b1e7bf9f/resourceGroups/Alert-RG/providers/Microsoft.Web/connections/azureblob-3&quot;,
+                    &quot;connectionName&quot;: &quot;azureblob-3&quot;,
+                    &quot;id&quot;: &quot;/subscriptions/d2ce31d1-d98f-41a0-ba3f-9db5b1e7bf9f/providers/Microsoft.Web/locations/eastus/managedApis/azureblob&quot;
+                },
+                &quot;office365&quot;: {
+                    &quot;connectionId&quot;: &quot;/subscriptions/d2ce31d1-d98f-41a0-ba3f-9db5b1e7bf9f/resourceGroups/Alert-RG/providers/Microsoft.Web/connections/office365-1&quot;,
+                    &quot;connectionName&quot;: &quot;office365-1&quot;,
+                    &quot;id&quot;: &quot;/subscriptions/d2ce31d1-d98f-41a0-ba3f-9db5b1e7bf9f/providers/Microsoft.Web/locations/eastus/managedApis/office365&quot;
+                }
+            }
+        }
+    }
+}
+
+
 ",
-            "wordcount": "13",
+            "wordcount": "686",
             "inLanguage": "en",
-            "dateCreated": "2023-05-09/",
-            "datePublished": "2023-05-09/",
-            "dateModified": "2023-05-09/",
+            "dateCreated": "2023-04-30/",
+            "datePublished": "2023-04-30/",
+            "dateModified": "2023-04-30/",
             "author": {
                 "@type": "Person",
                 "name": "Shubhendu",
@@ -690,7 +1198,7 @@ May 9, 2023
                 "image": "/assets/img/s.png",
                 
                 "jobTitle": "",
-                "url": "http://localhost:4000/authors/shubhendu/",
+                "url": "https://hugs4bugs.me/authors/shubhendu/",
                 "sameAs": [
                     "https://github.com/sivolko","https://twitter.com/myselfshubhendu","https://medium.com/@shubhendushubham","https://www.instagram.com/shubhendushubham","https://www.linkedin.com/in/shubhendu-shubham"
                 ]
@@ -698,10 +1206,10 @@ May 9, 2023
             "publisher": {
                 "@type": "Organization",
                 "name": "hugs4bugs",
-                "url": "http://localhost:4000/",
+                "url": "https://hugs4bugs.me/",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "http://localhost:4000/assets/img/blog-image.png",
+                    "url": "https://hugs4bugs.me/assets/img/blog-image.png",
                     "width": "600",
                     "height": "315"
                 }
@@ -709,7 +1217,7 @@ May 9, 2023
             "mainEntityOfPage": "True",
             "genre": "",
             "articleSection": "",
-            "keywords": ["Kubernetes","Docker","azure","troubleshooter Club"]
+            "keywords": ["azure","blob storage","logic app","cloud"]
         }
         </script>
     </body>
