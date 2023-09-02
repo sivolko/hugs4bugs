@@ -17,17 +17,19 @@
     
     
 
-    <title>Cloud | hugs4bugs</title>
-    <meta name="description" content="A category for cloud related posts.">
+    <title>What is Microsoft Defender Threat Intelligence | hugs4bugs</title>
+    <meta name="description" content="Automatically send email with attachment via Microsoft logic apps and Blob storage">
+    
+    <meta name="keywords" content="azure, Defender, Cyber Security, Threat Intelligence">
     
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cloud | hugs4bugs">
-    <meta name="twitter:description" content="A category for cloud related posts.">
+    <meta name="twitter:title" content="What is Microsoft Defender Threat Intelligence | hugs4bugs">
+    <meta name="twitter:description" content="Automatically send email with attachment via Microsoft logic apps and Blob storage">
 
     
-    <meta property="twitter:image" content="https://hugs4bugs.me/assets/img/s.png">
+    <meta property="twitter:image" content="https://images.pexels.com/photos/10782398/pexels-photo-10782398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
     
 
     
@@ -35,10 +37,10 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="https://hugs4bugs.me/category/travel/">
-    <meta property="og:title" content="Cloud | hugs4bugs">
-    <meta property="og:image" content="https://hugs4bugs.me/assets/img/s.png">
-    <meta property="og:description" content="A category for cloud related posts.">
+    <meta property="og:url" content="https://hugs4bugs.me/What-is-Microsoft-Defender-Threat-Intelligence(MDTI)/">
+    <meta property="og:title" content="What is Microsoft Defender Threat Intelligence | hugs4bugs">
+    <meta property="og:image" content="https://images.pexels.com/photos/10782398/pexels-photo-10782398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+    <meta property="og:description" content="Automatically send email with attachment via Microsoft logic apps and Blob storage">
     <meta property="og:site_name" content="hugs4bugs">
 
     <!-- Favicon -->
@@ -74,7 +76,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="canonical" href="https://hugs4bugs.me/category/travel/">
+    <link rel="canonical" href="https://hugs4bugs.me/What-is-Microsoft-Defender-Threat-Intelligence(MDTI)/">
     <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
         href="https://hugs4bugs.me/feed.xml" />
     <link rel='manifest' href='../manifest.json'>
@@ -111,7 +113,13 @@
         crossorigin="anonymous"></script>
 </head>
 
-    <body class="main-page has-push-menu">
+    <body class="has-push-menu">
+        
+
+
+
+
+
         <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -282,75 +290,334 @@
     </div>
 </div>
 
-        <section class="content">
-            <main class="home" id="post" role="main">
-                <h1 class="title-category">/Cloud</h1>
-                <div id="grid" class="row flex-grid">
+
+        <section class="post two-columns">
+            <article role="article" class="post-content">
+                <p class="post-info">
                     
+                        <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
+                        <time class="date" datetime="2023-09-02T00:00:00+00:00">
+                            
+
+
+September 2, 2023
+
+                        </time>
                     
+                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
+                    <span>2 min to read</span>
+                </p>
+                <h1 class="post-title">What is Microsoft Defender Threat Intelligence</h1>
+                <p class="post-subtitle">Security Analyst Workbench</p>
+
+                
+                    <img src="https://images.pexels.com/photos/10782398/pexels-photo-10782398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Featured image" class="post-cover">
+                
+
+                <!-- Pagination links -->
+
+
+
+                <!-- Add your table of contents here -->
+
+
+                <p>Before starting let’s understand a few steps of threat investigation and attackers’ mindset. Whenever attacker breaches a system or try to all logs are generated as Events and Incidents which can be fetched into SIEM tools like MS Sentinel , Qradar. These behaviours can be summarised into <strong>TTP</strong> viz</p>
+
+<ol>
+  <li>Tactics : The high level description of the behaviour and strategy of a threat actor.It means how they behave across the different stages of the cyberattack kill chain. Usually these stages includes :
+    <ul>
+      <li>Reconnaissance</li>
+      <li>Delivery and exploitation</li>
+      <li>Acting on the objective</li>
+    </ul>
+  </li>
+  <li>Technique : This is all about what the threat actors do in order to cause all sorts of problems. eg : Network infiltrate, Inside movement without trace, command and control centers establishments</li>
+  <li>Procedure: are the detailed description of how tactics are executed using the choice of techniques and set of actionable.</li>
+</ol>
+
+<p>So for every SOC analyst have to visit multiples repository to check , Domain Name, IP reputations, CVE details . So to reduce the pain of SOC people Microsoft has solution called Microsoft Defender Theat Intelligence aka MDTI</p>
+
+<p><strong>What is MDTI?</strong>
+Platform that streamlines triage, incident response, threat hunting, vulnerability management and cyber threat intelligence analyst workflows.</p>
+
+<p><strong>USE CASES</strong></p>
+
+<ol>
+  <li>Security Operations :use data collection from various cyber defense tools to analyze events occuring within an environment to migrate threats.</li>
+  <li>Incident Response: Investigate, Analysis and Responding to cyber Incidents within a network</li>
+  <li>Threat Hunting: Search for malware and attacker within a n/w</li>
+  <li>Cyber Threat Intelligence Analysis: Identifying and Tracking cyber threats to an organisation and working with stakeholders to reduce task.</li>
+  <li>Cybersecurity Research: Developing a new concept and approach .</li>
+</ol>
+
+<p><strong>Demo</strong></p>
+
+<p>Licences : Defender TI premium Licence
+Free Licence can access free offering of MDTI</p>
+
+<p><a href="https://ti.defender.microsoft.com/">Portal Link</a></p>
+
+<ul>
+  <li>Landing Page Look :-</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1693644280/Azure/MDTI/Web_capture_2-9-2023_104139_ti.defender.microsoft.com_uuwo99.jpg" alt="Landing Page" /></p>
+
+<p>It contains featuured articles with CVE , Threat Indicators and Intel Group name</p>
+
+<ul>
+  <li>Articles</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1693657867/Azure/MDTI/2_mlcljt.jpg" alt="Articles" /></p>
+
+<ul>
+  <li>Creating Teams account and Project. In free license we can’t create Teams account but we can create 1 project with accessibility to ownselves.</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1693657998/Azure/MDTI/3_dwm5f5.jpg" alt="Teams account" /></p>
+
+<ul>
+  <li>After Project creation, we do have to add artifacts to run the jobs</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1693658491/Azure/MDTI/4_kefh7u.jpg" alt="Artifacts" /></p>
+
+<ul>
+  <li>Artifacts can be either for domain or IP specific</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1693658719/Azure/MDTI/5_qrmyk2.jpg" alt="Artifacts" /></p>
+
+<ul>
+  <li>Run Jobs and It’ll seach from each search type like Tags, components, Trackers, WHOIS, Certificate, Cookies and provides result into two part</li>
+</ul>
+
+<ol>
+  <li>First is summary</li>
+  <li>Data Tab which contains all details about scans</li>
+</ol>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1693659085/Azure/MDTI/6_ud8med.jpg" alt="Scans" /></p>
+
+<p>At Intel profile, we can filter out Threat actors and groups by Targets and country</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1693659234/Azure/MDTI/7_dju2wa.jpg" alt="Intel" /></p>
+
+
+                <!-- Pagination links -->
+
+
+            </article>
+
+            
+                <aside class="see-also">
+                    <h2>See also</h2>
+                    <ul>
                         
-                    
                         
-                    
                         
-                    
+                            <li>
+                                <a href="/blue-team-vs-red-team-in-cyber-security/">
+                                    
+                                        <img src="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                    
+                                    <h3>Blue Team vs Red Team</h3>
+                                </a>
+                            </li>
                         
-                    
+                            <li>
+                                <a href="/difference-between-WAF-and-IPS/">
+                                    
+                                        <img src="https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                    
+                                    <h3>WAF vs IPS</h3>
+                                </a>
+                            </li>
                         
-                    
+                            <li>
+                                <a href="/2021-08-2-Understanding-basics-of-security/">
+                                    
+                                        <img src="https://cdn.pixabay.com/photo/2017/11/19/23/56/hacking-2964100_960_720.jpg">
+                                    
+                                    <h3>Protection against Security threat on Azure.☠️</h3>
+                                </a>
+                            </li>
                         
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                </div>
-            </main>
+                    </ul>
+                </aside>
+            
+
         </section>
+
+        <!-- Add time bar only for pages without pagination -->
+        
+            <div class="time-bar" data-minutes="2">
+    <span class="time-completed"></span>
+    <span class="time-remaining"></span>
+    <div class="bar">
+        <span class="completed" style="width:0%;"></span>
+        <span class="remaining" style="width:100%;"></span>
+    </div>
+</div>
+
+            <div class="recommendation">
+    <div class="message">
+        <strong>Why don't you read something next?</strong>
+        <div>
+            <button>
+                <svg><use xlink:href="#icon-arrow-right"></use></svg>
+                <span>Go back to top</span>
+            </button>
+        </div>
+    </div>
+    
+    <a href="/college-to-cyber-security/" class="post-preview">
+        <div class="image">
+            
+                <img src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80">
+            
+        </div>
+        <h3 class="title">College to Cyber Security Journey</h3>
+    </a>
+</div>
+
+        
+
+        <!-- Show modal if the post is the last one -->
+        
+
+        <!-- Show modal before user leaves the page -->
+        
+
+        <!-- Add your newsletter subscription form here -->
+
+        <section class="share">
+    <h3>Share</h3>
+    <a aria-label="Share on Twitter"
+        href="https://twitter.com/intent/tweet?text=&quot;Automatically send email with attachment via Microsoft logic apps and Blob storage&quot;%20https://hugs4bugs.me/What-is-Microsoft-Defender-Threat-Intelligence(MDTI)/%20via%20&#64;myselfshubhendu&hashtags=azure,Defender,Cyber Security,Threat Intelligence"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
+        title="Share on Twitter">
+        <svg class="icon icon-twitter">
+            <use xlink:href="#icon-twitter"></use>
+        </svg>
+    </a>
+    <a aria-label="Share on WhatsApp"
+        href="https://twitter.com/intent/tweet?text=&quot;Automatically send email with attachment via Microsoft logic apps and Blob storage&quot;%20https://hugs4bugs.me/What-is-Microsoft-Defender-Threat-Intelligence(MDTI)/%20via%20&#64;myselfshubhendu&hashtags=azure,Defender,Cyber Security,Threat Intelligence"
+        onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
+        title="Share on Twitter">
+        <svg class="icon icon-twitter">
+            <use xlink:href="#icon-twitter"></use>
+        </svg>
+    </a>
+    <a aria-label="Share on Facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/What-is-Microsoft-Defender-Threat-Intelligence(MDTI)/"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
+        title="Share on Facebook">
+        <svg class="icon icon-facebook">
+            <use xlink:href="#icon-facebook"></use>
+        </svg>
+    </a>
+</section>
+        
+
+  <section class="author">
+    <div class="details">
+      
+        <img class="img-rounded" src="/assets/img/s.png" alt="Shubhendu">
+      
+      <p class="def">Author</p>
+      <h3 class="name">
+        <a href="/authors/shubhendu/">Shubhendu</a>
+      </h3>
+      <p class="desc">A guy who survived after watching Bear Grylls shows,Now He writes code for survial.</p>
+      <p>
+        
+          <a href="https://github.com/sivolko" title="Github">
+            <svg><use xlink:href="#icon-github"></use></svg>
+          </a>
+        
+        
+        
+          <a href="https://twitter.com/myselfshubhendu" title="Twitter">
+            <svg><use xlink:href="#icon-twitter"></use></svg>
+          </a>
+        
+        
+          <a href="https://medium.com/@shubhendushubham" title="Medium">
+            <svg><use xlink:href="#icon-medium"></use></svg>
+          </a>
+        
+        
+          <a href="https://www.instagram.com/shubhendushubham" title="Instagram">
+            <svg><use xlink:href="#icon-instagram"></use></svg>
+          </a>
+        
+        
+          <a href="https://www.linkedin.com/in/shubhendu-shubham" title="LinkedIn">
+            <svg><use xlink:href="#icon-linkedin"></use></svg>
+          </a>
+        
+      </p>
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+  
+  
+
+  <script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Shubhendu",
+      
+      "image": "/assets/img/s.png",
+      
+      "jobTitle": "",
+      "url": "https://hugs4bugs.me/authors/shubhendu/",
+      "sameAs": [
+        "https://github.com/sivolko","https://twitter.com/myselfshubhendu","https://medium.com/@shubhendushubham","https://www.instagram.com/shubhendushubham","https://www.linkedin.com/in/shubhendu-shubham"
+      ]
+  }
+  </script>
+
+
+        
+
+<section class="comments">
+    <h3>Comments</h3>
+    <div id="disqus_thread"></div>
+</section>
+<script type="text/javascript">
+    var disqus_loaded = false;
+
+    function load_disqus()
+    {
+        disqus_loaded = true;
+        var disqus_shortname = 'hugs4bugs';
+        var disqus_title = '';
+        var disqus_url = '/What-is-Microsoft-Defender-Threat-Intelligence(MDTI)/';
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        var ldr = document.getElementById('disqus_loader');
+    };
+    window.onscroll = function(e) {
+        if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
+            //hit bottom of page
+            if (disqus_loaded==false)
+                load_disqus()
+        }
+    };
+</script>
+
+
+
         <footer>
   <p>
     
@@ -466,8 +733,142 @@
 
 <!-- Include extra scripts -->
 
+
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "name": "What is Microsoft Defender Threat Intelligence",
+            "headline": "Security Analyst Workbench",
+            "description": "Automatically send email with attachment via Microsoft logic apps and Blob storage",
+            "image": "https://images.pexels.com/photos/10782398/pexels-photo-10782398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "url": "https://hugs4bugs.me/What-is-Microsoft-Defender-Threat-Intelligence(MDTI)/",
+            "articleBody": "Before starting let’s understand a few steps of threat investigation and attackers’ mindset. Whenever attacker breaches a system or try to all logs are generated as Events and Incidents which can be fetched into SIEM tools like MS Sentinel , Qradar. These behaviours can be summarised into TTP viz
+
+
+  Tactics : The high level description of the behaviour and strategy of a threat actor.It means how they behave across the different stages of the cyberattack kill chain. Usually these stages includes :
+    
+      Reconnaissance
+      Delivery and exploitation
+      Acting on the objective
+    
+  
+  Technique : This is all about what the threat actors do in order to cause all sorts of problems. eg : Network infiltrate, Inside movement without trace, command and control centers establishments
+  Procedure: are the detailed description of how tactics are executed using the choice of techniques and set of actionable.
+
+
+So for every SOC analyst have to visit multiples repository to check , Domain Name, IP reputations, CVE details . So to reduce the pain of SOC people Microsoft has solution called Microsoft Defender Theat Intelligence aka MDTI
+
+What is MDTI?
+Platform that streamlines triage, incident response, threat hunting, vulnerability management and cyber threat intelligence analyst workflows.
+
+USE CASES
+
+
+  Security Operations :use data collection from various cyber defense tools to analyze events occuring within an environment to migrate threats.
+  Incident Response: Investigate, Analysis and Responding to cyber Incidents within a network
+  Threat Hunting: Search for malware and attacker within a n/w
+  Cyber Threat Intelligence Analysis: Identifying and Tracking cyber threats to an organisation and working with stakeholders to reduce task.
+  Cybersecurity Research: Developing a new concept and approach .
+
+
+Demo
+
+Licences : Defender TI premium Licence
+Free Licence can access free offering of MDTI
+
+Portal Link
+
+
+  Landing Page Look :-
+
+
+
+
+It contains featuured articles with CVE , Threat Indicators and Intel Group name
+
+
+  Articles
+
+
+
+
+
+  Creating Teams account and Project. In free license we can’t create Teams account but we can create 1 project with accessibility to ownselves.
+
+
+
+
+
+  After Project creation, we do have to add artifacts to run the jobs
+
+
+
+
+
+  Artifacts can be either for domain or IP specific
+
+
+
+
+
+  Run Jobs and It’ll seach from each search type like Tags, components, Trackers, WHOIS, Certificate, Cookies and provides result into two part
+
+
+
+  First is summary
+  Data Tab which contains all details about scans
+
+
+
+
+At Intel profile, we can filter out Threat actors and groups by Targets and country
+
+
+",
+            "wordcount": "450",
+            "inLanguage": "en",
+            "dateCreated": "2023-09-02/",
+            "datePublished": "2023-09-02/",
+            "dateModified": "2023-09-02/",
+            "author": {
+                "@type": "Person",
+                "name": "Shubhendu",
+                
+                "image": "/assets/img/s.png",
+                
+                "jobTitle": "",
+                "url": "https://hugs4bugs.me/authors/shubhendu/",
+                "sameAs": [
+                    "https://github.com/sivolko","https://twitter.com/myselfshubhendu","https://medium.com/@shubhendushubham","https://www.instagram.com/shubhendushubham","https://www.linkedin.com/in/shubhendu-shubham"
+                ]
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "hugs4bugs",
+                "url": "https://hugs4bugs.me/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://hugs4bugs.me/assets/img/blog-image.png",
+                    "width": "600",
+                    "height": "315"
+                }
+            },
+            "mainEntityOfPage": "True",
+            "genre": "",
+            "articleSection": "",
+            "keywords": ["azure","Defender","Cyber Security","Threat Intelligence"]
+        }
+        </script>
     </body>
 </html>
-
-
-

@@ -211,6 +211,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/What-is-Microsoft-Defender-Threat-Intelligence(MDTI)/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-09-02</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/send-email-with-Azure-logic-app/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>

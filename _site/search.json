@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "What is Microsoft Defender Threat Intelligence",
+      "tags"     : "azure, Defender, Cyber Security, and Threat Intelligence",
+      "categories" : "",
+      "url"      : "/What-is-Microsoft-Defender-Threat-Intelligence(MDTI)/",
+      "date"     : "09/02/2023"
+    } ,
+  
+    {
       "title"    : "Automate Email with Azure Logic App",
       "tags"     : "azure, blob storage, logic app, and cloud",
       "categories" : "",
