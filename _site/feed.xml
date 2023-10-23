@@ -5,9 +5,27 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 02 Sep 2023 12:55:26 +0000</pubDate>
-    <lastBuildDate>Sat, 02 Sep 2023 12:55:26 +0000</lastBuildDate>
+    <pubDate>Mon, 23 Oct 2023 18:18:54 +0000</pubDate>
+    <lastBuildDate>Mon, 23 Oct 2023 18:18:54 +0000</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
+    
+      <item>
+        <title>Microsoft Defender for Cloud 101</title>
+        <description>&lt;p&gt;Let’s understand what exactly MDC or Microsoft Defender for Cloud is?&lt;/p&gt; &lt;h2 id=&quot;microsoft-defender-for-cloud-is-cnapp-tool&quot;&gt;Microsoft Defender for Cloud is CNAPP tool.&lt;/h2&gt; &lt;p&gt;CNAPP == Cloud Native Application Protection Platform&lt;/p&gt; &lt;p&gt;So, MDC is cloud native CNAPP tool with a set of security best practices and measures to protect cloud based APPs, Servers , API and resources.&lt;/p&gt; &lt;p&gt;It comes with the 3 loaded features&lt;/p&gt; &lt;ul&gt; &lt;li&gt;DevSecOps&lt;/li&gt; &lt;li&gt;CSPM&lt;/li&gt; &lt;li&gt;CWPP&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;First let’s understand the problem statement from different stakeholder’s point of view,why do we need MDC?&lt;/p&gt; &lt;style type=&quot;text/css&quot;&gt; .tg {border-collapse:collapse;border-spacing:0;} .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px; overflow:hidden;padding:10px 5px;word-break:normal;} .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px; font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;} .tg .tg-riw3{background-color:#ebf5ff;border-color:inherit;text-align:left;vertical-align:top} .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top} @media screen...</description>
+        <pubDate>Sun, 22 Oct 2023 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/cloud-native-CNAPP-tool-Microsoft-defender-for-cloud-101/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/cloud-native-CNAPP-tool-Microsoft-defender-for-cloud-101/</guid>
+        
+        <category>azure</category>
+        
+        <category>MDC</category>
+        
+        <category>Cyber Security</category>
+        
+        <category>Microsoft Defender for cloud</category>
+        
+        <category></category>
+      </item>
     
       <item>
         <title>What is Microsoft Defender Threat Intelligence</title>
@@ -496,22 +514,6 @@
         <category>instagram</category>
         
         <category>javascript</category>
-        
-        <category></category>
-      </item>
-    
-      <item>
-        <title>How to install JENKINS on Linux ?</title>
-        <description>&lt;h1 id=&quot;what-is-jenkins&quot;&gt;What is Jenkins?&lt;/h1&gt; &lt;p&gt;Jenkins is an open source automation tool written in Java with plugins built for Continuous Integration purpose. Jenkins is used to build and test your software projects continuously making it easier for developers to integrate changes to the project, and making it easier for users to obtain a fresh build. It also allows you to continuously deliver your software by integrating with a large number of testing and deployment technologies.&lt;/p&gt; &lt;p&gt;It is a server-based system that runs in servlet containers such as Apache Tomcat&lt;/p&gt; &lt;h2 id=&quot;how-to-install-it-&quot;&gt;How To Install it ?&lt;/h2&gt; &lt;p&gt;Here,I am using my own Linux...</description>
-        <pubDate>Sun, 12 Jan 2020 12:26:40 +0000</pubDate>
-        <link>https://hugs4bugs.me/How-to-install-Jenkins-on-Linux/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/How-to-install-Jenkins-on-Linux/</guid>
-        
-        <category>devops</category>
-        
-        <category>jenkins</category>
-        
-        <category>linux</category>
         
         <category></category>
       </item>

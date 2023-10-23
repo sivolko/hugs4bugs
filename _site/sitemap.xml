@@ -211,6 +211,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/cloud-native-CNAPP-tool-Microsoft-defender-for-cloud-101/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-10-22</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/What-is-Microsoft-Defender-Threat-Intelligence(MDTI)/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
