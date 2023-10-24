@@ -29,6 +29,7 @@ It comes with the 3 loaded features
 - DevSecOps 
 - CSPM 
 - CWPP
+It has 3 plans viz free one, Defender for servers P1 and P2
 
 First let's understand the problem statement from different stakeholder's point of view,why do we need MDC?
 <style type="text/css">
@@ -156,3 +157,66 @@ It also protects from sophisticated attacks through the DNS infra like DNS tunne
 * **Defender for Key Vault**: Detects suspicious or unusual Azure Key Vault activities that indicates some workloads certificates,Keys and Secrets were potentially compromised.It detects user accessed high volume of key vaults, Detect access from a TOR exit node to a kwy vaults, detects suspicious policy change and secret query in key vault.
 
 ![Image](https://res.cloudinary.com/hugs4bugs/image/upload/v1698085075/q_fv8evf.jpg)
+
+## Microsoft Defender for Servers 
+It is a complement EDR with incrased visibility,detection and prevention with following features:-
+
+* Extend Visibility and Protection to on-premise and Multi-cloud Workloads
+* Advanced protection and Detection Capabilites leveraging ML 
+* Harden Machines against malware and comply with regulatory frameworks
+* Mitigate network exposure of management ports.
+* Integration with Microsoft Defender for Endpoint
+
+![Image](https://res.cloudinary.com/hugs4bugs/image/upload/v1698141871/de_hybfvm.jpg)
+
+We can turn on built-in vulnerability assessment for VMs with automated deployment of the vulnerability scanner.It continusously scans installed applications to find vulnerabilities for Linux and Windows VMs. It is powered by Qualys so gives us freedom to choose between Qualys and Microsoft threat and vulnerability management capabilities.
+
+![image](https://res.cloudinary.com/hugs4bugs/image/upload/v1698142318/vm_z4hvie.jpg)
+
+## How to on-board MDC to subscription?
+
+Before jumping over the onboarding process, let's do a quick basic requirements setup in a place.
+
+ 1. Management group hierarchy definition in your Azure environment according to the organisation's needs.
+ 2. We have already decided on a log Analytics workspace design either centralized or distributed.
+
+Considering above steps are configured, now there are 4 major steps for MDC on-boarding 
+
+1. Enable Microsoft Deender for Cloud on a subscription
+2. Make sure Azure Security Benchmark is assigned 
+3. Enable Defender for cloud Plans 
+4. Configure Auto-provisioning 
+
+## How to register the resource provider?
+
+```
+{
+    "type": Microsoft.Security/pricings",
+    "apiVersion": "2018-06-01",
+    "name": "VirtualMachines",
+    "properties": {
+        "pricingTier": "free"
+    }
+}
+
+```
+
+## How to enable Defender for Cloud plans at scale?
+
+```
+{
+    "type": Microsoft.Security/pricings",
+    "apiVersion": "2018-06-01",
+    "name": "VirtualMachines",
+    "properties": {
+        "pricingTier": "Standard"
+    }
+}
+
+```
+
+and enable policy.
+
+
+Thanks for reading blog, let's keep troubleshooting 
+

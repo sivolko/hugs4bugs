@@ -305,7 +305,7 @@ October 22, 2023
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>5 min to read</span>
+                    <span>6 min to read</span>
                 </p>
                 <h1 class="post-title">Microsoft Defender for Cloud 101</h1>
                 <p class="post-subtitle">Cloud Native CNAPP tool</p>
@@ -334,7 +334,8 @@ October 22, 2023
 <ul>
   <li>DevSecOps</li>
   <li>CSPM</li>
-  <li>CWPP</li>
+  <li>CWPP
+It has 3 plans viz free one, Defender for servers P1 and P2</li>
 </ul>
 
 <p>First let’s understand the problem statement from different stakeholder’s point of view,why do we need MDC?</p>
@@ -494,6 +495,72 @@ It also protects from sophisticated attacks through the DNS infra like DNS tunne
 
 <p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1698085075/q_fv8evf.jpg" alt="Image" /></p>
 
+<h2 id="microsoft-defender-for-servers">Microsoft Defender for Servers</h2>
+<p>It is a complement EDR with incrased visibility,detection and prevention with following features:-</p>
+
+<ul>
+  <li>Extend Visibility and Protection to on-premise and Multi-cloud Workloads</li>
+  <li>Advanced protection and Detection Capabilites leveraging ML</li>
+  <li>Harden Machines against malware and comply with regulatory frameworks</li>
+  <li>Mitigate network exposure of management ports.</li>
+  <li>Integration with Microsoft Defender for Endpoint</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1698141871/de_hybfvm.jpg" alt="Image" /></p>
+
+<p>We can turn on built-in vulnerability assessment for VMs with automated deployment of the vulnerability scanner.It continusously scans installed applications to find vulnerabilities for Linux and Windows VMs. It is powered by Qualys so gives us freedom to choose between Qualys and Microsoft threat and vulnerability management capabilities.</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1698142318/vm_z4hvie.jpg" alt="image" /></p>
+
+<h2 id="how-to-on-board-mdc-to-subscription">How to on-board MDC to subscription?</h2>
+
+<p>Before jumping over the onboarding process, let’s do a quick basic requirements setup in a place.</p>
+
+<ol>
+  <li>Management group hierarchy definition in your Azure environment according to the organisation’s needs.</li>
+  <li>We have already decided on a log Analytics workspace design either centralized or distributed.</li>
+</ol>
+
+<p>Considering above steps are configured, now there are 4 major steps for MDC on-boarding</p>
+
+<ol>
+  <li>Enable Microsoft Deender for Cloud on a subscription</li>
+  <li>Make sure Azure Security Benchmark is assigned</li>
+  <li>Enable Defender for cloud Plans</li>
+  <li>Configure Auto-provisioning</li>
+</ol>
+
+<h2 id="how-to-register-the-resource-provider">How to register the resource provider?</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "type": Microsoft.Security/pricings",
+    "apiVersion": "2018-06-01",
+    "name": "VirtualMachines",
+    "properties": {
+        "pricingTier": "free"
+    }
+}
+
+</code></pre></div></div>
+
+<h2 id="how-to-enable-defender-for-cloud-plans-at-scale">How to enable Defender for Cloud plans at scale?</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "type": Microsoft.Security/pricings",
+    "apiVersion": "2018-06-01",
+    "name": "VirtualMachines",
+    "properties": {
+        "pricingTier": "Standard"
+    }
+}
+
+</code></pre></div></div>
+
+<p>and enable policy.</p>
+
+<p>Thanks for reading blog, let’s keep troubleshooting</p>
+
+
 
                 <!-- Pagination links -->
 
@@ -508,29 +575,29 @@ It also protects from sophisticated attacks through the DNS infra like DNS tunne
                         
                         
                             <li>
-                                <a href="/blue-team-vs-red-team-in-cyber-security/">
+                                <a href="/Docker-101/">
                                     
-                                        <img src="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://th.bing.com/th/id/Rb3e6202f5356edebd8c8205623eef0f1?rik=2tDqbcLpDFguLg&riu=http%3a%2f%2fwww.shadowandy.net%2fwp%2fwp-content%2fuploads%2fdocker.png&ehk=d2o4OLvE5SZOjrajjCgOCdzXQ9xmehUy6vTEhPPFi3c%3d&risl=&pid=ImgRaw">
                                     
-                                    <h3>Blue Team vs Red Team</h3>
+                                    <h3>Docker 101</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/what-is-difference-between-ls-and-ls-lrt-command/">
+                                <a href="/access-management-101/">
                                     
-                                        <img src="https://images.pexels.com/photos/4709289/pexels-photo-4709289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://d3nn873nee648n.cloudfront.net/900x600/16347/120-SM692126.jpg">
                                     
-                                    <h3>Do you use ls -lrt?</h3>
+                                    <h3>Access Management 101.</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/what-is-chat-gpt/">
+                                <a href="/automation-with-firebase-and-ruby/">
                                     
-                                        <img src="https://images.pexels.com/photos/7108/notebook-computer-chill-relax.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://images.pexels.com/photos/4506940/pexels-photo-4506940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
                                     
-                                    <h3>What is chatGpt? How to use it?</h3>
+                                    <h3>Automate Firebase hosting with Github Actions and Ruby.</h3>
                                 </a>
                             </li>
                         
@@ -542,7 +609,7 @@ It also protects from sophisticated attacks through the DNS infra like DNS tunne
 
         <!-- Add time bar only for pages without pagination -->
         
-            <div class="time-bar" data-minutes="5">
+            <div class="time-bar" data-minutes="6">
     <span class="time-completed"></span>
     <span class="time-remaining"></span>
     <div class="bar">
@@ -562,13 +629,13 @@ It also protects from sophisticated attacks through the DNS infra like DNS tunne
         </div>
     </div>
     
-    <a href="/what-is-difference-between-ls-and-ls-lrt-command/" class="post-preview">
+    <a href="/what-is-chat-gpt/" class="post-preview">
         <div class="image">
             
-                <img src="https://images.pexels.com/photos/4709289/pexels-photo-4709289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                <img src="https://images.pexels.com/photos/7108/notebook-computer-chill-relax.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
             
         </div>
-        <h3 class="title">Do you use ls -lrt?</h3>
+        <h3 class="title">What is chatGpt? How to use it?</h3>
     </a>
 </div>
 
@@ -857,6 +924,7 @@ It comes with the 3 loaded features
   DevSecOps
   CSPM
   CWPP
+It has 3 plans viz free one, Defender for servers P1 and P2
 
 
 First let’s understand the problem statement from different stakeholder’s point of view,why do we need MDC?
@@ -1007,8 +1075,74 @@ It also protects from sophisticated attacks through the DNS infra like DNS tunne
 
 
 
+
+Microsoft Defender for Servers
+It is a complement EDR with incrased visibility,detection and prevention with following features:-
+
+
+  Extend Visibility and Protection to on-premise and Multi-cloud Workloads
+  Advanced protection and Detection Capabilites leveraging ML
+  Harden Machines against malware and comply with regulatory frameworks
+  Mitigate network exposure of management ports.
+  Integration with Microsoft Defender for Endpoint
+
+
+
+
+We can turn on built-in vulnerability assessment for VMs with automated deployment of the vulnerability scanner.It continusously scans installed applications to find vulnerabilities for Linux and Windows VMs. It is powered by Qualys so gives us freedom to choose between Qualys and Microsoft threat and vulnerability management capabilities.
+
+
+
+How to on-board MDC to subscription?
+
+Before jumping over the onboarding process, let’s do a quick basic requirements setup in a place.
+
+
+  Management group hierarchy definition in your Azure environment according to the organisation’s needs.
+  We have already decided on a log Analytics workspace design either centralized or distributed.
+
+
+Considering above steps are configured, now there are 4 major steps for MDC on-boarding
+
+
+  Enable Microsoft Deender for Cloud on a subscription
+  Make sure Azure Security Benchmark is assigned
+  Enable Defender for cloud Plans
+  Configure Auto-provisioning
+
+
+How to register the resource provider?
+
+{
+    &quot;type&quot;: Microsoft.Security/pricings&quot;,
+    &quot;apiVersion&quot;: &quot;2018-06-01&quot;,
+    &quot;name&quot;: &quot;VirtualMachines&quot;,
+    &quot;properties&quot;: {
+        &quot;pricingTier&quot;: &quot;free&quot;
+    }
+}
+
+
+
+How to enable Defender for Cloud plans at scale?
+
+{
+    &quot;type&quot;: Microsoft.Security/pricings&quot;,
+    &quot;apiVersion&quot;: &quot;2018-06-01&quot;,
+    &quot;name&quot;: &quot;VirtualMachines&quot;,
+    &quot;properties&quot;: {
+        &quot;pricingTier&quot;: &quot;Standard&quot;
+    }
+}
+
+
+
+and enable policy.
+
+Thanks for reading blog, let’s keep troubleshooting
+
 ",
-            "wordcount": "930",
+            "wordcount": "1209",
             "inLanguage": "en",
             "dateCreated": "2023-10-22/",
             "datePublished": "2023-10-22/",
