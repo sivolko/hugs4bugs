@@ -5,9 +5,27 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Oct 2023 10:28:00 +0000</pubDate>
-    <lastBuildDate>Tue, 24 Oct 2023 10:28:00 +0000</lastBuildDate>
+    <pubDate>Mon, 13 Nov 2023 20:58:35 +0000</pubDate>
+    <lastBuildDate>Mon, 13 Nov 2023 20:58:35 +0000</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
+    
+      <item>
+        <title>How to onboard your first Microsoft sentinel SIEM tool?</title>
+        <description>&lt;p&gt;Before jump over the onboarding of Microsoft Sentinel, let’s understand what MS Sentinel is?&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Definition&lt;/strong&gt;: Microsoft Sentinel is a cloud native SIEM(Security information and Event Management) and SOAR(Security orchestration,automation,and response) solution,which delivers intelligent security analytics and threat intelligence.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Why do we use it?&lt;/strong&gt; To act as blue teaming as defensive security against attack detection,threat visibility,proactive hunting and threat response.&lt;/p&gt; &lt;p&gt;In this blog we’ll be considering a single tennat onboarding with a single workspace.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;:&lt;/p&gt; &lt;ol&gt; &lt;li&gt;Azure subscription&lt;/li&gt; &lt;li&gt;Microsoft Entra ID / tennant ID&lt;/li&gt; &lt;li&gt;Sentinel Contributor permission or owner premission at tennant level&lt;/li&gt; &lt;li&gt;Log Analytics workspace&lt;/li&gt; &lt;/ol&gt; &lt;p&gt;In this blog I’ll...</description>
+        <pubDate>Mon, 13 Nov 2023 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/How-to-onboard-your-Microsoft-Sentinel-from-scratch/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/How-to-onboard-your-Microsoft-Sentinel-from-scratch/</guid>
+        
+        <category>azure</category>
+        
+        <category>Microsoft Sentinel</category>
+        
+        <category>Cyber Security</category>
+        
+        <category>Threat Intelligence</category>
+        
+        <category></category>
+      </item>
     
       <item>
         <title>Microsoft Defender for Cloud 101</title>
@@ -498,22 +516,6 @@
         <category>automation</category>
         
         <category>github</category>
-        
-        <category></category>
-      </item>
-    
-      <item>
-        <title>How to like Instagram posts with JavaScript?</title>
-        <description>&lt;p&gt;Before starting let’s recall &lt;strong&gt;what JavaScript is and How it works&lt;/strong&gt; ?&lt;/p&gt; &lt;p&gt;JavaScript is a scripting or programming language that allows us to implement complex features on web pages.&lt;/p&gt; &lt;p&gt;JavaScript is a scripting language that enables us to create dynamically updating content,control multimedia,animate images and pretty much everything else.&lt;/p&gt; &lt;p&gt;JavaScript is both &lt;strong&gt;client side&lt;/strong&gt; and &lt;strong&gt;server side&lt;/strong&gt; language. Like node.js could be used on server side and vanilla Js for client side .&lt;/p&gt; &lt;p&gt;In this process we’ll use JavaScript Client side behaviour to execute our script in browser .&lt;/p&gt; &lt;p&gt;This script will use execute itself in client side browser and...</description>
-        <pubDate>Mon, 02 Mar 2020 12:26:40 +0000</pubDate>
-        <link>https://hugs4bugs.me/how-to-like-instagram-post-with-javascript/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/how-to-like-instagram-post-with-javascript/</guid>
-        
-        <category>automation</category>
-        
-        <category>instagram</category>
-        
-        <category>javascript</category>
         
         <category></category>
       </item>

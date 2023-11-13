@@ -17,19 +17,19 @@
     
     
 
-    <title>Automate Twitter via github Actions. | hugs4bugs</title>
-    <meta name="description" content="How you ever seen add to home screen or install popup on .">
+    <title>How to onboard your first Microsoft sentinel SIEM tool? | hugs4bugs</title>
+    <meta name="description" content="This is all about how to configure Microsoft Sentinel environment with Log Analytics workspace">
     
-    <meta name="keywords" content="Automation, CI/CD, GitHub Actions">
+    <meta name="keywords" content="azure, Microsoft Sentinel, Cyber Security, Threat Intelligence">
     
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Automate Twitter via github Actions. | hugs4bugs">
-    <meta name="twitter:description" content="How you ever seen add to home screen or install popup on .">
+    <meta name="twitter:title" content="How to onboard your first Microsoft sentinel SIEM tool? | hugs4bugs">
+    <meta name="twitter:description" content="This is all about how to configure Microsoft Sentinel environment with Log Analytics workspace">
 
     
-    <meta property="twitter:image" content="https://images.pexels.com/photos/5744251/pexels-photo-5744251.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+    <meta property="twitter:image" content="https://th.bing.com/th/id/OIP.4iyoklvcRYZRDAi1HOKt0gHaEW?w=271&h=180&c=7&r=0&o=5&pid=1.7">
     
 
     
@@ -37,10 +37,10 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="https://hugs4bugs.me/how-to-automate-tweets-via-github-actions/">
-    <meta property="og:title" content="Automate Twitter via github Actions. | hugs4bugs">
-    <meta property="og:image" content="https://images.pexels.com/photos/5744251/pexels-photo-5744251.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-    <meta property="og:description" content="How you ever seen add to home screen or install popup on .">
+    <meta property="og:url" content="https://hugs4bugs.me/How-to-onboard-your-Microsoft-Sentinel-from-scratch/">
+    <meta property="og:title" content="How to onboard your first Microsoft sentinel SIEM tool? | hugs4bugs">
+    <meta property="og:image" content="https://th.bing.com/th/id/OIP.4iyoklvcRYZRDAi1HOKt0gHaEW?w=271&h=180&c=7&r=0&o=5&pid=1.7">
+    <meta property="og:description" content="This is all about how to configure Microsoft Sentinel environment with Log Analytics workspace">
     <meta property="og:site_name" content="hugs4bugs">
 
     <!-- Favicon -->
@@ -76,7 +76,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="canonical" href="https://hugs4bugs.me/how-to-automate-tweets-via-github-actions/">
+    <link rel="canonical" href="https://hugs4bugs.me/How-to-onboard-your-Microsoft-Sentinel-from-scratch/">
     <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
         href="https://hugs4bugs.me/feed.xml" />
     <link rel='manifest' href='../manifest.json'>
@@ -296,22 +296,22 @@
                 <p class="post-info">
                     
                         <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="2021-11-02T23:04:08+00:00">
+                        <time class="date" datetime="2023-11-13T00:00:00+00:00">
                             
 
 
-November 2, 2021
+November 13, 2023
 
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
                     <span>2 min to read</span>
                 </p>
-                <h1 class="post-title">Automate Twitter via github Actions.</h1>
-                <p class="post-subtitle">because why not!</p>
+                <h1 class="post-title">How to onboard your first Microsoft sentinel SIEM tool?</h1>
+                <p class="post-subtitle">Security Monitoring</p>
 
                 
-                    <img src="https://images.pexels.com/photos/5744251/pexels-photo-5744251.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Featured image" class="post-cover">
+                    <img src="https://th.bing.com/th/id/OIP.4iyoklvcRYZRDAi1HOKt0gHaEW?w=271&h=180&c=7&r=0&o=5&pid=1.7" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
@@ -321,93 +321,86 @@ November 2, 2021
                 <!-- Add your table of contents here -->
 
 
-                <p>We are used to the way we work, but we are also used to the way we work.Hahahah, Sounds confusing, right? I know, but it is not.Lemme explain.</p>
+                <p>Before jump over the onboarding of Microsoft Sentinel, let’s understand what MS Sentinel is?</p>
 
-<p>We are used to tweet via either twitter webApps or Native apps.But hold on, in the era of Devops where every things reliable on CI/CD, then why not automate our twitter too.</p>
+<p><strong>Definition</strong>: Microsoft Sentinel is a cloud native SIEM(Security information and Event Management) and SOAR(Security orchestration,automation,and response) solution,which delivers intelligent security analytics and threat intelligence.</p>
 
-<p>We gonna call this <strong>Twitter-Together</strong></p>
+<p><strong>Why do we use it?</strong>
+To act as blue teaming as defensive security against attack detection,threat visibility,proactive hunting and threat response.</p>
 
-<p>basically twitter-together is a <a href="https://github.com/features/actions"><strong>Github Action</strong></a>
-that utilizes text files to publish tweets from a GitHub repository. Rather than tweeting directly, GitHub’s pull request review process encourages more collaboration, Twitter activity and editorial contributions by enabling everyone to submit tweet drafts to a project.</p>
+<p>In this blog we’ll be considering a single tennat onboarding with a single workspace.</p>
 
-<p><strong>Setups</strong></p>
-
-<ol>
-  <li>
-    <p>Create a twitter app with your shared twitter account and store the credentials as <em>TWITTER_API_KEY</em>, <em>TWITTER_API_SECRET_KEY</em>, <em>TWITTER_ACCESS_TOKEN</em> and <em>TWITTER_ACCESS_TOKEN_SECRET</em> in your repository’s secrets settings.</p>
-  </li>
-  <li>
-    <p>Create a github workflow <em>.yml</em> file with the following contents:</p>
-  </li>
-</ol>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>on: [push, pull_request]
-name: Twitter, together!
-jobs:
-  preview:
-    name: Preview
-    runs~|-|on: ubuntu~|-|latest
-    if: github.event_name ~|=|~|=| 'pull_request'
-    steps:
-      ~|-| uses: gr2m/twitter~|-|together@v1.x
-        env:
-          GITHUB_TOKEN: $
-  tweet:
-    name: Tweet
-    runs~|-|on: ubuntu~|-|latest
-    if: github.event_name ~|=|~|=| 'push' &amp;&amp; github.ref ~|=|~|=| 'refs/heads/main'
-    steps:
-      ~|-| name: checkout main
-        uses: actions/checkout@v2
-      ~|-| name: Tweet
-        uses: gr2m/twitter~|-|together@v1.x
-        env:
-          GITHUB_TOKEN: $
-          TWITTER_ACCESS_TOKEN: $
-          TWITTER_ACCESS_TOKEN_SECRET: $
-          TWITTER_API_KEY: $
-          TWITTER_API_SECRET_KEY: $
-
-</code></pre></div></div>
+<p><strong>Prerequisites</strong>:</p>
 
 <ol>
-  <li>After creating or updating .github/workflows/twitter-together.yml in your repository’s default branch, a pull request will be created with further instructions.</li>
+  <li>Azure subscription</li>
+  <li>Microsoft Entra ID / tennant ID</li>
+  <li>Sentinel Contributor permission or owner premission at tennant level</li>
+  <li>Log Analytics workspace</li>
 </ol>
 
-<p>Now see the magic!</p>
+<p>In this blog I’ll be assuming one have already configured Tennant ID and having a valid Azure subscription.</p>
 
-<p>No wait, what about logic ?</p>
-
-<p>chillax!</p>
-
-<p>Here comes it:-</p>
-
-<p><strong>How It Works</strong></p>
-
-<p>Twitter-together is using two workflows</p>
+<p><strong>Onboarding steps</strong>:</p>
 
 <ol>
-  <li><em>push</em> event to publish new tweets</li>
-  <li><em>pull_request</em> event to validate and preview new tweets</li>
+  <li>Log on to <a href="https://portal.azure.com">Azure portal</a></li>
+  <li>Search and select for Log Analytics workspace
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1699907667/Azure/sentinel/bzdaurygtsspwatefto8.jpg" alt="Log ANAlytics" /></li>
+  <li>Select + Create to create a new workspace
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1699907666/Azure/sentinel/saaksvzy6debecqkb3ie.jpg" alt="LAWC" /></li>
+  <li>Choose your subscription, select a Resource Group</li>
+  <li>Enter a valid name for the Log Analytics Workspace</li>
+  <li>Select a Region to store Logs .Make sure to consider GDPR rule is you are deploying for client 
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1699907671/Azure/sentinel/ow2ey5y8zgp0srhdx5ip.jpg" alt="img" /></li>
+  <li>Select Review + create to validate the new workspace then click on create to deploy the workspace.</li>
+  <li>Wait for a few seconds, after deployment is completed, click on go to resources.
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1699907668/Azure/sentinel/tamg3g47xjt3aqcafah7.jpg" alt="img" /></li>
 </ol>
 
-<p><strong>The Push Events</strong></p>
+<p>Now we have to deploy Microsoft Sentinel to the recently created Log Analytics workspace.</p>
 
-<p>When triggered by the push event, the script looks for added *.tweet files in the tweets/ folder or subfolders. If there are any, a tweet for each added tweet file is published.</p>
+<ol>
+  <li>Search and Select for MS sentinel in Azure portal search box.
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1699907672/Azure/sentinel/bvpfkdfbo8iwda6ed31p.jpg" alt="img" /></li>
+  <li>Click on + Create
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1699907666/Azure/sentinel/ir1ribi6c7xs6vau1cq6.jpg" alt="img" /></li>
+  <li>Select recently created workspace and click Add
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1699907667/Azure/sentinel/th3jwvjnpixi7wafjsvq.jpg" alt="img" /></li>
+  <li>Automatically 31-days free MS Sentinel trial will be added.
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1699907670/Azure/sentinel/hk8adnyzpwe3f3fwvpsb.jpg" alt="img" /></li>
+</ol>
 
-<p>If there is no tweets/ subfolder, the script opens a pull request creating the folder with further instructions.</p>
+<p>Now Next step will be assiging a Microsoft Sentinel role to a user</p>
 
-<p><strong>The Pull Request Events</strong></p>
+<ol>
+  <li>Go to the Resource Group of Log Analytics workspace</li>
+  <li>Select Access control(IAM)</li>
+  <li>Select Add and Add role assignment
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1699907672/Azure/sentinel/u64u5cwmj6idkh0rcnna.jpg" alt="img" /></li>
+  <li>In the search bar search and select Mirosoft Sentinel Contributor role and click next
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1699907671/Azure/sentinel/myrh9fvuat1fipd9d6c3.jpg" alt="img" /></li>
+  <li>Select the option user,group or service principal
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1699907672/Azure/sentinel/v4qzy8yrkljapyuraw8t.jpg" alt="img" /></li>
+  <li>Select + Select members and assign to role to the proper user</li>
+  <li>click review and assign</li>
+</ol>
 
-<p>For the pull_request event, the script handles only opened and synchronize actions. It looks for new *.tweet files in the tweets/ folder or subfolders. If there are any, the length of each tweet is validated. If one is too long, a failed check run with an explanation is created. If all tweets are valid, a check run with a preview of all tweets is created.</p>
+<p>Now let’s connect the data connector to the Sentinel.</p>
 
-<p>What else?</p>
+<ol>
+  <li>Jump over MS Sentinel and select content Hub blade from content management 
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1699907673/Azure/sentinel/htb6vprwyjitc5rqbvz5.jpg" alt="img" /></li>
+  <li>Select Azure Activity Data connector and click on install
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1699907673/Azure/sentinel/jbgwlgtlskqhyem99c0p.jpg" alt="img" /></li>
+  <li>After successful installation, Installed connector blade will change to 1.
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1699907674/Azure/sentinel/pjpnlhtbn2m88xufb2kd.jpg" alt="img" /></li>
+  <li>After sometime we can check Logs using “Hearbeat” KQL command.</li>
+  <li>For Analytics rules creation , visit Analytics rule blade under configuration tab.
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1699907793/Azure/sentinel/w9jxbtsy9utye4kp9dw9.jpg" alt="img" /></li>
+</ol>
 
-<p><img src="https://media3.giphy.com/media/VeB9ieebylsaN5Jw8p/giphy.gif?cid=790b761136d0babf66050b3c838edbb51605f8eccbb2b2f2&amp;rid=giphy.gif&amp;ct=g" alt="Whatelse" /></p>
-
-<p>Nothing else.</p>
-
-<p><img src="https://media1.giphy.com/media/KBW6GETG4ydgHa9nPc/200w.webp?cid=ecf05e47bts7tyfingval61ivqvnuxwwomh6o3ntfyf20jsb&amp;rid=200w.webp&amp;ct=g" alt="Nothing" /></p>
+<p>Thanks for reading blog, keep learning Keep Troubleshooting.</p>
 
 
                 <!-- Pagination links -->
@@ -423,29 +416,29 @@ jobs:
                         
                         
                             <li>
-                                <a href="/Docker-101/">
+                                <a href="/access-management-101/">
                                     
-                                        <img src="https://th.bing.com/th/id/Rb3e6202f5356edebd8c8205623eef0f1?rik=2tDqbcLpDFguLg&riu=http%3a%2f%2fwww.shadowandy.net%2fwp%2fwp-content%2fuploads%2fdocker.png&ehk=d2o4OLvE5SZOjrajjCgOCdzXQ9xmehUy6vTEhPPFi3c%3d&risl=&pid=ImgRaw">
+                                        <img src="https://d3nn873nee648n.cloudfront.net/900x600/16347/120-SM692126.jpg">
                                     
-                                    <h3>Docker 101</h3>
+                                    <h3>Access Management 101.</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/difference-between-WAF-and-IPS/">
+                                <a href="/metasploitFramework-vs-metasploit-pro/">
                                     
-                                        <img src="https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80">
                                     
-                                    <h3>WAF vs IPS</h3>
+                                    <h3>Metasploit Framework vs Metasploit Pro</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/How-to-onboard-your-Microsoft-Sentinel-from-scratch/">
+                                <a href="/how-to-automate-tweets-via-github-actions/">
                                     
-                                        <img src="https://th.bing.com/th/id/OIP.4iyoklvcRYZRDAi1HOKt0gHaEW?w=271&h=180&c=7&r=0&o=5&pid=1.7">
+                                        <img src="https://images.pexels.com/photos/5744251/pexels-photo-5744251.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
                                     
-                                    <h3>How to onboard your first Microsoft sentinel SIEM tool?</h3>
+                                    <h3>Automate Twitter via github Actions.</h3>
                                 </a>
                             </li>
                         
@@ -477,13 +470,13 @@ jobs:
         </div>
     </div>
     
-    <a href="/access-management-101/" class="post-preview">
+    <a href="/bulid-and-deploy-MERN-stack-in-Azure-cosmos-DB/" class="post-preview">
         <div class="image">
             
-                <img src="https://d3nn873nee648n.cloudfront.net/900x600/16347/120-SM692126.jpg">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80">
             
         </div>
-        <h3 class="title">Access Management 101.</h3>
+        <h3 class="title">Anyone can build: node.js+ Cosmos DB in Azure </h3>
     </a>
 </div>
 
@@ -500,7 +493,7 @@ jobs:
         <section class="share">
     <h3>Share</h3>
     <a aria-label="Share on Twitter"
-        href="https://twitter.com/intent/tweet?text=&quot;How you ever seen add to home screen or install popup on .&quot;%20https://hugs4bugs.me/how-to-automate-tweets-via-github-actions/%20via%20&#64;myselfshubhendu&hashtags=Automation,CI/CD,GitHub Actions"
+        href="https://twitter.com/intent/tweet?text=&quot;This is all about how to configure Microsoft Sentinel environment with Log Analytics workspace&quot;%20https://hugs4bugs.me/How-to-onboard-your-Microsoft-Sentinel-from-scratch/%20via%20&#64;myselfshubhendu&hashtags=azure,Microsoft Sentinel,Cyber Security,Threat Intelligence"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -508,7 +501,7 @@ jobs:
         </svg>
     </a>
     <a aria-label="Share on WhatsApp"
-        href="https://twitter.com/intent/tweet?text=&quot;How you ever seen add to home screen or install popup on .&quot;%20https://hugs4bugs.me/how-to-automate-tweets-via-github-actions/%20via%20&#64;myselfshubhendu&hashtags=Automation,CI/CD,GitHub Actions"
+        href="https://twitter.com/intent/tweet?text=&quot;This is all about how to configure Microsoft Sentinel environment with Log Analytics workspace&quot;%20https://hugs4bugs.me/How-to-onboard-your-Microsoft-Sentinel-from-scratch/%20via%20&#64;myselfshubhendu&hashtags=azure,Microsoft Sentinel,Cyber Security,Threat Intelligence"
         onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -516,7 +509,7 @@ jobs:
         </svg>
     </a>
     <a aria-label="Share on Facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/how-to-automate-tweets-via-github-actions/"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/How-to-onboard-your-Microsoft-Sentinel-from-scratch/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
         title="Share on Facebook">
         <svg class="icon icon-facebook">
@@ -606,7 +599,7 @@ jobs:
         disqus_loaded = true;
         var disqus_shortname = 'hugs4bugs';
         var disqus_title = '';
-        var disqus_url = '/how-to-automate-tweets-via-github-actions/';
+        var disqus_url = '/How-to-onboard-your-Microsoft-Sentinel-from-scratch/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -753,104 +746,97 @@ jobs:
         {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
-            "name": "Automate Twitter via github Actions.",
-            "headline": "because why not!",
-            "description": "How you ever seen add to home screen or install popup on .",
-            "image": "https://images.pexels.com/photos/5744251/pexels-photo-5744251.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-            "url": "https://hugs4bugs.me/how-to-automate-tweets-via-github-actions/",
-            "articleBody": "We are used to the way we work, but we are also used to the way we work.Hahahah, Sounds confusing, right? I know, but it is not.Lemme explain.
+            "name": "How to onboard your first Microsoft sentinel SIEM tool?",
+            "headline": "Security Monitoring",
+            "description": "This is all about how to configure Microsoft Sentinel environment with Log Analytics workspace",
+            "image": "https://th.bing.com/th/id/OIP.4iyoklvcRYZRDAi1HOKt0gHaEW?w=271&h=180&c=7&r=0&o=5&pid=1.7",
+            "url": "https://hugs4bugs.me/How-to-onboard-your-Microsoft-Sentinel-from-scratch/",
+            "articleBody": "Before jump over the onboarding of Microsoft Sentinel, let’s understand what MS Sentinel is?
 
-We are used to tweet via either twitter webApps or Native apps.But hold on, in the era of Devops where every things reliable on CI/CD, then why not automate our twitter too.
+Definition: Microsoft Sentinel is a cloud native SIEM(Security information and Event Management) and SOAR(Security orchestration,automation,and response) solution,which delivers intelligent security analytics and threat intelligence.
 
-We gonna call this Twitter-Together
+Why do we use it?
+To act as blue teaming as defensive security against attack detection,threat visibility,proactive hunting and threat response.
 
-basically twitter-together is a Github Action
-that utilizes text files to publish tweets from a GitHub repository. Rather than tweeting directly, GitHub’s pull request review process encourages more collaboration, Twitter activity and editorial contributions by enabling everyone to submit tweet drafts to a project.
+In this blog we’ll be considering a single tennat onboarding with a single workspace.
 
-Setups
-
-
-  
-    Create a twitter app with your shared twitter account and store the credentials as TWITTER_API_KEY, TWITTER_API_SECRET_KEY, TWITTER_ACCESS_TOKEN and TWITTER_ACCESS_TOKEN_SECRET in your repository’s secrets settings.
-  
-  
-    Create a github workflow .yml file with the following contents:
-  
+Prerequisites:
 
 
-on: [push, pull_request]
-name: Twitter, together!
-jobs:
-  preview:
-    name: Preview
-    runs~|-|on: ubuntu~|-|latest
-    if: github.event_name ~|=|~|=| &apos;pull_request&apos;
-    steps:
-      ~|-| uses: gr2m/twitter~|-|together@v1.x
-        env:
-          GITHUB_TOKEN: $
-  tweet:
-    name: Tweet
-    runs~|-|on: ubuntu~|-|latest
-    if: github.event_name ~|=|~|=| &apos;push&apos; &amp;amp;&amp;amp; github.ref ~|=|~|=| &apos;refs/heads/main&apos;
-    steps:
-      ~|-| name: checkout main
-        uses: actions/checkout@v2
-      ~|-| name: Tweet
-        uses: gr2m/twitter~|-|together@v1.x
-        env:
-          GITHUB_TOKEN: $
-          TWITTER_ACCESS_TOKEN: $
-          TWITTER_ACCESS_TOKEN_SECRET: $
-          TWITTER_API_KEY: $
-          TWITTER_API_SECRET_KEY: $
+  Azure subscription
+  Microsoft Entra ID / tennant ID
+  Sentinel Contributor permission or owner premission at tennant level
+  Log Analytics workspace
+
+
+In this blog I’ll be assuming one have already configured Tennant ID and having a valid Azure subscription.
+
+Onboarding steps:
+
+
+  Log on to Azure portal
+  Search and select for Log Analytics workspace
+
+  Select + Create to create a new workspace
+
+  Choose your subscription, select a Resource Group
+  Enter a valid name for the Log Analytics Workspace
+  Select a Region to store Logs .Make sure to consider GDPR rule is you are deploying for client 
+
+  Select Review + create to validate the new workspace then click on create to deploy the workspace.
+  Wait for a few seconds, after deployment is completed, click on go to resources.
 
 
 
-
-  After creating or updating .github/workflows/twitter-together.yml in your repository’s default branch, a pull request will be created with further instructions.
-
-
-Now see the magic!
-
-No wait, what about logic ?
-
-chillax!
-
-Here comes it:-
-
-How It Works
-
-Twitter-together is using two workflows
+Now we have to deploy Microsoft Sentinel to the recently created Log Analytics workspace.
 
 
-  push event to publish new tweets
-  pull_request event to validate and preview new tweets
+  Search and Select for MS sentinel in Azure portal search box.
 
+  Click on + Create
 
-The Push Events
+  Select recently created workspace and click Add
 
-When triggered by the push event, the script looks for added *.tweet files in the tweets/ folder or subfolders. If there are any, a tweet for each added tweet file is published.
-
-If there is no tweets/ subfolder, the script opens a pull request creating the folder with further instructions.
-
-The Pull Request Events
-
-For the pull_request event, the script handles only opened and synchronize actions. It looks for new *.tweet files in the tweets/ folder or subfolders. If there are any, the length of each tweet is validated. If one is too long, a failed check run with an explanation is created. If all tweets are valid, a check run with a preview of all tweets is created.
-
-What else?
+  Automatically 31-days free MS Sentinel trial will be added.
 
 
 
-Nothing else.
+Now Next step will be assiging a Microsoft Sentinel role to a user
 
 
+  Go to the Resource Group of Log Analytics workspace
+  Select Access control(IAM)
+  Select Add and Add role assignment
+
+  In the search bar search and select Mirosoft Sentinel Contributor role and click next
+
+  Select the option user,group or service principal
+
+  Select + Select members and assign to role to the proper user
+  click review and assign
+
+
+Now let’s connect the data connector to the Sentinel.
+
+
+  Jump over MS Sentinel and select content Hub blade from content management 
+
+  Select Azure Activity Data connector and click on install
+
+  After successful installation, Installed connector blade will change to 1.
+
+  After sometime we can check Logs using “Hearbeat” KQL command.
+  For Analytics rules creation , visit Analytics rule blade under configuration tab.
+
+
+
+Thanks for reading blog, keep learning Keep Troubleshooting.
 ",
-            "wordcount": "408",
+            "wordcount": "454",
             "inLanguage": "en",
-            "dateCreated": "2021-11-02/",
-            "datePublished": "2021-11-02/",
-            "dateModified": "2021-11-02/",
+            "dateCreated": "2023-11-13/",
+            "datePublished": "2023-11-13/",
+            "dateModified": "2023-11-13/",
             "author": {
                 "@type": "Person",
                 "name": "Shubhendu",
@@ -877,7 +863,7 @@ Nothing else.
             "mainEntityOfPage": "True",
             "genre": "",
             "articleSection": "",
-            "keywords": ["Automation","CI/CD","GitHub Actions"]
+            "keywords": ["azure","Microsoft Sentinel","Cyber Security","Threat Intelligence"]
         }
         </script>
     </body>

@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "How to onboard your first Microsoft sentinel SIEM tool?",
+      "tags"     : "azure, Microsoft Sentinel, Cyber Security, and Threat Intelligence",
+      "categories" : "",
+      "url"      : "/How-to-onboard-your-Microsoft-Sentinel-from-scratch/",
+      "date"     : "11/13/2023"
+    } ,
+  
+    {
       "title"    : "Microsoft Defender for Cloud 101",
       "tags"     : "azure, MDC, Cyber Security, and Microsoft Defender for cloud",
       "categories" : "",
