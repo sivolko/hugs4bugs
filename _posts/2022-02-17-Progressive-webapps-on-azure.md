@@ -1,8 +1,7 @@
 ---
 title: Building and Deploying PWA on Azure Cloud.
 date: 2022-02-17 23:04:08 Z
-categories:
-- webapps
+category: webapps
 tags:
 - PWA
 - node.js

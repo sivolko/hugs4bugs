@@ -1,8 +1,7 @@
 ---
 title: Computer Networking 101
 date: 2021-04-04 23:04:08 Z
-categories:
-- networking
+category: networking
 tags:
 - networking
 - system Admin

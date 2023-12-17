@@ -1,8 +1,7 @@
 ---
 title: Automate Twitter via github Actions.
 date: 2021-11-02 23:04:08 Z
-categories:
-- automation
+category: automation
 tags:
 - Automation
 - CI/CD

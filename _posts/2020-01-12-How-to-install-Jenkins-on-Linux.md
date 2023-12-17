@@ -1,8 +1,7 @@
 ---
 title: How to install JENKINS on Linux ?
 date: 2020-01-12 12:26:40 Z
-categories:
-- devops
+category: devops
 tags:
 - devops
 - jenkins

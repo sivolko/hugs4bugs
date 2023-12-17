@@ -1,8 +1,7 @@
 ---
 title: WAF vs Firewall
 date: 2022-10-31 00:00:00 Z
-categories:
-- security
+category: security
 tags:
 - cloud
 - security

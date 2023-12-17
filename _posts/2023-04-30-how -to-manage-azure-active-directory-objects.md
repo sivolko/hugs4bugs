@@ -1,8 +1,7 @@
 ---
 title: How to create & Manage users and Groups within Azure AD.
 date: 2023-04-30 00:00:00 Z
-categories:
-- azure
+category: azure
 tags:
 - azure
 - active directory

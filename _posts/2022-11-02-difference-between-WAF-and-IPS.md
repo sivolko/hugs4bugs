@@ -1,8 +1,7 @@
 ---
 title: WAF vs IPS
 date: 2022-11-02 00:00:00 Z
-categories:
-- cloud
+category: cloud
 tags:
 - cloud
 - security

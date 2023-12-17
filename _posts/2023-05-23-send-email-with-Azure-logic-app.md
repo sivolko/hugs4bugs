@@ -7,8 +7,7 @@ image: https://d3nn873nee648n.cloudfront.net/900x600/19765/300-SM960337.jpg
 optimized_image: https://d3nn873nee648n.cloudfront.net/900x600/19765/300-SM960337.jpg
 author: Shubhendu Shubham
 date: 2023-04-30 00:00:00 Z
-categories:
-- azure
+category: azure
 tags:
 - azure
 - blob storage 

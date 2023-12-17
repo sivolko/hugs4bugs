@@ -5,9 +5,28 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 13 Nov 2023 20:58:35 +0000</pubDate>
-    <lastBuildDate>Mon, 13 Nov 2023 20:58:35 +0000</lastBuildDate>
+    <pubDate>Sun, 17 Dec 2023 17:29:53 +0000</pubDate>
+    <lastBuildDate>Sun, 17 Dec 2023 17:29:53 +0000</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
+    
+      <item>
+        <title>How to install ThreatMapper in Kali Linux?</title>
+        <description>
+</description>
+        <pubDate>Sun, 17 Dec 2023 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/How-to-install-threatmapper-in-kali-linux/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/How-to-install-threatmapper-in-kali-linux/</guid>
+        
+        <category>azure</category>
+        
+        <category>Microsoft Sentinel</category>
+        
+        <category>Cyber Security</category>
+        
+        <category>Threat Intelligence</category>
+        
+        <category>security</category>
+      </item>
     
       <item>
         <title>How to onboard your first Microsoft sentinel SIEM tool?</title>
@@ -24,7 +43,7 @@
         
         <category>Threat Intelligence</category>
         
-        <category></category>
+        <category>azure</category>
       </item>
     
       <item>
@@ -42,7 +61,7 @@
         
         <category>Microsoft Defender for cloud</category>
         
-        <category></category>
+        <category>azure</category>
       </item>
     
       <item>
@@ -60,7 +79,7 @@
         
         <category>Threat Intelligence</category>
         
-        <category></category>
+        <category>azure</category>
       </item>
     
       <item>
@@ -78,7 +97,7 @@
         
         <category>cloud</category>
         
-        <category></category>
+        <category>azure</category>
       </item>
     
       <item>
@@ -96,7 +115,7 @@
         
         <category>cloud</category>
         
-        <category></category>
+        <category>azure</category>
       </item>
     
       <item>
@@ -114,7 +133,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category></category>
+        <category>automation</category>
       </item>
     
       <item>
@@ -134,7 +153,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category></category>
+        <category>security</category>
       </item>
     
       <item>
@@ -154,7 +173,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category></category>
+        <category>automation</category>
       </item>
     
       <item>
@@ -172,7 +191,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category></category>
+        <category>linux</category>
       </item>
     
       <item>
@@ -192,7 +211,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category></category>
+        <category>security</category>
       </item>
     
       <item>
@@ -212,7 +231,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category></category>
+        <category>security</category>
       </item>
     
       <item>
@@ -232,7 +251,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category></category>
+        <category>cloud</category>
       </item>
     
       <item>
@@ -252,7 +271,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category></category>
+        <category>security</category>
       </item>
     
       <item>
@@ -272,7 +291,7 @@
         
         <category>troubleshooter Club</category>
         
-        <category></category>
+        <category>security</category>
       </item>
     
       <item>
@@ -290,7 +309,7 @@
         
         <category>offensive security</category>
         
-        <category></category>
+        <category>security</category>
       </item>
     
       <item>
@@ -306,7 +325,7 @@
         
         <category>COSMOS DB</category>
         
-        <category></category>
+        <category>webapps</category>
       </item>
     
       <item>
@@ -322,7 +341,7 @@
         
         <category>Cyber Security</category>
         
-        <category></category>
+        <category>security</category>
       </item>
     
       <item>
@@ -338,7 +357,7 @@
         
         <category>GitHub Actions</category>
         
-        <category></category>
+        <category>automation</category>
       </item>
     
       <item>
@@ -354,7 +373,7 @@
         
         <category>Progressive WebApp</category>
         
-        <category></category>
+        <category>webapps</category>
       </item>
     
       <item>
@@ -368,7 +387,7 @@
         
         <category>security</category>
         
-        <category></category>
+        <category>security</category>
       </item>
     
       <item>
@@ -382,7 +401,7 @@
         
         <category>security</category>
         
-        <category></category>
+        <category>azure</category>
       </item>
     
       <item>
@@ -400,7 +419,7 @@
         
         <category>security</category>
         
-        <category></category>
+        <category>security</category>
       </item>
     
       <item>
@@ -414,7 +433,7 @@
         
         <category>security</category>
         
-        <category></category>
+        <category>networking</category>
       </item>
     
       <item>
@@ -428,7 +447,7 @@
         
         <category>system Admin</category>
         
-        <category></category>
+        <category>networking</category>
       </item>
     
       <item>
@@ -442,7 +461,7 @@
         
         <category>microsoft</category>
         
-        <category></category>
+        <category>azure</category>
       </item>
     
       <item>
@@ -456,7 +475,7 @@
         
         <category>system Admin</category>
         
-        <category></category>
+        <category>linux</category>
       </item>
     
       <item>
@@ -471,7 +490,7 @@
         
         <category>devops</category>
         
-        <category></category>
+        <category>azure</category>
       </item>
     
       <item>
@@ -485,7 +504,7 @@
         
         <category>devops</category>
         
-        <category></category>
+        <category>docker</category>
       </item>
     
       <item>
@@ -499,25 +518,7 @@
         
         <category>CI/CD</category>
         
-        <category></category>
-      </item>
-    
-      <item>
-        <title>Automation with Jenkins and GitHub</title>
-        <description>&lt;h1 id=&quot;why-automation&quot;&gt;Why Automation?&lt;/h1&gt; &lt;p&gt;Automation is one of the key aspects of DevOps and agile development.Internet, connectivity and software technologies have raised customer expectations for service performance, reliability and quality. And since every organization is a software organization, businesses are forced to respond faster than ever before when it comes to improving product features, fixing issues, delivering customer service or even to market competition and trends.&lt;/p&gt; &lt;p&gt;Organizations have responded by embracing modern Software Development Lifecycle (SDLC) strategies such as DevOps that streamline the organizational, process and tooling workflows to push quality software features to end-users faster and effectively. Fast response to...</description>
-        <pubDate>Fri, 01 May 2020 12:26:40 +0000</pubDate>
-        <link>https://hugs4bugs.me/Automation-with-Jenkins-and-Github/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/Automation-with-Jenkins-and-Github/</guid>
-        
         <category>devops</category>
-        
-        <category>jenkins</category>
-        
-        <category>automation</category>
-        
-        <category>github</category>
-        
-        <category></category>
       </item>
     
   </channel>

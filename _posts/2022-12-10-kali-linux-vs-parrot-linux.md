@@ -1,8 +1,7 @@
 ---
 title: Kali Linux vs Parrot OS
 date: 2022-12-10 00:00:00 Z
-categories:
-- security
+category: security
 tags:
 - cloud
 - security

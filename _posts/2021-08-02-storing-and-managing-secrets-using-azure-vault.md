@@ -1,8 +1,7 @@
 ---
 title: "Managing and Storing Secrets:Azure Vault.\U0001F646"
 date: 2021-08-02 23:04:08 Z
-categories:
-- azure
+category: azure
 tags:
 - networking
 - security

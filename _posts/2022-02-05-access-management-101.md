@@ -1,8 +1,7 @@
 ---
 title: Access Management 101.
 date: 2022-02-05 23:04:08 Z
-categories:
-- security
+category: security
 tags:
 - Access Management
 - Vulnerability

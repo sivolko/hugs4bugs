@@ -1,8 +1,7 @@
 ---
 title: What is chatGpt? How to use it?
 date: 2022-12-25 00:00:00 Z
-categories:
-- automation
+category: automation
 tags:
 - cloud
 - security

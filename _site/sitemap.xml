@@ -211,6 +211,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/How-to-install-threatmapper-in-kali-linux/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-12-17</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/How-to-onboard-your-Microsoft-Sentinel-from-scratch/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>

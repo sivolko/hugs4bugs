@@ -7,8 +7,7 @@ image: https://th.bing.com/th/id/OIP.4iyoklvcRYZRDAi1HOKt0gHaEW?w=271&h=180&c=7&
 optimized_image: https://th.bing.com/th/id/OIP.4iyoklvcRYZRDAi1HOKt0gHaEW?w=271&h=180&c=7&r=0&o=5&pid=1.7
 author: Shubhendu Shubham
 date: 2023-11-13 00:00:00 Z
-categories:
-- azure
+category: azure
 tags:
 - azure
 - Microsoft Sentinel

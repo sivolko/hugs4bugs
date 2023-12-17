@@ -1,8 +1,7 @@
 ---
 title: Metasploit Framework vs Metasploit Pro
 date: 2022-08-21 00:00:00 Z
-categories:
-- security
+category: security
 tags:
 - cloud
 - security

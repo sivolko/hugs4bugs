@@ -7,8 +7,7 @@ image: https://images.pexels.com/photos/10782398/pexels-photo-10782398.jpeg?auto
 optimized_image: https://images.pexels.com/photos/10782398/pexels-photo-10782398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 author: Shubhendu Shubham
 date: 2023-09-02 00:00:00 Z
-categories:
-- azure
+category: azure
 tags:
 - azure
 - Defender

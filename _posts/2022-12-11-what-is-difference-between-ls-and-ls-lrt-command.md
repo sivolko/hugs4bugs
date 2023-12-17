@@ -1,8 +1,7 @@
 ---
 title: Do you use ls -lrt?
 date: 2022-12-11 00:00:00 Z
-categories:
-- linux
+category: linux
 tags:
 - security
 - hacking

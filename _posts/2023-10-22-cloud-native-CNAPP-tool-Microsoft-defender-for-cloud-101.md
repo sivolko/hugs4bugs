@@ -7,8 +7,7 @@ image: https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MS%20Defender
 optimized_image: https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MS%20Defender%20for%20Cloud%20R6?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1800&qlt=100&fmt=png-alpha&fit=constrain
 author: Shubhendu Shubham
 date: 2023-10-22 00:00:00 Z
-categories:
-- azure
+category: azure
 tags:
 - azure
 - MDC
