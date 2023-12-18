@@ -20,7 +20,7 @@
     <title>How to install ThreatMapper in Kali Linux? | hugs4bugs</title>
     <meta name="description" content="This is to install Open source CNAPP tool Threat Mapper in Kali Machine">
     
-    <meta name="keywords" content="azure, Microsoft Sentinel, Cyber Security, Threat Intelligence">
+    <meta name="keywords" content="Cyber Security, Threat Intelligence">
     
 
     <!-- Social: Twitter -->
@@ -29,7 +29,7 @@
     <meta name="twitter:description" content="This is to install Open source CNAPP tool Threat Mapper in Kali Machine">
 
     
-    <meta property="twitter:image" content="https://th.bing.com/th/id/OIP.4iyoklvcRYZRDAi1HOKt0gHaEW?w=271&h=180&c=7&r=0&o=5&pid=1.7">
+    <meta property="twitter:image" content="https://assets-global.website-files.com/63eaa07bbe370228bab003ea/644292bf096fd43dfd6532d4_image2-p-800.png">
     
 
     
@@ -39,7 +39,7 @@
     <!-- Social: Facebook / Open Graph -->
     <meta property="og:url" content="https://hugs4bugs.me/How-to-install-threatmapper-in-kali-linux/">
     <meta property="og:title" content="How to install ThreatMapper in Kali Linux? | hugs4bugs">
-    <meta property="og:image" content="https://th.bing.com/th/id/OIP.4iyoklvcRYZRDAi1HOKt0gHaEW?w=271&h=180&c=7&r=0&o=5&pid=1.7">
+    <meta property="og:image" content="https://assets-global.website-files.com/63eaa07bbe370228bab003ea/644292bf096fd43dfd6532d4_image2-p-800.png">
     <meta property="og:description" content="This is to install Open source CNAPP tool Threat Mapper in Kali Machine">
     <meta property="og:site_name" content="hugs4bugs">
 
@@ -305,13 +305,13 @@ December 17, 2023
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>1 min to read</span>
+                    <span>3 min to read</span>
                 </p>
                 <h1 class="post-title">How to install ThreatMapper in Kali Linux?</h1>
                 <p class="post-subtitle">One of the best CNAPP</p>
 
                 
-                    <img src="https://th.bing.com/th/id/OIP.4iyoklvcRYZRDAi1HOKt0gHaEW?w=271&h=180&c=7&r=0&o=5&pid=1.7" alt="Featured image" class="post-cover">
+                    <img src="https://assets-global.website-files.com/63eaa07bbe370228bab003ea/644292bf096fd43dfd6532d4_image2-p-800.png" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
@@ -321,7 +321,150 @@ December 17, 2023
                 <!-- Add your table of contents here -->
 
 
-                
+                <p>Before starting, let’s understand a few terms,what is CNAPP?
+CNAPP aka cloud Native Application Protection Platform is all-in one cloud-native software platform that simplifies DevSecops practices.This term <strong>CNAPP was orignally coined by Gartner in 2021</strong> CNAPPs make it simpler to embed security into the application lifecycle while providing superior protection for cloud workloads and data. A few core features of CNAPP are:-</p>
+
+<ol>
+  <li>No Vendor Locking, with multi cloud support</li>
+  <li>TI(Threat Intelligence)integration</li>
+  <li>Shifted Left DevOps Security Management</li>
+  <li>Centralised Compliance and Permissions</li>
+  <li>Comprehensive cloud workload protection</li>
+</ol>
+
+<p>Now let’s understand briefly what is <strong>ThreatMapper</strong>?</p>
+
+<p>ThreatMapper is an opensource CNAPP version of ThreatStryker, developed by <a href="https://www.deepfence.io/threatmapper">Deepfence</a>.It gives both agent and agentless based scanning options.</p>
+
+<p><strong>Components</strong>:-
+ThreatMapper consists of 2 components:-</p>
+<ol>
+  <li>ThreatMapper Console : It integrates with Infrastructure API to scan &amp; detect config errors, compliance posture with the help of data collected from sensors. It generated SBOMs to find vulnerabilities.</li>
+  <li>ThreatMapper Sensors: These sensors support different types of platforms like K8S, Docker, Bare Metal, AWS fargate.</li>
+</ol>
+
+<p>Architecture :-</p>
+
+<p><img src="https://community.deepfence.io/threatmapper/assets/images/threatmapper-components-5df1ba6044bd031a7f541358814bb9ed.jpg" alt="Image source Deepfence!" title="Image source Deepfence" /></p>
+
+<p><strong>Installation</strong></p>
+
+<p>For prerequisite please visit offical documentation by <a href="https://community.deepfence.io/threatmapper/docs/console/requirements/">Deepfence</a></p>
+
+<p>In this blog I’m referring official (GitHub Repo](https://github.com/deepfence/ThreatMapper)</p>
+
+<p><strong>Management Console Installation</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Docker installation process for ThreatMapper Management Console
+
+wget https://github.com/deepfence/ThreatMapper/raw/release-2.1/deployment-scripts/docker-compose.yml
+</code></pre></div></div>
+<p>Execute the following command to install and start the latest build of the Console</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker compose up -d
+</code></pre></div></div>
+<p>Now Let me run command <strong>docker ps</strong> to see all running images 
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702884578/hugs4bugs/Screenshot_2023-12-18_12_58_26_ow04dq.png" alt="Image" title="Docker Image" /></p>
+
+<p>Now Find my local IP using ‘ifconfig’ command in linux terminal and paste IP address in browser, default deepfence login/signup page will pop-up click on registration for first time user.</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702884832/hugs4bugs/login_mwfroo.jpg" alt="Default" /></p>
+
+<p>Registration page <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702884913/hugs4bugs/reg_hbppbs.jpg" alt="Image" /></p>
+
+<p><strong>Dashboard</strong></p>
+
+<p>Default dashboard will appear and we need to add connectors</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702885100/hugs4bugs/dashboard_r7w2uj.jpg" alt="Connector" /></p>
+
+<p><strong>Main Dashboard</strong></p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702886176/hugs4bugs/dass_opjiqk.jpg" alt="image" /></p>
+
+<p>Now I’ll connect my Azure cloud provider single subscription as data connector via Terraform.
+so let’s create a terraform basic file (yourfilename).tf</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  touch cloud-scanner.tf
+</code></pre></div></div>
+
+<p>Now paste the following command and replace it with your Azure subscription ID, ThreatMapper API, URL etc</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> provider "azurerm" {
+  features {}
+  subscription_id = "&lt;SUBSCRIPTION_ID eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX&gt;"
+}
+
+module "cloud-scanner_example_single-subscription" {
+  source              = "deepfence/cloud-scanner/azure//examples/single-subscription"
+  version             = "0.2.0"
+  mgmt-console-url    = "&lt;Console URL&gt; eg. XXX.XXX.XX.XXX"
+  mgmt-console-port   = "443"
+  deepfence-key       = "&lt;Deepfence-key&gt; eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+  name                = "deepfence-cloud-scanner"
+  image               = "quay.io/deepfenceio/cloud-scanner:2.0.1"
+}
+</code></pre></div></div>
+<p>Then initalise terraform inside directory using command</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  terraform init
+</code></pre></div></div>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702886516/hugs4bugs/tff_ithxuc.png" alt="image" /></p>
+
+<p>Then run command</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  terraform plan
+</code></pre></div></div>
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702887309/hugs4bugs/tf_bjb2l8.png" alt="image" /></p>
+
+<p>then run command</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> terraform apply
+</code></pre></div></div>
+<p>to remove scan and connection, run command ‘terraform destroy’</p>
+
+<h2 id="linux-host">Linux Host</h2>
+
+<p>Now let’s scan my own local machine which is runnig as Kali linux as bare metal Linux host.For this we have to install sensors. follow <a href="https://community.deepfence.io/threatmapper/docs/v2.0/sensors/docker/">official page</a> for information</p>
+
+<p>commands</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker run -dit \
+    --cpus=".2" \
+    --name=deepfence-agent \
+    --restart on-failure \
+    --pid=host \
+    --net=host \
+    --log-driver json-file \
+    --log-opt max-size=50m \
+    --privileged=true \
+    -v /sys/kernel/debug:/sys/kernel/debug:rw \
+    -v /var/log/fenced \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v /:/fenced/mnt/host/:ro \
+    -e USER_DEFINED_TAGS="" \
+    -e MGMT_CONSOLE_URL="---CONSOLE-IP---" \
+    -e MGMT_CONSOLE_PORT="443" \
+    -e DEEPFENCE_KEY="---DEEPFENCE-API-KEY---" \
+    deepfenceio/deepfence_agent_ce:2.0.1
+</code></pre></div></div>
+<p>After this there will be change in connected Devices –&gt; visit Topology and Hosts</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702888100/hugs4bugs/kali_baflg5.jpg" alt="image" /></p>
+
+<p>Now there is no scans <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702888251/hugs4bugs/noscan_duznsu.jpg" alt="image" />initiated,let’s start quicks Vulnerability scan from top left <strong>Action</strong> button.</p>
+
+<p>Here I’m doing only OS SCAN
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702888469/hugs4bugs/sp_dewc0c.jpg" alt="Scan" /></p>
+
+<p>Meanwhile we can check same from Vulnerability blade from right side.</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702888658/hugs4bugs/vb_pawxws.jpg" alt="image" /></p>
+
+<p>Remarks :-</p>
+
+<p>Doing bare metal/Host OS Vulnerability scan, there might be spikes in Memory and CPU usages.</p>
+
+<p>Thanks for reading blog, keep troubleshooting</p>
 
 
                 <!-- Pagination links -->
@@ -337,29 +480,29 @@ December 17, 2023
                         
                         
                             <li>
-                                <a href="/blue-team-vs-red-team-in-cyber-security/">
+                                <a href="/how-to-automate-tweets-via-github-actions/">
                                     
-                                        <img src="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://images.pexels.com/photos/5744251/pexels-photo-5744251.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
                                     
-                                    <h3>Blue Team vs Red Team</h3>
+                                    <h3>Automate Twitter via github Actions.</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/automation-with-firebase-and-ruby/">
+                                <a href="/metasploitFramework-vs-metasploit-pro/">
                                     
-                                        <img src="https://images.pexels.com/photos/4506940/pexels-photo-4506940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80">
                                     
-                                    <h3>Automate Firebase hosting with Github Actions and Ruby.</h3>
+                                    <h3>Metasploit Framework vs Metasploit Pro</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/Automation-with-Jenkins-and-Github/">
+                                <a href="/What-is-Microsoft-Defender-Threat-Intelligence(MDTI)/">
                                     
-                                        <img src="https://miro.medium.com/max/700/1*QTmgOmxLr78Ty_evSD_Riw.gif">
+                                        <img src="https://images.pexels.com/photos/10782398/pexels-photo-10782398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
                                     
-                                    <h3>Automation with Jenkins and GitHub</h3>
+                                    <h3>What is Microsoft Defender Threat Intelligence</h3>
                                 </a>
                             </li>
                         
@@ -371,7 +514,7 @@ December 17, 2023
 
         <!-- Add time bar only for pages without pagination -->
         
-            <div class="time-bar" data-minutes="1">
+            <div class="time-bar" data-minutes="3">
     <span class="time-completed"></span>
     <span class="time-remaining"></span>
     <div class="bar">
@@ -391,13 +534,13 @@ December 17, 2023
         </div>
     </div>
     
-    <a href="/the-blue-team-protecting-you/" class="post-preview">
+    <a href="/waf-vs-firewall/" class="post-preview">
         <div class="image">
             
-                <img src="https://cdn.pixabay.com/photo/2017/11/19/23/56/hacking-2964100_960_720.jpg">
+                <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
             
         </div>
-        <h3 class="title">The Blue Team.☠️</h3>
+        <h3 class="title">WAF vs Firewall</h3>
     </a>
 </div>
 
@@ -414,7 +557,7 @@ December 17, 2023
         <section class="share">
     <h3>Share</h3>
     <a aria-label="Share on Twitter"
-        href="https://twitter.com/intent/tweet?text=&quot;This is to install Open source CNAPP tool Threat Mapper in Kali Machine&quot;%20https://hugs4bugs.me/How-to-install-threatmapper-in-kali-linux/%20via%20&#64;myselfshubhendu&hashtags=azure,Microsoft Sentinel,Cyber Security,Threat Intelligence"
+        href="https://twitter.com/intent/tweet?text=&quot;This is to install Open source CNAPP tool Threat Mapper in Kali Machine&quot;%20https://hugs4bugs.me/How-to-install-threatmapper-in-kali-linux/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,Threat Intelligence"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -422,7 +565,7 @@ December 17, 2023
         </svg>
     </a>
     <a aria-label="Share on WhatsApp"
-        href="https://twitter.com/intent/tweet?text=&quot;This is to install Open source CNAPP tool Threat Mapper in Kali Machine&quot;%20https://hugs4bugs.me/How-to-install-threatmapper-in-kali-linux/%20via%20&#64;myselfshubhendu&hashtags=azure,Microsoft Sentinel,Cyber Security,Threat Intelligence"
+        href="https://twitter.com/intent/tweet?text=&quot;This is to install Open source CNAPP tool Threat Mapper in Kali Machine&quot;%20https://hugs4bugs.me/How-to-install-threatmapper-in-kali-linux/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,Threat Intelligence"
         onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -670,11 +813,154 @@ December 17, 2023
             "name": "How to install ThreatMapper in Kali Linux?",
             "headline": "One of the best CNAPP",
             "description": "This is to install Open source CNAPP tool Threat Mapper in Kali Machine",
-            "image": "https://th.bing.com/th/id/OIP.4iyoklvcRYZRDAi1HOKt0gHaEW?w=271&h=180&c=7&r=0&o=5&pid=1.7",
+            "image": "https://assets-global.website-files.com/63eaa07bbe370228bab003ea/644292bf096fd43dfd6532d4_image2-p-800.png",
             "url": "https://hugs4bugs.me/How-to-install-threatmapper-in-kali-linux/",
-            "articleBody": "
+            "articleBody": "Before starting, let’s understand a few terms,what is CNAPP?
+CNAPP aka cloud Native Application Protection Platform is all-in one cloud-native software platform that simplifies DevSecops practices.This term CNAPP was orignally coined by Gartner in 2021 CNAPPs make it simpler to embed security into the application lifecycle while providing superior protection for cloud workloads and data. A few core features of CNAPP are:-
+
+
+  No Vendor Locking, with multi cloud support
+  TI(Threat Intelligence)integration
+  Shifted Left DevOps Security Management
+  Centralised Compliance and Permissions
+  Comprehensive cloud workload protection
+
+
+Now let’s understand briefly what is ThreatMapper?
+
+ThreatMapper is an opensource CNAPP version of ThreatStryker, developed by Deepfence.It gives both agent and agentless based scanning options.
+
+Components:-
+ThreatMapper consists of 2 components:-
+
+  ThreatMapper Console : It integrates with Infrastructure API to scan &amp;amp; detect config errors, compliance posture with the help of data collected from sensors. It generated SBOMs to find vulnerabilities.
+  ThreatMapper Sensors: These sensors support different types of platforms like K8S, Docker, Bare Metal, AWS fargate.
+
+
+Architecture :-
+
+
+
+Installation
+
+For prerequisite please visit offical documentation by Deepfence
+
+In this blog I’m referring official (GitHub Repo](https://github.com/deepfence/ThreatMapper)
+
+Management Console Installation
+# Docker installation process for ThreatMapper Management Console
+
+wget https://github.com/deepfence/ThreatMapper/raw/release-2.1/deployment-scripts/docker-compose.yml
+
+Execute the following command to install and start the latest build of the Console
+ docker compose up -d
+
+Now Let me run command docker ps to see all running images 
+
+
+Now Find my local IP using ‘ifconfig’ command in linux terminal and paste IP address in browser, default deepfence login/signup page will pop-up click on registration for first time user.
+
+
+
+Registration page 
+
+Dashboard
+
+Default dashboard will appear and we need to add connectors
+
+
+
+Main Dashboard
+
+
+
+Now I’ll connect my Azure cloud provider single subscription as data connector via Terraform.
+so let’s create a terraform basic file (yourfilename).tf
+
+  touch cloud-scanner.tf
+
+
+Now paste the following command and replace it with your Azure subscription ID, ThreatMapper API, URL etc
+
+ provider &quot;azurerm&quot; {
+  features {}
+  subscription_id = &quot;&amp;lt;SUBSCRIPTION_ID eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX&amp;gt;&quot;
+}
+
+module &quot;cloud-scanner_example_single-subscription&quot; {
+  source              = &quot;deepfence/cloud-scanner/azure//examples/single-subscription&quot;
+  version             = &quot;0.2.0&quot;
+  mgmt-console-url    = &quot;&amp;lt;Console URL&amp;gt; eg. XXX.XXX.XX.XXX&quot;
+  mgmt-console-port   = &quot;443&quot;
+  deepfence-key       = &quot;&amp;lt;Deepfence-key&amp;gt; eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX&quot;
+  name                = &quot;deepfence-cloud-scanner&quot;
+  image               = &quot;quay.io/deepfenceio/cloud-scanner:2.0.1&quot;
+}
+
+Then initalise terraform inside directory using command
+
+  terraform init
+
+
+
+
+Then run command
+
+  terraform plan
+
+
+
+then run command
+
+ terraform apply
+
+to remove scan and connection, run command ‘terraform destroy’
+
+Linux Host
+
+Now let’s scan my own local machine which is runnig as Kali linux as bare metal Linux host.For this we have to install sensors. follow official page for information
+
+commands
+
+ docker run -dit \
+    --cpus=&quot;.2&quot; \
+    --name=deepfence-agent \
+    --restart on-failure \
+    --pid=host \
+    --net=host \
+    --log-driver json-file \
+    --log-opt max-size=50m \
+    --privileged=true \
+    -v /sys/kernel/debug:/sys/kernel/debug:rw \
+    -v /var/log/fenced \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v /:/fenced/mnt/host/:ro \
+    -e USER_DEFINED_TAGS=&quot;&quot; \
+    -e MGMT_CONSOLE_URL=&quot;---CONSOLE-IP---&quot; \
+    -e MGMT_CONSOLE_PORT=&quot;443&quot; \
+    -e DEEPFENCE_KEY=&quot;---DEEPFENCE-API-KEY---&quot; \
+    deepfenceio/deepfence_agent_ce:2.0.1
+
+After this there will be change in connected Devices –&amp;gt; visit Topology and Hosts
+
+
+
+Now there is no scans initiated,let’s start quicks Vulnerability scan from top left Action button.
+
+Here I’m doing only OS SCAN
+
+
+Meanwhile we can check same from Vulnerability blade from right side.
+
+
+
+Remarks :-
+
+Doing bare metal/Host OS Vulnerability scan, there might be spikes in Memory and CPU usages.
+
+Thanks for reading blog, keep troubleshooting
 ",
-            "wordcount": "0",
+            "wordcount": "637",
             "inLanguage": "en",
             "dateCreated": "2023-12-17/",
             "datePublished": "2023-12-17/",
@@ -705,7 +991,7 @@ December 17, 2023
             "mainEntityOfPage": "True",
             "genre": "security",
             "articleSection": "security",
-            "keywords": ["azure","Microsoft Sentinel","Cyber Security","Threat Intelligence"]
+            "keywords": ["Cyber Security","Threat Intelligence"]
         }
         </script>
     </body>
