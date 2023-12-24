@@ -83,3 +83,20 @@ exclude:
 - Gemfile.lock
 - gulpfile.js
 - README.md
+comments: 
+  giscus:
+  enabled: true
+  repo: "sivolko/hugs4bugs"
+  repo-id: "R_kgDOJBA0UA"
+  category: "General"
+  category-id: "DIC_kwDOJBA0UM4CW_3U"
+  mapping: "title"
+  strict: "1"
+  reactions-enabled: "1"
+  emit-metadata: "0"
+  input-position: "bottom"
+  theme: "dark"
+  lang: "en"
+  loading: "lazy"
+  crossorigin: "anonymous"
+      

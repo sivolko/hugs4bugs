@@ -1,10 +1,10 @@
-{% if site.disqus_username %}
+<!-- {% if site.disqus_username %} -->
 
 <section class="comments">
     <h3>{{ site.translations.text.comments | default: "Comments" }}</h3>
     <div id="disqus_thread"></div>
 </section>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     var disqus_loaded = false;
 
     function load_disqus()
@@ -27,4 +27,22 @@
     };
 </script>
 
-{% endif %}
+{% endif %} -->
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="sivolko/hugs4bugs"
+        data-repo-id="R_kgDOJBA0UA"
+        data-category="General"
+        data-category-id="DIC_kwDOJBA0UM4CW_3U"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
