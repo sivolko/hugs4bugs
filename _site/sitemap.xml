@@ -211,10 +211,17 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/how-to-integrate-docker-scout-with-azure-container-registry/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2023-12-24</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/tools-that-SOC-security-analys-should-know/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2023-12-17</lastmod>
+            <lastmod>2023-12-23</lastmod>
         </url>
     
         <url>

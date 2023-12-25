@@ -6,7 +6,7 @@ description: This is curated list of awesome Security Analyst tool used by SOC/S
 image: https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 optimized_image: https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
 author: Shubhendu Shubham
-date: 2023-12-17 00:00:00 Z
+date: 2023-12-23 00:00:00 Z
 category: security
 tags:
 - Cyber Security

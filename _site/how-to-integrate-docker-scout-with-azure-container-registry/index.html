@@ -17,19 +17,19 @@
     
     
 
-    <title>Fundamentals of Network Security.☠️ | hugs4bugs</title>
-    <meta name="description" content="This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of ne...">
+    <title>How to integrate Docker Scout with Azure Container Registry | hugs4bugs</title>
+    <meta name="description" content="This blog is about how to integrate docker scout with ACR(Azure Container Registry)">
     
-    <meta name="keywords" content="networking, security">
+    <meta name="keywords" content="Cyber Security, Container">
     
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Fundamentals of Network Security.☠️ | hugs4bugs">
-    <meta name="twitter:description" content="This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of ne...">
+    <meta name="twitter:title" content="How to integrate Docker Scout with Azure Container Registry | hugs4bugs">
+    <meta name="twitter:description" content="This blog is about how to integrate docker scout with ACR(Azure Container Registry)">
 
     
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80">
+    <meta property="twitter:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1703441731/hugs4bugs/01-primary-blue-docker-logo_rl8tst.png">
     
 
     
@@ -37,10 +37,10 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="https://hugs4bugs.me/Fundamentals-of-Network-security/">
-    <meta property="og:title" content="Fundamentals of Network Security.☠️ | hugs4bugs">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80">
-    <meta property="og:description" content="This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of ne...">
+    <meta property="og:url" content="https://hugs4bugs.me/how-to-integrate-docker-scout-with-azure-container-registry/">
+    <meta property="og:title" content="How to integrate Docker Scout with Azure Container Registry | hugs4bugs">
+    <meta property="og:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1703441731/hugs4bugs/01-primary-blue-docker-logo_rl8tst.png">
+    <meta property="og:description" content="This blog is about how to integrate docker scout with ACR(Azure Container Registry)">
     <meta property="og:site_name" content="hugs4bugs">
 
     <!-- Favicon -->
@@ -76,7 +76,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="canonical" href="https://hugs4bugs.me/Fundamentals-of-Network-security/">
+    <link rel="canonical" href="https://hugs4bugs.me/how-to-integrate-docker-scout-with-azure-container-registry/">
     <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
         href="https://hugs4bugs.me/feed.xml" />
     <link rel='manifest' href='../manifest.json'>
@@ -296,22 +296,22 @@
                 <p class="post-info">
                     
                         <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="2021-05-15T23:04:08+00:00">
+                        <time class="date" datetime="2023-12-24T00:00:00+00:00">
                             
 
 
-May 15, 2021
+December 24, 2023
 
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
                     <span>4 min to read</span>
                 </p>
-                <h1 class="post-title">Fundamentals of Network Security.☠️</h1>
-                <p class="post-subtitle">Network Security 101.</p>
+                <h1 class="post-title">How to integrate Docker Scout with Azure Container Registry</h1>
+                <p class="post-subtitle">Container Security</p>
 
                 
-                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="Featured image" class="post-cover">
+                    <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703441731/hugs4bugs/01-primary-blue-docker-logo_rl8tst.png" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
@@ -321,149 +321,136 @@ May 15, 2021
                 <!-- Add your table of contents here -->
 
 
-                <p>Either one is taking role as an azure developer,solution architech or administrator, all requires basic of the foundation of the networking.</p>
+                <p>Before starting, let’s understand what exactly is <strong>Docker Scout</strong>? 
+Docker Scout is a container image scanning tool built within Docker Desktop as well as CLI with mindset of Shift-Left approach.It lies on the top of the Docker ecosystem and helps developers to find container image vulnerabilities at the time of image build,thus helps organisation to ship secure entire supply chain.Now one might be confused is Docker-Scout another CNAPP tool? As per <a href="https://docs.docker.com/scout/">official documentation</a>,it uses SBOM(Software Bill of Material) with 17+ advisory Databases to analyze and scan images with real time CVEs updates.</p>
 
-<p>In this blog, we’ll learn the client-server network model, difference b/w authentication and authorization, firewall types and many more related topics.</p>
+<p>Now let’s see how we can integrate with <a href="https://learn.microsoft.com/en-us/azure/container-registry/">Azure Container Registry</a> to scan real time image.</p>
 
-<h1 id="network-clients">Network Clients</h1>
+<p><em>ACR+DockerScout is in Early Access phase at the time of writing this blog</em></p>
 
-<p>According to traditionnal sense, a network client is a lightweight computer/device that can’t run program on its own.But now-a-days the client has transformed from a simple terminal which can represent any hardware or software system that interects with services made available on a server.</p>
-
-<h2 id="types-of-clients-">Types of clients:-</h2>
-
-<table>
-  <tbody>
-    <tr>
-      <td><strong>Client</strong></td>
-      <td><strong>Local storage</strong></td>
-      <td><strong>Local CPU</strong></td>
-    </tr>
-    <tr>
-      <td>Thick</td>
-      <td>Yes</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Hybrid</td>
-      <td>No</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Thin</td>
-      <td>No</td>
-      <td>No</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Thick</strong> :- It is also known as workstation,that can process and store data locally without using a server.The client’s interaction with a server is minimal and might only be to store data on a shared netowork drive.</p>
-
-<p><strong>Hybrid</strong> :- This is a combination of both thick and thin clients.A hybrid client can do limited local data processing but has no local storage capability.These device renders content and stores the result on the server as same as the automated rating system.</p>
-
-<p><strong>Thin</strong> :- Historically thin client was a terminal. A thin client can’t process or store data locally.It depends upon the server to provide computaional power and storage.In modern era thin clients are represented by web Applications that request and display information from server regardless of the device they’re running on.</p>
-
-<h2 id="servers">Servers</h2>
-
-<p>In layman word server is an array of switches,routers,load balancers and firewalls which usually runs on server software eg:- windows Server 2019, Linux Server.A server’s main task is to provide services and resources to its clients. The larger the number of applications and users, the more the server is dedicated to specific purposes.</p>
-
-<p>A server’s hardware is usually a high-end computer with dozens of CPUs or cores, and vast amounts of memory.A server supports multiple clients, and a client can connect to and use the services from multiple servers.</p>
-
-<p>Eg:- Application can use</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>media server :- displays images &amp; Sound
-Database server :- to pull data to display
-</code></pre></div></div>
-
-<p><strong>Server Model</strong></p>
-
-<p>All client-server models are identified on the basis of how the client and server software communicates and how the server shares data and resources with clients.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Types of Server Model
-
-1. Request-response
-2. Peer-to-peer
-3. Publish-subscribe
-</code></pre></div></div>
+<p><strong>Infra Prerequisites</strong>:</p>
 
 <ol>
   <li>
-    <p>Request-response:- In request-response model,the client sends arequest to the server and  server carries out an activity and sends back a response. The response is either the result of a request or an acknowledgment.</p>
+    <p><a href="https://azure.microsoft.com/en-in/free/search/?ef_id=_k_72add33a00b31d31c1e2b6b27ce9063c_k_&amp;OCID=AIDcmmf1elj9v5_SEM__k_72add33a00b31d31c1e2b6b27ce9063c_k_&amp;msclkid=72add33a00b31d31c1e2b6b27ce9063c">Active Azure Subscription</a></p>
   </li>
   <li>
-    <p>Peer-to-peer:- In this model, every network device attached to the network is both a client and a server. Each client can request services (for example files) from any other device on the network and vice versa. P2P is an unstructured network suited for ad hoc usage.</p>
+    <p>Resource Group (Make sure region of resource group should match with ACR region and ACR region integration is not available for all region so refer official docs)</p>
   </li>
+  <li>ACR (Azure Container Registry)</li>
+  <li>Event Grid with System Topic Deployed</li>
+  <li>Event Hub Namespace</li>
+  <li>Inside ACR,enable Token from Repository Permission Blade</li>
+  <li>Docker Hub account, if you don’t have <a href="https://hub.docker.com/">create New one</a></li>
+  <li><a href="https://scout.docker.com/org/sivolko/settings/integrations">Docker socut</a> logged in with Docker hub account</li>
+  <li>Locally Docker Installed, if using Laptop CLI</li>
 </ol>
 
-<p>3.Publish-subscribe:-  This model is a messaging pattern, where clients subscribe to a service on the server. When a server receives a new message, it sends a response to each client that has subscribed. An RSS feed is a typical publish-subscribe type of client-server, where the user subscribes to the RSS feed. When new items appear, the user is automatically notified.</p>
+<p><strong>LAB</strong>
+In this lab I have take <a href="https://github.com/juice-shop/juice-shop">OWASP Juice Shop App</a> as container image to scan with Docker Scout.</p>
 
-<p>Types of Server</p>
+<h2 id="azure-container-registryazure-portal">Azure Container Registry(Azure portal)</h2>
 
-<ol>
-  <li>Application Server</li>
-  <li>Computing Server</li>
-  <li>Database Server</li>
-  <li>Files</li>
-  <li>Game</li>
-  <li>Mail</li>
-  <li>Media</li>
-  <li>Print</li>
-  <li>Web</li>
-</ol>
+<ul>
+  <li>
+    <p>Go to Azure Portal and search for container Registry and create one.Just for testing I have allowed all public network access to registry from Networking blade,but in production use private N/W
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703497968/hugs4bugs/dockerscout/IMG_6067_ppa5qu.jpg" alt="image" /></p>
+  </li>
+  <li>
+    <p>After successful ACR creation, you’ll get unique login server
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703498280/hugs4bugs/dockerscout/IMG_6068_qsp5ox.jpg" alt="Image" /></p>
+  </li>
+  <li>
+    <p>Now create a registry token from Repository permission blade,this token will be required during Docker Scout configuration. If you are using ARM template provided by Docker to deploy ACR then you can skip this step.
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703498504/hugs4bugs/dockerscout/IMG_6069_chqn26.jpg" alt="image" /></p>
+  </li>
+  <li>
+    <p>Now grab the container image of OWASP Juice APP, using docker pull command or else feel free to use own custom image.</p>
+  </li>
+</ul>
 
-<table>
-  <tbody>
-    <tr>
-      <td>Server</td>
-      <td>Purpose</td>
-      <td>Clients</td>
-    </tr>
-    <tr>
-      <td>Application</td>
-      <td>Hosts an application,which can be run through a web browser or customized client software</td>
-      <td>Any network device with access.</td>
-    </tr>
-    <tr>
-      <td>Computing</td>
-      <td>Makes available CPU and memory to the client. This type of server might be a supercomputer or mainframe.</td>
-      <td>Any networked computer that requires more CPU power and RAM to complete an activity.</td>
-    </tr>
-    <tr>
-      <td>Database</td>
-      <td>Any networked computer that requires more CPU power and RAM to complete an activity</td>
-      <td>Any form of software that requires access to structured data.</td>
-    </tr>
-    <tr>
-      <td>File</td>
-      <td>Makes available shared files and folders across a network</td>
-      <td>Any client that needs access to shared resources.</td>
-    </tr>
-    <tr>
-      <td>Game</td>
-      <td>Provisions a multiplayer game environment.</td>
-      <td>Personal computers, tablets, smartphones, or game consoles.</td>
-    </tr>
-    <tr>
-      <td>Mail</td>
-      <td>Hosts your email and makes it available across the network.</td>
-      <td>User of email applications.</td>
-    </tr>
-    <tr>
-      <td>Media</td>
-      <td>Enables media streaming of digital video or audio over a network.</td>
-      <td>Web and mobile applications.</td>
-    </tr>
-    <tr>
-      <td>Print</td>
-      <td>Shares printers over a network.</td>
-      <td>Any device that needs to print.</td>
-    </tr>
-    <tr>
-      <td>Web</td>
-      <td>Hosts webpages either on the internet or on private internal networks.</td>
-      <td>Any device with a browser.</td>
-    </tr>
-  </tbody>
-</table>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  docker pull bkimminich/juice-shop
+</code></pre></div></div>
+<ul>
+  <li>Now Run this Image locally</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run --rm -p 3000:3000 -d bkimminich/juice-shop 
+</code></pre></div></div>
+<p>You will see OWASP Juice Shop application can be accessible over port 3000. This is vulnerable application provided by OWASP for pentesting.</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703499102/hugs4bugs/dockerscout/jshop_sk06vw.jpg" alt="Local APp" /></p>
+
+<ul>
+  <li>Now tag this image and push it to ACR
+for tag use following command</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker tag bkimminich/juice-shop dockerscoutshubhendu.azurecr.io/owasp:v1
+</code></pre></div></div>
+<p>Replace your my loginserver with your own</p>
+
+<ul>
+  <li>Push it to ACR</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker push dockerscoutshubhendu.azurecr.io/owasp:v1
+</code></pre></div></div>
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703499593/hugs4bugs/dockerscout/dscoutpushed_hitsil.png" alt="Image" /></p>
+
+<p>Confirm from Azure portal Repositories blade
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703499718/hugs4bugs/dockerscout/IMG_6070_uq9wsw.jpg" alt="Image" /></p>
+
+<p>Now let’s integrate ACR with SCOUT for Vulnerability scan</p>
+<h1 id="docker-scout-integration">Docker Scout Integration</h1>
+
+<ul>
+  <li>Visit <a href="https://scout.docker.com/org/sivolko/settings/integrations">Docker Scout Dashboard</a>, and Login with docker account and select Azure Container Registry Option</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703500085/hugs4bugs/dockerscout/dsss_fg7afa.jpg" alt="Image" /></p>
+
+<ul>
+  <li>Now Enter Registry Name,which is nothing but your login server from ACR, copy paste same</li>
+</ul>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703500217/hugs4bugs/dockerscout/regname_ngknme.jpg" alt="image" /></p>
+
+<p>after that, you will get ARM template to deploy, basically this ARM template will deploy a Event Grid system topic from Azure Service Events and Registry token .</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703500699/hugs4bugs/dockerscout/azureee_q2nde4.jpg" alt="image" /></p>
+
+<p>Make sure to deploy Docker Scout resources to the same resource group as the registry.Then review and create.
+After successful deployment go to your ACR–&gt; Tokens from Repository Permission blade and copy token, then generate password. You can set password expiration date too. But remember to copy and save password locally, once window is close same password can’t be retrived. You need to regenrate.</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703501159/hugs4bugs/dockerscout/IMG_6071_jqu7is.jpg" alt="Image" /></p>
+
+<p>Same Token/password put into Docker Scout Registry Token blade and click on enable integration.</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703501288/hugs4bugs/dockerscout/rtt_tk7vne.jpg" alt="image" /></p>
+
+<p>After 5 min, status on Docker Scout will change to connected</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703501479/hugs4bugs/dockerscout/conn_b6ko3u.jpg" alt="image" />
+Now to start SCAN,select Image and activate Scan Analysis
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703501839/hugs4bugs/dockerscout/scan_vmw4mx.jpg" alt="image" />
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703501840/hugs4bugs/dockerscout/scanactive_jp38jf.jpg" alt="image" /></p>
+
+<p>Jump over image blade,there our ACR image is scanned with list of vulnerabilities.
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703501597/hugs4bugs/dockerscout/dscoutvlnreport_yclmts.jpg" alt="Image" /></p>
+
+<p>Jump over Vulnerabilites blade for more details 
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703501772/hugs4bugs/dockerscout/dscoutvlncve_u7trma.jpg" alt="image" /></p>
+
+<p>To mitigate vulnerabilities jump to patch blade and follow the patch released by specific vendor.
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703502034/hugs4bugs/dockerscout/dscoutpath_tvzbfg.jpg" alt="image" /></p>
+
+<p>We can check all centralised details from overview blade too.
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703502220/hugs4bugs/dockerscout/ov_gzscav.jpg" alt="image" /></p>
+
+<p>and we can deploy our own custom policies to set rules from Ploicies blade.</p>
+
+<p>Thanks for reading blog, keep troubleshooting!</p>
 
 
                 <!-- Pagination links -->
@@ -479,6 +466,15 @@ Database server :- to pull data to display
                         
                         
                             <li>
+                                <a href="/benifits-of-CI/">
+                                    
+                                        <img src="https://cdn-images-1.medium.com/max/1600/1*-eHRhJcg-QPUws99xEDh6w.png">
+                                    
+                                    <h3>Benifits of CI/CD</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
                                 <a href="/Automation-with-Jenkins-and-Github/">
                                     
                                         <img src="https://miro.medium.com/max/700/1*QTmgOmxLr78Ty_evSD_Riw.gif">
@@ -488,20 +484,11 @@ Database server :- to pull data to display
                             </li>
                         
                             <li>
-                                <a href="/send-email-with-Azure-logic-app/">
+                                <a href="/cloud-native-CNAPP-tool-Microsoft-defender-for-cloud-101/">
                                     
-                                        <img src="https://d3nn873nee648n.cloudfront.net/900x600/19765/300-SM960337.jpg">
+                                        <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MS%20Defender%20for%20Cloud%20R6?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1800&qlt=100&fmt=png-alpha&fit=constrain">
                                     
-                                    <h3>Automate Email with Azure Logic App</h3>
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="/Progressive-webapps-on-azure/">
-                                    
-                                        <img src="https://th.bing.com/th/id/R.49bd0ccbb9e904407116b65ce6a50d41?rik=1KXzdiLejsH2eA&riu=http%3a%2f%2fclipground.com%2fimages%2fcoder-clipart-1.jpg&ehk=xl5oxtd6bHoDW1%2f3HB007zg97209vFB75YXyIskHtPg%3d&risl=&pid=ImgRaw&r=0">
-                                    
-                                    <h3>Building and Deploying PWA on Azure Cloud.</h3>
+                                    <h3>Microsoft Defender for Cloud 101</h3>
                                 </a>
                             </li>
                         
@@ -533,13 +520,13 @@ Database server :- to pull data to display
         </div>
     </div>
     
-    <a href="/2021-08-2-Understanding-basics-of-security/" class="post-preview">
+    <a href="/How-to-install-Jenkins-on-Linux/" class="post-preview">
         <div class="image">
             
-                <img src="https://cdn.pixabay.com/photo/2017/11/19/23/56/hacking-2964100_960_720.jpg">
+                <img src="https://www.jenkins.io/images/logos/needs-you/Jenkins_Needs_You-02.png">
             
         </div>
-        <h3 class="title">Protection against Security threat on Azure.☠️</h3>
+        <h3 class="title">How to install JENKINS on Linux ?</h3>
     </a>
 </div>
 
@@ -556,7 +543,7 @@ Database server :- to pull data to display
         <section class="share">
     <h3>Share</h3>
     <a aria-label="Share on Twitter"
-        href="https://twitter.com/intent/tweet?text=&quot;This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of networking. &quot;%20https://hugs4bugs.me/Fundamentals-of-Network-security/%20via%20&#64;myselfshubhendu&hashtags=networking,security"
+        href="https://twitter.com/intent/tweet?text=&quot;This blog is about how to integrate docker scout with ACR(Azure Container Registry)&quot;%20https://hugs4bugs.me/how-to-integrate-docker-scout-with-azure-container-registry/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,Container"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -564,7 +551,7 @@ Database server :- to pull data to display
         </svg>
     </a>
     <a aria-label="Share on WhatsApp"
-        href="https://twitter.com/intent/tweet?text=&quot;This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of networking. &quot;%20https://hugs4bugs.me/Fundamentals-of-Network-security/%20via%20&#64;myselfshubhendu&hashtags=networking,security"
+        href="https://twitter.com/intent/tweet?text=&quot;This blog is about how to integrate docker scout with ACR(Azure Container Registry)&quot;%20https://hugs4bugs.me/how-to-integrate-docker-scout-with-azure-container-registry/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,Container"
         onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -572,7 +559,7 @@ Database server :- to pull data to display
         </svg>
     </a>
     <a aria-label="Share on Facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/Fundamentals-of-Network-security/"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/how-to-integrate-docker-scout-with-azure-container-registry/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
         title="Share on Facebook">
         <svg class="icon icon-facebook">
@@ -662,7 +649,7 @@ Database server :- to pull data to display
         disqus_loaded = true;
         var disqus_shortname = 'hugs4bugs';
         var disqus_title = '';
-        var disqus_url = '/Fundamentals-of-Network-security/';
+        var disqus_url = '/how-to-integrate-docker-scout-with-azure-container-registry/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -827,160 +814,147 @@ Database server :- to pull data to display
         {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
-            "name": "Fundamentals of Network Security.☠️",
-            "headline": "Network Security 101.",
-            "description": "This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of networking. ",
-            "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80",
-            "url": "https://hugs4bugs.me/Fundamentals-of-Network-security/",
-            "articleBody": "Either one is taking role as an azure developer,solution architech or administrator, all requires basic of the foundation of the networking.
+            "name": "How to integrate Docker Scout with Azure Container Registry",
+            "headline": "Container Security",
+            "description": "This blog is about how to integrate docker scout with ACR(Azure Container Registry)",
+            "image": "https://res.cloudinary.com/hugs4bugs/image/upload/v1703441731/hugs4bugs/01-primary-blue-docker-logo_rl8tst.png",
+            "url": "https://hugs4bugs.me/how-to-integrate-docker-scout-with-azure-container-registry/",
+            "articleBody": "Before starting, let’s understand what exactly is Docker Scout? 
+Docker Scout is a container image scanning tool built within Docker Desktop as well as CLI with mindset of Shift-Left approach.It lies on the top of the Docker ecosystem and helps developers to find container image vulnerabilities at the time of image build,thus helps organisation to ship secure entire supply chain.Now one might be confused is Docker-Scout another CNAPP tool? As per official documentation,it uses SBOM(Software Bill of Material) with 17+ advisory Databases to analyze and scan images with real time CVEs updates.
 
-In this blog, we’ll learn the client-server network model, difference b/w authentication and authorization, firewall types and many more related topics.
+Now let’s see how we can integrate with Azure Container Registry to scan real time image.
 
-Network Clients
+ACR+DockerScout is in Early Access phase at the time of writing this blog
 
-According to traditionnal sense, a network client is a lightweight computer/device that can’t run program on its own.But now-a-days the client has transformed from a simple terminal which can represent any hardware or software system that interects with services made available on a server.
-
-Types of clients:-
-
-
-  
-    
-      Client
-      Local storage
-      Local CPU
-    
-    
-      Thick
-      Yes
-      Yes
-    
-    
-      Hybrid
-      No
-      Yes
-    
-    
-      Thin
-      No
-      No
-    
-  
-
-
-Thick :- It is also known as workstation,that can process and store data locally without using a server.The client’s interaction with a server is minimal and might only be to store data on a shared netowork drive.
-
-Hybrid :- This is a combination of both thick and thin clients.A hybrid client can do limited local data processing but has no local storage capability.These device renders content and stores the result on the server as same as the automated rating system.
-
-Thin :- Historically thin client was a terminal. A thin client can’t process or store data locally.It depends upon the server to provide computaional power and storage.In modern era thin clients are represented by web Applications that request and display information from server regardless of the device they’re running on.
-
-Servers
-
-In layman word server is an array of switches,routers,load balancers and firewalls which usually runs on server software eg:- windows Server 2019, Linux Server.A server’s main task is to provide services and resources to its clients. The larger the number of applications and users, the more the server is dedicated to specific purposes.
-
-A server’s hardware is usually a high-end computer with dozens of CPUs or cores, and vast amounts of memory.A server supports multiple clients, and a client can connect to and use the services from multiple servers.
-
-Eg:- Application can use
-
-media server :- displays images &amp;amp; Sound
-Database server :- to pull data to display
-
-
-Server Model
-
-All client-server models are identified on the basis of how the client and server software communicates and how the server shares data and resources with clients.
-
-Types of Server Model
-
-1. Request-response
-2. Peer-to-peer
-3. Publish-subscribe
-
+Infra Prerequisites:
 
 
   
-    Request-response:- In request-response model,the client sends arequest to the server and  server carries out an activity and sends back a response. The response is either the result of a request or an acknowledgment.
+    Active Azure Subscription
   
   
-    Peer-to-peer:- In this model, every network device attached to the network is both a client and a server. Each client can request services (for example files) from any other device on the network and vice versa. P2P is an unstructured network suited for ad hoc usage.
+    Resource Group (Make sure region of resource group should match with ACR region and ACR region integration is not available for all region so refer official docs)
   
+  ACR (Azure Container Registry)
+  Event Grid with System Topic Deployed
+  Event Hub Namespace
+  Inside ACR,enable Token from Repository Permission Blade
+  Docker Hub account, if you don’t have create New one
+  Docker socut logged in with Docker hub account
+  Locally Docker Installed, if using Laptop CLI
 
 
-3.Publish-subscribe:-  This model is a messaging pattern, where clients subscribe to a service on the server. When a server receives a new message, it sends a response to each client that has subscribed. An RSS feed is a typical publish-subscribe type of client-server, where the user subscribes to the RSS feed. When new items appear, the user is automatically notified.
+LAB
+In this lab I have take OWASP Juice Shop App as container image to scan with Docker Scout.
 
-Types of Server
-
-
-  Application Server
-  Computing Server
-  Database Server
-  Files
-  Game
-  Mail
-  Media
-  Print
-  Web
-
+Azure Container Registry(Azure portal)
 
 
   
-    
-      Server
-      Purpose
-      Clients
-    
-    
-      Application
-      Hosts an application,which can be run through a web browser or customized client software
-      Any network device with access.
-    
-    
-      Computing
-      Makes available CPU and memory to the client. This type of server might be a supercomputer or mainframe.
-      Any networked computer that requires more CPU power and RAM to complete an activity.
-    
-    
-      Database
-      Any networked computer that requires more CPU power and RAM to complete an activity
-      Any form of software that requires access to structured data.
-    
-    
-      File
-      Makes available shared files and folders across a network
-      Any client that needs access to shared resources.
-    
-    
-      Game
-      Provisions a multiplayer game environment.
-      Personal computers, tablets, smartphones, or game consoles.
-    
-    
-      Mail
-      Hosts your email and makes it available across the network.
-      User of email applications.
-    
-    
-      Media
-      Enables media streaming of digital video or audio over a network.
-      Web and mobile applications.
-    
-    
-      Print
-      Shares printers over a network.
-      Any device that needs to print.
-    
-    
-      Web
-      Hosts webpages either on the internet or on private internal networks.
-      Any device with a browser.
-    
+    Go to Azure Portal and search for container Registry and create one.Just for testing I have allowed all public network access to registry from Networking blade,but in production use private N/W
+
+  
+  
+    After successful ACR creation, you’ll get unique login server
+
+  
+  
+    Now create a registry token from Repository permission blade,this token will be required during Docker Scout configuration. If you are using ARM template provided by Docker to deploy ACR then you can skip this step.
+
+  
+  
+    Now grab the container image of OWASP Juice APP, using docker pull command or else feel free to use own custom image.
   
 
+
+  docker pull bkimminich/juice-shop
+
+
+  Now Run this Image locally
+
+
+docker run --rm -p 3000:3000 -d bkimminich/juice-shop 
+
+You will see OWASP Juice Shop application can be accessible over port 3000. This is vulnerable application provided by OWASP for pentesting.
+
+
+
+
+  Now tag this image and push it to ACR
+for tag use following command
+
+
+ docker tag bkimminich/juice-shop dockerscoutshubhendu.azurecr.io/owasp:v1
+
+Replace your my loginserver with your own
+
+
+  Push it to ACR
+
+
+ docker push dockerscoutshubhendu.azurecr.io/owasp:v1
+
+
+
+Confirm from Azure portal Repositories blade
+
+
+Now let’s integrate ACR with SCOUT for Vulnerability scan
+Docker Scout Integration
+
+
+  Visit Docker Scout Dashboard, and Login with docker account and select Azure Container Registry Option
+
+
+
+
+
+  Now Enter Registry Name,which is nothing but your login server from ACR, copy paste same
+
+
+
+
+after that, you will get ARM template to deploy, basically this ARM template will deploy a Event Grid system topic from Azure Service Events and Registry token .
+
+
+
+Make sure to deploy Docker Scout resources to the same resource group as the registry.Then review and create.
+After successful deployment go to your ACR–&amp;gt; Tokens from Repository Permission blade and copy token, then generate password. You can set password expiration date too. But remember to copy and save password locally, once window is close same password can’t be retrived. You need to regenrate.
+
+
+
+Same Token/password put into Docker Scout Registry Token blade and click on enable integration.
+
+
+
+After 5 min, status on Docker Scout will change to connected
+
+
+Now to start SCAN,select Image and activate Scan Analysis
+
+
+
+Jump over image blade,there our ACR image is scanned with list of vulnerabilities.
+
+
+Jump over Vulnerabilites blade for more details 
+
+
+To mitigate vulnerabilities jump to patch blade and follow the patch released by specific vendor.
+
+
+We can check all centralised details from overview blade too.
+
+
+and we can deploy our own custom policies to set rules from Ploicies blade.
+
+Thanks for reading blog, keep troubleshooting!
 ",
-            "wordcount": "765",
+            "wordcount": "757",
             "inLanguage": "en",
-            "dateCreated": "2021-05-15/",
-            "datePublished": "2021-05-15/",
-            "dateModified": "2021-05-15/",
+            "dateCreated": "2023-12-24/",
+            "datePublished": "2023-12-24/",
+            "dateModified": "2023-12-24/",
             "author": {
                 "@type": "Person",
                 "name": "Shubhendu",
@@ -1005,9 +979,9 @@ Types of Server
                 }
             },
             "mainEntityOfPage": "True",
-            "genre": "networking",
-            "articleSection": "networking",
-            "keywords": ["networking","security"]
+            "genre": "security",
+            "articleSection": "security",
+            "keywords": ["Cyber Security","Container"]
         }
         </script>
     </body>

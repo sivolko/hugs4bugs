@@ -3,11 +3,19 @@
   
   
     {
+      "title"    : "How to integrate Docker Scout with Azure Container Registry",
+      "tags"     : "Cyber Security and Container",
+      "categories" : "security",
+      "url"      : "/how-to-integrate-docker-scout-with-azure-container-registry/",
+      "date"     : "12/24/2023"
+    } ,
+  
+    {
       "title"    : "Tools that SOC/Security Analyst must know",
       "tags"     : "Cyber Security and Tools",
       "categories" : "security",
       "url"      : "/tools-that-SOC-security-analys-should-know/",
-      "date"     : "12/17/2023"
+      "date"     : "12/23/2023"
     } ,
   
     {
