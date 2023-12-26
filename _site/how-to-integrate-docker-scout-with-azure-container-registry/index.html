@@ -322,7 +322,7 @@ December 24, 2023
 
 
                 <p>Before starting, let’s understand what exactly is <strong>Docker Scout</strong>? 
-Docker Scout is a container image scanning tool built within Docker Desktop as well as CLI with mindset of Shift-Left approach.It lies on the top of the Docker ecosystem and helps developers to find container image vulnerabilities at the time of image build,thus helps organisation to ship secure entire supply chain.Now one might be confused is Docker-Scout another CNAPP tool? As per <a href="https://docs.docker.com/scout/">official documentation</a>,it uses SBOM(Software Bill of Material) with 17+ advisory Databases to analyze and scan images with real time CVEs updates.</p>
+Docker Scout is a container image scanning tool built within Docker Desktop as well as CLI with mindset of Shift-Left approach.It lies on the top of the Docker ecosystem and helps developers to find container image vulnerabilities at the time of image build,thus helps organisation to ship secure entire supply chain.Now one might be confused is that Docker-Scout another CNAPP tool? As per <a href="https://docs.docker.com/scout/">official documentation</a>,it uses SBOM(Software Bill of Material) with 17+ advisory Databases to analyze and scan images with real time CVEs updates.</p>
 
 <p>Now let’s see how we can integrate with <a href="https://learn.microsoft.com/en-us/azure/container-registry/">Azure Container Registry</a> to scan real time image.</p>
 
@@ -347,13 +347,13 @@ Docker Scout is a container image scanning tool built within Docker Desktop as w
 </ol>
 
 <p><strong>LAB</strong>
-In this lab I have take <a href="https://github.com/juice-shop/juice-shop">OWASP Juice Shop App</a> as container image to scan with Docker Scout.</p>
+In this lab I have taken <a href="https://github.com/juice-shop/juice-shop">OWASP Juice Shop App</a> as container image to scan with Docker Scout.</p>
 
 <h2 id="azure-container-registryazure-portal">Azure Container Registry(Azure portal)</h2>
 
 <ul>
   <li>
-    <p>Go to Azure Portal and search for container Registry and create one.Just for testing I have allowed all public network access to registry from Networking blade,but in production use private N/W
+    <p>Go to Azure Portal and search for container Registry and create one.Just for testing I have allowed all public network access to registry from Networking blade,but in the production use private N/W
 <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703497968/hugs4bugs/dockerscout/IMG_6067_ppa5qu.jpg" alt="image" /></p>
   </li>
   <li>
@@ -382,13 +382,12 @@ In this lab I have take <a href="https://github.com/juice-shop/juice-shop">OWASP
 <p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703499102/hugs4bugs/dockerscout/jshop_sk06vw.jpg" alt="Local APp" /></p>
 
 <ul>
-  <li>Now tag this image and push it to ACR
-for tag use following command</li>
+  <li>Now tag this image and push it to ACR using following command</li>
 </ul>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker tag bkimminich/juice-shop dockerscoutshubhendu.azurecr.io/owasp:v1
 </code></pre></div></div>
-<p>Replace your my loginserver with your own</p>
+<p>Replace  my loginserver with yours.</p>
 
 <ul>
   <li>Push it to ACR</li>
@@ -421,11 +420,11 @@ for tag use following command</li>
 <p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703500699/hugs4bugs/dockerscout/azureee_q2nde4.jpg" alt="image" /></p>
 
 <p>Make sure to deploy Docker Scout resources to the same resource group as the registry.Then review and create.
-After successful deployment go to your ACR–&gt; Tokens from Repository Permission blade and copy token, then generate password. You can set password expiration date too. But remember to copy and save password locally, once window is close same password can’t be retrived. You need to regenrate.</p>
+After successful deployment go to your ACR–&gt; Tokens from Repository Permission blade and copy token, then generate password. You can set password expiration date too. But remember to copy and save password locally, once window is close same password can’t be retrived. You need to regenerate.</p>
 
 <p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703501159/hugs4bugs/dockerscout/IMG_6071_jqu7is.jpg" alt="Image" /></p>
 
-<p>Same Token/password put into Docker Scout Registry Token blade and click on enable integration.</p>
+<p>Copy the same Token/password put into Docker Scout Registry Token blade and click on enable integration.</p>
 
 <p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703501288/hugs4bugs/dockerscout/rtt_tk7vne.jpg" alt="image" /></p>
 
@@ -442,13 +441,13 @@ Now to start SCAN,select Image and activate Scan Analysis
 <p>Jump over Vulnerabilites blade for more details 
 <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703501772/hugs4bugs/dockerscout/dscoutvlncve_u7trma.jpg" alt="image" /></p>
 
-<p>To mitigate vulnerabilities jump to patch blade and follow the patch released by specific vendor.
+<p>To mitigate vulnerabilities, jump to patch blade and follow the patch released by specific vendor.
 <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703502034/hugs4bugs/dockerscout/dscoutpath_tvzbfg.jpg" alt="image" /></p>
 
 <p>We can check all centralised details from overview blade too.
 <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703502220/hugs4bugs/dockerscout/ov_gzscav.jpg" alt="image" /></p>
 
-<p>and we can deploy our own custom policies to set rules from Ploicies blade.</p>
+<p>and we can deploy our own custom policies from Ploicies blade to set rules.</p>
 
 <p>Thanks for reading blog, keep troubleshooting!</p>
 
@@ -466,29 +465,29 @@ Now to start SCAN,select Image and activate Scan Analysis
                         
                         
                             <li>
-                                <a href="/benifits-of-CI/">
-                                    
-                                        <img src="https://cdn-images-1.medium.com/max/1600/1*-eHRhJcg-QPUws99xEDh6w.png">
-                                    
-                                    <h3>Benifits of CI/CD</h3>
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="/Automation-with-Jenkins-and-Github/">
-                                    
-                                        <img src="https://miro.medium.com/max/700/1*QTmgOmxLr78Ty_evSD_Riw.gif">
-                                    
-                                    <h3>Automation with Jenkins and GitHub</h3>
-                                </a>
-                            </li>
-                        
-                            <li>
                                 <a href="/cloud-native-CNAPP-tool-Microsoft-defender-for-cloud-101/">
                                     
                                         <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MS%20Defender%20for%20Cloud%20R6?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1800&qlt=100&fmt=png-alpha&fit=constrain">
                                     
                                     <h3>Microsoft Defender for Cloud 101</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/kali-linux-vs-parrot-linux/">
+                                    
+                                        <img src="https://cdn.pixabay.com/photo/2018/04/22/22/57/hacker-3342696_960_720.jpg">
+                                    
+                                    <h3>Kali Linux vs Parrot OS</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/how-to-like-instagram-post-with-javascript/">
+                                    
+                                        <img src="https://media.giphy.com/media/cmqnzFK17DO4vKCscd/giphy.gif">
+                                    
+                                    <h3>How to like Instagram posts with JavaScript?</h3>
                                 </a>
                             </li>
                         
@@ -520,13 +519,13 @@ Now to start SCAN,select Image and activate Scan Analysis
         </div>
     </div>
     
-    <a href="/How-to-install-Jenkins-on-Linux/" class="post-preview">
+    <a href="/metasploitFramework-vs-metasploit-pro/" class="post-preview">
         <div class="image">
             
-                <img src="https://www.jenkins.io/images/logos/needs-you/Jenkins_Needs_You-02.png">
+                <img src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80">
             
         </div>
-        <h3 class="title">How to install JENKINS on Linux ?</h3>
+        <h3 class="title">Metasploit Framework vs Metasploit Pro</h3>
     </a>
 </div>
 
@@ -820,7 +819,7 @@ Now to start SCAN,select Image and activate Scan Analysis
             "image": "https://res.cloudinary.com/hugs4bugs/image/upload/v1703441731/hugs4bugs/01-primary-blue-docker-logo_rl8tst.png",
             "url": "https://hugs4bugs.me/how-to-integrate-docker-scout-with-azure-container-registry/",
             "articleBody": "Before starting, let’s understand what exactly is Docker Scout? 
-Docker Scout is a container image scanning tool built within Docker Desktop as well as CLI with mindset of Shift-Left approach.It lies on the top of the Docker ecosystem and helps developers to find container image vulnerabilities at the time of image build,thus helps organisation to ship secure entire supply chain.Now one might be confused is Docker-Scout another CNAPP tool? As per official documentation,it uses SBOM(Software Bill of Material) with 17+ advisory Databases to analyze and scan images with real time CVEs updates.
+Docker Scout is a container image scanning tool built within Docker Desktop as well as CLI with mindset of Shift-Left approach.It lies on the top of the Docker ecosystem and helps developers to find container image vulnerabilities at the time of image build,thus helps organisation to ship secure entire supply chain.Now one might be confused is that Docker-Scout another CNAPP tool? As per official documentation,it uses SBOM(Software Bill of Material) with 17+ advisory Databases to analyze and scan images with real time CVEs updates.
 
 Now let’s see how we can integrate with Azure Container Registry to scan real time image.
 
@@ -845,13 +844,13 @@ Infra Prerequisites:
 
 
 LAB
-In this lab I have take OWASP Juice Shop App as container image to scan with Docker Scout.
+In this lab I have taken OWASP Juice Shop App as container image to scan with Docker Scout.
 
 Azure Container Registry(Azure portal)
 
 
   
-    Go to Azure Portal and search for container Registry and create one.Just for testing I have allowed all public network access to registry from Networking blade,but in production use private N/W
+    Go to Azure Portal and search for container Registry and create one.Just for testing I have allowed all public network access to registry from Networking blade,but in the production use private N/W
 
   
   
@@ -880,13 +879,12 @@ You will see OWASP Juice Shop application can be accessible over port 3000. This
 
 
 
-  Now tag this image and push it to ACR
-for tag use following command
+  Now tag this image and push it to ACR using following command
 
 
  docker tag bkimminich/juice-shop dockerscoutshubhendu.azurecr.io/owasp:v1
 
-Replace your my loginserver with your own
+Replace  my loginserver with yours.
 
 
   Push it to ACR
@@ -919,11 +917,11 @@ after that, you will get ARM template to deploy, basically this ARM template wil
 
 
 Make sure to deploy Docker Scout resources to the same resource group as the registry.Then review and create.
-After successful deployment go to your ACR–&amp;gt; Tokens from Repository Permission blade and copy token, then generate password. You can set password expiration date too. But remember to copy and save password locally, once window is close same password can’t be retrived. You need to regenrate.
+After successful deployment go to your ACR–&amp;gt; Tokens from Repository Permission blade and copy token, then generate password. You can set password expiration date too. But remember to copy and save password locally, once window is close same password can’t be retrived. You need to regenerate.
 
 
 
-Same Token/password put into Docker Scout Registry Token blade and click on enable integration.
+Copy the same Token/password put into Docker Scout Registry Token blade and click on enable integration.
 
 
 
@@ -940,13 +938,13 @@ Jump over image blade,there our ACR image is scanned with list of vulnerabilitie
 Jump over Vulnerabilites blade for more details 
 
 
-To mitigate vulnerabilities jump to patch blade and follow the patch released by specific vendor.
+To mitigate vulnerabilities, jump to patch blade and follow the patch released by specific vendor.
 
 
 We can check all centralised details from overview blade too.
 
 
-and we can deploy our own custom policies to set rules from Ploicies blade.
+and we can deploy our own custom policies from Ploicies blade to set rules.
 
 Thanks for reading blog, keep troubleshooting!
 ",

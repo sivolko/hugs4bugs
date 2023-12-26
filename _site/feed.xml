@@ -5,13 +5,13 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 25 Dec 2023 11:05:52 +0000</pubDate>
-    <lastBuildDate>Mon, 25 Dec 2023 11:05:52 +0000</lastBuildDate>
+    <pubDate>Tue, 26 Dec 2023 03:59:06 +0000</pubDate>
+    <lastBuildDate>Tue, 26 Dec 2023 03:59:06 +0000</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
     
       <item>
         <title>How to integrate Docker Scout with Azure Container Registry</title>
-        <description>&lt;p&gt;Before starting, let’s understand what exactly is &lt;strong&gt;Docker Scout&lt;/strong&gt;? Docker Scout is a container image scanning tool built within Docker Desktop as well as CLI with mindset of Shift-Left approach.It lies on the top of the Docker ecosystem and helps developers to find container image vulnerabilities at the time of image build,thus helps organisation to ship secure entire supply chain.Now one might be confused is Docker-Scout another CNAPP tool? As per &lt;a href=&quot;https://docs.docker.com/scout/&quot;&gt;official documentation&lt;/a&gt;,it uses SBOM(Software Bill of Material) with 17+ advisory Databases to analyze and scan images with real time CVEs updates.&lt;/p&gt; &lt;p&gt;Now let’s see how we can integrate...</description>
+        <description>&lt;p&gt;Before starting, let’s understand what exactly is &lt;strong&gt;Docker Scout&lt;/strong&gt;? Docker Scout is a container image scanning tool built within Docker Desktop as well as CLI with mindset of Shift-Left approach.It lies on the top of the Docker ecosystem and helps developers to find container image vulnerabilities at the time of image build,thus helps organisation to ship secure entire supply chain.Now one might be confused is that Docker-Scout another CNAPP tool? As per &lt;a href=&quot;https://docs.docker.com/scout/&quot;&gt;official documentation&lt;/a&gt;,it uses SBOM(Software Bill of Material) with 17+ advisory Databases to analyze and scan images with real time CVEs updates.&lt;/p&gt; &lt;p&gt;Now let’s see how we can...</description>
         <pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate>
         <link>https://hugs4bugs.me/how-to-integrate-docker-scout-with-azure-container-registry/</link>
         <guid isPermaLink="true">https://hugs4bugs.me/how-to-integrate-docker-scout-with-azure-container-registry/</guid>

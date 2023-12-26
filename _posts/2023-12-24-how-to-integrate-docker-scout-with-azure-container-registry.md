@@ -13,7 +13,7 @@ tags:
 - Container
 ---
 Before starting, let's understand what exactly is **Docker Scout**? 
-Docker Scout is a container image scanning tool built within Docker Desktop as well as CLI with mindset of Shift-Left approach.It lies on the top of the Docker ecosystem and helps developers to find container image vulnerabilities at the time of image build,thus helps organisation to ship secure entire supply chain.Now one might be confused is Docker-Scout another CNAPP tool? As per [official documentation](https://docs.docker.com/scout/),it uses SBOM(Software Bill of Material) with 17+ advisory Databases to analyze and scan images with real time CVEs updates.
+Docker Scout is a container image scanning tool built within Docker Desktop as well as CLI with mindset of Shift-Left approach.It lies on the top of the Docker ecosystem and helps developers to find container image vulnerabilities at the time of image build,thus helps organisation to ship secure entire supply chain.Now one might be confused is that Docker-Scout another CNAPP tool? As per [official documentation](https://docs.docker.com/scout/),it uses SBOM(Software Bill of Material) with 17+ advisory Databases to analyze and scan images with real time CVEs updates.
 
 Now let's see how we can integrate with [Azure Container Registry](https://learn.microsoft.com/en-us/azure/container-registry/) to scan real time image.
 
@@ -34,11 +34,11 @@ Now let's see how we can integrate with [Azure Container Registry](https://learn
 9. Locally Docker Installed, if using Laptop CLI
 
 **LAB**
-In this lab I have take [OWASP Juice Shop App](https://github.com/juice-shop/juice-shop) as container image to scan with Docker Scout.
+In this lab I have taken [OWASP Juice Shop App](https://github.com/juice-shop/juice-shop) as container image to scan with Docker Scout.
 
 ## Azure Container Registry(Azure portal)
 
-* Go to Azure Portal and search for container Registry and create one.Just for testing I have allowed all public network access to registry from Networking blade,but in production use private N/W
+* Go to Azure Portal and search for container Registry and create one.Just for testing I have allowed all public network access to registry from Networking blade,but in the production use private N/W
 ![image](https://res.cloudinary.com/hugs4bugs/image/upload/v1703497968/hugs4bugs/dockerscout/IMG_6067_ppa5qu.jpg)
 
 * After successful ACR creation, you'll get unique login server
@@ -61,13 +61,12 @@ You will see OWASP Juice Shop application can be accessible over port 3000. This
 
 ![Local APp](https://res.cloudinary.com/hugs4bugs/image/upload/v1703499102/hugs4bugs/dockerscout/jshop_sk06vw.jpg)
 
-* Now tag this image and push it to ACR
-for tag use following command 
+* Now tag this image and push it to ACR using following command 
 
 ```
  docker tag bkimminich/juice-shop dockerscoutshubhendu.azurecr.io/owasp:v1
 ```
-Replace your my loginserver with your own 
+Replace  my loginserver with yours.
 
 * Push it to ACR 
 
@@ -95,11 +94,11 @@ after that, you will get ARM template to deploy, basically this ARM template wil
 ![image](https://res.cloudinary.com/hugs4bugs/image/upload/v1703500699/hugs4bugs/dockerscout/azureee_q2nde4.jpg)
 
 Make sure to deploy Docker Scout resources to the same resource group as the registry.Then review and create.
-After successful deployment go to your ACR--> Tokens from Repository Permission blade and copy token, then generate password. You can set password expiration date too. But remember to copy and save password locally, once window is close same password can't be retrived. You need to regenrate.
+After successful deployment go to your ACR--> Tokens from Repository Permission blade and copy token, then generate password. You can set password expiration date too. But remember to copy and save password locally, once window is close same password can't be retrived. You need to regenerate.
 
 ![Image](https://res.cloudinary.com/hugs4bugs/image/upload/v1703501159/hugs4bugs/dockerscout/IMG_6071_jqu7is.jpg)
 
-Same Token/password put into Docker Scout Registry Token blade and click on enable integration.
+Copy the same Token/password put into Docker Scout Registry Token blade and click on enable integration.
 
 ![image](https://res.cloudinary.com/hugs4bugs/image/upload/v1703501288/hugs4bugs/dockerscout/rtt_tk7vne.jpg)
 
@@ -116,12 +115,12 @@ Jump over image blade,there our ACR image is scanned with list of vulnerabilitie
 Jump over Vulnerabilites blade for more details 
 ![image](https://res.cloudinary.com/hugs4bugs/image/upload/v1703501772/hugs4bugs/dockerscout/dscoutvlncve_u7trma.jpg)
 
-To mitigate vulnerabilities jump to patch blade and follow the patch released by specific vendor.
+To mitigate vulnerabilities, jump to patch blade and follow the patch released by specific vendor.
 ![image](https://res.cloudinary.com/hugs4bugs/image/upload/v1703502034/hugs4bugs/dockerscout/dscoutpath_tvzbfg.jpg)
 
 We can check all centralised details from overview blade too.
 ![image](https://res.cloudinary.com/hugs4bugs/image/upload/v1703502220/hugs4bugs/dockerscout/ov_gzscav.jpg)
 
-and we can deploy our own custom policies to set rules from Ploicies blade.
+and we can deploy our own custom policies from Ploicies blade to set rules.
 
 Thanks for reading blog, keep troubleshooting!
