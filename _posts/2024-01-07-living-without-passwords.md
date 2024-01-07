@@ -2,7 +2,7 @@
 layout: post
 title: Live without passwords 
 subtitle: FIDO 2.0
-description: This is curated list of awesome Security Analyst tool used by SOC/Security Analyst.
+description: This is FIDO 2 Protocol which helps organisation,end users to adopt passwordless mindset with passkeys.
 image: https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg
 optimized_image: https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg
 author: Shubhendu Shubham
