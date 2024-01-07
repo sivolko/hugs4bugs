@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "Live without passwords",
+      "tags"     : "Cyber Security and Tools",
+      "categories" : "security",
+      "url"      : "/living-without-passwords/",
+      "date"     : "01/07/2024"
+    } ,
+  
+    {
       "title"    : "How to integrate Docker Scout with Azure Container Registry",
       "tags"     : "Cyber Security and Container",
       "categories" : "security",

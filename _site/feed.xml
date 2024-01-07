@@ -5,9 +5,23 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 26 Dec 2023 03:59:06 +0000</pubDate>
-    <lastBuildDate>Tue, 26 Dec 2023 03:59:06 +0000</lastBuildDate>
+    <pubDate>Sun, 07 Jan 2024 17:18:57 +0000</pubDate>
+    <lastBuildDate>Sun, 07 Jan 2024 17:18:57 +0000</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
+    
+      <item>
+        <title>Live without passwords</title>
+        <description>&lt;p&gt;Before starting, let’s quickly recall what’s &lt;strong&gt;Password&lt;/strong&gt;? Can we consider any sets of characters as password?&lt;/p&gt; &lt;p&gt;Well in the layman word answer is “YES”, untill those are secret to you.Again the matter of choice is completely on enduser, how strong one sets the password.That’s why instead of simple dictionary words, it’s advisable to use Passpharse like Y0urP@sswrd@7856.But we often forget these complex alpha-numeric passwords easily. Sometimes we do use secrets Manager tools like PassKey to store our credentials.&lt;/p&gt; &lt;p&gt;But the challenges aries, when our system get compromised or we lost passwords for secret managers.&lt;/p&gt; &lt;p&gt;Now here comes the solution as...</description>
+        <pubDate>Sun, 07 Jan 2024 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/living-without-passwords/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/living-without-passwords/</guid>
+        
+        <category>Cyber Security</category>
+        
+        <category>Tools</category>
+        
+        <category>security</category>
+      </item>
     
       <item>
         <title>How to integrate Docker Scout with Azure Container Registry</title>
@@ -499,21 +513,6 @@
         <category>system Admin</category>
         
         <category>linux</category>
-      </item>
-    
-      <item>
-        <title>Azure Networking 101</title>
-        <description>
-</description>
-        <pubDate>Tue, 01 Dec 2020 12:26:40 +0000</pubDate>
-        <link>https://hugs4bugs.me/azure-networking-101/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/azure-networking-101/</guid>
-        
-        <category>docker</category>
-        
-        <category>devops</category>
-        
-        <category>azure</category>
       </item>
     
   </channel>
