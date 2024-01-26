@@ -17,19 +17,19 @@
     
     
 
-    <title>How to install ThreatMapper in Kali Linux? | hugs4bugs</title>
-    <meta name="description" content="This is to install Open source CNAPP tool Threat Mapper in Kali Machine">
+    <title>Install Kali-Purple tools on top of Normal Kali | hugs4bugs</title>
+    <meta name="description" content="This post is all about how to install kali purple SOC out-of-the box tools on the top of the existing kali machine.">
     
-    <meta name="keywords" content="Cyber Security, Threat Intelligence">
+    <meta name="keywords" content="Cyber Security, Tools">
     
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="How to install ThreatMapper in Kali Linux? | hugs4bugs">
-    <meta name="twitter:description" content="This is to install Open source CNAPP tool Threat Mapper in Kali Machine">
+    <meta name="twitter:title" content="Install Kali-Purple tools on top of Normal Kali | hugs4bugs">
+    <meta name="twitter:description" content="This post is all about how to install kali purple SOC out-of-the box tools on the top of the existing kali machine.">
 
     
-    <meta property="twitter:image" content="https://assets-global.website-files.com/63eaa07bbe370228bab003ea/644292bf096fd43dfd6532d4_image2-p-800.png">
+    <meta property="twitter:image" content="https://www.kali.org/blog/kali-linux-2023-1-release/images/kali-purple-icon.svg">
     
 
     
@@ -37,10 +37,10 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="https://hugs4bugs.me/How-to-install-threatmapper-in-kali-linux/">
-    <meta property="og:title" content="How to install ThreatMapper in Kali Linux? | hugs4bugs">
-    <meta property="og:image" content="https://assets-global.website-files.com/63eaa07bbe370228bab003ea/644292bf096fd43dfd6532d4_image2-p-800.png">
-    <meta property="og:description" content="This is to install Open source CNAPP tool Threat Mapper in Kali Machine">
+    <meta property="og:url" content="https://hugs4bugs.me/how-to-install-kali-purple-SOC-tools-on-top-of-existing-kali-machine/">
+    <meta property="og:title" content="Install Kali-Purple tools on top of Normal Kali | hugs4bugs">
+    <meta property="og:image" content="https://www.kali.org/blog/kali-linux-2023-1-release/images/kali-purple-icon.svg">
+    <meta property="og:description" content="This post is all about how to install kali purple SOC out-of-the box tools on the top of the existing kali machine.">
     <meta property="og:site_name" content="hugs4bugs">
 
     <!-- Favicon -->
@@ -76,7 +76,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="canonical" href="https://hugs4bugs.me/How-to-install-threatmapper-in-kali-linux/">
+    <link rel="canonical" href="https://hugs4bugs.me/how-to-install-kali-purple-SOC-tools-on-top-of-existing-kali-machine/">
     <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
         href="https://hugs4bugs.me/feed.xml" />
     <link rel='manifest' href='../manifest.json'>
@@ -296,22 +296,22 @@
                 <p class="post-info">
                     
                         <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="2023-12-17T00:00:00+00:00">
+                        <time class="date" datetime="2024-01-26T00:00:00+00:00">
                             
 
 
-December 17, 2023
+January 26, 2024
 
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>3 min to read</span>
+                    <span>1 min to read</span>
                 </p>
-                <h1 class="post-title">How to install ThreatMapper in Kali Linux?</h1>
-                <p class="post-subtitle">One of the best CNAPP</p>
+                <h1 class="post-title">Install Kali-Purple tools on top of Normal Kali</h1>
+                <p class="post-subtitle">SOC OOTB</p>
 
                 
-                    <img src="https://assets-global.website-files.com/63eaa07bbe370228bab003ea/644292bf096fd43dfd6532d4_image2-p-800.png" alt="Featured image" class="post-cover">
+                    <img src="https://www.kali.org/blog/kali-linux-2023-1-release/images/kali-purple-icon.svg" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
@@ -321,150 +321,71 @@ December 17, 2023
                 <!-- Add your table of contents here -->
 
 
-                <p>Before starting, let’s understand a few terms,what is CNAPP?
-CNAPP aka cloud Native Application Protection Platform is all-in one cloud-native software platform that simplifies DevSecops practices.This term <strong>CNAPP was orignally coined by Gartner in 2021</strong> CNAPPs make it simpler to embed security into the application lifecycle while providing superior protection for cloud workloads and data. A few core features of CNAPP are:-</p>
-
+                <p>When Kali org announced Kali-purple on the occassion of 10th anniversary,it was move from offensive security to defensive security.
+It announced with couple of interesting features viz:-</p>
 <ol>
-  <li>No Vendor Locking, with multi cloud support</li>
-  <li>TI(Threat Intelligence)integration</li>
-  <li>Shifted Left DevOps Security Management</li>
-  <li>Centralised Compliance and Permissions</li>
-  <li>Comprehensive cloud workload protection</li>
+  <li>SOC out of the box</li>
+  <li>Security control design and testing</li>
+  <li>Protection of small &amp; Medium size environment</li>
 </ol>
 
-<p>Now let’s understand briefly what is <strong>ThreatMapper</strong>?</p>
+<p>Refer official docs for more <a href="https://www.kali.org/blog/kali-linux-2023-1-release/">Kali Purple Official</a></p>
 
-<p>ThreatMapper is an opensource CNAPP version of ThreatStryker, developed by <a href="https://www.deepfence.io/threatmapper">Deepfence</a>.It gives both agent and agentless based scanning options.</p>
+<p>Main interesting feature of Kali-purple is Tools are structured upon <a href="https://www.nist.gov/cyberframework">NIST Framework</a> viz</p>
+<ul>
+  <li>Identify</li>
+  <li>Protect</li>
+  <li>Detect</li>
+  <li>Respond</li>
+  <li>Recover</li>
+</ul>
 
-<p><strong>Components</strong>:-
-ThreatMapper consists of 2 components:-</p>
-<ol>
-  <li>ThreatMapper Console : It integrates with Infrastructure API to scan &amp; detect config errors, compliance posture with the help of data collected from sensors. It generated SBOMs to find vulnerabilities.</li>
-  <li>ThreatMapper Sensors: These sensors support different types of platforms like K8S, Docker, Bare Metal, AWS fargate.</li>
-</ol>
+<p>Suppose you already have Kali machine like me and wanna try kali purple specific tools or all SOC OOTB tools here comes commands :-</p>
 
-<p>Architecture :-</p>
+<p>step 1: Update repository</p>
 
-<p><img src="https://community.deepfence.io/threatmapper/assets/images/threatmapper-components-5df1ba6044bd031a7f541358814bb9ed.jpg" alt="Image source Deepfence!" title="Image source Deepfence" /></p>
-
-<p><strong>Installation</strong></p>
-
-<p>For prerequisite please visit offical documentation by <a href="https://community.deepfence.io/threatmapper/docs/console/requirements/">Deepfence</a></p>
-
-<p>In this blog I’m referring official (GitHub Repo](https://github.com/deepfence/ThreatMapper)</p>
-
-<p><strong>Management Console Installation</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Docker installation process for ThreatMapper Management Console
-
-wget https://github.com/deepfence/ThreatMapper/raw/release-2.1/deployment-scripts/docker-compose.yml
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo apt update 
 </code></pre></div></div>
-<p>Execute the following command to install and start the latest build of the Console</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker compose up -d
+<p>step 2: Upgrade system</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo apt full-upgrade -y 
 </code></pre></div></div>
-<p>Now Let me run command <strong>docker ps</strong> to see all running images 
-<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702884578/hugs4bugs/Screenshot_2023-12-18_12_58_26_ow04dq.png" alt="Image" title="Docker Image" /></p>
+<p>step 3: To remove unnecessary lib installed during upgradation</p>
 
-<p>Now Find my local IP using ‘ifconfig’ command in linux terminal and paste IP address in browser, default deepfence login/signup page will pop-up click on registration for first time user.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo apt autoremove
+</code></pre></div></div>
+<p>suppose you want to install specific tool, then run single command viz</p>
 
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702884832/hugs4bugs/login_mwfroo.jpg" alt="Default" /></p>
+<p>step 4: specific tool</p>
 
-<p>Registration page <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702884913/hugs4bugs/reg_hbppbs.jpg" alt="Image" /></p>
-
-<p><strong>Dashboard</strong></p>
-
-<p>Default dashboard will appear and we need to add connectors</p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702885100/hugs4bugs/dashboard_r7w2uj.jpg" alt="Connector" /></p>
-
-<p><strong>Main Dashboard</strong></p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702886176/hugs4bugs/dass_opjiqk.jpg" alt="image" /></p>
-
-<p>Now I’ll connect my Azure cloud provider single subscription as data connector via Terraform.
-so let’s create a terraform basic file (yourfilename).tf</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  touch cloud-scanner.tf
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo apt install kali-tools-identify -y
 </code></pre></div></div>
 
-<p>Now paste the following command and replace it with your Azure subscription ID, ThreatMapper API, URL etc</p>
+<p>Or else if you want to install all 5 framework tools together then run following command</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> provider "azurerm" {
-  features {}
-  subscription_id = "&lt;SUBSCRIPTION_ID eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX&gt;"
-}
+<p>step 5: All 5 together</p>
 
-module "cloud-scanner_example_single-subscription" {
-  source              = "deepfence/cloud-scanner/azure//examples/single-subscription"
-  version             = "0.2.0"
-  mgmt-console-url    = "&lt;Console URL&gt; eg. XXX.XXX.XX.XXX"
-  mgmt-console-port   = "443"
-  deepfence-key       = "&lt;Deepfence-key&gt; eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
-  name                = "deepfence-cloud-scanner"
-  image               = "quay.io/deepfenceio/cloud-scanner:2.0.1"
-}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo apt install kali-tools-identify kali-tools-protect kali-tools-detect kali-tools-respopnd kali-tools-recover -y
 </code></pre></div></div>
-<p>Then initalise terraform inside directory using command</p>
+<p>After all these tools installation your kali menu will be same like previous</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  terraform init
+<p><img src="https://pbs.twimg.com/media/GEobUi3a4AA0AQq?format=jpg&amp;name=900x900" alt="image" /></p>
+
+<p>If you want to add those framework tools into kali menu then reinstall kali menu running this command</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo apt install --reinstall kali-menu 
 </code></pre></div></div>
+<p>Then restart your system using command or GUI method</p>
 
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702886516/hugs4bugs/tff_ithxuc.png" alt="image" /></p>
-
-<p>Then run command</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  terraform plan
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo systemctl restart
 </code></pre></div></div>
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702887309/hugs4bugs/tf_bjb2l8.png" alt="image" /></p>
+<p>Afterwards those framework tools will be added</p>
 
-<p>then run command</p>
+<p><img src="https://pbs.twimg.com/media/GEobVF_a4AAA3e0?format=jpg&amp;name=900x900" alt="kali-purple tools" /></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> terraform apply
-</code></pre></div></div>
-<p>to remove scan and connection, run command ‘terraform destroy’</p>
+<p>Thanks for reading blog</p>
 
-<h2 id="linux-host">Linux Host</h2>
-
-<p>Now let’s scan my own local machine which is runnig as Kali linux as bare metal Linux host.For this we have to install sensors. follow <a href="https://community.deepfence.io/threatmapper/docs/v2.0/sensors/docker/">official page</a> for information</p>
-
-<p>commands</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker run -dit \
-    --cpus=".2" \
-    --name=deepfence-agent \
-    --restart on-failure \
-    --pid=host \
-    --net=host \
-    --log-driver json-file \
-    --log-opt max-size=50m \
-    --privileged=true \
-    -v /sys/kernel/debug:/sys/kernel/debug:rw \
-    -v /var/log/fenced \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -v /:/fenced/mnt/host/:ro \
-    -e USER_DEFINED_TAGS="" \
-    -e MGMT_CONSOLE_URL="---CONSOLE-IP---" \
-    -e MGMT_CONSOLE_PORT="443" \
-    -e DEEPFENCE_KEY="---DEEPFENCE-API-KEY---" \
-    deepfenceio/deepfence_agent_ce:2.0.1
-</code></pre></div></div>
-<p>After this there will be change in connected Devices –&gt; visit Topology and Hosts</p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702888100/hugs4bugs/kali_baflg5.jpg" alt="image" /></p>
-
-<p>Now there is no scans <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702888251/hugs4bugs/noscan_duznsu.jpg" alt="image" />initiated,let’s start quicks Vulnerability scan from top left <strong>Action</strong> button.</p>
-
-<p>Here I’m doing only OS SCAN
-<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702888469/hugs4bugs/sp_dewc0c.jpg" alt="Scan" /></p>
-
-<p>Meanwhile we can check same from Vulnerability blade from right side.</p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1702888658/hugs4bugs/vb_pawxws.jpg" alt="image" /></p>
-
-<p>Remarks :-</p>
-
-<p>Doing bare metal/Host OS Vulnerability scan, there might be spikes in Memory and CPU usages.</p>
-
-<p>Thanks for reading blog, keep troubleshooting</p>
+<p>Now keep learning,keep troubleshooting  #troubleshooterclub</p>
 
 
                 <!-- Pagination links -->
@@ -480,29 +401,29 @@ module "cloud-scanner_example_single-subscription" {
                         
                         
                             <li>
-                                <a href="/tools-that-SOC-security-analys-should-know/">
+                                <a href="/what-is-chat-gpt/">
                                     
-                                        <img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://images.pexels.com/photos/7108/notebook-computer-chill-relax.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
                                     
-                                    <h3>Tools that SOC/Security Analyst must know</h3>
+                                    <h3>What is chatGpt? How to use it?</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/how-to-integrate-docker-scout-with-azure-container-registry/">
+                                <a href="/waf-vs-firewall/">
                                     
-                                        <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703441731/hugs4bugs/01-primary-blue-docker-logo_rl8tst.png">
+                                        <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
                                     
-                                    <h3>How to integrate Docker Scout with Azure Container Registry</h3>
+                                    <h3>WAF vs Firewall</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/kali-linux-vs-parrot-linux/">
+                                <a href="/how-to-manage-azure-active-directory-objects/">
                                     
-                                        <img src="https://cdn.pixabay.com/photo/2018/04/22/22/57/hacker-3342696_960_720.jpg">
+                                        <img src="https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
                                     
-                                    <h3>Kali Linux vs Parrot OS</h3>
+                                    <h3>How to create & Manage users and Groups within Azure AD.</h3>
                                 </a>
                             </li>
                         
@@ -514,7 +435,7 @@ module "cloud-scanner_example_single-subscription" {
 
         <!-- Add time bar only for pages without pagination -->
         
-            <div class="time-bar" data-minutes="3">
+            <div class="time-bar" data-minutes="1">
     <span class="time-completed"></span>
     <span class="time-remaining"></span>
     <div class="bar">
@@ -534,13 +455,13 @@ module "cloud-scanner_example_single-subscription" {
         </div>
     </div>
     
-    <a href="/tools-that-SOC-security-analys-should-know/" class="post-preview">
+    <a href="/storing-and-managing-secrets-using-azure-vault/" class="post-preview">
         <div class="image">
             
-                <img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80">
             
         </div>
-        <h3 class="title">Tools that SOC/Security Analyst must know</h3>
+        <h3 class="title">Managing and Storing Secrets:Azure Vault.🙆</h3>
     </a>
 </div>
 
@@ -557,7 +478,7 @@ module "cloud-scanner_example_single-subscription" {
         <section class="share">
     <h3>Share</h3>
     <a aria-label="Share on Twitter"
-        href="https://twitter.com/intent/tweet?text=&quot;This is to install Open source CNAPP tool Threat Mapper in Kali Machine&quot;%20https://hugs4bugs.me/How-to-install-threatmapper-in-kali-linux/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,Threat Intelligence"
+        href="https://twitter.com/intent/tweet?text=&quot;This post is all about how to install kali purple SOC out-of-the box tools on the top of the existing kali machine.&quot;%20https://hugs4bugs.me/how-to-install-kali-purple-SOC-tools-on-top-of-existing-kali-machine/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,Tools"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -565,7 +486,7 @@ module "cloud-scanner_example_single-subscription" {
         </svg>
     </a>
     <a aria-label="Share on WhatsApp"
-        href="https://twitter.com/intent/tweet?text=&quot;This is to install Open source CNAPP tool Threat Mapper in Kali Machine&quot;%20https://hugs4bugs.me/How-to-install-threatmapper-in-kali-linux/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,Threat Intelligence"
+        href="https://twitter.com/intent/tweet?text=&quot;This post is all about how to install kali purple SOC out-of-the box tools on the top of the existing kali machine.&quot;%20https://hugs4bugs.me/how-to-install-kali-purple-SOC-tools-on-top-of-existing-kali-machine/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,Tools"
         onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -573,7 +494,7 @@ module "cloud-scanner_example_single-subscription" {
         </svg>
     </a>
     <a aria-label="Share on Facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/How-to-install-threatmapper-in-kali-linux/"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/how-to-install-kali-purple-SOC-tools-on-top-of-existing-kali-machine/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
         title="Share on Facebook">
         <svg class="icon icon-facebook">
@@ -663,7 +584,7 @@ module "cloud-scanner_example_single-subscription" {
         disqus_loaded = true;
         var disqus_shortname = 'hugs4bugs';
         var disqus_title = '';
-        var disqus_url = '/How-to-install-threatmapper-in-kali-linux/';
+        var disqus_url = '/how-to-install-kali-purple-SOC-tools-on-top-of-existing-kali-machine/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -828,161 +749,82 @@ module "cloud-scanner_example_single-subscription" {
         {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
-            "name": "How to install ThreatMapper in Kali Linux?",
-            "headline": "One of the best CNAPP",
-            "description": "This is to install Open source CNAPP tool Threat Mapper in Kali Machine",
-            "image": "https://assets-global.website-files.com/63eaa07bbe370228bab003ea/644292bf096fd43dfd6532d4_image2-p-800.png",
-            "url": "https://hugs4bugs.me/How-to-install-threatmapper-in-kali-linux/",
-            "articleBody": "Before starting, let’s understand a few terms,what is CNAPP?
-CNAPP aka cloud Native Application Protection Platform is all-in one cloud-native software platform that simplifies DevSecops practices.This term CNAPP was orignally coined by Gartner in 2021 CNAPPs make it simpler to embed security into the application lifecycle while providing superior protection for cloud workloads and data. A few core features of CNAPP are:-
+            "name": "Install Kali-Purple tools on top of Normal Kali",
+            "headline": "SOC OOTB",
+            "description": "This post is all about how to install kali purple SOC out-of-the box tools on the top of the existing kali machine.",
+            "image": "https://www.kali.org/blog/kali-linux-2023-1-release/images/kali-purple-icon.svg",
+            "url": "https://hugs4bugs.me/how-to-install-kali-purple-SOC-tools-on-top-of-existing-kali-machine/",
+            "articleBody": "When Kali org announced Kali-purple on the occassion of 10th anniversary,it was move from offensive security to defensive security.
+It announced with couple of interesting features viz:-
 
+  SOC out of the box
+  Security control design and testing
+  Protection of small &amp;amp; Medium size environment
 
-  No Vendor Locking, with multi cloud support
-  TI(Threat Intelligence)integration
-  Shifted Left DevOps Security Management
-  Centralised Compliance and Permissions
-  Comprehensive cloud workload protection
 
+Refer official docs for more Kali Purple Official
 
-Now let’s understand briefly what is ThreatMapper?
+Main interesting feature of Kali-purple is Tools are structured upon NIST Framework viz
 
-ThreatMapper is an opensource CNAPP version of ThreatStryker, developed by Deepfence.It gives both agent and agentless based scanning options.
+  Identify
+  Protect
+  Detect
+  Respond
+  Recover
 
-Components:-
-ThreatMapper consists of 2 components:-
 
-  ThreatMapper Console : It integrates with Infrastructure API to scan &amp;amp; detect config errors, compliance posture with the help of data collected from sensors. It generated SBOMs to find vulnerabilities.
-  ThreatMapper Sensors: These sensors support different types of platforms like K8S, Docker, Bare Metal, AWS fargate.
+Suppose you already have Kali machine like me and wanna try kali purple specific tools or all SOC OOTB tools here comes commands :-
 
+step 1: Update repository
 
-Architecture :-
+ sudo apt update 
 
+step 2: Upgrade system
 
+ sudo apt full-upgrade -y 
 
-Installation
+step 3: To remove unnecessary lib installed during upgradation
 
-For prerequisite please visit offical documentation by Deepfence
+ sudo apt autoremove
 
-In this blog I’m referring official (GitHub Repo](https://github.com/deepfence/ThreatMapper)
+suppose you want to install specific tool, then run single command viz
 
-Management Console Installation
-# Docker installation process for ThreatMapper Management Console
+step 4: specific tool
 
-wget https://github.com/deepfence/ThreatMapper/raw/release-2.1/deployment-scripts/docker-compose.yml
+ sudo apt install kali-tools-identify -y
 
-Execute the following command to install and start the latest build of the Console
- docker compose up -d
 
-Now Let me run command docker ps to see all running images 
+Or else if you want to install all 5 framework tools together then run following command
 
+step 5: All 5 together
 
-Now Find my local IP using ‘ifconfig’ command in linux terminal and paste IP address in browser, default deepfence login/signup page will pop-up click on registration for first time user.
+ sudo apt install kali-tools-identify kali-tools-protect kali-tools-detect kali-tools-respopnd kali-tools-recover -y
 
+After all these tools installation your kali menu will be same like previous
 
 
-Registration page 
 
-Dashboard
+If you want to add those framework tools into kali menu then reinstall kali menu running this command
 
-Default dashboard will appear and we need to add connectors
+ sudo apt install --reinstall kali-menu 
 
+Then restart your system using command or GUI method
 
+ sudo systemctl restart
 
-Main Dashboard
+Afterwards those framework tools will be added
 
 
 
-Now I’ll connect my Azure cloud provider single subscription as data connector via Terraform.
-so let’s create a terraform basic file (yourfilename).tf
+Thanks for reading blog
 
-  touch cloud-scanner.tf
-
-
-Now paste the following command and replace it with your Azure subscription ID, ThreatMapper API, URL etc
-
- provider &quot;azurerm&quot; {
-  features {}
-  subscription_id = &quot;&amp;lt;SUBSCRIPTION_ID eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX&amp;gt;&quot;
-}
-
-module &quot;cloud-scanner_example_single-subscription&quot; {
-  source              = &quot;deepfence/cloud-scanner/azure//examples/single-subscription&quot;
-  version             = &quot;0.2.0&quot;
-  mgmt-console-url    = &quot;&amp;lt;Console URL&amp;gt; eg. XXX.XXX.XX.XXX&quot;
-  mgmt-console-port   = &quot;443&quot;
-  deepfence-key       = &quot;&amp;lt;Deepfence-key&amp;gt; eg. XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX&quot;
-  name                = &quot;deepfence-cloud-scanner&quot;
-  image               = &quot;quay.io/deepfenceio/cloud-scanner:2.0.1&quot;
-}
-
-Then initalise terraform inside directory using command
-
-  terraform init
-
-
-
-
-Then run command
-
-  terraform plan
-
-
-
-then run command
-
- terraform apply
-
-to remove scan and connection, run command ‘terraform destroy’
-
-Linux Host
-
-Now let’s scan my own local machine which is runnig as Kali linux as bare metal Linux host.For this we have to install sensors. follow official page for information
-
-commands
-
- docker run -dit \
-    --cpus=&quot;.2&quot; \
-    --name=deepfence-agent \
-    --restart on-failure \
-    --pid=host \
-    --net=host \
-    --log-driver json-file \
-    --log-opt max-size=50m \
-    --privileged=true \
-    -v /sys/kernel/debug:/sys/kernel/debug:rw \
-    -v /var/log/fenced \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -v /:/fenced/mnt/host/:ro \
-    -e USER_DEFINED_TAGS=&quot;&quot; \
-    -e MGMT_CONSOLE_URL=&quot;---CONSOLE-IP---&quot; \
-    -e MGMT_CONSOLE_PORT=&quot;443&quot; \
-    -e DEEPFENCE_KEY=&quot;---DEEPFENCE-API-KEY---&quot; \
-    deepfenceio/deepfence_agent_ce:2.0.1
-
-After this there will be change in connected Devices –&amp;gt; visit Topology and Hosts
-
-
-
-Now there is no scans initiated,let’s start quicks Vulnerability scan from top left Action button.
-
-Here I’m doing only OS SCAN
-
-
-Meanwhile we can check same from Vulnerability blade from right side.
-
-
-
-Remarks :-
-
-Doing bare metal/Host OS Vulnerability scan, there might be spikes in Memory and CPU usages.
-
-Thanks for reading blog, keep troubleshooting
+Now keep learning,keep troubleshooting  #troubleshooterclub
 ",
-            "wordcount": "637",
+            "wordcount": "293",
             "inLanguage": "en",
-            "dateCreated": "2023-12-17/",
-            "datePublished": "2023-12-17/",
-            "dateModified": "2023-12-17/",
+            "dateCreated": "2024-01-26/",
+            "datePublished": "2024-01-26/",
+            "dateModified": "2024-01-26/",
             "author": {
                 "@type": "Person",
                 "name": "Shubhendu",
@@ -1009,7 +851,7 @@ Thanks for reading blog, keep troubleshooting
             "mainEntityOfPage": "True",
             "genre": "security",
             "articleSection": "security",
-            "keywords": ["Cyber Security","Threat Intelligence"]
+            "keywords": ["Cyber Security","Tools"]
         }
         </script>
     </body>

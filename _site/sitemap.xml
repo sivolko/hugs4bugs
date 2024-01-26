@@ -211,6 +211,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/how-to-install-kali-purple-SOC-tools-on-top-of-existing-kali-machine/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2024-01-26</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/living-without-passwords/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>

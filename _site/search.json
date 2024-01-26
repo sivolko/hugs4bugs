@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "Install Kali-Purple tools on top of Normal Kali",
+      "tags"     : "Cyber Security and Tools",
+      "categories" : "security",
+      "url"      : "/how-to-install-kali-purple-SOC-tools-on-top-of-existing-kali-machine/",
+      "date"     : "01/26/2024"
+    } ,
+  
+    {
       "title"    : "Live without passwords",
       "tags"     : "Cyber Security and Tools",
       "categories" : "security",
