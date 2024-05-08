@@ -17,19 +17,19 @@
     
     
 
-    <title>Fundamentals of Network Security.☠️ | hugs4bugs</title>
-    <meta name="description" content="This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of ne...">
+    <title>Automate Multiple Login failure alerts | hugs4bugs</title>
+    <meta name="description" content="In this section we'll cover up basic but important challange faced by SOC analyst bu automating the multiple login failure alerts response">
     
-    <meta name="keywords" content="networking, security">
+    <meta name="keywords" content="Cyber Security, BlueTeam, SOC">
     
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Fundamentals of Network Security.☠️ | hugs4bugs">
-    <meta name="twitter:description" content="This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of ne...">
+    <meta name="twitter:title" content="Automate Multiple Login failure alerts | hugs4bugs">
+    <meta name="twitter:description" content="In this section we'll cover up basic but important challange faced by SOC analyst bu automating the multiple login failure alerts response">
 
     
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80">
+    <meta property="twitter:image" content="https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg">
     
 
     
@@ -37,10 +37,10 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="https://hugs4bugs.me/Fundamentals-of-Network-security/">
-    <meta property="og:title" content="Fundamentals of Network Security.☠️ | hugs4bugs">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80">
-    <meta property="og:description" content="This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of ne...">
+    <meta property="og:url" content="https://hugs4bugs.me/automate-multiple-loginfailure-alerts-response/">
+    <meta property="og:title" content="Automate Multiple Login failure alerts | hugs4bugs">
+    <meta property="og:image" content="https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg">
+    <meta property="og:description" content="In this section we'll cover up basic but important challange faced by SOC analyst bu automating the multiple login failure alerts response">
     <meta property="og:site_name" content="hugs4bugs">
 
     <!-- Favicon -->
@@ -76,7 +76,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="canonical" href="https://hugs4bugs.me/Fundamentals-of-Network-security/">
+    <link rel="canonical" href="https://hugs4bugs.me/automate-multiple-loginfailure-alerts-response/">
     <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
         href="https://hugs4bugs.me/feed.xml" />
     <link rel='manifest' href='../manifest.json'>
@@ -296,22 +296,22 @@
                 <p class="post-info">
                     
                         <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="2021-05-15T23:04:08+00:00">
+                        <time class="date" datetime="2024-05-08T00:00:00+00:00">
                             
 
 
-May 15, 2021
+May 8, 2024
 
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>4 min to read</span>
+                    <span>1 min to read</span>
                 </p>
-                <h1 class="post-title">Fundamentals of Network Security.☠️</h1>
-                <p class="post-subtitle">Network Security 101.</p>
+                <h1 class="post-title">Automate Multiple Login failure alerts</h1>
+                <p class="post-subtitle">Reduce SOC analyst burnout</p>
 
                 
-                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="Featured image" class="post-cover">
+                    <img src="https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
@@ -321,149 +321,42 @@ May 15, 2021
                 <!-- Add your table of contents here -->
 
 
-                <p>Either one is taking role as an azure developer,solution architech or administrator, all requires basic of the foundation of the networking.</p>
+                <p>MTTD (Mean Time To Detect) and MTTR (Mean Time To Response) are the two crucial factor in Defensive side of hashtag#cybersecurity
+Major challenge for Blue team is resource burnout and manual investigation on repetitive task which increase average MTTR .</p>
 
-<p>In this blog, we’ll learn the client-server network model, difference b/w authentication and authorization, firewall types and many more related topics.</p>
+<p>Let’s understand use case to orchestrate security flow 
+use Case :- Automate Multiple login failure alerts response</p>
 
-<h1 id="network-clients">Network Clients</h1>
+<p>Workflow link :- 
+<img src="https://raw.githubusercontent.com/sivolko/Awesome-Security-Analyst-tools/main/security-automation/use-cases/image.png" alt="workflow" /></p>
 
-<p>According to traditionnal sense, a network client is a lightweight computer/device that can’t run program on its own.But now-a-days the client has transformed from a simple terminal which can represent any hardware or software system that interects with services made available on a server.</p>
+<p>Here we’ll use SOAR (Security Orchestration Autoamtion and Response) to automate Multiple login failure alert response. It can be achived with the both Azure Logic &amp; Power Apps.</p>
 
-<h2 id="types-of-clients-">Types of clients:-</h2>
-
-<table>
-  <tbody>
-    <tr>
-      <td><strong>Client</strong></td>
-      <td><strong>Local storage</strong></td>
-      <td><strong>Local CPU</strong></td>
-    </tr>
-    <tr>
-      <td>Thick</td>
-      <td>Yes</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Hybrid</td>
-      <td>No</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Thin</td>
-      <td>No</td>
-      <td>No</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Thick</strong> :- It is also known as workstation,that can process and store data locally without using a server.The client’s interaction with a server is minimal and might only be to store data on a shared netowork drive.</p>
-
-<p><strong>Hybrid</strong> :- This is a combination of both thick and thin clients.A hybrid client can do limited local data processing but has no local storage capability.These device renders content and stores the result on the server as same as the automated rating system.</p>
-
-<p><strong>Thin</strong> :- Historically thin client was a terminal. A thin client can’t process or store data locally.It depends upon the server to provide computaional power and storage.In modern era thin clients are represented by web Applications that request and display information from server regardless of the device they’re running on.</p>
-
-<h2 id="servers">Servers</h2>
-
-<p>In layman word server is an array of switches,routers,load balancers and firewalls which usually runs on server software eg:- windows Server 2019, Linux Server.A server’s main task is to provide services and resources to its clients. The larger the number of applications and users, the more the server is dedicated to specific purposes.</p>
-
-<p>A server’s hardware is usually a high-end computer with dozens of CPUs or cores, and vast amounts of memory.A server supports multiple clients, and a client can connect to and use the services from multiple servers.</p>
-
-<p>Eg:- Application can use</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>media server :- displays images &amp; Sound
-Database server :- to pull data to display
-</code></pre></div></div>
-
-<p><strong>Server Model</strong></p>
-
-<p>All client-server models are identified on the basis of how the client and server software communicates and how the server shares data and resources with clients.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Types of Server Model
-
-1. Request-response
-2. Peer-to-peer
-3. Publish-subscribe
-</code></pre></div></div>
+<p>Steps:-</p>
 
 <ol>
-  <li>
-    <p>Request-response:- In request-response model,the client sends arequest to the server and  server carries out an activity and sends back a response. The response is either the result of a request or an acknowledgment.</p>
-  </li>
-  <li>
-    <p>Peer-to-peer:- In this model, every network device attached to the network is both a client and a server. Each client can request services (for example files) from any other device on the network and vice versa. P2P is an unstructured network suited for ad hoc usage.</p>
-  </li>
+  <li>We’ll set threashold of login failure eg- 4/5 times</li>
+  <li>When user account have multiple times failed password attemps,</li>
+  <li>Playbook will trigger an email to user asking for justification</li>
+  <li>Waits for the end user reply &amp; inform analyst</li>
+  <li>As soon as it receives response from end user, next job will start based upon reply</li>
+  <li>If user confirms genuine activities then look for justification</li>
+  <li>In case password expired/forgotten, reset password and share revised login credentials to user over mail</li>
+  <li>Incase if failed password attempts are not from end user then playbook will trigger investigation action</li>
+  <li>Fetch Incidents details from SIEM and UEBA connectors</li>
+  <li>Query will run to extract usernames, Source IP, Destination IP, Assets details</li>
+  <li>Cross verify username with existing users list in AD (Active Directory)</li>
+  <li>Check IP reputation with multiple open source IP checker. ps :- It can be automated with help of API , eg if we do use VirusTotal then Virus total API can be integrated with SOAR platform ,And in case of Microsoft Azure, Microsoft Threat Intel profile could be linked up or TAXII API</li>
+  <li>Check distance between IP in case of multiple location jump and generate location map &amp; event duration</li>
+  <li>Notify the analyst with result score</li>
+  <li>If activity is malicious then Quarantine?Block IP and user, Create ITSM ticket with defined SOP severity &amp; notify support team via email/Teams channel or slack</li>
+  <li>If it’s non malicious then close incident with false positive justification.</li>
+  <li>Stop playbook</li>
 </ol>
 
-<p>3.Publish-subscribe:-  This model is a messaging pattern, where clients subscribe to a service on the server. When a server receives a new message, it sends a response to each client that has subscribed. An RSS feed is a typical publish-subscribe type of client-server, where the user subscribes to the RSS feed. When new items appear, the user is automatically notified.</p>
+<p><a href="https://github.com/sivolko/Awesome-Security-Analyst-tools/blob/main/security-automation/use-cases/multiple-login-failure-alert-response.md">Github</a></p>
 
-<p>Types of Server</p>
-
-<ol>
-  <li>Application Server</li>
-  <li>Computing Server</li>
-  <li>Database Server</li>
-  <li>Files</li>
-  <li>Game</li>
-  <li>Mail</li>
-  <li>Media</li>
-  <li>Print</li>
-  <li>Web</li>
-</ol>
-
-<table>
-  <tbody>
-    <tr>
-      <td>Server</td>
-      <td>Purpose</td>
-      <td>Clients</td>
-    </tr>
-    <tr>
-      <td>Application</td>
-      <td>Hosts an application,which can be run through a web browser or customized client software</td>
-      <td>Any network device with access.</td>
-    </tr>
-    <tr>
-      <td>Computing</td>
-      <td>Makes available CPU and memory to the client. This type of server might be a supercomputer or mainframe.</td>
-      <td>Any networked computer that requires more CPU power and RAM to complete an activity.</td>
-    </tr>
-    <tr>
-      <td>Database</td>
-      <td>Any networked computer that requires more CPU power and RAM to complete an activity</td>
-      <td>Any form of software that requires access to structured data.</td>
-    </tr>
-    <tr>
-      <td>File</td>
-      <td>Makes available shared files and folders across a network</td>
-      <td>Any client that needs access to shared resources.</td>
-    </tr>
-    <tr>
-      <td>Game</td>
-      <td>Provisions a multiplayer game environment.</td>
-      <td>Personal computers, tablets, smartphones, or game consoles.</td>
-    </tr>
-    <tr>
-      <td>Mail</td>
-      <td>Hosts your email and makes it available across the network.</td>
-      <td>User of email applications.</td>
-    </tr>
-    <tr>
-      <td>Media</td>
-      <td>Enables media streaming of digital video or audio over a network.</td>
-      <td>Web and mobile applications.</td>
-    </tr>
-    <tr>
-      <td>Print</td>
-      <td>Shares printers over a network.</td>
-      <td>Any device that needs to print.</td>
-    </tr>
-    <tr>
-      <td>Web</td>
-      <td>Hosts webpages either on the internet or on private internal networks.</td>
-      <td>Any device with a browser.</td>
-    </tr>
-  </tbody>
-</table>
+<p>Keep Learning, Keep Troubleshooting !</p>
 
 
                 <!-- Pagination links -->
@@ -479,29 +372,29 @@ Database server :- to pull data to display
                         
                         
                             <li>
-                                <a href="/waf-vs-firewall/">
+                                <a href="/storing-and-managing-secrets-using-azure-vault/">
                                     
-                                        <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80">
                                     
-                                    <h3>WAF vs Firewall</h3>
+                                    <h3>Managing and Storing Secrets:Azure Vault.🙆</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/best-linux-cheatsheet-101/">
+                                <a href="/how-to-automate-tweets-via-github-actions/">
                                     
-                                        <img src="https://www.iihglobal.com/wp-content/uploads/2019/02/dcsad.gif">
+                                        <img src="https://images.pexels.com/photos/5744251/pexels-photo-5744251.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
                                     
-                                    <h3>Linux Cheat Sheet 101</h3>
+                                    <h3>Automate Twitter via github Actions.</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/How-to-install-threatmapper-in-kali-linux/">
+                                <a href="/Docker-101/">
                                     
-                                        <img src="https://assets-global.website-files.com/63eaa07bbe370228bab003ea/644292bf096fd43dfd6532d4_image2-p-800.png">
+                                        <img src="https://th.bing.com/th/id/Rb3e6202f5356edebd8c8205623eef0f1?rik=2tDqbcLpDFguLg&riu=http%3a%2f%2fwww.shadowandy.net%2fwp%2fwp-content%2fuploads%2fdocker.png&ehk=d2o4OLvE5SZOjrajjCgOCdzXQ9xmehUy6vTEhPPFi3c%3d&risl=&pid=ImgRaw">
                                     
-                                    <h3>How to install ThreatMapper in Kali Linux?</h3>
+                                    <h3>Docker 101</h3>
                                 </a>
                             </li>
                         
@@ -513,7 +406,7 @@ Database server :- to pull data to display
 
         <!-- Add time bar only for pages without pagination -->
         
-            <div class="time-bar" data-minutes="4">
+            <div class="time-bar" data-minutes="1">
     <span class="time-completed"></span>
     <span class="time-remaining"></span>
     <div class="bar">
@@ -533,13 +426,13 @@ Database server :- to pull data to display
         </div>
     </div>
     
-    <a href="/2021-08-2-Understanding-basics-of-security/" class="post-preview">
+    <a href="/Progressive-web-app/" class="post-preview">
         <div class="image">
             
-                <img src="https://cdn.pixabay.com/photo/2017/11/19/23/56/hacking-2964100_960_720.jpg">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
             
         </div>
-        <h3 class="title">Protection against Security threat on Azure.☠️</h3>
+        <h3 class="title">Progressive WebApp.</h3>
     </a>
 </div>
 
@@ -556,7 +449,7 @@ Database server :- to pull data to display
         <section class="share">
     <h3>Share</h3>
     <a aria-label="Share on Twitter"
-        href="https://twitter.com/intent/tweet?text=&quot;This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of networking. &quot;%20https://hugs4bugs.me/Fundamentals-of-Network-security/%20via%20&#64;myselfshubhendu&hashtags=networking,security"
+        href="https://twitter.com/intent/tweet?text=&quot;In this section we'll cover up basic but important challange faced by SOC analyst bu automating the multiple login failure alerts response&quot;%20https://hugs4bugs.me/automate-multiple-loginfailure-alerts-response/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,BlueTeam,SOC"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -564,7 +457,7 @@ Database server :- to pull data to display
         </svg>
     </a>
     <a aria-label="Share on WhatsApp"
-        href="https://twitter.com/intent/tweet?text=&quot;This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of networking. &quot;%20https://hugs4bugs.me/Fundamentals-of-Network-security/%20via%20&#64;myselfshubhendu&hashtags=networking,security"
+        href="https://twitter.com/intent/tweet?text=&quot;In this section we'll cover up basic but important challange faced by SOC analyst bu automating the multiple login failure alerts response&quot;%20https://hugs4bugs.me/automate-multiple-loginfailure-alerts-response/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,BlueTeam,SOC"
         onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -572,7 +465,7 @@ Database server :- to pull data to display
         </svg>
     </a>
     <a aria-label="Share on Facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/Fundamentals-of-Network-security/"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/automate-multiple-loginfailure-alerts-response/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
         title="Share on Facebook">
         <svg class="icon icon-facebook">
@@ -662,7 +555,7 @@ Database server :- to pull data to display
         disqus_loaded = true;
         var disqus_shortname = 'hugs4bugs';
         var disqus_title = '';
-        var disqus_url = '/Fundamentals-of-Network-security/';
+        var disqus_url = '/automate-multiple-loginfailure-alerts-response/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -827,160 +720,53 @@ Database server :- to pull data to display
         {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
-            "name": "Fundamentals of Network Security.☠️",
-            "headline": "Network Security 101.",
-            "description": "This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of networking. ",
-            "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80",
-            "url": "https://hugs4bugs.me/Fundamentals-of-Network-security/",
-            "articleBody": "Either one is taking role as an azure developer,solution architech or administrator, all requires basic of the foundation of the networking.
+            "name": "Automate Multiple Login failure alerts",
+            "headline": "Reduce SOC analyst burnout",
+            "description": "In this section we'll cover up basic but important challange faced by SOC analyst bu automating the multiple login failure alerts response",
+            "image": "https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg",
+            "url": "https://hugs4bugs.me/automate-multiple-loginfailure-alerts-response/",
+            "articleBody": "MTTD (Mean Time To Detect) and MTTR (Mean Time To Response) are the two crucial factor in Defensive side of hashtag#cybersecurity
+Major challenge for Blue team is resource burnout and manual investigation on repetitive task which increase average MTTR .
 
-In this blog, we’ll learn the client-server network model, difference b/w authentication and authorization, firewall types and many more related topics.
+Let’s understand use case to orchestrate security flow 
+use Case :- Automate Multiple login failure alerts response
 
-Network Clients
-
-According to traditionnal sense, a network client is a lightweight computer/device that can’t run program on its own.But now-a-days the client has transformed from a simple terminal which can represent any hardware or software system that interects with services made available on a server.
-
-Types of clients:-
+Workflow link :- 
 
 
-  
-    
-      Client
-      Local storage
-      Local CPU
-    
-    
-      Thick
-      Yes
-      Yes
-    
-    
-      Hybrid
-      No
-      Yes
-    
-    
-      Thin
-      No
-      No
-    
-  
+Here we’ll use SOAR (Security Orchestration Autoamtion and Response) to automate Multiple login failure alert response. It can be achived with the both Azure Logic &amp;amp; Power Apps.
+
+Steps:-
 
 
-Thick :- It is also known as workstation,that can process and store data locally without using a server.The client’s interaction with a server is minimal and might only be to store data on a shared netowork drive.
-
-Hybrid :- This is a combination of both thick and thin clients.A hybrid client can do limited local data processing but has no local storage capability.These device renders content and stores the result on the server as same as the automated rating system.
-
-Thin :- Historically thin client was a terminal. A thin client can’t process or store data locally.It depends upon the server to provide computaional power and storage.In modern era thin clients are represented by web Applications that request and display information from server regardless of the device they’re running on.
-
-Servers
-
-In layman word server is an array of switches,routers,load balancers and firewalls which usually runs on server software eg:- windows Server 2019, Linux Server.A server’s main task is to provide services and resources to its clients. The larger the number of applications and users, the more the server is dedicated to specific purposes.
-
-A server’s hardware is usually a high-end computer with dozens of CPUs or cores, and vast amounts of memory.A server supports multiple clients, and a client can connect to and use the services from multiple servers.
-
-Eg:- Application can use
-
-media server :- displays images &amp;amp; Sound
-Database server :- to pull data to display
-
-
-Server Model
-
-All client-server models are identified on the basis of how the client and server software communicates and how the server shares data and resources with clients.
-
-Types of Server Model
-
-1. Request-response
-2. Peer-to-peer
-3. Publish-subscribe
+  We’ll set threashold of login failure eg- 4/5 times
+  When user account have multiple times failed password attemps,
+  Playbook will trigger an email to user asking for justification
+  Waits for the end user reply &amp;amp; inform analyst
+  As soon as it receives response from end user, next job will start based upon reply
+  If user confirms genuine activities then look for justification
+  In case password expired/forgotten, reset password and share revised login credentials to user over mail
+  Incase if failed password attempts are not from end user then playbook will trigger investigation action
+  Fetch Incidents details from SIEM and UEBA connectors
+  Query will run to extract usernames, Source IP, Destination IP, Assets details
+  Cross verify username with existing users list in AD (Active Directory)
+  Check IP reputation with multiple open source IP checker. ps :- It can be automated with help of API , eg if we do use VirusTotal then Virus total API can be integrated with SOAR platform ,And in case of Microsoft Azure, Microsoft Threat Intel profile could be linked up or TAXII API
+  Check distance between IP in case of multiple location jump and generate location map &amp;amp; event duration
+  Notify the analyst with result score
+  If activity is malicious then Quarantine?Block IP and user, Create ITSM ticket with defined SOP severity &amp;amp; notify support team via email/Teams channel or slack
+  If it’s non malicious then close incident with false positive justification.
+  Stop playbook
 
 
+Github
 
-  
-    Request-response:- In request-response model,the client sends arequest to the server and  server carries out an activity and sends back a response. The response is either the result of a request or an acknowledgment.
-  
-  
-    Peer-to-peer:- In this model, every network device attached to the network is both a client and a server. Each client can request services (for example files) from any other device on the network and vice versa. P2P is an unstructured network suited for ad hoc usage.
-  
-
-
-3.Publish-subscribe:-  This model is a messaging pattern, where clients subscribe to a service on the server. When a server receives a new message, it sends a response to each client that has subscribed. An RSS feed is a typical publish-subscribe type of client-server, where the user subscribes to the RSS feed. When new items appear, the user is automatically notified.
-
-Types of Server
-
-
-  Application Server
-  Computing Server
-  Database Server
-  Files
-  Game
-  Mail
-  Media
-  Print
-  Web
-
-
-
-  
-    
-      Server
-      Purpose
-      Clients
-    
-    
-      Application
-      Hosts an application,which can be run through a web browser or customized client software
-      Any network device with access.
-    
-    
-      Computing
-      Makes available CPU and memory to the client. This type of server might be a supercomputer or mainframe.
-      Any networked computer that requires more CPU power and RAM to complete an activity.
-    
-    
-      Database
-      Any networked computer that requires more CPU power and RAM to complete an activity
-      Any form of software that requires access to structured data.
-    
-    
-      File
-      Makes available shared files and folders across a network
-      Any client that needs access to shared resources.
-    
-    
-      Game
-      Provisions a multiplayer game environment.
-      Personal computers, tablets, smartphones, or game consoles.
-    
-    
-      Mail
-      Hosts your email and makes it available across the network.
-      User of email applications.
-    
-    
-      Media
-      Enables media streaming of digital video or audio over a network.
-      Web and mobile applications.
-    
-    
-      Print
-      Shares printers over a network.
-      Any device that needs to print.
-    
-    
-      Web
-      Hosts webpages either on the internet or on private internal networks.
-      Any device with a browser.
-    
-  
-
+Keep Learning, Keep Troubleshooting !
 ",
-            "wordcount": "765",
+            "wordcount": "340",
             "inLanguage": "en",
-            "dateCreated": "2021-05-15/",
-            "datePublished": "2021-05-15/",
-            "dateModified": "2021-05-15/",
+            "dateCreated": "2024-05-08/",
+            "datePublished": "2024-05-08/",
+            "dateModified": "2024-05-08/",
             "author": {
                 "@type": "Person",
                 "name": "Shubhendu",
@@ -1005,9 +791,9 @@ Types of Server
                 }
             },
             "mainEntityOfPage": "True",
-            "genre": "networking",
-            "articleSection": "networking",
-            "keywords": ["networking","security"]
+            "genre": "security",
+            "articleSection": "security",
+            "keywords": ["Cyber Security","BlueTeam","SOC"]
         }
         </script>
     </body>

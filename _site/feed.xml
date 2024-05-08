@@ -5,9 +5,25 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 21 Apr 2024 17:49:41 +0000</pubDate>
-    <lastBuildDate>Sun, 21 Apr 2024 17:49:41 +0000</lastBuildDate>
+    <pubDate>Wed, 08 May 2024 06:42:12 +0000</pubDate>
+    <lastBuildDate>Wed, 08 May 2024 06:42:12 +0000</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
+    
+      <item>
+        <title>Automate Multiple Login failure alerts</title>
+        <description>&lt;p&gt;MTTD (Mean Time To Detect) and MTTR (Mean Time To Response) are the two crucial factor in Defensive side of hashtag#cybersecurity Major challenge for Blue team is resource burnout and manual investigation on repetitive task which increase average MTTR .&lt;/p&gt; &lt;p&gt;Let’s understand use case to orchestrate security flow use Case :- Automate Multiple login failure alerts response&lt;/p&gt; &lt;p&gt;Workflow link :- &lt;img src=&quot;https://raw.githubusercontent.com/sivolko/Awesome-Security-Analyst-tools/main/security-automation/use-cases/image.png&quot; alt=&quot;workflow&quot; /&gt;&lt;/p&gt; &lt;p&gt;Here we’ll use SOAR (Security Orchestration Autoamtion and Response) to automate Multiple login failure alert response. It can be achived with the both Azure Logic &amp;amp; Power Apps.&lt;/p&gt; &lt;p&gt;Steps:-&lt;/p&gt; &lt;ol&gt; &lt;li&gt;We’ll set threashold of login failure...</description>
+        <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/automate-multiple-loginfailure-alerts-response/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/automate-multiple-loginfailure-alerts-response/</guid>
+        
+        <category>Cyber Security</category>
+        
+        <category>BlueTeam</category>
+        
+        <category>SOC</category>
+        
+        <category>security</category>
+      </item>
     
       <item>
         <title>Install Kali-Purple tools on top of Normal Kali</title>
@@ -499,20 +515,6 @@
         <category>system Admin</category>
         
         <category>networking</category>
-      </item>
-    
-      <item>
-        <title>Anyone can build: node.js+ Cosmos DB in Azure </title>
-        <description>&lt;p&gt;Before Starting our project let’s Quickly learn about &lt;strong&gt;Cosmos DB&lt;/strong&gt;&lt;/p&gt; &lt;h2 id=&quot;what-is-cosmos-db-&quot;&gt;What is Cosmos DB ?&lt;/h2&gt; &lt;p&gt;Cosmos DB is a planet scale DB, No SQL JSON DB with multi API support provided by &lt;a href=&quot;https://azure.microsoft.com/en-us/&quot;&gt;Microsoft Azure&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hugs4bugs/image/upload/v1616362364/Azure/23_sqxpoz.jpg&quot; alt=&quot;cosmos DB&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;planet-scale-db-means&quot;&gt;Planet scale DB means?&lt;/h2&gt; &lt;p&gt;It means that we can build our primary DataBase in one region and setup different secondary Databases in different geo locations to avoid much latency and smoother user experiences. Whenever our primary Database goes down, any one these secondary Database can come as primary Database.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hugs4bugs/image/upload/v1616362726/Azure/25_yxlnqu.jpg&quot; alt=&quot;planet Scale&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;multi-api-support&quot;&gt;Multi API Support&lt;/h2&gt;...</description>
-        <pubDate>Wed, 17 Mar 2021 23:48:05 +0000</pubDate>
-        <link>https://hugs4bugs.me/bulid-and-deploy-MERN-stack-in-Azure-cosmos-DB/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/bulid-and-deploy-MERN-stack-in-Azure-cosmos-DB/</guid>
-        
-        <category>azure</category>
-        
-        <category>microsoft</category>
-        
-        <category>azure</category>
       </item>
     
   </channel>
