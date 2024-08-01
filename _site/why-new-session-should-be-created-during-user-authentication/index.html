@@ -17,17 +17,19 @@
     
     
 
-    <title>Networking | hugs4bugs</title>
-    <meta name="description" content="A category for networking related posts.">
+    <title>Why new session should be created during user authentication? | hugs4bugs</title>
+    <meta name="description" content="In this section we'll see importance of session cookies, browsers request handling and security authentication">
+    
+    <meta name="keywords" content="Cyber Security, SAST, Pentest">
     
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Networking | hugs4bugs">
-    <meta name="twitter:description" content="A category for networking related posts.">
+    <meta name="twitter:title" content="Why new session should be created during user authentication? | hugs4bugs">
+    <meta name="twitter:description" content="In this section we'll see importance of session cookies, browsers request handling and security authentication">
 
     
-    <meta property="twitter:image" content="https://hugs4bugs.me/assets/img/s.png">
+    <meta property="twitter:image" content="https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg">
     
 
     
@@ -35,10 +37,10 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="https://hugs4bugs.me/category/networking/">
-    <meta property="og:title" content="Networking | hugs4bugs">
-    <meta property="og:image" content="https://hugs4bugs.me/assets/img/s.png">
-    <meta property="og:description" content="A category for networking related posts.">
+    <meta property="og:url" content="https://hugs4bugs.me/why-new-session-should-be-created-during-user-authentication/">
+    <meta property="og:title" content="Why new session should be created during user authentication? | hugs4bugs">
+    <meta property="og:image" content="https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg">
+    <meta property="og:description" content="In this section we'll see importance of session cookies, browsers request handling and security authentication">
     <meta property="og:site_name" content="hugs4bugs">
 
     <!-- Favicon -->
@@ -74,7 +76,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="canonical" href="https://hugs4bugs.me/category/networking/">
+    <link rel="canonical" href="https://hugs4bugs.me/why-new-session-should-be-created-during-user-authentication/">
     <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
         href="https://hugs4bugs.me/feed.xml" />
     <link rel='manifest' href='../manifest.json'>
@@ -111,7 +113,13 @@
         crossorigin="anonymous"></script>
 </head>
 
-    <body class="main-page has-push-menu">
+    <body class="has-push-menu">
+        
+
+
+
+
+
         <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -288,261 +296,287 @@
     </div>
 </div>
 
-        <section class="content">
-            <main class="home" id="post" role="main">
-                <h1 class="title-category">/Networking</h1>
-                <div id="grid" class="row flex-grid">
+
+        <section class="post two-columns">
+            <article role="article" class="post-content">
+                <p class="post-info">
                     
+                        <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
+                        <time class="date" datetime="2024-07-03T00:00:00+00:00">
+                            
+
+
+July 3, 2024
+
+                        </time>
                     
+                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
+                    <span>1 min to read</span>
+                </p>
+                <h1 class="post-title">Why new session should be created during user authentication?</h1>
+                <p class="post-subtitle">Security POV</p>
+
+                
+                    <img src="https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg" alt="Featured image" class="post-cover">
+                
+
+                <!-- Pagination links -->
+
+
+
+                <!-- Add your table of contents here -->
+
+
+                <p>Let’s Understand a few Terms before jumping to our main topic viz “Why do we need a new session for user authentication”?</p>
+
+<p><strong>What’s Session</strong>?</p>
+
+<p>In layman term session is the term used to refer to a user’s time browsing a webpage.It identifies the users to the app after they have logged in an is valid for a period of time. It contians activities like Page rendering, events e.g like, share, comments in session storages.</p>
+
+<p>A web session is the sequence of network HTTP request and response transcations associated with the same user.WebApps/Websites use sessions once user has authenticated .This ensure the ability to identify the user on any subsequent requests as well as being able to apply security access controls, authorised access to the user private data and to increase usability of App. That’s why sessions can be used both pre and post authentication.</p>
+
+<p>Since HTTP is a stateless protocol,which means each request and response pair is independent of other web interactions.</p>
+
+<p>Now let’s understand <strong>Session Fixation</strong> Here don’t get confused session fixation with session Hijacking. In <strong>Session Hijacking</strong> steals the established session between the client and web server <strong>after the user logs in</strong> but in <strong>Session Fixation</strong> attack fixes an established session on the victim’s browser so the attack starts before the user logs in .</p>
+
+<p>As per OWASP documentation</p>
+
+<p>Session Fixation is an attack that permits an attacker to hijack a valid user session. The attack explores a limitation in the way the web application manages the session ID, more specifically the vulnerable web application. When authenticating a user, it doesn’t assign a new session ID, making it possible to use an existent session ID. The attack consists of obtaining a valid session ID (e.g. by connecting to the application), inducing a user to authenticate himself with that session ID, and then hijacking the user-validated session by the knowledge of the used session ID. The attacker has to provide a legitimate Web application session ID and try to make the victim’s browser use it.</p>
+
+<p><strong>Session Fixation Workflow</strong></p>
+
+
+                <!-- Pagination links -->
+
+
+            </article>
+
+            
+                <aside class="see-also">
+                    <h2>See also</h2>
+                    <ul>
                         
-                    
                         
-                    
                         
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                            <article class="box-item">
-                                <div class="box-body">
+                            <li>
+                                <a href="/Docker-101/">
                                     
-                                        <a class="cover" href="/Fundamentals-of-Network-security/">
-                                            <svg width="50" height="50" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" class="loader">
-    <defs>
-        <linearGradient x1="0%" y1="100%" x2="100%" y2="100%" id="a">
-            <stop stop-color="currentColor" stop-opacity="0" offset="0%"/>
-            <stop stop-color="currentColor" stop-opacity=".631" offset="63.146%"/>
-            <stop stop-color="currentColor" offset="100%"/>
-        </linearGradient>
-    </defs>
-    <g fill="none" fill-rule="evenodd">
-        <g transform="translate(1 1)">
-            <path d="M0,18.0000525 C0,27.9411416 8.05885836,36 18.0000525,36 C27.9411416,36 36,27.9411416 36,18.0000525" id="Oval-2" stroke="url(#a)" stroke-width="2">
-                <animateTransform
-                    attributeName="transform"
-                    type="rotate"
-                    from="360 18 18"
-                    to="0 18 18"
-                    dur="1.9s"
-                    repeatCount="indefinite" />
-            </path>
-            <circle fill="currentColor" cx="36" cy="18" r="1">
-                <animateTransform
-                    attributeName="transform"
-                    type="rotate"
-                    from="360 18 18"
-                    to="0 18 18"
-                    dur="1.9s"
-                    repeatCount="indefinite" />
-            </circle>
-        </g>
-    </g>
-</svg>
-
-                                            
-                                                <img src="/assets/img/placeholder.png" width="100%" data-url="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" class="preload">
-                                                <noscript>
-                                                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" width="100%">
-                                                </noscript>
-                                            
-                                            
-
-
-
-
-                                            <div class="read-icon">
-    <svg><use xlink:href="#icon-read"></use></svg>
-</div>
-
-                                        </a>
+                                        <img src="https://th.bing.com/th/id/Rb3e6202f5356edebd8c8205623eef0f1?rik=2tDqbcLpDFguLg&riu=http%3a%2f%2fwww.shadowandy.net%2fwp%2fwp-content%2fuploads%2fdocker.png&ehk=d2o4OLvE5SZOjrajjCgOCdzXQ9xmehUy6vTEhPPFi3c%3d&risl=&pid=ImgRaw">
                                     
-                                    <div class="box-info">
-                                        <time datetime="2021-05-15T23:04:08+00:00" class="date">
-                                            
-
-
-May 15, 2021
-
-                                        </time>
-                                        <a class="post-link" href="/Fundamentals-of-Network-security/">
-                                            <h2 class="post-title">
-                                                Fundamentals of Network Security.☠️
-                                            </h2>
-                                        </a>
-                                        <a class="post-link" href="/Fundamentals-of-Network-security/">
-                                            <p class="description">This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of networking. </p>
-                                        </a>
-                                        <div class="tags">
-                                            
-                                                
-                                                    <a href="/tags/#networking">#networking</a>
-                                                
-                                            
-                                                
-                                                    <a href="/tags/#security">#security</a>
-                                                
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
+                                    <h3>Docker 101</h3>
+                                </a>
+                            </li>
                         
-                    
-                        
-                            <article class="box-item">
-                                <div class="box-body">
+                            <li>
+                                <a href="/Fundamentals-of-Network-security/">
                                     
-                                        <a class="cover" href="/computer-networking-basics/">
-                                            <svg width="50" height="50" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" class="loader">
-    <defs>
-        <linearGradient x1="0%" y1="100%" x2="100%" y2="100%" id="a">
-            <stop stop-color="currentColor" stop-opacity="0" offset="0%"/>
-            <stop stop-color="currentColor" stop-opacity=".631" offset="63.146%"/>
-            <stop stop-color="currentColor" offset="100%"/>
-        </linearGradient>
-    </defs>
-    <g fill="none" fill-rule="evenodd">
-        <g transform="translate(1 1)">
-            <path d="M0,18.0000525 C0,27.9411416 8.05885836,36 18.0000525,36 C27.9411416,36 36,27.9411416 36,18.0000525" id="Oval-2" stroke="url(#a)" stroke-width="2">
-                <animateTransform
-                    attributeName="transform"
-                    type="rotate"
-                    from="360 18 18"
-                    to="0 18 18"
-                    dur="1.9s"
-                    repeatCount="indefinite" />
-            </path>
-            <circle fill="currentColor" cx="36" cy="18" r="1">
-                <animateTransform
-                    attributeName="transform"
-                    type="rotate"
-                    from="360 18 18"
-                    to="0 18 18"
-                    dur="1.9s"
-                    repeatCount="indefinite" />
-            </circle>
-        </g>
-    </g>
-</svg>
-
-                                            
-                                                <img src="/assets/img/placeholder.png" width="100%" data-url="https://res.cloudinary.com/hugs4bugs/image/upload/v1620918379/Networking/photo_2021-04-04_23-19-26_ylhetf.jpg" class="preload">
-                                                <noscript>
-                                                    <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1620918379/Networking/photo_2021-04-04_23-19-26_ylhetf.jpg" width="100%">
-                                                </noscript>
-                                            
-                                            
-
-
-
-
-                                            <div class="read-icon">
-    <svg><use xlink:href="#icon-read"></use></svg>
-</div>
-
-                                        </a>
+                                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80">
                                     
-                                    <div class="box-info">
-                                        <time datetime="2021-04-04T23:04:08+00:00" class="date">
-                                            
+                                    <h3>Fundamentals of Network Security.☠️</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/send-email-with-Azure-logic-app/">
+                                    
+                                        <img src="https://d3nn873nee648n.cloudfront.net/900x600/19765/300-SM960337.jpg">
+                                    
+                                    <h3>Automate Email with Azure Logic App</h3>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </aside>
+            
 
-
-April 4, 2021
-
-                                        </time>
-                                        <a class="post-link" href="/computer-networking-basics/">
-                                            <h2 class="post-title">
-                                                Computer Networking 101
-                                            </h2>
-                                        </a>
-                                        <a class="post-link" href="/computer-networking-basics/">
-                                            <p class="description">Learn basics of Computer Netoworking with hugs4bugs.The best beginers computer networking solution. </p>
-                                        </a>
-                                        <div class="tags">
-                                            
-                                                
-                                                    <a href="/tags/#networking">#networking</a>
-                                                
-                                            
-                                                
-                                                    <a href="/tags/#system-admin">#system Admin</a>
-                                                
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                </div>
-            </main>
         </section>
+
+        <!-- Add time bar only for pages without pagination -->
+        
+            <div class="time-bar" data-minutes="1">
+    <span class="time-completed"></span>
+    <span class="time-remaining"></span>
+    <div class="bar">
+        <span class="completed" style="width:0%;"></span>
+        <span class="remaining" style="width:100%;"></span>
+    </div>
+</div>
+
+            <div class="recommendation">
+    <div class="message">
+        <strong>Why don't you read something next?</strong>
+        <div>
+            <button>
+                <svg><use xlink:href="#icon-arrow-right"></use></svg>
+                <span>Go back to top</span>
+            </button>
+        </div>
+    </div>
+    
+    <a href="/send-email-with-Azure-logic-app/" class="post-preview">
+        <div class="image">
+            
+                <img src="https://d3nn873nee648n.cloudfront.net/900x600/19765/300-SM960337.jpg">
+            
+        </div>
+        <h3 class="title">Automate Email with Azure Logic App</h3>
+    </a>
+</div>
+
+        
+
+        <!-- Show modal if the post is the last one -->
+        
+
+        <!-- Show modal before user leaves the page -->
+        
+
+        <!-- Add your newsletter subscription form here -->
+
+        <section class="share">
+    <h3>Share</h3>
+    <a aria-label="Share on Twitter"
+        href="https://twitter.com/intent/tweet?text=&quot;In this section we'll see importance of session cookies, browsers request handling and security authentication&quot;%20https://hugs4bugs.me/why-new-session-should-be-created-during-user-authentication/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,SAST,Pentest"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
+        title="Share on Twitter">
+        <svg class="icon icon-twitter">
+            <use xlink:href="#icon-twitter"></use>
+        </svg>
+    </a>
+    <a aria-label="Share on WhatsApp"
+        href="https://twitter.com/intent/tweet?text=&quot;In this section we'll see importance of session cookies, browsers request handling and security authentication&quot;%20https://hugs4bugs.me/why-new-session-should-be-created-during-user-authentication/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,SAST,Pentest"
+        onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
+        title="Share on Twitter">
+        <svg class="icon icon-twitter">
+            <use xlink:href="#icon-twitter"></use>
+        </svg>
+    </a>
+    <a aria-label="Share on Facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/why-new-session-should-be-created-during-user-authentication/"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
+        title="Share on Facebook">
+        <svg class="icon icon-facebook">
+            <use xlink:href="#icon-facebook"></use>
+        </svg>
+    </a>
+</section>
+        
+
+  <section class="author">
+    <div class="details">
+      
+        <img class="img-rounded" src="/assets/img/s.png" alt="Shubhendu">
+      
+      <p class="def">Author</p>
+      <h3 class="name">
+        <a href="/authors/shubhendu/">Shubhendu</a>
+      </h3>
+      <p class="desc">A guy who survived after watching Bear Grylls shows,Now He writes code for survial.</p>
+      <p>
+        
+          <a href="https://github.com/sivolko" title="Github">
+            <svg><use xlink:href="#icon-github"></use></svg>
+          </a>
+        
+        
+        
+          <a href="https://twitter.com/myselfshubhendu" title="Twitter">
+            <svg><use xlink:href="#icon-twitter"></use></svg>
+          </a>
+        
+        
+          <a href="https://medium.com/@shubhendushubham" title="Medium">
+            <svg><use xlink:href="#icon-medium"></use></svg>
+          </a>
+        
+        
+          <a href="https://www.instagram.com/shubhendushubham" title="Instagram">
+            <svg><use xlink:href="#icon-instagram"></use></svg>
+          </a>
+        
+        
+          <a href="https://www.linkedin.com/in/shubhendu-shubham" title="LinkedIn">
+            <svg><use xlink:href="#icon-linkedin"></use></svg>
+          </a>
+        
+      </p>
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+  
+  
+
+  <script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Shubhendu",
+      
+      "image": "/assets/img/s.png",
+      
+      "jobTitle": "",
+      "url": "https://hugs4bugs.me/authors/shubhendu/",
+      "sameAs": [
+        "https://github.com/sivolko","https://twitter.com/myselfshubhendu","https://medium.com/@shubhendushubham","https://www.instagram.com/shubhendushubham","https://www.linkedin.com/in/shubhendu-shubham"
+      ]
+  }
+  </script>
+
+
+        <!--  -->
+
+<section class="comments">
+    <h3>Comments</h3>
+    <div id="disqus_thread"></div>
+</section>
+<!-- <script type="text/javascript">
+    var disqus_loaded = false;
+
+    function load_disqus()
+    {
+        disqus_loaded = true;
+        var disqus_shortname = 'hugs4bugs';
+        var disqus_title = '';
+        var disqus_url = '/why-new-session-should-be-created-during-user-authentication/';
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        var ldr = document.getElementById('disqus_loader');
+    };
+    window.onscroll = function(e) {
+        if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
+            //hit bottom of page
+            if (disqus_loaded==false)
+                load_disqus()
+        }
+    };
+</script>
+
+ -->
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="sivolko/hugs4bugs"
+        data-repo-id="R_kgDOJBA0UA"
+        data-category="General"
+        data-category-id="DIC_kwDOJBA0UM4CW_3U"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
         <footer>
   <p>
     
@@ -664,8 +698,77 @@ April 4, 2021
 
 <!-- Include extra scripts -->
 
+
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "name": "Why new session should be created during user authentication?",
+            "headline": "Security POV",
+            "description": "In this section we'll see importance of session cookies, browsers request handling and security authentication",
+            "image": "https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg",
+            "url": "https://hugs4bugs.me/why-new-session-should-be-created-during-user-authentication/",
+            "articleBody": "Let’s Understand a few Terms before jumping to our main topic viz “Why do we need a new session for user authentication”?
+
+What’s Session?
+
+In layman term session is the term used to refer to a user’s time browsing a webpage.It identifies the users to the app after they have logged in an is valid for a period of time. It contians activities like Page rendering, events e.g like, share, comments in session storages.
+
+A web session is the sequence of network HTTP request and response transcations associated with the same user.WebApps/Websites use sessions once user has authenticated .This ensure the ability to identify the user on any subsequent requests as well as being able to apply security access controls, authorised access to the user private data and to increase usability of App. That’s why sessions can be used both pre and post authentication.
+
+Since HTTP is a stateless protocol,which means each request and response pair is independent of other web interactions.
+
+Now let’s understand Session Fixation Here don’t get confused session fixation with session Hijacking. In Session Hijacking steals the established session between the client and web server after the user logs in but in Session Fixation attack fixes an established session on the victim’s browser so the attack starts before the user logs in .
+
+As per OWASP documentation
+
+Session Fixation is an attack that permits an attacker to hijack a valid user session. The attack explores a limitation in the way the web application manages the session ID, more specifically the vulnerable web application. When authenticating a user, it doesn’t assign a new session ID, making it possible to use an existent session ID. The attack consists of obtaining a valid session ID (e.g. by connecting to the application), inducing a user to authenticate himself with that session ID, and then hijacking the user-validated session by the knowledge of the used session ID. The attacker has to provide a legitimate Web application session ID and try to make the victim’s browser use it.
+
+Session Fixation Workflow
+",
+            "wordcount": "339",
+            "inLanguage": "en",
+            "dateCreated": "2024-07-03/",
+            "datePublished": "2024-07-03/",
+            "dateModified": "2024-07-03/",
+            "author": {
+                "@type": "Person",
+                "name": "Shubhendu",
+                
+                "image": "/assets/img/s.png",
+                
+                "jobTitle": "",
+                "url": "https://hugs4bugs.me/authors/shubhendu/",
+                "sameAs": [
+                    "https://github.com/sivolko","https://twitter.com/myselfshubhendu","https://medium.com/@shubhendushubham","https://www.instagram.com/shubhendushubham","https://www.linkedin.com/in/shubhendu-shubham"
+                ]
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "hugs4bugs",
+                "url": "https://hugs4bugs.me/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://hugs4bugs.me/assets/img/blog-image.png",
+                    "width": "600",
+                    "height": "315"
+                }
+            },
+            "mainEntityOfPage": "True",
+            "genre": "security",
+            "articleSection": "security",
+            "keywords": ["Cyber Security","SAST","Pentest"]
+        }
+        </script>
     </body>
 </html>
-
-
-

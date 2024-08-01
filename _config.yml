@@ -26,6 +26,8 @@ menu:
   url: "/"
 - title: About
   url: "/about"
+- title: Project
+  url: "/project"
 - title: Contact
   url: "/contact"
 email: myblackcat420@gmail.com

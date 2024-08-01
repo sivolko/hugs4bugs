@@ -13,7 +13,7 @@ tags:
 - BlueTeam
 - SOC
 ---
-MTTD (Mean Time To Detect) and MTTR (Mean Time To Response) are the two crucial factor in Defensive side of hashtag#cybersecurity
+MTTD (Mean Time To Detect) and MTTR (Mean Time To Response/Remediate) are the two crucial factor in Defensive side of hashtag#cybersecurity
 Major challenge for Blue team is resource burnout and manual investigation on repetitive task which increase average MTTR .
 
 Let's understand use case to orchestrate security flow 

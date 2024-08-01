@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "Why new session should be created during user authentication?",
+      "tags"     : "Cyber Security, SAST, and Pentest",
+      "categories" : "security",
+      "url"      : "/why-new-session-should-be-created-during-user-authentication/",
+      "date"     : "07/03/2024"
+    } ,
+  
+    {
       "title"    : "Automate Multiple Login failure alerts",
       "tags"     : "Cyber Security, BlueTeam, and SOC",
       "categories" : "security",

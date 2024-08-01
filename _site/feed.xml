@@ -5,13 +5,29 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 08 May 2024 06:42:12 +0000</pubDate>
-    <lastBuildDate>Wed, 08 May 2024 06:42:12 +0000</lastBuildDate>
+    <pubDate>Thu, 01 Aug 2024 07:49:06 +0000</pubDate>
+    <lastBuildDate>Thu, 01 Aug 2024 07:49:06 +0000</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
     
       <item>
+        <title>Why new session should be created during user authentication?</title>
+        <description>&lt;p&gt;Let’s Understand a few Terms before jumping to our main topic viz “Why do we need a new session for user authentication”?&lt;/p&gt; &lt;p&gt;&lt;strong&gt;What’s Session&lt;/strong&gt;?&lt;/p&gt; &lt;p&gt;In layman term session is the term used to refer to a user’s time browsing a webpage.It identifies the users to the app after they have logged in an is valid for a period of time. It contians activities like Page rendering, events e.g like, share, comments in session storages.&lt;/p&gt; &lt;p&gt;A web session is the sequence of network HTTP request and response transcations associated with the same user.WebApps/Websites use sessions once user has authenticated .This ensure...</description>
+        <pubDate>Wed, 03 Jul 2024 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/why-new-session-should-be-created-during-user-authentication/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/why-new-session-should-be-created-during-user-authentication/</guid>
+        
+        <category>Cyber Security</category>
+        
+        <category>SAST</category>
+        
+        <category>Pentest</category>
+        
+        <category>security</category>
+      </item>
+    
+      <item>
         <title>Automate Multiple Login failure alerts</title>
-        <description>&lt;p&gt;MTTD (Mean Time To Detect) and MTTR (Mean Time To Response) are the two crucial factor in Defensive side of hashtag#cybersecurity Major challenge for Blue team is resource burnout and manual investigation on repetitive task which increase average MTTR .&lt;/p&gt; &lt;p&gt;Let’s understand use case to orchestrate security flow use Case :- Automate Multiple login failure alerts response&lt;/p&gt; &lt;p&gt;Workflow link :- &lt;img src=&quot;https://raw.githubusercontent.com/sivolko/Awesome-Security-Analyst-tools/main/security-automation/use-cases/image.png&quot; alt=&quot;workflow&quot; /&gt;&lt;/p&gt; &lt;p&gt;Here we’ll use SOAR (Security Orchestration Autoamtion and Response) to automate Multiple login failure alert response. It can be achived with the both Azure Logic &amp;amp; Power Apps.&lt;/p&gt; &lt;p&gt;Steps:-&lt;/p&gt; &lt;ol&gt; &lt;li&gt;We’ll set threashold of login failure...</description>
+        <description>&lt;p&gt;MTTD (Mean Time To Detect) and MTTR (Mean Time To Response/Remediate) are the two crucial factor in Defensive side of hashtag#cybersecurity Major challenge for Blue team is resource burnout and manual investigation on repetitive task which increase average MTTR .&lt;/p&gt; &lt;p&gt;Let’s understand use case to orchestrate security flow use Case :- Automate Multiple login failure alerts response&lt;/p&gt; &lt;p&gt;Workflow link :- &lt;img src=&quot;https://raw.githubusercontent.com/sivolko/Awesome-Security-Analyst-tools/main/security-automation/use-cases/image.png&quot; alt=&quot;workflow&quot; /&gt;&lt;/p&gt; &lt;p&gt;Here we’ll use SOAR (Security Orchestration Autoamtion and Response) to automate Multiple login failure alert response. It can be achived with the both Azure Logic &amp;amp; Power Apps.&lt;/p&gt; &lt;p&gt;Steps:-&lt;/p&gt; &lt;ol&gt; &lt;li&gt;We’ll set threashold of login failure...</description>
         <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
         <link>https://hugs4bugs.me/automate-multiple-loginfailure-alerts-response/</link>
         <guid isPermaLink="true">https://hugs4bugs.me/automate-multiple-loginfailure-alerts-response/</guid>
@@ -499,20 +515,6 @@
         <category>networking</category>
         
         <category>security</category>
-        
-        <category>networking</category>
-      </item>
-    
-      <item>
-        <title>Computer Networking 101</title>
-        <description>&lt;p&gt;In the era of Cloud, having basic understanding of computer networking, how it’s work and use cases to build network is essential. Apart form it’s structure one should also keep in mind there are various ascepts of networking too like &lt;strong&gt;Network communication Protocols&lt;/strong&gt; &lt;strong&gt;security of our Network&lt;/strong&gt; …&lt;/p&gt; &lt;p&gt;In this we are gonna cover all the basic fundamentals of Networking.&lt;/p&gt; &lt;p&gt;Although all the networks are built on the same principles, but let’s consider them separetely for better understandings. so first thing first start with what comes in our mind when we think about “Networking”..&lt;/p&gt; &lt;h2 id=&quot;what-is-a-network&quot;&gt;What is a Network?&lt;/h2&gt; &lt;p&gt;A...</description>
-        <pubDate>Sun, 04 Apr 2021 23:04:08 +0000</pubDate>
-        <link>https://hugs4bugs.me/computer-networking-basics/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/computer-networking-basics/</guid>
-        
-        <category>networking</category>
-        
-        <category>system Admin</category>
         
         <category>networking</category>
       </item>
