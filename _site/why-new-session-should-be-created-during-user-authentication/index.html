@@ -37,7 +37,7 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="http://0.0.0.0:4000/why-new-session-should-be-created-during-user-authentication/">
+    <meta property="og:url" content="https://hugs4bugs.me/why-new-session-should-be-created-during-user-authentication/">
     <meta property="og:title" content="Why new session should be created during user authentication? | hugs4bugs">
     <meta property="og:image" content="https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg">
     <meta property="og:description" content="In this section we'll see importance of session cookies, browsers request handling and security authentication">
@@ -76,9 +76,9 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="canonical" href="http://0.0.0.0:4000/why-new-session-should-be-created-during-user-authentication/">
+    <link rel="canonical" href="https://hugs4bugs.me/why-new-session-should-be-created-during-user-authentication/">
     <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
-        href="http://0.0.0.0:4000/feed.xml" />
+        href="https://hugs4bugs.me/feed.xml" />
     <link rel='manifest' href='../manifest.json'>
     <link rel='wellknown' href='.well-known/assetlinks.json'>
     <link rel='ads' href='/ads.txt'>
@@ -261,25 +261,25 @@
   
     
       <li>
-        <a href="http://0.0.0.0:4000/">Home</a>
+        <a href="https://hugs4bugs.me/">Home</a>
       </li>
     
   
     
       <li>
-        <a href="http://0.0.0.0:4000/about">About</a>
+        <a href="https://hugs4bugs.me/about">About</a>
       </li>
     
   
     
       <li>
-        <a href="http://0.0.0.0:4000/project">Project</a>
+        <a href="https://hugs4bugs.me/project">Project</a>
       </li>
     
   
     
       <li>
-        <a href="http://0.0.0.0:4000/contact">Contact</a>
+        <a href="https://hugs4bugs.me/contact">Contact</a>
       </li>
     
   
@@ -311,7 +311,7 @@ July 3, 2024
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>1 min to read</span>
+                    <span>5 min to read</span>
                 </p>
                 <h1 class="post-title">Why new session should be created during user authentication?</h1>
                 <p class="post-subtitle">Security POV</p>
@@ -343,7 +343,111 @@ July 3, 2024
 
 <p>Session Fixation is an attack that permits an attacker to hijack a valid user session. The attack explores a limitation in the way the web application manages the session ID, more specifically the vulnerable web application. When authenticating a user, it doesn’t assign a new session ID, making it possible to use an existent session ID. The attack consists of obtaining a valid session ID (e.g. by connecting to the application), inducing a user to authenticate himself with that session ID, and then hijacking the user-validated session by the knowledge of the used session ID. The attacker has to provide a legitimate Web application session ID and try to make the victim’s browser use it.</p>
 
-<p><strong>Session Fixation Workflow</strong></p>
+<p><strong>Session Fixation Attack Workflow</strong></p>
+
+<p><img src="/assets/img/wf.jpeg" alt="image" /></p>
+
+<p>Here are the points rephrased into bullet points:</p>
+
+<ul>
+  <li><strong>Session token in the URL argument</strong>:
+    <ul>
+      <li>The Session ID is sent to the victim in a hyperlink.</li>
+      <li>The victim accesses the site through the malicious URL.</li>
+    </ul>
+  </li>
+  <li><strong>Session token in a hidden form field</strong>:
+    <ul>
+      <li>The victim is tricked into authenticating on the target Web Server.</li>
+      <li>A login form developed by the attacker is used.</li>
+      <li>The form could be hosted on the attacker’s web server or embedded in an HTML-formatted email.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Session ID in a cookie</strong>:</p>
+
+<ul>
+  <li><strong>Client-side script</strong></li>
+</ul>
+
+<p>Most browsers support the execution of client-side scripting. In this case, the aggressor could use attacks of code injection as the XSS (Cross-site scripting) attack to insert a malicious code in the hyperlink sent to the victim and fix a Session ID in its cookie. Using the function document.cookie, the browser which executes the command becomes capable of fixing values inside of the cookie that it will use to keep a session between the client and the Web Application.</p>
+
+<p><strong>META Tag</strong></p>
+
+<p>Is considered a code injection attack, however, different from the XSS attack where undesirable scripts can be disabled, or the execution can be denied. The attack using this method becomes much more efficient because it’s impossible to disable the processing of these tags in the browsers.</p>
+
+<p><strong>HTTP header response</strong>-</p>
+
+<p>This method explores the server response to fix the Session ID in the victim’s browser. Including the parameter Set-Cookie in the HTTP header response, the attacker is able to insert the value of Session ID in the cookie and sends it to the victim’s browser.</p>
+
+<p><strong>What is the potential impact</strong>?</p>
+<ol>
+  <li>Impersonation : Attackers can use a fixed session ID to impersonate victims, gaining unauthorized access to accounts and performing malicious actions or transactions.</li>
+  <li>Data Breach : Access to a user’s session can expose sensitive data, leading to identity theft, financial fraud, or other malicious activities.</li>
+  <li>Privilege Escalation : Attackers can use session fixation to gain higher privileges within a web application, bypassing access controls and potentially compromising the entire system.</li>
+</ol>
+
+<p><strong>How to fix it ?</strong></p>
+
+<p>User authentication,it’s a crucual to generate the session identifier to prevent fixation attacks. Using passport <em>req.session.regenerate()</em> method we can ensure that after successful authentication, each user is assigned to a new unique session ID .</p>
+
+<p>Non compliant Code</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>app.post('/login',
+  passport.authenticate('local', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Noncompliant - no session.regenerate after login
+    res.redirect('/');
+  });
+
+</code></pre></div></div>
+
+<p>Compliant Code</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>app.post('/login',
+  passport.authenticate('local', { failureRedirect: '/login' }),
+  function(req, res) {
+    let prevSession = req.session;
+    req.session.regenerate((err) =&gt; {
+      Object.assign(req.session, prevSession);
+      res.redirect('/');
+    });
+  });
+
+</code></pre></div></div>
+
+<p><strong>Behind the scene, how session fixation protection works?</strong></p>
+
+<ul>
+  <li><strong>Session Creation</strong>:
+    <ul>
+      <li>When a user visits a website or logs in, a session with a unique identifier is created.</li>
+      <li>This identifier is stored in a cookie or passed through URL parameters.</li>
+    </ul>
+  </li>
+  <li><strong>Session Fixation Attack</strong>:
+    <ul>
+      <li>An attacker tricks the user into using a predetermined session ID.</li>
+      <li>This allows the attacker to gain unauthorized access to the user’s session.</li>
+    </ul>
+  </li>
+  <li><strong>Protection Mechanisms</strong>:
+    <ul>
+      <li>Upon successful authentication, a new session ID is generated.</li>
+      <li>The old session ID, potentially manipulated by the attacker, is invalidated.</li>
+      <li>This ensures the attacker cannot use the fixed session ID.</li>
+    </ul>
+  </li>
+  <li><strong>New Session ID</strong>:
+    <ul>
+      <li>The user is assigned a new session ID for subsequent requests.</li>
+      <li>This new ID is stored in a new session cookie or passed through URL parameters.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><a href="https://cwe.mitre.org/data/definitions/384">CWE related to session fixation</a></p>
 
 
                 <!-- Pagination links -->
@@ -359,29 +463,29 @@ July 3, 2024
                         
                         
                             <li>
-                                <a href="/difference-between-WAF-and-IPS/">
+                                <a href="/how-to-like-instagram-post-with-javascript/">
                                     
-                                        <img src="https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://media.giphy.com/media/cmqnzFK17DO4vKCscd/giphy.gif">
                                     
-                                    <h3>WAF vs IPS</h3>
+                                    <h3>How to like Instagram posts with JavaScript?</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/2021-08-2-Understanding-basics-of-security/">
+                                <a href="/how-to-install-kali-purple-SOC-tools-on-top-of-existing-kali-machine/">
                                     
-                                        <img src="https://cdn.pixabay.com/photo/2017/11/19/23/56/hacking-2964100_960_720.jpg">
+                                        <img src="https://www.kali.org/blog/kali-linux-2023-1-release/images/kali-purple-icon.svg">
                                     
-                                    <h3>Protection against Security threat on Azure.☠️</h3>
+                                    <h3>Install Kali-Purple tools on top of Normal Kali</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/the-blue-team-protecting-you/">
+                                <a href="/how-to-integrate-docker-scout-with-azure-container-registry/">
                                     
-                                        <img src="https://cdn.pixabay.com/photo/2017/11/19/23/56/hacking-2964100_960_720.jpg">
+                                        <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1703441731/hugs4bugs/01-primary-blue-docker-logo_rl8tst.png">
                                     
-                                    <h3>The Blue Team.☠️</h3>
+                                    <h3>How to integrate Docker Scout with Azure Container Registry</h3>
                                 </a>
                             </li>
                         
@@ -393,7 +497,7 @@ July 3, 2024
 
         <!-- Add time bar only for pages without pagination -->
         
-            <div class="time-bar" data-minutes="1">
+            <div class="time-bar" data-minutes="5">
     <span class="time-completed"></span>
     <span class="time-remaining"></span>
     <div class="bar">
@@ -413,13 +517,13 @@ July 3, 2024
         </div>
     </div>
     
-    <a href="/azure-networking-101/" class="post-preview">
+    <a href="/automate-multiple-loginfailure-alerts-response/" class="post-preview">
         <div class="image">
             
-                <img src="https://th.bing.com/th/id/Rb3e6202f5356edebd8c8205623eef0f1?rik=2tDqbcLpDFguLg&riu=http%3a%2f%2fwww.shadowandy.net%2fwp%2fwp-content%2fuploads%2fdocker.png&ehk=d2o4OLvE5SZOjrajjCgOCdzXQ9xmehUy6vTEhPPFi3c%3d&risl=&pid=ImgRaw">
+                <img src="https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg">
             
         </div>
-        <h3 class="title">Azure Networking 101</h3>
+        <h3 class="title">Automate Multiple Login failure alerts</h3>
     </a>
 </div>
 
@@ -436,7 +540,7 @@ July 3, 2024
         <section class="share">
     <h3>Share</h3>
     <a aria-label="Share on Twitter"
-        href="https://twitter.com/intent/tweet?text=&quot;In this section we'll see importance of session cookies, browsers request handling and security authentication&quot;%20http://0.0.0.0:4000/why-new-session-should-be-created-during-user-authentication/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,SAST,Pentest"
+        href="https://twitter.com/intent/tweet?text=&quot;In this section we'll see importance of session cookies, browsers request handling and security authentication&quot;%20https://hugs4bugs.me/why-new-session-should-be-created-during-user-authentication/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,SAST,Pentest"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -444,7 +548,7 @@ July 3, 2024
         </svg>
     </a>
     <a aria-label="Share on WhatsApp"
-        href="https://twitter.com/intent/tweet?text=&quot;In this section we'll see importance of session cookies, browsers request handling and security authentication&quot;%20http://0.0.0.0:4000/why-new-session-should-be-created-during-user-authentication/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,SAST,Pentest"
+        href="https://twitter.com/intent/tweet?text=&quot;In this section we'll see importance of session cookies, browsers request handling and security authentication&quot;%20https://hugs4bugs.me/why-new-session-should-be-created-during-user-authentication/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,SAST,Pentest"
         onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -452,7 +556,7 @@ July 3, 2024
         </svg>
     </a>
     <a aria-label="Share on Facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=http://0.0.0.0:4000/why-new-session-should-be-created-during-user-authentication/"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/why-new-session-should-be-created-during-user-authentication/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
         title="Share on Facebook">
         <svg class="icon icon-facebook">
@@ -520,7 +624,7 @@ July 3, 2024
       "image": "/assets/img/s.png",
       
       "jobTitle": "",
-      "url": "http://0.0.0.0:4000/authors/shubhendu/",
+      "url": "https://hugs4bugs.me/authors/shubhendu/",
       "sameAs": [
         "https://github.com/sivolko","https://twitter.com/myselfshubhendu","https://medium.com/@shubhendushubham","https://www.instagram.com/shubhendushubham","https://www.linkedin.com/in/shubhendu-shubham"
       ]
@@ -615,25 +719,25 @@ July 3, 2024
   
     
       <li>
-        <a href="http://0.0.0.0:4000/">Home</a>
+        <a href="https://hugs4bugs.me/">Home</a>
       </li>
     
   
     
       <li>
-        <a href="http://0.0.0.0:4000/about">About</a>
+        <a href="https://hugs4bugs.me/about">About</a>
       </li>
     
   
     
       <li>
-        <a href="http://0.0.0.0:4000/project">Project</a>
+        <a href="https://hugs4bugs.me/project">Project</a>
       </li>
     
   
     
       <li>
-        <a href="http://0.0.0.0:4000/contact">Contact</a>
+        <a href="https://hugs4bugs.me/contact">Contact</a>
       </li>
     
   
@@ -661,10 +765,10 @@ July 3, 2024
   "@type": "Organization",
   "name": "hugs4bugs",
   "description": "hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.",
-  "url": "http://0.0.0.0:4000/",
+  "url": "https://hugs4bugs.me/",
   "logo": {
       "@type": "ImageObject",
-      "url": "http://0.0.0.0:4000/assets/img/icons/mediumtile.png",
+      "url": "https://hugs4bugs.me/assets/img/icons/mediumtile.png",
       "width": "600",
       "height": "315"
   },
@@ -717,7 +821,7 @@ July 3, 2024
             "headline": "Security POV",
             "description": "In this section we'll see importance of session cookies, browsers request handling and security authentication",
             "image": "https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg",
-            "url": "http://0.0.0.0:4000/why-new-session-should-be-created-during-user-authentication/",
+            "url": "https://hugs4bugs.me/why-new-session-should-be-created-during-user-authentication/",
             "articleBody": "Let’s Understand a few Terms before jumping to our main topic viz “Why do we need a new session for user authentication”?
 
 What’s Session?
@@ -734,9 +838,113 @@ As per OWASP documentation
 
 Session Fixation is an attack that permits an attacker to hijack a valid user session. The attack explores a limitation in the way the web application manages the session ID, more specifically the vulnerable web application. When authenticating a user, it doesn’t assign a new session ID, making it possible to use an existent session ID. The attack consists of obtaining a valid session ID (e.g. by connecting to the application), inducing a user to authenticate himself with that session ID, and then hijacking the user-validated session by the knowledge of the used session ID. The attacker has to provide a legitimate Web application session ID and try to make the victim’s browser use it.
 
-Session Fixation Workflow
+Session Fixation Attack Workflow
+
+
+
+Here are the points rephrased into bullet points:
+
+
+  Session token in the URL argument:
+    
+      The Session ID is sent to the victim in a hyperlink.
+      The victim accesses the site through the malicious URL.
+    
+  
+  Session token in a hidden form field:
+    
+      The victim is tricked into authenticating on the target Web Server.
+      A login form developed by the attacker is used.
+      The form could be hosted on the attacker’s web server or embedded in an HTML-formatted email.
+    
+  
+
+
+Session ID in a cookie:
+
+
+  Client-side script
+
+
+Most browsers support the execution of client-side scripting. In this case, the aggressor could use attacks of code injection as the XSS (Cross-site scripting) attack to insert a malicious code in the hyperlink sent to the victim and fix a Session ID in its cookie. Using the function document.cookie, the browser which executes the command becomes capable of fixing values inside of the cookie that it will use to keep a session between the client and the Web Application.
+
+META Tag
+
+Is considered a code injection attack, however, different from the XSS attack where undesirable scripts can be disabled, or the execution can be denied. The attack using this method becomes much more efficient because it’s impossible to disable the processing of these tags in the browsers.
+
+HTTP header response-
+
+This method explores the server response to fix the Session ID in the victim’s browser. Including the parameter Set-Cookie in the HTTP header response, the attacker is able to insert the value of Session ID in the cookie and sends it to the victim’s browser.
+
+What is the potential impact?
+
+  Impersonation : Attackers can use a fixed session ID to impersonate victims, gaining unauthorized access to accounts and performing malicious actions or transactions.
+  Data Breach : Access to a user’s session can expose sensitive data, leading to identity theft, financial fraud, or other malicious activities.
+  Privilege Escalation : Attackers can use session fixation to gain higher privileges within a web application, bypassing access controls and potentially compromising the entire system.
+
+
+How to fix it ?
+
+User authentication,it’s a crucual to generate the session identifier to prevent fixation attacks. Using passport req.session.regenerate() method we can ensure that after successful authentication, each user is assigned to a new unique session ID .
+
+Non compliant Code
+
+app.post(&apos;/login&apos;,
+  passport.authenticate(&apos;local&apos;, { failureRedirect: &apos;/login&apos; }),
+  function(req, res) {
+    // Noncompliant - no session.regenerate after login
+    res.redirect(&apos;/&apos;);
+  });
+
+
+
+Compliant Code
+
+app.post(&apos;/login&apos;,
+  passport.authenticate(&apos;local&apos;, { failureRedirect: &apos;/login&apos; }),
+  function(req, res) {
+    let prevSession = req.session;
+    req.session.regenerate((err) =&amp;gt; {
+      Object.assign(req.session, prevSession);
+      res.redirect(&apos;/&apos;);
+    });
+  });
+
+
+
+Behind the scene, how session fixation protection works?
+
+
+  Session Creation:
+    
+      When a user visits a website or logs in, a session with a unique identifier is created.
+      This identifier is stored in a cookie or passed through URL parameters.
+    
+  
+  Session Fixation Attack:
+    
+      An attacker tricks the user into using a predetermined session ID.
+      This allows the attacker to gain unauthorized access to the user’s session.
+    
+  
+  Protection Mechanisms:
+    
+      Upon successful authentication, a new session ID is generated.
+      The old session ID, potentially manipulated by the attacker, is invalidated.
+      This ensures the attacker cannot use the fixed session ID.
+    
+  
+  New Session ID:
+    
+      The user is assigned a new session ID for subsequent requests.
+      This new ID is stored in a new session cookie or passed through URL parameters.
+    
+  
+
+
+CWE related to session fixation
 ",
-            "wordcount": "339",
+            "wordcount": "930",
             "inLanguage": "en",
             "dateCreated": "2024-07-03/",
             "datePublished": "2024-07-03/",
@@ -748,7 +956,7 @@ Session Fixation Workflow
                 "image": "/assets/img/s.png",
                 
                 "jobTitle": "",
-                "url": "http://0.0.0.0:4000/authors/shubhendu/",
+                "url": "https://hugs4bugs.me/authors/shubhendu/",
                 "sameAs": [
                     "https://github.com/sivolko","https://twitter.com/myselfshubhendu","https://medium.com/@shubhendushubham","https://www.instagram.com/shubhendushubham","https://www.linkedin.com/in/shubhendu-shubham"
                 ]
@@ -756,10 +964,10 @@ Session Fixation Workflow
             "publisher": {
                 "@type": "Organization",
                 "name": "hugs4bugs",
-                "url": "http://0.0.0.0:4000/",
+                "url": "https://hugs4bugs.me/",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "http://0.0.0.0:4000/assets/img/blog-image.png",
+                    "url": "https://hugs4bugs.me/assets/img/blog-image.png",
                     "width": "600",
                     "height": "315"
                 }
