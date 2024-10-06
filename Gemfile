@@ -8,4 +8,4 @@ gem "jekyll-paginate"
 gem "jekyll-paginate-content"
 gem "json"
 gem 'http_parser.rb', '~> 0.8.0'
-gem "webrick"
+gem "webrick", ">= 1.8.2"
