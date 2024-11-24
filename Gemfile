@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "kramdown"
+gem "kramdown", ">= 2.5.1"
 gem "kramdown-parser-gfm"
 gem "rouge"
 gem "jekyll"
