@@ -219,6 +219,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/streamline-security-wazuh-in-docker/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2024-12-29</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/why-new-session-should-be-created-during-user-authentication/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>

@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "Streamline Security :Wazuh in Docker with Kali",
+      "tags"     : "Cyber Security, SIEM, blueteam, and soc",
+      "categories" : "docker",
+      "url"      : "/streamline-security-wazuh-in-docker/",
+      "date"     : "12/29/2024"
+    } ,
+  
+    {
       "title"    : "Why new session should be created during user authentication?",
       "tags"     : "Cyber Security, SAST, and Pentest",
       "categories" : "security",

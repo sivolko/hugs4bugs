@@ -5,9 +5,27 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Sep 2024 19:37:37 +0000</pubDate>
-    <lastBuildDate>Tue, 24 Sep 2024 19:37:37 +0000</lastBuildDate>
+    <pubDate>Sun, 29 Dec 2024 09:37:26 +0000</pubDate>
+    <lastBuildDate>Sun, 29 Dec 2024 09:37:26 +0000</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
+    
+      <item>
+        <title>Streamline Security :Wazuh in Docker with Kali</title>
+        <description>&lt;p&gt;If you’re a security professional,it might a chance you would be familier with SIEM aka Security Information Event Management used by SOC analyst or security engineers. In this homelab cybersecurity series I’m guiding you through step by step Wazuh as single node deployment using docker in Kali Machine.&lt;/p&gt; &lt;p&gt;Before that let’s understand Wazuh and It’s Architecture :-&lt;/p&gt; &lt;h2 id=&quot;wazuh&quot;&gt;Wazuh&lt;/h2&gt; &lt;p&gt;Wazuh is open source security platform with unified XDR(Xtended Detection and Response) and SIEM platform which protects endpoints and cloud workloads.It has 3 major components&lt;/p&gt; &lt;ol&gt; &lt;li&gt;Wazuh Server:- mainlay used for Agent data collection&lt;/li&gt; &lt;li&gt;Wazuh Indexer:- for cluster communication&lt;/li&gt; &lt;li&gt;Wazuh Dashboard:-...</description>
+        <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/streamline-security-wazuh-in-docker/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/streamline-security-wazuh-in-docker/</guid>
+        
+        <category>Cyber Security</category>
+        
+        <category>SIEM</category>
+        
+        <category>blueteam</category>
+        
+        <category>soc</category>
+        
+        <category>docker</category>
+      </item>
     
       <item>
         <title>Why new session should be created during user authentication?</title>
@@ -503,20 +521,6 @@
         <category>security</category>
         
         <category>security</category>
-      </item>
-    
-      <item>
-        <title>Fundamentals of Network Security.☠️</title>
-        <description>&lt;p&gt;Either one is taking role as an azure developer,solution architech or administrator, all requires basic of the foundation of the networking.&lt;/p&gt; &lt;p&gt;In this blog, we’ll learn the client-server network model, difference b/w authentication and authorization, firewall types and many more related topics.&lt;/p&gt; &lt;h1 id=&quot;network-clients&quot;&gt;Network Clients&lt;/h1&gt; &lt;p&gt;According to traditionnal sense, a network client is a lightweight computer/device that can’t run program on its own.But now-a-days the client has transformed from a simple terminal which can represent any hardware or software system that interects with services made available on a server.&lt;/p&gt; &lt;h2 id=&quot;types-of-clients-&quot;&gt;Types of clients:-&lt;/h2&gt; &lt;table&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td&gt;&lt;strong&gt;Client&lt;/strong&gt;&lt;/td&gt; &lt;td&gt;&lt;strong&gt;Local storage&lt;/strong&gt;&lt;/td&gt; &lt;td&gt;&lt;strong&gt;Local...</description>
-        <pubDate>Sat, 15 May 2021 23:04:08 +0000</pubDate>
-        <link>https://hugs4bugs.me/Fundamentals-of-Network-security/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/Fundamentals-of-Network-security/</guid>
-        
-        <category>networking</category>
-        
-        <category>security</category>
-        
-        <category>networking</category>
       </item>
     
   </channel>
