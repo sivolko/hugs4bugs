@@ -5,9 +5,27 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Dec 2024 09:37:26 +0000</pubDate>
-    <lastBuildDate>Sun, 29 Dec 2024 09:37:26 +0000</lastBuildDate>
+    <pubDate>Wed, 01 Jan 2025 07:10:15 +0000</pubDate>
+    <lastBuildDate>Wed, 01 Jan 2025 07:10:15 +0000</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
+    
+      <item>
+        <title>Wazuh&apos;s Big Move:From Elasticsearch to OpenSearch</title>
+        <description>&lt;p&gt;Before, we jump to our topic let’s recall what wazuh is? It’s a popular open source security monitoring platfrom . It’s HIDS aka host based intrusion Detection system. HIDs a Host-based Intrusion Detection System monitors and analyzes the internals of a computing system rather than the network packets on its external interfaces. It focuses on detecting unauthorized access and malicious activities on individual hosts or devices.&lt;/p&gt; &lt;p&gt;Wazuh has shifted to opensearch from elasticsearch since version4.3 and current version is 4.9.2 . So let’s break down why it happened and how cybersecurity professional get benifited.&lt;/p&gt; &lt;ol&gt; &lt;li&gt;&lt;strong&gt;Licensing Issues&lt;/strong&gt;&lt;/li&gt; &lt;/ol&gt; &lt;ul&gt; &lt;li&gt;...</description>
+        <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/wazuh's-big-move-from-elasticsearch-to-opensearch/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/wazuh's-big-move-from-elasticsearch-to-opensearch/</guid>
+        
+        <category>Cyber Security</category>
+        
+        <category>SIEM</category>
+        
+        <category>blueteam</category>
+        
+        <category>soc</category>
+        
+        <category>security</category>
+      </item>
     
       <item>
         <title>Streamline Security :Wazuh in Docker with Kali</title>
@@ -503,24 +521,6 @@
         <category>security</category>
         
         <category>azure</category>
-      </item>
-    
-      <item>
-        <title>Protection against Security threat on Azure.☠️</title>
-        <description>&lt;p&gt;Let’s break the Paradox of the Word &lt;strong&gt;Security&lt;/strong&gt;, considering the factors involved in Securing an application or environment.Such as strengthening security posture and protect against threat by using &lt;strong&gt;Azure security center&lt;/strong&gt;. Collecting and acting on security data from many different sources by using &lt;strong&gt;Azure sentinel&lt;/strong&gt;.Storing and accessing the sesitive information like passwords,Encryption keys securely in Azure key vault.Managing dedicated physical servers to host your &lt;strong&gt;Azure VMS&lt;/strong&gt; for windows and Linux by using &lt;strong&gt;Azure Dedicated Host&lt;/strong&gt; .&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Security Posture&lt;/strong&gt;:- Security policies and controls along with the how well one could predict, prevent,and responds to security threats.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 02 Aug 2021 23:04:08 +0000</pubDate>
-        <link>https://hugs4bugs.me/2021-08-2-Understanding-basics-of-security/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/2021-08-2-Understanding-basics-of-security/</guid>
-        
-        <category>networking</category>
-        
-        <category>security</category>
-        
-        <category>security</category>
       </item>
     
   </channel>

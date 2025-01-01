@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "Wazuh&#39;s Big Move:From Elasticsearch to OpenSearch",
+      "tags"     : "Cyber Security, SIEM, blueteam, and soc",
+      "categories" : "security",
+      "url"      : "/wazuh's-big-move-from-elasticsearch-to-opensearch/",
+      "date"     : "01/01/2025"
+    } ,
+  
+    {
       "title"    : "Streamline Security :Wazuh in Docker with Kali",
       "tags"     : "Cyber Security, SIEM, blueteam, and soc",
       "categories" : "docker",
