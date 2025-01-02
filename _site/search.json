@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "Demystifying Log Analytics vs Log Analytics Workspace in MS Sentinel",
+      "tags"     : "Cyber Security, SIEM, sentinel, and soc",
+      "categories" : "azure",
+      "url"      : "/demystifying-loganalytics-vs-log-analytics-workspace-in-MS-Sentinel/",
+      "date"     : "01/02/2025"
+    } ,
+  
+    {
       "title"    : "Wazuh&#39;s Big Move:From Elasticsearch to OpenSearch",
       "tags"     : "Cyber Security, SIEM, blueteam, and soc",
       "categories" : "security",

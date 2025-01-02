@@ -5,9 +5,27 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 01 Jan 2025 07:10:15 +0000</pubDate>
-    <lastBuildDate>Wed, 01 Jan 2025 07:10:15 +0000</lastBuildDate>
+    <pubDate>Thu, 02 Jan 2025 06:58:22 +0000</pubDate>
+    <lastBuildDate>Thu, 02 Jan 2025 06:58:22 +0000</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
+    
+      <item>
+        <title>Demystifying Log Analytics vs Log Analytics Workspace in MS Sentinel</title>
+        <description>&lt;p&gt;&lt;strong&gt;Problem Statement&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;I have seen many professionals,especially those new to Azure, often get confused between Log Analytics and Log Analytics Workspace during Microsoft Sentinel deployment. This confusion can lead to inefficient setups, increased costs, and suboptimal security postures. Being a security SME it’s crucial to share my personal and hands on expertise to avoid future confusions.Let’s break down these concepts to eliminate any ambiguity.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Understanding Log Analytics&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Log Analytics is a service within Azure Monitor that collects and analyzes log data from various sources. Think of it as the engine that powers your log data analysis. It helps you gain...</description>
+        <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/demystifying-loganalytics-vs-log-analytics-workspace-in-MS-Sentinel/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/demystifying-loganalytics-vs-log-analytics-workspace-in-MS-Sentinel/</guid>
+        
+        <category>Cyber Security</category>
+        
+        <category>SIEM</category>
+        
+        <category>sentinel</category>
+        
+        <category>soc</category>
+        
+        <category>azure</category>
+      </item>
     
       <item>
         <title>Wazuh&apos;s Big Move:From Elasticsearch to OpenSearch</title>
@@ -507,20 +525,6 @@
         <category>security</category>
         
         <category>security</category>
-      </item>
-    
-      <item>
-        <title>Managing and Storing Secrets:Azure Vault.🙆</title>
-        <description>&lt;p&gt;As we deploy our production to the cloud, we need to be very consious about the sensitive informations eg:- passwords,encryption keys and certificates, which needs to be available to function. Apart from authorised use case, one should take care for &lt;strong&gt;unauthorised&lt;/strong&gt; access.&lt;/p&gt; &lt;p&gt;Hence, comes the &lt;strong&gt;Azure Key Vault&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;What is Azure key vault&lt;/strong&gt;?&lt;/p&gt; &lt;p&gt;Azure Key Vault is a centrilized cloud service for securely storing and accessing secrets.Hold on what does &lt;em&gt;Secret&lt;/em&gt; means? it could be anythings that one want to tightly control access to eg- API keys, passwords, certificates.&lt;/p&gt; &lt;p&gt;Key value services supports 2 types of containers:-&lt;/p&gt; &lt;ol&gt; &lt;li&gt;&lt;strong&gt;Vaults&lt;/strong&gt; :...</description>
-        <pubDate>Mon, 02 Aug 2021 23:04:08 +0000</pubDate>
-        <link>https://hugs4bugs.me/storing-and-managing-secrets-using-azure-vault/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/storing-and-managing-secrets-using-azure-vault/</guid>
-        
-        <category>networking</category>
-        
-        <category>security</category>
-        
-        <category>azure</category>
       </item>
     
   </channel>

@@ -92,13 +92,13 @@ In this my homelab I'll be using single node deployment. so let's colne official
 ```
 ![image](https://res.cloudinary.com/hugs4bugs/image/upload/v1735460735/hugs4bugs/wazuh/7_jyjjnw.png)
 
-5.Visit Favourite browser and type localhost or local ip :443 for wazuh dashboard. Default username is admin & Password as SecretPassword
+5.Visit favourite browser and type localhost or local ip :443 for wazuh dashboard. Default username is admin & Password as SecretPassword
 
 ![image](https://res.cloudinary.com/hugs4bugs/image/upload/v1735460735/hugs4bugs/wazuh/8_tckpuk.jpg)
 
 6.Feel Free to change default password 
 
-![image](https://res.cloudinary.com/hugs4bugs/image/upload/v1735460735/hugs4bugs/wazuh/8_tckpuk.jpg)
+![image](https://res.cloudinary.com/hugs4bugs/image/upload/v1735460735/hugs4bugs/wazuh/10_ybo7rv.jpg)
 
 7.Hover Hamburger Menu and click Endpoint Summary under server Management
 

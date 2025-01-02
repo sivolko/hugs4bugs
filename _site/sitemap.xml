@@ -219,6 +219,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/demystifying-loganalytics-vs-log-analytics-workspace-in-MS-Sentinel/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2025-01-02</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/wazuh's-big-move-from-elasticsearch-to-opensearch/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
