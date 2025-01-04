@@ -219,6 +219,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/best-way-tofool-yourself-enablinng-sms-based-2FA/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2025-01-04</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/demystifying-loganalytics-vs-log-analytics-workspace-in-MS-Sentinel/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>

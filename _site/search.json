@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "The Best Way to Fool Yourself:Use SMS 2FA",
+      "tags"     : "Cyber Security",
+      "categories" : "Identity & Access",
+      "url"      : "/best-way-tofool-yourself-enablinng-sms-based-2FA/",
+      "date"     : "01/04/2025"
+    } ,
+  
+    {
       "title"    : "Demystifying Log Analytics vs Log Analytics Workspace in MS Sentinel",
       "tags"     : "Cyber Security, SIEM, sentinel, and soc",
       "categories" : "azure",
