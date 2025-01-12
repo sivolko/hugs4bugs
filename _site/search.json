@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "Effortless Wazuh v4.10.0 upgrade using Docker",
+      "tags"     : "Cyber Security and SOC",
+      "categories" : "security",
+      "url"      : "/how-and-why-to-upgrade-wazuh-4.10-using-docker/",
+      "date"     : "01/12/2025"
+    } ,
+  
+    {
       "title"    : "The Best Way to Fool Yourself:Use SMS 2FA",
       "tags"     : "Cyber Security",
       "categories" : "Identity & Access",

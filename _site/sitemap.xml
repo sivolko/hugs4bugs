@@ -219,6 +219,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/how-and-why-to-upgrade-wazuh-4.10-using-docker/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2025-01-12</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/best-way-tofool-yourself-enablinng-sms-based-2FA/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
