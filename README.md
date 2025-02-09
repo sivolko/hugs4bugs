@@ -1,27 +1,61 @@
-hey folks ! 
+# Hugs4Bugs
 
-This is open source blog , I have written for my own reference and lemme know if you find this useful and insightful.
+This is an open-source blog where I write about various technical aspects. This project is built using Jekyll, a simple, blog-aware, static site generator for personal, project, or organization sites. The site is hosted on Firebase and uses GitHub Actions for continuous integration.
+
+## Architecture
+
+The project follows a straightforward architecture:
+- **Jekyll**: Generates static site content from Markdown files.
+- **GitHub Actions**: Automates CI/CD pipeline, including CodeQL security analysis.
+- **Firebase**: Hosts the generated static site.
+- **Docker**: Provides containerized development and deployment environments.
+
+### Directory Structure
+
+hugs4bugs/ ├── _posts/ │ ├── ... ├── _site/ │ ├── ... ├── Dockerfile ├── docker-compose.yml ├── Gemfile ├── ..
 
 
-Feel free to raise PR 
-# hugs4bugs
+## Running Locally
 
-Currently writing about Cloud Security and Cyber Security
+To run the project locally, follow these steps:
 
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/sivolko/hugs4bugs.git
+   cd hugs4bugs
+   ```
+2. Install dependencies and run the Jekyll server:
+  ```
+   gem install bundler && bundle install
+   bundle exec jekyll serve
 
-## Run Locally 
- Clone this repo and run following commands 
- ```
- 1. gem install bundler && bundle install && bundle exec jekyll serve
-
- ```
-
- To load server live just add -l 
+```
+3. To load the server live, add the -l option:
+```
+bundle exec jekyll serve -l
+```
 
 ## Run inside Container (Docker)
 
-Edit docker-compose file as per your preferences and run following commands 
+To run the project inside a Docker container, follow these steps:
 
-1. docker-compose up (starts server)
-2. docker-compose stop (stops server)
-3. docker-compose down (unmounts and delete the container including Networks)
+1. Edit the docker-compose.yml file as per your preferences.
+2. Start the server:
+   ```
+    docker-compose up
+   ```
+3. Stop the server:
+```
+docker-compose stop
+```
+
+**Continuous Integration**
+
+The repository uses GitHub Actions to automate the CI/CD pipeline. The workflow includes:
+
+1. **CodeQL Analysis**: Performs security analysis on the codebase to detect vulnerabilities.
+2. **Firebase Deployment**: Deploys the static site to Firebase Hosting.
+You can find the workflow configuration in the .github/workflows directory.
+
+**Contributions**
+Feel free to raise PRs or issues if you find something useful or have suggestions for improvements.
