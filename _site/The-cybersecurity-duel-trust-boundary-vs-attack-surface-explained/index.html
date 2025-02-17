@@ -17,19 +17,19 @@
     
     
 
-    <title>Protection against Security threat on Azure.☠️ | hugs4bugs</title>
-    <meta name="description" content="This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of ne...">
+    <title>Trust boundary vs Attack Surface Explained | hugs4bugs</title>
+    <meta name="description" content="Let's get concept clear what's Log analytics and log analytics workspace">
     
-    <meta name="keywords" content="networking, security">
+    <meta name="keywords" content="Cyber Security">
     
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Protection against Security threat on Azure.☠️ | hugs4bugs">
-    <meta name="twitter:description" content="This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of ne...">
+    <meta name="twitter:title" content="Trust boundary vs Attack Surface Explained | hugs4bugs">
+    <meta name="twitter:description" content="Let's get concept clear what's Log analytics and log analytics workspace">
 
     
-    <meta property="twitter:image" content="https://cdn.pixabay.com/photo/2017/11/19/23/56/hacking-2964100_960_720.jpg">
+    <meta property="twitter:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1735797428/hugs4bugs/IMG20240824121111_d2qqef.jpg">
     
 
     
@@ -37,10 +37,10 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="https://hugs4bugs.me/2021-08-2-Understanding-basics-of-security/">
-    <meta property="og:title" content="Protection against Security threat on Azure.☠️ | hugs4bugs">
-    <meta property="og:image" content="https://cdn.pixabay.com/photo/2017/11/19/23/56/hacking-2964100_960_720.jpg">
-    <meta property="og:description" content="This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of ne...">
+    <meta property="og:url" content="https://hugs4bugs.me/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/">
+    <meta property="og:title" content="Trust boundary vs Attack Surface Explained | hugs4bugs">
+    <meta property="og:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1735797428/hugs4bugs/IMG20240824121111_d2qqef.jpg">
+    <meta property="og:description" content="Let's get concept clear what's Log analytics and log analytics workspace">
     <meta property="og:site_name" content="hugs4bugs">
 
     <!-- Favicon -->
@@ -76,7 +76,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="canonical" href="https://hugs4bugs.me/2021-08-2-Understanding-basics-of-security/">
+    <link rel="canonical" href="https://hugs4bugs.me/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/">
     <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
         href="https://hugs4bugs.me/feed.xml" />
     <link rel='manifest' href='../manifest.json'>
@@ -304,22 +304,22 @@
                 <p class="post-info">
                     
                         <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="2021-08-02T23:04:08+00:00">
+                        <time class="date" datetime="2025-02-17T00:00:00+00:00">
                             
 
 
-August 2, 2021
+February 17, 2025
 
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>1 min to read</span>
+                    <span>4 min to read</span>
                 </p>
-                <h1 class="post-title">Protection against Security threat on Azure.☠️</h1>
-                <p class="post-subtitle">Security:clearing the common myths.</p>
+                <h1 class="post-title">Trust boundary vs Attack Surface Explained</h1>
+                <p class="post-subtitle">No More Confusions!</p>
 
                 
-                    <img src="https://cdn.pixabay.com/photo/2017/11/19/23/56/hacking-2964100_960_720.jpg" alt="Featured image" class="post-cover">
+                    <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1735797428/hugs4bugs/IMG20240824121111_d2qqef.jpg" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
@@ -329,10 +329,111 @@ August 2, 2021
                 <!-- Add your table of contents here -->
 
 
-                <p>Let’s break the Paradox of the Word <strong>Security</strong>, considering the factors involved in Securing an application or environment.Such as strengthening security posture and protect against threat by using <strong>Azure security center</strong>. Collecting and acting on security data from many different sources by using <strong>Azure sentinel</strong>.Storing and accessing the sesitive information like passwords,Encryption keys securely in Azure key vault.Managing dedicated physical servers to host your <strong>Azure VMS</strong> for windows and Linux by using <strong>Azure Dedicated Host</strong> .</p>
+                <p>I have often seen people get confused term “Trust Boundary” with “Attack Surface”, so let’s get it clear now with the context of a corporate network.</p>
 
-<p><strong>Security Posture</strong>:- Security policies and controls along with the how well one could predict, prevent,and responds to security threats.</p>
+<p><strong>What Are Trust Boundaries?</strong></p>
 
+<p>Trust boundaries are the dividing lines that separate different zones within a system, each requiring specific security measures to protect sensitive data. Think of them as invisible fences within your digital landscape, ensuring that only authorized personnel can access certain areas.</p>
+
+<p>In a corporate network, trust boundaries can be found between various departments, each with its own set of sensitive information. For instance:</p>
+
+<ul>
+  <li>
+    <p>HR Department: Contains employee records, personal details, and salary information. Access to this data is restricted to HR personnel.</p>
+  </li>
+  <li>
+    <p>Finance Department: Houses financial reports, budgets, and transaction records, with access limited to finance team members.</p>
+  </li>
+  <li>
+    <p>IT Department: Manages network infrastructure, servers, and security systems, accessible only by IT staff.</p>
+  </li>
+</ul>
+
+<p>To establish and maintain these trust boundaries, organizations implement access controls such as user authentication and role-based access control (RBAC). These measures ensure that sensitive information remains within its designated boundaries, protected from unauthorized access.</p>
+
+<p><strong>Understanding Attack Surfaces</strong></p>
+
+<p>While trust boundaries focus on securing specific zones within a system, the attack surface defines all potential points where an unauthorized user (the attacker) could try to enter or extract data. It’s the digital battleground, where every exposed interface, endpoint, and application represents a potential vulnerability.</p>
+
+<p>In a corporate network, the attack surface includes:</p>
+
+<ul>
+  <li>Network Interfaces: External connections to the internet, VPNs, and remote access points.</li>
+  <li>Endpoints: Devices such as computers, smartphones, and IoT gadgets used by employees.</li>
+  <li>Applications: Web applications, email systems, and other software utilized within the organization.</li>
+  <li>APIs: Interfaces that enable communication between different systems.</li>
+</ul>
+
+<p>The more interfaces, endpoints, and applications a network has, the larger its attack surface. Each point of entry is a potential vulnerability that an attacker could exploit.</p>
+
+<p><strong>A Real-World Example: Corporate Network Security</strong></p>
+
+<p>Let’s consider a corporate network with multiple departments, each with its own set of sensitive data. The organization has implemented several security measures to protect its digital assets:</p>
+
+<ol>
+  <li>
+    <p>External Trust Boundary: A firewall controls incoming and outgoing traffic, creating a barrier between the external internet and the internal network.</p>
+  </li>
+  <li>
+    <p>Internal Trust Boundaries: Each department (HR, Finance, IT) has its own internal trust boundary, protected by strong access controls and encryption to ensure sensitive data remains secure.</p>
+  </li>
+</ol>
+
+<p>Despite these measures, the network’s attack surface includes various points of potential vulnerability:</p>
+
+<ul>
+  <li>
+    <p>Network Interfaces: Connections to the internet and VPNs must be monitored and secured to prevent unauthorized access.</p>
+  </li>
+  <li>
+    <p>Endpoints: Devices used by employees must be protected against malware and other threats.</p>
+  </li>
+  <li>
+    <p>Applications: Web applications and email systems require regular updates and security patches to address vulnerabilities.</p>
+  </li>
+  <li>
+    <p>APIs: Interfaces enabling communication between systems must be secured to prevent exploitation.</p>
+  </li>
+</ul>
+
+<p><strong>Potential Attacks and Mitigation Strategies</strong></p>
+
+<p>An attacker might attempt to exploit vulnerabilities within the corporate network using various methods:</p>
+
+<ol>
+  <li>
+    <p>Phishing Attack: The attacker sends a malicious email to an employee, hoping to trick them into clicking on a link or downloading a file that contains malware. To mitigate this risk, organizations can educate employees about phishing risks and implement email filtering systems to detect and block malicious emails.</p>
+  </li>
+  <li>
+    <p>Vulnerable Application: The attacker identifies a vulnerable web application used by the company and attempts to exploit it to gain access to the internal network. Regular updates, security patches, and thorough testing can help address these vulnerabilities.</p>
+  </li>
+  <li>
+    <p>Compromised Device: The attacker targets an employee’s device with malware, which then spreads within the network. Implementing endpoint protection solutions and conducting regular security assessments can help detect and prevent such attacks.</p>
+  </li>
+</ol>
+
+<p><strong>Reducing the Attack Surface</strong></p>
+
+<p>To better protect sensitive data and reduce the risk of successful attacks, organizations can implement the following strategies:</p>
+
+<ol>
+  <li>
+    <p>Minimize Exposed Interfaces: Limit the number of exposed interfaces, endpoints, and applications to reduce potential entry points for attackers.</p>
+  </li>
+  <li>
+    <p>Regular Updates and Patching: Ensure that all software, applications, and systems are regularly updated and patched to address vulnerabilities.</p>
+  </li>
+  <li>
+    <p>Employee Education: Educate employees about cybersecurity best practices, including recognizing phishing attempts and safeguarding their devices.</p>
+  </li>
+  <li>
+    <p>Network Segmentation: Segment the network into smaller, isolated sections to contain potential breaches and limit the spread of malware.</p>
+  </li>
+</ol>
+
+<p>By reducing the attack surface and reinforcing trust boundaries, organizations can enhance their cybersecurity posture and protect their valuable digital assets.</p>
+
+<p>Thanks for reading!</p>
 
 
                 <!-- Pagination links -->
@@ -348,29 +449,29 @@ August 2, 2021
                         
                         
                             <li>
-                                <a href="/cloud-native-CNAPP-tool-Microsoft-defender-for-cloud-101/">
+                                <a href="/why-new-session-should-be-created-during-user-authentication/">
                                     
-                                        <img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MS%20Defender%20for%20Cloud%20R6?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1800&qlt=100&fmt=png-alpha&fit=constrain">
+                                        <img src="https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg">
                                     
-                                    <h3>Microsoft Defender for Cloud 101</h3>
+                                    <h3>Why new session should be created during user authentication?</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/metasploitFramework-vs-metasploit-pro/">
+                                <a href="/what-is-chat-gpt/">
                                     
-                                        <img src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80">
+                                        <img src="https://images.pexels.com/photos/7108/notebook-computer-chill-relax.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
                                     
-                                    <h3>Metasploit Framework vs Metasploit Pro</h3>
+                                    <h3>What is chatGpt? How to use it?</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/wazuh's-big-move-from-elasticsearch-to-opensearch/">
+                                <a href="/streamline-security-wazuh-in-docker/">
                                     
-                                        <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1735713838/IMG_5316_vrb0rb.jpg">
+                                        <img src="https://plus.unsplash.com/premium_photo-1683140655656-20448abc55da?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
                                     
-                                    <h3>Wazuh's Big Move:From Elasticsearch to OpenSearch</h3>
+                                    <h3>Streamline Security :Wazuh in Docker with Kali</h3>
                                 </a>
                             </li>
                         
@@ -382,7 +483,7 @@ August 2, 2021
 
         <!-- Add time bar only for pages without pagination -->
         
-            <div class="time-bar" data-minutes="1">
+            <div class="time-bar" data-minutes="4">
     <span class="time-completed"></span>
     <span class="time-remaining"></span>
     <div class="bar">
@@ -402,13 +503,13 @@ August 2, 2021
         </div>
     </div>
     
-    <a href="/storing-and-managing-secrets-using-azure-vault/" class="post-preview">
+    <a href="/best-linux-cheatsheet-101/" class="post-preview">
         <div class="image">
             
-                <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80">
+                <img src="https://www.iihglobal.com/wp-content/uploads/2019/02/dcsad.gif">
             
         </div>
-        <h3 class="title">Managing and Storing Secrets:Azure Vault.🙆</h3>
+        <h3 class="title">Linux Cheat Sheet 101</h3>
     </a>
 </div>
 
@@ -425,7 +526,7 @@ August 2, 2021
         <section class="share">
     <h3>Share</h3>
     <a aria-label="Share on Twitter"
-        href="https://twitter.com/intent/tweet?text=&quot;This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of networking. &quot;%20https://hugs4bugs.me/2021-08-2-Understanding-basics-of-security/%20via%20&#64;myselfshubhendu&hashtags=networking,security"
+        href="https://twitter.com/intent/tweet?text=&quot;Let's get concept clear what's Log analytics and log analytics workspace&quot;%20https://hugs4bugs.me/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -433,7 +534,7 @@ August 2, 2021
         </svg>
     </a>
     <a aria-label="Share on WhatsApp"
-        href="https://twitter.com/intent/tweet?text=&quot;This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of networking. &quot;%20https://hugs4bugs.me/2021-08-2-Understanding-basics-of-security/%20via%20&#64;myselfshubhendu&hashtags=networking,security"
+        href="https://twitter.com/intent/tweet?text=&quot;Let's get concept clear what's Log analytics and log analytics workspace&quot;%20https://hugs4bugs.me/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security"
         onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -441,7 +542,7 @@ August 2, 2021
         </svg>
     </a>
     <a aria-label="Share on Facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/2021-08-2-Understanding-basics-of-security/"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
         title="Share on Facebook">
         <svg class="icon icon-facebook">
@@ -531,7 +632,7 @@ August 2, 2021
         disqus_loaded = true;
         var disqus_shortname = 'hugs4bugs';
         var disqus_title = '';
-        var disqus_url = '/2021-08-2-Understanding-basics-of-security/';
+        var disqus_url = '/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -702,21 +803,122 @@ August 2, 2021
         {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
-            "name": "Protection against Security threat on Azure.☠️",
-            "headline": "Security:clearing the common myths.",
-            "description": "This is fundamental blog of network security 101 with role as an azure developer,solution architect,administrator requires knowledge of the foundations of networking. ",
-            "image": "https://cdn.pixabay.com/photo/2017/11/19/23/56/hacking-2964100_960_720.jpg",
-            "url": "https://hugs4bugs.me/2021-08-2-Understanding-basics-of-security/",
-            "articleBody": "Let’s break the Paradox of the Word Security, considering the factors involved in Securing an application or environment.Such as strengthening security posture and protect against threat by using Azure security center. Collecting and acting on security data from many different sources by using Azure sentinel.Storing and accessing the sesitive information like passwords,Encryption keys securely in Azure key vault.Managing dedicated physical servers to host your Azure VMS for windows and Linux by using Azure Dedicated Host .
+            "name": "Trust boundary vs Attack Surface Explained",
+            "headline": "No More Confusions!",
+            "description": "Let's get concept clear what's Log analytics and log analytics workspace",
+            "image": "https://res.cloudinary.com/hugs4bugs/image/upload/v1735797428/hugs4bugs/IMG20240824121111_d2qqef.jpg",
+            "url": "https://hugs4bugs.me/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/",
+            "articleBody": "I have often seen people get confused term “Trust Boundary” with “Attack Surface”, so let’s get it clear now with the context of a corporate network.
 
-Security Posture:- Security policies and controls along with the how well one could predict, prevent,and responds to security threats.
+What Are Trust Boundaries?
 
+Trust boundaries are the dividing lines that separate different zones within a system, each requiring specific security measures to protect sensitive data. Think of them as invisible fences within your digital landscape, ensuring that only authorized personnel can access certain areas.
+
+In a corporate network, trust boundaries can be found between various departments, each with its own set of sensitive information. For instance:
+
+
+  
+    HR Department: Contains employee records, personal details, and salary information. Access to this data is restricted to HR personnel.
+  
+  
+    Finance Department: Houses financial reports, budgets, and transaction records, with access limited to finance team members.
+  
+  
+    IT Department: Manages network infrastructure, servers, and security systems, accessible only by IT staff.
+  
+
+
+To establish and maintain these trust boundaries, organizations implement access controls such as user authentication and role-based access control (RBAC). These measures ensure that sensitive information remains within its designated boundaries, protected from unauthorized access.
+
+Understanding Attack Surfaces
+
+While trust boundaries focus on securing specific zones within a system, the attack surface defines all potential points where an unauthorized user (the attacker) could try to enter or extract data. It’s the digital battleground, where every exposed interface, endpoint, and application represents a potential vulnerability.
+
+In a corporate network, the attack surface includes:
+
+
+  Network Interfaces: External connections to the internet, VPNs, and remote access points.
+  Endpoints: Devices such as computers, smartphones, and IoT gadgets used by employees.
+  Applications: Web applications, email systems, and other software utilized within the organization.
+  APIs: Interfaces that enable communication between different systems.
+
+
+The more interfaces, endpoints, and applications a network has, the larger its attack surface. Each point of entry is a potential vulnerability that an attacker could exploit.
+
+A Real-World Example: Corporate Network Security
+
+Let’s consider a corporate network with multiple departments, each with its own set of sensitive data. The organization has implemented several security measures to protect its digital assets:
+
+
+  
+    External Trust Boundary: A firewall controls incoming and outgoing traffic, creating a barrier between the external internet and the internal network.
+  
+  
+    Internal Trust Boundaries: Each department (HR, Finance, IT) has its own internal trust boundary, protected by strong access controls and encryption to ensure sensitive data remains secure.
+  
+
+
+Despite these measures, the network’s attack surface includes various points of potential vulnerability:
+
+
+  
+    Network Interfaces: Connections to the internet and VPNs must be monitored and secured to prevent unauthorized access.
+  
+  
+    Endpoints: Devices used by employees must be protected against malware and other threats.
+  
+  
+    Applications: Web applications and email systems require regular updates and security patches to address vulnerabilities.
+  
+  
+    APIs: Interfaces enabling communication between systems must be secured to prevent exploitation.
+  
+
+
+Potential Attacks and Mitigation Strategies
+
+An attacker might attempt to exploit vulnerabilities within the corporate network using various methods:
+
+
+  
+    Phishing Attack: The attacker sends a malicious email to an employee, hoping to trick them into clicking on a link or downloading a file that contains malware. To mitigate this risk, organizations can educate employees about phishing risks and implement email filtering systems to detect and block malicious emails.
+  
+  
+    Vulnerable Application: The attacker identifies a vulnerable web application used by the company and attempts to exploit it to gain access to the internal network. Regular updates, security patches, and thorough testing can help address these vulnerabilities.
+  
+  
+    Compromised Device: The attacker targets an employee’s device with malware, which then spreads within the network. Implementing endpoint protection solutions and conducting regular security assessments can help detect and prevent such attacks.
+  
+
+
+Reducing the Attack Surface
+
+To better protect sensitive data and reduce the risk of successful attacks, organizations can implement the following strategies:
+
+
+  
+    Minimize Exposed Interfaces: Limit the number of exposed interfaces, endpoints, and applications to reduce potential entry points for attackers.
+  
+  
+    Regular Updates and Patching: Ensure that all software, applications, and systems are regularly updated and patched to address vulnerabilities.
+  
+  
+    Employee Education: Educate employees about cybersecurity best practices, including recognizing phishing attempts and safeguarding their devices.
+  
+  
+    Network Segmentation: Segment the network into smaller, isolated sections to contain potential breaches and limit the spread of malware.
+  
+
+
+By reducing the attack surface and reinforcing trust boundaries, organizations can enhance their cybersecurity posture and protect their valuable digital assets.
+
+Thanks for reading!
 ",
-            "wordcount": "95",
+            "wordcount": "757",
             "inLanguage": "en",
-            "dateCreated": "2021-08-02/",
-            "datePublished": "2021-08-02/",
-            "dateModified": "2021-08-02/",
+            "dateCreated": "2025-02-17/",
+            "datePublished": "2025-02-17/",
+            "dateModified": "2025-02-17/",
             "author": {
                 "@type": "Person",
                 "name": "Shubhendu",
@@ -743,7 +945,7 @@ Security Posture:- Security policies and controls along with the how well one co
             "mainEntityOfPage": "True",
             "genre": "security",
             "articleSection": "security",
-            "keywords": ["networking","security"]
+            "keywords": ["Cyber Security"]
         }
         </script>
     </body>

@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "Trust boundary vs Attack Surface Explained",
+      "tags"     : "Cyber Security",
+      "categories" : "security",
+      "url"      : "/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/",
+      "date"     : "02/17/2025"
+    } ,
+  
+    {
       "title"    : "Effortless Wazuh v4.10.0 upgrade using Docker",
       "tags"     : "Cyber Security and SOC",
       "categories" : "security",

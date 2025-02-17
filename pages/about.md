@@ -45,3 +45,4 @@ He is practictionar of Cyber Security with DevSecops, threat hunting, and RED Te
 
 <strong>
 I love to meet new people 👨‍⚕️, listen to their stories and discuss new ideas</strong>
++

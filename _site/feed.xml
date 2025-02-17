@@ -5,9 +5,21 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 01 Feb 2025 13:09:50 +0000</pubDate>
-    <lastBuildDate>Sat, 01 Feb 2025 13:09:50 +0000</lastBuildDate>
+    <pubDate>Mon, 17 Feb 2025 07:51:55 +0000</pubDate>
+    <lastBuildDate>Mon, 17 Feb 2025 07:51:55 +0000</lastBuildDate>
     <generator>Jekyll v3.9.3</generator>
+    
+      <item>
+        <title>Trust boundary vs Attack Surface Explained</title>
+        <description>&lt;p&gt;I have often seen people get confused term “Trust Boundary” with “Attack Surface”, so let’s get it clear now with the context of a corporate network.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;What Are Trust Boundaries?&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Trust boundaries are the dividing lines that separate different zones within a system, each requiring specific security measures to protect sensitive data. Think of them as invisible fences within your digital landscape, ensuring that only authorized personnel can access certain areas.&lt;/p&gt; &lt;p&gt;In a corporate network, trust boundaries can be found between various departments, each with its own set of sensitive information. For instance:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;HR Department: Contains employee records,...</description>
+        <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/</guid>
+        
+        <category>Cyber Security</category>
+        
+        <category>security</category>
+      </item>
     
       <item>
         <title>Effortless Wazuh v4.10.0 upgrade using Docker</title>
@@ -505,22 +517,6 @@
         <category>Cyber Security</category>
         
         <category>security</category>
-      </item>
-    
-      <item>
-        <title>Automate Twitter via github Actions.</title>
-        <description>&lt;p&gt;We are used to the way we work, but we are also used to the way we work.Hahahah, Sounds confusing, right? I know, but it is not.Lemme explain.&lt;/p&gt; &lt;p&gt;We are used to tweet via either twitter webApps or Native apps.But hold on, in the era of Devops where every things reliable on CI/CD, then why not automate our twitter too.&lt;/p&gt; &lt;p&gt;We gonna call this &lt;strong&gt;Twitter-Together&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;basically twitter-together is a &lt;a href=&quot;https://github.com/features/actions&quot;&gt;&lt;strong&gt;Github Action&lt;/strong&gt;&lt;/a&gt; that utilizes text files to publish tweets from a GitHub repository. Rather than tweeting directly, GitHub’s pull request review process encourages more collaboration, Twitter activity and editorial contributions...</description>
-        <pubDate>Tue, 02 Nov 2021 23:04:08 +0000</pubDate>
-        <link>https://hugs4bugs.me/how-to-automate-tweets-via-github-actions/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/how-to-automate-tweets-via-github-actions/</guid>
-        
-        <category>Automation</category>
-        
-        <category>CI/CD</category>
-        
-        <category>GitHub Actions</category>
-        
-        <category>automation</category>
       </item>
     
   </channel>

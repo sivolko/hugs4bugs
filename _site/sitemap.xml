@@ -219,6 +219,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2025-02-17</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/how-and-why-to-upgrade-wazuh-4.10-using-docker/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
