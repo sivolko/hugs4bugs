@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "Is Your SSH Port a Security Time Bomb? Understanding Wazuh Audit Insights",
+      "tags"     : "Cyber Security, wazuh, and soc",
+      "categories" : "security",
+      "url"      : "/is-your-ssh-port-a-security-time-bomb-understand-wazuh-audit-insights/",
+      "date"     : "03/09/2025"
+    } ,
+  
+    {
       "title"    : "Trust boundary vs Attack Surface Explained",
       "tags"     : "Cyber Security",
       "categories" : "security",

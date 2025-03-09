@@ -17,19 +17,19 @@
     
     
 
-    <title>WAF vs IPS | hugs4bugs</title>
-    <meta name="description" content="What is the difference between WAF and IPS system and why do we need both?">
+    <title>Is Your SSH Port a Security Time Bomb? Understanding Wazuh Audit Insights | hugs4bugs</title>
+    <meta name="description" content="Learn how default SSH configurations, such as using port 22, can expose your system to security risks. This blog dives into Wazuh audit insights and provides...">
     
-    <meta name="keywords" content="cloud, security, hacking, offensive security, troubleshooter Club">
+    <meta name="keywords" content="Cyber Security, wazuh, soc">
     
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="WAF vs IPS | hugs4bugs">
-    <meta name="twitter:description" content="What is the difference between WAF and IPS system and why do we need both?">
+    <meta name="twitter:title" content="Is Your SSH Port a Security Time Bomb? Understanding Wazuh Audit Insights | hugs4bugs">
+    <meta name="twitter:description" content="Learn how default SSH configurations, such as using port 22, can expose your system to security risks. This blog dives into Wazuh audit insights and provides...">
 
     
-    <meta property="twitter:image" content="https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+    <meta property="twitter:image" content="https://hugs4bugs.me/assets/img/s.png">
     
 
     
@@ -37,10 +37,10 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="https://hugs4bugs.me/difference-between-WAF-and-IPS/">
-    <meta property="og:title" content="WAF vs IPS | hugs4bugs">
-    <meta property="og:image" content="https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-    <meta property="og:description" content="What is the difference between WAF and IPS system and why do we need both?">
+    <meta property="og:url" content="https://hugs4bugs.me/is-your-ssh-port-a-security-time-bomb-understand-wazuh-audit-insights/">
+    <meta property="og:title" content="Is Your SSH Port a Security Time Bomb? Understanding Wazuh Audit Insights | hugs4bugs">
+    <meta property="og:image" content="https://hugs4bugs.me/assets/img/s.png">
+    <meta property="og:description" content="Learn how default SSH configurations, such as using port 22, can expose your system to security risks. This blog dives into Wazuh audit insights and provides...">
     <meta property="og:site_name" content="hugs4bugs">
 
     <!-- Favicon -->
@@ -76,7 +76,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="canonical" href="https://hugs4bugs.me/difference-between-WAF-and-IPS/">
+    <link rel="canonical" href="https://hugs4bugs.me/is-your-ssh-port-a-security-time-bomb-understand-wazuh-audit-insights/">
     <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
         href="https://hugs4bugs.me/feed.xml" />
     <link rel='manifest' href='../manifest.json'>
@@ -304,22 +304,20 @@
                 <p class="post-info">
                     
                         <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="2022-11-02T00:00:00+00:00">
+                        <time class="date" datetime="2025-03-09T00:00:00+00:00">
                             
 
 
-November 2, 2022
+March 9, 2025
 
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>4 min to read</span>
+                    <span>3 min to read</span>
                 </p>
-                <h1 class="post-title">WAF vs IPS</h1>
-                <p class="post-subtitle">Are you still confused?</p>
+                <h1 class="post-title">Is Your SSH Port a Security Time Bomb? Understanding Wazuh Audit Insights</h1>
+                <p class="post-subtitle">Fix Your SSH Port Before It's Too Late</p>
 
-                
-                    <img src="https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
@@ -329,99 +327,163 @@ November 2, 2022
                 <!-- Add your table of contents here -->
 
 
-                <p>Before we start, you must be confused or there might be a question in your mind “why do we need so many things as security?” We do have firewalls, Antivirus though .</p>
+                <p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1741543902/hugs4bugs/wazuh_yg5dwh.jpg" alt="mage" /></p>
 
-<p>Lemme explain this situation in simpler use case. Suppose you have plan for long road trip for a week with your family and you have decided to leave home at early morning to avoid city traffic . You set alarm, and leave home as early as you can . While boarding to car, you <strong>locked your main gate, but in rush you have forgotten to close balcony french window, back gates</strong>.</p>
+<p>When it comes to system security, even small misconfigurations can open the door to cyberattacks. Tools like Wazuh, a Security Information and Event Management (SIEM) platform, help users perform audits to evaluate their system’s security posture. In this blog, we’ll walk you through understanding audit results and share actionable steps to secure your Unix-based system.</p>
 
-<p>This is the same situation when a <strong>network administrator knows that this would be like locking the front door of our house but leaving all the windows and the back door open. Now that the attacks occur in different “layers” in the network protocols, for which we need different defense systems for each type of traffic</strong></p>
+<p><strong>Understanding Wazuh System Audit Scores</strong></p>
 
-<p>I hope you got your confusion away.Now let’s jump over main point What’s difference between Web Application Firewall(WAF) and Intrusion Prevention System (IPS)</p>
-
-<p><strong>WAF</strong></p>
-
-<p>In WAF all request-response i.e nothing but HTTP request is analyzed before reaching to the WebApps or users.That’s why WAF is a solution (hardware or software) that works as an intermediary between external users and web applications. And WAF have a set of predefined or manual rules, which help WAF to perform HTTP traffic monitoring and Analysis to prevent malicious HTTP requests like XSS(Cross site Scripting )DOS, DDOS, SQL injection etc.</p>
-
-<p><strong>Once the WAF detects a threat, it blocks the traffic and rejects the malicious web request or response with sensitive data.</strong></p>
-
-<p>Requirements for WAF :-</p>
+<p>A Wazuh audit generates a report that divides checks into three categories:</p>
 
 <ul>
-  <li>SSL Acceleration</li>
-  <li>DPI (Deep Packet Inspection)</li>
-  <li>High-performance and high-throughput</li>
-  <li>High-availability</li>
-  <li>Scalability</li>
+  <li>
+    <p>Passed: Checks that meet security standards.</p>
+  </li>
+  <li>
+    <p>Failed: Checks that require attention to improve security.</p>
+  </li>
+  <li>
+    <p>Not Applicable: Checks that don’t apply to your current system setup.</p>
+  </li>
 </ul>
 
-<p><strong>IPS</strong></p>
-
-<p>Intrusion Prevention System (IPS) is a more general-purpose protection appliance or software. It provides protection from traffic from a wide variety of protocol types, such as DNS, SMTP, TELNET, RDP, SSH, and FTP among others.</p>
-
-<p>General Methods used in IPS (Intrusion Prevention System) are :-</p>
-
-<ul>
-  <li>Signature-based detection</li>
-  <li>Policy-based detection</li>
-  <li>Detection based on anomalies</li>
-  <li>Honey Pot Detection</li>
-</ul>
+<p>For example, here’s what a typical result looks like:</p>
 
 <ol>
   <li>
-    <p>IPS uses signature-based detection just as an antivirus does. A firm can recognize a threat and send an alert to the administrator. For this method to work correctly, all signatures must be with the latest update.</p>
+    <p>Passed Checks: 3</p>
   </li>
   <li>
-    <p>IPS requires that security policies be declared very specifically. The IPS recognizes the traffic that is outside of these policies and automatically rejects abnormal behavior or unusual traffic.</p>
+    <p>Failed Checks: 13</p>
   </li>
   <li>
-    <p>The IPS automatically performs statistical analysis and establishes a comparison standard. When the traffic moves too far from this standard, it sends out an alert. The other way is by manually setting the normal behavior of the traffic so that alerts are sent when the traffic, again, moves away from this rule. The disadvantage of the manual way is that being less flexible and dynamic, it can send <strong>false alerts</strong>.</p>
+    <p>Not Applicable Checks: 7</p>
   </li>
 </ol>
 
-<p><strong>Why Do You Need A WAF And IPS Security Solution?</strong></p>
+<p><strong>Overall Score: 18%</strong></p>
 
-<p>An IPS accompanies a WAF solution and is typically deployed together. WAF deployments protect web application traffic, while IPS deployments scan and protect the network level by inspecting all packets. An IPS is typically used to protect your network from threats in most network protocols, and it works at OSI Layer 4-7. WAF solutions are mainly used to protect applications at the OSI layer-7 level.</p>
+<p>My audit score (in this case, 18%) reflects the percentage of security checks your system passed. Higher scores mean better security compliance. A low score like this highlights potential vulnerabilities.</p>
 
-<p>Tabular Comparison between WAF &amp; IPS :-</p>
+<p><strong>Identifying Issues: A Closer Look</strong></p>
 
-<style type="text/css">
-.tg  {border-collapse:collapse;border-color:#9ABAD9;border-spacing:0;}
-.tg td{background-color:#EBF5FF;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#444;
-  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{background-color:#409cff;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#fff;
-  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-phtq{background-color:#D2E4FC;border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-</style>
+<p>One example from a Wazuh audit might flag this issue: “SSH Hardening: Port should not be 22.” Let’s break it down:</p>
 
-<table class="tg">
-<thead>
-  <tr>
-    <th class="tg-0pky"></th>
-    <th class="tg-0pky"><span style="font-weight:bold;color:#000">WAF</span></th>
-    <th class="tg-0pky"><span style="font-weight:bold;color:#000">IPS</span></th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td class="tg-0pky"><span style="font-weight:400;font-style:normal">Network placement</span></td>
-    <td class="tg-phtq"><span style="font-weight:400;font-style:normal">Placed at the front of websites / web application</span></td>
-    <td class="tg-0pky"><span style="font-weight:400;font-style:normal">Behind the firewall either as in-line or out-of-band.</span><br /></td>
-  </tr>
-  <tr>
-    <td class="tg-0pky"><span style="font-weight:400;font-style:normal">Main Purpose </span></td>
-    <td class="tg-phtq">Dedicated to inspect only HTTP web traffic and protect against web specific attacks<br /></td>
-    <td class="tg-0pky">Dedicated to inspect all network packets to match them against signatures of known malicious attacks. Then, traffic is either blocked or an alarm is issued.<br /></td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">Protection </td>
-    <td class="tg-phtq">SQL injection, Cross Site Scripting, GET/POST attacks, session manipulation attacks, javascript, LFI/RFI etc<br /></td>
-    <td class="tg-0pky">Exploits against services such as webservers, SMTP, RDP, DNS, windows OS, Linux OS etc.<br /></td>
-  </tr>
-</tbody>
-</table>
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1741545552/hugs4bugs/controls_wtzyq0.jpg" alt="image" /></p>
 
-<p>Thanks for reading! keep Learning, Keep <strong>Troubleshooting</strong></p>
+<p><strong>What’s wrong?</strong> By default, SSH (Secure Shell) listens on port 22, which is commonly targeted by automated bots and attackers. Keeping this default configuration increases your risk of brute-force attacks or port scans.</p>
+
+<p><strong>Why does it matter?</strong> Changing the SSH port to something other than 22 adds an extra layer of security. It won’t completely stop determined attackers, but it can reduce the chances of opportunistic attacks by bots.</p>
+
+<p><strong>How do you fix it?</strong> Modify the SSH configuration file (/etc/ssh/sshd_config) and change the Port 22 line to a non-default port (e.g., 2222). After saving the changes, restart the SSH service to apply the update.</p>
+
+<p><strong>Preventive Steps to Improve Audit Scores</strong></p>
+
+<ol>
+  <li>Harden Your SSH Settings
+    <ul>
+      <li>Change the default SSH port.</li>
+      <li>Disable root login by setting PermitRootLogin no in the SSH config file.</li>
+      <li>Use SSH key-based authentication instead of passwords.</li>
+      <li>Implement two-factor authentication (2FA).</li>
+    </ul>
+  </li>
+  <li>Manage File Permissions
+    <ul>
+      <li>Use commands like chmod and chown to set restrictive file permissions.</li>
+    </ul>
+  </li>
+</ol>
+
+<ul>
+  <li>Regularly audit sensitive files to prevent unauthorized access.</li>
+</ul>
+
+<ol>
+  <li>Apply Security Updates
+    <ul>
+      <li>Always keep your operating system and software up to date. Updates often include patches for vulnerabilities.</li>
+    </ul>
+  </li>
+  <li>Enforce Strong Password Policies
+    <ul>
+      <li>Use tools like PAM to enforce complex passwords and periodic changes.</li>
+    </ul>
+  </li>
+  <li>Firewall and Network Security
+    <ul>
+      <li>Use a firewall (iptables or ufw) to block unauthorized access.</li>
+    </ul>
+  </li>
+</ol>
+
+<ul>
+  <li>Restrict network services to only what is essential.</li>
+</ul>
+
+<ol>
+  <li>Monitor Logs
+    <ul>
+      <li>Continuously monitor system logs for suspicious activities using tools like journalctl.</li>
+    </ul>
+  </li>
+  <li>Run Regular Audits
+    <ul>
+      <li>Perform routine checks with Wazuh or other tools to identify and fix new vulnerabilities.</li>
+    </ul>
+  </li>
+</ol>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1741546358/hugs4bugs/www_irv7on.png" alt="alt text" /></p>
+
+<p><strong>Steps to Change the SSH Port</strong></p>
+
+<p>Edit the SSH Configuration File:</p>
+
+<p><strong>Open the SSH configuration file in a text editor</strong>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash
+sudo nano /etc/ssh/sshd_config
+Locate the line that says #Port 22. If it’s commented out (with a #), remove the # to uncomment it.
+</code></pre></div></div>
+
+<p><strong>Change the value from 22 to 222</strong>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash
+Port 222
+Update Firewall Rules:
+</code></pre></div></div>
+<p><strong>Allow the new port (222) in your firewall to ensure SSH connections are not blocked</strong>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash
+sudo ufw allow 222/tcp
+</code></pre></div></div>
+
+<p>If you’re using iptables, add a rule for the new port:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash
+sudo iptables -A INPUT -p tcp --dport 222 -j ACCEPT
+
+</code></pre></div></div>
+
+<p>Restart the SSH Service:</p>
+
+<p>Apply the changes by restarting the SSH daemon:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash
+sudo systemctl restart sshd
+Test the New Port:
+</code></pre></div></div>
+<p>Before logging out, test the new port to ensure it works:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash
+ssh -p 222 username@your_server_ip
+Replace username with your actual username and your_server_ip with your system’s IP address.
+</code></pre></div></div>
+<p>Disable the Old Port (Optional):</p>
+
+<p>Once you confirm the new port works, you can block the old port (22) in your firewall:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash
+sudo ufw deny 22/tcp
+
+</code></pre></div></div>
 
 
                 <!-- Pagination links -->
@@ -437,29 +499,29 @@ November 2, 2022
                         
                         
                             <li>
-                                <a href="/How-to-onboard-your-Microsoft-Sentinel-from-scratch/">
+                                <a href="/How-to-install-threatmapper-in-kali-linux/">
                                     
-                                        <img src="https://th.bing.com/th/id/OIP.4iyoklvcRYZRDAi1HOKt0gHaEW?w=271&h=180&c=7&r=0&o=5&pid=1.7">
+                                        <img src="https://assets-global.website-files.com/63eaa07bbe370228bab003ea/644292bf096fd43dfd6532d4_image2-p-800.png">
                                     
-                                    <h3>How to onboard your first Microsoft sentinel SIEM tool?</h3>
+                                    <h3>How to install ThreatMapper in Kali Linux?</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/useful-cybersecurity-search-engines/">
-                                    
-                                        <img src="https://cdn.pixabay.com/photo/2018/04/22/22/57/hacker-3342696_960_720.jpg">
-                                    
-                                    <h3>Search engines one should know as a CyberSecurity enthausist!</h3>
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="/demystifying-loganalytics-vs-log-analytics-workspace-in-MS-Sentinel/">
+                                <a href="/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/">
                                     
                                         <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1735797428/hugs4bugs/IMG20240824121111_d2qqef.jpg">
                                     
-                                    <h3>Demystifying Log Analytics vs Log Analytics Workspace in MS Sentinel</h3>
+                                    <h3>Trust boundary vs Attack Surface Explained</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/What-is-Microsoft-Defender-Threat-Intelligence(MDTI)/">
+                                    
+                                        <img src="https://images.pexels.com/photos/10782398/pexels-photo-10782398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                    
+                                    <h3>What is Microsoft Defender Threat Intelligence</h3>
                                 </a>
                             </li>
                         
@@ -471,7 +533,7 @@ November 2, 2022
 
         <!-- Add time bar only for pages without pagination -->
         
-            <div class="time-bar" data-minutes="4">
+            <div class="time-bar" data-minutes="3">
     <span class="time-completed"></span>
     <span class="time-remaining"></span>
     <div class="bar">
@@ -514,7 +576,7 @@ November 2, 2022
         <section class="share">
     <h3>Share</h3>
     <a aria-label="Share on Twitter"
-        href="https://twitter.com/intent/tweet?text=&quot;What is the difference between WAF and IPS system and why do we need both?&quot;%20https://hugs4bugs.me/difference-between-WAF-and-IPS/%20via%20&#64;myselfshubhendu&hashtags=cloud,security,hacking,offensive security,troubleshooter Club"
+        href="https://twitter.com/intent/tweet?text=&quot;Learn how default SSH configurations, such as using port 22, can expose your system to security risks. This blog dives into Wazuh audit insights and provides actionable steps to strengthen your Unix-based system's defenses. Stay ahead of attackers with smarter configurations!&quot;%20https://hugs4bugs.me/is-your-ssh-port-a-security-time-bomb-understand-wazuh-audit-insights/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,wazuh,soc"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -522,7 +584,7 @@ November 2, 2022
         </svg>
     </a>
     <a aria-label="Share on WhatsApp"
-        href="https://twitter.com/intent/tweet?text=&quot;What is the difference between WAF and IPS system and why do we need both?&quot;%20https://hugs4bugs.me/difference-between-WAF-and-IPS/%20via%20&#64;myselfshubhendu&hashtags=cloud,security,hacking,offensive security,troubleshooter Club"
+        href="https://twitter.com/intent/tweet?text=&quot;Learn how default SSH configurations, such as using port 22, can expose your system to security risks. This blog dives into Wazuh audit insights and provides actionable steps to strengthen your Unix-based system's defenses. Stay ahead of attackers with smarter configurations!&quot;%20https://hugs4bugs.me/is-your-ssh-port-a-security-time-bomb-understand-wazuh-audit-insights/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,wazuh,soc"
         onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -530,7 +592,7 @@ November 2, 2022
         </svg>
     </a>
     <a aria-label="Share on Facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/difference-between-WAF-and-IPS/"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/is-your-ssh-port-a-security-time-bomb-understand-wazuh-audit-insights/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
         title="Share on Facebook">
         <svg class="icon icon-facebook">
@@ -620,7 +682,7 @@ November 2, 2022
         disqus_loaded = true;
         var disqus_shortname = 'hugs4bugs';
         var disqus_title = '';
-        var disqus_url = '/difference-between-WAF-and-IPS/';
+        var disqus_url = '/is-your-ssh-port-a-security-time-bomb-understand-wazuh-audit-insights/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -791,102 +853,174 @@ November 2, 2022
         {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
-            "name": "WAF vs IPS",
-            "headline": "Are you still confused?",
-            "description": "What is the difference between WAF and IPS system and why do we need both?",
-            "image": "https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "url": "https://hugs4bugs.me/difference-between-WAF-and-IPS/",
-            "articleBody": "Before we start, you must be confused or there might be a question in your mind “why do we need so many things as security?” We do have firewalls, Antivirus though .
+            "name": "Is Your SSH Port a Security Time Bomb? Understanding Wazuh Audit Insights",
+            "headline": "Fix Your SSH Port Before It's Too Late",
+            "description": "Learn how default SSH configurations, such as using port 22, can expose your system to security risks. This blog dives into Wazuh audit insights and provides actionable steps to strengthen your Unix-based system's defenses. Stay ahead of attackers with smarter configurations!",
+            "image": "",
+            "url": "https://hugs4bugs.me/is-your-ssh-port-a-security-time-bomb-understand-wazuh-audit-insights/",
+            "articleBody": "
 
-Lemme explain this situation in simpler use case. Suppose you have plan for long road trip for a week with your family and you have decided to leave home at early morning to avoid city traffic . You set alarm, and leave home as early as you can . While boarding to car, you locked your main gate, but in rush you have forgotten to close balcony french window, back gates.
+When it comes to system security, even small misconfigurations can open the door to cyberattacks. Tools like Wazuh, a Security Information and Event Management (SIEM) platform, help users perform audits to evaluate their system’s security posture. In this blog, we’ll walk you through understanding audit results and share actionable steps to secure your Unix-based system.
 
-This is the same situation when a network administrator knows that this would be like locking the front door of our house but leaving all the windows and the back door open. Now that the attacks occur in different “layers” in the network protocols, for which we need different defense systems for each type of traffic
+Understanding Wazuh System Audit Scores
 
-I hope you got your confusion away.Now let’s jump over main point What’s difference between Web Application Firewall(WAF) and Intrusion Prevention System (IPS)
-
-WAF
-
-In WAF all request-response i.e nothing but HTTP request is analyzed before reaching to the WebApps or users.That’s why WAF is a solution (hardware or software) that works as an intermediary between external users and web applications. And WAF have a set of predefined or manual rules, which help WAF to perform HTTP traffic monitoring and Analysis to prevent malicious HTTP requests like XSS(Cross site Scripting )DOS, DDOS, SQL injection etc.
-
-Once the WAF detects a threat, it blocks the traffic and rejects the malicious web request or response with sensitive data.
-
-Requirements for WAF :-
-
-
-  SSL Acceleration
-  DPI (Deep Packet Inspection)
-  High-performance and high-throughput
-  High-availability
-  Scalability
-
-
-IPS
-
-Intrusion Prevention System (IPS) is a more general-purpose protection appliance or software. It provides protection from traffic from a wide variety of protocol types, such as DNS, SMTP, TELNET, RDP, SSH, and FTP among others.
-
-General Methods used in IPS (Intrusion Prevention System) are :-
-
-
-  Signature-based detection
-  Policy-based detection
-  Detection based on anomalies
-  Honey Pot Detection
-
+A Wazuh audit generates a report that divides checks into three categories:
 
 
   
-    IPS uses signature-based detection just as an antivirus does. A firm can recognize a threat and send an alert to the administrator. For this method to work correctly, all signatures must be with the latest update.
+    Passed: Checks that meet security standards.
   
   
-    IPS requires that security policies be declared very specifically. The IPS recognizes the traffic that is outside of these policies and automatically rejects abnormal behavior or unusual traffic.
+    Failed: Checks that require attention to improve security.
   
   
-    The IPS automatically performs statistical analysis and establishes a comparison standard. When the traffic moves too far from this standard, it sends out an alert. The other way is by manually setting the normal behavior of the traffic so that alerts are sent when the traffic, again, moves away from this rule. The disadvantage of the manual way is that being less flexible and dynamic, it can send false alerts.
+    Not Applicable: Checks that don’t apply to your current system setup.
   
 
 
-Why Do You Need A WAF And IPS Security Solution?
-
-An IPS accompanies a WAF solution and is typically deployed together. WAF deployments protect web application traffic, while IPS deployments scan and protect the network level by inspecting all packets. An IPS is typically used to protect your network from threats in most network protocols, and it works at OSI Layer 4-7. WAF solutions are mainly used to protect applications at the OSI layer-7 level.
-
-Tabular Comparison between WAF &amp;amp; IPS :-
-
-
-
+For example, here’s what a typical result looks like:
 
 
   
+    Passed Checks: 3
+  
+  
+    Failed Checks: 13
+  
+  
+    Not Applicable Checks: 7
+  
+
+
+Overall Score: 18%
+
+My audit score (in this case, 18%) reflects the percentage of security checks your system passed. Higher scores mean better security compliance. A low score like this highlights potential vulnerabilities.
+
+Identifying Issues: A Closer Look
+
+One example from a Wazuh audit might flag this issue: “SSH Hardening: Port should not be 22.” Let’s break it down:
+
+
+
+What’s wrong? By default, SSH (Secure Shell) listens on port 22, which is commonly targeted by automated bots and attackers. Keeping this default configuration increases your risk of brute-force attacks or port scans.
+
+Why does it matter? Changing the SSH port to something other than 22 adds an extra layer of security. It won’t completely stop determined attackers, but it can reduce the chances of opportunistic attacks by bots.
+
+How do you fix it? Modify the SSH configuration file (/etc/ssh/sshd_config) and change the Port 22 line to a non-default port (e.g., 2222). After saving the changes, restart the SSH service to apply the update.
+
+Preventive Steps to Improve Audit Scores
+
+
+  Harden Your SSH Settings
     
-    WAF
-    IPS
+      Change the default SSH port.
+      Disable root login by setting PermitRootLogin no in the SSH config file.
+      Use SSH key-based authentication instead of passwords.
+      Implement two-factor authentication (2FA).
+    
   
-
-
-  
-    Network placement
-    Placed at the front of websites / web application
-    Behind the firewall either as in-line or out-of-band.
-  
-  
-    Main Purpose 
-    Dedicated to inspect only HTTP web traffic and protect against web specific attacks
-    Dedicated to inspect all network packets to match them against signatures of known malicious attacks. Then, traffic is either blocked or an alarm is issued.
-  
-  
-    Protection 
-    SQL injection, Cross Site Scripting, GET/POST attacks, session manipulation attacks, javascript, LFI/RFI etc
-    Exploits against services such as webservers, SMTP, RDP, DNS, windows OS, Linux OS etc.
+  Manage File Permissions
+    
+      Use commands like chmod and chown to set restrictive file permissions.
+    
   
 
 
 
-Thanks for reading! keep Learning, Keep Troubleshooting
+  Regularly audit sensitive files to prevent unauthorized access.
+
+
+
+  Apply Security Updates
+    
+      Always keep your operating system and software up to date. Updates often include patches for vulnerabilities.
+    
+  
+  Enforce Strong Password Policies
+    
+      Use tools like PAM to enforce complex passwords and periodic changes.
+    
+  
+  Firewall and Network Security
+    
+      Use a firewall (iptables or ufw) to block unauthorized access.
+    
+  
+
+
+
+  Restrict network services to only what is essential.
+
+
+
+  Monitor Logs
+    
+      Continuously monitor system logs for suspicious activities using tools like journalctl.
+    
+  
+  Run Regular Audits
+    
+      Perform routine checks with Wazuh or other tools to identify and fix new vulnerabilities.
+    
+  
+
+
+
+
+Steps to Change the SSH Port
+
+Edit the SSH Configuration File:
+
+Open the SSH configuration file in a text editor:
+
+bash
+sudo nano /etc/ssh/sshd_config
+Locate the line that says #Port 22. If it’s commented out (with a #), remove the # to uncomment it.
+
+
+Change the value from 22 to 222:
+
+bash
+Port 222
+Update Firewall Rules:
+
+Allow the new port (222) in your firewall to ensure SSH connections are not blocked:
+bash
+sudo ufw allow 222/tcp
+
+
+If you’re using iptables, add a rule for the new port:
+bash
+sudo iptables -A INPUT -p tcp --dport 222 -j ACCEPT
+
+
+
+Restart the SSH Service:
+
+Apply the changes by restarting the SSH daemon:
+
+bash
+sudo systemctl restart sshd
+Test the New Port:
+
+Before logging out, test the new port to ensure it works:
+bash
+ssh -p 222 username@your_server_ip
+Replace username with your actual username and your_server_ip with your system’s IP address.
+
+Disable the Old Port (Optional):
+
+Once you confirm the new port works, you can block the old port (22) in your firewall:
+bash
+sudo ufw deny 22/tcp
+
+
 ",
-            "wordcount": "731",
+            "wordcount": "696",
             "inLanguage": "en",
-            "dateCreated": "2022-11-02/",
-            "datePublished": "2022-11-02/",
-            "dateModified": "2022-11-02/",
+            "dateCreated": "2025-03-09/",
+            "datePublished": "2025-03-09/",
+            "dateModified": "2025-03-09/",
             "author": {
                 "@type": "Person",
                 "name": "Shubhendu",
@@ -911,9 +1045,9 @@ Thanks for reading! keep Learning, Keep Troubleshooting
                 }
             },
             "mainEntityOfPage": "True",
-            "genre": "cloud",
-            "articleSection": "cloud",
-            "keywords": ["cloud","security","hacking","offensive security","troubleshooter Club"]
+            "genre": "security",
+            "articleSection": "security",
+            "keywords": ["Cyber Security","wazuh","soc"]
         }
         </script>
     </body>

@@ -219,6 +219,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/is-your-ssh-port-a-security-time-bomb-understand-wazuh-audit-insights/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2025-03-09</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
