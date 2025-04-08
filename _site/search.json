@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "MPIC for All:An Open Approach to Certificate Security",
+      "tags"     : "Cyber Security",
+      "categories" : "security",
+      "url"      : "/MPIC-for-All-An-Open-Approach-to-Certificate-Security/",
+      "date"     : "03/09/2025"
+    } ,
+  
+    {
       "title"    : "Is Your SSH Port a Security Time Bomb? Understanding Wazuh Audit Insights",
       "tags"     : "Cyber Security, wazuh, and soc",
       "categories" : "security",

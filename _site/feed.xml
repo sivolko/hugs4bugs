@@ -5,9 +5,21 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 09 Mar 2025 18:56:48 +0000</pubDate>
-    <lastBuildDate>Sun, 09 Mar 2025 18:56:48 +0000</lastBuildDate>
-    <generator>Jekyll v3.9.3</generator>
+    <pubDate>Tue, 08 Apr 2025 17:18:04 +0000</pubDate>
+    <lastBuildDate>Tue, 08 Apr 2025 17:18:04 +0000</lastBuildDate>
+    <generator>Jekyll v3.10.0</generator>
+    
+      <item>
+        <title>MPIC for All:An Open Approach to Certificate Security</title>
+        <description>&lt;p&gt;Alright, let’s talk about making the internet a little safer when you get those “secure” padlocks in your browser. Imagine you’re trying to prove you own a house, and you only show the ID to one person. A sneaky bad guy could potentially trick that one person into thinking they’re you. That’s kind of what can happen with website security certificates, and a new project called Open Multi-Perspective Issuance Corroboration (MPIC) is trying to fix that.&lt;/p&gt; &lt;p&gt;Think of it like this: when a website wants to get a security certificate (that digital ID that says “this website is legit”), a...</description>
+        <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/MPIC-for-All-An-Open-Approach-to-Certificate-Security/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/MPIC-for-All-An-Open-Approach-to-Certificate-Security/</guid>
+        
+        <category>Cyber Security</category>
+        
+        <category>security</category>
+      </item>
     
       <item>
         <title>Is Your SSH Port a Security Time Bomb? Understanding Wazuh Audit Insights</title>
@@ -501,22 +513,6 @@
         <category>offensive security</category>
         
         <category>security</category>
-      </item>
-    
-      <item>
-        <title>Building and Deploying PWA on Azure Cloud.</title>
-        <description>&lt;p&gt;let’s start with &lt;strong&gt;PWA&lt;/strong&gt;, PWA are apps built with web technologies like Js, Css, React,or HTMl with feel and functionality of an actual native app.&lt;/p&gt; &lt;p&gt;They have service worker and manifest.json file to make it work offline and installable. Web apps can reach anyone,anywhere, on any device with a single codebase.When it comes to the platform specific applications, PWA are known for being incredibly rich and reliable.They’re present, on home screens, on the home screens, docks and the taskbars. They work regardless of network connection.They can launch in their standalone experience,can read &amp;amp; write files from the local file system,access...</description>
-        <pubDate>Thu, 17 Feb 2022 23:04:08 +0000</pubDate>
-        <link>https://hugs4bugs.me/Progressive-webapps-on-azure/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/Progressive-webapps-on-azure/</guid>
-        
-        <category>PWA</category>
-        
-        <category>node.js</category>
-        
-        <category>COSMOS DB</category>
-        
-        <category>webapps</category>
       </item>
     
   </channel>

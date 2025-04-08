@@ -82,6 +82,14 @@
         </url>
     
         <url>
+            <loc>https://hugs4bugs.me/category/identity&access/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/</loc>
             
                 <changefreq>monthly</changefreq>
@@ -217,6 +225,13 @@
             
         </url>
     
+    
+        <url>
+            <loc>https://hugs4bugs.me/MPIC-for-All-An-Open-Approach-to-Certificate-Security/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2025-03-09</lastmod>
+        </url>
     
         <url>
             <loc>https://hugs4bugs.me/is-your-ssh-port-a-security-time-bomb-understand-wazuh-audit-insights/</loc>

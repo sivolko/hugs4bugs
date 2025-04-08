@@ -17,19 +17,19 @@
     
     
 
-    <title>Trust boundary vs Attack Surface Explained | hugs4bugs</title>
-    <meta name="description" content="Let's get concept clear what's Log analytics and log analytics workspace">
+    <title>MPIC for All:An Open Approach to Certificate Security | hugs4bugs</title>
+    <meta name="description" content="Let's learn what's beyond the HTTPs">
     
     <meta name="keywords" content="Cyber Security">
     
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Trust boundary vs Attack Surface Explained | hugs4bugs">
-    <meta name="twitter:description" content="Let's get concept clear what's Log analytics and log analytics workspace">
+    <meta name="twitter:title" content="MPIC for All:An Open Approach to Certificate Security | hugs4bugs">
+    <meta name="twitter:description" content="Let's learn what's beyond the HTTPs">
 
     
-    <meta property="twitter:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1735797428/hugs4bugs/IMG20240824121111_d2qqef.jpg">
+    <meta property="twitter:image" content="https://cdn.pixabay.com/photo/2016/11/29/02/14/man-1866784_1280.jpg">
     
 
     
@@ -37,10 +37,10 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="https://hugs4bugs.me/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/">
-    <meta property="og:title" content="Trust boundary vs Attack Surface Explained | hugs4bugs">
-    <meta property="og:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1735797428/hugs4bugs/IMG20240824121111_d2qqef.jpg">
-    <meta property="og:description" content="Let's get concept clear what's Log analytics and log analytics workspace">
+    <meta property="og:url" content="https://hugs4bugs.me/MPIC-for-All-An-Open-Approach-to-Certificate-Security/">
+    <meta property="og:title" content="MPIC for All:An Open Approach to Certificate Security | hugs4bugs">
+    <meta property="og:image" content="https://cdn.pixabay.com/photo/2016/11/29/02/14/man-1866784_1280.jpg">
+    <meta property="og:description" content="Let's learn what's beyond the HTTPs">
     <meta property="og:site_name" content="hugs4bugs">
 
     <!-- Favicon -->
@@ -76,7 +76,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="canonical" href="https://hugs4bugs.me/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/">
+    <link rel="canonical" href="https://hugs4bugs.me/MPIC-for-All-An-Open-Approach-to-Certificate-Security/">
     <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
         href="https://hugs4bugs.me/feed.xml" />
     <link rel='manifest' href='../manifest.json'>
@@ -304,22 +304,22 @@
                 <p class="post-info">
                     
                         <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="2025-02-17T00:00:00+00:00">
+                        <time class="date" datetime="2025-03-09T00:00:00+00:00">
                             
 
 
-February 17, 2025
+March 9, 2025
 
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>4 min to read</span>
+                    <span>6 min to read</span>
                 </p>
-                <h1 class="post-title">Trust boundary vs Attack Surface Explained</h1>
-                <p class="post-subtitle">No More Confusions!</p>
+                <h1 class="post-title">MPIC for All:An Open Approach to Certificate Security</h1>
+                <p class="post-subtitle">Is your HTTPS safe?</p>
 
                 
-                    <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1735797428/hugs4bugs/IMG20240824121111_d2qqef.jpg" alt="Featured image" class="post-cover">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/29/02/14/man-1866784_1280.jpg" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
@@ -329,111 +329,92 @@ February 17, 2025
                 <!-- Add your table of contents here -->
 
 
-                <p>I have often seen people get confused term “Trust Boundary” with “Attack Surface”, so let’s get it clear now with the context of a corporate network.</p>
+                <p>Alright, let’s talk about making the internet a little safer when you get those “secure” padlocks in your browser. Imagine you’re trying to prove you own a house, and you only show the ID to one person. A sneaky bad guy could potentially trick that one person into thinking they’re you. That’s kind of what can happen with website security certificates, and a new project called Open Multi-Perspective Issuance Corroboration (MPIC) is trying to fix that.</p>
 
-<p><strong>What Are Trust Boundaries?</strong></p>
+<p>Think of it like this: when a website wants to get a security certificate (that digital ID that says “this website is legit”), a Certificate Authority (CA) needs to make sure the website actually owns the domain name. This process is called domain control validation. Now, there’s a sneaky attack called a Border Gateway Protocol (BGP) routing attack. Imagine the internet as a giant network of roads, and BGP is like the traffic control system. A BGP attack is like a bad guy changing the road signs so that traffic meant for the real website goes to their fake website instead.</p>
 
-<p>Trust boundaries are the dividing lines that separate different zones within a system, each requiring specific security measures to protect sensitive data. Think of them as invisible fences within your digital landscape, ensuring that only authorized personnel can access certain areas.</p>
+<p>So, when the CA tries to check if you own your website, the bad guy can hijack the traffic and trick the CA into thinking they own your website. This means they could get a legitimate security certificate for a fake website and use it to steal your information – that’s what we call a man-in-the-middle attack. Pretty scary, right?</p>
 
-<p>In a corporate network, trust boundaries can be found between various departments, each with its own set of sensitive information. For instance:</p>
+<p>That’s where Multi-Perspective Issuance Corroboration (MPIC) comes to the rescue. Instead of just checking from one place, MPIC is like having multiple detectives checking your ID from different locations across the internet. Think of it as the CA asking several different computers around the world to verify if the request to validate your domain is actually coming to your server.</p>
 
-<ul>
-  <li>
-    <p>HR Department: Contains employee records, personal details, and salary information. Access to this data is restricted to HR personnel.</p>
-  </li>
-  <li>
-    <p>Finance Department: Houses financial reports, budgets, and transaction records, with access limited to finance team members.</p>
-  </li>
-  <li>
-    <p>IT Department: Manages network infrastructure, servers, and security systems, accessible only by IT staff.</p>
-  </li>
-</ul>
+<p>The cool thing is that these sneaky BGP attacks usually don’t affect the entire internet – they’re often localized, like a road closure in one part of town. So, if the CA checks from a location that isn’t affected by the attack, that check will go to the real website and the CA will realize something is fishy. This multi-checking process makes it much harder for attackers to fool the CAs</p>
 
-<p>To establish and maintain these trust boundaries, organizations implement access controls such as user authentication and role-based access control (RBAC). These measures ensure that sensitive information remains within its designated boundaries, protected from unauthorized access.</p>
+<p>Now, some of the big players like Let’s Encrypt and Google Trust Services are already using MPIC to protect against these attacks. They’ve built their own systems to do this. However, these existing systems have some limitations.</p>
 
-<p><strong>Understanding Attack Surfaces</strong></p>
+<p><strong>Let’s Encrypt’s</strong> system is built into their specific software called Boulder, and it uses its own internal data structures, which might make it difficult for other CAs to use. Also, Let’s Encrypt only deals with one specific way of validating domain ownership called ACME</p>
 
-<p>While trust boundaries focus on securing specific zones within a system, the attack surface defines all potential points where an unauthorized user (the attacker) could try to enter or extract data. It’s the digital battleground, where every exposed interface, endpoint, and application represents a potential vulnerability.</p>
+<p><strong>Google Trust Services</strong> also uses MPIC, but it relies on Google’s own internal infrastructure. Like Let’s Encrypt, their current MPIC setup only supports ACME validation.</p>
 
-<p>In a corporate network, the attack surface includes:</p>
+<p><strong>CloudFlare</strong> has created an HTTPS-API-based version of MPIC that other CAs can use. This is helpful, but right now, it also only supports ACME validation methods, although they plan to add more later. Plus, some CAs might prefer to have more direct control over the infrastructure rather than relying on a third party like CloudFlare</p>
 
-<ul>
-  <li>Network Interfaces: External connections to the internet, VPNs, and remote access points.</li>
-  <li>Endpoints: Devices such as computers, smartphones, and IoT gadgets used by employees.</li>
-  <li>Applications: Web applications, email systems, and other software utilized within the organization.</li>
-  <li>APIs: Interfaces that enable communication between different systems.</li>
-</ul>
+<p>Here’s a quick look at the differences</p>
 
-<p>The more interfaces, endpoints, and applications a network has, the larger its attack surface. Each point of entry is a potential vulnerability that an attacker could exploit.</p>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Feature</th>
+      <th style="text-align: left">Let’s Encrypt</th>
+      <th style="text-align: left">Google Trust Services</th>
+      <th style="text-align: left">CloudFlare</th>
+      <th style="text-align: left">Open MPIC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>ACME Support</strong></td>
+      <td style="text-align: left">Yes</td>
+      <td style="text-align: left">Yes</td>
+      <td style="text-align: left">Yes</td>
+      <td style="text-align: left"><strong>Yes</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Non-ACME Support</strong></td>
+      <td style="text-align: left">No</td>
+      <td style="text-align: left">No</td>
+      <td style="text-align: left">No*</td>
+      <td style="text-align: left"><strong>Yes</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Open Source</strong></td>
+      <td style="text-align: left">Yes</td>
+      <td style="text-align: left">No</td>
+      <td style="text-align: left">No</td>
+      <td style="text-align: left"><strong>Yes</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>First-Party Hosted</strong></td>
+      <td style="text-align: left">Yes</td>
+      <td style="text-align: left">Yes</td>
+      <td style="text-align: left">No</td>
+      <td style="text-align: left"><strong>Yes</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>RESTful API</strong></td>
+      <td style="text-align: left">No</td>
+      <td style="text-align: left">No</td>
+      <td style="text-align: left">Yes</td>
+      <td style="text-align: left"><strong>Yes</strong></td>
+    </tr>
+  </tbody>
+</table>
 
-<p><strong>A Real-World Example: Corporate Network Security</strong></p>
+<p>Here are some of the cool technical bits about Open MPIC, explained in a way that hopefully makes sense:</p>
 
-<p>Let’s consider a corporate network with multiple departments, each with its own set of sensitive data. The organization has implemented several security measures to protect its digital assets:</p>
+<p><strong>Supports Different Ways to Prove Ownership (ACME and Non-ACME)</strong>: Open MPIC plans to work with both the standard ACME method and other ways CAs verify you own a domain, like checking files on your website or DNS records. This is a big deal because not all CAs use ACME.</p>
 
-<ol>
-  <li>
-    <p>External Trust Boundary: A firewall controls incoming and outgoing traffic, creating a barrier between the external internet and the internal network.</p>
-  </li>
-  <li>
-    <p>Internal Trust Boundaries: Each department (HR, Finance, IT) has its own internal trust boundary, protected by strong access controls and encryption to ensure sensitive data remains secure.</p>
-  </li>
-</ol>
+<p><strong>Handles Various Validation Methods</strong>: Initially, they’ll focus on the common methods like HTTP (checking a file on your website) and DNS (checking records in your domain’s settings). But they also plan to expand it to check other things, like email contacts in your domain’s CAA records (these records say which CAs are allowed to issue certificates for your domain).</p>
 
-<p>Despite these measures, the network’s attack surface includes various points of potential vulnerability:</p>
+<p><strong>CAA Compliance Checking</strong>: The system will be able to check your CAA records at the same time it’s doing the other validation checks. It can also do a separate check of these records whenever needed. This adds another layer of security by making sure only authorized CAs can issue certificates.</p>
 
-<ul>
-  <li>
-    <p>Network Interfaces: Connections to the internet and VPNs must be monitored and secured to prevent unauthorized access.</p>
-  </li>
-  <li>
-    <p>Endpoints: Devices used by employees must be protected against malware and other threats.</p>
-  </li>
-  <li>
-    <p>Applications: Web applications and email systems require regular updates and security patches to address vulnerabilities.</p>
-  </li>
-  <li>
-    <p>APIs: Interfaces enabling communication between systems must be secured to prevent exploitation.</p>
-  </li>
-</ul>
+<p><strong>Detailed Logging</strong>: Open MPIC will keep very detailed records of all the checks it performs. This logging will follow the guidelines that the CA/Browser Forum (the group that sets the rules for certificate issuance) is likely to require. This includes logs from all the different “detective” locations and detailed responses from the checks. The idea is that CAs can easily fit these logs into their existing systems.</p>
 
-<p><strong>Potential Attacks and Mitigation Strategies</strong></p>
+<p><strong>Secure Infrastructure</strong>: The Open MPIC system itself will be hosted on secure servers and will follow best security practices to prevent attacks on it. Also, all communication between the CA and the Open MPIC system will be protected with strong encryption (TLS) and secret keys known only to that CA. Even the communication between the different checking locations will be secure.</p>
 
-<p>An attacker might attempt to exploit vulnerabilities within the corporate network using various methods:</p>
+<p><strong>Automated Deployment</strong>: Setting up and managing infrastructure in different parts of the world can be a headache. To solve this, Open MPIC aims to have an automated system that allows CAs to quickly deploy their own instance of the API using their existing cloud provider accounts (like Amazon Web Services, Google Cloud, etc.). Think of it as a one-click setup for this security enhancement</p>
 
-<ol>
-  <li>
-    <p>Phishing Attack: The attacker sends a malicious email to an employee, hoping to trick them into clicking on a link or downloading a file that contains malware. To mitigate this risk, organizations can educate employees about phishing risks and implement email filtering systems to detect and block malicious emails.</p>
-  </li>
-  <li>
-    <p>Vulnerable Application: The attacker identifies a vulnerable web application used by the company and attempts to exploit it to gain access to the internal network. Regular updates, security patches, and thorough testing can help address these vulnerabilities.</p>
-  </li>
-  <li>
-    <p>Compromised Device: The attacker targets an employee’s device with malware, which then spreads within the network. Implementing endpoint protection solutions and conducting regular security assessments can help detect and prevent such attacks.</p>
-  </li>
-</ol>
-
-<p><strong>Reducing the Attack Surface</strong></p>
-
-<p>To better protect sensitive data and reduce the risk of successful attacks, organizations can implement the following strategies:</p>
-
-<ol>
-  <li>
-    <p>Minimize Exposed Interfaces: Limit the number of exposed interfaces, endpoints, and applications to reduce potential entry points for attackers.</p>
-  </li>
-  <li>
-    <p>Regular Updates and Patching: Ensure that all software, applications, and systems are regularly updated and patched to address vulnerabilities.</p>
-  </li>
-  <li>
-    <p>Employee Education: Educate employees about cybersecurity best practices, including recognizing phishing attempts and safeguarding their devices.</p>
-  </li>
-  <li>
-    <p>Network Segmentation: Segment the network into smaller, isolated sections to contain potential breaches and limit the spread of malware.</p>
-  </li>
-</ol>
-
-<p>By reducing the attack surface and reinforcing trust boundaries, organizations can enhance their cybersecurity posture and protect their valuable digital assets.</p>
-
-<p>Thanks for reading!</p>
+<p><strong>Highly Configurable</strong>: While the default settings should work for most CAs, Open MPIC will also be very customizable. CAs will be able to adjust things like how many locations to check from, where those locations are, and how many checks need to succeed for the validation to pass (this is called a quorum policy).
+•
+<strong>Works Across Different Clouds</strong>: Eventually, the goal is for Open MPIC to work with all the major cloud providers. This gives CAs more flexibility in choosing where to deploy the system, especially if they already have relationships with a particular cloud provider.</p>
 
 
                 <!-- Pagination links -->
@@ -449,29 +430,29 @@ February 17, 2025
                         
                         
                             <li>
-                                <a href="/how-to-like-instagram-post-with-javascript/">
+                                <a href="/Automation-with-Jenkins-and-Github/">
                                     
-                                        <img src="https://media.giphy.com/media/cmqnzFK17DO4vKCscd/giphy.gif">
+                                        <img src="https://miro.medium.com/max/700/1*QTmgOmxLr78Ty_evSD_Riw.gif">
                                     
-                                    <h3>How to like Instagram posts with JavaScript?</h3>
+                                    <h3>Automation with Jenkins and GitHub</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/tools-that-SOC-security-analys-should-know/">
+                                <a href="/how-and-why-to-upgrade-wazuh-4.10-using-docker/">
                                     
-                                        <img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://benheater.com/content/images/size/w1050/2022/06/wazuh_logo_circle-1.png">
                                     
-                                    <h3>Tools that SOC/Security Analyst must know</h3>
+                                    <h3>Effortless Wazuh v4.10.0 upgrade using Docker</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/blue-team-vs-red-team-in-cyber-security/">
+                                <a href="/wazuh's-big-move-from-elasticsearch-to-opensearch/">
                                     
-                                        <img src="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1735713838/IMG_5316_vrb0rb.jpg">
                                     
-                                    <h3>Blue Team vs Red Team</h3>
+                                    <h3>Wazuh's Big Move:From Elasticsearch to OpenSearch</h3>
                                 </a>
                             </li>
                         
@@ -483,7 +464,7 @@ February 17, 2025
 
         <!-- Add time bar only for pages without pagination -->
         
-            <div class="time-bar" data-minutes="4">
+            <div class="time-bar" data-minutes="6">
     <span class="time-completed"></span>
     <span class="time-remaining"></span>
     <div class="bar">
@@ -503,13 +484,13 @@ February 17, 2025
         </div>
     </div>
     
-    <a href="/is-your-ssh-port-a-security-time-bomb-understand-wazuh-audit-insights/" class="post-preview">
+    <a href="/how-to-automate-tweets-via-github-actions/" class="post-preview">
         <div class="image">
             
-                <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1735990558/hugs4bugs/MFA/profile_u7ic2x.jpg">
+                <img src="https://images.pexels.com/photos/5744251/pexels-photo-5744251.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
             
         </div>
-        <h3 class="title">Is Your SSH Port a Security Time Bomb? Understanding Wazuh Audit Insights</h3>
+        <h3 class="title">Automate Twitter via github Actions.</h3>
     </a>
 </div>
 
@@ -526,7 +507,7 @@ February 17, 2025
         <section class="share">
     <h3>Share</h3>
     <a aria-label="Share on Twitter"
-        href="https://twitter.com/intent/tweet?text=&quot;Let's get concept clear what's Log analytics and log analytics workspace&quot;%20https://hugs4bugs.me/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security"
+        href="https://twitter.com/intent/tweet?text=&quot;Let's learn what's beyond the HTTPs&quot;%20https://hugs4bugs.me/MPIC-for-All-An-Open-Approach-to-Certificate-Security/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -534,7 +515,7 @@ February 17, 2025
         </svg>
     </a>
     <a aria-label="Share on WhatsApp"
-        href="https://twitter.com/intent/tweet?text=&quot;Let's get concept clear what's Log analytics and log analytics workspace&quot;%20https://hugs4bugs.me/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security"
+        href="https://twitter.com/intent/tweet?text=&quot;Let's learn what's beyond the HTTPs&quot;%20https://hugs4bugs.me/MPIC-for-All-An-Open-Approach-to-Certificate-Security/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security"
         onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -542,7 +523,7 @@ February 17, 2025
         </svg>
     </a>
     <a aria-label="Share on Facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/MPIC-for-All-An-Open-Approach-to-Certificate-Security/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
         title="Share on Facebook">
         <svg class="icon icon-facebook">
@@ -632,7 +613,7 @@ February 17, 2025
         disqus_loaded = true;
         var disqus_shortname = 'hugs4bugs';
         var disqus_title = '';
-        var disqus_url = '/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/';
+        var disqus_url = '/MPIC-for-All-An-Open-Approach-to-Certificate-Security/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -803,122 +784,103 @@ February 17, 2025
         {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
-            "name": "Trust boundary vs Attack Surface Explained",
-            "headline": "No More Confusions!",
-            "description": "Let's get concept clear what's Log analytics and log analytics workspace",
-            "image": "https://res.cloudinary.com/hugs4bugs/image/upload/v1735797428/hugs4bugs/IMG20240824121111_d2qqef.jpg",
-            "url": "https://hugs4bugs.me/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/",
-            "articleBody": "I have often seen people get confused term “Trust Boundary” with “Attack Surface”, so let’s get it clear now with the context of a corporate network.
+            "name": "MPIC for All:An Open Approach to Certificate Security",
+            "headline": "Is your HTTPS safe?",
+            "description": "Let's learn what's beyond the HTTPs",
+            "image": "https://cdn.pixabay.com/photo/2016/11/29/02/14/man-1866784_1280.jpg",
+            "url": "https://hugs4bugs.me/MPIC-for-All-An-Open-Approach-to-Certificate-Security/",
+            "articleBody": "Alright, let’s talk about making the internet a little safer when you get those “secure” padlocks in your browser. Imagine you’re trying to prove you own a house, and you only show the ID to one person. A sneaky bad guy could potentially trick that one person into thinking they’re you. That’s kind of what can happen with website security certificates, and a new project called Open Multi-Perspective Issuance Corroboration (MPIC) is trying to fix that.
 
-What Are Trust Boundaries?
+Think of it like this: when a website wants to get a security certificate (that digital ID that says “this website is legit”), a Certificate Authority (CA) needs to make sure the website actually owns the domain name. This process is called domain control validation. Now, there’s a sneaky attack called a Border Gateway Protocol (BGP) routing attack. Imagine the internet as a giant network of roads, and BGP is like the traffic control system. A BGP attack is like a bad guy changing the road signs so that traffic meant for the real website goes to their fake website instead.
 
-Trust boundaries are the dividing lines that separate different zones within a system, each requiring specific security measures to protect sensitive data. Think of them as invisible fences within your digital landscape, ensuring that only authorized personnel can access certain areas.
+So, when the CA tries to check if you own your website, the bad guy can hijack the traffic and trick the CA into thinking they own your website. This means they could get a legitimate security certificate for a fake website and use it to steal your information – that’s what we call a man-in-the-middle attack. Pretty scary, right?
 
-In a corporate network, trust boundaries can be found between various departments, each with its own set of sensitive information. For instance:
+That’s where Multi-Perspective Issuance Corroboration (MPIC) comes to the rescue. Instead of just checking from one place, MPIC is like having multiple detectives checking your ID from different locations across the internet. Think of it as the CA asking several different computers around the world to verify if the request to validate your domain is actually coming to your server.
 
+The cool thing is that these sneaky BGP attacks usually don’t affect the entire internet – they’re often localized, like a road closure in one part of town. So, if the CA checks from a location that isn’t affected by the attack, that check will go to the real website and the CA will realize something is fishy. This multi-checking process makes it much harder for attackers to fool the CAs
 
-  
-    HR Department: Contains employee records, personal details, and salary information. Access to this data is restricted to HR personnel.
-  
-  
-    Finance Department: Houses financial reports, budgets, and transaction records, with access limited to finance team members.
-  
-  
-    IT Department: Manages network infrastructure, servers, and security systems, accessible only by IT staff.
-  
+Now, some of the big players like Let’s Encrypt and Google Trust Services are already using MPIC to protect against these attacks. They’ve built their own systems to do this. However, these existing systems have some limitations.
 
+Let’s Encrypt’s system is built into their specific software called Boulder, and it uses its own internal data structures, which might make it difficult for other CAs to use. Also, Let’s Encrypt only deals with one specific way of validating domain ownership called ACME
 
-To establish and maintain these trust boundaries, organizations implement access controls such as user authentication and role-based access control (RBAC). These measures ensure that sensitive information remains within its designated boundaries, protected from unauthorized access.
+Google Trust Services also uses MPIC, but it relies on Google’s own internal infrastructure. Like Let’s Encrypt, their current MPIC setup only supports ACME validation.
 
-Understanding Attack Surfaces
+CloudFlare has created an HTTPS-API-based version of MPIC that other CAs can use. This is helpful, but right now, it also only supports ACME validation methods, although they plan to add more later. Plus, some CAs might prefer to have more direct control over the infrastructure rather than relying on a third party like CloudFlare
 
-While trust boundaries focus on securing specific zones within a system, the attack surface defines all potential points where an unauthorized user (the attacker) could try to enter or extract data. It’s the digital battleground, where every exposed interface, endpoint, and application represents a potential vulnerability.
-
-In a corporate network, the attack surface includes:
-
-
-  Network Interfaces: External connections to the internet, VPNs, and remote access points.
-  Endpoints: Devices such as computers, smartphones, and IoT gadgets used by employees.
-  Applications: Web applications, email systems, and other software utilized within the organization.
-  APIs: Interfaces that enable communication between different systems.
-
-
-The more interfaces, endpoints, and applications a network has, the larger its attack surface. Each point of entry is a potential vulnerability that an attacker could exploit.
-
-A Real-World Example: Corporate Network Security
-
-Let’s consider a corporate network with multiple departments, each with its own set of sensitive data. The organization has implemented several security measures to protect its digital assets:
+Here’s a quick look at the differences
 
 
   
-    External Trust Boundary: A firewall controls incoming and outgoing traffic, creating a barrier between the external internet and the internal network.
+    
+      Feature
+      Let’s Encrypt
+      Google Trust Services
+      CloudFlare
+      Open MPIC
+    
   
   
-    Internal Trust Boundaries: Each department (HR, Finance, IT) has its own internal trust boundary, protected by strong access controls and encryption to ensure sensitive data remains secure.
-  
-
-
-Despite these measures, the network’s attack surface includes various points of potential vulnerability:
-
-
-  
-    Network Interfaces: Connections to the internet and VPNs must be monitored and secured to prevent unauthorized access.
-  
-  
-    Endpoints: Devices used by employees must be protected against malware and other threats.
-  
-  
-    Applications: Web applications and email systems require regular updates and security patches to address vulnerabilities.
-  
-  
-    APIs: Interfaces enabling communication between systems must be secured to prevent exploitation.
-  
-
-
-Potential Attacks and Mitigation Strategies
-
-An attacker might attempt to exploit vulnerabilities within the corporate network using various methods:
-
-
-  
-    Phishing Attack: The attacker sends a malicious email to an employee, hoping to trick them into clicking on a link or downloading a file that contains malware. To mitigate this risk, organizations can educate employees about phishing risks and implement email filtering systems to detect and block malicious emails.
-  
-  
-    Vulnerable Application: The attacker identifies a vulnerable web application used by the company and attempts to exploit it to gain access to the internal network. Regular updates, security patches, and thorough testing can help address these vulnerabilities.
-  
-  
-    Compromised Device: The attacker targets an employee’s device with malware, which then spreads within the network. Implementing endpoint protection solutions and conducting regular security assessments can help detect and prevent such attacks.
-  
-
-
-Reducing the Attack Surface
-
-To better protect sensitive data and reduce the risk of successful attacks, organizations can implement the following strategies:
-
-
-  
-    Minimize Exposed Interfaces: Limit the number of exposed interfaces, endpoints, and applications to reduce potential entry points for attackers.
-  
-  
-    Regular Updates and Patching: Ensure that all software, applications, and systems are regularly updated and patched to address vulnerabilities.
-  
-  
-    Employee Education: Educate employees about cybersecurity best practices, including recognizing phishing attempts and safeguarding their devices.
-  
-  
-    Network Segmentation: Segment the network into smaller, isolated sections to contain potential breaches and limit the spread of malware.
+    
+      ACME Support
+      Yes
+      Yes
+      Yes
+      Yes
+    
+    
+      Non-ACME Support
+      No
+      No
+      No*
+      Yes
+    
+    
+      Open Source
+      Yes
+      No
+      No
+      Yes
+    
+    
+      First-Party Hosted
+      Yes
+      Yes
+      No
+      Yes
+    
+    
+      RESTful API
+      No
+      No
+      Yes
+      Yes
+    
   
 
 
-By reducing the attack surface and reinforcing trust boundaries, organizations can enhance their cybersecurity posture and protect their valuable digital assets.
+Here are some of the cool technical bits about Open MPIC, explained in a way that hopefully makes sense:
 
-Thanks for reading!
+Supports Different Ways to Prove Ownership (ACME and Non-ACME): Open MPIC plans to work with both the standard ACME method and other ways CAs verify you own a domain, like checking files on your website or DNS records. This is a big deal because not all CAs use ACME.
+
+Handles Various Validation Methods: Initially, they’ll focus on the common methods like HTTP (checking a file on your website) and DNS (checking records in your domain’s settings). But they also plan to expand it to check other things, like email contacts in your domain’s CAA records (these records say which CAs are allowed to issue certificates for your domain).
+
+CAA Compliance Checking: The system will be able to check your CAA records at the same time it’s doing the other validation checks. It can also do a separate check of these records whenever needed. This adds another layer of security by making sure only authorized CAs can issue certificates.
+
+Detailed Logging: Open MPIC will keep very detailed records of all the checks it performs. This logging will follow the guidelines that the CA/Browser Forum (the group that sets the rules for certificate issuance) is likely to require. This includes logs from all the different “detective” locations and detailed responses from the checks. The idea is that CAs can easily fit these logs into their existing systems.
+
+Secure Infrastructure: The Open MPIC system itself will be hosted on secure servers and will follow best security practices to prevent attacks on it. Also, all communication between the CA and the Open MPIC system will be protected with strong encryption (TLS) and secret keys known only to that CA. Even the communication between the different checking locations will be secure.
+
+Automated Deployment: Setting up and managing infrastructure in different parts of the world can be a headache. To solve this, Open MPIC aims to have an automated system that allows CAs to quickly deploy their own instance of the API using their existing cloud provider accounts (like Amazon Web Services, Google Cloud, etc.). Think of it as a one-click setup for this security enhancement
+
+Highly Configurable: While the default settings should work for most CAs, Open MPIC will also be very customizable. CAs will be able to adjust things like how many locations to check from, where those locations are, and how many checks need to succeed for the validation to pass (this is called a quorum policy).
+•
+Works Across Different Clouds: Eventually, the goal is for Open MPIC to work with all the major cloud providers. This gives CAs more flexibility in choosing where to deploy the system, especially if they already have relationships with a particular cloud provider.
 ",
-            "wordcount": "757",
+            "wordcount": "1119",
             "inLanguage": "en",
-            "dateCreated": "2025-02-17/",
-            "datePublished": "2025-02-17/",
-            "dateModified": "2025-02-17/",
+            "dateCreated": "2025-03-09/",
+            "datePublished": "2025-03-09/",
+            "dateModified": "2025-03-09/",
             "author": {
                 "@type": "Person",
                 "name": "Shubhendu",
