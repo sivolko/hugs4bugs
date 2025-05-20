@@ -227,6 +227,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/build-threat-hunting-IOC-with-elastic-siem/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2025-03-09</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/MPIC-for-All-An-Open-Approach-to-Certificate-Security/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>

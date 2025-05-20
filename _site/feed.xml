@@ -5,9 +5,23 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 08 Apr 2025 17:18:04 +0000</pubDate>
-    <lastBuildDate>Tue, 08 Apr 2025 17:18:04 +0000</lastBuildDate>
+    <pubDate>Tue, 20 May 2025 15:35:22 +0000</pubDate>
+    <lastBuildDate>Tue, 20 May 2025 15:35:22 +0000</lastBuildDate>
     <generator>Jekyll v3.10.0</generator>
+    
+      <item>
+        <title>Build Your Own IOC Playground with ELastic SIEM</title>
+        <description>&lt;p&gt;When it comes to proactive approach of security, threat Hunting comes to the picture. And being aware of IOC aka Indicators of Compromise gives an extra leverage to find malicious urls, hash, IP and block those and take proper action. In this lab, I’m gonna build homelab with Elastic Cloud and Elastic SIEM deployment and generate IOC with AbuseCH .&lt;/p&gt; &lt;p&gt;Basic HLD&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hugs4bugs/image/upload/v1747751796/hugs4bugs/Screenshot_20-5-2025_20540_excalidraw.com_rlsc0e.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Steps to create a hosted Deployment&lt;/strong&gt;&lt;/p&gt; &lt;ol&gt; &lt;li&gt;Signup to &lt;a href=&quot;https://cloud.elastic.co&quot;&gt;Elastic Cloud&lt;/a&gt;&lt;/li&gt; &lt;li&gt;Click on Add Deployment &lt;img src=&quot;https://res.cloudinary.com/hugs4bugs/image/upload/v1747754029/hugs4bugs/Elastics/hostedclouddeployment_ustvd2.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/li&gt; &lt;li&gt;Launching Deployement &lt;img src=&quot;https://res.cloudinary.com/hugs4bugs/image/upload/v1747754101/hugs4bugs/Elastics/launching_deployement_ewcinj.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/li&gt; &lt;li&gt;Incoming Data Confirmation &lt;img src=&quot;https://res.cloudinary.com/hugs4bugs/image/upload/v1747754167/hugs4bugs/Elastics/incomingdatapreview_vlz16q.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/li&gt; &lt;/ol&gt;...</description>
+        <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/build-threat-hunting-IOC-with-elastic-siem/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/build-threat-hunting-IOC-with-elastic-siem/</guid>
+        
+        <category>Cyber Security</category>
+        
+        <category>Elastic SIEM</category>
+        
+        <category>security</category>
+      </item>
     
       <item>
         <title>MPIC for All:An Open Approach to Certificate Security</title>
@@ -493,24 +507,6 @@
         <category>offensive security</category>
         
         <category>troubleshooter Club</category>
-        
-        <category>security</category>
-      </item>
-    
-      <item>
-        <title>Metasploit Framework vs Metasploit Pro</title>
-        <description>&lt;p&gt;In the tug of war game of tools, we always confused with community edition and Pro. Both have their own separate use cases, we can’t compare. But let’s talk about what’s the difference between them in the case of &lt;strong&gt; “Metasploit” &lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;History of Metasploit&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;HD Moore began working on Metasploit in the early oughts, and released 1.0, written in Perl, in 2003. The project has grown dramatically since then, from the original 11 exploits the project came with to more than 1,500 now, plus around 500 payloads, with a switch to Ruby under the hood along the way.&lt;/p&gt; &lt;p&gt;Security...</description>
-        <pubDate>Sun, 21 Aug 2022 00:00:00 +0000</pubDate>
-        <link>https://hugs4bugs.me/metasploitFramework-vs-metasploit-pro/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/metasploitFramework-vs-metasploit-pro/</guid>
-        
-        <category>cloud</category>
-        
-        <category>security</category>
-        
-        <category>hacking</category>
-        
-        <category>offensive security</category>
         
         <category>security</category>
       </item>

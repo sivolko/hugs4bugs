@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "Build Your Own IOC Playground with ELastic SIEM",
+      "tags"     : "Cyber Security and Elastic SIEM",
+      "categories" : "security",
+      "url"      : "/build-threat-hunting-IOC-with-elastic-siem/",
+      "date"     : "03/09/2025"
+    } ,
+  
+    {
       "title"    : "MPIC for All:An Open Approach to Certificate Security",
       "tags"     : "Cyber Security",
       "categories" : "security",

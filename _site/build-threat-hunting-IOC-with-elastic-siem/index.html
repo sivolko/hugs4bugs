@@ -17,19 +17,19 @@
     
     
 
-    <title>How to create & Manage users and Groups within Azure AD. | hugs4bugs</title>
-    <meta name="description" content="Atomatically  deploy your webapps with Github actions and firebase hosting with Jekyll templates">
+    <title>Build Your Own IOC Playground with ELastic SIEM | hugs4bugs</title>
+    <meta name="description" content="Let's learn how to hunt Threat adversory">
     
-    <meta name="keywords" content="azure, active directory, developer, cloud">
+    <meta name="keywords" content="Cyber Security, Elastic SIEM">
     
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="How to create & Manage users and Groups within Azure AD. | hugs4bugs">
-    <meta name="twitter:description" content="Atomatically  deploy your webapps with Github actions and firebase hosting with Jekyll templates">
+    <meta name="twitter:title" content="Build Your Own IOC Playground with ELastic SIEM | hugs4bugs">
+    <meta name="twitter:description" content="Let's learn how to hunt Threat adversory">
 
     
-    <meta property="twitter:image" content="https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+    <meta property="twitter:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1747750540/AI%20generated/use_this_image_as_person_with_laptop_frcpq3.png">
     
 
     
@@ -37,10 +37,10 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="https://hugs4bugs.me/how-to-manage-azure-active-directory-objects/">
-    <meta property="og:title" content="How to create & Manage users and Groups within Azure AD. | hugs4bugs">
-    <meta property="og:image" content="https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-    <meta property="og:description" content="Atomatically  deploy your webapps with Github actions and firebase hosting with Jekyll templates">
+    <meta property="og:url" content="https://hugs4bugs.me/build-threat-hunting-IOC-with-elastic-siem/">
+    <meta property="og:title" content="Build Your Own IOC Playground with ELastic SIEM | hugs4bugs">
+    <meta property="og:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1747750540/AI%20generated/use_this_image_as_person_with_laptop_frcpq3.png">
+    <meta property="og:description" content="Let's learn how to hunt Threat adversory">
     <meta property="og:site_name" content="hugs4bugs">
 
     <!-- Favicon -->
@@ -76,7 +76,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="canonical" href="https://hugs4bugs.me/how-to-manage-azure-active-directory-objects/">
+    <link rel="canonical" href="https://hugs4bugs.me/build-threat-hunting-IOC-with-elastic-siem/">
     <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
         href="https://hugs4bugs.me/feed.xml" />
     <link rel='manifest' href='../manifest.json'>
@@ -304,22 +304,22 @@
                 <p class="post-info">
                     
                         <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="2023-04-30T00:00:00+00:00">
+                        <time class="date" datetime="2025-03-09T00:00:00+00:00">
                             
 
 
-April 30, 2023
+March 9, 2025
 
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>5 min to read</span>
+                    <span>2 min to read</span>
                 </p>
-                <h1 class="post-title">How to create & Manage users and Groups within Azure AD.</h1>
-                <p class="post-subtitle">Az Active Directory Objects</p>
+                <h1 class="post-title">Build Your Own IOC Playground with ELastic SIEM</h1>
+                <p class="post-subtitle">Hunt IOC</p>
 
                 
-                    <img src="https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Featured image" class="post-cover">
+                    <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747750540/AI%20generated/use_this_image_as_person_with_laptop_frcpq3.png" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
@@ -329,226 +329,83 @@ April 30, 2023
                 <!-- Add your table of contents here -->
 
 
-                <p>In this blog,let’s learn how to create and manage users &amp; group their properties within Azure AD.</p>
+                <p>When it comes to proactive approach of security, threat Hunting comes to the picture. And being aware of IOC aka Indicators of Compromise gives an extra leverage to find malicious urls, hash, IP and block those and take proper action. In this lab, I’m gonna build homelab with Elastic Cloud and Elastic SIEM deployment and generate IOC with AbuseCH .</p>
 
-<p><em>Disclaimer</em> :- I’m not gonna cover Azure AD’s AU (Administrative Units)</p>
+<p>Basic HLD</p>
 
-<p><strong>Prerequisits</strong> :-</p>
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747751796/hugs4bugs/Screenshot_20-5-2025_20540_excalidraw.com_rlsc0e.jpg" alt="image" /></p>
 
-<ul>
-  <li>Azure Account</li>
-  <li>Global Administrator Privilege</li>
-  <li>Basic Knowledge of Azure service</li>
-</ul>
-
-<p>Q. Before start let’s understand What Azure AD offers? or What is Azure AD?</p>
-
-<p>A.</p>
-<ul>
-  <li>Directory and Identity management solution within the cloud</li>
-  <li>Provides Traditional username &amp; password Identity Managemet</li>
-  <li>Role based permission management</li>
-  <li>Multifactor authentication (Enterprise solution)</li>
-  <li>Application monitoring solution and alerting</li>
-  <li>Can be integrated with on-prem AD</li>
-</ul>
-
-<p>If you are interested into Azure AD licencing and cost, kindly visit official doc :-</p>
-
-<p><a href="https://www.microsoft.com/nl-nl/security/business/identity-access-management/azure-ad-pricing?rtc=1&amp;market=nl">Azure AD licencing</a></p>
-
-<p><strong>Create users in Azure AD via portal</strong></p>
-
-<p>steps:-</p>
-
-<p>1) Visit <a href="https://portal.azure.com">Azure portal</a></p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687535386/Azure/az104/1_ijkwsk.jpg" alt="Image" /></p>
-
-<p>2) Select Azure Active Directory from left hand hamburger menu or directly search in search box</p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687535627/Azure/az104/2_b4bvym.jpg" alt="Az AD Directory" /></p>
-
-<p>3) Click on users, then select all Users</p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687535966/Azure/az104/3_miyxtr.jpg" alt="users" /></p>
-
-<p>4) Now We have to create a few demo users with different privileges,here I’m gonna create 3 users as</p>
-<ul>
-  <li>user1</li>
-  <li>user2</li>
-  <li>user3</li>
-</ul>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687536583/Azure/az104/4_vmwzm2.jpg" alt="new user" /></p>
-
-<p>5) I am using my own custom domain <a href="https://hugs4bugs.me">hugs4bugs</a>, but feel free to use deafult</p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687538927/Azure/az104/5_rq9uzk.jpg" alt="Usercreation Page" /></p>
-
-<p>6) Fill the second tab info as per your choice and feel free to skips non mandatory things too.
-I have filled details as follow :-</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> * First Name : user
- * Last Name : 1
- * user type: member
- * job title: az admin (here this user gonna have global admin privilege)
- * company : hugs4bugs (optional)
- * departement: IT (optional)
- * employee id: 001 (optional)
- * contact info : skipped 
- * parental control : skipped 
- * settings: usage location : India
-</code></pre></div></div>
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687539645/Azure/az104/6_c87kus.jpg" alt="Properties" /></p>
-
-<p>Leave as default or blank Assignments tab</p>
-
-<p>7) Click on Review and Create button and repeate same steps for user2 &amp; user3</p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687540040/Azure/az104/7_fhlywu.jpg" alt="user creation" /></p>
-
-<p>8) After successful user creation , notification will popup .</p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687540045/Azure/az104/8_pszz3x.jpg" alt="notification" /></p>
-
-<p><strong>Groups : Azure AD</strong></p>
-
-<p>Before jumping to the Azure AD Groups, let’s understand the types of groups and their functionality.</p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687549467/Azure/az104/9_ancsen.jpg" alt="Image" /></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Security Group :- As same as on prem Group
-                   used to secure Objects within the Azure AD 
-
-* Microsoft 365 Group :- Provides group of people access to a collection of shared resources eg:- shared mailbox, calendar,.
-Not just limited to Azure AD
-</code></pre></div></div>
-<p>Security Groups provides 3 types of memberships:-</p>
-
+<p><strong>Steps to create a hosted Deployment</strong></p>
 <ol>
-  <li>Assigned :- Manually assign user to a group</li>
-  <li>Dynamic user:- Define parameter, to auto assign users to a group like people with same job Title can be groupped together</li>
-  <li>Dynamic Devices:- Define parameters to auto group devices, eg:- All devices with same OS can be assigned to the same group</li>
+  <li>Signup to  <a href="https://cloud.elastic.co">Elastic Cloud</a></li>
+  <li>Click on Add Deployment 
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747754029/hugs4bugs/Elastics/hostedclouddeployment_ustvd2.jpg" alt="image" /></li>
+  <li>Launching Deployement 
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747754101/hugs4bugs/Elastics/launching_deployement_ewcinj.jpg" alt="image" /></li>
+  <li>Incoming Data Confirmation
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747754167/hugs4bugs/Elastics/incomingdatapreview_vlz16q.jpg" alt="image" /></li>
 </ol>
 
-<p><strong>Create Assigned Group via Azure Portal</strong></p>
-
-<ul>
-  <li>Follow the previous steps to get into azure active Directory from <a href="https://portal.azure.com">azure portal</a> and select Group from the left hamburger menu.</li>
-</ul>
-
-<p>if you have premium P1 licence feel free to create Dynamic user group.</p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687555597/Azure/az104/10_oizkdd.jpg" alt="Assigned Group" /></p>
-
-<p><strong>Managing User and Group Properties</strong></p>
-
-<p>So, we have successfully created users,Groups in previous steps now what and how can configure for an azure AD user account.</p>
-
-<p><strong>For Users</strong>
-List:-</p>
+<p><strong>Agent Installation</strong></p>
 
 <ol>
-  <li>Profile:</li>
-  <li>Assigned Roles</li>
-  <li>Administrative Units</li>
-  <li>Groups</li>
-  <li>Applications</li>
-  <li>Licences</li>
-  <li>Devices</li>
-  <li>Azure Role Assignments</li>
-  <li>Authentication Methods</li>
+  <li>
+    <p>Click on the assets, and Add Agent button 
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747752370/hugs4bugs/Elastics/completeintegrationEDR_jzv0dn.jpg" alt="image" /></p>
+  </li>
+  <li>Enroll in Fleet which means elastic agents in fleet to automatically deploy updates and centrally manage the agent.</li>
+  <li>Install Elastic agent on the host machine, in my case it’s Kali Linux Machine
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -L -O https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-9.0.1-linux-arm64.tar.gz 
+  tar xzvf elastic-agent-9.0.1-linux-arm64.tar.gz
+  cd elastic-agent-9.0.1-linux-arm64
+  sudo ./elastic-agent install --url=https://a097fdb86de9432ebec921c664a65f9d.fleet.us-east-1.aws.elastic.cloud:443 --enrollment-token=R0FzLTRwWUJtSzFxcVVmU2tyUUo6OUlIdGticVFtcjJhRVNjR2t1NUY4dw==
+</code></pre></div>    </div>
+    <p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747752682/hugs4bugs/Elastics/agentsuccess_ni21jq.png" alt="image" /></p>
+  </li>
+  <li>Incoming Data confirmation</li>
 </ol>
 
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687726491/Azure/az104/11_gpljsd.jpg" alt="Users Permission" /></p>
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747752747/hugs4bugs/Elastics/agentinstallationconfirmationUI_pgtnsy.jpg" alt="image" /></p>
 
-<p><strong>For Groups</strong></p>
+<p><strong>Now Deploy Elastic Defend</strong></p>
 
-<p>List:-</p>
+<p>Go to the integration and select Elastic Defend then click Add Elastic Defend</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747753309/hugs4bugs/Elastics/fleet_agents_vznevr.jpg" alt="image" /></p>
 
 <ol>
-  <li>Overview</li>
-  <li>Properties</li>
-  <li>Members</li>
-  <li>Owners</li>
-  <li>Administrative units</li>
-  <li>Group Memberships</li>
-  <li>Applications</li>
-  <li>Licenses</li>
-  <li>Azure Role Assignments</li>
-  <li>Dynamic Membership Rules</li>
+  <li>Configuration Integration give it a name and Description
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747753425/hugs4bugs/Elastics/completeintegrationEDR_cpwl9a.jpg" alt="image" /></li>
+  <li>Under Configuration Settings, it should be “Complete EDR with full telemetry”
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747753543/hugs4bugs/Elastics/EDRconfig_zrslnf.jpg" alt="image" /></li>
+  <li>under Where to host section, select existing host and pick same host where we had deployed 1st agent policy
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747753694/hugs4bugs/Elastics/existinghostti_ogs2b2.jpg" alt="image" /></li>
 </ol>
 
-<p><strong>Device Management</strong></p>
+<p>Save &amp; Continue</p>
 
-<p>To meet with the security and compliance standard, we can configure Device based conditional access form Azure AD.</p>
+<p>Now configure Threat Intel feed, from security project left hand menu side click on Intelligence</p>
+<ol>
+  <li>Click on AbuseCH TI tool
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747754440/hugs4bugs/Elastics/absurech_vb1tk1.jpg" alt="image" /></li>
+  <li>Add AbuseCH 
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747754555/hugs4bugs/Elastics/add_absuech_h0ozni.jpg" alt="image" /></li>
+  <li>Select Deployment option as Agent based and toggle off for “collect AbuseCh logs via API using Elastic Agents” . If you have AbuseCH API key feel free to use this option 
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747754702/hugs4bugs/Elastics/deployment-agentbased-ti_lzn3ss.jpg" alt="image" /></li>
+  <li>Now check the TI feeds from Intelligence pannel and feel free to build custom dashboard as well. 
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747754859/hugs4bugs/Elastics/threattintelfeed_kxoqps.jpg" alt="image" /></li>
+</ol>
 
-<p>Steps:</p>
+<p>IOC Details</p>
 
-<p>1) Signin to <a href="https://portal.azure.com">Azure Portal</a>
-2) Go to Azure Active Directory and select Devices option</p>
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747755003/hugs4bugs/Elastics/IOC_details_k9gmw0.jpg" alt="image" /></p>
 
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687726881/Azure/az104/12_waeypt.jpg" alt="Devices" /></p>
+<p><strong>Custom Dashboards</strong> 
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747755168/hugs4bugs/Elastics/abusechurl_vfwmli.jpg" alt="Abusechurls" /></p>
 
-<p>3) Select Device settings from the left-hand menu and let’s configure following settings:-</p>
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747755248/hugs4bugs/Elastics/popularurls_uzd62i.jpg" alt="Most url" /></p>
 
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687727020/Azure/az104/13_yw7zxx.jpg" alt="settings" /></p>
-
-<p>For the best security use case make sure enable MFA.</p>
-
-<p>After all settings are done click on the save.</p>
-
-<p>To check all user logs, click on the audit logs</p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687727341/Azure/az104/14_ghcsgb.jpg" alt="audit logs" /></p>
-
-<p><strong>Managing Guest Users</strong></p>
-
-<p>Here comes the Azure AD B2B in the role,it is a feature in azure that allows org to connect and work safely with external users.</p>
-
-<ul>
-  <li>External users don’t require a microsoft work and personal account that has been added to an existing Azure AD tenant.</li>
-</ul>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687727773/Azure/az104/15_lk6nzr.jpg" alt="External User" /></p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687728114/Azure/az104/16_ktn4bp.jpg" alt="Guest" /></p>
-
-<p>Feel free to select users role from assignment tab and be causious too., since it’s external guest user permission. You don’t wanna share critical resources with others.</p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687728223/Azure/az104/17_jud2cv.jpg" alt="Guest Access" /></p>
-
-<p>If you put original guest user email . you will get a mail like this</p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687729482/Azure/az104/18_mz0hiy.jpg" alt="email" /></p>
-
-<p>After Accepting invitation, it’ll ask for MFA(Multifactor Authenticato App) Registration .</p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687729803/Azure/az104/19_bjwc2n.jpg" alt="MFA" /></p>
-
-<p>After 1st successful signin</p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687730030/Azure/az104/20_ykiv9h.jpg" alt="Success" /></p>
-
-<p><strong>SSPR</strong></p>
-
-<p>SSPR stands for the self-service password Reset. It allows users to reset password by ownself, which reduces the dependencies on admins.</p>
-
-<p><em>in free Azure AD only cloud users only password change is supported not password reset</em></p>
-
-<p>Steps:</p>
-
-<p>1) Visit Azure Active Directory
-2) Select password reset from the Azure AD overview blade from left hamburger menu.</p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1687730422/Azure/az104/21_q810ey.jpg" alt="password reset" /></p>
-
-<p>3) In the Password reset overview blade, you can enable SSPR for all your users, by selecting All, or for selected users and groups, by selecting Selected.</p>
-
-<p>Make a slection of methods available to users for password reset.</p>
-
-<p>Click save.</p>
-
-<p>Thanks for Reading, Keep learning keep Troubleshooting together!</p>
+<p>In next part we’ll discuss how to create correlation rule with TI feeds.</p>
 
 
                 <!-- Pagination links -->
@@ -564,29 +421,29 @@ List:-</p>
                         
                         
                             <li>
-                                <a href="/metasploitFramework-vs-metasploit-pro/">
+                                <a href="/what-is-chat-gpt/">
                                     
-                                        <img src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80">
+                                        <img src="https://images.pexels.com/photos/7108/notebook-computer-chill-relax.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
                                     
-                                    <h3>Metasploit Framework vs Metasploit Pro</h3>
+                                    <h3>What is chatGpt? How to use it?</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/The-cybersecurity-duel-trust-boundary-vs-attack-surface-explained/">
+                                <a href="/the-blue-team-protecting-you/">
                                     
-                                        <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1735797428/hugs4bugs/IMG20240824121111_d2qqef.jpg">
+                                        <img src="https://cdn.pixabay.com/photo/2017/11/19/23/56/hacking-2964100_960_720.jpg">
                                     
-                                    <h3>Trust boundary vs Attack Surface Explained</h3>
+                                    <h3>The Blue Team.☠️</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/difference-between-WAF-and-IPS/">
+                                <a href="/how-to-install-kali-purple-SOC-tools-on-top-of-existing-kali-machine/">
                                     
-                                        <img src="https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://www.kali.org/blog/kali-linux-2023-1-release/images/kali-purple-icon.svg">
                                     
-                                    <h3>WAF vs IPS</h3>
+                                    <h3>Install Kali-Purple tools on top of Normal Kali</h3>
                                 </a>
                             </li>
                         
@@ -598,7 +455,7 @@ List:-</p>
 
         <!-- Add time bar only for pages without pagination -->
         
-            <div class="time-bar" data-minutes="5">
+            <div class="time-bar" data-minutes="2">
     <span class="time-completed"></span>
     <span class="time-remaining"></span>
     <div class="bar">
@@ -618,13 +475,13 @@ List:-</p>
         </div>
     </div>
     
-    <a href="/send-email-with-Azure-logic-app/" class="post-preview">
+    <a href="/blue-team-vs-red-team-in-cyber-security/" class="post-preview">
         <div class="image">
             
-                <img src="https://d3nn873nee648n.cloudfront.net/900x600/19765/300-SM960337.jpg">
+                <img src="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
             
         </div>
-        <h3 class="title">Automate Email with Azure Logic App</h3>
+        <h3 class="title">Blue Team vs Red Team</h3>
     </a>
 </div>
 
@@ -641,7 +498,7 @@ List:-</p>
         <section class="share">
     <h3>Share</h3>
     <a aria-label="Share on Twitter"
-        href="https://twitter.com/intent/tweet?text=&quot;Atomatically  deploy your webapps with Github actions and firebase hosting with Jekyll templates&quot;%20https://hugs4bugs.me/how-to-manage-azure-active-directory-objects/%20via%20&#64;myselfshubhendu&hashtags=azure,active directory,developer,cloud"
+        href="https://twitter.com/intent/tweet?text=&quot;Let's learn how to hunt Threat adversory&quot;%20https://hugs4bugs.me/build-threat-hunting-IOC-with-elastic-siem/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,Elastic SIEM"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -649,7 +506,7 @@ List:-</p>
         </svg>
     </a>
     <a aria-label="Share on WhatsApp"
-        href="https://twitter.com/intent/tweet?text=&quot;Atomatically  deploy your webapps with Github actions and firebase hosting with Jekyll templates&quot;%20https://hugs4bugs.me/how-to-manage-azure-active-directory-objects/%20via%20&#64;myselfshubhendu&hashtags=azure,active directory,developer,cloud"
+        href="https://twitter.com/intent/tweet?text=&quot;Let's learn how to hunt Threat adversory&quot;%20https://hugs4bugs.me/build-threat-hunting-IOC-with-elastic-siem/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,Elastic SIEM"
         onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -657,7 +514,7 @@ List:-</p>
         </svg>
     </a>
     <a aria-label="Share on Facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/how-to-manage-azure-active-directory-objects/"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/build-threat-hunting-IOC-with-elastic-siem/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
         title="Share on Facebook">
         <svg class="icon icon-facebook">
@@ -747,7 +604,7 @@ List:-</p>
         disqus_loaded = true;
         var disqus_shortname = 'hugs4bugs';
         var disqus_title = '';
-        var disqus_url = '/how-to-manage-azure-active-directory-objects/';
+        var disqus_url = '/build-threat-hunting-IOC-with-elastic-siem/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -918,237 +775,94 @@ List:-</p>
         {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
-            "name": "How to create & Manage users and Groups within Azure AD.",
-            "headline": "Az Active Directory Objects",
-            "description": "Atomatically  deploy your webapps with Github actions and firebase hosting with Jekyll templates",
-            "image": "https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "url": "https://hugs4bugs.me/how-to-manage-azure-active-directory-objects/",
-            "articleBody": "In this blog,let’s learn how to create and manage users &amp;amp; group their properties within Azure AD.
+            "name": "Build Your Own IOC Playground with ELastic SIEM",
+            "headline": "Hunt IOC",
+            "description": "Let's learn how to hunt Threat adversory",
+            "image": "https://res.cloudinary.com/hugs4bugs/image/upload/v1747750540/AI%20generated/use_this_image_as_person_with_laptop_frcpq3.png",
+            "url": "https://hugs4bugs.me/build-threat-hunting-IOC-with-elastic-siem/",
+            "articleBody": "When it comes to proactive approach of security, threat Hunting comes to the picture. And being aware of IOC aka Indicators of Compromise gives an extra leverage to find malicious urls, hash, IP and block those and take proper action. In this lab, I’m gonna build homelab with Elastic Cloud and Elastic SIEM deployment and generate IOC with AbuseCH .
 
-Disclaimer :- I’m not gonna cover Azure AD’s AU (Administrative Units)
+Basic HLD
 
-Prerequisits :-
 
 
-  Azure Account
-  Global Administrator Privilege
-  Basic Knowledge of Azure service
+Steps to create a hosted Deployment
 
+  Signup to  Elastic Cloud
+  Click on Add Deployment 
 
-Q. Before start let’s understand What Azure AD offers? or What is Azure AD?
+  Launching Deployement 
 
-A.
+  Incoming Data Confirmation
 
-  Directory and Identity management solution within the cloud
-  Provides Traditional username &amp;amp; password Identity Managemet
-  Role based permission management
-  Multifactor authentication (Enterprise solution)
-  Application monitoring solution and alerting
-  Can be integrated with on-prem AD
 
 
-If you are interested into Azure AD licencing and cost, kindly visit official doc :-
+Agent Installation
 
-Azure AD licencing
 
-Create users in Azure AD via portal
+  
+    Click on the assets, and Add Agent button 
 
-steps:-
+  
+  Enroll in Fleet which means elastic agents in fleet to automatically deploy updates and centrally manage the agent.
+  Install Elastic agent on the host machine, in my case it’s Kali Linux Machine
+    curl -L -O https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-9.0.1-linux-arm64.tar.gz 
+  tar xzvf elastic-agent-9.0.1-linux-arm64.tar.gz
+  cd elastic-agent-9.0.1-linux-arm64
+  sudo ./elastic-agent install --url=https://a097fdb86de9432ebec921c664a65f9d.fleet.us-east-1.aws.elastic.cloud:443 --enrollment-token=R0FzLTRwWUJtSzFxcVVmU2tyUUo6OUlIdGticVFtcjJhRVNjR2t1NUY4dw==
+    
+    
+  
+  Incoming Data confirmation
 
-1) Visit Azure portal
 
 
 
-2) Select Azure Active Directory from left hand hamburger menu or directly search in search box
+Now Deploy Elastic Defend
 
+Go to the integration and select Elastic Defend then click Add Elastic Defend
 
 
-3) Click on users, then select all Users
 
 
+  Configuration Integration give it a name and Description
 
-4) Now We have to create a few demo users with different privileges,here I’m gonna create 3 users as
+  Under Configuration Settings, it should be “Complete EDR with full telemetry”
 
-  user1
-  user2
-  user3
+  under Where to host section, select existing host and pick same host where we had deployed 1st agent policy
 
 
 
+Save &amp;amp; Continue
 
-5) I am using my own custom domain hugs4bugs, but feel free to use deafult
+Now configure Threat Intel feed, from security project left hand menu side click on Intelligence
 
+  Click on AbuseCH TI tool
 
+  Add AbuseCH 
 
-6) Fill the second tab info as per your choice and feel free to skips non mandatory things too.
-I have filled details as follow :-
- * First Name : user
- * Last Name : 1
- * user type: member
- * job title: az admin (here this user gonna have global admin privilege)
- * company : hugs4bugs (optional)
- * departement: IT (optional)
- * employee id: 001 (optional)
- * contact info : skipped 
- * parental control : skipped 
- * settings: usage location : India
+  Select Deployment option as Agent based and toggle off for “collect AbuseCh logs via API using Elastic Agents” . If you have AbuseCH API key feel free to use this option 
 
+  Now check the TI feeds from Intelligence pannel and feel free to build custom dashboard as well. 
 
 
-Leave as default or blank Assignments tab
 
-7) Click on Review and Create button and repeate same steps for user2 &amp;amp; user3
+IOC Details
 
 
 
-8) After successful user creation , notification will popup .
+Custom Dashboards 
 
 
 
-Groups : Azure AD
 
-Before jumping to the Azure AD Groups, let’s understand the types of groups and their functionality.
-
-
-* Security Group :- As same as on prem Group
-                   used to secure Objects within the Azure AD 
-
-* Microsoft 365 Group :- Provides group of people access to a collection of shared resources eg:- shared mailbox, calendar,.
-Not just limited to Azure AD
-
-Security Groups provides 3 types of memberships:-
-
-
-  Assigned :- Manually assign user to a group
-  Dynamic user:- Define parameter, to auto assign users to a group like people with same job Title can be groupped together
-  Dynamic Devices:- Define parameters to auto group devices, eg:- All devices with same OS can be assigned to the same group
-
-
-Create Assigned Group via Azure Portal
-
-
-  Follow the previous steps to get into azure active Directory from azure portal and select Group from the left hamburger menu.
-
-
-if you have premium P1 licence feel free to create Dynamic user group.
-
-
-
-Managing User and Group Properties
-
-So, we have successfully created users,Groups in previous steps now what and how can configure for an azure AD user account.
-
-For Users
-List:-
-
-
-  Profile:
-  Assigned Roles
-  Administrative Units
-  Groups
-  Applications
-  Licences
-  Devices
-  Azure Role Assignments
-  Authentication Methods
-
-
-
-
-For Groups
-
-List:-
-
-
-  Overview
-  Properties
-  Members
-  Owners
-  Administrative units
-  Group Memberships
-  Applications
-  Licenses
-  Azure Role Assignments
-  Dynamic Membership Rules
-
-
-Device Management
-
-To meet with the security and compliance standard, we can configure Device based conditional access form Azure AD.
-
-Steps:
-
-1) Signin to Azure Portal
-2) Go to Azure Active Directory and select Devices option
-
-
-
-3) Select Device settings from the left-hand menu and let’s configure following settings:-
-
-
-
-For the best security use case make sure enable MFA.
-
-After all settings are done click on the save.
-
-To check all user logs, click on the audit logs
-
-
-
-Managing Guest Users
-
-Here comes the Azure AD B2B in the role,it is a feature in azure that allows org to connect and work safely with external users.
-
-
-  External users don’t require a microsoft work and personal account that has been added to an existing Azure AD tenant.
-
-
-
-
-
-
-Feel free to select users role from assignment tab and be causious too., since it’s external guest user permission. You don’t wanna share critical resources with others.
-
-
-
-If you put original guest user email . you will get a mail like this
-
-
-
-After Accepting invitation, it’ll ask for MFA(Multifactor Authenticato App) Registration .
-
-
-
-After 1st successful signin
-
-
-
-SSPR
-
-SSPR stands for the self-service password Reset. It allows users to reset password by ownself, which reduces the dependencies on admins.
-
-in free Azure AD only cloud users only password change is supported not password reset
-
-Steps:
-
-1) Visit Azure Active Directory
-2) Select password reset from the Azure AD overview blade from left hamburger menu.
-
-
-
-3) In the Password reset overview blade, you can enable SSPR for all your users, by selecting All, or for selected users and groups, by selecting Selected.
-
-Make a slection of methods available to users for password reset.
-
-Click save.
-
-Thanks for Reading, Keep learning keep Troubleshooting together!
+In next part we’ll discuss how to create correlation rule with TI feeds.
 ",
-            "wordcount": "933",
+            "wordcount": "376",
             "inLanguage": "en",
-            "dateCreated": "2023-04-30/",
-            "datePublished": "2023-04-30/",
-            "dateModified": "2023-04-30/",
+            "dateCreated": "2025-03-09/",
+            "datePublished": "2025-03-09/",
+            "dateModified": "2025-03-09/",
             "author": {
                 "@type": "Person",
                 "name": "Shubhendu",
@@ -1173,9 +887,9 @@ Thanks for Reading, Keep learning keep Troubleshooting together!
                 }
             },
             "mainEntityOfPage": "True",
-            "genre": "azure",
-            "articleSection": "azure",
-            "keywords": ["azure","active directory","developer","cloud"]
+            "genre": "security",
+            "articleSection": "security",
+            "keywords": ["Cyber Security","Elastic SIEM"]
         }
         </script>
     </body>
