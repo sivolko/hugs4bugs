@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    <title>Ship AI Tools Like Apps with  Docker's MCP ToolKit | hugs4bugs</title>
+    <meta name="description" content="Leverage Docker to build production ready MCP">
+    
+    <meta name="keywords" content="MCP, Docker">
+    
+
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ship AI Tools Like Apps with  Docker's MCP ToolKit | hugs4bugs">
+    <meta name="twitter:description" content="Leverage Docker to build production ready MCP">
+
+    
+    <meta property="twitter:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1748198502/hugs4bugs/dockermcp/mcp.png">
+    
+
+    
+    <meta name="twitter:site" content="@myselfshubhendu">
+    
+
+    <!-- Social: Facebook / Open Graph -->
+    <meta property="og:url" content="https://hugs4bugs.me/ship-ai-tools-like-app-with-docker-mcptoolkit/">
+    <meta property="og:title" content="Ship AI Tools Like Apps with  Docker's MCP ToolKit | hugs4bugs">
+    <meta property="og:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1748198502/hugs4bugs/dockermcp/mcp.png">
+    <meta property="og:description" content="Leverage Docker to build production ready MCP">
+    <meta property="og:site_name" content="hugs4bugs">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
+
+    <!-- Windows 8 Tile Icons -->
+    <!-- <meta name="application-name" content="hugs4bugs">
+    <meta name="msapplication-TileColor" content="#141414">
+    <meta name="msapplication-square70x70logo" content="smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="widetile.png" />
+    <meta name="msapplication-square310x310logo" content="largetile.png" /> -->
+
+    <!-- Android Lolipop Theme Color -->
+    <meta name="theme-color" content="#141414">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="canonical" href="https://hugs4bugs.me/ship-ai-tools-like-app-with-docker-mcptoolkit/">
+    <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
+        href="https://hugs4bugs.me/feed.xml" />
+    <link rel='manifest' href='../manifest.json'>
+    <link rel='wellknown' href='.well-known/assetlinks.json'>
+    <link rel='ads' href='/ads.txt'>
+
+
+    <!-- Include extra styles -->
+    
+
+  
+    
+
+
+    <link rel="alternate" hreflang="en" href="https://hugs4bugs.me">
+    <!-- <link rel="alternate" hreflang="hi" href="https://hi.hugs4bugs.me">
+    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+    <script>
+        Weglot.initialize({
+            api_key: 'wg_3517bf871d8b37ee8f37481a72de4cb77'
+        });
+    </script> -->
+    <!-- JavaScript enabled/disabled -->
+    <script>
+        document.querySelector('html').classList.remove('no-js');
+    </script>
+    <script type="module">import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+        const el = document.createElement('pwa-update');
+        document.body.appendChild(el);
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5165937973513449"
+        crossorigin="anonymous">
+    </script>
+
+</head>
+
+    <body class="has-push-menu">
+        
+
+
+
+
+
+        <svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  display="none"
+  version="1.1"
+>
+  <defs>
+    <symbol id="icon-menu" viewBox="0 0 1024 1024">
+      <path
+        class="path1"
+        d="M128 213.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 725.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"
+      />
+    </symbol>
+    <symbol id="icon-search" viewBox="0 0 951 1024">
+      <path
+        class="path1"
+        d="M658.286 475.429q0-105.714-75.143-180.857t-180.857-75.143-180.857 75.143-75.143 180.857 75.143 180.857 180.857 75.143 180.857-75.143 75.143-180.857zM950.857 950.857q0 29.714-21.714 51.429t-51.429 21.714q-30.857 0-51.429-21.714l-196-195.429q-102.286 70.857-228 70.857-81.714 0-156.286-31.714t-128.571-85.714-85.714-128.571-31.714-156.286 31.714-156.286 85.714-128.571 128.571-85.714 156.286-31.714 156.286 31.714 128.571 85.714 85.714 128.571 31.714 156.286q0 125.714-70.857 228l196 196q21.143 21.143 21.143 51.429z"
+      />
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 1000 1000">
+      <path
+        d="M969.8,870.3c27,27.7,27,71.8,0,99.1C955.7,983,937.9,990,920,990c-17.9,0-35.7-7-49.7-20.7L500,599L129.6,969.4C115.6,983,97.8,990,79.9,990s-35.7-7-49.7-20.7c-27-27.3-27-71.4,0-99.1L400.9,500L30.3,129.3c-27-27.3-27-71.4,0-99.1c27.3-27,71.8-27,99.4,0L500,400.9L870.4,30.2c27.7-27,71.8-27,99.4,0c27,27.7,27,71.8,0,99.1L599.1,500L969.8,870.3z"
+      />
+    </symbol>
+    <symbol id="icon-twitter" viewBox="0 0 951 1024">
+      <path
+        class="path1"
+        d="M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"
+      />
+    </symbol>
+    <symbol id="icon-facebook" viewBox="0 0 585 1024">
+      <path
+        class="path1"
+        d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"
+      />
+    </symbol>
+    <symbol id="icon-clock" viewBox="0 0 1000 1000">
+      <path
+        d="M500,10C229.8,10,10,229.8,10,500c0,270.2,219.8,490,490,490c270.2,0,490-219.8,490-490C990,229.8,770.2,10,500,10z M500,910.2c-226.2,0-410.2-184-410.2-410.2c0-226.2,184-410.2,410.2-410.2c226.2,0,410.2,184,410.2,410.2C910.2,726.1,726.2,910.2,500,910.2z M753.1,374c8.2,11.9,5.2,28.1-6.6,36.3L509.9,573.7c-4.4,3.1-9.6,4.6-14.8,4.6c-4.1,0-8.3-1-12.1-3c-8.6-4.5-14-13.4-14-23.1V202.5c0-14.4,11.7-26.1,26.1-26.1c14.4,0,26.1,11.7,26.1,26.1v300l195.6-135.1C728.7,359.2,744.9,362.1,753.1,374z"
+      />
+    </symbol>
+    <symbol id="icon-calendar" viewBox="0 0 1000 1000">
+      <path
+        d="M920,500v420H80V500H920 M990,430H10v490c0,38.7,31.3,70,70,70h840c38.7,0,70-31.3,70-70V430L990,430z"
+      />
+      <path
+        d="M850,80v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80H360v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80C72.8,80,10,142.7,10,220v140h980V220C990,142.7,927.2,80,850,80z"
+      />
+      <path
+        d="M255,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C290,25.8,274.3,10,255,10z"
+      />
+      <path
+        d="M745,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C780,25.8,764.3,10,745,10z"
+      />
+    </symbol>
+    <symbol id="icon-github" viewBox="0 0 12 14">
+      <path
+        d="M6 1q1.633 0 3.012 0.805t2.184 2.184 0.805 3.012q0 1.961-1.145 3.527t-2.957 2.168q-0.211 0.039-0.312-0.055t-0.102-0.234q0-0.023 0.004-0.598t0.004-1.051q0-0.758-0.406-1.109 0.445-0.047 0.801-0.141t0.734-0.305 0.633-0.52 0.414-0.82 0.16-1.176q0-0.93-0.617-1.609 0.289-0.711-0.062-1.594-0.219-0.070-0.633 0.086t-0.719 0.344l-0.297 0.187q-0.727-0.203-1.5-0.203t-1.5 0.203q-0.125-0.086-0.332-0.211t-0.652-0.301-0.664-0.105q-0.352 0.883-0.062 1.594-0.617 0.68-0.617 1.609 0 0.664 0.16 1.172t0.41 0.82 0.629 0.523 0.734 0.305 0.801 0.141q-0.305 0.281-0.383 0.805-0.164 0.078-0.352 0.117t-0.445 0.039-0.512-0.168-0.434-0.488q-0.148-0.25-0.379-0.406t-0.387-0.187l-0.156-0.023q-0.164 0-0.227 0.035t-0.039 0.090 0.070 0.109 0.102 0.094l0.055 0.039q0.172 0.078 0.34 0.297t0.246 0.398l0.078 0.18q0.102 0.297 0.344 0.48t0.523 0.234 0.543 0.055 0.434-0.027l0.18-0.031q0 0.297 0.004 0.691t0.004 0.426q0 0.141-0.102 0.234t-0.312 0.055q-1.812-0.602-2.957-2.168t-1.145-3.527q0-1.633 0.805-3.012t2.184-2.184 3.012-0.805zM2.273 9.617q0.023-0.055-0.055-0.094-0.078-0.023-0.102 0.016-0.023 0.055 0.055 0.094 0.070 0.047 0.102-0.016zM2.516 9.883q0.055-0.039-0.016-0.125-0.078-0.070-0.125-0.023-0.055 0.039 0.016 0.125 0.078 0.078 0.125 0.023zM2.75 10.234q0.070-0.055 0-0.148-0.062-0.102-0.133-0.047-0.070 0.039 0 0.141t0.133 0.055zM3.078 10.562q0.062-0.062-0.031-0.148-0.094-0.094-0.156-0.023-0.070 0.062 0.031 0.148 0.094 0.094 0.156 0.023zM3.523 10.758q0.023-0.086-0.102-0.125-0.117-0.031-0.148 0.055t0.102 0.117q0.117 0.047 0.148-0.047zM4.016 10.797q0-0.102-0.133-0.086-0.125 0-0.125 0.086 0 0.102 0.133 0.086 0.125 0 0.125-0.086zM4.469 10.719q-0.016-0.086-0.141-0.070-0.125 0.023-0.109 0.117t0.141 0.062 0.109-0.109z"
+      ></path>
+    </symbol>
+    <symbol id="icon-medium" viewBox="0 0 1000 1000">
+      <path
+        d="M336.5,240.2v641.5c0,9.1-2.3,16.9-6.8,23.2s-11.2,9.6-20,9.6c-6.2,0-12.2-1.5-18-4.4L37.3,782.7c-7.7-3.6-14.1-9.8-19.4-18.3S10,747.4,10,739V115.5c0-7.3,1.8-13.5,5.5-18.6c3.6-5.1,8.9-7.7,15.9-7.7c5.1,0,13.1,2.7,24.1,8.2l279.5,140C335.9,238.6,336.5,239.5,336.5,240.2L336.5,240.2z M371.5,295.5l292,473.6l-292-145.5V295.5z M990,305.3v576.4c0,9.1-2.6,16.5-7.7,22.1c-5.1,5.7-12,8.5-20.8,8.5s-17.3-2.4-25.7-7.1L694.7,784.9L990,305.3z M988.4,239.7c0,1.1-46.8,77.6-140.3,229.4C754.6,621,699.8,709.8,683.8,735.7L470.5,389l177.2-288.2c6.2-10.2,15.7-15.3,28.4-15.3c5.1,0,9.8,1.1,14.2,3.3l295.9,147.7C987.6,237.1,988.4,238.2,988.4,239.7L988.4,239.7z"
+      />
+    </symbol>
+    <symbol id="icon-instagram" viewBox="0 0 489.84 489.84">
+      <path
+        d="M249.62,50.46c65.4,0,73.14.25,99,1.43C372.47,53,385.44,57,394.07,60.32a75.88,75.88,0,0,1,28.16,18.32,75.88,75.88,0,0,1,18.32,28.16c3.35,8.63,7.34,21.6,8.43,45.48,1.18,25.83,1.43,33.57,1.43,99s-0.25,73.14-1.43,99c-1.09,23.88-5.08,36.85-8.43,45.48a81.11,81.11,0,0,1-46.48,46.48c-8.63,3.35-21.6,7.34-45.48,8.43-25.82,1.18-33.57,1.43-99,1.43s-73.15-.25-99-1.43c-23.88-1.09-36.85-5.08-45.48-8.43A75.88,75.88,0,0,1,77,423.86,75.88,75.88,0,0,1,58.69,395.7c-3.35-8.63-7.34-21.6-8.43-45.48-1.18-25.83-1.43-33.57-1.43-99s0.25-73.14,1.43-99c1.09-23.88,5.08-36.85,8.43-45.48A75.88,75.88,0,0,1,77,78.64a75.88,75.88,0,0,1,28.16-18.32c8.63-3.35,21.6-7.34,45.48-8.43,25.83-1.18,33.57-1.43,99-1.43m0-44.13c-66.52,0-74.86.28-101,1.47s-43.87,5.33-59.45,11.38A120.06,120.06,0,0,0,45.81,47.44,120.06,120.06,0,0,0,17.56,90.82C11.5,106.4,7.36,124.2,6.17,150.27s-1.47,34.46-1.47,101,0.28,74.86,1.47,101,5.33,43.87,11.38,59.45a120.06,120.06,0,0,0,28.25,43.38,120.06,120.06,0,0,0,43.38,28.25c15.58,6.05,33.38,10.19,59.45,11.38s34.46,1.47,101,1.47,74.86-.28,101-1.47,43.87-5.33,59.45-11.38a125.24,125.24,0,0,0,71.63-71.63c6.05-15.58,10.19-33.38,11.38-59.45s1.47-34.46,1.47-101-0.28-74.86-1.47-101-5.33-43.87-11.38-59.45a120.06,120.06,0,0,0-28.25-43.38,120.06,120.06,0,0,0-43.38-28.25C394.47,13.13,376.67,9,350.6,7.8s-34.46-1.47-101-1.47h0Z"
+        transform="translate(-4.7 -6.33)"
+      />
+      <path
+        d="M249.62,125.48A125.77,125.77,0,1,0,375.39,251.25,125.77,125.77,0,0,0,249.62,125.48Zm0,207.41a81.64,81.64,0,1,1,81.64-81.64A81.64,81.64,0,0,1,249.62,332.89Z"
+        transform="translate(-4.7 -6.33)"
+      />
+      <circle cx="375.66" cy="114.18" r="29.39" />
+    </symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 12 14">
+      <path
+        d="M2.727 4.883v7.742h-2.578v-7.742h2.578zM2.891 2.492q0.008 0.57-0.395 0.953t-1.059 0.383h-0.016q-0.641 0-1.031-0.383t-0.391-0.953q0-0.578 0.402-0.957t1.051-0.379 1.039 0.379 0.398 0.957zM12 8.187v4.437h-2.57v-4.141q0-0.82-0.316-1.285t-0.988-0.465q-0.492 0-0.824 0.27t-0.496 0.668q-0.086 0.234-0.086 0.633v4.32h-2.57q0.016-3.117 0.016-5.055t-0.008-2.313l-0.008-0.375h2.57v1.125h-0.016q0.156-0.25 0.32-0.438t0.441-0.406 0.68-0.34 0.895-0.121q1.336 0 2.148 0.887t0.813 2.598z"
+      ></path>
+    </symbol>
+    <symbol id="icon-heart" viewBox="0 0 34 30">
+      <path
+        d="M17,29.7 L16.4,29.2 C3.5,18.7 0,15 0,9 C0,4 4,0 9,0 C13.1,0 15.4,2.3 17,4.1 C18.6,2.3 20.9,0 25,0 C30,0 34,4 34,9 C34,15 30.5,18.7 17.6,29.2 L17,29.7 Z M9,2 C5.1,2 2,5.1 2,9 C2,14.1 5.2,17.5 17,27.1 C28.8,17.5 32,14.1 32,9 C32,5.1 28.9,2 25,2 C21.5,2 19.6,4.1 18.1,5.8 L17,7.1 L15.9,5.8 C14.4,4.1 12.5,2 9,2 Z"
+        id="Shape"
+      ></path>
+    </symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 25.452 25.452">
+      <path
+        d="M4.471,24.929v-2.004l12.409-9.788c0.122-0.101,0.195-0.251,0.195-0.411c0-0.156-0.073-0.31-0.195-0.409L4.471,2.526V0.522c0-0.2,0.115-0.384,0.293-0.469c0.18-0.087,0.396-0.066,0.552,0.061l15.47,12.202c0.123,0.1,0.195,0.253,0.195,0.409c0,0.16-0.072,0.311-0.195,0.411L5.316,25.34c-0.155,0.125-0.372,0.147-0.552,0.061C4.586,25.315,4.471,25.13,4.471,24.929z"
+      />
+    </symbol>
+    <symbol id="icon-star" viewBox="0 0 48 48">
+      <path
+        fill="currentColor"
+        d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"
+      />
+      <path
+        fill="#ffffff"
+        d="M24,11l3.898,7.898l8.703,1.301l-6.301,6.102l1.5,8.699L24,30.898L16.199,35l1.5-8.699l-6.301-6.102  l8.703-1.301L24,11z"
+      />
+    </symbol>
+    <symbol id="icon-read" viewBox="0 0 32 32">
+      <path
+        fill="currentColor"
+        d="M29,4H3C1.343,4,0,5.343,0,7v18c0,1.657,1.343,3,3,3h10c0,0.552,0.448,1,1,1h4c0.552,0,1-0.448,1-1h10  c1.657,0,3-1.343,3-3V7C32,5.343,30.657,4,29,4z M29,5v20H18.708c-0.618,0-1.236,0.146-1.789,0.422l-0.419,0.21V5H29z M15.5,5  v20.632l-0.419-0.21C14.528,25.146,13.91,25,13.292,25H3V5H15.5z M31,25c0,1.103-0.897,2-2,2H18v1h-4v-1H3c-1.103,0-2-0.897-2-2V7  c0-0.737,0.405-1.375,1-1.722V25c0,0.552,0.448,1,1,1h10.292c0.466,0,0.925,0.108,1.342,0.317l0.919,0.46  c0.141,0.07,0.294,0.106,0.447,0.106c0.153,0,0.306-0.035,0.447-0.106l0.919-0.46C17.783,26.108,18.242,26,18.708,26H29  c0.552,0,1-0.448,1-1V5.278C30.595,5.625,31,6.263,31,7V25z M6,12.5C6,12.224,6.224,12,6.5,12h5c0.276,0,0.5,0.224,0.5,0.5  S11.776,13,11.5,13h-5C6.224,13,6,12.776,6,12.5z M6,14.5C6,14.224,6.224,14,6.5,14h5c0.276,0,0.5,0.224,0.5,0.5S11.776,15,11.5,15  h-5C6.224,15,6,14.776,6,14.5z M6,16.5C6,16.224,6.224,16,6.5,16h5c0.276,0,0.5,0.224,0.5,0.5S11.776,17,11.5,17h-5  C6.224,17,6,16.776,6,16.5z M20,12.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,13,25.5,13h-5  C20.224,13,20,12.776,20,12.5z M20,14.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,15,25.5,15h-5  C20.224,15,20,14.776,20,14.5z M20,16.5c0-0.276,0.224-0.5,0.5-0.5h5c0.276,0,0.5,0.224,0.5,0.5S25.776,17,25.5,17h-5  C20.224,17,20,16.776,20,16.5z"
+      ></path>
+    </symbol>
+  </defs>
+</svg>
+
+        <header class="bar-header">
+    <a id="menu" role="button">
+        <svg id="open" class="icon-menu">
+            <use xlink:href="#icon-menu"></use>
+        </svg>
+    </a>
+    <h1 class="logo">
+        <a href="/">
+            
+            hugs4bugs <span class="version"></span>
+            
+        </a>
+    </h1>
+    <a id="search" class="dosearch" role="button">
+        <svg class="icon-search">
+            <use xlink:href="#icon-search"></use>
+        </svg>
+    </a>
+
+</header>
+
+<div id="mask" class="overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+    <nav id="navigation">
+      <h2>Menu</h2>
+      <ul>
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/">Home</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/about">About</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/project">Project</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/contact">Contact</a>
+      </li>
+    
+  
+</ul>
+
+    </nav>
+</aside>
+
+<div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search">
+        <svg class="icon-remove-sign"><use xlink:href="#icon-close"></use></svg>
+        <ul class="search-results search-list"></ul>
+    </div>
+</div>
+
+
+        <section class="post two-columns">
+            <article role="article" class="post-content">
+                <p class="post-info">
+                    
+                        <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
+                        <time class="date" datetime="2025-05-25T00:00:00+00:00">
+                            
+
+
+May 25, 2025
+
+                        </time>
+                    
+                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
+                    <span>12 min to read</span>
+                </p>
+                <h1 class="post-title">Ship AI Tools Like Apps with  Docker's MCP ToolKit</h1>
+                <p class="post-subtitle">No more Conflicts!</p>
+
+                
+                    <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748198502/hugs4bugs/dockermcp/mcp.png" alt="Featured image" class="post-cover">
+                
+
+                <!-- Pagination links -->
+
+
+
+                <!-- Add your table of contents here -->
+
+
+                <h1 id="ship-ai-tools-like-apps-dockers-mcp-toolkit">Ship AI Tools Like Apps: Docker’s MCP ToolKit</h1>
+
+<p>The AI revolution is here, and every company wants their services to work seamlessly with large language models (LLMs). Wait a minute, I do recall a quote from “<a href="https://www.linkedin.com/in/ajeetsraina/">Ajeet’s</a> talk “ is now every company an AI  company?” and we all know the answer. Now the Model Context Protocol (MCP) – Anthropic’s open standard that’s rapidly becoming the bridge between LLMs and real-world applications. With Windows Copilot, Google Gemini, OpenAI’s ChatGPT, and Claude all embracing MCP, the message is clear: if you want LLMs to use your service, you need an MCP server.</p>
+
+<p>But here’s where many companies are getting it wrong. In the rush to make their services AI-ready, they’re taking the seemingly obvious shortcut: auto-generating MCP servers from their existing OpenAPI schemas. It’s fast, it’s easy, and it technically works. But as David Gomes from Neon recently explained in his presentation, this approach misses the mark entirely.</p>
+
+<h2 id="what-exactly-is-mcp">What Exactly is MCP?</h2>
+
+<p>Before diving into why auto-generation fails, let’s establish what MCP actually does. Think of MCP as a universal translator between LLMs and your applications. It standardizes how LLMs can:</p>
+
+<ul>
+  <li>Access real-world services and data</li>
+  <li>Perform actions on behalf of users</li>
+  <li>Understand what tools are available to them</li>
+</ul>
+
+<p>An MCP server exposes three main components to LLMs:</p>
+<ul>
+  <li><strong>Tools</strong> (the most important): Actions the LLM can perform</li>
+  <li><strong>Resources</strong>: Data sources the LLM can access</li>
+  <li><strong>Prompts</strong>: Pre-defined conversation starters</li>
+</ul>
+
+<p>The tools are where the magic happens. These are the actions that transform a conversational AI from a chatbot into a capable assistant that can actually get things done in your application.</p>
+
+<h2 id="the-auto-generation-trap">The Auto-Generation Trap</h2>
+
+<p>Here’s the seductive logic that’s leading companies astray: “We already have an API with detailed OpenAPI documentation. Why not just convert that into an MCP server automatically?”</p>
+
+<p>Several services have emerged to do exactly this – Stainless, Speakeasy, Mintlify, and others can generate an MCP server from your API schema in under a minute. The appeal is obvious: instant AI integration with zero custom development.</p>
+
+<p>But this approach fundamentally misunderstands how LLMs work and what they need to be effective.</p>
+
+<h2 id="the-evolution-from-apis-to-ai-native-mcp-design">The Evolution: From APIs to AI-Native MCP Design</h2>
+
+<p>To better understand why auto-generation fails, let’s examine how different approaches to MCP server creation stack up:</p>
+
+<h3 id="design-philosophy-comparison">Design Philosophy Comparison</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Aspect</th>
+      <th>Traditional API</th>
+      <th>Auto-Generated MCP</th>
+      <th>Purpose-Built MCP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Primary User</strong></td>
+      <td>Human developers</td>
+      <td>LLMs (by proxy)</td>
+      <td>LLMs (by design)</td>
+    </tr>
+    <tr>
+      <td><strong>Tool Count</strong></td>
+      <td>50-100+ endpoints</td>
+      <td>50-100+ tools (1:1 mapping)</td>
+      <td>5-15 focused tools</td>
+    </tr>
+    <tr>
+      <td><strong>Descriptions</strong></td>
+      <td>Technical documentation</td>
+      <td>Direct API description copy</td>
+      <td>LLM-optimized with examples</td>
+    </tr>
+    <tr>
+      <td><strong>Abstraction Level</strong></td>
+      <td>Resource management</td>
+      <td>Resource management</td>
+      <td>Task-oriented goals</td>
+    </tr>
+    <tr>
+      <td><strong>Workflow Support</strong></td>
+      <td>Single operations</td>
+      <td>Single operations</td>
+      <td>Multi-step processes</td>
+    </tr>
+    <tr>
+      <td><strong>Testing Strategy</strong></td>
+      <td>Unit/integration tests</td>
+      <td>Basic functionality tests</td>
+      <td>AI behavior evaluations (evals)</td>
+    </tr>
+    <tr>
+      <td><strong>Security Model</strong></td>
+      <td>Authentication/authorization</td>
+      <td>Authentication/authorization</td>
+      <td>Container isolation + auth</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="real-world-example-database-operations">Real-World Example: Database Operations</h3>
+
+<p>Let’s see how the same database functionality would be exposed across different approaches:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Operation</th>
+      <th>Traditional API</th>
+      <th>Auto-Generated MCP</th>
+      <th>Purpose-Built MCP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Create Database</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">POST /databases</code></td>
+      <td><code class="language-plaintext highlighter-rouge">create_database</code> tool</td>
+      <td><code class="language-plaintext highlighter-rouge">create_database</code> tool</td>
+    </tr>
+    <tr>
+      <td><strong>Run Migration</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">POST /databases/{id}/query</code></td>
+      <td><code class="language-plaintext highlighter-rouge">execute_sql</code> tool</td>
+      <td><code class="language-plaintext highlighter-rouge">prepare_database_migration</code> + <code class="language-plaintext highlighter-rouge">complete_database_migration</code></td>
+    </tr>
+    <tr>
+      <td><strong>Backup Database</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">POST /databases/{id}/backup</code></td>
+      <td><code class="language-plaintext highlighter-rouge">create_backup</code> tool</td>
+      <td><code class="language-plaintext highlighter-rouge">create_safe_backup_with_verification</code></td>
+    </tr>
+    <tr>
+      <td><strong>Monitor Performance</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">GET /databases/{id}/metrics</code></td>
+      <td><code class="language-plaintext highlighter-rouge">get_database_metrics</code> tool</td>
+      <td><code class="language-plaintext highlighter-rouge">analyze_performance_and_recommend_optimizations</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="user-experience-impact">User Experience Impact</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Traditional API Experience:
+User Request: "Set up a database for my todo app"
+├── Developer writes code to call create_database
+├── Developer writes migration scripts
+├── Developer configures connection strings
+├── Developer sets up monitoring
+└── Result: Working database (requires technical expertise)
+
+Auto-Generated MCP Experience:
+User Request: "Set up a database for my todo app"
+├── LLM calls create_database tool
+├── LLM struggles with configuration options
+├── LLM may choose wrong migration approach
+├── LLM lacks context for best practices
+└── Result: Functional but potentially problematic setup
+
+Purpose-Built MCP Experience:
+User Request: "Set up a database for my todo app"
+├── LLM calls optimized create_database tool with smart defaults
+├── LLM uses guided migration workflow with safety checks
+├── LLM follows built-in best practices
+├── LLM receives context-aware recommendations
+└── Result: Production-ready database with best practices applied
+</code></pre></div></div>
+
+<h2 id="four-critical-problems-with-auto-generated-mcp-servers">Four Critical Problems with Auto-Generated MCP Servers</h2>
+
+<h3 id="1-choice-paralysis-too-many-tools-confuse-llms">1. Choice Paralysis: Too Many Tools Confuse LLMs</h3>
+
+<p>Most APIs are comprehensive by design. Neon’s API, for example, has 75-100 different endpoints covering every possible operation. But here’s what many don’t realize: <strong>LLMs perform terribly when given too many options</strong>.</p>
+
+<p>Despite the hype around million-token context windows, LLMs actually work better with focused, limited contexts. When presented with dozens of tools, they become indecisive and often choose incorrectly. It’s like asking someone to pick a restaurant from a phone book – more options create more confusion, not better decisions.</p>
+
+<h3 id="2-api-documentation-wasnt-written-for-ai">2. API Documentation Wasn’t Written for AI</h3>
+
+<p>Your existing API documentation was written for human developers who can Google unfamiliar concepts, read between the lines, and apply common sense. LLMs need something entirely different:</p>
+
+<ul>
+  <li><strong>Direct, explicit language</strong>: No assuming background knowledge</li>
+  <li><strong>Rich examples</strong>: LLMs learn patterns better with concrete examples</li>
+  <li><strong>Context about when to use each tool</strong>: Not just what it does, but why and when</li>
+</ul>
+
+<p>Neon solved this by rewriting their tool descriptions in XML format, providing extensive context about each tool’s purpose and appropriate usage scenarios. This isn’t just a nice-to-have – it’s essential for reliable LLM performance.</p>
+
+<h3 id="3-apis-vs-tasks-different-mental-models">3. APIs vs. Tasks: Different Mental Models</h3>
+
+<p>Traditional APIs are designed for automation and low-level resource management. They’re built with developers in mind who want granular control over system resources. But LLMs think more like humans – they want to accomplish high-level goals and tasks.</p>
+
+<p>An LLM doesn’t care about the intricacies of database connection pooling or memory allocation. It wants to “create a to-do app with user authentication” or “analyze sales data from last quarter.” The abstraction levels are completely different.</p>
+
+<h3 id="4-missing-the-innovation-opportunity">4. Missing the Innovation Opportunity</h3>
+
+<p>Perhaps most importantly, auto-generation prevents you from creating genuinely useful AI-native workflows. When you simply expose existing API endpoints, you’re limited to what those endpoints can do individually.</p>
+
+<p>Consider Neon’s approach to database migrations. They could have exposed a generic “Run SQL” tool and called it done. Instead, they created a sophisticated two-step workflow:</p>
+
+<ol>
+  <li><strong>“Prepare Database Migration”</strong>: Stages the migration on a temporary branch</li>
+  <li><strong>“Complete Database Migration”</strong>: Applies the migration after testing</li>
+</ol>
+
+<p>This workflow includes built-in safety measures that guide the LLM through testing before committing changes. It’s something that makes perfect sense for AI but would be overly complex for a traditional API endpoint.</p>
+
+<h2 id="building-mcp-servers-the-right-way">Building MCP Servers the Right Way</h2>
+
+<p>So what should you do instead? Here’s a practical approach:</p>
+
+<h3 id="start-with-strategy-not-generation">Start with Strategy, Not Generation</h3>
+
+<p>Begin by asking: “What would an AI assistant want to accomplish with our service?” Don’t start with your existing API – start with user goals and work backwards.</p>
+
+<h3 id="the-hybrid-approach">The Hybrid Approach</h3>
+
+<p>If you want to leverage existing work, consider this process:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Step</th>
+      <th>Action</th>
+      <th>Goal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong>Auto-generate</strong> from API schema</td>
+      <td>Create initial foundation</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong>Ruthlessly cut</strong> unnecessary tools</td>
+      <td>Aim for 5-15 essential actions</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong>Rewrite descriptions</strong> for LLMs</td>
+      <td>Add examples and explicit context</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong>Design purpose-built tools</strong></td>
+      <td>Create AI-native workflows</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><strong>Build comprehensive tests</strong></td>
+      <td>Ensure reliability through evals</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="focus-on-testing-and-iteration">Focus on Testing and Iteration</h3>
+
+<p>LLMs are non-deterministic, so you need to test extensively. Run your evaluations hundreds or thousands of times to ensure reliability. Think of it as load testing, but for AI behavior instead of server performance.</p>
+
+<h2 id="how-docker-mcp-toolkit-revolutionizes-mcp-development">How Docker MCP Toolkit Revolutionizes MCP Development</h2>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748199212/hugs4bugs/dockermcp/mcptoolkit_kkhgjq.png" alt="image" /></p>
+
+<blockquote>
+
+  <p>As per official Documentation Docker MCP toolKIT is a Docker Extension allowing to connect dockerized MCP servers to MCP Clients.</p>
+</blockquote>
+
+<p>Docker ToolKit with Claude MCP Client</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748199718/hugs4bugs/dockermcp/dockersetup_qucux7.png" alt="image" />
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748199564/hugs4bugs/dockermcp/dockermcp_ucvyim.png" alt="image" /></p>
+
+<p>While the principles above guide good MCP server design, there’s still the practical challenge of building, deploying, and managing these servers securely. This is where Docker’s recently launched MCP Catalog and Toolkit comes in, addressing the production-readiness gap that has been holding back MCP adoption.</p>
+
+<h3 id="the-production-readiness-problem">The Production Readiness Problem</h3>
+
+<p>Traditional MCP server development faces several critical challenges:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Traditional MCP Development Challenges
+├── Environment Conflicts
+│   ├── Version conflicts between dependencies
+│   └── "Dependency hell" across different projects
+├── Complex Setup
+│   ├── Manual configuration required
+│   └── Platform inconsistencies (Windows/Mac/Linux)
+├── Security Vulnerabilities
+│   ├── Full host system access
+│   └── Plaintext credential exposure
+└── Discovery Fragmentation
+    ├── Searching Discord threads
+    └── Hunting through Twitter replies
+</code></pre></div></div>
+
+<h3 id="docker-mcp-toolkit-architecture">Docker MCP Toolkit Architecture</h3>
+
+<p>Docker’s MCP Toolkit solves these problems by bringing the same containerization benefits that revolutionized application deployment to the MCP ecosystem:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌─────────────────────────────────────────────────────────────────┐
+│                    Docker MCP Ecosystem                        │
+│                                                                 │
+│  ┌─────────────────┐    ┌──────────────────┐    ┌─────────────┐ │
+│  │ Docker MCP      │───▶│ Trusted MCP      │───▶│ Docker      │ │
+│  │ Catalog         │    │ Servers          │    │ Desktop     │ │
+│  │ (Docker Hub)    │    │ (100+ Verified)  │    │ Extension   │ │
+│  └─────────────────┘    └──────────────────┘    └─────────────┘ │
+│                                                         │       │
+│                         ┌──────────────────┐            │       │
+│                         │ Gateway MCP      │◄───────────┘       │
+│                         │ Server           │                    │
+│                         │ (Dynamic Routing)│                    │
+│                         └─────────┬────────┘                    │
+└─────────────────────────────────────┼───────────────────────────┘
+                                      │
+                    ┌─────────────────▼─────────────────┐
+                    │         MCP Clients              │
+                    │  Claude • Cursor • VS Code       │
+                    │  Windsurf • continue.dev         │
+                    └───────────────────────────────────┘
+
+Security &amp; Management Layers:
+┌─────────────────┬─────────────────┬─────────────────┐
+│ Container       │ Credential      │ CLI Management  │
+│ Isolation       │ Management      │                 │
+│ • Network       │ • OAuth         │ • docker mcp    │
+│ • Memory        │ • Revocation    │ • Build &amp; Run   │
+│ • Disk          │ • Integration   │ • Lifecycle     │
+└─────────────────┴─────────────────┴─────────────────┘
+</code></pre></div></div>
+
+<h3 id="key-features-and-benefits">Key Features and Benefits</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Traditional Setup</th>
+      <th>Docker MCP Toolkit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Discovery</strong></td>
+      <td>Manual searching, fragmented sources</td>
+      <td>Centralized catalog with 100+ verified servers</td>
+    </tr>
+    <tr>
+      <td><strong>Installation</strong></td>
+      <td>Complex dependency management</td>
+      <td>One-click launch from Docker Desktop</td>
+    </tr>
+    <tr>
+      <td><strong>Security</strong></td>
+      <td>Host access, plaintext credentials</td>
+      <td>Built-in isolation, integrated OAuth management</td>
+    </tr>
+    <tr>
+      <td><strong>Credential Management</strong></td>
+      <td>Manual configuration files</td>
+      <td>Integrated with Docker Hub account</td>
+    </tr>
+    <tr>
+      <td><strong>Cross-Platform</strong></td>
+      <td>Platform-specific issues</td>
+      <td>Container consistency across environments</td>
+    </tr>
+    <tr>
+      <td><strong>Updates</strong></td>
+      <td>Manual version management</td>
+      <td>Automated container updates</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="addressing-critical-security-concerns">Addressing Critical Security Concerns</h3>
+
+<p>The Docker MCP Toolkit specifically addresses several emerging security threats in the MCP ecosystem:</p>
+
+<h4 id="security-threat-comparison">Security Threat Comparison</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Threat Type</th>
+      <th>Traditional MCP</th>
+      <th>Docker MCP Toolkit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Tool Poisoning</strong></td>
+      <td>Malicious instructions in tool descriptions</td>
+      <td>Verified publisher model, content scanning</td>
+    </tr>
+    <tr>
+      <td><strong>Tool Rug Pulls</strong></td>
+      <td>Legitimate servers compromised after adoption</td>
+      <td>Docker’s secure supply chain, vulnerability scanning</td>
+    </tr>
+    <tr>
+      <td><strong>Environment Conflicts</strong></td>
+      <td>Version conflicts, dependency issues</td>
+      <td>Complete container isolation</td>
+    </tr>
+    <tr>
+      <td><strong>Credential Exposure</strong></td>
+      <td>Plaintext environment variables</td>
+      <td>Integrated credential management with revocation</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="implementation-workflow">Implementation Workflow</h3>
+
+<p>Here’s how the Docker MCP Toolkit transforms the development workflow:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Developer  Catalog   Desktop   Container   Client
+    │         │         │          │         │
+    │ Browse  │         │          │         │
+    │ servers │         │          │         │
+    │────────▶│         │          │         │
+    │         │         │          │         │
+    │ One-click install │          │         │
+    │──────────────────▶│          │         │
+    │         │         │ Launch   │         │
+    │         │         │ isolated │         │
+    │         │         │ server   │         │
+    │         │         │─────────▶│         │
+    │         │         │          │ Register│
+    │         │         │          │ with    │
+    │         │         │◄─────────│ Gateway │
+    │         │         │          │         │
+    │         │         │          │         │ Connect
+    │         │         │◄─────────────────────│ to Gateway
+    │         │         │          │         │
+    │         │         │ Route    │         │
+    │         │         │ requests │         │
+    │         │         │─────────▶│         │
+    │         │         │          │ Return  │
+    │         │         │          │responses│
+    │         │         │          │────────▶│
+</code></pre></div></div>
+
+<h3 id="enterprise-ready-features">Enterprise-Ready Features</h3>
+
+<p>Docker is partnering with trusted names including Stripe, Elastic, Heroku, Pulumi, Grafana Labs, Kong Inc., Neo4j, and New Relic to build a secure ecosystem. Key enterprise features include:</p>
+
+<ul>
+  <li><strong>Registry Access Management</strong>: Control which MCP registries are accessible</li>
+  <li><strong>Image Access Management</strong>: Restrict which MCP servers can be installed</li>
+  <li><strong>Custom MCP Server Publishing</strong>: Organizations can publish private MCP servers</li>
+  <li><strong>Full Enterprise Controls</strong>: Comprehensive governance and compliance features</li>
+</ul>
+
+<h3 id="getting-started-with-docker-mcp-toolkit">Getting Started with Docker MCP Toolkit</h3>
+
+<p>The toolkit includes several components that work together:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Purpose</th>
+      <th>Key Features</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>MCP Catalog</strong></td>
+      <td>Discovery and trust</td>
+      <td>100+ verified servers, trusted publishers</td>
+    </tr>
+    <tr>
+      <td><strong>Desktop Extension</strong></td>
+      <td>Management interface</td>
+      <td>One-click launch, credential management</td>
+    </tr>
+    <tr>
+      <td><strong>Gateway Server</strong></td>
+      <td>Dynamic routing</td>
+      <td>Exposes enabled tools to compatible clients</td>
+    </tr>
+    <tr>
+      <td><strong>docker mcp CLI</strong></td>
+      <td>Command-line management</td>
+      <td>Build, run, and manage MCP servers</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This comprehensive approach means that instead of spending time on infrastructure concerns, developers can focus on what matters: designing effective AI-native workflows and tools.</p>
+
+<h2 id="the-bigger-picture">The Bigger Picture</h2>
+
+<p>MCP represents a fundamental shift in how we think about application interfaces. Just as mobile apps required different design patterns than desktop software, AI integrations require different patterns than human-facing APIs.</p>
+
+<p>The companies that recognize this early and invest in thoughtfully designed MCP servers will have a significant advantage as AI assistants become more prevalent. Those that simply auto-generate from existing APIs will find their integrations are technically functional but practically frustrating.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>The rise of MCP is creating an inflection point for how software services integrate with AI. While the temptation to auto-generate MCP servers from existing APIs is understandable, it’s a shortcut that leads to suboptimal results.</p>
+
+<p>Building effective MCP servers requires understanding that LLMs are a fundamentally different type of client. They need focused choices, explicit guidance, task-oriented abstractions, and purpose-built workflows. Companies that embrace this reality and design accordingly will create AI integrations that truly delight users.</p>
+
+<p>The question isn’t whether your service will support AI integration – it’s whether you’ll do it in a way that actually works well. Your API might be perfect for developers, but it’s probably not ready for AI. And that’s exactly why MCP exists.</p>
+
+
+
+                <!-- Pagination links -->
+
+
+            </article>
+
+            
+                <aside class="see-also">
+                    <h2>See also</h2>
+                    <ul>
+                        
+                        
+                        
+                            <li>
+                                <a href="/build-threat-hunting-IOC-with-elastic-siem/">
+                                    
+                                        <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747750540/AI%20generated/use_this_image_as_person_with_laptop_frcpq3.png">
+                                    
+                                    <h3>Build Your Own IOC Playground with ELastic SIEM</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/how-to-automate-tweets-via-github-actions/">
+                                    
+                                        <img src="https://images.pexels.com/photos/5744251/pexels-photo-5744251.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+                                    
+                                    <h3>Automate Twitter via github Actions.</h3>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/Progressive-web-app/">
+                                    
+                                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
+                                    
+                                    <h3>Progressive WebApp.</h3>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </aside>
+            
+
+        </section>
+
+        <!-- Add time bar only for pages without pagination -->
+        
+            <div class="time-bar" data-minutes="12">
+    <span class="time-completed"></span>
+    <span class="time-remaining"></span>
+    <div class="bar">
+        <span class="completed" style="width:0%;"></span>
+        <span class="remaining" style="width:100%;"></span>
+    </div>
+</div>
+
+            <div class="recommendation">
+    <div class="message">
+        <strong>Why don't you read something next?</strong>
+        <div>
+            <button>
+                <svg><use xlink:href="#icon-arrow-right"></use></svg>
+                <span>Go back to top</span>
+            </button>
+        </div>
+    </div>
+    
+    <a href="/bulid-and-deploy-MERN-stack-in-Azure-cosmos-DB/" class="post-preview">
+        <div class="image">
+            
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80">
+            
+        </div>
+        <h3 class="title">Anyone can build: node.js+ Cosmos DB in Azure </h3>
+    </a>
+</div>
+
+        
+
+        <!-- Show modal if the post is the last one -->
+        
+
+        <!-- Show modal before user leaves the page -->
+        
+
+        <!-- Add your newsletter subscription form here -->
+
+        <section class="share">
+    <h3>Share</h3>
+    <a aria-label="Share on Twitter"
+        href="https://twitter.com/intent/tweet?text=&quot;Leverage Docker to build production ready MCP&quot;%20https://hugs4bugs.me/ship-ai-tools-like-app-with-docker-mcptoolkit/%20via%20&#64;myselfshubhendu&hashtags=MCP,Docker"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
+        title="Share on Twitter">
+        <svg class="icon icon-twitter">
+            <use xlink:href="#icon-twitter"></use>
+        </svg>
+    </a>
+    <a aria-label="Share on WhatsApp"
+        href="https://twitter.com/intent/tweet?text=&quot;Leverage Docker to build production ready MCP&quot;%20https://hugs4bugs.me/ship-ai-tools-like-app-with-docker-mcptoolkit/%20via%20&#64;myselfshubhendu&hashtags=MCP,Docker"
+        onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
+        title="Share on Twitter">
+        <svg class="icon icon-twitter">
+            <use xlink:href="#icon-twitter"></use>
+        </svg>
+    </a>
+    <a aria-label="Share on Facebook"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/ship-ai-tools-like-app-with-docker-mcptoolkit/"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
+        title="Share on Facebook">
+        <svg class="icon icon-facebook">
+            <use xlink:href="#icon-facebook"></use>
+        </svg>
+    </a>
+</section>
+        
+
+  <section class="author">
+    <div class="details">
+      
+        <img class="img-rounded" src="/assets/img/s.png" alt="Shubhendu">
+      
+      <p class="def">Author</p>
+      <h3 class="name">
+        <a href="/authors/shubhendu/">Shubhendu</a>
+      </h3>
+      <p class="desc">A guy who survived after watching Bear Grylls shows,Now He hunts threats for survial.</p>
+      <p>
+        
+          <a href="https://github.com/sivolko" title="Github">
+            <svg><use xlink:href="#icon-github"></use></svg>
+          </a>
+        
+        
+        
+          <a href="https://twitter.com/myselfshubhendu" title="Twitter">
+            <svg><use xlink:href="#icon-twitter"></use></svg>
+          </a>
+        
+        
+          <a href="https://medium.com/@shubhendushubham" title="Medium">
+            <svg><use xlink:href="#icon-medium"></use></svg>
+          </a>
+        
+        
+          <a href="https://www.instagram.com/shubhendushubham" title="Instagram">
+            <svg><use xlink:href="#icon-instagram"></use></svg>
+          </a>
+        
+        
+          <a href="https://www.linkedin.com/in/shubhendu-shubham" title="LinkedIn">
+            <svg><use xlink:href="#icon-linkedin"></use></svg>
+          </a>
+        
+      </p>
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+  
+  
+
+  <script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Shubhendu",
+      
+      "image": "/assets/img/s.png",
+      
+      "jobTitle": "",
+      "url": "https://hugs4bugs.me/authors/shubhendu/",
+      "sameAs": [
+        "https://github.com/sivolko","https://twitter.com/myselfshubhendu","https://medium.com/@shubhendushubham","https://www.instagram.com/shubhendushubham","https://www.linkedin.com/in/shubhendu-shubham"
+      ]
+  }
+  </script>
+
+
+        <!--  -->
+
+<section class="comments">
+    <h3>Comments</h3>
+    <div id="disqus_thread"></div>
+</section>
+<!-- <script type="text/javascript">
+    var disqus_loaded = false;
+
+    function load_disqus()
+    {
+        disqus_loaded = true;
+        var disqus_shortname = 'hugs4bugs';
+        var disqus_title = '';
+        var disqus_url = '/ship-ai-tools-like-app-with-docker-mcptoolkit/';
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        var ldr = document.getElementById('disqus_loader');
+    };
+    window.onscroll = function(e) {
+        if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
+            //hit bottom of page
+            if (disqus_loaded==false)
+                load_disqus()
+        }
+    };
+</script>
+
+ -->
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="sivolko/hugs4bugs"
+        data-repo-id="R_kgDOJBA0UA"
+        data-category="General"
+        data-category-id="DIC_kwDOJBA0UM4CW_3U"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
+        <footer>
+  <p>
+    
+    <a href="https://github.com/sivolko" title="Github">
+      <svg>
+        <use xlink:href="#icon-github"></use>
+      </svg>
+    </a>
+    
+    
+    
+    <a href="https://twitter.com/myselfshubhendu" title="Twitter">
+      <svg>
+        <use xlink:href="#icon-twitter"></use>
+      </svg>
+    </a>
+    
+    
+    <a href="https://medium.com/@shubhendushubham" title="Medium">
+      <svg>
+        <use xlink:href="#icon-medium"></use>
+      </svg>
+    </a>
+    
+    
+    
+    <a href="https://www.linkedin.com/in/shubhendu-shubham" title="LinkedIn">
+      <svg>
+        <use xlink:href="#icon-linkedin"></use>
+      </svg>
+    </a>
+    
+  </p>
+
+  <ul>
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/">Home</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/about">About</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/project">Project</a>
+      </li>
+    
+  
+    
+      <li>
+        <a href="https://hugs4bugs.me/contact">Contact</a>
+      </li>
+    
+  
+</ul>
+
+
+  <p>
+    <span>hugs4bugs</span> was made with <svg class="love">
+      <use xlink:href="#icon-heart"></use>
+    </svg> by <a href="https://hugs4bugs.me" target="_blank" class="creator">Shubhendu Shubham</a>
+  </p>
+</footer>
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "hugs4bugs",
+  "description": "hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.",
+  "url": "https://hugs4bugs.me/",
+  "logo": {
+      "@type": "ImageObject",
+      "url": "https://hugs4bugs.me/assets/img/icons/mediumtile.png",
+      "width": "600",
+      "height": "315"
+  },
+  "sameAs": [
+    "https://github.com/sivolko","https://twitter.com/myselfshubhendu","https://medium.com/@shubhendushubham","https://www.linkedin.com/in/shubhendu-shubham"
+  ]
+}
+</script>
+
+<!-- Include the script that allows Netlify CMS login -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<!-- Include the website scripts -->
+<script src="/assets/js/scripts.min.js"></script>
+
+<!-- Include Google Analytics script -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0FMLF6JCFT"></script>
+<script>
+  var host = window.location.hostname;
+  if (host != 'localhost') {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-0FMLF6JCFT');
+  }
+</script>
+  
+
+
+<!-- Include extra scripts -->
+
+
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "name": "Ship AI Tools Like Apps with  Docker's MCP ToolKit",
+            "headline": "No more Conflicts!",
+            "description": "Leverage Docker to build production ready MCP",
+            "image": "https://res.cloudinary.com/hugs4bugs/image/upload/v1748198502/hugs4bugs/dockermcp/mcp.png",
+            "url": "https://hugs4bugs.me/ship-ai-tools-like-app-with-docker-mcptoolkit/",
+            "articleBody": "Ship AI Tools Like Apps: Docker’s MCP ToolKit
+
+The AI revolution is here, and every company wants their services to work seamlessly with large language models (LLMs). Wait a minute, I do recall a quote from “Ajeet’s talk “ is now every company an AI  company?” and we all know the answer. Now the Model Context Protocol (MCP) – Anthropic’s open standard that’s rapidly becoming the bridge between LLMs and real-world applications. With Windows Copilot, Google Gemini, OpenAI’s ChatGPT, and Claude all embracing MCP, the message is clear: if you want LLMs to use your service, you need an MCP server.
+
+But here’s where many companies are getting it wrong. In the rush to make their services AI-ready, they’re taking the seemingly obvious shortcut: auto-generating MCP servers from their existing OpenAPI schemas. It’s fast, it’s easy, and it technically works. But as David Gomes from Neon recently explained in his presentation, this approach misses the mark entirely.
+
+What Exactly is MCP?
+
+Before diving into why auto-generation fails, let’s establish what MCP actually does. Think of MCP as a universal translator between LLMs and your applications. It standardizes how LLMs can:
+
+
+  Access real-world services and data
+  Perform actions on behalf of users
+  Understand what tools are available to them
+
+
+An MCP server exposes three main components to LLMs:
+
+  Tools (the most important): Actions the LLM can perform
+  Resources: Data sources the LLM can access
+  Prompts: Pre-defined conversation starters
+
+
+The tools are where the magic happens. These are the actions that transform a conversational AI from a chatbot into a capable assistant that can actually get things done in your application.
+
+The Auto-Generation Trap
+
+Here’s the seductive logic that’s leading companies astray: “We already have an API with detailed OpenAPI documentation. Why not just convert that into an MCP server automatically?”
+
+Several services have emerged to do exactly this – Stainless, Speakeasy, Mintlify, and others can generate an MCP server from your API schema in under a minute. The appeal is obvious: instant AI integration with zero custom development.
+
+But this approach fundamentally misunderstands how LLMs work and what they need to be effective.
+
+The Evolution: From APIs to AI-Native MCP Design
+
+To better understand why auto-generation fails, let’s examine how different approaches to MCP server creation stack up:
+
+Design Philosophy Comparison
+
+
+  
+    
+      Aspect
+      Traditional API
+      Auto-Generated MCP
+      Purpose-Built MCP
+    
+  
+  
+    
+      Primary User
+      Human developers
+      LLMs (by proxy)
+      LLMs (by design)
+    
+    
+      Tool Count
+      50-100+ endpoints
+      50-100+ tools (1:1 mapping)
+      5-15 focused tools
+    
+    
+      Descriptions
+      Technical documentation
+      Direct API description copy
+      LLM-optimized with examples
+    
+    
+      Abstraction Level
+      Resource management
+      Resource management
+      Task-oriented goals
+    
+    
+      Workflow Support
+      Single operations
+      Single operations
+      Multi-step processes
+    
+    
+      Testing Strategy
+      Unit/integration tests
+      Basic functionality tests
+      AI behavior evaluations (evals)
+    
+    
+      Security Model
+      Authentication/authorization
+      Authentication/authorization
+      Container isolation + auth
+    
+  
+
+
+Real-World Example: Database Operations
+
+Let’s see how the same database functionality would be exposed across different approaches:
+
+
+  
+    
+      Operation
+      Traditional API
+      Auto-Generated MCP
+      Purpose-Built MCP
+    
+  
+  
+    
+      Create Database
+      POST /databases
+      create_database tool
+      create_database tool
+    
+    
+      Run Migration
+      POST /databases/{id}/query
+      execute_sql tool
+      prepare_database_migration + complete_database_migration
+    
+    
+      Backup Database
+      POST /databases/{id}/backup
+      create_backup tool
+      create_safe_backup_with_verification
+    
+    
+      Monitor Performance
+      GET /databases/{id}/metrics
+      get_database_metrics tool
+      analyze_performance_and_recommend_optimizations
+    
+  
+
+
+User Experience Impact
+
+Traditional API Experience:
+User Request: &quot;Set up a database for my todo app&quot;
+├── Developer writes code to call create_database
+├── Developer writes migration scripts
+├── Developer configures connection strings
+├── Developer sets up monitoring
+└── Result: Working database (requires technical expertise)
+
+Auto-Generated MCP Experience:
+User Request: &quot;Set up a database for my todo app&quot;
+├── LLM calls create_database tool
+├── LLM struggles with configuration options
+├── LLM may choose wrong migration approach
+├── LLM lacks context for best practices
+└── Result: Functional but potentially problematic setup
+
+Purpose-Built MCP Experience:
+User Request: &quot;Set up a database for my todo app&quot;
+├── LLM calls optimized create_database tool with smart defaults
+├── LLM uses guided migration workflow with safety checks
+├── LLM follows built-in best practices
+├── LLM receives context-aware recommendations
+└── Result: Production-ready database with best practices applied
+
+
+Four Critical Problems with Auto-Generated MCP Servers
+
+1. Choice Paralysis: Too Many Tools Confuse LLMs
+
+Most APIs are comprehensive by design. Neon’s API, for example, has 75-100 different endpoints covering every possible operation. But here’s what many don’t realize: LLMs perform terribly when given too many options.
+
+Despite the hype around million-token context windows, LLMs actually work better with focused, limited contexts. When presented with dozens of tools, they become indecisive and often choose incorrectly. It’s like asking someone to pick a restaurant from a phone book – more options create more confusion, not better decisions.
+
+2. API Documentation Wasn’t Written for AI
+
+Your existing API documentation was written for human developers who can Google unfamiliar concepts, read between the lines, and apply common sense. LLMs need something entirely different:
+
+
+  Direct, explicit language: No assuming background knowledge
+  Rich examples: LLMs learn patterns better with concrete examples
+  Context about when to use each tool: Not just what it does, but why and when
+
+
+Neon solved this by rewriting their tool descriptions in XML format, providing extensive context about each tool’s purpose and appropriate usage scenarios. This isn’t just a nice-to-have – it’s essential for reliable LLM performance.
+
+3. APIs vs. Tasks: Different Mental Models
+
+Traditional APIs are designed for automation and low-level resource management. They’re built with developers in mind who want granular control over system resources. But LLMs think more like humans – they want to accomplish high-level goals and tasks.
+
+An LLM doesn’t care about the intricacies of database connection pooling or memory allocation. It wants to “create a to-do app with user authentication” or “analyze sales data from last quarter.” The abstraction levels are completely different.
+
+4. Missing the Innovation Opportunity
+
+Perhaps most importantly, auto-generation prevents you from creating genuinely useful AI-native workflows. When you simply expose existing API endpoints, you’re limited to what those endpoints can do individually.
+
+Consider Neon’s approach to database migrations. They could have exposed a generic “Run SQL” tool and called it done. Instead, they created a sophisticated two-step workflow:
+
+
+  “Prepare Database Migration”: Stages the migration on a temporary branch
+  “Complete Database Migration”: Applies the migration after testing
+
+
+This workflow includes built-in safety measures that guide the LLM through testing before committing changes. It’s something that makes perfect sense for AI but would be overly complex for a traditional API endpoint.
+
+Building MCP Servers the Right Way
+
+So what should you do instead? Here’s a practical approach:
+
+Start with Strategy, Not Generation
+
+Begin by asking: “What would an AI assistant want to accomplish with our service?” Don’t start with your existing API – start with user goals and work backwards.
+
+The Hybrid Approach
+
+If you want to leverage existing work, consider this process:
+
+
+  
+    
+      Step
+      Action
+      Goal
+    
+  
+  
+    
+      1
+      Auto-generate from API schema
+      Create initial foundation
+    
+    
+      2
+      Ruthlessly cut unnecessary tools
+      Aim for 5-15 essential actions
+    
+    
+      3
+      Rewrite descriptions for LLMs
+      Add examples and explicit context
+    
+    
+      4
+      Design purpose-built tools
+      Create AI-native workflows
+    
+    
+      5
+      Build comprehensive tests
+      Ensure reliability through evals
+    
+  
+
+
+Focus on Testing and Iteration
+
+LLMs are non-deterministic, so you need to test extensively. Run your evaluations hundreds or thousands of times to ensure reliability. Think of it as load testing, but for AI behavior instead of server performance.
+
+How Docker MCP Toolkit Revolutionizes MCP Development
+
+
+
+
+
+  As per official Documentation Docker MCP toolKIT is a Docker Extension allowing to connect dockerized MCP servers to MCP Clients.
+
+
+Docker ToolKit with Claude MCP Client
+
+
+
+
+While the principles above guide good MCP server design, there’s still the practical challenge of building, deploying, and managing these servers securely. This is where Docker’s recently launched MCP Catalog and Toolkit comes in, addressing the production-readiness gap that has been holding back MCP adoption.
+
+The Production Readiness Problem
+
+Traditional MCP server development faces several critical challenges:
+
+Traditional MCP Development Challenges
+├── Environment Conflicts
+│   ├── Version conflicts between dependencies
+│   └── &quot;Dependency hell&quot; across different projects
+├── Complex Setup
+│   ├── Manual configuration required
+│   └── Platform inconsistencies (Windows/Mac/Linux)
+├── Security Vulnerabilities
+│   ├── Full host system access
+│   └── Plaintext credential exposure
+└── Discovery Fragmentation
+    ├── Searching Discord threads
+    └── Hunting through Twitter replies
+
+
+Docker MCP Toolkit Architecture
+
+Docker’s MCP Toolkit solves these problems by bringing the same containerization benefits that revolutionized application deployment to the MCP ecosystem:
+
+┌─────────────────────────────────────────────────────────────────┐
+│                    Docker MCP Ecosystem                        │
+│                                                                 │
+│  ┌─────────────────┐    ┌──────────────────┐    ┌─────────────┐ │
+│  │ Docker MCP      │───▶│ Trusted MCP      │───▶│ Docker      │ │
+│  │ Catalog         │    │ Servers          │    │ Desktop     │ │
+│  │ (Docker Hub)    │    │ (100+ Verified)  │    │ Extension   │ │
+│  └─────────────────┘    └──────────────────┘    └─────────────┘ │
+│                                                         │       │
+│                         ┌──────────────────┐            │       │
+│                         │ Gateway MCP      │◄───────────┘       │
+│                         │ Server           │                    │
+│                         │ (Dynamic Routing)│                    │
+│                         └─────────┬────────┘                    │
+└─────────────────────────────────────┼───────────────────────────┘
+                                      │
+                    ┌─────────────────▼─────────────────┐
+                    │         MCP Clients              │
+                    │  Claude • Cursor • VS Code       │
+                    │  Windsurf • continue.dev         │
+                    └───────────────────────────────────┘
+
+Security &amp;amp; Management Layers:
+┌─────────────────┬─────────────────┬─────────────────┐
+│ Container       │ Credential      │ CLI Management  │
+│ Isolation       │ Management      │                 │
+│ • Network       │ • OAuth         │ • docker mcp    │
+│ • Memory        │ • Revocation    │ • Build &amp;amp; Run   │
+│ • Disk          │ • Integration   │ • Lifecycle     │
+└─────────────────┴─────────────────┴─────────────────┘
+
+
+Key Features and Benefits
+
+
+  
+    
+      Feature
+      Traditional Setup
+      Docker MCP Toolkit
+    
+  
+  
+    
+      Discovery
+      Manual searching, fragmented sources
+      Centralized catalog with 100+ verified servers
+    
+    
+      Installation
+      Complex dependency management
+      One-click launch from Docker Desktop
+    
+    
+      Security
+      Host access, plaintext credentials
+      Built-in isolation, integrated OAuth management
+    
+    
+      Credential Management
+      Manual configuration files
+      Integrated with Docker Hub account
+    
+    
+      Cross-Platform
+      Platform-specific issues
+      Container consistency across environments
+    
+    
+      Updates
+      Manual version management
+      Automated container updates
+    
+  
+
+
+Addressing Critical Security Concerns
+
+The Docker MCP Toolkit specifically addresses several emerging security threats in the MCP ecosystem:
+
+Security Threat Comparison
+
+
+  
+    
+      Threat Type
+      Traditional MCP
+      Docker MCP Toolkit
+    
+  
+  
+    
+      Tool Poisoning
+      Malicious instructions in tool descriptions
+      Verified publisher model, content scanning
+    
+    
+      Tool Rug Pulls
+      Legitimate servers compromised after adoption
+      Docker’s secure supply chain, vulnerability scanning
+    
+    
+      Environment Conflicts
+      Version conflicts, dependency issues
+      Complete container isolation
+    
+    
+      Credential Exposure
+      Plaintext environment variables
+      Integrated credential management with revocation
+    
+  
+
+
+Implementation Workflow
+
+Here’s how the Docker MCP Toolkit transforms the development workflow:
+
+Developer  Catalog   Desktop   Container   Client
+    │         │         │          │         │
+    │ Browse  │         │          │         │
+    │ servers │         │          │         │
+    │────────▶│         │          │         │
+    │         │         │          │         │
+    │ One-click install │          │         │
+    │──────────────────▶│          │         │
+    │         │         │ Launch   │         │
+    │         │         │ isolated │         │
+    │         │         │ server   │         │
+    │         │         │─────────▶│         │
+    │         │         │          │ Register│
+    │         │         │          │ with    │
+    │         │         │◄─────────│ Gateway │
+    │         │         │          │         │
+    │         │         │          │         │ Connect
+    │         │         │◄─────────────────────│ to Gateway
+    │         │         │          │         │
+    │         │         │ Route    │         │
+    │         │         │ requests │         │
+    │         │         │─────────▶│         │
+    │         │         │          │ Return  │
+    │         │         │          │responses│
+    │         │         │          │────────▶│
+
+
+Enterprise-Ready Features
+
+Docker is partnering with trusted names including Stripe, Elastic, Heroku, Pulumi, Grafana Labs, Kong Inc., Neo4j, and New Relic to build a secure ecosystem. Key enterprise features include:
+
+
+  Registry Access Management: Control which MCP registries are accessible
+  Image Access Management: Restrict which MCP servers can be installed
+  Custom MCP Server Publishing: Organizations can publish private MCP servers
+  Full Enterprise Controls: Comprehensive governance and compliance features
+
+
+Getting Started with Docker MCP Toolkit
+
+The toolkit includes several components that work together:
+
+
+  
+    
+      Component
+      Purpose
+      Key Features
+    
+  
+  
+    
+      MCP Catalog
+      Discovery and trust
+      100+ verified servers, trusted publishers
+    
+    
+      Desktop Extension
+      Management interface
+      One-click launch, credential management
+    
+    
+      Gateway Server
+      Dynamic routing
+      Exposes enabled tools to compatible clients
+    
+    
+      docker mcp CLI
+      Command-line management
+      Build, run, and manage MCP servers
+    
+  
+
+
+This comprehensive approach means that instead of spending time on infrastructure concerns, developers can focus on what matters: designing effective AI-native workflows and tools.
+
+The Bigger Picture
+
+MCP represents a fundamental shift in how we think about application interfaces. Just as mobile apps required different design patterns than desktop software, AI integrations require different patterns than human-facing APIs.
+
+The companies that recognize this early and invest in thoughtfully designed MCP servers will have a significant advantage as AI assistants become more prevalent. Those that simply auto-generate from existing APIs will find their integrations are technically functional but practically frustrating.
+
+Conclusion
+
+The rise of MCP is creating an inflection point for how software services integrate with AI. While the temptation to auto-generate MCP servers from existing APIs is understandable, it’s a shortcut that leads to suboptimal results.
+
+Building effective MCP servers requires understanding that LLMs are a fundamentally different type of client. They need focused choices, explicit guidance, task-oriented abstractions, and purpose-built workflows. Companies that embrace this reality and design accordingly will create AI integrations that truly delight users.
+
+The question isn’t whether your service will support AI integration – it’s whether you’ll do it in a way that actually works well. Your API might be perfect for developers, but it’s probably not ready for AI. And that’s exactly why MCP exists.
+
+",
+            "wordcount": "2338",
+            "inLanguage": "en",
+            "dateCreated": "2025-05-25/",
+            "datePublished": "2025-05-25/",
+            "dateModified": "2025-05-25/",
+            "author": {
+                "@type": "Person",
+                "name": "Shubhendu",
+                
+                "image": "/assets/img/s.png",
+                
+                "jobTitle": "",
+                "url": "https://hugs4bugs.me/authors/shubhendu/",
+                "sameAs": [
+                    "https://github.com/sivolko","https://twitter.com/myselfshubhendu","https://medium.com/@shubhendushubham","https://www.instagram.com/shubhendushubham","https://www.linkedin.com/in/shubhendu-shubham"
+                ]
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "hugs4bugs",
+                "url": "https://hugs4bugs.me/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://hugs4bugs.me/assets/img/blog-image.png",
+                    "width": "600",
+                    "height": "315"
+                }
+            },
+            "mainEntityOfPage": "True",
+            "genre": "Docker",
+            "articleSection": "Docker",
+            "keywords": ["MCP","Docker"]
+        }
+        </script>
+    </body>
+</html>

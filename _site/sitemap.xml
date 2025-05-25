@@ -227,6 +227,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/ship-ai-tools-like-app-with-docker-mcptoolkit/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2025-05-25</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/build-threat-hunting-IOC-with-elastic-siem/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>

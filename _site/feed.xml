@@ -5,9 +5,23 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 20 May 2025 15:35:22 +0000</pubDate>
-    <lastBuildDate>Tue, 20 May 2025 15:35:22 +0000</lastBuildDate>
+    <pubDate>Sun, 25 May 2025 19:04:26 +0000</pubDate>
+    <lastBuildDate>Sun, 25 May 2025 19:04:26 +0000</lastBuildDate>
     <generator>Jekyll v3.10.0</generator>
+    
+      <item>
+        <title>Ship AI Tools Like Apps with  Docker&apos;s MCP ToolKit</title>
+        <description>&lt;h1 id=&quot;ship-ai-tools-like-apps-dockers-mcp-toolkit&quot;&gt;Ship AI Tools Like Apps: Docker’s MCP ToolKit&lt;/h1&gt; &lt;p&gt;The AI revolution is here, and every company wants their services to work seamlessly with large language models (LLMs). Wait a minute, I do recall a quote from “&lt;a href=&quot;https://www.linkedin.com/in/ajeetsraina/&quot;&gt;Ajeet’s&lt;/a&gt; talk “ is now every company an AI company?” and we all know the answer. Now the Model Context Protocol (MCP) – Anthropic’s open standard that’s rapidly becoming the bridge between LLMs and real-world applications. With Windows Copilot, Google Gemini, OpenAI’s ChatGPT, and Claude all embracing MCP, the message is clear: if you want LLMs to use your service, you need...</description>
+        <pubDate>Sun, 25 May 2025 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/ship-ai-tools-like-app-with-docker-mcptoolkit/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/ship-ai-tools-like-app-with-docker-mcptoolkit/</guid>
+        
+        <category>MCP</category>
+        
+        <category>Docker</category>
+        
+        <category>Docker</category>
+      </item>
     
       <item>
         <title>Build Your Own IOC Playground with ELastic SIEM</title>
@@ -477,26 +491,6 @@
         <pubDate>Mon, 31 Oct 2022 00:00:00 +0000</pubDate>
         <link>https://hugs4bugs.me/waf-vs-firewall/</link>
         <guid isPermaLink="true">https://hugs4bugs.me/waf-vs-firewall/</guid>
-        
-        <category>cloud</category>
-        
-        <category>security</category>
-        
-        <category>hacking</category>
-        
-        <category>offensive security</category>
-        
-        <category>troubleshooter Club</category>
-        
-        <category>security</category>
-      </item>
-    
-      <item>
-        <title>College to Cyber Security Journey</title>
-        <description>&lt;p&gt;We have been raised by watching Sci-Fi hollywood movies and hacking series. We often heard xyz company site has been compromised, hackers has released sensitive user data to the public ? But lemme clear one thing in the beginning of the block &lt;strong&gt;Hacking&lt;/strong&gt; is the word for non tech or media people. And anyone who writes code, makes policy, debug code all are hackers in tech.&lt;/p&gt; &lt;p&gt;Now point is what actual name of those professionals who do such thing in cyber security world? Hold on…..&lt;/p&gt; &lt;p&gt;Before Jumping to the fancy words , let’s understand why security is important and what...</description>
-        <pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate>
-        <link>https://hugs4bugs.me/college-to-cyber-security/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/college-to-cyber-security/</guid>
         
         <category>cloud</category>
         
