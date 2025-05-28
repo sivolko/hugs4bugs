@@ -5,9 +5,23 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 25 May 2025 19:04:26 +0000</pubDate>
-    <lastBuildDate>Sun, 25 May 2025 19:04:26 +0000</lastBuildDate>
+    <pubDate>Wed, 28 May 2025 05:57:05 +0000</pubDate>
+    <lastBuildDate>Wed, 28 May 2025 05:57:05 +0000</lastBuildDate>
     <generator>Jekyll v3.10.0</generator>
+    
+      <item>
+        <title>Stop Fighting Local LLMs:Docker Just fixed the Mess</title>
+        <description>&lt;p&gt;If you’re like me and have been wrestling with running LLMs locally for development, Docker just dropped something that might change your workflow completely. &lt;img src=&quot;https://res.cloudinary.com/hugs4bugs/image/upload/v1748409418/hugs4bugs/dockermodelrunner/3_jhl3rl.png&quot; alt=&quot;image&quot; /&gt; The new “Models” tab you see in Docker Desktop isn’t just another UI addition—it’s part of Docker Model Runner, a beta feature that’s currently shaking up how we work with AI models locally.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;What Exactly Is This Thing?&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Docker Model Runner makes it easier for developers to run AI models locally. No extra setup, no jumping between tools, and no need to wrangle infrastructure. &lt;img src=&quot;https://res.cloudinary.com/hugs4bugs/image/upload/v1748406335/hugs4bugs/dockermodelrunner/1_k0cx3q.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt; &lt;p&gt;Think of it as...</description>
+        <pubDate>Wed, 28 May 2025 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/stop-fighting-local-llm-docker-just-fixed-mess-model-runnner/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/stop-fighting-local-llm-docker-just-fixed-mess-model-runnner/</guid>
+        
+        <category>Model Runner</category>
+        
+        <category>Docker</category>
+        
+        <category>Docker</category>
+      </item>
     
       <item>
         <title>Ship AI Tools Like Apps with  Docker&apos;s MCP ToolKit</title>
@@ -483,26 +497,6 @@
         <category>troubleshooter Club</category>
         
         <category>cloud</category>
-      </item>
-    
-      <item>
-        <title>WAF vs Firewall</title>
-        <description>&lt;p&gt;Before start differences, let’s understand the WAF. WAF stands for the &lt;strong&gt;Web Application Firewall&lt;/strong&gt; that operates as application firewall for the HTTPS applications. It implements set of rules for a HTTP conversation and due to these rules, WAF prevents from XSS (Cross site scripting) and SQL injections.&lt;/p&gt; &lt;p&gt;WAF is more focused on &lt;strong&gt;Web Applications&lt;/strong&gt; .A WAF is a firewall primarily used for protecting applications, APIs to Webhooks, providing protection by assessing what the traffic is trying to do and blocking it if necessary, especially if the actions in the traffic are deemed malicious.&lt;/p&gt; &lt;p&gt;General view of WAF&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://firewallauthority.com/wp-content/uploads/2022/02/WAF.png&quot; alt=&quot;WAF&quot;...</description>
-        <pubDate>Mon, 31 Oct 2022 00:00:00 +0000</pubDate>
-        <link>https://hugs4bugs.me/waf-vs-firewall/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/waf-vs-firewall/</guid>
-        
-        <category>cloud</category>
-        
-        <category>security</category>
-        
-        <category>hacking</category>
-        
-        <category>offensive security</category>
-        
-        <category>troubleshooter Club</category>
-        
-        <category>security</category>
       </item>
     
   </channel>

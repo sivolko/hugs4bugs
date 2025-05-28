@@ -227,6 +227,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/stop-fighting-local-llm-docker-just-fixed-mess-model-runnner/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2025-05-28</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/ship-ai-tools-like-app-with-docker-mcptoolkit/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>

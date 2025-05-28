@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "Stop Fighting Local LLMs:Docker Just fixed the Mess",
+      "tags"     : "Model Runner and Docker",
+      "categories" : "Docker",
+      "url"      : "/stop-fighting-local-llm-docker-just-fixed-mess-model-runnner/",
+      "date"     : "05/28/2025"
+    } ,
+  
+    {
       "title"    : "Ship AI Tools Like Apps with  Docker&#39;s MCP ToolKit",
       "tags"     : "MCP and Docker",
       "categories" : "Docker",
