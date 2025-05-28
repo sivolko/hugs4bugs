@@ -37,7 +37,7 @@ You might expect Docker to spin up a container like it usually does. But it does
 
 Under the hood, Docker is running an inference engine built on top of llama.cpp and accessible through the familiar OpenAI API. The critical difference? By using host-based execution, we avoid the performance limitations of running models inside virtual machines.
 
-This means your LLM is running directly on your Mac's metal (currently only Apple Silicon is supported), not inside Docker's Linux VM. The performance difference is significant.
+This means your LLM is running directly on your Mac's metal. The performance difference is significant.
 
 **Why Should You Care?**
 
@@ -149,6 +149,6 @@ The vision is clear: make AI models as easy to use as container images. Pull, ru
 
 If you're on Mac and doing AI development, absolutely try it. The setup is trivial and the performance is genuinely good. Even in beta, it's already more reliable than most local LLM setups I've dealt with.
 
-If you're on Windows or Linux, keep an eye on this. Docker's track record suggests they'll expand platform support quickly
+If you're on Windows Docker Desktop vs4.41 is available on Windows + NVIDIA GPU and Latest Docker release will be having windows + Qualcomm support as well. In upcoming release Docker Desktop gonna target all eco system with awesome Model Runner feature.
 
-Check the [official docs](https://docs.docker.com/desktop/features/model-runner/) for the latest features
+Keep eyes on the [official docs](https://docs.docker.com/desktop/features/model-runner/) for the latest features.
