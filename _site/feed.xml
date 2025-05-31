@@ -5,9 +5,23 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 28 May 2025 10:35:28 +0000</pubDate>
-    <lastBuildDate>Wed, 28 May 2025 10:35:28 +0000</lastBuildDate>
+    <pubDate>Sat, 31 May 2025 05:52:49 +0000</pubDate>
+    <lastBuildDate>Sat, 31 May 2025 05:52:49 +0000</lastBuildDate>
     <generator>Jekyll v3.10.0</generator>
+    
+      <item>
+        <title>Be a Detective with AWS Detective</title>
+        <description>&lt;p&gt;In the ever-evolving landscape of cloud security, identifying and responding to threats swiftly is paramount. Amazon detective makes its easy for soc analyst or security engineer to analyse, investigate, and do RCA. Before jumping to the tehnical side, let’s understand the landscape of security Incidents investigation phase :&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hugs4bugs/image/upload/v1748666399/hugs4bugs/aws/1_d9pzu7.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt; &lt;p&gt;1.Triage – Figuring Out If There’s a Real Threat Imagine getting an alert that something suspicious might be happening in your system. Your first step is to check whether it’s a real problem or a false alarm.&lt;/p&gt; &lt;p&gt;Some alerts come from Amazon GuardDuty or Amazon Inspector, which help...</description>
+        <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/be-a-detective-with-aws-detective/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/be-a-detective-with-aws-detective/</guid>
+        
+        <category>aws</category>
+        
+        <category>Cybersecurity</category>
+        
+        <category>Cyber Security</category>
+      </item>
     
       <item>
         <title>Stop Fighting Local LLMs:Docker Just fixed the Mess</title>
@@ -477,26 +491,6 @@
         <category>troubleshooter Club</category>
         
         <category>security</category>
-      </item>
-    
-      <item>
-        <title>WAF vs IPS</title>
-        <description>&lt;p&gt;Before we start, you must be confused or there might be a question in your mind “why do we need so many things as security?” We do have firewalls, Antivirus though .&lt;/p&gt; &lt;p&gt;Lemme explain this situation in simpler use case. Suppose you have plan for long road trip for a week with your family and you have decided to leave home at early morning to avoid city traffic . You set alarm, and leave home as early as you can . While boarding to car, you &lt;strong&gt;locked your main gate, but in rush you have forgotten to close balcony french...</description>
-        <pubDate>Wed, 02 Nov 2022 00:00:00 +0000</pubDate>
-        <link>https://hugs4bugs.me/difference-between-WAF-and-IPS/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/difference-between-WAF-and-IPS/</guid>
-        
-        <category>cloud</category>
-        
-        <category>security</category>
-        
-        <category>hacking</category>
-        
-        <category>offensive security</category>
-        
-        <category>troubleshooter Club</category>
-        
-        <category>cloud</category>
       </item>
     
   </channel>

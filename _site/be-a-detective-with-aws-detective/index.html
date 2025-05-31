@@ -17,19 +17,19 @@
     
     
 
-    <title>Build Your Own IOC Playground with ELastic SIEM | hugs4bugs</title>
-    <meta name="description" content="Let's learn how to hunt Threat adversory">
+    <title>Be a Detective with AWS Detective | hugs4bugs</title>
+    <meta name="description" content="Let's deep dive into AWS Detective services">
     
-    <meta name="keywords" content="Cyber Security, Elastic SIEM">
+    <meta name="keywords" content="aws, Cybersecurity">
     
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Build Your Own IOC Playground with ELastic SIEM | hugs4bugs">
-    <meta name="twitter:description" content="Let's learn how to hunt Threat adversory">
+    <meta name="twitter:title" content="Be a Detective with AWS Detective | hugs4bugs">
+    <meta name="twitter:description" content="Let's deep dive into AWS Detective services">
 
     
-    <meta property="twitter:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1747750540/AI%20generated/use_this_image_as_person_with_laptop_frcpq3.png">
+    <meta property="twitter:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1748665961/hugs4bugs/aws/aws.png">
     
 
     
@@ -37,10 +37,10 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="https://hugs4bugs.me/build-threat-hunting-IOC-with-elastic-siem/">
-    <meta property="og:title" content="Build Your Own IOC Playground with ELastic SIEM | hugs4bugs">
-    <meta property="og:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1747750540/AI%20generated/use_this_image_as_person_with_laptop_frcpq3.png">
-    <meta property="og:description" content="Let's learn how to hunt Threat adversory">
+    <meta property="og:url" content="https://hugs4bugs.me/be-a-detective-with-aws-detective/">
+    <meta property="og:title" content="Be a Detective with AWS Detective | hugs4bugs">
+    <meta property="og:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1748665961/hugs4bugs/aws/aws.png">
+    <meta property="og:description" content="Let's deep dive into AWS Detective services">
     <meta property="og:site_name" content="hugs4bugs">
 
     <!-- Favicon -->
@@ -76,7 +76,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="canonical" href="https://hugs4bugs.me/build-threat-hunting-IOC-with-elastic-siem/">
+    <link rel="canonical" href="https://hugs4bugs.me/be-a-detective-with-aws-detective/">
     <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
         href="https://hugs4bugs.me/feed.xml" />
     <link rel='manifest' href='../manifest.json'>
@@ -304,22 +304,22 @@
                 <p class="post-info">
                     
                         <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="2025-03-09T00:00:00+00:00">
+                        <time class="date" datetime="2025-05-31T00:00:00+00:00">
                             
 
 
-March 9, 2025
+May 31, 2025
 
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
                     <span>2 min to read</span>
                 </p>
-                <h1 class="post-title">Build Your Own IOC Playground with ELastic SIEM</h1>
-                <p class="post-subtitle">Hunt IOC</p>
+                <h1 class="post-title">Be a Detective with AWS Detective</h1>
+                <p class="post-subtitle">SOC POV</p>
 
                 
-                    <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747750540/AI%20generated/use_this_image_as_person_with_laptop_frcpq3.png" alt="Featured image" class="post-cover">
+                    <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748665961/hugs4bugs/aws/aws.png" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
@@ -329,83 +329,90 @@ March 9, 2025
                 <!-- Add your table of contents here -->
 
 
-                <p>When it comes to proactive approach of security, threat Hunting comes to the picture. And being aware of IOC aka Indicators of Compromise gives an extra leverage to find malicious urls, hash, IP and block those and take proper action. In this lab, I’m gonna build homelab with Elastic Cloud and Elastic SIEM deployment and generate IOC with AbuseCH .</p>
+                <p>In the ever-evolving landscape of cloud security, identifying and responding to threats swiftly is paramount. Amazon detective makes its easy for soc analyst or security engineer to analyse, investigate, and do RCA. Before jumping to the tehnical side, let’s understand the landscape of security Incidents investigation phase :</p>
 
-<p>Basic HLD</p>
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748666399/hugs4bugs/aws/1_d9pzu7.jpg" alt="image" /></p>
 
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747751796/hugs4bugs/Screenshot_20-5-2025_20540_excalidraw.com_rlsc0e.jpg" alt="image" /></p>
+<p>1.Triage – Figuring Out If There’s a Real Threat
+Imagine getting an alert that something suspicious might be happening in your system. Your first step is to check whether it’s a real problem or a false alarm.</p>
 
-<p><strong>Steps to create a hosted Deployment</strong></p>
-<ol>
-  <li>Signup to  <a href="https://cloud.elastic.co">Elastic Cloud</a></li>
-  <li>Click on Add Deployment 
-<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747754029/hugs4bugs/Elastics/hostedclouddeployment_ustvd2.jpg" alt="image" /></li>
-  <li>Launching Deployement 
-<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747754101/hugs4bugs/Elastics/launching_deployement_ewcinj.jpg" alt="image" /></li>
-  <li>Incoming Data Confirmation
-<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747754167/hugs4bugs/Elastics/incomingdatapreview_vlz16q.jpg" alt="image" /></li>
-</ol>
+<p>Some alerts come from Amazon GuardDuty or Amazon Inspector, which help detect unusual activity.</p>
 
-<p><strong>Agent Installation</strong></p>
+<p>If the issue looks serious (like someone trying to break in), it’s a true positive, and you move on to the next step.</p>
 
-<ol>
-  <li>
-    <p>Click on the assets, and Add Agent button 
-<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747752370/hugs4bugs/Elastics/completeintegrationEDR_jzv0dn.jpg" alt="image" /></p>
-  </li>
-  <li>Enroll in Fleet which means elastic agents in fleet to automatically deploy updates and centrally manage the agent.</li>
-  <li>Install Elastic agent on the host machine, in my case it’s Kali Linux Machine
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -L -O https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-9.0.1-linux-arm64.tar.gz 
-  tar xzvf elastic-agent-9.0.1-linux-arm64.tar.gz
-  cd elastic-agent-9.0.1-linux-arm64
-  sudo ./elastic-agent install --url=https://a097fdb86de9432ebec921c664a65f9d.fleet.us-east-1.aws.elastic.cloud:443 --enrollment-token=R0FzLTRwWUJtSzFxcVVmU2tyUUo6OUlIdGticVFtcjJhRVNjR2t1NUY4dw==
-</code></pre></div>    </div>
-    <p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747752682/hugs4bugs/Elastics/agentsuccess_ni21jq.png" alt="image" /></p>
-  </li>
-  <li>Incoming Data confirmation</li>
-</ol>
+<p>If it’s just normal activity being misinterpreted, it’s a false positive, and you can ignore it.</p>
 
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747752747/hugs4bugs/Elastics/agentinstallationconfirmationUI_pgtnsy.jpg" alt="image" /></p>
+<p>AWS Detective helps by showing useful data about the activity so you can decide whether it’s actually a threat.</p>
 
-<p><strong>Now Deploy Elastic Defend</strong></p>
+<p>2.Scoping – Understanding the Full Story
+Once you’ve confirmed there’s a real security issue, it’s time to investigate the details. This phase answers key questions:</p>
 
-<p>Go to the integration and select Elastic Defend then click Add Elastic Defend</p>
+<p>Who or what was affected? (Did someone gain access to your system or users’ accounts?)</p>
 
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747753309/hugs4bugs/Elastics/fleet_agents_vznevr.jpg" alt="image" /></p>
+<p>Where did the problem start? (Did the attack come from inside or outside your network?)</p>
 
-<ol>
-  <li>Configuration Integration give it a name and Description
-<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747753425/hugs4bugs/Elastics/completeintegrationEDR_cpwl9a.jpg" alt="image" /></li>
-  <li>Under Configuration Settings, it should be “Complete EDR with full telemetry”
-<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747753543/hugs4bugs/Elastics/EDRconfig_zrslnf.jpg" alt="image" /></li>
-  <li>under Where to host section, select existing host and pick same host where we had deployed 1st agent policy
-<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747753694/hugs4bugs/Elastics/existinghostti_ogs2b2.jpg" alt="image" /></li>
-</ol>
+<p>How long has this been happening? (Has your data been exposed for days, weeks, or just minutes?)</p>
 
-<p>Save &amp; Continue</p>
+<p>Are there other related issues? (If someone stole data, how did they get in?)</p>
 
-<p>Now configure Threat Intel feed, from security project left hand menu side click on Intelligence</p>
-<ol>
-  <li>Click on AbuseCH TI tool
-<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747754440/hugs4bugs/Elastics/absurech_vb1tk1.jpg" alt="image" /></li>
-  <li>Add AbuseCH 
-<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747754555/hugs4bugs/Elastics/add_absuech_h0ozni.jpg" alt="image" /></li>
-  <li>Select Deployment option as Agent based and toggle off for “collect AbuseCh logs via API using Elastic Agents” . If you have AbuseCH API key feel free to use this option 
-<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747754702/hugs4bugs/Elastics/deployment-agentbased-ti_lzn3ss.jpg" alt="image" /></li>
-  <li>Now check the TI feeds from Intelligence pannel and feel free to build custom dashboard as well. 
-<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747754859/hugs4bugs/Elastics/threattintelfeed_kxoqps.jpg" alt="image" /></li>
-</ol>
+<p>AWS Detective visualizes all this information so you can connect the dots and see the bigger picture.</p>
 
-<p>IOC Details</p>
+<p>3.Response – Stopping the Attack &amp; Preventing Future Issues
+After understanding the scope of the attack, the final step is taking action to fix the problem:</p>
 
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747755003/hugs4bugs/Elastics/IOC_details_k9gmw0.jpg" alt="image" /></p>
+<p>Shut down the attack (Block suspicious users, cut off unauthorized access).</p>
 
-<p><strong>Custom Dashboards</strong> 
-<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747755168/hugs4bugs/Elastics/abusechurl_vfwmli.jpg" alt="Abusechurls" /></p>
+<p>Limit the damage (Secure affected systems, restore backups).</p>
 
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1747755248/hugs4bugs/Elastics/popularurls_uzd62i.jpg" alt="Most url" /></p>
+<p>Prevent similar attacks (Improve security measures, adjust settings).</p>
 
-<p>In next part we’ll discuss how to create correlation rule with TI feeds.</p>
+<p>AWS Detective helps you trace the source of the attack, so your security team can act fast and prevent another one from happening.</p>
+
+<p><img src="https://docs.aws.amazon.com/images/detective/latest/userguide/images/diagram_investigation_flow_entity.png" alt="image" />
+source: aws</p>
+
+<p><strong>How to enable Amazon Detective?</strong></p>
+
+<p>1.Visit Aws console and search for Amazon Detective and click on Get started
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748666903/hugs4bugs/aws/2_s0oqzk.jpg" alt="image" /></p>
+
+<p>2.You can invite group members or use default aws recommendation, which uses IAM policy 
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748667030/hugs4bugs/aws/3_uyk7kq.jpg" alt="image" /></p>
+
+<p>3.Now enable Security Lake, but for that your aws account must be a member of AWS orgnaisation 
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748667211/hugs4bugs/aws/4_rqrfri.jpg" alt="image" /></p>
+
+<p>4.Now let’s create aws orgnaisation 
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748667333/hugs4bugs/aws/5_lbjogb.jpg" alt="image" /></p>
+
+<p>5.Convert or create a management account</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748667434/hugs4bugs/aws/6_s0t5ix.jpg" alt="image" /></p>
+
+<p>6.Successful Managemetn Account creation
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748667546/hugs4bugs/aws/7_dcjztg.jpg" alt="image" /></p>
+
+<p>7.Now return to amazon detective page for security lake integration adn enable 30-days free trials
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748667712/hugs4bugs/aws/8_swkgqt.jpg" alt="image" /></p>
+
+<p>8.Crate a delegate account
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748667802/hugs4bugs/aws/9_kluqha.jpg" alt="image" /></p>
+
+<p>9.Register a deligate Admin 
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748668339/hugs4bugs/aws/10_ofb158.jpg" alt="image" />
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748669113/hugs4bugs/aws/12_y764em.jpg" alt="image" /></p>
+
+<p>10.Make sure Trust access is enabled from AWS orgnaisation for Amazon Detective</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748668897/hugs4bugs/aws/11_i9fpj9.jpg" alt="image" /></p>
+
+<p>11.Now you can see all Roles and Users with Most API calls 
+<img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748670703/hugs4bugs/aws/14_vwsoye.jpg" alt="image" /></p>
+
+<p>12.Geolocation based</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748670703/hugs4bugs/aws/15_khrn0y.jpg" alt="image" /></p>
+
 
 
                 <!-- Pagination links -->
@@ -421,29 +428,29 @@ March 9, 2025
                         
                         
                             <li>
-                                <a href="/kali-linux-vs-parrot-linux/">
+                                <a href="/Progressive-web-app/">
                                     
-                                        <img src="https://cdn.pixabay.com/photo/2018/04/22/22/57/hacker-3342696_960_720.jpg">
+                                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
                                     
-                                    <h3>Kali Linux vs Parrot OS</h3>
+                                    <h3>Progressive WebApp.</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/bulid-and-deploy-MERN-stack-in-Azure-cosmos-DB/">
+                                <a href="/send-email-with-Azure-logic-app/">
                                     
-                                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80">
+                                        <img src="https://d3nn873nee648n.cloudfront.net/900x600/19765/300-SM960337.jpg">
                                     
-                                    <h3>Anyone can build: node.js+ Cosmos DB in Azure </h3>
+                                    <h3>Automate Email with Azure Logic App</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/wazuh's-big-move-from-elasticsearch-to-opensearch/">
+                                <a href="/Docker-101/">
                                     
-                                        <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1735713838/IMG_5316_vrb0rb.jpg">
+                                        <img src="https://th.bing.com/th/id/Rb3e6202f5356edebd8c8205623eef0f1?rik=2tDqbcLpDFguLg&riu=http%3a%2f%2fwww.shadowandy.net%2fwp%2fwp-content%2fuploads%2fdocker.png&ehk=d2o4OLvE5SZOjrajjCgOCdzXQ9xmehUy6vTEhPPFi3c%3d&risl=&pid=ImgRaw">
                                     
-                                    <h3>Wazuh's Big Move:From Elasticsearch to OpenSearch</h3>
+                                    <h3>Docker 101</h3>
                                 </a>
                             </li>
                         
@@ -475,13 +482,13 @@ March 9, 2025
         </div>
     </div>
     
-    <a href="/ship-ai-tools-like-app-with-docker-mcptoolkit/" class="post-preview">
+    <a href="/send-email-with-Azure-logic-app/" class="post-preview">
         <div class="image">
             
-                <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1748198502/hugs4bugs/dockermcp/mcp.png">
+                <img src="https://d3nn873nee648n.cloudfront.net/900x600/19765/300-SM960337.jpg">
             
         </div>
-        <h3 class="title">Ship AI Tools Like Apps with  Docker's MCP ToolKit</h3>
+        <h3 class="title">Automate Email with Azure Logic App</h3>
     </a>
 </div>
 
@@ -498,7 +505,7 @@ March 9, 2025
         <section class="share">
     <h3>Share</h3>
     <a aria-label="Share on Twitter"
-        href="https://twitter.com/intent/tweet?text=&quot;Let's learn how to hunt Threat adversory&quot;%20https://hugs4bugs.me/build-threat-hunting-IOC-with-elastic-siem/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,Elastic SIEM"
+        href="https://twitter.com/intent/tweet?text=&quot;Let's deep dive into AWS Detective services&quot;%20https://hugs4bugs.me/be-a-detective-with-aws-detective/%20via%20&#64;myselfshubhendu&hashtags=aws,Cybersecurity"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -506,7 +513,7 @@ March 9, 2025
         </svg>
     </a>
     <a aria-label="Share on WhatsApp"
-        href="https://twitter.com/intent/tweet?text=&quot;Let's learn how to hunt Threat adversory&quot;%20https://hugs4bugs.me/build-threat-hunting-IOC-with-elastic-siem/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,Elastic SIEM"
+        href="https://twitter.com/intent/tweet?text=&quot;Let's deep dive into AWS Detective services&quot;%20https://hugs4bugs.me/be-a-detective-with-aws-detective/%20via%20&#64;myselfshubhendu&hashtags=aws,Cybersecurity"
         onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -514,7 +521,7 @@ March 9, 2025
         </svg>
     </a>
     <a aria-label="Share on Facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/build-threat-hunting-IOC-with-elastic-siem/"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/be-a-detective-with-aws-detective/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
         title="Share on Facebook">
         <svg class="icon icon-facebook">
@@ -604,7 +611,7 @@ March 9, 2025
         disqus_loaded = true;
         var disqus_shortname = 'hugs4bugs';
         var disqus_title = '';
-        var disqus_url = '/build-threat-hunting-IOC-with-elastic-siem/';
+        var disqus_url = '/be-a-detective-with-aws-detective/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -775,94 +782,101 @@ March 9, 2025
         {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
-            "name": "Build Your Own IOC Playground with ELastic SIEM",
-            "headline": "Hunt IOC",
-            "description": "Let's learn how to hunt Threat adversory",
-            "image": "https://res.cloudinary.com/hugs4bugs/image/upload/v1747750540/AI%20generated/use_this_image_as_person_with_laptop_frcpq3.png",
-            "url": "https://hugs4bugs.me/build-threat-hunting-IOC-with-elastic-siem/",
-            "articleBody": "When it comes to proactive approach of security, threat Hunting comes to the picture. And being aware of IOC aka Indicators of Compromise gives an extra leverage to find malicious urls, hash, IP and block those and take proper action. In this lab, I’m gonna build homelab with Elastic Cloud and Elastic SIEM deployment and generate IOC with AbuseCH .
-
-Basic HLD
+            "name": "Be a Detective with AWS Detective",
+            "headline": "SOC POV",
+            "description": "Let's deep dive into AWS Detective services",
+            "image": "https://res.cloudinary.com/hugs4bugs/image/upload/v1748665961/hugs4bugs/aws/aws.png",
+            "url": "https://hugs4bugs.me/be-a-detective-with-aws-detective/",
+            "articleBody": "In the ever-evolving landscape of cloud security, identifying and responding to threats swiftly is paramount. Amazon detective makes its easy for soc analyst or security engineer to analyse, investigate, and do RCA. Before jumping to the tehnical side, let’s understand the landscape of security Incidents investigation phase :
 
 
 
-Steps to create a hosted Deployment
+1.Triage – Figuring Out If There’s a Real Threat
+Imagine getting an alert that something suspicious might be happening in your system. Your first step is to check whether it’s a real problem or a false alarm.
 
-  Signup to  Elastic Cloud
-  Click on Add Deployment 
+Some alerts come from Amazon GuardDuty or Amazon Inspector, which help detect unusual activity.
 
-  Launching Deployement 
+If the issue looks serious (like someone trying to break in), it’s a true positive, and you move on to the next step.
 
-  Incoming Data Confirmation
+If it’s just normal activity being misinterpreted, it’s a false positive, and you can ignore it.
 
+AWS Detective helps by showing useful data about the activity so you can decide whether it’s actually a threat.
 
+2.Scoping – Understanding the Full Story
+Once you’ve confirmed there’s a real security issue, it’s time to investigate the details. This phase answers key questions:
 
-Agent Installation
+Who or what was affected? (Did someone gain access to your system or users’ accounts?)
 
+Where did the problem start? (Did the attack come from inside or outside your network?)
 
-  
-    Click on the assets, and Add Agent button 
+How long has this been happening? (Has your data been exposed for days, weeks, or just minutes?)
 
-  
-  Enroll in Fleet which means elastic agents in fleet to automatically deploy updates and centrally manage the agent.
-  Install Elastic agent on the host machine, in my case it’s Kali Linux Machine
-    curl -L -O https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-9.0.1-linux-arm64.tar.gz 
-  tar xzvf elastic-agent-9.0.1-linux-arm64.tar.gz
-  cd elastic-agent-9.0.1-linux-arm64
-  sudo ./elastic-agent install --url=https://a097fdb86de9432ebec921c664a65f9d.fleet.us-east-1.aws.elastic.cloud:443 --enrollment-token=R0FzLTRwWUJtSzFxcVVmU2tyUUo6OUlIdGticVFtcjJhRVNjR2t1NUY4dw==
-    
-    
-  
-  Incoming Data confirmation
+Are there other related issues? (If someone stole data, how did they get in?)
 
+AWS Detective visualizes all this information so you can connect the dots and see the bigger picture.
 
+3.Response – Stopping the Attack &amp;amp; Preventing Future Issues
+After understanding the scope of the attack, the final step is taking action to fix the problem:
 
+Shut down the attack (Block suspicious users, cut off unauthorized access).
 
-Now Deploy Elastic Defend
+Limit the damage (Secure affected systems, restore backups).
 
-Go to the integration and select Elastic Defend then click Add Elastic Defend
+Prevent similar attacks (Improve security measures, adjust settings).
 
+AWS Detective helps you trace the source of the attack, so your security team can act fast and prevent another one from happening.
 
 
+source: aws
 
-  Configuration Integration give it a name and Description
+How to enable Amazon Detective?
 
-  Under Configuration Settings, it should be “Complete EDR with full telemetry”
-
-  under Where to host section, select existing host and pick same host where we had deployed 1st agent policy
-
+1.Visit Aws console and search for Amazon Detective and click on Get started
 
 
-Save &amp;amp; Continue
+2.You can invite group members or use default aws recommendation, which uses IAM policy 
 
-Now configure Threat Intel feed, from security project left hand menu side click on Intelligence
 
-  Click on AbuseCH TI tool
+3.Now enable Security Lake, but for that your aws account must be a member of AWS orgnaisation 
 
-  Add AbuseCH 
 
-  Select Deployment option as Agent based and toggle off for “collect AbuseCh logs via API using Elastic Agents” . If you have AbuseCH API key feel free to use this option 
+4.Now let’s create aws orgnaisation 
 
-  Now check the TI feeds from Intelligence pannel and feel free to build custom dashboard as well. 
+
+5.Convert or create a management account
 
 
 
-IOC Details
+6.Successful Managemetn Account creation
+
+
+7.Now return to amazon detective page for security lake integration adn enable 30-days free trials
+
+
+8.Crate a delegate account
+
+
+9.Register a deligate Admin 
 
 
 
-Custom Dashboards 
+10.Make sure Trust access is enabled from AWS orgnaisation for Amazon Detective
 
 
 
+11.Now you can see all Roles and Users with Most API calls 
 
-In next part we’ll discuss how to create correlation rule with TI feeds.
+
+12.Geolocation based
+
+
+
 ",
-            "wordcount": "376",
+            "wordcount": "511",
             "inLanguage": "en",
-            "dateCreated": "2025-03-09/",
-            "datePublished": "2025-03-09/",
-            "dateModified": "2025-03-09/",
+            "dateCreated": "2025-05-31/",
+            "datePublished": "2025-05-31/",
+            "dateModified": "2025-05-31/",
             "author": {
                 "@type": "Person",
                 "name": "Shubhendu",
@@ -887,9 +901,9 @@ In next part we’ll discuss how to create correlation rule with TI feeds.
                 }
             },
             "mainEntityOfPage": "True",
-            "genre": "security",
-            "articleSection": "security",
-            "keywords": ["Cyber Security","Elastic SIEM"]
+            "genre": "Cyber Security",
+            "articleSection": "Cyber Security",
+            "keywords": ["aws","Cybersecurity"]
         }
         </script>
     </body>

@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "Be a Detective with AWS Detective",
+      "tags"     : "aws and Cybersecurity",
+      "categories" : "Cyber Security",
+      "url"      : "/be-a-detective-with-aws-detective/",
+      "date"     : "05/31/2025"
+    } ,
+  
+    {
       "title"    : "Stop Fighting Local LLMs:Docker Just fixed the Mess",
       "tags"     : "Model Runner and Docker",
       "categories" : "Docker",

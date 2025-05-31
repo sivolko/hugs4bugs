@@ -227,6 +227,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/be-a-detective-with-aws-detective/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2025-05-31</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/stop-fighting-local-llm-docker-just-fixed-mess-model-runnner/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
