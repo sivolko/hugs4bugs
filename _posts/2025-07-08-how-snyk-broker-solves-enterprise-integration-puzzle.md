@@ -94,6 +94,19 @@ Broker configuration relies heavily on environment variables. Key configurations
 
 ![image](https://res.cloudinary.com/hugs4bugs/image/upload/v1751997129/hugs4bugs/snyk/snykkk.jpg)
 
+**Why Broker Matters for Enterprise Security**?
+
+From an application security perspective, Broker addresses several critical concerns:
+
+Network Segmentation: Your source code and internal systems remain completely isolated from external networks. The broker acts as a controlled gateway, ensuring no direct access to your internal infrastructure.
+
+Data Sovereignty: Sensitive code and artifacts never leave your network perimeter. Broker only transmits metadata and vulnerability findings, not your actual source code.
+
+Compliance: For organizations subject to regulatory requirements like SOC 2, GDPR, or industry-specific standards, Broker provides the necessary controls to demonstrate proper data handling and network security.
+
+Auditability: All traffic flows through a single, controllable point that can be monitored, logged, and audited according to your security policies.
+
+
 **Common Pitfalls and Solutions**
 
 Through multiple implementations, I've encountered several recurring challenges:
