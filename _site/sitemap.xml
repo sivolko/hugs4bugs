@@ -227,6 +227,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/how-snyk-broker-solves-enterprise-integration-puzzle/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2025-07-08</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/DNS4EU-How-europe-just-built-a-dns-killer/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>

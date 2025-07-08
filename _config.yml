@@ -85,6 +85,7 @@ exclude:
 - Gemfile.lock
 - gulpfile.js
 - README.md
+- vendor
 comments: 
   giscus:
   enabled: true
@@ -101,4 +102,3 @@ comments:
   lang: "en"
   loading: "lazy"
   crossorigin: "anonymous"
-      

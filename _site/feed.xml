@@ -5,9 +5,23 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 11 Jun 2025 05:27:13 +0000</pubDate>
-    <lastBuildDate>Wed, 11 Jun 2025 05:27:13 +0000</lastBuildDate>
+    <pubDate>Tue, 08 Jul 2025 17:54:44 +0000</pubDate>
+    <lastBuildDate>Tue, 08 Jul 2025 17:54:44 +0000</lastBuildDate>
     <generator>Jekyll v3.10.0</generator>
+    
+      <item>
+        <title>How Snyk broker solves the Enterprise Integration Puzzle?</title>
+        <description>&lt;p&gt;Recently I got interviewed with a company and there I being asked a scernairo based question somewhat regarding Snyk Broker connector 3rd party tool and integration seems fine, but artifact scans are getting failed. So this question forced me to think about as organizations mature their DevSecOps practices, one of the biggest challenges they face is integrating security tools with their existing infrastructure while maintaining strict security boundaries. This is particularly true for enterprises with air-gapped environments, strict network policies, or sensitive codebases that cannot be exposed to external services.&lt;/p&gt; &lt;p&gt;Being Snyk Ambassador, let’s see hwo &lt;strong&gt;Snyk Broker&lt;/strong&gt; solves the...</description>
+        <pubDate>Tue, 08 Jul 2025 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/how-snyk-broker-solves-enterprise-integration-puzzle/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/how-snyk-broker-solves-enterprise-integration-puzzle/</guid>
+        
+        <category>AppSec</category>
+        
+        <category>Cybersecurity</category>
+        
+        <category>Cyber Security</category>
+      </item>
     
       <item>
         <title>DNS4EU:How Europe just built a DNS Killer?</title>
@@ -465,26 +479,6 @@
         <category>troubleshooter Club</category>
         
         <category>linux</category>
-      </item>
-    
-      <item>
-        <title>Kali Linux vs Parrot OS</title>
-        <description>&lt;p&gt;Hey Folks,All loves word &lt;strong&gt;Hacker&lt;/strong&gt; or pretend to be or wish to be a hacker’s friend ? .But technically there is no hacker is this IT world.Anyone who have a common sense and curiosity we call them hacker. I know you might be thinking what nonsense he has written but that’s true ..&lt;/p&gt; &lt;p&gt;Anyway Jokes apart, if these cyber security world fascinates you and you wanna start your journey, then &lt;em&gt;A stupid Question might be bothering you&lt;/em&gt; :- “Which OS should be suitable for Cyber Security?”.&lt;/p&gt; &lt;p&gt;Well there is no right and wrong answer for this, it again depends upon...</description>
-        <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
-        <link>https://hugs4bugs.me/kali-linux-vs-parrot-linux/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/kali-linux-vs-parrot-linux/</guid>
-        
-        <category>cloud</category>
-        
-        <category>security</category>
-        
-        <category>hacking</category>
-        
-        <category>offensive security</category>
-        
-        <category>troubleshooter Club</category>
-        
-        <category>security</category>
       </item>
     
   </channel>
