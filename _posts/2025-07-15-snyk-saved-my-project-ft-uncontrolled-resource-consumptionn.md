@@ -12,7 +12,7 @@ tags:
 - Cybersecurity
 ---
 
-<iframe src="https://creators.spotify.com/pod/show/shubhendushubham/embed/episodes/5MSloKT0dP8PR4O7CW7qTW/details   " height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/5MSloKT0dP8PR4O7CW7qTW?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
 Yesterday, I got an unexpected visitor to my GitHub repository. Not a human contributor, but Snyk's automated security bot, flagging a critical vulnerability in my Firebase project. What started as a routine dependency check turned into a fascinating case study of how modern security tools can catch threats that even experienced developers might miss.
 
