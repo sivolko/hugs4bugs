@@ -2,7 +2,7 @@
 layout: post
 title: When Snyk Saved my Firebase Project 
 subtitle:  "A Real world security Fix story"
-description: Let's understand uncontrolled resource consumption vulerability 
+description: Let's understand uncontrolled resource consumption vulnerability
 image: https://res.cloudinary.com/hugs4bugs/image/upload/v1752546677/hugs4bugs/snyk/thumnbail_dsnrli.png
 optimized_image: https://res.cloudinary.com/hugs4bugs/image/upload/v1752546677/hugs4bugs/snyk/thumnbail_dsnrli.png
 author: Shubhendu Shubham
@@ -12,7 +12,7 @@ tags:
 - Cybersecurity
 ---
 
-<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/5MSloKT0dP8PR4O7CW7qTW?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/5MSloKT0dP8PR4O7CW7qTW?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
 Yesterday, I got an unexpected visitor to my GitHub repository. Not a human contributor, but Snyk's automated security bot, flagging a critical vulnerability in my Firebase project. What started as a routine dependency check turned into a fascinating case study of how modern security tools can catch threats that even experienced developers might miss.
 
