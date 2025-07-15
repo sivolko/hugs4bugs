@@ -5,9 +5,23 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 08 Jul 2025 17:58:59 +0000</pubDate>
-    <lastBuildDate>Tue, 08 Jul 2025 17:58:59 +0000</lastBuildDate>
+    <pubDate>Tue, 15 Jul 2025 03:16:07 +0000</pubDate>
+    <lastBuildDate>Tue, 15 Jul 2025 03:16:07 +0000</lastBuildDate>
     <generator>Jekyll v3.10.0</generator>
+    
+      <item>
+        <title>When Snyk Saved my Firebase Project</title>
+        <description>&lt;iframe src=&quot;https://creators.spotify.com/pod/show/shubhendushubham/embed/episodes/5MSloKT0dP8PR4O7CW7qTW/details &quot; height=&quot;102px&quot; width=&quot;400px&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt; &lt;p&gt;Yesterday, I got an unexpected visitor to my GitHub repository. Not a human contributor, but Snyk’s automated security bot, flagging a critical vulnerability in my Firebase project. What started as a routine dependency check turned into a fascinating case study of how modern security tools can catch threats that even experienced developers might miss.&lt;/p&gt; &lt;p&gt;The culprit? An uncontrolled resource consumption vulnerability lurking in the @grpc/grpc-js library, buried deep within Firebase’s dependency chain. With a severity score of &lt;strong&gt;559&lt;/strong&gt; and the identifier &lt;strong&gt;SNYK-JS-GRPCGRPCJS-7242922&lt;/strong&gt;, this wasn’t just another minor security hiccup—it was a legitimate denial...</description>
+        <pubDate>Tue, 15 Jul 2025 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn/</guid>
+        
+        <category>AppSec</category>
+        
+        <category>Cybersecurity</category>
+        
+        <category>Cyber Security</category>
+      </item>
     
       <item>
         <title>How Snyk broker solves the Enterprise Integration Puzzle?</title>
@@ -461,24 +475,6 @@
         <category>troubleshooter Club</category>
         
         <category>automation</category>
-      </item>
-    
-      <item>
-        <title>Do you use ls -lrt?</title>
-        <description>&lt;p&gt;Hey folks, as a coder or techie we often do use &lt;strong&gt;terminal&lt;/strong&gt; to interact with our files. And we all are familiar with &lt;strong&gt;ls&lt;/strong&gt; command.Basically we use ls command for listing the contents of a directory.&lt;/p&gt; &lt;p&gt;ls command :&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://res.cloudinary.com/hugs4bugs/image/upload/v1670738418/linux/1_ig8j6w.png&quot; alt=&quot;ls&quot; /&gt;&lt;/p&gt; &lt;p&gt;But what about if there are thousands of files inside a folder and we have to pick or sort a particular file within time frame? In such case using ls command and going line by line doesn’t makes sense?&lt;/p&gt; &lt;p&gt;So here we do have &lt;strong&gt;lrt&lt;/strong&gt; option which is bascially combo three different options which provide us extra...</description>
-        <pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate>
-        <link>https://hugs4bugs.me/what-is-difference-between-ls-and-ls-lrt-command/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/what-is-difference-between-ls-and-ls-lrt-command/</guid>
-        
-        <category>security</category>
-        
-        <category>hacking</category>
-        
-        <category>offensive security</category>
-        
-        <category>troubleshooter Club</category>
-        
-        <category>linux</category>
       </item>
     
   </channel>
