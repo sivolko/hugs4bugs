@@ -17,19 +17,19 @@
     
     
 
-    <title>When Snyk Saved my Firebase Project | hugs4bugs</title>
-    <meta name="description" content="Let's understand uncontrolled resource consumption vulerability">
+    <title>Terraform's Secret Weapon: Write Only Arguments | hugs4bugs</title>
+    <meta name="description" content="Let's understand what's new write only arguments in terraform 1.11, how IaaC engineers no need to store secrets in state file">
     
-    <meta name="keywords" content="AppSec, Cybersecurity">
+    <meta name="keywords" content="IaaC, Cybersecurity">
     
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="When Snyk Saved my Firebase Project | hugs4bugs">
-    <meta name="twitter:description" content="Let's understand uncontrolled resource consumption vulerability">
+    <meta name="twitter:title" content="Terraform's Secret Weapon: Write Only Arguments | hugs4bugs">
+    <meta name="twitter:description" content="Let's understand what's new write only arguments in terraform 1.11, how IaaC engineers no need to store secrets in state file">
 
     
-    <meta property="twitter:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1752546677/hugs4bugs/snyk/thumnbail_dsnrli.png">
+    <meta property="twitter:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1752723091/hugs4bugs/terraform/terraform_writeonly_svg_b3zno4.svg">
     
 
     
@@ -37,10 +37,10 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn/">
-    <meta property="og:title" content="When Snyk Saved my Firebase Project | hugs4bugs">
-    <meta property="og:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1752546677/hugs4bugs/snyk/thumnbail_dsnrli.png">
-    <meta property="og:description" content="Let's understand uncontrolled resource consumption vulerability">
+    <meta property="og:url" content="https://hugs4bugs.me/no-more-secrets-in-terraform-statefile-write-only-arguments/">
+    <meta property="og:title" content="Terraform's Secret Weapon: Write Only Arguments | hugs4bugs">
+    <meta property="og:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1752723091/hugs4bugs/terraform/terraform_writeonly_svg_b3zno4.svg">
+    <meta property="og:description" content="Let's understand what's new write only arguments in terraform 1.11, how IaaC engineers no need to store secrets in state file">
     <meta property="og:site_name" content="hugs4bugs">
 
     <!-- Favicon -->
@@ -76,7 +76,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="canonical" href="https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn/">
+    <link rel="canonical" href="https://hugs4bugs.me/no-more-secrets-in-terraform-statefile-write-only-arguments/">
     <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
         href="https://hugs4bugs.me/feed.xml" />
     <link rel='manifest' href='../manifest.json'>
@@ -304,22 +304,22 @@
                 <p class="post-info">
                     
                         <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="2025-07-15T00:00:00+00:00">
+                        <time class="date" datetime="2025-07-17T00:00:00+00:00">
                             
 
 
-July 15, 2025
+July 17, 2025
 
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>4 min to read</span>
+                    <span>5 min to read</span>
                 </p>
-                <h1 class="post-title">When Snyk Saved my Firebase Project</h1>
-                <p class="post-subtitle">A Real world security Fix story</p>
+                <h1 class="post-title">Terraform's Secret Weapon: Write Only Arguments</h1>
+                <p class="post-subtitle">Let's keep it simpler</p>
 
                 
-                    <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1752546677/hugs4bugs/snyk/thumnbail_dsnrli.png" alt="Featured image" class="post-cover">
+                    <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1752723091/hugs4bugs/terraform/terraform_writeonly_svg_b3zno4.svg" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
@@ -329,119 +329,198 @@ July 15, 2025
                 <!-- Add your table of contents here -->
 
 
-                <iframe src="https://creators.spotify.com/pod/show/shubhendushubham/embed/episodes/5MSloKT0dP8PR4O7CW7qTW/details   " height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
+                <p>If you’ve been working with Terraform for a while, you’ve probably run into this frustrating situation: you need to pass a password or API token to a resource, but you don’t want that sensitive data sitting in your state file for everyone to see. Maybe you’ve tried creative workarounds with external data sources or complex scripting, but let’s be honest – it always felt like a hack.</p>
 
-<p>Yesterday, I got an unexpected visitor to my GitHub repository. Not a human contributor, but Snyk’s automated security bot, flagging a critical vulnerability in my Firebase project. What started as a routine dependency check turned into a fascinating case study of how modern security tools can catch threats that even experienced developers might miss.</p>
+<p>Well, good news! Terraform 1.11 introduces write-only arguments, and they’re about to change how we handle secrets in our infrastructure code. Think of them as a secure handoff mechanism – you can pass sensitive data to resources during deployment, but Terraform immediately forgets about it once the job is done.</p>
 
-<p>The culprit? An uncontrolled resource consumption vulnerability lurking in the @grpc/grpc-js library, buried deep within Firebase’s dependency chain. With a severity score of <strong>559</strong> and the identifier <strong>SNYK-JS-GRPCGRPCJS-7242922</strong>, this wasn’t just another minor security hiccup—it was a legitimate denial of service risk sitting in production code.</p>
+<p><strong>What Are Write-Only Arguments?</strong></p>
 
-<p><strong>The Technical Breakdown</strong></p>
+<p>Write-only arguments are exactly what they sound like: arguments that you can write to (pass values to) but Terraform never stores anywhere. No state file, no plan file, no logs – nowhere. It’s like whispering a secret that gets forgotten the moment it’s used.</p>
 
-<p><em>What Actually Happened</em></p>
+<p>Here’s the key insight: most of the time, we don’t actually need Terraform to remember passwords and tokens. We just need to pass them to the cloud provider during resource creation or updates. Once the resource is created, the cloud provider handles the secret internally.</p>
 
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1752546282/hugs4bugs/snyk/Screenshot_15-7-2025_75158_github.com_tbysmn.jpg" alt="image" /></p>
+<p><strong>The Problem This Solves</strong></p>
 
-<p>The vulnerability existed in versions of @grpc/grpc-js prior to 1.8.22, 1.9.15, and 1.10.9. The problem centered around how the library handled the <em>grpc.max_receive_message_length</em> channel option. Instead of properly enforcing message size limits, the library would buffer or decompress incoming messages into memory regardless of their actual size.</p>
+<p>Before write-only arguments, here’s what typically happened:</p>
 
-<p>Here’s the scary part: an attacker could craft messages that appeared to respect the configured limits but would consume massive amounts of memory during processing. Think of it like a zip bomb, but for gRPC messages. The server would dutifully allocate memory for what seemed like legitimate requests, only to find itself choking on unexpectedly large payloads.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># The old way - DON'T do this!
 
-<p><strong>The Attack Vector</strong></p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1752547034/hugs4bugs/snyk/attackvecctor_lcyzkc.jpg" alt="image" /></p>
-
-<p>The vulnerability manifested through a classic resource exhaustion pattern:</p>
-
-<ol>
-  <li>Initial Request: Attacker sends a gRPC message that passes basic size validation</li>
-  <li>Decompression Phase: The library begins processing the message, allocating memory for decompression</li>
-  <li>Memory Explosion: The decompressed content far exceeds expected limits</li>
-  <li>System Exhaustion: Server runs out of memory, leading to crashes or severe performance degradation</li>
-</ol>
-
-<p>For a Firebase application, this could mean:</p>
-
-<ul>
-  <li>Real-time database connections dropping</li>
-  <li>Cloud Functions timing out</li>
-  <li>Authentication services becoming unresponsive</li>
-  <li>Complete application downtime</li>
-</ul>
-
-<p><strong>Snyk’s Intervention: Automated Security in Action</strong></p>
-
-<p><strong>The Discovery Process</strong></p>
-
-<p>What impressed me most was how Snyk detected this vulnerability. It wasn’t just scanning my direct dependencies—it was analyzing the entire dependency tree. My <em>package.json</em> showed Firebase 9.22.1, but Snyk dug deeper, tracing through Firebase’s own dependencies to find the vulnerable @grpc/grpc-js library nested several layers down.
-The timeline was remarkable:</p>
-
-<p>Detection: Snyk identified the vulnerability within hours of the security advisory
-Analysis: The platform assessed the impact on my specific project
-Solution: An automated pull request was generated with the fix
-Documentation: Complete vulnerability details and remediation steps were provided</p>
-
-<p><strong>The Automated Fix</strong></p>
-
-<p>Snyk’s solution was elegantly simple: upgrade Firebase from 9.22.1 to 10.1.0. This newer version included an updated @grpc/grpc-js dependency that had the vulnerability patched. The pull request modified two files:</p>
-
-<p>package.json: Updated the Firebase version requirement
-package-lock.json: Locked in the secure dependency versions</p>
-
-<p>What made this particularly valuable was the context Snyk provided. The bot didn’t just say “upgrade this”—it explained exactly why the upgrade was necessary, which vulnerability it addressed, and what the security implications were.</p>
-
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1752547744/hugs4bugs/snyk/fix_fyf77g.jpg" alt="image" /></p>
-
-<p><strong>Technical Deep Dive: Understanding Resource Consumption Attacks</strong></p>
-
-<p>The Anatomy of the Attack</p>
-
-<p>Resource consumption attacks exploit the fundamental tension between performance and security. Applications need to process data efficiently, but they also need to protect themselves from malicious inputs. The @grpc/grpc-js vulnerability occurred because the library optimized for performance without adequately considering security implications.</p>
-
-<p>The specific attack pattern involved:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Vulnerable code pattern (simplified)
-function processMessage(compressedData) {
-    // Check appears to validate size
-    if (compressedData.length &gt; MAX_MESSAGE_SIZE) {
-        throw new Error('Message too large');
-    }
-    
-    // But decompression can expand data significantly
-    const decompressedData = decompress(compressedData);
-    
-    // This allocation might be much larger than expected
-    const buffer = Buffer.alloc(decompressedData.length);
-    // ... process data
+resource "aws_db_instance" "example" {
+  instance_class = "db.t3.micro"
+  allocated_storage = "5"
+  engine = "postgres"
+  username = "dbuser"
+  password = "super-secret-password"  # This ends up in state!
+  skip_final_snapshot = true
 }
 </code></pre></div></div>
-<p>The fix involved implementing proper resource limits throughout the entire message processing pipeline, not just at the initial validation stage.</p>
+<p>That password would sit in your state file, readable by anyone with access to it. Not great for security.</p>
 
-<p>Detection Challenges</p>
+<p><strong>How Write-Only Arguments Work</strong></p>
 
-<p>These vulnerabilities are particularly insidious because they’re hard to detect through normal testing:</p>
+<p>With Terraform 1.11, providers can now mark certain arguments as write-only. The AWS provider, for example, introduces <em>password_wo</em> (write-only) arguments for database resources:</p>
 
-<ul>
-  <li>Load testing might miss edge cases involving specific message types</li>
-  <li>Unit tests typically don’t cover resource exhaustion scenarios</li>
-  <li>Integration tests often run in resource-constrained environments that don’t reflect production conditions</li>
-  <li>Security scans might focus on traditional vulnerabilities like injection attacks</li>
-</ul>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>resource "aws_db_instance" "example" {
+  instance_class = "db.t3.micro"
+  allocated_storage = "5"
+  engine = "postgres"
+  username = "dbuser"
+  password_wo = "super-secret-password"  # Never stored!
+  password_wo_version = 1
+  skip_final_snapshot = true
+}
 
-<p>This is where tools like Snyk become invaluable—they maintain databases of known vulnerabilities and can identify risks that traditional testing might miss.</p>
+</code></pre></div></div>
 
-<p><strong>Snyk Integration with Development Workflows</strong></p>
+<p>Notice two things:</p>
 
-<p>The seamless integration with GitHub workflows was particularly impressive. Snyk didn’t just identify the vulnerability—it created a pull request that fit naturally into my existing development process. The PR included:</p>
+<ol>
+  <li>The <em>password_wo argument</em> – this is write-only</li>
+  <li>The <em>password_wo_version</em> argument – this is how we trigger updates</li>
+</ol>
 
-<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1752548107/hugs4bugs/snyk/PR_udxuwy.jpg" alt="snyk pr" /></p>
+<p><strong>The Version Argument Pattern</strong></p>
 
-<ul>
-  <li>Clear vulnerability descriptions</li>
-  <li>Impact assessments</li>
-  <li>Remediation instructions</li>
-  <li>Links to additional resources</li>
-</ul>
+<p>Since Terraform can’t track changes to write-only arguments (because it doesn’t store them), providers use version arguments to detect when updates are needed. When you want to change a password, you increment the version:</p>
 
-<p>This is my personal security experience with Snyk SAST with my live blog, In the end I would like to conclude as a  good security isn’t about preventing all vulnerabilities—it’s about detecting and responding to them quickly when they do appear. Tools like Snyk make that rapid response possible, turning potential disasters into manageable maintenance tasks.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>resource "aws_db_instance" "example" {
+  instance_class = "db.t3.micro"
+  allocated_storage = "5"
+  engine = "postgres"
+  username = "dbuser"
+  password_wo = "new-super-secret-password"
+  password_wo_version = 2  # Incremented to trigger update
+  skip_final_snapshot = true
+}
+</code></pre></div></div>
+<p>Terraform sees the version change, knows something’s different, and tells the provider to use the new password.</p>
+
+<p><strong>Real World AWS Example: DB with Secrets Manager</strong></p>
+
+<p>Here’s where it gets really powerful. You can combine write-only arguments with ephemeral resources to create a fully automated, secure password management system:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Generate a random password (ephemeral - exists only during apply)
+ephemeral "random_password" "db_password" {
+  length = 16
+  override_special = "!#$%&amp;*()-_=+[]{}&lt;&gt;:?"
+}
+
+# Store it in AWS Secrets Manager
+resource "aws_secretsmanager_secret" "db_password" {
+  name = "rds-postgres-password"
+  description = "Password for RDS PostgreSQL instance"
+}
+
+resource "aws_secretsmanager_secret_version" "db_password" {
+  secret_id = aws_secretsmanager_secret.db_password.id
+  secret_string_wo = ephemeral.random_password.db_password.result
+  secret_string_wo_version = 1
+}
+
+# Retrieve it for use (also ephemeral)
+ephemeral "aws_secretsmanager_secret_version" "db_password" {
+  secret_id = aws_secretsmanager_secret_version.db_password.secret_id
+}
+
+# Create the database using the password
+resource "aws_db_instance" "example" {
+  identifier = "my-postgres-db"
+  instance_class = "db.t3.micro"
+  allocated_storage = 20
+  engine = "postgres"
+  engine_version = "13.7"
+  username = "dbadmin"
+  
+  # Use the password from Secrets Manager
+  password_wo = ephemeral.aws_secretsmanager_secret_version.db_password.secret_string
+  password_wo_version = aws_secretsmanager_secret_version.db_password.secret_string_wo_version
+  
+  skip_final_snapshot = true
+  
+  tags = {
+    Name = "Example PostgreSQL DB"
+  }
+}
+
+</code></pre></div></div>
+
+<p><strong>What happens here</strong>:</p>
+
+<ol>
+  <li>Terraform generates a random password (ephemeral)</li>
+  <li>Stores it in AWS Secrets Manager (using write-only argument)</li>
+  <li>Retrieves it back (ephemeral)</li>
+  <li>Uses it to create the database (write-only argument)</li>
+  <li>The password never appears in state or plan files</li>
+</ol>
+
+<p>As per my understanding I have figured out couple of best practices</p>
+
+<ol>
+  <li>Always use version Arguments : without it terraform has no way to know when to update the resource:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>resource "aws_db_instance" "example" {
+  # ... other arguments
+  password_wo = var.db_password
+  password_wo_version = var.db_password_version  # Don't forget this!
+}
+</code></pre></div></div>
+
+<ol>
+  <li>Combine with Emphemeral Resources : Write only arguments work greate with emphemeral resources for fully automated secret management</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ephemeral "random_password" "api_key" {
+  length = 32
+}
+
+resource "some_service" "example" {
+  api_key_wo = ephemeral.random_password.api_key.result
+  api_key_wo_version = 1
+}
+
+</code></pre></div></div>
+<ol>
+  <li>Use Local for version Management: when you need to update multiple resources with the same secret, use locals to manage versions:</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>locals {
+  db_password_version = 2  # Increment this to rotate everywhere
+}
+
+resource "aws_db_instance" "primary" {
+  password_wo = var.db_password
+  password_wo_version = local.db_password_version
+}
+
+resource "aws_db_instance" "replica" {
+  password_wo = var.db_password
+  password_wo_version = local.db_password_version
+}
+
+</code></pre></div></div>
+<p><strong>Common Gotchas</strong></p>
+
+<p><strong>Write-Only Arguments Are Sent Every Time</strong></p>
+
+<p>Unlike regular arguments, write-only arguments are sent to the provider during every Terraform operation. This is because Terraform can’t compare them to detect changes.</p>
+
+<p><strong>Plan Output Won’t Show Changes</strong>
+Since write-only arguments aren’t stored, terraform plan won’t show their values or changes. It will only show version argument changes.</p>
+
+<p><strong>Provider-Specific Implementation</strong></p>
+
+<p>Each provider implements write-only arguments differently. Always check the provider documentation for specific details and supported resources.</p>
+
+<p><strong>The Future of Secret Management</strong></p>
+
+<p>Write-only arguments represent a significant step forward in Terraform’s secret management capabilities. Combined with ephemeral resources, they enable patterns that were previously impossible or required complex workarounds.
+This isn’t just about security – it’s about cleaner, more maintainable infrastructure code. When secrets aren’t cluttering up your state files, debugging becomes easier, and you can focus on what really matters: building reliable infrastructure.</p>
+
+<p>I’m still learning and adopting these new changes and best practices, let’s see how’s the future ?</p>
+
+<p>Thanks for reading, keep troubleshooting !!!</p>
 
 
                 <!-- Pagination links -->
@@ -457,29 +536,29 @@ function processMessage(compressedData) {
                         
                         
                             <li>
-                                <a href="/storing-and-managing-secrets-using-azure-vault/">
+                                <a href="/wazuh's-big-move-from-elasticsearch-to-opensearch/">
                                     
-                                        <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80">
+                                        <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1735713838/IMG_5316_vrb0rb.jpg">
                                     
-                                    <h3>Managing and Storing Secrets:Azure Vault.🙆</h3>
+                                    <h3>Wazuh's Big Move:From Elasticsearch to OpenSearch</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/waf-vs-firewall/">
+                                <a href="/DNS4EU-How-europe-just-built-a-dns-killer/">
                                     
-                                        <img src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1749614169/hugs4bugs/DNS4EU.png">
                                     
-                                    <h3>WAF vs Firewall</h3>
+                                    <h3>DNS4EU:How Europe just built a DNS Killer?</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/college-to-cyber-security/">
+                                <a href="/living-without-passwords/">
                                     
-                                        <img src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80">
+                                        <img src="https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg">
                                     
-                                    <h3>College to Cyber Security Journey</h3>
+                                    <h3>Live without passwords</h3>
                                 </a>
                             </li>
                         
@@ -491,7 +570,7 @@ function processMessage(compressedData) {
 
         <!-- Add time bar only for pages without pagination -->
         
-            <div class="time-bar" data-minutes="4">
+            <div class="time-bar" data-minutes="5">
     <span class="time-completed"></span>
     <span class="time-remaining"></span>
     <div class="bar">
@@ -511,13 +590,13 @@ function processMessage(compressedData) {
         </div>
     </div>
     
-    <a href="/storing-and-managing-secrets-using-azure-vault/" class="post-preview">
+    <a href="/metasploitFramework-vs-metasploit-pro/" class="post-preview">
         <div class="image">
             
-                <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80">
+                <img src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80">
             
         </div>
-        <h3 class="title">Managing and Storing Secrets:Azure Vault.🙆</h3>
+        <h3 class="title">Metasploit Framework vs Metasploit Pro</h3>
     </a>
 </div>
 
@@ -534,7 +613,7 @@ function processMessage(compressedData) {
         <section class="share">
     <h3>Share</h3>
     <a aria-label="Share on Twitter"
-        href="https://twitter.com/intent/tweet?text=&quot;Let's understand uncontrolled resource consumption vulerability&quot;%20https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn/%20via%20&#64;myselfshubhendu&hashtags=AppSec,Cybersecurity"
+        href="https://twitter.com/intent/tweet?text=&quot;Let's understand what's new write only arguments in terraform 1.11, how IaaC engineers no need to store secrets in state file&quot;%20https://hugs4bugs.me/no-more-secrets-in-terraform-statefile-write-only-arguments/%20via%20&#64;myselfshubhendu&hashtags=IaaC,Cybersecurity"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -542,7 +621,7 @@ function processMessage(compressedData) {
         </svg>
     </a>
     <a aria-label="Share on WhatsApp"
-        href="https://twitter.com/intent/tweet?text=&quot;Let's understand uncontrolled resource consumption vulerability&quot;%20https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn/%20via%20&#64;myselfshubhendu&hashtags=AppSec,Cybersecurity"
+        href="https://twitter.com/intent/tweet?text=&quot;Let's understand what's new write only arguments in terraform 1.11, how IaaC engineers no need to store secrets in state file&quot;%20https://hugs4bugs.me/no-more-secrets-in-terraform-statefile-write-only-arguments/%20via%20&#64;myselfshubhendu&hashtags=IaaC,Cybersecurity"
         onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -550,7 +629,7 @@ function processMessage(compressedData) {
         </svg>
     </a>
     <a aria-label="Share on Facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn/"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/no-more-secrets-in-terraform-statefile-write-only-arguments/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
         title="Share on Facebook">
         <svg class="icon icon-facebook">
@@ -640,7 +719,7 @@ function processMessage(compressedData) {
         disqus_loaded = true;
         var disqus_shortname = 'hugs4bugs';
         var disqus_title = '';
-        var disqus_url = '/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn/';
+        var disqus_url = '/no-more-secrets-in-terraform-statefile-write-only-arguments/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -811,130 +890,209 @@ function processMessage(compressedData) {
         {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
-            "name": "When Snyk Saved my Firebase Project",
-            "headline": "A Real world security Fix story",
-            "description": "Let's understand uncontrolled resource consumption vulerability",
-            "image": "https://res.cloudinary.com/hugs4bugs/image/upload/v1752546677/hugs4bugs/snyk/thumnbail_dsnrli.png",
-            "url": "https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn/",
-            "articleBody": "
+            "name": "Terraform's Secret Weapon: Write Only Arguments",
+            "headline": "Let's keep it simpler",
+            "description": "Let's understand what's new write only arguments in terraform 1.11, how IaaC engineers no need to store secrets in state file",
+            "image": "https://res.cloudinary.com/hugs4bugs/image/upload/v1752723091/hugs4bugs/terraform/terraform_writeonly_svg_b3zno4.svg",
+            "url": "https://hugs4bugs.me/no-more-secrets-in-terraform-statefile-write-only-arguments/",
+            "articleBody": "If you’ve been working with Terraform for a while, you’ve probably run into this frustrating situation: you need to pass a password or API token to a resource, but you don’t want that sensitive data sitting in your state file for everyone to see. Maybe you’ve tried creative workarounds with external data sources or complex scripting, but let’s be honest – it always felt like a hack.
 
-Yesterday, I got an unexpected visitor to my GitHub repository. Not a human contributor, but Snyk’s automated security bot, flagging a critical vulnerability in my Firebase project. What started as a routine dependency check turned into a fascinating case study of how modern security tools can catch threats that even experienced developers might miss.
+Well, good news! Terraform 1.11 introduces write-only arguments, and they’re about to change how we handle secrets in our infrastructure code. Think of them as a secure handoff mechanism – you can pass sensitive data to resources during deployment, but Terraform immediately forgets about it once the job is done.
 
-The culprit? An uncontrolled resource consumption vulnerability lurking in the @grpc/grpc-js library, buried deep within Firebase’s dependency chain. With a severity score of 559 and the identifier SNYK-JS-GRPCGRPCJS-7242922, this wasn’t just another minor security hiccup—it was a legitimate denial of service risk sitting in production code.
+What Are Write-Only Arguments?
 
-The Technical Breakdown
+Write-only arguments are exactly what they sound like: arguments that you can write to (pass values to) but Terraform never stores anywhere. No state file, no plan file, no logs – nowhere. It’s like whispering a secret that gets forgotten the moment it’s used.
 
-What Actually Happened
+Here’s the key insight: most of the time, we don’t actually need Terraform to remember passwords and tokens. We just need to pass them to the cloud provider during resource creation or updates. Once the resource is created, the cloud provider handles the secret internally.
 
+The Problem This Solves
 
+Before write-only arguments, here’s what typically happened:
 
-The vulnerability existed in versions of @grpc/grpc-js prior to 1.8.22, 1.9.15, and 1.10.9. The problem centered around how the library handled the grpc.max_receive_message_length channel option. Instead of properly enforcing message size limits, the library would buffer or decompress incoming messages into memory regardless of their actual size.
+# The old way - DON&apos;T do this!
 
-Here’s the scary part: an attacker could craft messages that appeared to respect the configured limits but would consume massive amounts of memory during processing. Think of it like a zip bomb, but for gRPC messages. The server would dutifully allocate memory for what seemed like legitimate requests, only to find itself choking on unexpectedly large payloads.
-
-The Attack Vector
-
-
-
-The vulnerability manifested through a classic resource exhaustion pattern:
-
-
-  Initial Request: Attacker sends a gRPC message that passes basic size validation
-  Decompression Phase: The library begins processing the message, allocating memory for decompression
-  Memory Explosion: The decompressed content far exceeds expected limits
-  System Exhaustion: Server runs out of memory, leading to crashes or severe performance degradation
-
-
-For a Firebase application, this could mean:
-
-
-  Real-time database connections dropping
-  Cloud Functions timing out
-  Authentication services becoming unresponsive
-  Complete application downtime
-
-
-Snyk’s Intervention: Automated Security in Action
-
-The Discovery Process
-
-What impressed me most was how Snyk detected this vulnerability. It wasn’t just scanning my direct dependencies—it was analyzing the entire dependency tree. My package.json showed Firebase 9.22.1, but Snyk dug deeper, tracing through Firebase’s own dependencies to find the vulnerable @grpc/grpc-js library nested several layers down.
-The timeline was remarkable:
-
-Detection: Snyk identified the vulnerability within hours of the security advisory
-Analysis: The platform assessed the impact on my specific project
-Solution: An automated pull request was generated with the fix
-Documentation: Complete vulnerability details and remediation steps were provided
-
-The Automated Fix
-
-Snyk’s solution was elegantly simple: upgrade Firebase from 9.22.1 to 10.1.0. This newer version included an updated @grpc/grpc-js dependency that had the vulnerability patched. The pull request modified two files:
-
-package.json: Updated the Firebase version requirement
-package-lock.json: Locked in the secure dependency versions
-
-What made this particularly valuable was the context Snyk provided. The bot didn’t just say “upgrade this”—it explained exactly why the upgrade was necessary, which vulnerability it addressed, and what the security implications were.
-
-
-
-Technical Deep Dive: Understanding Resource Consumption Attacks
-
-The Anatomy of the Attack
-
-Resource consumption attacks exploit the fundamental tension between performance and security. Applications need to process data efficiently, but they also need to protect themselves from malicious inputs. The @grpc/grpc-js vulnerability occurred because the library optimized for performance without adequately considering security implications.
-
-The specific attack pattern involved:
-
-// Vulnerable code pattern (simplified)
-function processMessage(compressedData) {
-    // Check appears to validate size
-    if (compressedData.length &amp;gt; MAX_MESSAGE_SIZE) {
-        throw new Error(&apos;Message too large&apos;);
-    }
-    
-    // But decompression can expand data significantly
-    const decompressedData = decompress(compressedData);
-    
-    // This allocation might be much larger than expected
-    const buffer = Buffer.alloc(decompressedData.length);
-    // ... process data
+resource &quot;aws_db_instance&quot; &quot;example&quot; {
+  instance_class = &quot;db.t3.micro&quot;
+  allocated_storage = &quot;5&quot;
+  engine = &quot;postgres&quot;
+  username = &quot;dbuser&quot;
+  password = &quot;super-secret-password&quot;  # This ends up in state!
+  skip_final_snapshot = true
 }
 
-The fix involved implementing proper resource limits throughout the entire message processing pipeline, not just at the initial validation stage.
+That password would sit in your state file, readable by anyone with access to it. Not great for security.
 
-Detection Challenges
+How Write-Only Arguments Work
 
-These vulnerabilities are particularly insidious because they’re hard to detect through normal testing:
+With Terraform 1.11, providers can now mark certain arguments as write-only. The AWS provider, for example, introduces password_wo (write-only) arguments for database resources:
 
-
-  Load testing might miss edge cases involving specific message types
-  Unit tests typically don’t cover resource exhaustion scenarios
-  Integration tests often run in resource-constrained environments that don’t reflect production conditions
-  Security scans might focus on traditional vulnerabilities like injection attacks
-
-
-This is where tools like Snyk become invaluable—they maintain databases of known vulnerabilities and can identify risks that traditional testing might miss.
-
-Snyk Integration with Development Workflows
-
-The seamless integration with GitHub workflows was particularly impressive. Snyk didn’t just identify the vulnerability—it created a pull request that fit naturally into my existing development process. The PR included:
+resource &quot;aws_db_instance&quot; &quot;example&quot; {
+  instance_class = &quot;db.t3.micro&quot;
+  allocated_storage = &quot;5&quot;
+  engine = &quot;postgres&quot;
+  username = &quot;dbuser&quot;
+  password_wo = &quot;super-secret-password&quot;  # Never stored!
+  password_wo_version = 1
+  skip_final_snapshot = true
+}
 
 
 
-
-  Clear vulnerability descriptions
-  Impact assessments
-  Remediation instructions
-  Links to additional resources
+Notice two things:
 
 
-This is my personal security experience with Snyk SAST with my live blog, In the end I would like to conclude as a  good security isn’t about preventing all vulnerabilities—it’s about detecting and responding to them quickly when they do appear. Tools like Snyk make that rapid response possible, turning potential disasters into manageable maintenance tasks.
+  The password_wo argument – this is write-only
+  The password_wo_version argument – this is how we trigger updates
+
+
+The Version Argument Pattern
+
+Since Terraform can’t track changes to write-only arguments (because it doesn’t store them), providers use version arguments to detect when updates are needed. When you want to change a password, you increment the version:
+
+resource &quot;aws_db_instance&quot; &quot;example&quot; {
+  instance_class = &quot;db.t3.micro&quot;
+  allocated_storage = &quot;5&quot;
+  engine = &quot;postgres&quot;
+  username = &quot;dbuser&quot;
+  password_wo = &quot;new-super-secret-password&quot;
+  password_wo_version = 2  # Incremented to trigger update
+  skip_final_snapshot = true
+}
+
+Terraform sees the version change, knows something’s different, and tells the provider to use the new password.
+
+Real World AWS Example: DB with Secrets Manager
+
+Here’s where it gets really powerful. You can combine write-only arguments with ephemeral resources to create a fully automated, secure password management system:
+
+# Generate a random password (ephemeral - exists only during apply)
+ephemeral &quot;random_password&quot; &quot;db_password&quot; {
+  length = 16
+  override_special = &quot;!#$%&amp;amp;*()-_=+[]{}&amp;lt;&amp;gt;:?&quot;
+}
+
+# Store it in AWS Secrets Manager
+resource &quot;aws_secretsmanager_secret&quot; &quot;db_password&quot; {
+  name = &quot;rds-postgres-password&quot;
+  description = &quot;Password for RDS PostgreSQL instance&quot;
+}
+
+resource &quot;aws_secretsmanager_secret_version&quot; &quot;db_password&quot; {
+  secret_id = aws_secretsmanager_secret.db_password.id
+  secret_string_wo = ephemeral.random_password.db_password.result
+  secret_string_wo_version = 1
+}
+
+# Retrieve it for use (also ephemeral)
+ephemeral &quot;aws_secretsmanager_secret_version&quot; &quot;db_password&quot; {
+  secret_id = aws_secretsmanager_secret_version.db_password.secret_id
+}
+
+# Create the database using the password
+resource &quot;aws_db_instance&quot; &quot;example&quot; {
+  identifier = &quot;my-postgres-db&quot;
+  instance_class = &quot;db.t3.micro&quot;
+  allocated_storage = 20
+  engine = &quot;postgres&quot;
+  engine_version = &quot;13.7&quot;
+  username = &quot;dbadmin&quot;
+  
+  # Use the password from Secrets Manager
+  password_wo = ephemeral.aws_secretsmanager_secret_version.db_password.secret_string
+  password_wo_version = aws_secretsmanager_secret_version.db_password.secret_string_wo_version
+  
+  skip_final_snapshot = true
+  
+  tags = {
+    Name = &quot;Example PostgreSQL DB&quot;
+  }
+}
+
+
+
+What happens here:
+
+
+  Terraform generates a random password (ephemeral)
+  Stores it in AWS Secrets Manager (using write-only argument)
+  Retrieves it back (ephemeral)
+  Uses it to create the database (write-only argument)
+  The password never appears in state or plan files
+
+
+As per my understanding I have figured out couple of best practices
+
+
+  Always use version Arguments : without it terraform has no way to know when to update the resource:
+
+
+resource &quot;aws_db_instance&quot; &quot;example&quot; {
+  # ... other arguments
+  password_wo = var.db_password
+  password_wo_version = var.db_password_version  # Don&apos;t forget this!
+}
+
+
+
+  Combine with Emphemeral Resources : Write only arguments work greate with emphemeral resources for fully automated secret management
+
+
+ephemeral &quot;random_password&quot; &quot;api_key&quot; {
+  length = 32
+}
+
+resource &quot;some_service&quot; &quot;example&quot; {
+  api_key_wo = ephemeral.random_password.api_key.result
+  api_key_wo_version = 1
+}
+
+
+
+  Use Local for version Management: when you need to update multiple resources with the same secret, use locals to manage versions:
+
+
+locals {
+  db_password_version = 2  # Increment this to rotate everywhere
+}
+
+resource &quot;aws_db_instance&quot; &quot;primary&quot; {
+  password_wo = var.db_password
+  password_wo_version = local.db_password_version
+}
+
+resource &quot;aws_db_instance&quot; &quot;replica&quot; {
+  password_wo = var.db_password
+  password_wo_version = local.db_password_version
+}
+
+
+Common Gotchas
+
+Write-Only Arguments Are Sent Every Time
+
+Unlike regular arguments, write-only arguments are sent to the provider during every Terraform operation. This is because Terraform can’t compare them to detect changes.
+
+Plan Output Won’t Show Changes
+Since write-only arguments aren’t stored, terraform plan won’t show their values or changes. It will only show version argument changes.
+
+Provider-Specific Implementation
+
+Each provider implements write-only arguments differently. Always check the provider documentation for specific details and supported resources.
+
+The Future of Secret Management
+
+Write-only arguments represent a significant step forward in Terraform’s secret management capabilities. Combined with ephemeral resources, they enable patterns that were previously impossible or required complex workarounds.
+This isn’t just about security – it’s about cleaner, more maintainable infrastructure code. When secrets aren’t cluttering up your state files, debugging becomes easier, and you can focus on what really matters: building reliable infrastructure.
+
+I’m still learning and adopting these new changes and best practices, let’s see how’s the future ?
+
+Thanks for reading, keep troubleshooting !!!
 ",
-            "wordcount": "820",
+            "wordcount": "989",
             "inLanguage": "en",
-            "dateCreated": "2025-07-15/",
-            "datePublished": "2025-07-15/",
-            "dateModified": "2025-07-15/",
+            "dateCreated": "2025-07-17/",
+            "datePublished": "2025-07-17/",
+            "dateModified": "2025-07-17/",
             "author": {
                 "@type": "Person",
                 "name": "Shubhendu",
@@ -961,7 +1119,7 @@ This is my personal security experience with Snyk SAST with my live blog, In the
             "mainEntityOfPage": "True",
             "genre": "Cyber Security",
             "articleSection": "Cyber Security",
-            "keywords": ["AppSec","Cybersecurity"]
+            "keywords": ["IaaC","Cybersecurity"]
         }
         </script>
     </body>

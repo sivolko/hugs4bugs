@@ -86,8 +86,8 @@ jobs:
       - run: 'sudo gem install bundler && sudo bundle install && bundle exec jekyll build '
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SHUBHENDU_SHUBHAM }}'
+          repoToken: '{% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}'
+          firebaseServiceAccount: '{% raw %}${{ secrets.FIREBASE_SERVICE_ACCOUNT_SHUBHENDU_SHUBHAM }}{% endraw %}'
           channelId: live
           projectId: shubhendu-shubham //replace it with your project ID
 
@@ -100,15 +100,15 @@ name: Deploy to Firebase Hosting on PR
 'on': pull_request
 jobs:
   build_and_preview:
-    if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
+    if: '{% raw %}${{ github.event.pull_request.head.repo.full_name == github.repository }}{% endraw %}'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - run: 'bundle install && bundle exec jekyll build '
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SHUBHENDU_SHUBHAM }}'
+          repoToken: '{% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}'
+          firebaseServiceAccount: '{% raw %}${{ secrets.FIREBASE_SERVICE_ACCOUNT_SHUBHENDU_SHUBHAM }}{% endraw %}'
           projectId: shubhendu-shubham
 ```
 

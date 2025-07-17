@@ -5,16 +5,30 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 Jul 2025 03:16:07 +0000</pubDate>
-    <lastBuildDate>Tue, 15 Jul 2025 03:16:07 +0000</lastBuildDate>
+    <pubDate>Thu, 17 Jul 2025 03:52:49 +0000</pubDate>
+    <lastBuildDate>Thu, 17 Jul 2025 03:52:49 +0000</lastBuildDate>
     <generator>Jekyll v3.10.0</generator>
     
       <item>
+        <title>Terraform&apos;s Secret Weapon: Write Only Arguments</title>
+        <description>&lt;p&gt;If you’ve been working with Terraform for a while, you’ve probably run into this frustrating situation: you need to pass a password or API token to a resource, but you don’t want that sensitive data sitting in your state file for everyone to see. Maybe you’ve tried creative workarounds with external data sources or complex scripting, but let’s be honest – it always felt like a hack.&lt;/p&gt; &lt;p&gt;Well, good news! Terraform 1.11 introduces write-only arguments, and they’re about to change how we handle secrets in our infrastructure code. Think of them as a secure handoff mechanism – you can pass...</description>
+        <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/no-more-secrets-in-terraform-statefile-write-only-arguments/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/no-more-secrets-in-terraform-statefile-write-only-arguments/</guid>
+        
+        <category>IaaC</category>
+        
+        <category>Cybersecurity</category>
+        
+        <category>Cyber Security</category>
+      </item>
+    
+      <item>
         <title>When Snyk Saved my Firebase Project</title>
-        <description>&lt;iframe src=&quot;https://creators.spotify.com/pod/show/shubhendushubham/embed/episodes/5MSloKT0dP8PR4O7CW7qTW/details &quot; height=&quot;102px&quot; width=&quot;400px&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt; &lt;p&gt;Yesterday, I got an unexpected visitor to my GitHub repository. Not a human contributor, but Snyk’s automated security bot, flagging a critical vulnerability in my Firebase project. What started as a routine dependency check turned into a fascinating case study of how modern security tools can catch threats that even experienced developers might miss.&lt;/p&gt; &lt;p&gt;The culprit? An uncontrolled resource consumption vulnerability lurking in the @grpc/grpc-js library, buried deep within Firebase’s dependency chain. With a severity score of &lt;strong&gt;559&lt;/strong&gt; and the identifier &lt;strong&gt;SNYK-JS-GRPCGRPCJS-7242922&lt;/strong&gt;, this wasn’t just another minor security hiccup—it was a legitimate denial...</description>
+        <description>&lt;iframe style=&quot;border-radius:12px&quot; src=&quot;https://open.spotify.com/embed/episode/5MSloKT0dP8PR4O7CW7qTW?utm_source=generator&quot; width=&quot;100%&quot; height=&quot;352&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; allow=&quot;autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt; &lt;p&gt;Yesterday, I got an unexpected visitor to my GitHub repository. Not a human contributor, but Snyk’s automated security bot, flagging a critical vulnerability in my Firebase project. What started as a routine dependency check turned into a fascinating case study of how modern security tools can catch threats that even experienced developers might miss.&lt;/p&gt; &lt;p&gt;The culprit? An uncontrolled resource consumption vulnerability lurking in the @grpc/grpc-js library, buried deep within Firebase’s dependency chain. With a severity score of &lt;strong&gt;559&lt;/strong&gt; and the identifier &lt;strong&gt;SNYK-JS-GRPCGRPCJS-7242922&lt;/strong&gt;, this wasn’t just another minor...</description>
         <pubDate>Tue, 15 Jul 2025 00:00:00 +0000</pubDate>
-        <link>https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn/</guid>
+        <link>https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumption/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumption/</guid>
         
         <category>AppSec</category>
         
@@ -455,26 +469,6 @@
         <category>troubleshooter Club</category>
         
         <category>security</category>
-      </item>
-    
-      <item>
-        <title>What is chatGpt? How to use it?</title>
-        <description>&lt;p&gt;One day I woke up and saw my &lt;a href=&quot;https://twitter.com/myselfshubhendu&quot;&gt;twitter&lt;/a&gt; timeline was filled with all funny conversation with &lt;a href=&quot;&quot;&gt;&lt;strong&gt;Chat-gpt&lt;/strong&gt;&lt;/a&gt;.Hence being a curious troubleshooter, I just google and did some handson chat-gpt open AI tool. So, here are my few insights what I learnt from it.&lt;/p&gt; &lt;p&gt;let’s understand in layman terms. First thing first is what is &lt;strong&gt;GPT&lt;/strong&gt;?&lt;/p&gt; &lt;p&gt;&lt;strong&gt;GPT&lt;/strong&gt; stands for the Generative Pre-trained Transformer.it uses &lt;a href=&quot;https://huggingface.co/blog/rlhf&quot;&gt;RLHF&lt;/a&gt; i.e Reinforcement Learning with Human Feedback which means a method that uses human demonstrations to guide the model towards desired behaviours.&lt;/p&gt; &lt;p&gt;It was created by &lt;a href=&quot;https://openai.com&quot;&gt;OpenAI&lt;/a&gt;, a San Francisco-based AI and...</description>
-        <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
-        <link>https://hugs4bugs.me/what-is-chat-gpt/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/what-is-chat-gpt/</guid>
-        
-        <category>cloud</category>
-        
-        <category>security</category>
-        
-        <category>hacking</category>
-        
-        <category>offensive security</category>
-        
-        <category>troubleshooter Club</category>
-        
-        <category>automation</category>
       </item>
     
   </channel>

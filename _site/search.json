@@ -3,10 +3,18 @@
   
   
     {
+      "title"    : "Terraform&#39;s Secret Weapon: Write Only Arguments",
+      "tags"     : "IaaC and Cybersecurity",
+      "categories" : "Cyber Security",
+      "url"      : "/no-more-secrets-in-terraform-statefile-write-only-arguments/",
+      "date"     : "07/17/2025"
+    } ,
+  
+    {
       "title"    : "When Snyk Saved my Firebase Project",
       "tags"     : "AppSec and Cybersecurity",
       "categories" : "Cyber Security",
-      "url"      : "/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn/",
+      "url"      : "/snyk-saved-my-project-ft-uncontrolled-resource-consumption/",
       "date"     : "07/15/2025"
     } ,
   

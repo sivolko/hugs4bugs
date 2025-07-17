@@ -17,19 +17,19 @@
     
     
 
-    <title>Benifits of CI/CD | hugs4bugs</title>
-    <meta name="description" content="How to use Continuous integration and Delivery in our project.">
+    <title>When Snyk Saved my Firebase Project | hugs4bugs</title>
+    <meta name="description" content="Let's understand uncontrolled resource consumption vulnerability">
     
-    <meta name="keywords" content="devops, CI/CD">
+    <meta name="keywords" content="AppSec, Cybersecurity">
     
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Benifits of CI/CD | hugs4bugs">
-    <meta name="twitter:description" content="How to use Continuous integration and Delivery in our project.">
+    <meta name="twitter:title" content="When Snyk Saved my Firebase Project | hugs4bugs">
+    <meta name="twitter:description" content="Let's understand uncontrolled resource consumption vulnerability">
 
     
-    <meta property="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*-eHRhJcg-QPUws99xEDh6w.png">
+    <meta property="twitter:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1752546677/hugs4bugs/snyk/thumnbail_dsnrli.png">
     
 
     
@@ -37,10 +37,10 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="https://hugs4bugs.me/benifits-of-CI/">
-    <meta property="og:title" content="Benifits of CI/CD | hugs4bugs">
-    <meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*-eHRhJcg-QPUws99xEDh6w.png">
-    <meta property="og:description" content="How to use Continuous integration and Delivery in our project.">
+    <meta property="og:url" content="https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumption/">
+    <meta property="og:title" content="When Snyk Saved my Firebase Project | hugs4bugs">
+    <meta property="og:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1752546677/hugs4bugs/snyk/thumnbail_dsnrli.png">
+    <meta property="og:description" content="Let's understand uncontrolled resource consumption vulnerability">
     <meta property="og:site_name" content="hugs4bugs">
 
     <!-- Favicon -->
@@ -76,7 +76,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="canonical" href="https://hugs4bugs.me/benifits-of-CI/">
+    <link rel="canonical" href="https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumption/">
     <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
         href="https://hugs4bugs.me/feed.xml" />
     <link rel='manifest' href='../manifest.json'>
@@ -304,22 +304,22 @@
                 <p class="post-info">
                     
                         <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="2020-10-12T12:26:40+00:00">
+                        <time class="date" datetime="2025-07-15T00:00:00+00:00">
                             
 
 
-October 12, 2020
+July 15, 2025
 
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>3 min to read</span>
+                    <span>4 min to read</span>
                 </p>
-                <h1 class="post-title">Benifits of CI/CD</h1>
-                <p class="post-subtitle">Continuous integration and Delivery</p>
+                <h1 class="post-title">When Snyk Saved my Firebase Project</h1>
+                <p class="post-subtitle">A Real world security Fix story</p>
 
                 
-                    <img src="https://cdn-images-1.medium.com/max/1600/1*-eHRhJcg-QPUws99xEDh6w.png" alt="Featured image" class="post-cover">
+                    <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1752546677/hugs4bugs/snyk/thumnbail_dsnrli.png" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
@@ -329,76 +329,119 @@ October 12, 2020
                 <!-- Add your table of contents here -->
 
 
-                <p>Continuous Integration and Delivery (CI/CD) changed the way we build, test, and deploy software. CI/CD tools automate these processes, reducing error rates and optimizing workflows. Code moves through each development stage while automated testing throughout the process ensures errors are caught and rolled back before they ever reach production.</p>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/5MSloKT0dP8PR4O7CW7qTW?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
-<p>The use of CI/CD tools will continue to rise and improve the way software is developed. Deployments no longer need to be an annual, quarterly, or even a monthly event. With CI/CD, DevOps teams can deploy several times a day.</p>
+<p>Yesterday, I got an unexpected visitor to my GitHub repository. Not a human contributor, but Snyk’s automated security bot, flagging a critical vulnerability in my Firebase project. What started as a routine dependency check turned into a fascinating case study of how modern security tools can catch threats that even experienced developers might miss.</p>
 
-<blockquote>
-  <p>DevOps is future</p>
-</blockquote>
+<p>The culprit? An uncontrolled resource consumption vulnerability lurking in the @grpc/grpc-js library, buried deep within Firebase’s dependency chain. With a severity score of <strong>559</strong> and the identifier <strong>SNYK-JS-GRPCGRPCJS-7242922</strong>, this wasn’t just another minor security hiccup—it was a legitimate denial of service risk sitting in production code.</p>
 
-<h2 id="10-advantages-of-cicd--">10 Advantages of CI/CD :-</h2>
+<p><strong>The Technical Breakdown</strong></p>
 
-<p><strong>1. Fewer handoffs.</strong></p>
+<p><em>What Actually Happened</em></p>
 
-<p>The more handoffs in your development pipeline, the more points of failure and the more complexity you add to the process.</p>
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1752546282/hugs4bugs/snyk/Screenshot_15-7-2025_75158_github.com_tbysmn.jpg" alt="image" /></p>
 
-<p><strong>2. Increased development speed.</strong></p>
+<p>The vulnerability existed in versions of @grpc/grpc-js prior to 1.8.22, 1.9.15, and 1.10.9. The problem centered around how the library handled the <em>grpc.max_receive_message_length</em> channel option. Instead of properly enforcing message size limits, the library would buffer or decompress incoming messages into memory regardless of their actual size.</p>
 
-<p>All stages of development are faster with CI/CD. Faster iterations throughout the process make every team more efficient and developers can move onto other projects confidently.</p>
+<p>Here’s the scary part: an attacker could craft messages that appeared to respect the configured limits but would consume massive amounts of memory during processing. Think of it like a zip bomb, but for gRPC messages. The server would dutifully allocate memory for what seemed like legitimate requests, only to find itself choking on unexpectedly large payloads.</p>
 
-<p><strong>3. More deployments.</strong></p>
+<p><strong>The Attack Vector</strong></p>
 
-<p>Releases that happened every couple of weeks or more, can now be pushed up to six or more times a day.</p>
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1752547034/hugs4bugs/snyk/attackvecctor_lcyzkc.jpg" alt="image" /></p>
 
-<p><strong>4. Faster testing.</strong></p>
+<p>The vulnerability manifested through a classic resource exhaustion pattern:</p>
 
-<p>One of the more time-consuming parts of the development workflow is removed and developers can work on other high-value projects. Automated testing lets teams get feedback sooner and fail early rather than catching bugs in production – or worse – in the final release.</p>
+<ol>
+  <li>Initial Request: Attacker sends a gRPC message that passes basic size validation</li>
+  <li>Decompression Phase: The library begins processing the message, allocating memory for decompression</li>
+  <li>Memory Explosion: The decompressed content far exceeds expected limits</li>
+  <li>System Exhaustion: Server runs out of memory, leading to crashes or severe performance degradation</li>
+</ol>
 
-<p><strong>5. Fewer bugs.</strong></p>
+<p>For a Firebase application, this could mean:</p>
 
-<p>With automated testing throughout the development process, bugs are caught as they arise and rolled back without ever making it into master. This ensures better code quality overall and that every release works just as intended.</p>
+<ul>
+  <li>Real-time database connections dropping</li>
+  <li>Cloud Functions timing out</li>
+  <li>Authentication services becoming unresponsive</li>
+  <li>Complete application downtime</li>
+</ul>
 
-<p><strong>Improved compliance.</strong></p>
+<p><strong>Snyk’s Intervention: Automated Security in Action</strong></p>
 
-<p>Compliance tasks can be incorporated into the development lifecycle, reducing the risk of releasing non-compliant applications. Automated compliance makes it easier to complete audits and can prevent costly mistakes (especially in highly-regulated industries).</p>
+<p><strong>The Discovery Process</strong></p>
 
-<p><strong>7. More time to innovate.</strong></p>
+<p>What impressed me most was how Snyk detected this vulnerability. It wasn’t just scanning my direct dependencies—it was analyzing the entire dependency tree. My <em>package.json</em> showed Firebase 9.22.1, but Snyk dug deeper, tracing through Firebase’s own dependencies to find the vulnerable @grpc/grpc-js library nested several layers down.
+The timeline was remarkable:</p>
 
-<p>Less time spent on integration maintenance and undifferentiated IT spend means resources can be directed elsewhere.</p>
+<p>Detection: Snyk identified the vulnerability within hours of the security advisory
+Analysis: The platform assessed the impact on my specific project
+Solution: An automated pull request was generated with the fix
+Documentation: Complete vulnerability details and remediation steps were provided</p>
 
-<p><strong>8. Happier developers.</strong></p>
+<p><strong>The Automated Fix</strong></p>
 
-<p>Developers can work confidently and fix things quickly instead of waiting for weeks to learn there was a bug.</p>
+<p>Snyk’s solution was elegantly simple: upgrade Firebase from 9.22.1 to 10.1.0. This newer version included an updated @grpc/grpc-js dependency that had the vulnerability patched. The pull request modified two files:</p>
 
-<p><strong>9. Reduced overhead spending.</strong></p>
+<p>package.json: Updated the Firebase version requirement
+package-lock.json: Locked in the secure dependency versions</p>
 
-<p>Organizations can only have so many developers at one time. Development hours are many times billable hours, and manually deploying or testing code can bust IT budgets. An automated workflow reduces manual tasks and makes budgets more efficient.</p>
+<p>What made this particularly valuable was the context Snyk provided. The bot didn’t just say “upgrade this”—it explained exactly why the upgrade was necessary, which vulnerability it addressed, and what the security implications were.</p>
 
-<p><strong>10. Consistent processes.</strong></p>
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1752547744/hugs4bugs/snyk/fix_fyf77g.jpg" alt="image" /></p>
 
-<p>Having more automation in the development workflow means nobody ever forgets a step in the process. Builds are more consistent, it’s easier to train new developers, and organizations have more control over how things are built and when they get released.</p>
+<p><strong>Technical Deep Dive: Understanding Resource Consumption Attacks</strong></p>
 
-<p><strong>Single Application CI/CD</strong></p>
+<p>The Anatomy of the Attack</p>
 
-<p>We believe a single application that offers visibility across the entire SDLC is the best way to ensure that every development stage is included and optimized. When everything is under one roof, it’s easy to pinpoint workflow bottlenecks and evaluate the impact each element has on deployment speed.</p>
+<p>Resource consumption attacks exploit the fundamental tension between performance and security. Applications need to process data efficiently, but they also need to protect themselves from malicious inputs. The @grpc/grpc-js vulnerability occurred because the library optimized for performance without adequately considering security implications.</p>
 
-<p><strong>Benefits of single application CI/CD:</strong></p>
+<p>The specific attack pattern involved:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     1.Visibility across the entire development lifecycle
-     2.Single source of truth across all development stages
-     3.No logging into multiple applications
-     4.Simpler navigation on one interface
-     5.Only one application to install, maintain, scale, backup, network, and secure
-     6.Easier authorization management
-     7.Lower operating expense
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Vulnerable code pattern (simplified)
+function processMessage(compressedData) {
+    // Check appears to validate size
+    if (compressedData.length &gt; MAX_MESSAGE_SIZE) {
+        throw new Error('Message too large');
+    }
+    
+    // But decompression can expand data significantly
+    const decompressedData = decompress(compressedData);
+    
+    // This allocation might be much larger than expected
+    const buffer = Buffer.alloc(decompressedData.length);
+    // ... process data
+}
 </code></pre></div></div>
+<p>The fix involved implementing proper resource limits throughout the entire message processing pipeline, not just at the initial validation stage.</p>
 
-<h3 id="gitlab-cicd-vs-jenkins-ci">GitLab CI/CD vs Jenkins CI</h3>
+<p>Detection Challenges</p>
 
-<p><strong>Built in CI/CD</strong></p>
+<p>These vulnerabilities are particularly insidious because they’re hard to detect through normal testing:</p>
 
-<p>Both Jenkins and Gitlab offer CI/CD without a need to install separately.</p>
+<ul>
+  <li>Load testing might miss edge cases involving specific message types</li>
+  <li>Unit tests typically don’t cover resource exhaustion scenarios</li>
+  <li>Integration tests often run in resource-constrained environments that don’t reflect production conditions</li>
+  <li>Security scans might focus on traditional vulnerabilities like injection attacks</li>
+</ul>
+
+<p>This is where tools like Snyk become invaluable—they maintain databases of known vulnerabilities and can identify risks that traditional testing might miss.</p>
+
+<p><strong>Snyk Integration with Development Workflows</strong></p>
+
+<p>The seamless integration with GitHub workflows was particularly impressive. Snyk didn’t just identify the vulnerability—it created a pull request that fit naturally into my existing development process. The PR included:</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1752548107/hugs4bugs/snyk/PR_udxuwy.jpg" alt="snyk pr" /></p>
+
+<ul>
+  <li>Clear vulnerability descriptions</li>
+  <li>Impact assessments</li>
+  <li>Remediation instructions</li>
+  <li>Links to additional resources</li>
+</ul>
+
+<p>This is my personal security experience with Snyk SAST with my live blog, In the end I would like to conclude as a  good security isn’t about preventing all vulnerabilities—it’s about detecting and responding to them quickly when they do appear. Tools like Snyk make that rapid response possible, turning potential disasters into manageable maintenance tasks.</p>
 
 
                 <!-- Pagination links -->
@@ -414,29 +457,29 @@ October 12, 2020
                         
                         
                             <li>
-                                <a href="/how-snyk-broker-solves-enterprise-integration-puzzle/">
+                                <a href="/access-management-101/">
                                     
-                                        <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1751994543/hugs4bugs/snyk/snyk-broker.png">
+                                        <img src="https://d3nn873nee648n.cloudfront.net/900x600/16347/120-SM692126.jpg">
                                     
-                                    <h3>How Snyk broker solves the Enterprise Integration Puzzle?</h3>
+                                    <h3>Access Management 101.</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/what-is-chat-gpt/">
+                                <a href="/automation-with-firebase-and-ruby/">
                                     
-                                        <img src="https://images.pexels.com/photos/7108/notebook-computer-chill-relax.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                                        <img src="https://images.pexels.com/photos/4506940/pexels-photo-4506940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
                                     
-                                    <h3>What is chatGpt? How to use it?</h3>
+                                    <h3>Automate Firebase hosting with Github Actions and Ruby.</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/bulid-and-deploy-MERN-stack-in-Azure-cosmos-DB/">
+                                <a href="/metasploitFramework-vs-metasploit-pro/">
                                     
-                                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80">
+                                        <img src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80">
                                     
-                                    <h3>Anyone can build: node.js+ Cosmos DB in Azure </h3>
+                                    <h3>Metasploit Framework vs Metasploit Pro</h3>
                                 </a>
                             </li>
                         
@@ -448,7 +491,7 @@ October 12, 2020
 
         <!-- Add time bar only for pages without pagination -->
         
-            <div class="time-bar" data-minutes="3">
+            <div class="time-bar" data-minutes="4">
     <span class="time-completed"></span>
     <span class="time-remaining"></span>
     <div class="bar">
@@ -468,13 +511,13 @@ October 12, 2020
         </div>
     </div>
     
-    <a href="/Docker-101/" class="post-preview">
+    <a href="/no-more-secrets-in-terraform-statefile-write-only-arguments/" class="post-preview">
         <div class="image">
             
-                <img src="https://th.bing.com/th/id/Rb3e6202f5356edebd8c8205623eef0f1?rik=2tDqbcLpDFguLg&riu=http%3a%2f%2fwww.shadowandy.net%2fwp%2fwp-content%2fuploads%2fdocker.png&ehk=d2o4OLvE5SZOjrajjCgOCdzXQ9xmehUy6vTEhPPFi3c%3d&risl=&pid=ImgRaw">
+                <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1752723091/hugs4bugs/terraform/terraform_writeonly_svg_b3zno4.svg">
             
         </div>
-        <h3 class="title">Docker 101</h3>
+        <h3 class="title">Terraform's Secret Weapon: Write Only Arguments</h3>
     </a>
 </div>
 
@@ -491,7 +534,7 @@ October 12, 2020
         <section class="share">
     <h3>Share</h3>
     <a aria-label="Share on Twitter"
-        href="https://twitter.com/intent/tweet?text=&quot;How to use Continuous integration and Delivery in our project.&quot;%20https://hugs4bugs.me/benifits-of-CI/%20via%20&#64;myselfshubhendu&hashtags=devops,CI/CD"
+        href="https://twitter.com/intent/tweet?text=&quot;Let's understand uncontrolled resource consumption vulnerability&quot;%20https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumption/%20via%20&#64;myselfshubhendu&hashtags=AppSec,Cybersecurity"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -499,7 +542,7 @@ October 12, 2020
         </svg>
     </a>
     <a aria-label="Share on WhatsApp"
-        href="https://twitter.com/intent/tweet?text=&quot;How to use Continuous integration and Delivery in our project.&quot;%20https://hugs4bugs.me/benifits-of-CI/%20via%20&#64;myselfshubhendu&hashtags=devops,CI/CD"
+        href="https://twitter.com/intent/tweet?text=&quot;Let's understand uncontrolled resource consumption vulnerability&quot;%20https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumption/%20via%20&#64;myselfshubhendu&hashtags=AppSec,Cybersecurity"
         onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -507,7 +550,7 @@ October 12, 2020
         </svg>
     </a>
     <a aria-label="Share on Facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/benifits-of-CI/"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumption/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
         title="Share on Facebook">
         <svg class="icon icon-facebook">
@@ -597,7 +640,7 @@ October 12, 2020
         disqus_loaded = true;
         var disqus_shortname = 'hugs4bugs';
         var disqus_title = '';
-        var disqus_url = '/benifits-of-CI/';
+        var disqus_url = '/snyk-saved-my-project-ft-uncontrolled-resource-consumption/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -768,87 +811,130 @@ October 12, 2020
         {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
-            "name": "Benifits of CI/CD",
-            "headline": "Continuous integration and Delivery",
-            "description": "How to use Continuous integration and Delivery in our project.",
-            "image": "https://cdn-images-1.medium.com/max/1600/1*-eHRhJcg-QPUws99xEDh6w.png",
-            "url": "https://hugs4bugs.me/benifits-of-CI/",
-            "articleBody": "Continuous Integration and Delivery (CI/CD) changed the way we build, test, and deploy software. CI/CD tools automate these processes, reducing error rates and optimizing workflows. Code moves through each development stage while automated testing throughout the process ensures errors are caught and rolled back before they ever reach production.
+            "name": "When Snyk Saved my Firebase Project",
+            "headline": "A Real world security Fix story",
+            "description": "Let's understand uncontrolled resource consumption vulnerability",
+            "image": "https://res.cloudinary.com/hugs4bugs/image/upload/v1752546677/hugs4bugs/snyk/thumnbail_dsnrli.png",
+            "url": "https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumption/",
+            "articleBody": "
 
-The use of CI/CD tools will continue to rise and improve the way software is developed. Deployments no longer need to be an annual, quarterly, or even a monthly event. With CI/CD, DevOps teams can deploy several times a day.
+Yesterday, I got an unexpected visitor to my GitHub repository. Not a human contributor, but Snyk’s automated security bot, flagging a critical vulnerability in my Firebase project. What started as a routine dependency check turned into a fascinating case study of how modern security tools can catch threats that even experienced developers might miss.
 
+The culprit? An uncontrolled resource consumption vulnerability lurking in the @grpc/grpc-js library, buried deep within Firebase’s dependency chain. With a severity score of 559 and the identifier SNYK-JS-GRPCGRPCJS-7242922, this wasn’t just another minor security hiccup—it was a legitimate denial of service risk sitting in production code.
 
-  DevOps is future
+The Technical Breakdown
 
-
-10 Advantages of CI/CD :-
-
-1. Fewer handoffs.
-
-The more handoffs in your development pipeline, the more points of failure and the more complexity you add to the process.
-
-2. Increased development speed.
-
-All stages of development are faster with CI/CD. Faster iterations throughout the process make every team more efficient and developers can move onto other projects confidently.
-
-3. More deployments.
-
-Releases that happened every couple of weeks or more, can now be pushed up to six or more times a day.
-
-4. Faster testing.
-
-One of the more time-consuming parts of the development workflow is removed and developers can work on other high-value projects. Automated testing lets teams get feedback sooner and fail early rather than catching bugs in production – or worse – in the final release.
-
-5. Fewer bugs.
-
-With automated testing throughout the development process, bugs are caught as they arise and rolled back without ever making it into master. This ensures better code quality overall and that every release works just as intended.
-
-Improved compliance.
-
-Compliance tasks can be incorporated into the development lifecycle, reducing the risk of releasing non-compliant applications. Automated compliance makes it easier to complete audits and can prevent costly mistakes (especially in highly-regulated industries).
-
-7. More time to innovate.
-
-Less time spent on integration maintenance and undifferentiated IT spend means resources can be directed elsewhere.
-
-8. Happier developers.
-
-Developers can work confidently and fix things quickly instead of waiting for weeks to learn there was a bug.
-
-9. Reduced overhead spending.
-
-Organizations can only have so many developers at one time. Development hours are many times billable hours, and manually deploying or testing code can bust IT budgets. An automated workflow reduces manual tasks and makes budgets more efficient.
-
-10. Consistent processes.
-
-Having more automation in the development workflow means nobody ever forgets a step in the process. Builds are more consistent, it’s easier to train new developers, and organizations have more control over how things are built and when they get released.
-
-Single Application CI/CD
-
-We believe a single application that offers visibility across the entire SDLC is the best way to ensure that every development stage is included and optimized. When everything is under one roof, it’s easy to pinpoint workflow bottlenecks and evaluate the impact each element has on deployment speed.
-
-Benefits of single application CI/CD:
-
-     1.Visibility across the entire development lifecycle
-     2.Single source of truth across all development stages
-     3.No logging into multiple applications
-     4.Simpler navigation on one interface
-     5.Only one application to install, maintain, scale, backup, network, and secure
-     6.Easier authorization management
-     7.Lower operating expense
+What Actually Happened
 
 
-GitLab CI/CD vs Jenkins CI
 
-Built in CI/CD
+The vulnerability existed in versions of @grpc/grpc-js prior to 1.8.22, 1.9.15, and 1.10.9. The problem centered around how the library handled the grpc.max_receive_message_length channel option. Instead of properly enforcing message size limits, the library would buffer or decompress incoming messages into memory regardless of their actual size.
 
-Both Jenkins and Gitlab offer CI/CD without a need to install separately.
+Here’s the scary part: an attacker could craft messages that appeared to respect the configured limits but would consume massive amounts of memory during processing. Think of it like a zip bomb, but for gRPC messages. The server would dutifully allocate memory for what seemed like legitimate requests, only to find itself choking on unexpectedly large payloads.
+
+The Attack Vector
+
+
+
+The vulnerability manifested through a classic resource exhaustion pattern:
+
+
+  Initial Request: Attacker sends a gRPC message that passes basic size validation
+  Decompression Phase: The library begins processing the message, allocating memory for decompression
+  Memory Explosion: The decompressed content far exceeds expected limits
+  System Exhaustion: Server runs out of memory, leading to crashes or severe performance degradation
+
+
+For a Firebase application, this could mean:
+
+
+  Real-time database connections dropping
+  Cloud Functions timing out
+  Authentication services becoming unresponsive
+  Complete application downtime
+
+
+Snyk’s Intervention: Automated Security in Action
+
+The Discovery Process
+
+What impressed me most was how Snyk detected this vulnerability. It wasn’t just scanning my direct dependencies—it was analyzing the entire dependency tree. My package.json showed Firebase 9.22.1, but Snyk dug deeper, tracing through Firebase’s own dependencies to find the vulnerable @grpc/grpc-js library nested several layers down.
+The timeline was remarkable:
+
+Detection: Snyk identified the vulnerability within hours of the security advisory
+Analysis: The platform assessed the impact on my specific project
+Solution: An automated pull request was generated with the fix
+Documentation: Complete vulnerability details and remediation steps were provided
+
+The Automated Fix
+
+Snyk’s solution was elegantly simple: upgrade Firebase from 9.22.1 to 10.1.0. This newer version included an updated @grpc/grpc-js dependency that had the vulnerability patched. The pull request modified two files:
+
+package.json: Updated the Firebase version requirement
+package-lock.json: Locked in the secure dependency versions
+
+What made this particularly valuable was the context Snyk provided. The bot didn’t just say “upgrade this”—it explained exactly why the upgrade was necessary, which vulnerability it addressed, and what the security implications were.
+
+
+
+Technical Deep Dive: Understanding Resource Consumption Attacks
+
+The Anatomy of the Attack
+
+Resource consumption attacks exploit the fundamental tension between performance and security. Applications need to process data efficiently, but they also need to protect themselves from malicious inputs. The @grpc/grpc-js vulnerability occurred because the library optimized for performance without adequately considering security implications.
+
+The specific attack pattern involved:
+
+// Vulnerable code pattern (simplified)
+function processMessage(compressedData) {
+    // Check appears to validate size
+    if (compressedData.length &amp;gt; MAX_MESSAGE_SIZE) {
+        throw new Error(&apos;Message too large&apos;);
+    }
+    
+    // But decompression can expand data significantly
+    const decompressedData = decompress(compressedData);
+    
+    // This allocation might be much larger than expected
+    const buffer = Buffer.alloc(decompressedData.length);
+    // ... process data
+}
+
+The fix involved implementing proper resource limits throughout the entire message processing pipeline, not just at the initial validation stage.
+
+Detection Challenges
+
+These vulnerabilities are particularly insidious because they’re hard to detect through normal testing:
+
+
+  Load testing might miss edge cases involving specific message types
+  Unit tests typically don’t cover resource exhaustion scenarios
+  Integration tests often run in resource-constrained environments that don’t reflect production conditions
+  Security scans might focus on traditional vulnerabilities like injection attacks
+
+
+This is where tools like Snyk become invaluable—they maintain databases of known vulnerabilities and can identify risks that traditional testing might miss.
+
+Snyk Integration with Development Workflows
+
+The seamless integration with GitHub workflows was particularly impressive. Snyk didn’t just identify the vulnerability—it created a pull request that fit naturally into my existing development process. The PR included:
+
+
+
+
+  Clear vulnerability descriptions
+  Impact assessments
+  Remediation instructions
+  Links to additional resources
+
+
+This is my personal security experience with Snyk SAST with my live blog, In the end I would like to conclude as a  good security isn’t about preventing all vulnerabilities—it’s about detecting and responding to them quickly when they do appear. Tools like Snyk make that rapid response possible, turning potential disasters into manageable maintenance tasks.
 ",
-            "wordcount": "552",
+            "wordcount": "826",
             "inLanguage": "en",
-            "dateCreated": "2020-10-12/",
-            "datePublished": "2020-10-12/",
-            "dateModified": "2020-10-12/",
+            "dateCreated": "2025-07-15/",
+            "datePublished": "2025-07-15/",
+            "dateModified": "2025-07-15/",
             "author": {
                 "@type": "Person",
                 "name": "Shubhendu",
@@ -873,9 +959,9 @@ Both Jenkins and Gitlab offer CI/CD without a need to install separately.
                 }
             },
             "mainEntityOfPage": "True",
-            "genre": "devops",
-            "articleSection": "devops",
-            "keywords": ["devops","CI/CD"]
+            "genre": "Cyber Security",
+            "articleSection": "Cyber Security",
+            "keywords": ["AppSec","Cybersecurity"]
         }
         </script>
     </body>
