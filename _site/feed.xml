@@ -5,9 +5,23 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Jul 2025 03:52:49 +0000</pubDate>
-    <lastBuildDate>Thu, 17 Jul 2025 03:52:49 +0000</lastBuildDate>
+    <pubDate>Fri, 15 Aug 2025 08:14:03 +0000</pubDate>
+    <lastBuildDate>Fri, 15 Aug 2025 08:14:03 +0000</lastBuildDate>
     <generator>Jekyll v3.10.0</generator>
+    
+      <item>
+        <title>SIEM Done Right:3stage RoadMap</title>
+        <description>&lt;p&gt;Last week I got a situation that stuck me “Why does SIEM feel like it’s fighting against us instead of helping us”? It’s a fair question. Too many organisations jumps into SIEM implementation assuming they’ll flip a switch and suddenly have perfect visibility. I have been observing since my last 6 years in cybersecurity domain that most of the organisation approach towards SIEM deployment is completly wrong.They are simply adopting facing tools and doing partenership with fancy vendors. The reality?&lt;/p&gt; &lt;p&gt;We all knows or those who got chance to work within SOC might agree with me. Building an effective SIEM...</description>
+        <pubDate>Fri, 15 Aug 2025 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/SIEM-doneright-3-stages-roadmap-that-actually-works/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/SIEM-doneright-3-stages-roadmap-that-actually-works/</guid>
+        
+        <category>SOC</category>
+        
+        <category>Cybersecurity</category>
+        
+        <category>Cyber Security</category>
+      </item>
     
       <item>
         <title>Terraform&apos;s Secret Weapon: Write Only Arguments</title>
@@ -21,6 +35,17 @@
         <category>Cybersecurity</category>
         
         <category>Cyber Security</category>
+      </item>
+    
+      <item>
+        <title>Snyk Saved My Project Ft Uncontrolled Resource Consumptionn</title>
+        <description>
+</description>
+        <pubDate>Tue, 15 Jul 2025 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn/</guid>
+        
+        <category></category>
       </item>
     
       <item>
@@ -431,44 +456,6 @@
         <category>cloud</category>
         
         <category>azure</category>
-      </item>
-    
-      <item>
-        <title>Automate Firebase hosting with Github Actions and Ruby.</title>
-        <description>&lt;p&gt;Before start, let’s understand why do I need this ? Since I have been working on my blog and deploying it over firebase and again pushing them back to github for version control and keeping source code hosted to reduce the chance of deletion from my location system , which is very common to me! Being a lazy and troubleshooter guy I planned to reduce my workload , and minimalise them. That’s how journey of CI/CD starts.&lt;/p&gt; &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; # USE CASE:- 1. Setup firebase hosting 2. Integrate hosting with Github Repository 3. Setup Workflow inside project...</description>
-        <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
-        <link>https://hugs4bugs.me/automation-with-firebase-and-ruby/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/automation-with-firebase-and-ruby/</guid>
-        
-        <category>webApps</category>
-        
-        <category>jekyll</category>
-        
-        <category>developer</category>
-        
-        <category>troubleshooter Club</category>
-        
-        <category>automation</category>
-      </item>
-    
-      <item>
-        <title>Search engines one should know as a CyberSecurity enthausist!</title>
-        <description>&lt;p&gt;Before jumping to the topic,lemme tell you some interesting thing about this blog. It’s was hot sunny day and I was enjoying my holiday vaccation at &lt;a href=&quot;https://www.keralatourism.org/destination/varkala-beach/328/&quot;&gt;Varkala Beach&lt;/a&gt; in Kerela Midway , In hot summer afternoon I am curating all those list from my resort bed.&lt;/p&gt; &lt;p&gt;Here are the list of must try search engines as a cyber security researcher!&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;h2 id=&quot;dehashed--leaked-credentials&quot;&gt;DeHashed : Leaked credentials&lt;/h2&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/s/1.png&quot; alt=&quot;Dehashed&quot; /&gt;&lt;/p&gt; &lt;p&gt;Dehashed provides free deep-web scans and protection against credential leaks.It OFFER TRUE WILDCARD,REGEX SEARCHES, AND A BASIC SEARCH WHICH INCLUDES SEARCH OPERATORS.&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;h2 id=&quot;security-trails--extensive-dns-data&quot;&gt;Security...</description>
-        <pubDate>Mon, 27 Feb 2023 00:00:00 +0000</pubDate>
-        <link>https://hugs4bugs.me/useful-cybersecurity-search-engines/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/useful-cybersecurity-search-engines/</guid>
-        
-        <category>search engine</category>
-        
-        <category>security</category>
-        
-        <category>hacking</category>
-        
-        <category>offensive security</category>
-        
-        <category>troubleshooter Club</category>
-        
-        <category>security</category>
       </item>
     
   </channel>

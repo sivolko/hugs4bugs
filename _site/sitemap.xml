@@ -227,10 +227,24 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/SIEM-doneright-3-stages-roadmap-that-actually-works/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2025-08-15</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/no-more-secrets-in-terraform-statefile-write-only-arguments/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2025-07-17</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://hugs4bugs.me/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2025-07-15</lastmod>
         </url>
     
         <url>

@@ -3,11 +3,27 @@
   
   
     {
+      "title"    : "SIEM Done Right:3stage RoadMap",
+      "tags"     : "SOC and Cybersecurity",
+      "categories" : "Cyber Security",
+      "url"      : "/SIEM-doneright-3-stages-roadmap-that-actually-works/",
+      "date"     : "08/15/2025"
+    } ,
+  
+    {
       "title"    : "Terraform&#39;s Secret Weapon: Write Only Arguments",
       "tags"     : "IaaC and Cybersecurity",
       "categories" : "Cyber Security",
       "url"      : "/no-more-secrets-in-terraform-statefile-write-only-arguments/",
       "date"     : "07/17/2025"
+    } ,
+  
+    {
+      "title"    : "Snyk Saved My Project Ft Uncontrolled Resource Consumptionn",
+      "tags"     : "",
+      "categories" : "",
+      "url"      : "/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn/",
+      "date"     : "07/15/2025"
     } ,
   
     {
