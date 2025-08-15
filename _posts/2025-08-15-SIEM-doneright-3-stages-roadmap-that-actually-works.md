@@ -3,8 +3,8 @@ layout: post
 title: "SIEM Done Right:3stage RoadMap"
 subtitle: "It actually works!"
 description: "I've seen hundreds of SIEM deployments fail, Here's what actually works. The 3 stages roadmap for SIEM deployement for cybersecurity or SOC team"
-image: https://res.cloudinary.com/hugs4bugs/image/upload/v1755245299/hugs4bugs/SOC/siem_sogrfy.jpg
-optimized_image: https://res.cloudinary.com/hugs4bugs/image/upload/v1755245299/hugs4bugs/SOC/siem_sogrfy.jpg
+image: https://res.cloudinary.com/hugs4bugs/image/upload/v1755246473/hugs4bugs/SOC/siem_dysuut.jpg
+optimized_image: https://res.cloudinary.com/hugs4bugs/image/upload/v1755246473/hugs4bugs/SOC/siem_dysuut.jpg
 author: Shubhendu Shubham
 category: Cyber Security
 tags:
