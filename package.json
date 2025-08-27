@@ -21,7 +21,7 @@
     "url": "https://github.com/thiagorossener/jekflix-template/issues"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^3.0.4",
     "child_process": "^1.0.2",
     "del": "^7.0.0",
     "gulp": "^5.0.1",
@@ -39,6 +39,6 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
-    "firebase": "^10.1.0"
+    "firebase": "^10.9.0"
   }
 }
