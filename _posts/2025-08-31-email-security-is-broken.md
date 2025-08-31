@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Email Security is broken?"
-subtitle: "How Servers Can Be Tricked Into Self-Destruction"
+subtitle: "Mitre Defend:Sender Reputation Analysis"
 description: "Logic Behind D3-SRA"
 image: https://res.cloudinary.com/hugs4bugs/image/upload/v1756619710/hugs4bugs/mitredefend_fmbtx7.png
 optimized_image: https://res.cloudinary.com/hugs4bugs/image/upload/v1756619710/hugs4bugs/mitredefend_fmbtx7.png
@@ -16,7 +16,7 @@ Email security has become a cat-and-mouse game where attackers consistently outp
 
 The fundamental issue is that most email security solutions treat each message in isolation. They scan for malware, check against reputation databases, and apply content filters—but they miss the behavioral patterns that reveal the real threats. A CEO fraud email from a trusted domain with clean content will sail right through these defenses.
 
-This is where [**D3-SRA** aka Defend Matrix _Sender Reputaiton Anallysis](https://d3fend.mitre.org/technique/d3f:SenderReputationAnalysis/) comes in. Instead of asking "Is this message malicious?", we ask "Does this sender behave normally?" The difference is crucial.
+This is where [**D3-SRA** aka Defend Matrix _Sender Reputaiton Analysis](https://d3fend.mitre.org/technique/d3f:SenderReputationAnalysis/) comes in. Instead of asking "Is this message malicious?", we ask "Does this sender behave normally?" The difference is crucial.
 
 **How Sender Reputation Actually Works?**
 
