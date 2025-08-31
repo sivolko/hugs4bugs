@@ -227,6 +227,20 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/email-security-is-broken/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2025-08-31</lastmod>
+        </url>
+    
+        <url>
+            <loc>https://hugs4bugs.me/made-your-reset-vulnerability/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2025-08-20</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/SIEM-doneright-3-stages-roadmap-that-actually-works/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>

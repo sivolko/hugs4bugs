@@ -17,19 +17,19 @@
     
     
 
-    <title>Automate Multiple Login failure alerts | hugs4bugs</title>
-    <meta name="description" content="In this section we'll cover up basic but important challange faced by SOC analyst bu automating the multiple login failure alerts response">
+    <title>Email Security is broken? | hugs4bugs</title>
+    <meta name="description" content="Logic Behind D3-SRA">
     
-    <meta name="keywords" content="Cyber Security, BlueTeam, SOC">
+    <meta name="keywords" content="emailsecurity, Cybersecurity">
     
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Automate Multiple Login failure alerts | hugs4bugs">
-    <meta name="twitter:description" content="In this section we'll cover up basic but important challange faced by SOC analyst bu automating the multiple login failure alerts response">
+    <meta name="twitter:title" content="Email Security is broken? | hugs4bugs">
+    <meta name="twitter:description" content="Logic Behind D3-SRA">
 
     
-    <meta property="twitter:image" content="https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg">
+    <meta property="twitter:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1756619710/hugs4bugs/mitredefend_fmbtx7.png">
     
 
     
@@ -37,10 +37,10 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="https://hugs4bugs.me/automate-multiple-loginfailure-alerts-response/">
-    <meta property="og:title" content="Automate Multiple Login failure alerts | hugs4bugs">
-    <meta property="og:image" content="https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg">
-    <meta property="og:description" content="In this section we'll cover up basic but important challange faced by SOC analyst bu automating the multiple login failure alerts response">
+    <meta property="og:url" content="https://hugs4bugs.me/email-security-is-broken/">
+    <meta property="og:title" content="Email Security is broken? | hugs4bugs">
+    <meta property="og:image" content="https://res.cloudinary.com/hugs4bugs/image/upload/v1756619710/hugs4bugs/mitredefend_fmbtx7.png">
+    <meta property="og:description" content="Logic Behind D3-SRA">
     <meta property="og:site_name" content="hugs4bugs">
 
     <!-- Favicon -->
@@ -76,7 +76,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <link rel="canonical" href="https://hugs4bugs.me/automate-multiple-loginfailure-alerts-response/">
+    <link rel="canonical" href="https://hugs4bugs.me/email-security-is-broken/">
     <link rel="alternate" type="application/rss+xml" title="hugs4bugs"
         href="https://hugs4bugs.me/feed.xml" />
     <link rel='manifest' href='../manifest.json'>
@@ -304,22 +304,22 @@
                 <p class="post-info">
                     
                         <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="2024-05-08T00:00:00+00:00">
+                        <time class="date" datetime="2025-08-31T00:00:00+00:00">
                             
 
 
-May 8, 2024
+August 31, 2025
 
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>1 min to read</span>
+                    <span>5 min to read</span>
                 </p>
-                <h1 class="post-title">Automate Multiple Login failure alerts</h1>
-                <p class="post-subtitle">Reduce SOC analyst burnout</p>
+                <h1 class="post-title">Email Security is broken?</h1>
+                <p class="post-subtitle">How Servers Can Be Tricked Into Self-Destruction</p>
 
                 
-                    <img src="https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg" alt="Featured image" class="post-cover">
+                    <img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1756619710/hugs4bugs/mitredefend_fmbtx7.png" alt="Featured image" class="post-cover">
                 
 
                 <!-- Pagination links -->
@@ -329,42 +329,153 @@ May 8, 2024
                 <!-- Add your table of contents here -->
 
 
-                <p>MTTD (Mean Time To Detect) and MTTR (Mean Time To Response/Remediate) are the two crucial factor in Defensive side of hashtag#cybersecurity
-Major challenge for Blue team is resource burnout and manual investigation on repetitive task which increase average MTTR .</p>
+                <p>Email security has become a cat-and-mouse game where attackers consistently outpace traditional defenses. While we’ve spent years perfecting signature-based detection and sandboxing, threat actors have moved to more sophisticated tactics: compromised accounts, domain spoofing, and slow-burn social engineering campaigns that span weeks or months.</p>
 
-<p>Let’s understand use case to orchestrate security flow 
-use Case :- Automate Multiple login failure alerts response</p>
+<p>The fundamental issue is that most email security solutions treat each message in isolation. They scan for malware, check against reputation databases, and apply content filters—but they miss the behavioral patterns that reveal the real threats. A CEO fraud email from a trusted domain with clean content will sail right through these defenses.</p>
 
-<p>Workflow link :- 
-<img src="https://raw.githubusercontent.com/sivolko/Awesome-Security-Analyst-tools/main/security-automation/use-cases/image.png" alt="workflow" /></p>
+<p>This is where <a href="https://d3fend.mitre.org/technique/d3f:SenderReputationAnalysis/"><strong>D3-SRA</strong> aka Defend Matrix _Sender Reputaiton Anallysis</a> comes in. Instead of asking “Is this message malicious?”, we ask “Does this sender behave normally?” The difference is crucial.</p>
 
-<p>Here we’ll use SOAR (Security Orchestration Autoamtion and Response) to automate Multiple login failure alert response. It can be achived with the both Azure Logic &amp; Power Apps.</p>
+<p><strong>How Sender Reputation Actually Works?</strong></p>
 
-<p>Steps:-</p>
+<p>Traditional reputation systems rely on external blacklists and IP reputation feeds. That’s useful, but it’s backward-looking and misses internal context. Modern D3-SRA systems build reputation from the ground up using your organization’s own email patterns.</p>
 
-<ol>
-  <li>We’ll set threashold of login failure eg- 4/5 times</li>
-  <li>When user account have multiple times failed password attemps,</li>
-  <li>Playbook will trigger an email to user asking for justification</li>
-  <li>Waits for the end user reply &amp; inform analyst</li>
-  <li>As soon as it receives response from end user, next job will start based upon reply</li>
-  <li>If user confirms genuine activities then look for justification</li>
-  <li>In case password expired/forgotten, reset password and share revised login credentials to user over mail</li>
-  <li>Incase if failed password attempts are not from end user then playbook will trigger investigation action</li>
-  <li>Fetch Incidents details from SIEM and UEBA connectors</li>
-  <li>Query will run to extract usernames, Source IP, Destination IP, Assets details</li>
-  <li>Cross verify username with existing users list in AD (Active Directory)</li>
-  <li>Check IP reputation with multiple open source IP checker. ps :- It can be automated with help of API , eg if we do use VirusTotal then Virus total API can be integrated with SOAR platform ,And in case of Microsoft Azure, Microsoft Threat Intel profile could be linked up or TAXII API</li>
-  <li>Check distance between IP in case of multiple location jump and generate location map &amp; event duration</li>
-  <li>Notify the analyst with result score</li>
-  <li>If activity is malicious then Quarantine?Block IP and user, Create ITSM ticket with defined SOP severity &amp; notify support team via email/Teams channel or slack</li>
-  <li>If it’s non malicious then close incident with false positive justification.</li>
-  <li>Stop playbook</li>
-</ol>
+<p>The core insight is that legitimate senders exhibit consistent behavioral patterns. Your CFO always sends quarterly reports from the same IP range at 2 PM on Fridays. Your vendor contact uses Outlook and includes specific signature formatting. Your business partner’s emails consistently originate from their corporate mail servers with proper DKIM signatures. When these patterns break, something’s wrong.</p>
 
-<p><a href="https://github.com/sivolko/Awesome-Security-Analyst-tools/blob/main/security-automation/use-cases/multiple-login-failure-alert-response.md">Github</a></p>
+<p>D3-SRA Flow Image</p>
 
-<p>Keep Learning, Keep Troubleshooting !</p>
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1756618095/hugs4bugs/60231a54_eddzpw.png" alt="image" /></p>
+
+<p><strong>Building the Email Relationship Graph</strong></p>
+
+<p>The technical foundation of D3-SRA is an email relationship graph—essentially a living map of your organization’s communication patterns. Every email creates or updates relationships between senders, recipients, domains, and MTAs.</p>
+
+<p><strong>Core System Components</strong></p>
+
+<p><strong>Email Gateway Layer:</strong> Serves as the initial interception point for all incoming messages, extracting sender metadata and routing emails through the reputation analysis pipeline.</p>
+
+<p><strong>Reputation Database:</strong> Maintains historical sender data, behavioral patterns, and trust scores. This component requires high-performance storage capable of handling millions of sender records with sub-second query response times.</p>
+
+<p><strong>Scoring Engine:</strong> Implements the mathematical algorithms that compute reputation scores based on the eleven MITRE-defined factors. Modern implementations leverage machine learning models to improve accuracy over time.</p>
+
+<p><strong>Policy Engine:</strong> Translates trust ratings into actionable decisions such as allow, filter, or block based on organizational security policies.</p>
+
+<p>Advanced Architecture Components</p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1756618351/hugs4bugs/8d7103f3_ypp2dw.png" alt="image" /></p>
+
+<p><strong>Trust Rating Classification</strong></p>
+
+<p>The system assigns trust ratings based on multiple factors:</p>
+
+<p><strong>Unknown Senders:</strong> New entities with no interaction history. These get enhanced scrutiny but aren’t automatically blocked—legitimate new business contacts shouldn’t be penalized.</p>
+
+<p><strong>Known Senders:</strong> Entities with some history but limited positive interactions. Messages from these senders undergo standard security processing.</p>
+
+<p><strong>Trusted Senders:</strong> Well-established communication partners with strong positive interaction patterns. These senders get expedited processing while maintaining monitoring.</p>
+
+<p><strong>Suspicious Senders:</strong> Entities showing behavioral anomalies or limited positive engagement. Messages require additional review and may be quarantined.</p>
+
+<p><strong>Malicious Senders:</strong> Confirmed threats based on behavior analysis or external intelligence. These are blocked outright.
+The key is that these ratings aren’t static. A trusted sender can become suspicious if their behavior changes significantly, and unknown senders can build trust through consistent, normal interactions.</p>
+
+<p>Threat Intelligence Integration and MITRE Framework Alignment</p>
+
+<p><em>D3FEND and ATT&amp;CK Synergy</em></p>
+
+<p>D3-SRA operates as a defensive countermeasure against multiple MITRE ATT&amp;CK techniques:</p>
+
+<p><em>Initial Access Tactics:</em> Sender reputation analysis directly counters phishing attacks (T1566) by identifying suspicious senders before message delivery.</p>
+
+<p><em>Credential Access:</em> By blocking or filtering emails from low-reputation senders, D3-SRA prevents credential harvesting attempts through malicious links and attachments.</p>
+
+<p><em>Business Email Compromise:</em> The technique’s focus on sender-enterprise interaction ratios helps identify impersonation attempts and domain spoofing.</p>
+
+<p><strong>Best Practices and Implementation Recommendations</strong></p>
+
+<p>Deployment Strategy</p>
+
+<p>Gradual Implementation: Begin with monitoring mode to establish baseline sender behaviors before enforcing blocking policies. This approach prevents disruption to legitimate business communications while building comprehensive reputation data.</p>
+
+<p>Multi-layered Defense: Implement D3-SRA as part of a broader email security strategy that includes:</p>
+
+<ul>
+  <li>
+    <p>SPF, DKIM, and DMARC authentication to prevent domain spoofing</p>
+  </li>
+  <li>
+    <p>Content-based filtering for additional threat detection</p>
+  </li>
+  <li>
+    <p>User awareness training to handle suspicious emails that bypass automated filters</p>
+  </li>
+</ul>
+
+<p><strong>Configuration Best Practices</strong></p>
+
+<ul>
+  <li>
+    <p>Threshold Tuning: Establish reputation score thresholds based on organizational risk tolerance:</p>
+  </li>
+  <li>
+    <p>Trusted threshold: Typically 70-80+ for automatic delivery</p>
+  </li>
+  <li>
+    <p>Suspicious threshold: 30-70 requiring additional scrutiny</p>
+  </li>
+  <li>
+    <p>Malicious threshold: Below 30 triggering automatic blocking</p>
+  </li>
+  <li>
+    <p>Policy Customization: Configure different policies for various email types:</p>
+    <ul>
+      <li>External email: Apply full reputation analysis</li>
+      <li>Internal email: Use lightweight reputation checks</li>
+      <li>Partner communications: Maintain whitelist for trusted business partners</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Reputation Factor Weighting</strong></p>
+
+<p><img src="https://res.cloudinary.com/hugs4bugs/image/upload/v1756618894/hugs4bugs/0ca48f9e_kqu8tc.png" alt="image" /></p>
+
+<p>Different reputation factors carry varying significance based on organizational context and threat landscape. The impact matrix shows how factors influence trust categorization:</p>
+
+<p>High-Impact Factors for trusted senders include:</p>
+
+<ul>
+  <li>
+    <p>Email history length and recipient interaction counts</p>
+  </li>
+  <li>
+    <p>Open vs. unopened ratios indicating user engagement</p>
+  </li>
+  <li>
+    <p>Reply patterns demonstrating legitimate communication</p>
+  </li>
+</ul>
+
+<p>High-Impact Factors for malicious classification include:</p>
+
+<ul>
+  <li>
+    <p>High counts of unopened emails with attachments or URLs</p>
+  </li>
+  <li>
+    <p>Unusual sender vs. enterprise message ratios</p>
+  </li>
+  <li>
+    <p>Patterns indicating automated or bulk sending behavior</p>
+  </li>
+</ul>
+
+<p><strong>The Bottom Line</strong></p>
+
+<p>D3-SRA isn’t just another email security feature—it’s a fundamental shift toward behavioral-based threat detection. When implemented correctly, it provides substantial protection against email-based attacks while maintaining operational efficiency.</p>
+
+<p>The key to success is treating D3-SRA as part of a broader security architecture rather than a standalone solution. Integrate it with your existing security stack, feed its intelligence into your SIEM, and use its insights to enhance your threat hunting capabilities.</p>
+
+<p>Email-based attacks continue evolving, but with proper sender reputation analysis, we can stay ahead of the threat curve. The framework provides the foundation—the implementation details determine your success.</p>
 
 
                 <!-- Pagination links -->
@@ -380,29 +491,29 @@ use Case :- Automate Multiple login failure alerts response</p>
                         
                         
                             <li>
-                                <a href="/the-blue-team-protecting-you/">
+                                <a href="/how-to-automate-tweets-via-github-actions/">
                                     
-                                        <img src="https://cdn.pixabay.com/photo/2017/11/19/23/56/hacking-2964100_960_720.jpg">
+                                        <img src="https://images.pexels.com/photos/5744251/pexels-photo-5744251.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
                                     
-                                    <h3>The Blue Team.☠️</h3>
+                                    <h3>Automate Twitter via github Actions.</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/send-email-with-Azure-logic-app/">
+                                <a href="/best-linux-cheatsheet-101/">
                                     
-                                        <img src="https://d3nn873nee648n.cloudfront.net/900x600/19765/300-SM960337.jpg">
+                                        <img src="https://www.iihglobal.com/wp-content/uploads/2019/02/dcsad.gif">
                                     
-                                    <h3>Automate Email with Azure Logic App</h3>
+                                    <h3>Linux Cheat Sheet 101</h3>
                                 </a>
                             </li>
                         
                             <li>
-                                <a href="/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn/">
+                                <a href="/how-to-like-instagram-post-with-javascript/">
                                     
-                                        <img src="/assets/img/off.jpg">
+                                        <img src="https://media.giphy.com/media/cmqnzFK17DO4vKCscd/giphy.gif">
                                     
-                                    <h3>Snyk Saved My Project Ft Uncontrolled Resource Consumptionn</h3>
+                                    <h3>How to like Instagram posts with JavaScript?</h3>
                                 </a>
                             </li>
                         
@@ -414,7 +525,7 @@ use Case :- Automate Multiple login failure alerts response</p>
 
         <!-- Add time bar only for pages without pagination -->
         
-            <div class="time-bar" data-minutes="1">
+            <div class="time-bar" data-minutes="5">
     <span class="time-completed"></span>
     <span class="time-remaining"></span>
     <div class="bar">
@@ -434,13 +545,13 @@ use Case :- Automate Multiple login failure alerts response</p>
         </div>
     </div>
     
-    <a href="/why-new-session-should-be-created-during-user-authentication/" class="post-preview">
+    <a href="/Progressive-webapps-on-azure/" class="post-preview">
         <div class="image">
             
-                <img src="https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg">
+                <img src="https://th.bing.com/th/id/R.49bd0ccbb9e904407116b65ce6a50d41?rik=1KXzdiLejsH2eA&riu=http%3a%2f%2fclipground.com%2fimages%2fcoder-clipart-1.jpg&ehk=xl5oxtd6bHoDW1%2f3HB007zg97209vFB75YXyIskHtPg%3d&risl=&pid=ImgRaw&r=0">
             
         </div>
-        <h3 class="title">Why new session should be created during user authentication?</h3>
+        <h3 class="title">Building and Deploying PWA on Azure Cloud.</h3>
     </a>
 </div>
 
@@ -457,7 +568,7 @@ use Case :- Automate Multiple login failure alerts response</p>
         <section class="share">
     <h3>Share</h3>
     <a aria-label="Share on Twitter"
-        href="https://twitter.com/intent/tweet?text=&quot;In this section we'll cover up basic but important challange faced by SOC analyst bu automating the multiple login failure alerts response&quot;%20https://hugs4bugs.me/automate-multiple-loginfailure-alerts-response/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,BlueTeam,SOC"
+        href="https://twitter.com/intent/tweet?text=&quot;Logic Behind D3-SRA&quot;%20https://hugs4bugs.me/email-security-is-broken/%20via%20&#64;myselfshubhendu&hashtags=emailsecurity,Cybersecurity"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -465,7 +576,7 @@ use Case :- Automate Multiple login failure alerts response</p>
         </svg>
     </a>
     <a aria-label="Share on WhatsApp"
-        href="https://twitter.com/intent/tweet?text=&quot;In this section we'll cover up basic but important challange faced by SOC analyst bu automating the multiple login failure alerts response&quot;%20https://hugs4bugs.me/automate-multiple-loginfailure-alerts-response/%20via%20&#64;myselfshubhendu&hashtags=Cyber Security,BlueTeam,SOC"
+        href="https://twitter.com/intent/tweet?text=&quot;Logic Behind D3-SRA&quot;%20https://hugs4bugs.me/email-security-is-broken/%20via%20&#64;myselfshubhendu&hashtags=emailsecurity,Cybersecurity"
         onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
         title="Share on Twitter">
         <svg class="icon icon-twitter">
@@ -473,7 +584,7 @@ use Case :- Automate Multiple login failure alerts response</p>
         </svg>
     </a>
     <a aria-label="Share on Facebook"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/automate-multiple-loginfailure-alerts-response/"
+        href="https://www.facebook.com/sharer/sharer.php?u=https://hugs4bugs.me/email-security-is-broken/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
         title="Share on Facebook">
         <svg class="icon icon-facebook">
@@ -563,7 +674,7 @@ use Case :- Automate Multiple login failure alerts response</p>
         disqus_loaded = true;
         var disqus_shortname = 'hugs4bugs';
         var disqus_title = '';
-        var disqus_url = '/automate-multiple-loginfailure-alerts-response/';
+        var disqus_url = '/email-security-is-broken/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
@@ -734,53 +845,164 @@ use Case :- Automate Multiple login failure alerts response</p>
         {
             "@context": "http://schema.org",
             "@type": "BlogPosting",
-            "name": "Automate Multiple Login failure alerts",
-            "headline": "Reduce SOC analyst burnout",
-            "description": "In this section we'll cover up basic but important challange faced by SOC analyst bu automating the multiple login failure alerts response",
-            "image": "https://cdn.pixabay.com/photo/2019/04/29/09/33/anonymous-4165613_1280.jpg",
-            "url": "https://hugs4bugs.me/automate-multiple-loginfailure-alerts-response/",
-            "articleBody": "MTTD (Mean Time To Detect) and MTTR (Mean Time To Response/Remediate) are the two crucial factor in Defensive side of hashtag#cybersecurity
-Major challenge for Blue team is resource burnout and manual investigation on repetitive task which increase average MTTR .
+            "name": "Email Security is broken?",
+            "headline": "How Servers Can Be Tricked Into Self-Destruction",
+            "description": "Logic Behind D3-SRA",
+            "image": "https://res.cloudinary.com/hugs4bugs/image/upload/v1756619710/hugs4bugs/mitredefend_fmbtx7.png",
+            "url": "https://hugs4bugs.me/email-security-is-broken/",
+            "articleBody": "Email security has become a cat-and-mouse game where attackers consistently outpace traditional defenses. While we’ve spent years perfecting signature-based detection and sandboxing, threat actors have moved to more sophisticated tactics: compromised accounts, domain spoofing, and slow-burn social engineering campaigns that span weeks or months.
 
-Let’s understand use case to orchestrate security flow 
-use Case :- Automate Multiple login failure alerts response
+The fundamental issue is that most email security solutions treat each message in isolation. They scan for malware, check against reputation databases, and apply content filters—but they miss the behavioral patterns that reveal the real threats. A CEO fraud email from a trusted domain with clean content will sail right through these defenses.
 
-Workflow link :- 
+This is where D3-SRA aka Defend Matrix _Sender Reputaiton Anallysis comes in. Instead of asking “Is this message malicious?”, we ask “Does this sender behave normally?” The difference is crucial.
 
+How Sender Reputation Actually Works?
 
-Here we’ll use SOAR (Security Orchestration Autoamtion and Response) to automate Multiple login failure alert response. It can be achived with the both Azure Logic &amp;amp; Power Apps.
+Traditional reputation systems rely on external blacklists and IP reputation feeds. That’s useful, but it’s backward-looking and misses internal context. Modern D3-SRA systems build reputation from the ground up using your organization’s own email patterns.
 
-Steps:-
+The core insight is that legitimate senders exhibit consistent behavioral patterns. Your CFO always sends quarterly reports from the same IP range at 2 PM on Fridays. Your vendor contact uses Outlook and includes specific signature formatting. Your business partner’s emails consistently originate from their corporate mail servers with proper DKIM signatures. When these patterns break, something’s wrong.
 
-
-  We’ll set threashold of login failure eg- 4/5 times
-  When user account have multiple times failed password attemps,
-  Playbook will trigger an email to user asking for justification
-  Waits for the end user reply &amp;amp; inform analyst
-  As soon as it receives response from end user, next job will start based upon reply
-  If user confirms genuine activities then look for justification
-  In case password expired/forgotten, reset password and share revised login credentials to user over mail
-  Incase if failed password attempts are not from end user then playbook will trigger investigation action
-  Fetch Incidents details from SIEM and UEBA connectors
-  Query will run to extract usernames, Source IP, Destination IP, Assets details
-  Cross verify username with existing users list in AD (Active Directory)
-  Check IP reputation with multiple open source IP checker. ps :- It can be automated with help of API , eg if we do use VirusTotal then Virus total API can be integrated with SOAR platform ,And in case of Microsoft Azure, Microsoft Threat Intel profile could be linked up or TAXII API
-  Check distance between IP in case of multiple location jump and generate location map &amp;amp; event duration
-  Notify the analyst with result score
-  If activity is malicious then Quarantine?Block IP and user, Create ITSM ticket with defined SOP severity &amp;amp; notify support team via email/Teams channel or slack
-  If it’s non malicious then close incident with false positive justification.
-  Stop playbook
+D3-SRA Flow Image
 
 
-Github
 
-Keep Learning, Keep Troubleshooting !
+Building the Email Relationship Graph
+
+The technical foundation of D3-SRA is an email relationship graph—essentially a living map of your organization’s communication patterns. Every email creates or updates relationships between senders, recipients, domains, and MTAs.
+
+Core System Components
+
+Email Gateway Layer: Serves as the initial interception point for all incoming messages, extracting sender metadata and routing emails through the reputation analysis pipeline.
+
+Reputation Database: Maintains historical sender data, behavioral patterns, and trust scores. This component requires high-performance storage capable of handling millions of sender records with sub-second query response times.
+
+Scoring Engine: Implements the mathematical algorithms that compute reputation scores based on the eleven MITRE-defined factors. Modern implementations leverage machine learning models to improve accuracy over time.
+
+Policy Engine: Translates trust ratings into actionable decisions such as allow, filter, or block based on organizational security policies.
+
+Advanced Architecture Components
+
+
+
+Trust Rating Classification
+
+The system assigns trust ratings based on multiple factors:
+
+Unknown Senders: New entities with no interaction history. These get enhanced scrutiny but aren’t automatically blocked—legitimate new business contacts shouldn’t be penalized.
+
+Known Senders: Entities with some history but limited positive interactions. Messages from these senders undergo standard security processing.
+
+Trusted Senders: Well-established communication partners with strong positive interaction patterns. These senders get expedited processing while maintaining monitoring.
+
+Suspicious Senders: Entities showing behavioral anomalies or limited positive engagement. Messages require additional review and may be quarantined.
+
+Malicious Senders: Confirmed threats based on behavior analysis or external intelligence. These are blocked outright.
+The key is that these ratings aren’t static. A trusted sender can become suspicious if their behavior changes significantly, and unknown senders can build trust through consistent, normal interactions.
+
+Threat Intelligence Integration and MITRE Framework Alignment
+
+D3FEND and ATT&amp;amp;CK Synergy
+
+D3-SRA operates as a defensive countermeasure against multiple MITRE ATT&amp;amp;CK techniques:
+
+Initial Access Tactics: Sender reputation analysis directly counters phishing attacks (T1566) by identifying suspicious senders before message delivery.
+
+Credential Access: By blocking or filtering emails from low-reputation senders, D3-SRA prevents credential harvesting attempts through malicious links and attachments.
+
+Business Email Compromise: The technique’s focus on sender-enterprise interaction ratios helps identify impersonation attempts and domain spoofing.
+
+Best Practices and Implementation Recommendations
+
+Deployment Strategy
+
+Gradual Implementation: Begin with monitoring mode to establish baseline sender behaviors before enforcing blocking policies. This approach prevents disruption to legitimate business communications while building comprehensive reputation data.
+
+Multi-layered Defense: Implement D3-SRA as part of a broader email security strategy that includes:
+
+
+  
+    SPF, DKIM, and DMARC authentication to prevent domain spoofing
+  
+  
+    Content-based filtering for additional threat detection
+  
+  
+    User awareness training to handle suspicious emails that bypass automated filters
+  
+
+
+Configuration Best Practices
+
+
+  
+    Threshold Tuning: Establish reputation score thresholds based on organizational risk tolerance:
+  
+  
+    Trusted threshold: Typically 70-80+ for automatic delivery
+  
+  
+    Suspicious threshold: 30-70 requiring additional scrutiny
+  
+  
+    Malicious threshold: Below 30 triggering automatic blocking
+  
+  
+    Policy Customization: Configure different policies for various email types:
+    
+      External email: Apply full reputation analysis
+      Internal email: Use lightweight reputation checks
+      Partner communications: Maintain whitelist for trusted business partners
+    
+  
+
+
+Reputation Factor Weighting
+
+
+
+Different reputation factors carry varying significance based on organizational context and threat landscape. The impact matrix shows how factors influence trust categorization:
+
+High-Impact Factors for trusted senders include:
+
+
+  
+    Email history length and recipient interaction counts
+  
+  
+    Open vs. unopened ratios indicating user engagement
+  
+  
+    Reply patterns demonstrating legitimate communication
+  
+
+
+High-Impact Factors for malicious classification include:
+
+
+  
+    High counts of unopened emails with attachments or URLs
+  
+  
+    Unusual sender vs. enterprise message ratios
+  
+  
+    Patterns indicating automated or bulk sending behavior
+  
+
+
+The Bottom Line
+
+D3-SRA isn’t just another email security feature—it’s a fundamental shift toward behavioral-based threat detection. When implemented correctly, it provides substantial protection against email-based attacks while maintaining operational efficiency.
+
+The key to success is treating D3-SRA as part of a broader security architecture rather than a standalone solution. Integrate it with your existing security stack, feed its intelligence into your SIEM, and use its insights to enhance your threat hunting capabilities.
+
+Email-based attacks continue evolving, but with proper sender reputation analysis, we can stay ahead of the threat curve. The framework provides the foundation—the implementation details determine your success.
 ",
-            "wordcount": "340",
+            "wordcount": "944",
             "inLanguage": "en",
-            "dateCreated": "2024-05-08/",
-            "datePublished": "2024-05-08/",
-            "dateModified": "2024-05-08/",
+            "dateCreated": "2025-08-31/",
+            "datePublished": "2025-08-31/",
+            "dateModified": "2025-08-31/",
             "author": {
                 "@type": "Person",
                 "name": "Shubhendu",
@@ -805,9 +1027,9 @@ Keep Learning, Keep Troubleshooting !
                 }
             },
             "mainEntityOfPage": "True",
-            "genre": "security",
-            "articleSection": "security",
-            "keywords": ["Cyber Security","BlueTeam","SOC"]
+            "genre": "cybersecurity",
+            "articleSection": "cybersecurity",
+            "keywords": ["emailsecurity","Cybersecurity"]
         }
         </script>
     </body>

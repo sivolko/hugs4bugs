@@ -5,9 +5,37 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 15 Aug 2025 08:28:29 +0000</pubDate>
-    <lastBuildDate>Fri, 15 Aug 2025 08:28:29 +0000</lastBuildDate>
+    <pubDate>Sun, 31 Aug 2025 05:56:45 +0000</pubDate>
+    <lastBuildDate>Sun, 31 Aug 2025 05:56:45 +0000</lastBuildDate>
     <generator>Jekyll v3.10.0</generator>
+    
+      <item>
+        <title>Email Security is broken?</title>
+        <description>&lt;p&gt;Email security has become a cat-and-mouse game where attackers consistently outpace traditional defenses. While we’ve spent years perfecting signature-based detection and sandboxing, threat actors have moved to more sophisticated tactics: compromised accounts, domain spoofing, and slow-burn social engineering campaigns that span weeks or months.&lt;/p&gt; &lt;p&gt;The fundamental issue is that most email security solutions treat each message in isolation. They scan for malware, check against reputation databases, and apply content filters—but they miss the behavioral patterns that reveal the real threats. A CEO fraud email from a trusted domain with clean content will sail right through these defenses.&lt;/p&gt; &lt;p&gt;This is where...</description>
+        <pubDate>Sun, 31 Aug 2025 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/email-security-is-broken/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/email-security-is-broken/</guid>
+        
+        <category>emailsecurity</category>
+        
+        <category>Cybersecurity</category>
+        
+        <category>cybersecurity</category>
+      </item>
+    
+      <item>
+        <title>MadeYouReset&apos; HTTP/2 Vulnerability (CVE-2025-8671) Explained</title>
+        <description>&lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;The internet carries much of its vital traffic over the HTTP protocol. With the evolution from HTTP/1.1 to HTTP/2, websites and web apps became dramatically faster, more responsive, and capable of handling heavier loads. But with these leaps forward come new, sometimes quietly lurking, risks. In 2023, the world’s top cloud providers faced the &lt;em&gt;“Rapid Reset”&lt;/em&gt; vulnerability, which allowed attackers to crash powerful services using HTTP/2’s own stream management features. While defenses for that attack were deployed quickly, 2025 saw the discovery of a new twist: “MadeYouReset” (CVE-2025-8671). This crafty vulnerability asks a chilling question—what if attackers didn’t flood...</description>
+        <pubDate>Wed, 20 Aug 2025 00:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/made-your-reset-vulnerability/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/made-your-reset-vulnerability/</guid>
+        
+        <category>cve</category>
+        
+        <category>Cybersecurity</category>
+        
+        <category>cve</category>
+      </item>
     
       <item>
         <title>SIEM Done Right:3stage RoadMap</title>
@@ -418,42 +446,6 @@
         <category>Cyber Security</category>
         
         <category>Threat Intelligence</category>
-        
-        <category>azure</category>
-      </item>
-    
-      <item>
-        <title>Automate Email with Azure Logic App</title>
-        <description>&lt;p&gt;Before start,let’s understand the usecase of Logic App and our requirements.&lt;/p&gt; &lt;p&gt;We need to create an automated email flow with attachment with particular email group or people. So for this we need to create a logic app with storage account which contains our email attachment. Now let’s divide it into 2 parts&lt;/p&gt; &lt;ol&gt; &lt;li&gt;Storage account creation&lt;/li&gt; &lt;li&gt;Logic App&lt;/li&gt; &lt;/ol&gt; &lt;h2 id=&quot;requirements--&quot;&gt;Requirements :-&lt;/h2&gt; &lt;ol&gt; &lt;li&gt;Azure Subscription&lt;/li&gt; &lt;li&gt;Storage Account access&lt;/li&gt; &lt;li&gt;Logic App contributor access&lt;/li&gt; &lt;li&gt;Email group either outlook or gmail&lt;/li&gt; &lt;/ol&gt; &lt;p&gt;Steps :-&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Signin to &lt;a href=&quot;https://portal.azure.com&quot;&gt;Azure Portal&lt;/a&gt; and search storage account and click on create and fill deatails for storage...</description>
-        <pubDate>Sun, 30 Apr 2023 00:00:00 +0000</pubDate>
-        <link>https://hugs4bugs.me/send-email-with-Azure-logic-app/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/send-email-with-Azure-logic-app/</guid>
-        
-        <category>azure</category>
-        
-        <category>blob storage</category>
-        
-        <category>logic app</category>
-        
-        <category>cloud</category>
-        
-        <category>azure</category>
-      </item>
-    
-      <item>
-        <title>How to create &amp; Manage users and Groups within Azure AD.</title>
-        <description>&lt;p&gt;In this blog,let’s learn how to create and manage users &amp;amp; group their properties within Azure AD.&lt;/p&gt; &lt;p&gt;&lt;em&gt;Disclaimer&lt;/em&gt; :- I’m not gonna cover Azure AD’s AU (Administrative Units)&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Prerequisits&lt;/strong&gt; :-&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Azure Account&lt;/li&gt; &lt;li&gt;Global Administrator Privilege&lt;/li&gt; &lt;li&gt;Basic Knowledge of Azure service&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Q. Before start let’s understand What Azure AD offers? or What is Azure AD?&lt;/p&gt; &lt;p&gt;A.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Directory and Identity management solution within the cloud&lt;/li&gt; &lt;li&gt;Provides Traditional username &amp;amp; password Identity Managemet&lt;/li&gt; &lt;li&gt;Role based permission management&lt;/li&gt; &lt;li&gt;Multifactor authentication (Enterprise solution)&lt;/li&gt; &lt;li&gt;Application monitoring solution and alerting&lt;/li&gt; &lt;li&gt;Can be integrated with on-prem AD&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;If you are interested into Azure AD...</description>
-        <pubDate>Sun, 30 Apr 2023 00:00:00 +0000</pubDate>
-        <link>https://hugs4bugs.me/how-to-manage-azure-active-directory-objects/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/how-to-manage-azure-active-directory-objects/</guid>
-        
-        <category>azure</category>
-        
-        <category>active directory</category>
-        
-        <category>developer</category>
-        
-        <category>cloud</category>
         
         <category>azure</category>
       </item>

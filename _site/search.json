@@ -3,6 +3,22 @@
   
   
     {
+      "title"    : "Email Security is broken?",
+      "tags"     : "emailsecurity and Cybersecurity",
+      "categories" : "cybersecurity",
+      "url"      : "/email-security-is-broken/",
+      "date"     : "08/31/2025"
+    } ,
+  
+    {
+      "title"    : "MadeYouReset&#39; HTTP/2 Vulnerability (CVE-2025-8671) Explained",
+      "tags"     : "cve and Cybersecurity",
+      "categories" : "cve",
+      "url"      : "/made-your-reset-vulnerability/",
+      "date"     : "08/20/2025"
+    } ,
+  
+    {
       "title"    : "SIEM Done Right:3stage RoadMap",
       "tags"     : "SOC and Cybersecurity",
       "categories" : "Cyber Security",
