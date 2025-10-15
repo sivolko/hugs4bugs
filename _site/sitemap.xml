@@ -227,6 +227,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/best-ms-sentinel-authentication-method/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2025-10-15</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/email-security-is-broken/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>

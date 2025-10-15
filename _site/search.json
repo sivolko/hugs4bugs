@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "Sentinel Authentication:you&#39;re probably doing it wrong?",
+      "tags"     : "soc, Cybersecurity, and sentinel",
+      "categories" : "cybersecurity",
+      "url"      : "/best-ms-sentinel-authentication-method/",
+      "date"     : "10/15/2025"
+    } ,
+  
+    {
       "title"    : "Email Security is broken?",
       "tags"     : "emailsecurity and Cybersecurity",
       "categories" : "cybersecurity",
