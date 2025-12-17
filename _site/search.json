@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "Logic App vs Security Copilot ",
+      "tags"     : "soc, Cybersecurity, and sentinel",
+      "categories" : "cybersecurity",
+      "url"      : "/logicapps-vs-securitycopilot/",
+      "date"     : "12/17/2025"
+    } ,
+  
+    {
       "title"    : "Sentinel Authentication:you&#39;re probably doing it wrong?",
       "tags"     : "soc, Cybersecurity, and sentinel",
       "categories" : "cybersecurity",
