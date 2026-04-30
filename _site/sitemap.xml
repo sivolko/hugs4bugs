@@ -227,6 +227,13 @@
     
     
         <url>
+            <loc>https://hugs4bugs.me/ai-agent-ssh-keys/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2026-04-30</lastmod>
+        </url>
+    
+        <url>
             <loc>https://hugs4bugs.me/logicapps-vs-securitycopilot/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>

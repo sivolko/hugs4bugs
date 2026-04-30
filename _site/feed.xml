@@ -5,9 +5,27 @@
     <description>hugs4bugs is an open source blog written by shubhendu shubham on various cloud and technologies to for community help.</description>
     <link>https://hugs4bugs.me/</link>
     <atom:link href="https://hugs4bugs.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 17 Dec 2025 05:36:10 +0000</pubDate>
-    <lastBuildDate>Wed, 17 Dec 2025 05:36:10 +0000</lastBuildDate>
+    <pubDate>Thu, 30 Apr 2026 18:55:06 +0000</pubDate>
+    <lastBuildDate>Thu, 30 Apr 2026 18:55:06 +0000</lastBuildDate>
     <generator>Jekyll v3.10.0</generator>
+    
+      <item>
+        <title>Your AI Agent Just Exfiltrated Your SSH Keys. You Approved It.</title>
+        <description>&lt;h1 id=&quot;your-ai-agent-just-exfiltrated-your-ssh-keys-you-approved-it-soln--docker-sandbox&quot;&gt;Your AI Agent Just Exfiltrated Your SSH Keys. You Approved It. Soln : Docker Sandbox&lt;/h1&gt; &lt;p&gt;.&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;&lt;strong&gt;Source&lt;/strong&gt;: All technical content sourced from the &lt;a href=&quot;https://docs.docker.com/ai/sandboxes/&quot;&gt;official Docker Sandboxes documentation&lt;/a&gt; and &lt;a href=&quot;https://docs.docker.com/engine/security/&quot;&gt;Docker Engine Security docs&lt;/a&gt;.&lt;/p&gt; &lt;/blockquote&gt; &lt;hr /&gt; &lt;h2 id=&quot;the-new-problem-sitting-in-every-engineering-teams-lap&quot;&gt;The New Problem Sitting in Every Engineering Team’s Lap&lt;/h2&gt; &lt;p&gt;AI coding agents changed how software gets written. Claude Code, GitHub Copilot CLI, Codex, Gemini CLI — these tools don’t just suggest code anymore, they execute it. They install packages, run builds, modify config files, call APIs, and spin up services. And by default, they do all of that on your...</description>
+        <pubDate>Thu, 30 Apr 2026 12:00:00 +0000</pubDate>
+        <link>https://hugs4bugs.me/ai-agent-ssh-keys/</link>
+        <guid isPermaLink="true">https://hugs4bugs.me/ai-agent-ssh-keys/</guid>
+        
+        <category>docker</category>
+        
+        <category>sandbox</category>
+        
+        <category>ai-agents</category>
+        
+        <category>security</category>
+        
+        <category>security</category>
+      </item>
     
       <item>
         <title>Logic App vs Security Copilot </title>
@@ -426,24 +444,6 @@
         <category>Threat Intelligence</category>
         
         <category>security</category>
-      </item>
-    
-      <item>
-        <title>How to onboard your first Microsoft sentinel SIEM tool?</title>
-        <description>&lt;p&gt;Before jump over the onboarding of Microsoft Sentinel, let’s understand what MS Sentinel is?&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Definition&lt;/strong&gt;: Microsoft Sentinel is a cloud native SIEM(Security information and Event Management) and SOAR(Security orchestration,automation,and response) solution,which delivers intelligent security analytics and threat intelligence.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Why do we use it?&lt;/strong&gt; To act as blue teaming as defensive security against attack detection,threat visibility,proactive hunting and threat response.&lt;/p&gt; &lt;p&gt;In this blog we’ll be considering a single tennat onboarding with a single workspace.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;:&lt;/p&gt; &lt;ol&gt; &lt;li&gt;Azure subscription&lt;/li&gt; &lt;li&gt;Microsoft Entra ID / tennant ID&lt;/li&gt; &lt;li&gt;Sentinel Contributor permission or owner premission at tennant level&lt;/li&gt; &lt;li&gt;Log Analytics workspace&lt;/li&gt; &lt;/ol&gt; &lt;p&gt;In this blog I’ll...</description>
-        <pubDate>Mon, 13 Nov 2023 00:00:00 +0000</pubDate>
-        <link>https://hugs4bugs.me/How-to-onboard-your-Microsoft-Sentinel-from-scratch/</link>
-        <guid isPermaLink="true">https://hugs4bugs.me/How-to-onboard-your-Microsoft-Sentinel-from-scratch/</guid>
-        
-        <category>azure</category>
-        
-        <category>Microsoft Sentinel</category>
-        
-        <category>Cyber Security</category>
-        
-        <category>Threat Intelligence</category>
-        
-        <category>azure</category>
       </item>
     
   </channel>

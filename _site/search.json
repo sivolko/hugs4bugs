@@ -3,6 +3,14 @@
   
   
     {
+      "title"    : "Your AI Agent Just Exfiltrated Your SSH Keys. You Approved It.",
+      "tags"     : "docker, sandbox, ai-agents, and security",
+      "categories" : "security",
+      "url"      : "/ai-agent-ssh-keys/",
+      "date"     : "04/30/2026"
+    } ,
+  
+    {
       "title"    : "Logic App vs Security Copilot ",
       "tags"     : "soc, Cybersecurity, and sentinel",
       "categories" : "cybersecurity",
