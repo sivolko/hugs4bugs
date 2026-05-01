@@ -15,7 +15,6 @@ optimized_image: https://cdn.pixabay.com/photo/2017/11/19/23/56/hacking-2964100_
 author: Shubhendu Shubham
 ---
 
-# Your AI Agent Just Exfiltrated Your SSH Keys. You Approved It. Soln : Docker Sandbox
 .
 
 > **Source**: All technical content sourced from the [official Docker Sandboxes documentation](https://docs.docker.com/ai/sandboxes/) and [Docker Engine Security docs](https://docs.docker.com/engine/security/).
