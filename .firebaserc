@@ -5,7 +5,7 @@
   "targets": {
     "shubhendu-shubham": {
       "hosting": {
-        "blog": ["hugs4bugs"],
+        "blog": ["shubhendu-shubham"],
         "cms": ["hugs4bugs-cms"]
       }
     }
