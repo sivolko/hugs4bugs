@@ -1,5 +1,13 @@
 {
   "projects": {
     "default": "shubhendu-shubham"
+  },
+  "targets": {
+    "shubhendu-shubham": {
+      "hosting": {
+        "blog": ["hugs4bugs"],
+        "cms": ["hugs4bugs-cms"]
+      }
+    }
   }
 }

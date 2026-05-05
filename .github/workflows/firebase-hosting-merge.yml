@@ -22,9 +22,23 @@ jobs:
           bundler-cache: true
       - name: Build Jekyll
         run: bundle exec jekyll build
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - name: Build CMS
+        run: cd cms && npm install && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SHUBHENDU_SHUBHAM }}'
           channelId: live
           projectId: shubhendu-shubham
+          target: blog
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SHUBHENDU_SHUBHAM }}'
+          channelId: live
+          projectId: shubhendu-shubham
+          target: cms
