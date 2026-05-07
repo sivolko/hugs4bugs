@@ -6,6 +6,8 @@ gem "rouge"
 gem "jekyll"
 gem "jekyll-paginate"
 gem "jekyll-paginate-content"
+gem "jekyll-sitemap"
+gem "jekyll-feed"
 gem "json"
 gem 'http_parser.rb', '~> 0.8.0'
 gem "webrick", "~> 1.7"

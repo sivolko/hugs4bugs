@@ -1,0 +1,52 @@
+{% if page.layout == 'post' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | absolute_url }}"
+  },
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.description | default: page.excerpt | strip_html | truncate: 160 | jsonify }},
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "url": "{{ page.url | absolute_url }}",
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ page.image | default: '/assets/img/s.png' | absolute_url }}"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Shubhendu Shubham",
+    "url": "https://hugs4bugs.me/about",
+    "sameAs": [
+      "https://twitter.com/myselfshubhendu",
+      "https://github.com/sivolko",
+      "https://linkedin.com/in/shubhendu-shubham"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "hugs4bugs",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://hugs4bugs.me/assets/img/s.png"
+    }
+  }{% if page.tags %},
+  "keywords": {{ page.tags | join: ', ' | jsonify }}{% endif %}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hugs4bugs.me" }{% if page.categories %},
+    { "@type": "ListItem", "position": 2, "name": {{ page.categories | first | jsonify }}, "item": "https://hugs4bugs.me/category/{{ page.categories | first | downcase | replace: ' ', '-' }}/" },
+    { "@type": "ListItem", "position": 3, "name": {{ page.title | jsonify }}, "item": "{{ page.url | absolute_url }}" }{% else %},
+    { "@type": "ListItem", "position": 2, "name": {{ page.title | jsonify }}, "item": "{{ page.url | absolute_url }}" }{% endif %}
+  ]
+}
+</script>
+{% endif %}

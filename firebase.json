@@ -7,6 +7,64 @@
         "firebase.json",
         "**/.*",
         "**/node_modules/**"
+      ],
+      "headers": [
+        {
+          "source": "**/*.@(js|css|png|jpg|jpeg|gif|svg|ico|webp|woff|woff2)",
+          "headers": [
+            { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+          ]
+        },
+        {
+          "source": "**",
+          "headers": [
+            { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+            { "key": "X-Content-Type-Options", "value": "nosniff" },
+            { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+          ]
+        }
+      ],
+      "redirects": [
+        {
+          "source": "/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn",
+          "destination": "/snyk-saved-my-project-ft-uncontrolled-resource-consumption",
+          "type": 301
+        },
+        {
+          "source": "/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn/",
+          "destination": "/snyk-saved-my-project-ft-uncontrolled-resource-consumption/",
+          "type": 301
+        },
+        {
+          "source": "/stop-fighting-local-llm-docker-just-fixed-mess-model-runnner",
+          "destination": "/stop-fighting-local-llm-docker-just-fixed-mess-model-runner",
+          "type": 301
+        },
+        {
+          "source": "/stop-fighting-local-llm-docker-just-fixed-mess-model-runnner/",
+          "destination": "/stop-fighting-local-llm-docker-just-fixed-mess-model-runner/",
+          "type": 301
+        },
+        {
+          "source": "/Your-AI-AgentExfiltrated-YourSSH-Keys",
+          "destination": "/your-ai-agent-exfiltrated-your-ssh-keys",
+          "type": 301
+        },
+        {
+          "source": "/Your-AI-AgentExfiltrated-YourSSH-Keys/",
+          "destination": "/your-ai-agent-exfiltrated-your-ssh-keys/",
+          "type": 301
+        },
+        {
+          "source": "/category/Cyber%20Security",
+          "destination": "/category/cybersecurity",
+          "type": 301
+        },
+        {
+          "source": "/category/Cyber%20Security/",
+          "destination": "/category/cybersecurity/",
+          "type": 301
+        }
       ]
     },
     {

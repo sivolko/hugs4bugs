@@ -1,4 +1,3 @@
----
 title: hugs4bugs
 timezone: UTC
 collections:
@@ -12,14 +11,25 @@ collections:
     title: Uploads
     output: true
 name: hugs4bugs
-description: hugs4bugs is an open source blog written by shubhendu shubham on various
-  cloud and technologies to for community help.
+description: Practical deep dives into cloud security, Microsoft Sentinel, Docker,
+  and DevSecOps by Shubhendu Shubham. Updated weekly.
 tags:
 - blog
-- template
 - jekyll
-- theme
-- netlify
+- cybersecurity
+- devsecops
+- cloud
+author:
+  name: Shubhendu Shubham
+  twitter: myselfshubhendu
+  url: https://hugs4bugs.me/about
+social:
+  name: Shubhendu Shubham
+  links:
+  - https://twitter.com/myselfshubhendu
+  - https://github.com/sivolko
+  - https://linkedin.com/in/shubhendu-shubham
+logo: /assets/img/s.png
 show_hero: true
 menu:
 - title: Home
@@ -36,6 +46,9 @@ formspree_form_id: formspree_form_id
 mailchimp-list: https://hugs4bugs.us1.list-manage.com/subscribe?u=867b91e0eabcef08a2107847c&id=791d7284d0
 github_username: sivolko
 twitter_username: myselfshubhendu
+twitter:
+  username: myselfshubhendu
+  card: summary_large_image
 linkedin_username: shubhendu-shubham
 medium_username: shubhendushubham
 show_time_bar: true
@@ -75,6 +88,8 @@ sass:
 plugins:
 - jekyll-paginate
 - jekyll-paginate-content
+- jekyll-sitemap
+- jekyll-feed
 exclude:
 - package.json
 - package-lock.json
@@ -86,7 +101,7 @@ exclude:
 - gulpfile.js
 - README.md
 - vendor
-comments: 
+comments:
   giscus:
   enabled: true
   repo: "sivolko/hugs4bugs"
@@ -102,3 +117,10 @@ comments:
   lang: "en"
   loading: "lazy"
   crossorigin: "anonymous"
+defaults:
+- scope:
+    path: ""
+    type: "posts"
+  values:
+    author: "Shubhendu Shubham"
+    image: "/assets/img/s.png"
