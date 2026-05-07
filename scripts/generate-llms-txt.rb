@@ -29,7 +29,7 @@ Dir.glob("#{POSTS_DIR}/*.md").each do |file|
   content = File.read(file)
   next unless content =~ /\A---\s*\n(.*?)\n---\s*\n/m
 
-  front_matter = YAML.safe_load($1) || {}
+  front_matter = YAML.safe_load($1, permitted_classes: [Date, Time, DateTime]) || {}
   filename = File.basename(file, '.md')
   slug = filename.sub(/^\d{4}-\d{2}-\d{2}-/, '')
   title = front_matter['title'] || slug.gsub('-', ' ').capitalize
