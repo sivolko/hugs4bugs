@@ -1,0 +1,29 @@
+# hugs4bugs.me
+> Practical deep dives into cloud security, Microsoft Sentinel, Docker, and DevSecOps by Shubhendu Shubham.
+
+## About
+- Author: Shubhendu Shubham
+- Site: https://hugs4bugs.me
+- Twitter: https://twitter.com/myselfshubhendu
+- GitHub: https://github.com/sivolko
+- Topics: cybersecurity, cloud security, DevSecOps, Microsoft Sentinel, Docker, AI security
+
+## Content
+This blog publishes technical tutorials, security research, and hands-on guides for SOC analysts, DevSecOps engineers, and cloud security practitioners.
+
+## Posts
+- /your-ai-agent-exfiltrated-your-ssh-keys/: How AI agents can exfiltrate SSH keys and what to do about it
+- /snyk-saved-my-project-ft-uncontrolled-resource-consumption/: How Snyk caught an uncontrolled resource consumption vulnerability
+- /stop-fighting-local-llm-docker-just-fixed-mess-model-runner/: Running local LLMs cleanly using Docker model runner
+- /sentinel-authentication-you-re-probably-doing-it-wrong/: Microsoft Sentinel authentication methods explained
+- /siem-roadmap/: SIEM deployment roadmap for security teams
+- /aws-detective/: AWS Detective deep dive for threat hunting
+- /terraform-write-only/: Terraform write-only arguments for secrets management
+
+## Topics covered
+- Microsoft Sentinel: authentication, KQL queries, analytics rules, SOAR playbooks
+- Docker: sandboxing, secrets management, container security, MCP toolkit
+- DevSecOps: CI/CD pipeline security, GitHub Actions, IaC scanning
+- AI security: agent risks, prompt injection, model sandboxing
+- Cloud: AWS, Azure, GCP security misconfigurations
+- AppSec: CVE triage, DMARC/DKIM/SPF, supply chain attacks
