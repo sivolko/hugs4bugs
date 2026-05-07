@@ -39,7 +39,16 @@ Dir.glob("#{POSTS_DIR}/*.md").each do |file|
   posts << { slug: slug, title: title, description: description, date: date }
 end
 
-posts.sort_by! { |p| p[:date] || Date.new(2000, 1, 1) }.reverse!
+posts.sort_by! do |p|
+  date = p[:date]
+  if date.is_a?(String)
+    Date.parse(date) rescue Date.new(2000, 1, 1)
+  elsif date.is_a?(Date)
+    date
+  else
+    Date.new(2000, 1, 1)
+  end
+end.reverse!
 
 posts_content = posts.map { |p| "- /#{p[:slug]}/: #{p[:description].empty? ? p[:title] : p[:description]}" }.join("\n")
 
