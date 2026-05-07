@@ -19,7 +19,9 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
-          bundler-cache: true
+          bundler-cache: false
+      - name: Install gems
+        run: bundle install
       - name: Build Jekyll
         run: bundle exec jekyll build
       - name: Setup Node
