@@ -70,10 +70,7 @@ export default function CMS() {
   };
   const [fields, setFields] = useState(emptyFields);
 
-  const saveConfig = (c) => {
-    setConfig(c);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(c));
-  };
+  const saveConfig = (c) => { setConfig(c); localStorage.setItem(STORAGE_KEY, JSON.stringify(c)); };
 
   const fetchAll = useCallback(async () => {
     if (!config.token) return;
@@ -85,13 +82,9 @@ export default function CMS() {
         gh.get(`/repos/${config.owner}/${config.repo}/pulls?state=open&per_page=50`),
       ]);
       setPosts(Array.isArray(postsData) ? postsData.sort((a, b) => b.name.localeCompare(a.name)) : []);
-      const cmsDrafts = prsData.filter(pr => pr.title.startsWith("[CMS] Draft:"));
-      setDrafts(cmsDrafts);
-    } catch (e) {
-      setStatus({ type: "error", msg: e.message });
-    } finally {
-      setLoadingPosts(false);
-    }
+      setDrafts(prsData.filter(pr => pr.title.startsWith("[CMS] Draft:")));
+    } catch (e) { setStatus({ type: "error", msg: e.message }); }
+    finally { setLoadingPosts(false); }
   }, [config]);
 
   useEffect(() => { if (view === VIEWS.LIST) fetchAll(); }, [view, fetchAll]);
@@ -103,15 +96,14 @@ export default function CMS() {
   };
 
   const openPost = async (post) => {
-    setStatus({ type: "info", msg: "Loading post\u2026" });
+    setStatus({ type: "info", msg: "Loading post..." });
     try {
       const gh = GH(config.token);
       const data = await gh.get(`/repos/${config.owner}/${config.repo}/contents/_posts/${post.name}`);
       const content = atob(data.content.replace(/\n/g, ""));
       const fmMatch = content.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
       if (fmMatch) {
-        const raw = fmMatch[1];
-        const body = fmMatch[2].trim();
+        const raw = fmMatch[1], body = fmMatch[2].trim();
         const parse = (k) => { const m = raw.match(new RegExp(`^${k}:\\s*(.+)$`, "m")); return m ? m[1].replace(/^["']|["']$/g, "").trim() : ""; };
         const tagsMatch = raw.match(/^tags:\n((?:\s+-\s*.+\n?)*)/m);
         const tags = tagsMatch ? (tagsMatch[1].match(/-\s*(.+)/g)?.map(t => t.replace(/^-\s*/, "").trim()).join(", ") || "") : "";
@@ -123,7 +115,7 @@ export default function CMS() {
   };
 
   const openDraft = async (pr) => {
-    setStatus({ type: "info", msg: "Loading draft\u2026" });
+    setStatus({ type: "info", msg: "Loading draft..." });
     try {
       const gh = GH(config.token);
       const files = await gh.get(`/repos/${config.owner}/${config.repo}/pulls/${pr.number}/files`);
@@ -133,8 +125,7 @@ export default function CMS() {
       const content = atob(data.content.replace(/\n/g, ""));
       const fmMatch = content.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
       if (fmMatch) {
-        const raw = fmMatch[1];
-        const body = fmMatch[2].trim();
+        const raw = fmMatch[1], body = fmMatch[2].trim();
         const parse = (k) => { const m = raw.match(new RegExp(`^${k}:\\s*(.+)$`, "m")); return m ? m[1].replace(/^["']|["']$/g, "").trim() : ""; };
         const tagsMatch = raw.match(/^tags:\n((?:\s+-\s*.+\n?)*)/m);
         const tags = tagsMatch ? (tagsMatch[1].match(/-\s*(.+)/g)?.map(t => t.replace(/^-\s*/, "").trim()).join(", ") || "") : "";
@@ -158,15 +149,14 @@ export default function CMS() {
       await gh.delete(`/repos/${owner}/${repo}/contents/_posts/${post.name}`, { message: `[CMS] Delete: ${post.name}`, sha: data.sha, branch });
       const pr = await gh.post(`/repos/${owner}/${repo}/pulls`, { title: `[CMS] Delete: ${post.name}`, body: "Deleted via hugs4bugs CMS.", head: branch, base: "main" });
       await gh.put(`/repos/${owner}/${repo}/pulls/${pr.number}/merge`, { merge_method: "squash", commit_title: `Delete: ${post.name}` });
-      setStatus({ type: "success", msg: `"${post.name}" deleted and deployed.` });
+      setStatus({ type: "success", msg: `"${post.name}" deleted.` });
       fetchAll();
-    } catch (e) {
-      setStatus({ type: "error", msg: e.message });
-    } finally { setDeleting(null); }
+    } catch (e) { setStatus({ type: "error", msg: e.message }); }
+    finally { setDeleting(null); }
   };
 
   const deleteDraft = async (pr) => {
-    if (!window.confirm(`Discard draft "${pr.title.replace("[CMS] Draft: ", "")}"? This will close the PR and delete the branch.`)) return;
+    if (!window.confirm(`Discard draft "${pr.title.replace("[CMS] Draft: ", "")}"?`)) return;
     setDeleting(pr.number);
     const gh = GH(config.token);
     const { owner, repo } = config;
@@ -176,9 +166,8 @@ export default function CMS() {
       await gh.delete(`/repos/${owner}/${repo}/git/refs/heads/${pr.head.ref}`);
       setStatus({ type: "success", msg: "Draft discarded." });
       fetchAll();
-    } catch (e) {
-      setStatus({ type: "error", msg: e.message });
-    } finally { setDeleting(null); }
+    } catch (e) { setStatus({ type: "error", msg: e.message }); }
+    finally { setDeleting(null); }
   };
 
   const publishDraft = async (pr) => {
@@ -187,17 +176,16 @@ export default function CMS() {
     setPublishing(true);
     try {
       await gh.put(`/repos/${owner}/${repo}/pulls/${pr.number}/merge`, { merge_method: "squash", commit_title: pr.title.replace("[CMS] Draft:", "Publish:") });
-      setStatus({ type: "success", msg: "Draft published! Deploying to Firebase\u2026", prUrl: pr.html_url });
+      setStatus({ type: "success", msg: "Draft published! Deploying to Firebase...", prUrl: pr.html_url });
       fetchAll();
-    } catch (e) {
-      setStatus({ type: "error", msg: e.message });
-    } finally { setPublishing(false); }
+    } catch (e) { setStatus({ type: "error", msg: e.message }); }
+    finally { setPublishing(false); }
   };
 
   const publish = async (draft = false) => {
     if (!fields.title.trim()) { setStatus({ type: "error", msg: "Title is required." }); return; }
     setPublishing(true);
-    setStatus({ type: "info", msg: draft ? "Saving draft\u2026" : "Publishing\u2026", steps: [] });
+    setStatus({ type: "info", msg: draft ? "Saving draft..." : "Publishing...", steps: [] });
     const gh = GH(config.token);
     const { owner, repo } = config;
     const filename = filenameFromTitle(fields.title, fields.date);
@@ -207,39 +195,37 @@ export default function CMS() {
     try {
       let prNumber = editPost?.prNumber;
       if (!editPost?.isDraft) {
-        step("Getting main branch ref\u2026");
+        step("Getting main branch ref...");
         const ref = await gh.get(`/repos/${owner}/${repo}/git/ref/heads/main`);
-        const sha = ref.object.sha;
-        step("Creating branch\u2026");
-        await gh.post(`/repos/${owner}/${repo}/git/refs`, { ref: `refs/heads/${branch}`, sha });
+        step("Creating branch...");
+        await gh.post(`/repos/${owner}/${repo}/git/refs`, { ref: `refs/heads/${branch}`, sha: ref.object.sha });
       }
-      step(`Writing _posts/${filename}\u2026`);
+      step(`Writing _posts/${filename}...`);
       const fileBody = { message: `[CMS] ${draft ? "Draft" : "Publish"}: ${fields.title}`, content, branch };
       if (editPost?.sha) fileBody.sha = editPost.sha;
       await gh.put(`/repos/${owner}/${repo}/contents/_posts/${filename}`, fileBody);
       if (!editPost?.isDraft) {
-        step("Creating Pull Request\u2026");
+        step("Creating Pull Request...");
         const pr = await gh.post(`/repos/${owner}/${repo}/pulls`, {
           title: `[CMS] ${draft ? "Draft" : "Post"}: ${fields.title}`,
-          body: `Auto-generated by hugs4bugs CMS.\n\n**${draft ? "Draft \u2014 review before merging." : "Ready to publish \u2014 auto-merging."}**`,
+          body: `Auto-generated by hugs4bugs CMS.\n\n**${draft ? "Draft - review before merging." : "Ready to publish - auto-merging."}**`,
           head: branch, base: "main",
         });
         prNumber = pr.number;
         if (!draft) {
-          step("Merging PR \u2192 triggering deploy\u2026");
+          step("Merging PR -> triggering deploy...");
           await gh.put(`/repos/${owner}/${repo}/pulls/${pr.number}/merge`, { merge_method: "squash", commit_title: `Publish: ${fields.title}` });
         }
-        setStatus({ type: "success", msg: draft ? `Draft PR #${prNumber} created!` : "Published! Deploying to Firebase\u2026", prUrl: `https://github.com/${owner}/${repo}/pull/${prNumber}`, steps: [] });
+        setStatus({ type: "success", msg: draft ? `Draft PR #${prNumber} created!` : "Published! Deploying to Firebase...", prUrl: `https://github.com/${owner}/${repo}/pull/${prNumber}`, steps: [] });
       } else {
         if (!draft) {
-          step("Merging draft PR\u2026");
+          step("Merging draft PR...");
           await gh.put(`/repos/${owner}/${repo}/pulls/${prNumber}/merge`, { merge_method: "squash", commit_title: `Publish: ${fields.title}` });
         }
-        setStatus({ type: "success", msg: draft ? "Draft updated!" : "Draft published! Deploying to Firebase\u2026", steps: [] });
+        setStatus({ type: "success", msg: draft ? "Draft updated!" : "Draft published! Deploying to Firebase...", steps: [] });
       }
-    } catch (e) {
-      setStatus(s => ({ type: "error", msg: e.message, steps: s?.steps || [] }));
-    } finally { setPublishing(false); }
+    } catch (e) { setStatus(s => ({ type: "error", msg: e.message, steps: s?.steps || [] })); }
+    finally { setPublishing(false); }
   };
 
   const set = (k) => (e) => setFields(f => ({ ...f, [k]: e.target.value }));
@@ -277,14 +263,13 @@ export default function CMS() {
         .md-preview code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; font-size: 13px; }
         .md-preview ul, .md-preview ol { padding-left: 1.5em; margin: 0.5em 0; line-height: 1.75; }
         .md-preview a { color: #2563eb; }
-        .token.comment, .token.prolog { color: #8b949e !important; }
+        .token.comment,.token.prolog { color: #8b949e !important; }
         .token.keyword { color: #ff7b72 !important; }
         .token.string { color: #a5d6ff !important; }
         .token.function { color: #d2a8ff !important; }
         .token.number { color: #79c0ff !important; }
         .token.operator { color: #ff7b72 !important; }
         .token.class-name { color: #ffa657 !important; }
-        .token.tag .token.tag { color: #7ee787 !important; }
         .token.attr-name { color: #79c0ff !important; }
         .token.attr-value { color: #a5d6ff !important; }
         .token.boolean { color: #79c0ff !important; }
@@ -305,11 +290,7 @@ export default function CMS() {
             </button>
             <div className={`sidebar-item ${view === VIEWS.LIST ? "active" : ""}`} onClick={() => setView(VIEWS.LIST)}>
               <GridIcon /> All Posts
-              {drafts.length > 0 && (
-                <span style={{ marginLeft: "auto", background: "#f59e0b", color: "#fff", borderRadius: 10, fontSize: 10, padding: "1px 6px", fontWeight: 600 }}>
-                  {drafts.length}
-                </span>
-              )}
+              {drafts.length > 0 && <span style={{ marginLeft: "auto", background: "#f59e0b", color: "#fff", borderRadius: 10, fontSize: 10, padding: "1px 6px", fontWeight: 600 }}>{drafts.length}</span>}
             </div>
             <div className={`sidebar-item ${view === VIEWS.EDITOR ? "active" : ""}`} onClick={() => view !== VIEWS.EDITOR && newPost()}>
               <EditIcon /> Editor
@@ -322,21 +303,10 @@ export default function CMS() {
           </aside>
           <main style={{ flex: 1, overflow: "hidden", display: "flex", flexDirection: "column" }}>
             {view === VIEWS.LIST && (
-              <PostsList
-                posts={posts} drafts={drafts} loading={loadingPosts}
-                onOpen={openPost} onOpenDraft={openDraft} onRefresh={fetchAll} onNew={newPost}
-                onDelete={deletePost} onPublishDraft={publishDraft} onDeleteDraft={deleteDraft}
-                deleting={deleting} status={status}
-                activeListTab={activeListTab} setActiveListTab={setActiveListTab}
-              />
+              <PostsList posts={posts} drafts={drafts} loading={loadingPosts} onOpen={openPost} onOpenDraft={openDraft} onRefresh={fetchAll} onNew={newPost} onDelete={deletePost} onPublishDraft={publishDraft} onDeleteDraft={deleteDraft} deleting={deleting} status={status} activeListTab={activeListTab} setActiveListTab={setActiveListTab} />
             )}
             {view === VIEWS.EDITOR && (
-              <EditorView
-                fields={fields} set={set} previewMode={previewMode}
-                setPreviewMode={setPreviewMode} onPublish={publish} publishing={publishing}
-                status={status} setStatus={setStatus} editPost={editPost}
-                onBack={() => setView(VIEWS.LIST)} activeTab={activeTab} setActiveTab={setActiveTab}
-              />
+              <EditorView fields={fields} set={set} previewMode={previewMode} setPreviewMode={setPreviewMode} onPublish={publish} publishing={publishing} status={status} setStatus={setStatus} editPost={editPost} onBack={() => setView(VIEWS.LIST)} activeTab={activeTab} setActiveTab={setActiveTab} />
             )}
           </main>
         </div>
@@ -355,8 +325,8 @@ function SetupScreen({ config, onSave }) {
     try {
       const r = await fetch(`https://api.github.com/repos/${form.owner}/${form.repo}`, { headers: { Authorization: `token ${form.token}` } });
       const d = await r.json();
-      if (r.ok) setTestResult({ ok: true, msg: `\u2713 Connected to ${d.full_name}` });
-      else setTestResult({ ok: false, msg: `\u2717 ${d.message}` });
+      if (r.ok) setTestResult({ ok: true, msg: `Connected to ${d.full_name}` });
+      else setTestResult({ ok: false, msg: d.message });
     } catch (e) { setTestResult({ ok: false, msg: e.message }); }
     setTesting(false);
   };
@@ -366,7 +336,7 @@ function SetupScreen({ config, onSave }) {
         <h1 style={{ fontSize: 22, fontWeight: 600, color: "#111", marginBottom: 6 }}>hugs4bugs<span style={{ color: "#16a34a" }}>.</span>cms</h1>
         <p style={{ color: "#888", fontSize: 14, marginBottom: 28, lineHeight: 1.6 }}>Connect your GitHub repo to start writing.</p>
         {[
-          { label: "GitHub Personal Access Token", key: "token", type: "password", placeholder: "ghp_\u2026", hint: "repo + pull_requests scopes" },
+          { label: "GitHub Personal Access Token", key: "token", type: "password", placeholder: "ghp_...", hint: "repo + pull_requests scopes" },
           { label: "Repo Owner", key: "owner", placeholder: "sivolko" },
           { label: "Repository", key: "repo", placeholder: "hugs4bugs" },
           { label: "Default Author", key: "author", placeholder: "Shubhendu Shubham" },
@@ -379,8 +349,8 @@ function SetupScreen({ config, onSave }) {
         ))}
         {testResult && <div style={{ padding: "10px 14px", borderRadius: 8, marginBottom: 14, fontSize: 13, background: testResult.ok ? "#f0fdf4" : "#fef2f2", color: testResult.ok ? "#16a34a" : "#dc2626" }}>{testResult.msg}</div>}
         <div style={{ display: "flex", gap: 10, marginTop: 24 }}>
-          <button className="btn btn-outline" onClick={test} disabled={testing || !form.token} style={{ flex: 1 }}>{testing ? "Testing\u2026" : "Test Connection"}</button>
-          <button className="btn btn-primary" style={{ flex: 1 }} onClick={() => onSave(form)} disabled={!form.token}>Connect \u2192</button>
+          <button className="btn btn-outline" onClick={test} disabled={testing || !form.token} style={{ flex: 1 }}>{testing ? "Testing..." : "Test Connection"}</button>
+          <button className="btn btn-primary" style={{ flex: 1 }} onClick={() => onSave(form)} disabled={!form.token}>Connect</button>
         </div>
       </div>
     </div>
@@ -396,7 +366,7 @@ function PostsList({ posts, drafts, loading, onOpen, onOpenDraft, onRefresh, onN
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ display: "flex", alignItems: "center", marginBottom: 20, gap: 12 }}>
           <div style={{ flex: 1 }}><h2 style={{ fontSize: 20, fontWeight: 600, color: "#111" }}>Posts</h2></div>
-          <button className="btn btn-outline" onClick={onRefresh}>\u21ba Refresh</button>
+          <button className="btn btn-outline" onClick={onRefresh}>Refresh</button>
           <button className="btn btn-primary" onClick={onNew}>+ New Post</button>
         </div>
         <div style={{ display: "flex", gap: 4, background: "#f1f1f1", padding: 4, borderRadius: 10, marginBottom: 16, width: "fit-content" }}>
@@ -405,13 +375,9 @@ function PostsList({ posts, drafts, loading, onOpen, onOpenDraft, onRefresh, onN
             Drafts {drafts.length > 0 && <span style={{ background: "#f59e0b", color: "#fff", borderRadius: 8, fontSize: 10, padding: "1px 5px", marginLeft: 4 }}>{drafts.length}</span>}
           </button>
         </div>
-        {status && (
-          <div style={{ padding: "10px 14px", borderRadius: 8, marginBottom: 16, fontSize: 13, background: status.type === "error" ? "#fef2f2" : status.type === "success" ? "#f0fdf4" : "#eff6ff", color: status.type === "error" ? "#dc2626" : status.type === "success" ? "#16a34a" : "#1d4ed8" }}>
-            {status.msg}
-          </div>
-        )}
-        <input className="input" placeholder="Search\u2026" value={search} onChange={e => setSearch(e.target.value)} style={{ marginBottom: 16 }} />
-        {loading && (<div style={{ textAlign: "center", padding: 64, color: "#aaa" }}><div className="spinner" style={{ margin: "0 auto 12px" }} />Fetching from GitHub\u2026</div>)}
+        {status && <div style={{ padding: "10px 14px", borderRadius: 8, marginBottom: 16, fontSize: 13, background: status.type === "error" ? "#fef2f2" : status.type === "success" ? "#f0fdf4" : "#eff6ff", color: status.type === "error" ? "#dc2626" : status.type === "success" ? "#16a34a" : "#1d4ed8" }}>{status.msg}</div>}
+        <input className="input" placeholder="Search..." value={search} onChange={e => setSearch(e.target.value)} style={{ marginBottom: 16 }} />
+        {loading && <div style={{ textAlign: "center", padding: 64, color: "#aaa" }}><div className="spinner" style={{ margin: "0 auto 12px" }} />Fetching from GitHub...</div>}
         {activeListTab === "published" && !loading && (
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
             {filtered.length === 0 && <EmptyState text={search ? "No posts match." : "No published posts yet."} />}
@@ -427,7 +393,7 @@ function PostsList({ posts, drafts, loading, onOpen, onOpenDraft, onRefresh, onN
                     <div style={{ fontSize: 12, color: "#aaa", marginTop: 2, fontFamily: "'DM Mono', monospace" }}>{date}</div>
                   </div>
                   <button className="btn btn-red" style={{ padding: "5px 10px", fontSize: 12, flexShrink: 0 }} onClick={(e) => { e.stopPropagation(); onDelete(post); }} disabled={deleting === post.name}>
-                    {deleting === post.name ? "\u2026" : <TrashIcon />}
+                    {deleting === post.name ? "..." : <TrashIcon />}
                   </button>
                 </div>
               );
@@ -445,13 +411,13 @@ function PostsList({ posts, drafts, loading, onOpen, onOpenDraft, onRefresh, onN
                   <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#f59e0b", flexShrink: 0 }} />
                   <div style={{ flex: 1, minWidth: 0, cursor: "pointer" }} onClick={() => onOpenDraft(pr)}>
                     <div style={{ fontWeight: 500, fontSize: 14, color: "#111", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{title}</div>
-                    <div style={{ fontSize: 12, color: "#aaa", marginTop: 2, fontFamily: "'DM Mono', monospace" }}>PR #{pr.number} \u00b7 {date}</div>
+                    <div style={{ fontSize: 12, color: "#aaa", marginTop: 2, fontFamily: "'DM Mono', monospace" }}>PR #{pr.number} - {date}</div>
                   </div>
                   <div style={{ display: "flex", gap: 6, flexShrink: 0 }}>
                     <button className="btn btn-green" style={{ padding: "5px 10px", fontSize: 12 }} onClick={() => onPublishDraft(pr)}>Publish</button>
-                    <a href={pr.html_url} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: "5px 10px", fontSize: 12 }}>PR \u2197</a>
+                    <a href={pr.html_url} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: "5px 10px", fontSize: 12 }}>PR</a>
                     <button className="btn btn-red" style={{ padding: "5px 10px", fontSize: 12 }} onClick={() => onDeleteDraft(pr)} disabled={deleting === pr.number}>
-                      {deleting === pr.number ? "\u2026" : <TrashIcon />}
+                      {deleting === pr.number ? "..." : <TrashIcon />}
                     </button>
                   </div>
                 </div>
@@ -470,7 +436,7 @@ function EmptyState({ text }) {
 
 const LANGUAGES = ["bash","c","cpp","css","diff","docker","go","graphql","html","java","javascript","json","kotlin","kql","markdown","python","ruby","rust","shell","sql","swift","typescript","yaml"];
 
-function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publishing, status, setStatus, editPost, onBack, activeTab, setActiveTab }) {
+function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publishing, status, editPost, onBack, activeTab, setActiveTab }) {
   const textareaRef = useRef(null);
   const [showLangPicker, setShowLangPicker] = useState(false);
   const [langSearch, setLangSearch] = useState("");
@@ -502,23 +468,25 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
       <div style={{ background: "#fff", borderBottom: "1px solid #e2e8f0", padding: "10px 20px", display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
-        <button className="btn btn-outline" onClick={onBack} style={{ padding: "7px 11px" }}>\u2039</button>
+        <button className="btn btn-outline" onClick={onBack} style={{ padding: "7px 11px" }}>Back</button>
         <input className="input" style={{ flex: 1, fontSize: 15, fontWeight: 500, border: "none", padding: "6px 0", borderBottom: "2px solid #f1f5f9", borderRadius: 0, background: "transparent" }}
-          placeholder="Post title\u2026" value={fields.title} onChange={set("title")} />
+          placeholder="Post title..." value={fields.title} onChange={set("title")} />
         {editPost?.isDraft && <span style={{ fontSize: 11, background: "#fef9c3", color: "#a16207", padding: "3px 8px", borderRadius: 6, fontWeight: 500 }}>Draft</span>}
         <div style={{ display: "flex", gap: 8, flexShrink: 0 }}>
           {publishing
-            ? <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "#888", padding: "0 8px" }}><div className="spinner" /> Working\u2026</div>
-            : <><button className="btn btn-outline" onClick={() => onPublish(true)} disabled={publishing}>\u2398 Save Draft</button>
-                <button className="btn btn-green" onClick={() => onPublish(false)} disabled={publishing}>\u2713 Publish</button></>
+            ? <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "#888", padding: "0 8px" }}><div className="spinner" /> Working...</div>
+            : <>
+                <button className="btn btn-outline" onClick={() => onPublish(true)} disabled={publishing}>Save Draft</button>
+                <button className="btn btn-green" onClick={() => onPublish(false)} disabled={publishing}>Publish</button>
+              </>
           }
         </div>
       </div>
       {status && (
         <div style={{ margin: "10px 20px 0", flexShrink: 0, padding: "10px 14px", borderRadius: 8, fontSize: 13, background: status.type === "success" ? "#f0fdf4" : status.type === "error" ? "#fef2f2" : "#eff6ff", color: status.type === "success" ? "#15803d" : status.type === "error" ? "#b91c1c" : "#1d4ed8", border: `1px solid ${status.type === "success" ? "#bbf7d0" : status.type === "error" ? "#fecaca" : "#bfdbfe"}` }}>
           <div style={{ fontWeight: 500 }}>{status.msg}</div>
-          {status.steps?.map((s, i) => <div key={i} style={{ fontSize: 12, opacity: 0.75, marginTop: 2 }}>\u2713 {s}</div>)}
-          {status.prUrl && <a href={status.prUrl} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, display: "block", marginTop: 4, color: "inherit", textDecoration: "underline" }}>View PR on GitHub \u2192</a>}
+          {status.steps?.map((s, i) => <div key={i} style={{ fontSize: 12, opacity: 0.75, marginTop: 2 }}>- {s}</div>)}
+          {status.prUrl && <a href={status.prUrl} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, display: "block", marginTop: 4, color: "inherit", textDecoration: "underline" }}>View PR on GitHub</a>}
         </div>
       )}
       <div style={{ background: "#f8f9fa", borderBottom: "1px solid #e2e8f0", padding: "6px 20px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
@@ -533,8 +501,8 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
               { label: "B", title: "Bold", before: "**", after: "**", style: { fontWeight: 700 } },
               { label: "I", title: "Italic", before: "*", after: "*", style: { fontStyle: "italic" } },
               { label: "H2", title: "Heading", before: "## ", after: "" },
-              { label: "\u2014", title: "Divider", before: "\n---\n", after: "" },
-              { label: '""', title: "Blockquote", before: "> ", after: "" },
+              { label: "---", title: "Divider", before: "\n---\n", after: "" },
+              { label: "> ", title: "Blockquote", before: "> ", after: "" },
             ].map(({ label, title, before, after, style }) => (
               <button key={label} title={title} onClick={() => insertAt(before, after)}
                 style={{ padding: "4px 9px", borderRadius: 6, border: "1px solid #e2e8f0", background: "#fff", cursor: "pointer", fontSize: 12, fontFamily: "inherit", color: "#555", ...style }}>
@@ -544,12 +512,12 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
             <div style={{ position: "relative" }}>
               <button title="Insert code block" onClick={() => setShowLangPicker(p => !p)}
                 style={{ padding: "4px 10px", borderRadius: 6, border: "1px solid #e2e8f0", background: showLangPicker ? "#111" : "#fff", color: showLangPicker ? "#fff" : "#555", cursor: "pointer", fontSize: 12, fontFamily: "'DM Mono', monospace", display: "flex", alignItems: "center", gap: 5 }}>
-                {"</>"} <span style={{ fontSize: 10, opacity: 0.7 }}>\u25be</span>
+                {"</>"} v
               </button>
               {showLangPicker && (
                 <div style={{ position: "absolute", right: 0, top: "calc(100% + 6px)", background: "#fff", border: "1px solid #e2e8f0", borderRadius: 10, boxShadow: "0 8px 24px rgba(0,0,0,0.12)", zIndex: 100, width: 180 }}>
                   <div style={{ padding: "8px 10px", borderBottom: "1px solid #f1f1f1" }}>
-                    <input autoFocus className="input" placeholder="Search language\u2026" value={langSearch} onChange={e => setLangSearch(e.target.value)} style={{ padding: "5px 8px", fontSize: 12 }} />
+                    <input autoFocus className="input" placeholder="Search language..." value={langSearch} onChange={e => setLangSearch(e.target.value)} style={{ padding: "5px 8px", fontSize: 12 }} />
                   </div>
                   <div style={{ maxHeight: 220, overflowY: "auto" }}>
                     {filteredLangs.map(lang => (
@@ -582,7 +550,7 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
         {activeTab === "content" && !previewMode && (
           <textarea ref={textareaRef} className="input input-mono"
             style={{ width: "100%", height: "100%", border: "none", borderRadius: 0, resize: "none", padding: "28px 32px", fontSize: 14, lineHeight: 1.85, outline: "none", background: "#fff" }}
-            placeholder={"Write your post in Markdown\u2026\n\n## Introduction\n\nStart here\u2026"}
+            placeholder="Write your post in Markdown...\n\n## Introduction\n\nStart here..."
             value={fields.body} onChange={set("body")} />
         )}
         {activeTab === "content" && previewMode && <MarkdownPreview content={fields.body} />}
@@ -590,7 +558,7 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
       </div>
       <div style={{ background: "#fff", borderTop: "1px solid #e2e8f0", padding: "5px 20px", display: "flex", gap: 20, flexShrink: 0 }}>
         <span style={{ fontSize: 11, color: "#ccc", fontFamily: "'DM Mono', monospace" }}>
-          {fields.body.split(/\s+/).filter(Boolean).length} words \u00b7 {fields.body.length} chars
+          {fields.body.split(/\s+/).filter(Boolean).length} words - {fields.body.length} chars
         </span>
         {editPost && <span style={{ fontSize: 11, color: "#ccc", fontFamily: "'DM Mono', monospace" }}>editing: {editPost.name}</span>}
       </div>
@@ -612,7 +580,7 @@ function MetaPanel({ fields, set }) {
         </div>
         <Field label="Tags (comma-separated)" value={fields.tags} onChange={set("tags")} placeholder="devops, linux, docker" />
         <Field label="Description (SEO)" value={fields.description} onChange={set("description")} placeholder="Brief description" textarea />
-        <Field label="Cover Image URL" value={fields.image} onChange={set("image")} placeholder="https://\u2026" />
+        <Field label="Cover Image URL" value={fields.image} onChange={set("image")} placeholder="https://..." />
         <Field label="Optimized Image URL" value={fields.optimized_image} onChange={set("optimized_image")} placeholder="Leave blank to reuse cover image" />
         {fields.image && (
           <div style={{ border: "1px solid #e2e8f0", borderRadius: 10, overflow: "hidden" }}>
@@ -698,7 +666,8 @@ function MarkdownPreview({ content }) {
 
   codeBlocks.forEach(({ lang, code }, i) => {
     const escaped = code.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    const block = `<div style="margin:20px 0;border-radius:10px;overflow:hidden;border:1px solid #2d2d2d;"><div style="background:#1a1a2e;padding:8px 16px;border-bottom:1px solid #2d2d2d;"><span style="font-size:11px;color:#7c8cf8;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;font-weight:600">${lang}</span></div><pre style="margin:0;padding:20px;background:#0d1117;overflow-x:auto;"><code class="language-${lang !== "kql" ? lang : "plaintext"}" style="background:transparent;font-family:'DM Mono',monospace;font-size:13px;line-height:1.7;color:#c9d1d9;">${escaped}</code></pre></div>`;
+    const displayLang = lang === "kql" ? "plaintext" : lang;
+    const block = `<div style="margin:20px 0;border-radius:10px;overflow:hidden;border:1px solid #2d2d2d;"><div style="background:#1a1a2e;padding:8px 16px;border-bottom:1px solid #2d2d2d;"><span style="font-size:11px;color:#7c8cf8;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;font-weight:600">${lang}</span></div><pre style="margin:0;padding:20px;background:#0d1117;overflow-x:auto;"><code class="language-${displayLang}" style="background:transparent;font-family:'DM Mono',monospace;font-size:13px;line-height:1.7;color:#c9d1d9;">${escaped}</code></pre></div>`;
     html = html.replace(`%%CODE_BLOCK_${i}%%`, block);
   });
 
