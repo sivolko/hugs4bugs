@@ -69,15 +69,15 @@
     @include center(rem(800px));
     @include mainFont(400);
     font-size: rem(17px);
-    line-height: rem(30px);
-    letter-spacing: 0.025rem;
+    line-height: 1.85;
+    letter-spacing: 0;
     padding: 0 rem(20px);
     margin: rem(20px) auto 0;
 
     @include media(">=sm") {
-      font-size: rem(20px);
-      line-height: rem(40px);
-      margin: rem(29px) auto 0;
+      font-size: rem(19px);
+      line-height: 1.9;
+      margin: rem(28px) auto 0;
     }
   }
 
@@ -89,12 +89,13 @@
 
   p.post-subtitle {
     color: darken($lightGray, 30%);
-    font-size: rem(17px);
+    font-size: rem(16px);
     margin: rem(10px) auto;
     line-height: 1.6;
+    font-weight: 400;
 
     @include media(">=sm") {
-      font-size: rem(20px);
+      font-size: rem(18px);
     }
   }
 
@@ -117,7 +118,7 @@
     margin: 0 auto;
 
     @include media(">=sm") {
-      font-size: rem(15px);
+      font-size: rem(14px);
     }
 
     span,
@@ -139,21 +140,22 @@
     color: $texts;
 
     code {
-      font-size: rem(15px);
-      background: #282a36;
-      color: #fff;
+      font-family: "DM Mono", "Courier New", monospace;
+      font-size: rem(14px);
+      background: #1e293b;
+      color: #e2e8f0;
       word-wrap: break-word;
-      padding: rem(3px) rem(5px);
-      border-radius: 3px;
+      padding: rem(2px) rem(6px);
+      border-radius: 4px;
 
       @include media(">=sm") {
-        font-size: rem(17px);
+        font-size: rem(15px);
       }
     }
   }
 
   li {
-    padding: rem(10px) 0;
+    padding: rem(8px) 0;
 
     ul {
       margin-bottom: 0;
@@ -185,40 +187,43 @@
   h4,
   h5,
   h6 {
-    @include mainFont(700);
+    @include mainFont(600);
     margin-top: 0;
-    padding-top: rem(50px);
+    padding-top: rem(40px);
+    letter-spacing: -0.02em;
 
     @include media(">=sm") {
       margin-top: 0;
-      padding-top: rem(60px);
+      padding-top: rem(52px);
     }
   }
+
   h1 {
-    font-size: rem(36px);
-    line-height: 1.4;
+    font-size: rem(32px);
+    line-height: 1.25;
     @include media(">=sm") {
-      font-size: rem(50px);
+      font-size: rem(44px);
     }
   }
 
   h2 {
-    font-size: rem(28px);
-    line-height: 1.4;
+    font-size: rem(24px);
+    line-height: 1.3;
 
     @include media(">=sm") {
-      font-size: rem(37px);
+      font-size: rem(32px);
     }
   }
 
   h3 {
-    font-size: rem(22px);
-    line-height: 1.4;
+    font-size: rem(20px);
+    line-height: 1.35;
 
     @include media(">=sm") {
-      font-size: rem(27px);
+      font-size: rem(24px);
     }
   }
+
   ul,
   ol {
     padding-left: rem(60px);
@@ -234,7 +239,7 @@
 
   blockquote {
     @include center(rem(730px));
-    border-left: rem(5px) solid $texts;
+    border-left: rem(4px) solid $texts;
     padding: 0 rem(10px);
     margin: rem(30px) auto;
     width: 90%;
@@ -249,8 +254,9 @@
       font-size: rem(17px);
       color: rgba(0, 0, 0, 0.6);
       margin: 0;
+      font-style: italic;
       @include media(">=sm") {
-        font-size: rem(20px);
+        font-size: rem(19px);
       }
     }
   }
@@ -263,29 +269,35 @@
 
   pre {
     overflow-x: auto;
+    font-family: "DM Mono", monospace;
   }
 
   table {
     @include mainFont(400);
-    font-size: rem(17px);
-    line-height: rem(35px);
-    letter-spacing: 0.025rem;
-    margin: rem(50px) auto;
+    font-size: rem(15px);
+    line-height: 1.7;
+    letter-spacing: 0;
+    margin: rem(40px) auto;
     border-collapse: collapse;
 
     @include media(">=sm") {
-      font-size: rem(20px);
+      font-size: rem(17px);
     }
 
     th,
     td {
-      border: rem(1px) solid #ccc;
-      padding: rem(5px) rem(10px);
+      border: rem(1px) solid #e2e8f0;
+      padding: rem(8px) rem(14px);
 
       @include media(">=sm") {
-        border: rem(2px) solid #ccc;
-        padding: rem(10px) rem(20px);
+        border: rem(1px) solid #e2e8f0;
+        padding: rem(12px) rem(20px);
       }
+    }
+
+    th {
+      background: #f8f9fa;
+      font-weight: 600;
     }
   }
 
@@ -345,8 +357,8 @@
   }
 
   h2 {
-    font-size: rem(24px);
-    font-weight: bold;
+    font-size: rem(22px);
+    font-weight: 600;
     border-bottom: 1px solid $lightGray;
     padding: rem(10px) 0;
     @include media(">=sm") {
@@ -599,7 +611,7 @@
       margin: rem(5px) 0;
       transition: all 0.3s;
       @include media(">=sm") {
-        font-size: rem(23px);
+        font-size: rem(22px);
         margin: 0 0 0 rem(20px);
       }
     }
@@ -624,8 +636,8 @@
     font-size: rem(18px);
     margin: 0 auto rem(29px);
     margin-top: rem(30px);
-    letter-spacing: 0.025rem;
-    line-height: rem(40px);
+    letter-spacing: 0;
+    line-height: 1.8;
     padding: 0 rem(10px);
 
     @include media(">=sm") {
@@ -634,7 +646,7 @@
     }
 
     a {
-      font-size: rem(14px);
+      font-size: rem(13px);
       color: $primaryDark;
       display: inline-block;
       border: 1px solid $primaryDark;
@@ -658,7 +670,7 @@
   .tag-title {
     @include mainFont(300);
     @include center(rem(800px));
-    font-size: rem(30px);
+    font-size: rem(28px);
     margin-top: rem(20px);
     padding: 0 rem(10px);
 
