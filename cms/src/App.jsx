@@ -19,20 +19,7 @@ const filenameFromTitle = (title, date) => {
 const buildFrontmatter = (fields) => {
   const tags = fields.tags.split(",").map((t) => t.trim()).filter(Boolean);
   const tagLines = tags.map((t) => `  - ${t}`).join("\n");
-  return `---
-layout: post
-title: "${fields.title}"
-date: ${fields.date}
-category: ${fields.category}
-tags:\n${tagLines}
-subtitle: "${fields.subtitle}"
-description: "${fields.description}"
-image: ${fields.image}
-optimized_image: ${fields.optimized_image || fields.image}
-author: ${fields.author}
----
-
-${fields.body}`;
+  return `---\nlayout: post\ntitle: "${fields.title}"\ndate: ${fields.date}\ncategory: ${fields.category}\ntags:\n${tagLines}\nsubtitle: "${fields.subtitle}"\ndescription: "${fields.description}"\nimage: ${fields.image}\noptimized_image: ${fields.optimized_image || fields.image}\nauthor: ${fields.author}\n---\n\n${fields.body}`;
 };
 
 const GH = (token) => ({
@@ -116,7 +103,7 @@ export default function CMS() {
   };
 
   const openPost = async (post) => {
-    setStatus({ type: "info", msg: "Loading post…" });
+    setStatus({ type: "info", msg: "Loading post\u2026" });
     try {
       const gh = GH(config.token);
       const data = await gh.get(`/repos/${config.owner}/${config.repo}/contents/_posts/${post.name}`);
@@ -135,16 +122,13 @@ export default function CMS() {
     } catch (e) { setStatus({ type: "error", msg: e.message }); }
   };
 
-  // Open draft PR file in editor
   const openDraft = async (pr) => {
-    setStatus({ type: "info", msg: "Loading draft…" });
+    setStatus({ type: "info", msg: "Loading draft\u2026" });
     try {
       const gh = GH(config.token);
-      // get files changed in the PR
       const files = await gh.get(`/repos/${config.owner}/${config.repo}/pulls/${pr.number}/files`);
       const postFile = files.find(f => f.filename.startsWith("_posts/"));
       if (!postFile) throw new Error("No post file found in this PR");
-      // fetch file content from the PR branch
       const data = await gh.get(`/repos/${config.owner}/${config.repo}/contents/${postFile.filename}?ref=${pr.head.ref}`);
       const content = atob(data.content.replace(/\n/g, ""));
       const fmMatch = content.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
@@ -171,22 +155,14 @@ export default function CMS() {
       const branch = `cms/delete-${slugify(post.name)}-${Date.now()}`;
       const ref = await gh.get(`/repos/${owner}/${repo}/git/ref/heads/main`);
       await gh.post(`/repos/${owner}/${repo}/git/refs`, { ref: `refs/heads/${branch}`, sha: ref.object.sha });
-      await gh.delete(`/repos/${owner}/${repo}/contents/_posts/${post.name}`, {
-        message: `[CMS] Delete: ${post.name}`, sha: data.sha, branch,
-      });
-      const pr = await gh.post(`/repos/${owner}/${repo}/pulls`, {
-        title: `[CMS] Delete: ${post.name}`, body: "Deleted via hugs4bugs CMS.", head: branch, base: "main",
-      });
-      await gh.put(`/repos/${owner}/${repo}/pulls/${pr.number}/merge`, {
-        merge_method: "squash", commit_title: `Delete: ${post.name}`,
-      });
+      await gh.delete(`/repos/${owner}/${repo}/contents/_posts/${post.name}`, { message: `[CMS] Delete: ${post.name}`, sha: data.sha, branch });
+      const pr = await gh.post(`/repos/${owner}/${repo}/pulls`, { title: `[CMS] Delete: ${post.name}`, body: "Deleted via hugs4bugs CMS.", head: branch, base: "main" });
+      await gh.put(`/repos/${owner}/${repo}/pulls/${pr.number}/merge`, { merge_method: "squash", commit_title: `Delete: ${post.name}` });
       setStatus({ type: "success", msg: `"${post.name}" deleted and deployed.` });
       fetchAll();
     } catch (e) {
       setStatus({ type: "error", msg: e.message });
-    } finally {
-      setDeleting(null);
-    }
+    } finally { setDeleting(null); }
   };
 
   const deleteDraft = async (pr) => {
@@ -198,91 +174,72 @@ export default function CMS() {
       await gh.post(`/repos/${owner}/${repo}/issues/${pr.number}/comments`, { body: "Discarded via hugs4bugs CMS." });
       await gh.patch(`/repos/${owner}/${repo}/pulls/${pr.number}`, { state: "closed" });
       await gh.delete(`/repos/${owner}/${repo}/git/refs/heads/${pr.head.ref}`);
-      setStatus({ type: "success", msg: `Draft discarded.` });
+      setStatus({ type: "success", msg: "Draft discarded." });
       fetchAll();
     } catch (e) {
       setStatus({ type: "error", msg: e.message });
-    } finally {
-      setDeleting(null);
-    }
+    } finally { setDeleting(null); }
   };
 
-  // Publish a draft PR by merging it
   const publishDraft = async (pr) => {
     const gh = GH(config.token);
     const { owner, repo } = config;
     setPublishing(true);
     try {
-      await gh.put(`/repos/${owner}/${repo}/pulls/${pr.number}/merge`, {
-        merge_method: "squash",
-        commit_title: pr.title.replace("[CMS] Draft:", "Publish:"),
-      });
-      setStatus({ type: "success", msg: `Draft published! Deploying to Firebase…`, prUrl: pr.html_url });
+      await gh.put(`/repos/${owner}/${repo}/pulls/${pr.number}/merge`, { merge_method: "squash", commit_title: pr.title.replace("[CMS] Draft:", "Publish:") });
+      setStatus({ type: "success", msg: "Draft published! Deploying to Firebase\u2026", prUrl: pr.html_url });
       fetchAll();
     } catch (e) {
       setStatus({ type: "error", msg: e.message });
-    } finally {
-      setPublishing(false);
-    }
+    } finally { setPublishing(false); }
   };
 
   const publish = async (draft = false) => {
     if (!fields.title.trim()) { setStatus({ type: "error", msg: "Title is required." }); return; }
     setPublishing(true);
-    setStatus({ type: "info", msg: draft ? "Saving draft…" : "Publishing…", steps: [] });
+    setStatus({ type: "info", msg: draft ? "Saving draft\u2026" : "Publishing\u2026", steps: [] });
     const gh = GH(config.token);
     const { owner, repo } = config;
     const filename = filenameFromTitle(fields.title, fields.date);
     const branch = editPost?.branch || `cms/${slugify(fields.title)}-${Date.now()}`;
     const content = btoa(unescape(encodeURIComponent(buildFrontmatter(fields))));
     const step = (msg) => setStatus(s => ({ ...s, steps: [...(s.steps || []), msg] }));
-
     try {
       let prNumber = editPost?.prNumber;
-
       if (!editPost?.isDraft) {
-        step("Getting main branch ref…");
+        step("Getting main branch ref\u2026");
         const ref = await gh.get(`/repos/${owner}/${repo}/git/ref/heads/main`);
         const sha = ref.object.sha;
-        step(`Creating branch…`);
+        step("Creating branch\u2026");
         await gh.post(`/repos/${owner}/${repo}/git/refs`, { ref: `refs/heads/${branch}`, sha });
       }
-
-      step(`Writing _posts/${filename}…`);
+      step(`Writing _posts/${filename}\u2026`);
       const fileBody = { message: `[CMS] ${draft ? "Draft" : "Publish"}: ${fields.title}`, content, branch };
       if (editPost?.sha) fileBody.sha = editPost.sha;
       await gh.put(`/repos/${owner}/${repo}/contents/_posts/${filename}`, fileBody);
-
       if (!editPost?.isDraft) {
-        step("Creating Pull Request…");
+        step("Creating Pull Request\u2026");
         const pr = await gh.post(`/repos/${owner}/${repo}/pulls`, {
           title: `[CMS] ${draft ? "Draft" : "Post"}: ${fields.title}`,
-          body: `Auto-generated by hugs4bugs CMS.\n\n**${draft ? "Draft — review before merging." : "Ready to publish — auto-merging."}**`,
+          body: `Auto-generated by hugs4bugs CMS.\n\n**${draft ? "Draft \u2014 review before merging." : "Ready to publish \u2014 auto-merging."}**`,
           head: branch, base: "main",
         });
         prNumber = pr.number;
         if (!draft) {
-          step("Merging PR → triggering deploy…");
-          await gh.put(`/repos/${owner}/${repo}/pulls/${pr.number}/merge`, {
-            merge_method: "squash", commit_title: `Publish: ${fields.title}`,
-          });
+          step("Merging PR \u2192 triggering deploy\u2026");
+          await gh.put(`/repos/${owner}/${repo}/pulls/${pr.number}/merge`, { merge_method: "squash", commit_title: `Publish: ${fields.title}` });
         }
-        setStatus({ type: "success", msg: draft ? `Draft PR #${prNumber} created!` : `Published! Deploying to Firebase…`, prUrl: `https://github.com/${owner}/${repo}/pull/${prNumber}`, steps: [] });
+        setStatus({ type: "success", msg: draft ? `Draft PR #${prNumber} created!` : "Published! Deploying to Firebase\u2026", prUrl: `https://github.com/${owner}/${repo}/pull/${prNumber}`, steps: [] });
       } else {
-        // updating an existing draft branch — just commit, PR already exists
         if (!draft) {
-          step("Merging draft PR…");
-          await gh.put(`/repos/${owner}/${repo}/pulls/${prNumber}/merge`, {
-            merge_method: "squash", commit_title: `Publish: ${fields.title}`,
-          });
+          step("Merging draft PR\u2026");
+          await gh.put(`/repos/${owner}/${repo}/pulls/${prNumber}/merge`, { merge_method: "squash", commit_title: `Publish: ${fields.title}` });
         }
-        setStatus({ type: "success", msg: draft ? "Draft updated!" : "Draft published! Deploying to Firebase…", steps: [] });
+        setStatus({ type: "success", msg: draft ? "Draft updated!" : "Draft published! Deploying to Firebase\u2026", steps: [] });
       }
     } catch (e) {
       setStatus(s => ({ type: "error", msg: e.message, steps: s?.steps || [] }));
-    } finally {
-      setPublishing(false);
-    }
+    } finally { setPublishing(false); }
   };
 
   const set = (k) => (e) => setFields(f => ({ ...f, [k]: e.target.value }));
@@ -363,7 +320,6 @@ export default function CMS() {
             </div>
             <div style={{ padding: "8px 12px 0", fontSize: 11, color: "#bbb" }}>{config.owner}/{config.repo}</div>
           </aside>
-
           <main style={{ flex: 1, overflow: "hidden", display: "flex", flexDirection: "column" }}>
             {view === VIEWS.LIST && (
               <PostsList
@@ -399,8 +355,8 @@ function SetupScreen({ config, onSave }) {
     try {
       const r = await fetch(`https://api.github.com/repos/${form.owner}/${form.repo}`, { headers: { Authorization: `token ${form.token}` } });
       const d = await r.json();
-      if (r.ok) setTestResult({ ok: true, msg: `✓ Connected to ${d.full_name}` });
-      else setTestResult({ ok: false, msg: `✗ ${d.message}` });
+      if (r.ok) setTestResult({ ok: true, msg: `\u2713 Connected to ${d.full_name}` });
+      else setTestResult({ ok: false, msg: `\u2717 ${d.message}` });
     } catch (e) { setTestResult({ ok: false, msg: e.message }); }
     setTesting(false);
   };
@@ -410,7 +366,7 @@ function SetupScreen({ config, onSave }) {
         <h1 style={{ fontSize: 22, fontWeight: 600, color: "#111", marginBottom: 6 }}>hugs4bugs<span style={{ color: "#16a34a" }}>.</span>cms</h1>
         <p style={{ color: "#888", fontSize: 14, marginBottom: 28, lineHeight: 1.6 }}>Connect your GitHub repo to start writing.</p>
         {[
-          { label: "GitHub Personal Access Token", key: "token", type: "password", placeholder: "ghp_…", hint: "repo + pull_requests scopes" },
+          { label: "GitHub Personal Access Token", key: "token", type: "password", placeholder: "ghp_\u2026", hint: "repo + pull_requests scopes" },
           { label: "Repo Owner", key: "owner", placeholder: "sivolko" },
           { label: "Repository", key: "repo", placeholder: "hugs4bugs" },
           { label: "Default Author", key: "author", placeholder: "Shubhendu Shubham" },
@@ -423,8 +379,8 @@ function SetupScreen({ config, onSave }) {
         ))}
         {testResult && <div style={{ padding: "10px 14px", borderRadius: 8, marginBottom: 14, fontSize: 13, background: testResult.ok ? "#f0fdf4" : "#fef2f2", color: testResult.ok ? "#16a34a" : "#dc2626" }}>{testResult.msg}</div>}
         <div style={{ display: "flex", gap: 10, marginTop: 24 }}>
-          <button className="btn btn-outline" onClick={test} disabled={testing || !form.token} style={{ flex: 1 }}>{testing ? "Testing…" : "Test Connection"}</button>
-          <button className="btn btn-primary" style={{ flex: 1 }} onClick={() => onSave(form)} disabled={!form.token}>Connect →</button>
+          <button className="btn btn-outline" onClick={test} disabled={testing || !form.token} style={{ flex: 1 }}>{testing ? "Testing\u2026" : "Test Connection"}</button>
+          <button className="btn btn-primary" style={{ flex: 1 }} onClick={() => onSave(form)} disabled={!form.token}>Connect \u2192</button>
         </div>
       </div>
     </div>
@@ -435,44 +391,27 @@ function PostsList({ posts, drafts, loading, onOpen, onOpenDraft, onRefresh, onN
   const [search, setSearch] = useState("");
   const filtered = posts.filter(p => p.name.toLowerCase().includes(search.toLowerCase()));
   const filteredDrafts = drafts.filter(d => d.title.toLowerCase().includes(search.toLowerCase()));
-
   return (
     <div style={{ height: "100%", overflow: "auto", padding: 32 }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ display: "flex", alignItems: "center", marginBottom: 20, gap: 12 }}>
-          <div style={{ flex: 1 }}>
-            <h2 style={{ fontSize: 20, fontWeight: 600, color: "#111" }}>Posts</h2>
-          </div>
-          <button className="btn btn-outline" onClick={onRefresh}>↺ Refresh</button>
+          <div style={{ flex: 1 }}><h2 style={{ fontSize: 20, fontWeight: 600, color: "#111" }}>Posts</h2></div>
+          <button className="btn btn-outline" onClick={onRefresh}>\u21ba Refresh</button>
           <button className="btn btn-primary" onClick={onNew}>+ New Post</button>
         </div>
-
-        {/* Tab switcher */}
         <div style={{ display: "flex", gap: 4, background: "#f1f1f1", padding: 4, borderRadius: 10, marginBottom: 16, width: "fit-content" }}>
-          <button className={`list-tab ${activeListTab === "published" ? "active" : ""}`} onClick={() => setActiveListTab("published")}>
-            Published ({posts.length})
-          </button>
+          <button className={`list-tab ${activeListTab === "published" ? "active" : ""}`} onClick={() => setActiveListTab("published")}>Published ({posts.length})</button>
           <button className={`list-tab ${activeListTab === "drafts" ? "active" : ""}`} onClick={() => setActiveListTab("drafts")}>
             Drafts {drafts.length > 0 && <span style={{ background: "#f59e0b", color: "#fff", borderRadius: 8, fontSize: 10, padding: "1px 5px", marginLeft: 4 }}>{drafts.length}</span>}
           </button>
         </div>
-
         {status && (
           <div style={{ padding: "10px 14px", borderRadius: 8, marginBottom: 16, fontSize: 13, background: status.type === "error" ? "#fef2f2" : status.type === "success" ? "#f0fdf4" : "#eff6ff", color: status.type === "error" ? "#dc2626" : status.type === "success" ? "#16a34a" : "#1d4ed8" }}>
             {status.msg}
           </div>
         )}
-
-        <input className="input" placeholder="Search…" value={search} onChange={e => setSearch(e.target.value)} style={{ marginBottom: 16 }} />
-
-        {loading && (
-          <div style={{ textAlign: "center", padding: 64, color: "#aaa" }}>
-            <div className="spinner" style={{ margin: "0 auto 12px" }} />
-            Fetching from GitHub…
-          </div>
-        )}
-
-        {/* Published posts */}
+        <input className="input" placeholder="Search\u2026" value={search} onChange={e => setSearch(e.target.value)} style={{ marginBottom: 16 }} />
+        {loading && (<div style={{ textAlign: "center", padding: 64, color: "#aaa" }}><div className="spinner" style={{ margin: "0 auto 12px" }} />Fetching from GitHub\u2026</div>)}
         {activeListTab === "published" && !loading && (
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
             {filtered.length === 0 && <EmptyState text={search ? "No posts match." : "No published posts yet."} />}
@@ -487,21 +426,14 @@ function PostsList({ posts, drafts, loading, onOpen, onOpenDraft, onRefresh, onN
                     <div style={{ fontWeight: 500, fontSize: 14, color: "#111", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{title}</div>
                     <div style={{ fontSize: 12, color: "#aaa", marginTop: 2, fontFamily: "'DM Mono', monospace" }}>{date}</div>
                   </div>
-                  <button
-                    className="btn btn-red"
-                    style={{ padding: "5px 10px", fontSize: 12, flexShrink: 0 }}
-                    onClick={(e) => { e.stopPropagation(); onDelete(post); }}
-                    disabled={deleting === post.name}
-                  >
-                    {deleting === post.name ? "…" : <TrashIcon />}
+                  <button className="btn btn-red" style={{ padding: "5px 10px", fontSize: 12, flexShrink: 0 }} onClick={(e) => { e.stopPropagation(); onDelete(post); }} disabled={deleting === post.name}>
+                    {deleting === post.name ? "\u2026" : <TrashIcon />}
                   </button>
                 </div>
               );
             })}
           </div>
         )}
-
-        {/* Draft PRs */}
         {activeListTab === "drafts" && !loading && (
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
             {filteredDrafts.length === 0 && <EmptyState text={search ? "No drafts match." : "No drafts yet. Use 'Save Draft' in the editor."} />}
@@ -513,22 +445,13 @@ function PostsList({ posts, drafts, loading, onOpen, onOpenDraft, onRefresh, onN
                   <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#f59e0b", flexShrink: 0 }} />
                   <div style={{ flex: 1, minWidth: 0, cursor: "pointer" }} onClick={() => onOpenDraft(pr)}>
                     <div style={{ fontWeight: 500, fontSize: 14, color: "#111", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{title}</div>
-                    <div style={{ fontSize: 12, color: "#aaa", marginTop: 2, fontFamily: "'DM Mono', monospace" }}>PR #{pr.number} · {date}</div>
+                    <div style={{ fontSize: 12, color: "#aaa", marginTop: 2, fontFamily: "'DM Mono', monospace" }}>PR #{pr.number} \u00b7 {date}</div>
                   </div>
                   <div style={{ display: "flex", gap: 6, flexShrink: 0 }}>
-                    <button className="btn btn-green" style={{ padding: "5px 10px", fontSize: 12 }} onClick={() => onPublishDraft(pr)}>
-                      Publish
-                    </button>
-                    <a href={pr.html_url} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: "5px 10px", fontSize: 12 }}>
-                      PR ↗
-                    </a>
-                    <button
-                      className="btn btn-red"
-                      style={{ padding: "5px 10px", fontSize: 12 }}
-                      onClick={() => onDeleteDraft(pr)}
-                      disabled={deleting === pr.number}
-                    >
-                      {deleting === pr.number ? "…" : <TrashIcon />}
+                    <button className="btn btn-green" style={{ padding: "5px 10px", fontSize: 12 }} onClick={() => onPublishDraft(pr)}>Publish</button>
+                    <a href={pr.html_url} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: "5px 10px", fontSize: 12 }}>PR \u2197</a>
+                    <button className="btn btn-red" style={{ padding: "5px 10px", fontSize: 12 }} onClick={() => onDeleteDraft(pr)} disabled={deleting === pr.number}>
+                      {deleting === pr.number ? "\u2026" : <TrashIcon />}
                     </button>
                   </div>
                 </div>
@@ -567,7 +490,7 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
     if (!ta) return;
     const start = ta.selectionStart, end = ta.selectionEnd;
     const selected = fields.body.slice(start, end);
-    const block = `\`\`\`${lang}\n${selected || "// your code here"}\n\`\`\``;
+    const block = "```" + lang + "\n" + (selected || "// your code here") + "\n```";
     const newVal = fields.body.slice(0, start) + block + fields.body.slice(end);
     set("body")({ target: { value: newVal } });
     setShowLangPicker(false); setLangSearch("");
@@ -578,45 +501,39 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
 
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
-      {/* Topbar */}
       <div style={{ background: "#fff", borderBottom: "1px solid #e2e8f0", padding: "10px 20px", display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
-        <button className="btn btn-outline" onClick={onBack} style={{ padding: "7px 11px" }}>‹</button>
+        <button className="btn btn-outline" onClick={onBack} style={{ padding: "7px 11px" }}>\u2039</button>
         <input className="input" style={{ flex: 1, fontSize: 15, fontWeight: 500, border: "none", padding: "6px 0", borderBottom: "2px solid #f1f5f9", borderRadius: 0, background: "transparent" }}
-          placeholder="Post title…" value={fields.title} onChange={set("title")} />
+          placeholder="Post title\u2026" value={fields.title} onChange={set("title")} />
         {editPost?.isDraft && <span style={{ fontSize: 11, background: "#fef9c3", color: "#a16207", padding: "3px 8px", borderRadius: 6, fontWeight: 500 }}>Draft</span>}
         <div style={{ display: "flex", gap: 8, flexShrink: 0 }}>
           {publishing
-            ? <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "#888", padding: "0 8px" }}><div className="spinner" /> Working…</div>
-            : <><button className="btn btn-outline" onClick={() => onPublish(true)} disabled={publishing}>⎘ Save Draft</button>
-                <button className="btn btn-green" onClick={() => onPublish(false)} disabled={publishing}>✓ Publish</button></>
+            ? <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "#888", padding: "0 8px" }}><div className="spinner" /> Working\u2026</div>
+            : <><button className="btn btn-outline" onClick={() => onPublish(true)} disabled={publishing}>\u2398 Save Draft</button>
+                <button className="btn btn-green" onClick={() => onPublish(false)} disabled={publishing}>\u2713 Publish</button></>
           }
         </div>
       </div>
-
       {status && (
         <div style={{ margin: "10px 20px 0", flexShrink: 0, padding: "10px 14px", borderRadius: 8, fontSize: 13, background: status.type === "success" ? "#f0fdf4" : status.type === "error" ? "#fef2f2" : "#eff6ff", color: status.type === "success" ? "#15803d" : status.type === "error" ? "#b91c1c" : "#1d4ed8", border: `1px solid ${status.type === "success" ? "#bbf7d0" : status.type === "error" ? "#fecaca" : "#bfdbfe"}` }}>
           <div style={{ fontWeight: 500 }}>{status.msg}</div>
-          {status.steps?.map((s, i) => <div key={i} style={{ fontSize: 12, opacity: 0.75, marginTop: 2 }}>✓ {s}</div>)}
-          {status.prUrl && <a href={status.prUrl} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, display: "block", marginTop: 4, color: "inherit", textDecoration: "underline" }}>View PR on GitHub →</a>}
+          {status.steps?.map((s, i) => <div key={i} style={{ fontSize: 12, opacity: 0.75, marginTop: 2 }}>\u2713 {s}</div>)}
+          {status.prUrl && <a href={status.prUrl} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, display: "block", marginTop: 4, color: "inherit", textDecoration: "underline" }}>View PR on GitHub \u2192</a>}
         </div>
       )}
-
-      {/* Tab + formatting toolbar */}
       <div style={{ background: "#f8f9fa", borderBottom: "1px solid #e2e8f0", padding: "6px 20px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
         <div style={{ display: "flex", gap: 2, background: "#efefef", padding: 3, borderRadius: 8 }}>
           {["content", "meta"].map(t => (
             <button key={t} className={`toolbar-tab ${activeTab === t ? "active" : ""}`} onClick={() => setActiveTab(t)} style={{ textTransform: "capitalize" }}>{t}</button>
           ))}
         </div>
-
         {activeTab === "content" && !previewMode && (
           <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
-            {/* Formatting buttons */}
             {[
               { label: "B", title: "Bold", before: "**", after: "**", style: { fontWeight: 700 } },
               { label: "I", title: "Italic", before: "*", after: "*", style: { fontStyle: "italic" } },
               { label: "H2", title: "Heading", before: "## ", after: "" },
-              { label: "—", title: "Divider", before: "\n---\n", after: "" },
+              { label: "\u2014", title: "Divider", before: "\n---\n", after: "" },
               { label: '""', title: "Blockquote", before: "> ", after: "" },
             ].map(({ label, title, before, after, style }) => (
               <button key={label} title={title} onClick={() => insertAt(before, after)}
@@ -624,23 +541,20 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
                 {label}
               </button>
             ))}
-
-            {/* Code block picker */}
             <div style={{ position: "relative" }}>
               <button title="Insert code block" onClick={() => setShowLangPicker(p => !p)}
                 style={{ padding: "4px 10px", borderRadius: 6, border: "1px solid #e2e8f0", background: showLangPicker ? "#111" : "#fff", color: showLangPicker ? "#fff" : "#555", cursor: "pointer", fontSize: 12, fontFamily: "'DM Mono', monospace", display: "flex", alignItems: "center", gap: 5 }}>
-                {"</>"}  <span style={{ fontSize: 10, opacity: 0.7 }}>▾</span>
+                {"</>"} <span style={{ fontSize: 10, opacity: 0.7 }}>\u25be</span>
               </button>
               {showLangPicker && (
                 <div style={{ position: "absolute", right: 0, top: "calc(100% + 6px)", background: "#fff", border: "1px solid #e2e8f0", borderRadius: 10, boxShadow: "0 8px 24px rgba(0,0,0,0.12)", zIndex: 100, width: 180 }}>
                   <div style={{ padding: "8px 10px", borderBottom: "1px solid #f1f1f1" }}>
-                    <input autoFocus className="input" placeholder="Search language…" value={langSearch} onChange={e => setLangSearch(e.target.value)}
-                      style={{ padding: "5px 8px", fontSize: 12 }} />
+                    <input autoFocus className="input" placeholder="Search language\u2026" value={langSearch} onChange={e => setLangSearch(e.target.value)} style={{ padding: "5px 8px", fontSize: 12 }} />
                   </div>
                   <div style={{ maxHeight: 220, overflowY: "auto" }}>
                     {filteredLangs.map(lang => (
                       <div key={lang} onClick={() => insertCodeBlock(lang)}
-                        style={{ padding: "7px 14px", fontSize: 13, cursor: "pointer", fontFamily: "'DM Mono', monospace", color: "#333", transition: "background 0.1s" }}
+                        style={{ padding: "7px 14px", fontSize: 13, cursor: "pointer", fontFamily: "'DM Mono', monospace", color: "#333" }}
                         onMouseEnter={e => e.currentTarget.style.background = "#f8f9fa"}
                         onMouseLeave={e => e.currentTarget.style.background = "transparent"}>
                         {lang}
@@ -650,7 +564,6 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
                 </div>
               )}
             </div>
-
             <div style={{ width: 1, height: 18, background: "#e2e8f0", margin: "0 2px" }} />
             <div style={{ display: "flex", gap: 2, background: "#efefef", padding: 3, borderRadius: 8 }}>
               <button className="toolbar-tab active" onClick={() => setPreviewMode(false)}>Write</button>
@@ -658,7 +571,6 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
             </div>
           </div>
         )}
-
         {activeTab === "content" && previewMode && (
           <div style={{ display: "flex", gap: 2, background: "#efefef", padding: 3, borderRadius: 8 }}>
             <button className="toolbar-tab" onClick={() => setPreviewMode(false)}>Write</button>
@@ -666,21 +578,19 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
           </div>
         )}
       </div>
-
       <div style={{ flex: 1, overflow: "auto" }} onClick={() => showLangPicker && setShowLangPicker(false)}>
         {activeTab === "content" && !previewMode && (
           <textarea ref={textareaRef} className="input input-mono"
             style={{ width: "100%", height: "100%", border: "none", borderRadius: 0, resize: "none", padding: "28px 32px", fontSize: 14, lineHeight: 1.85, outline: "none", background: "#fff" }}
-            placeholder={"Write your post in Markdown…\n\n## Introduction\n\nStart here…"}
+            placeholder={"Write your post in Markdown\u2026\n\n## Introduction\n\nStart here\u2026"}
             value={fields.body} onChange={set("body")} />
         )}
         {activeTab === "content" && previewMode && <MarkdownPreview content={fields.body} />}
         {activeTab === "meta" && <MetaPanel fields={fields} set={set} />}
       </div>
-
       <div style={{ background: "#fff", borderTop: "1px solid #e2e8f0", padding: "5px 20px", display: "flex", gap: 20, flexShrink: 0 }}>
         <span style={{ fontSize: 11, color: "#ccc", fontFamily: "'DM Mono', monospace" }}>
-          {fields.body.split(/\s+/).filter(Boolean).length} words · {fields.body.length} chars
+          {fields.body.split(/\s+/).filter(Boolean).length} words \u00b7 {fields.body.length} chars
         </span>
         {editPost && <span style={{ fontSize: 11, color: "#ccc", fontFamily: "'DM Mono', monospace" }}>editing: {editPost.name}</span>}
       </div>
@@ -702,7 +612,7 @@ function MetaPanel({ fields, set }) {
         </div>
         <Field label="Tags (comma-separated)" value={fields.tags} onChange={set("tags")} placeholder="devops, linux, docker" />
         <Field label="Description (SEO)" value={fields.description} onChange={set("description")} placeholder="Brief description" textarea />
-        <Field label="Cover Image URL" value={fields.image} onChange={set("image")} placeholder="https://…" />
+        <Field label="Cover Image URL" value={fields.image} onChange={set("image")} placeholder="https://\u2026" />
         <Field label="Optimized Image URL" value={fields.optimized_image} onChange={set("optimized_image")} placeholder="Leave blank to reuse cover image" />
         {fields.image && (
           <div style={{ border: "1px solid #e2e8f0", borderRadius: 10, overflow: "hidden" }}>
@@ -735,7 +645,6 @@ function Field({ label, value, onChange, placeholder, textarea, mono }) {
 
 function MarkdownPreview({ content }) {
   const ref = useRef(null);
-
   useEffect(() => {
     if (!window.Prism) {
       const script = document.createElement("script");
@@ -756,7 +665,6 @@ function MarkdownPreview({ content }) {
     }
   }, [content]);
 
-  // Extract fenced code blocks first, replace with placeholders
   const codeBlocks = [];
   const withPlaceholders = content.replace(/```(\w+)?\n([\s\S]*?)```/g, (_, lang, code) => {
     const i = codeBlocks.length;
@@ -764,7 +672,18 @@ function MarkdownPreview({ content }) {
     return `%%CODE_BLOCK_${i}%%`;
   });
 
-  let html = withPlaceholders
+  const tableRegex = /(\|.+\|\n)([\|\-: ]+\|\n)((?:\|.+\|\n?)*)/gm;
+  const withTables = withPlaceholders.replace(tableRegex, (_, header, separator, body) => {
+    const parseRow = (row) => row.trim().replace(/^\||\|$/g, "").split("|").map(c => c.trim());
+    const headers = parseRow(header);
+    const aligns = parseRow(separator).map(c => c.startsWith(":") && c.endsWith(":") ? "center" : c.endsWith(":") ? "right" : "left");
+    const rows = body.trim().split("\n").filter(Boolean).map(parseRow);
+    const ths = headers.map((h, i) => `<th style="padding:10px 14px;text-align:${aligns[i]};font-weight:600;color:#111;white-space:nowrap">${h}</th>`).join("");
+    const trs = rows.map(r => `<tr>${r.map((c, i) => `<td style="padding:9px 14px;text-align:${aligns[i] || "left"};border-top:1px solid #e2e8f0">${c}</td>`).join("")}</tr>`).join("");
+    return `<div style="overflow-x:auto;margin:16px 0"><table style="width:100%;border-collapse:collapse;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;font-size:14px"><thead style="background:#f8f9fa"><tr>${ths}</tr></thead><tbody>${trs}</tbody></table></div>`;
+  });
+
+  let html = withTables
     .replace(/^### (.+)$/gm, "<h3>$1</h3>")
     .replace(/^## (.+)$/gm, "<h2>$1</h2>")
     .replace(/^# (.+)$/gm, "<h1>$1</h1>")
@@ -777,15 +696,9 @@ function MarkdownPreview({ content }) {
     .replace(/(<li>.*<\/li>\n?)+/g, m => `<ul>${m}</ul>`)
     .replace(/\n\n+/g, "</p><p>");
 
-  // Restore code blocks with styled wrappers
   codeBlocks.forEach(({ lang, code }, i) => {
     const escaped = code.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    const block = `<div style="margin:20px 0;border-radius:10px;overflow:hidden;border:1px solid #2d2d2d;font-family:'DM Mono',monospace;">
-      <div style="background:#1a1a2e;padding:8px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #2d2d2d;">
-        <span style="font-size:11px;color:#7c8cf8;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;font-weight:600">${lang}</span>
-      </div>
-      <pre style="margin:0;padding:20px;background:#0d1117;overflow-x:auto;border-radius:0;"><code class="language-${lang !== 'kql' ? lang : 'plaintext'}" style="background:transparent;font-family:'DM Mono',monospace;font-size:13px;line-height:1.7;color:#c9d1d9;">${escaped}</code></pre>
-    </div>`;
+    const block = `<div style="margin:20px 0;border-radius:10px;overflow:hidden;border:1px solid #2d2d2d;"><div style="background:#1a1a2e;padding:8px 16px;border-bottom:1px solid #2d2d2d;"><span style="font-size:11px;color:#7c8cf8;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;font-weight:600">${lang}</span></div><pre style="margin:0;padding:20px;background:#0d1117;overflow-x:auto;"><code class="language-${lang !== "kql" ? lang : "plaintext"}" style="background:transparent;font-family:'DM Mono',monospace;font-size:13px;line-height:1.7;color:#c9d1d9;">${escaped}</code></pre></div>`;
     html = html.replace(`%%CODE_BLOCK_${i}%%`, block);
   });
 
@@ -798,5 +711,5 @@ function MarkdownPreview({ content }) {
 const PlusIcon = () => <svg width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>;
 const GridIcon = () => <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>;
 const EditIcon = () => <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>;
-const SettingsIcon = () => <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>;
+const SettingsIcon = () => <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l-.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>;
 const TrashIcon = () => <svg width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>;
