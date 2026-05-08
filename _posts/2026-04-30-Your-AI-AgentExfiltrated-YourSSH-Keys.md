@@ -8,6 +8,7 @@ tags:
 - ai-agents
 - security
 layout: post
+permalink: /your-ai-agent-exfiltrated-your-ssh-keys/
 subtitle: The hidden risks of AI agent integrations and data exfiltration.
 description: 'Exploring the security implications when AI agents have access to sensitive credentials and how approval workflows can inadvertently enable data exfiltration.'
 image: https://cdn.pixabay.com/photo/2017/11/19/23/56/hacking-2964100_960_720.jpg
