@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 
 const STORAGE_KEY = "h4b_cms_config";
+const DRAFT_KEY = "h4b_cms_autosave";
 const defaultConfig = { owner: "sivolko", repo: "hugs4bugs", token: "", author: "Shubhendu Shubham" };
 
 const slugify = (str) =>
@@ -63,6 +64,7 @@ export default function CMS() {
   const [publishing, setPublishing] = useState(false);
   const [activeTab, setActiveTab] = useState("content");
   const [deleting, setDeleting] = useState(null);
+  const [autoSaved, setAutoSaved] = useState(false);
 
   const emptyFields = {
     title: "", subtitle: "", date: todayISO(), category: "", tags: "",
@@ -71,6 +73,14 @@ export default function CMS() {
   const [fields, setFields] = useState(emptyFields);
 
   const saveConfig = (c) => { setConfig(c); localStorage.setItem(STORAGE_KEY, JSON.stringify(c)); };
+
+  // Auto-save fields to localStorage whenever writing a NEW post (no editPost)
+  useEffect(() => {
+    if (view === VIEWS.EDITOR && !editPost) {
+      localStorage.setItem(DRAFT_KEY, JSON.stringify(fields));
+      setAutoSaved(true);
+    }
+  }, [fields, view, editPost]);
 
   const fetchAll = useCallback(async () => {
     if (!config.token) return;
@@ -90,9 +100,15 @@ export default function CMS() {
   useEffect(() => { if (view === VIEWS.LIST) fetchAll(); }, [view, fetchAll]);
 
   const newPost = () => {
-    setFields({ ...emptyFields, date: todayISO(), author: config.author });
+    // Restore auto-saved content if available
+    const saved = localStorage.getItem(DRAFT_KEY);
+    let restored = { ...emptyFields, date: todayISO(), author: config.author };
+    if (saved) {
+      try { restored = { ...restored, ...JSON.parse(saved) }; } catch {}
+    }
+    setFields(restored);
     setEditPost(null); setPreviewMode(false); setStatus(null);
-    setActiveTab("content"); setView(VIEWS.EDITOR);
+    setActiveTab("content"); setAutoSaved(!!saved); setView(VIEWS.EDITOR);
   };
 
   const openPost = async (post) => {
@@ -110,7 +126,7 @@ export default function CMS() {
         setFields({ title: parse("title"), subtitle: parse("subtitle"), date: parse("date"), category: parse("category"), tags, description: parse("description"), image: parse("image"), optimized_image: parse("optimized_image"), author: parse("author"), body });
       }
       setEditPost({ name: post.name, sha: data.sha });
-      setStatus(null); setPreviewMode(false); setActiveTab("content"); setView(VIEWS.EDITOR);
+      setStatus(null); setPreviewMode(false); setActiveTab("content"); setAutoSaved(false); setView(VIEWS.EDITOR);
     } catch (e) { setStatus({ type: "error", msg: e.message }); }
   };
 
@@ -132,7 +148,7 @@ export default function CMS() {
         setFields({ title: parse("title"), subtitle: parse("subtitle"), date: parse("date"), category: parse("category"), tags, description: parse("description"), image: parse("image"), optimized_image: parse("optimized_image"), author: parse("author"), body });
       }
       setEditPost({ name: postFile.filename.replace("_posts/", ""), sha: data.sha, prNumber: pr.number, branch: pr.head.ref, isDraft: true });
-      setStatus(null); setPreviewMode(false); setActiveTab("content"); setView(VIEWS.EDITOR);
+      setStatus(null); setPreviewMode(false); setActiveTab("content"); setAutoSaved(false); setView(VIEWS.EDITOR);
     } catch (e) { setStatus({ type: "error", msg: e.message }); }
   };
 
@@ -216,12 +232,17 @@ export default function CMS() {
           step("Merging PR -> triggering deploy...");
           await gh.put(`/repos/${owner}/${repo}/pulls/${pr.number}/merge`, { merge_method: "squash", commit_title: `Publish: ${fields.title}` });
         }
+        // Clear autosave on success
+        localStorage.removeItem(DRAFT_KEY);
+        setAutoSaved(false);
         setStatus({ type: "success", msg: draft ? `Draft PR #${prNumber} created!` : "Published! Deploying to Firebase...", prUrl: `https://github.com/${owner}/${repo}/pull/${prNumber}`, steps: [] });
       } else {
         if (!draft) {
           step("Merging draft PR...");
           await gh.put(`/repos/${owner}/${repo}/pulls/${prNumber}/merge`, { merge_method: "squash", commit_title: `Publish: ${fields.title}` });
         }
+        localStorage.removeItem(DRAFT_KEY);
+        setAutoSaved(false);
         setStatus({ type: "success", msg: draft ? "Draft updated!" : "Draft published! Deploying to Firebase...", steps: [] });
       }
     } catch (e) { setStatus(s => ({ type: "error", msg: e.message, steps: s?.steps || [] })); }
@@ -306,7 +327,7 @@ export default function CMS() {
               <PostsList posts={posts} drafts={drafts} loading={loadingPosts} onOpen={openPost} onOpenDraft={openDraft} onRefresh={fetchAll} onNew={newPost} onDelete={deletePost} onPublishDraft={publishDraft} onDeleteDraft={deleteDraft} deleting={deleting} status={status} activeListTab={activeListTab} setActiveListTab={setActiveListTab} />
             )}
             {view === VIEWS.EDITOR && (
-              <EditorView fields={fields} set={set} previewMode={previewMode} setPreviewMode={setPreviewMode} onPublish={publish} publishing={publishing} status={status} setStatus={setStatus} editPost={editPost} onBack={() => setView(VIEWS.LIST)} activeTab={activeTab} setActiveTab={setActiveTab} />
+              <EditorView fields={fields} set={set} previewMode={previewMode} setPreviewMode={setPreviewMode} onPublish={publish} publishing={publishing} status={status} editPost={editPost} onBack={() => setView(VIEWS.LIST)} activeTab={activeTab} setActiveTab={setActiveTab} autoSaved={autoSaved} />
             )}
           </main>
         </div>
@@ -436,7 +457,7 @@ function EmptyState({ text }) {
 
 const LANGUAGES = ["bash","c","cpp","css","diff","docker","go","graphql","html","java","javascript","json","kotlin","kql","markdown","python","ruby","rust","shell","sql","swift","typescript","yaml"];
 
-function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publishing, status, editPost, onBack, activeTab, setActiveTab }) {
+function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publishing, status, editPost, onBack, activeTab, setActiveTab, autoSaved }) {
   const textareaRef = useRef(null);
   const [showLangPicker, setShowLangPicker] = useState(false);
   const [langSearch, setLangSearch] = useState("");
@@ -512,7 +533,7 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
             <div style={{ position: "relative" }}>
               <button title="Insert code block" onClick={() => setShowLangPicker(p => !p)}
                 style={{ padding: "4px 10px", borderRadius: 6, border: "1px solid #e2e8f0", background: showLangPicker ? "#111" : "#fff", color: showLangPicker ? "#fff" : "#555", cursor: "pointer", fontSize: 12, fontFamily: "'DM Mono', monospace", display: "flex", alignItems: "center", gap: 5 }}>
-                {"</>"} v
+                {"</>"}  v
               </button>
               {showLangPicker && (
                 <div style={{ position: "absolute", right: 0, top: "calc(100% + 6px)", background: "#fff", border: "1px solid #e2e8f0", borderRadius: 10, boxShadow: "0 8px 24px rgba(0,0,0,0.12)", zIndex: 100, width: 180 }}>
@@ -556,11 +577,14 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
         {activeTab === "content" && previewMode && <MarkdownPreview content={fields.body} />}
         {activeTab === "meta" && <MetaPanel fields={fields} set={set} />}
       </div>
-      <div style={{ background: "#fff", borderTop: "1px solid #e2e8f0", padding: "5px 20px", display: "flex", gap: 20, flexShrink: 0 }}>
+      <div style={{ background: "#fff", borderTop: "1px solid #e2e8f0", padding: "5px 20px", display: "flex", alignItems: "center", gap: 20, flexShrink: 0 }}>
         <span style={{ fontSize: 11, color: "#ccc", fontFamily: "'DM Mono', monospace" }}>
           {fields.body.split(/\s+/).filter(Boolean).length} words - {fields.body.length} chars
         </span>
         {editPost && <span style={{ fontSize: 11, color: "#ccc", fontFamily: "'DM Mono', monospace" }}>editing: {editPost.name}</span>}
+        {autoSaved && !editPost && (
+          <span style={{ marginLeft: "auto", fontSize: 11, color: "#16a34a", fontFamily: "'DM Mono', monospace" }}>saved locally</span>
+        )}
       </div>
     </div>
   );
