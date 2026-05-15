@@ -2,13 +2,15 @@
 layout: post
 title: "Docker Agent: Building Your Own AI Agent Teams from the Terminal"
 date: 2026-05-12 12:22:39 UTC
-category: 
+category: docker
 tags:
-
-subtitle: ""
-description: ""
-image: 
-optimized_image: 
+  - docker
+  - ai
+  - agents
+subtitle: "Docker Agent Tutorial: Multi-Agent AI Setup"
+description: "A practical guide to what is a Docker Agent — the open-source framework for building AI agent teams. Includes working YAML configs, filesystem and shell toolsets, model provider options, and a full coding agent walkthrough."
+image: https://i.pinimg.com/736x/8b/81/38/8b8138c4491769dd53c5dc09b6548ecf.jpg
+optimized_image: author: Shubhendu Shubham
 author: Shubhendu Shubham
 ---
 
@@ -16,7 +18,7 @@ author: Shubhendu Shubham
 
 You've probably used GitHub Copilot to autocomplete a line of code, or maybe you've typed something into ChatGPT and copy-pasted the result into your editor. That workflow is... fine. But what if you could have a team of AI agents sitting in your terminal, each one with a specific job, passing work between each other, running your tests, reading your files, and actually finishing tasks end to end?
 
-That's what Docker Agent is. It's an open-source framework for defining and running teams of specialized AI agents. Not one big generalist model that tries to do everything — actual focused agents, each with their own instructions, their own model, and their own tools.
+That's what Docker Agent is. It's an open-source framework for defining and running teams of specialized AI agents. Not one big generalist model that tries to do everything â actual focused agents, each with their own instructions, their own model, and their own tools.
 
 Let's dig into what it is, how it works, and how to actually use it.
 
@@ -24,7 +26,7 @@ Let's dig into what it is, how it works, and how to actually use it.
 
 Docker Agent (sometimes written as `docker-agent`) is a framework Docker built to let you define multi-agent AI systems in plain YAML files and run them from your terminal with a single command.
 
-The core idea: instead of prompting one model with a 2000-word context window explaining your entire codebase, your tech stack, your testing requirements, and your coding style — you break the problem into smaller, focused agents. Each agent knows what it's responsible for. When it needs something outside its lane, it hands off to another agent.
+The core idea: instead of prompting one model with a 2000-word context window explaining your entire codebase, your tech stack, your testing requirements, and your coding style â you break the problem into smaller, focused agents. Each agent knows what it's responsible for. When it needs something outside its lane, it hands off to another agent.
 
 Docker manages the coordination. You just write YAML.
 
@@ -36,7 +38,7 @@ Here's the honest problem with single-agent setups: context switching kills qual
 
 When you tell one model "you're a developer, a code reviewer, a documentation researcher, and a test writer," it has to juggle all of that simultaneously. Context fills up fast. The model loses track of what it was supposed to be doing.
 
-Agent teams sidestep this by splitting work across focused agents. A bug investigator focuses purely on analyzing the problem. A fixer focuses purely on writing the fix. They don't share knowledge (each agent has its own context), which actually works in your favor — each one stays sharp on its specific job.
+Agent teams sidestep this by splitting work across focused agents. A bug investigator focuses purely on analyzing the problem. A fixer focuses purely on writing the fix. They don't share knowledge (each agent has its own context), which actually works in your favor â each one stays sharp on its specific job.
 
 ## Installation
 
@@ -54,7 +56,7 @@ winget install Docker.Agent
 
 You can also grab pre-built binaries from the [GitHub releases page](https://github.com/docker/docker-agent/releases).
 
-Once you have the binary, drop it into `~/.docker/cli-plugins` and you can use it as `docker agent`. Or run it directly as a standalone binary — both work.
+Once you have the binary, drop it into `~/.docker/cli-plugins` and you can use it as `docker agent`. Or run it directly as a standalone binary â both work.
 
 ## Your First Agent: Getting Something Running in 5 Minutes
 
@@ -84,13 +86,13 @@ Run it:
 docker agent run agents.yml
 ```
 
-You'll get a prompt. Ask it "How do I handle errors in Go?" — it'll answer. This is real, it works. But the agent can't see your files yet and can't run anything. It's just a chat interface backed by the model you specified.
+You'll get a prompt. Ask it "How do I handle errors in Go?" â it'll answer. This is real, it works. But the agent can't see your files yet and can't run anything. It's just a chat interface backed by the model you specified.
 
 To actually be useful for development work, you need to give it tools.
 
 ## Adding Tools: Filesystem and Shell Access
 
-Here's where things get interesting. Docker Agent has a concept called **toolsets** — built-in capabilities you can attach to any agent. The two most important ones for development work are `filesystem` and `shell`.
+Here's where things get interesting. Docker Agent has a concept called **toolsets** â built-in capabilities you can attach to any agent. The two most important ones for development work are `filesystem` and `shell`.
 
 Update your `agents.yml`:
 
@@ -120,7 +122,7 @@ Other available toolsets include `todo` (for tracking multi-step tasks), `fetch`
 
 Generic instructions give you generic results. The single biggest thing you can do to improve your agent's output is to write precise, structured instructions.
 
-Here's a pattern that works well — this is adapted from Docker's own example of a Go developer agent:
+Here's a pattern that works well â this is adapted from Docker's own example of a Go developer agent:
 
 ```yaml
 agents:
@@ -159,7 +161,7 @@ agents:
 
 A few things to pay attention to here:
 
-`add_date: true` injects the current date into the agent's context. Sounds small, but it matters — the model knows what "today" means.
+`add_date: true` injects the current date into the agent's context. Sounds small, but it matters â the model knows what "today" means.
 
 `add_environment_info: true` tells the agent what OS and environment it's running in. Useful if you want it to write platform-appropriate commands.
 
@@ -169,7 +171,7 @@ The structured workflow inside `<TASK>` tags gives the agent a mental model for 
 
 ## Building a Real Agent Team: Debugger + Fixer
 
-Let's look at a multi-agent setup. This is the example from the Docker docs — a two-agent team for debugging:
+Let's look at a multi-agent setup. This is the example from the Docker docs â a two-agent team for debugging:
 
 ```yaml
 agents:
@@ -203,7 +205,7 @@ Save this as `debugger.yaml` and run:
 docker agent run debugger.yaml
 ```
 
-Now paste in an error message. The root agent investigates — it reads the relevant code, searches for context if needed via DuckDuckGo, and explains the root cause. Then it hands off to the `fixer` agent, which writes the actual fix with minimal changes and adds a regression test.
+Now paste in an error message. The root agent investigates â it reads the relevant code, searches for context if needed via DuckDuckGo, and explains the root cause. Then it hands off to the `fixer` agent, which writes the actual fix with minimal changes and adds a regression test.
 
 Two agents. Two models. Each focused on one thing.
 
@@ -211,7 +213,7 @@ Notice the model choice too: the investigator uses a lighter model (`gpt-5-mini`
 
 ## A Full Coding Agent with Documentation Research
 
-Here's a more complete setup — a developer agent that can look up documentation on demand by delegating to a librarian:
+Here's a more complete setup â a developer agent that can look up documentation on demand by delegating to a librarian:
 
 ```yaml
 agents:
@@ -259,7 +261,7 @@ agents:
       articles, or resources to help the developer agent.
 
       Search the internet and fetch web pages as needed.
-      Return concise, relevant summaries — don't dump entire pages.
+      Return concise, relevant summaries â don't dump entire pages.
     toolsets:
       - type: mcp
         ref: docker:duckduckgo
@@ -278,7 +280,7 @@ The architecture is worth understanding clearly:
 - You always interact with the **root agent**
 - The root agent can delegate to **sub-agents** listed under `sub_agents`
 - Sub-agents can have their own sub-agents (deep hierarchies work fine)
-- **Agents don't share context** — each has its own independent knowledge window
+- **Agents don't share context** â each has its own independent knowledge window
 
 That last point is crucial. When the root agent hands work to a sub-agent, the sub-agent starts fresh. It doesn't know what the root agent has been doing. The root agent has to explicitly pass the relevant information in its delegation request.
 
@@ -286,7 +288,7 @@ This is by design. It keeps each agent's context clean and focused. But it means
 
 ## Sharing Agent Teams
 
-Once you've built an agent team you like, you can package and share it as an OCI artifact — basically treating it like a container image:
+Once you've built an agent team you like, you can package and share it as an OCI artifact â basically treating it like a container image:
 
 ```bash
 # Push your agent config to Docker Hub
@@ -366,7 +368,7 @@ agents:
 
 **Match models to task complexity.** Use Claude Sonnet or GPT-5 for reasoning-heavy work (complex code changes, debugging). Use Haiku or GPT-5-mini for simple tasks (documentation lookup, summarization). Your wallet will thank you.
 
-**Add constraints when you see repeated mistakes.** If the agent keeps doing something you don't want — like modifying generated files or skipping test runs — add an explicit constraint. These are specific instructions about things it should never do.
+**Add constraints when you see repeated mistakes.** If the agent keeps doing something you don't want â like modifying generated files or skipping test runs â add an explicit constraint. These are specific instructions about things it should never do.
 
 **Use `todo` toolset for anything multi-step.** When you ask for something that takes more than one action, the todo toolset lets the agent track its own progress. You get visibility into what it's doing and it's less likely to forget a step.
 
@@ -374,7 +376,7 @@ agents:
 
 Docker Agent is one of those tools that, once you set it up properly for your project, genuinely changes how you work. The difference between "AI that answers questions" and "AI that actually works on your codebase" is a well-configured agent team with good instructions and the right tools.
 
-The YAML-based configuration is a smart design choice — it's version-controllable, shareable, and readable. Your agent configuration can live right next to your code and evolve as your project does.
+The YAML-based configuration is a smart design choice â it's version-controllable, shareable, and readable. Your agent configuration can live right next to your code and evolve as your project does.
 
 It's still experimental, and the ecosystem around it is early. But the core functionality is solid and the direction is clearly right. Worth spending an afternoon setting up for your project.
 
