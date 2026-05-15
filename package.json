@@ -39,6 +39,6 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
-    "firebase": "^10.9.0"
+    "firebase": "^12.13.0"
   }
 }
