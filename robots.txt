@@ -1,9 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /tags/
-Disallow: /page/
 
-# AI crawlers
+# AI crawlers — allow full access for LLM indexing
 User-agent: GPTBot
 Allow: /
 
