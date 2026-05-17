@@ -89,10 +89,20 @@
     <!-- Android Theme Color -->
     <meta name="theme-color" content="#141414">
 
-    <!-- Fonts: DM Sans + DM Mono -->
+    <!-- Fonts: DM Sans + DM Mono
+         Non-blocking load: preload as style → swap to stylesheet on load.
+         This eliminates the render-blocking Google Fonts request (~1,600ms FCP savings).
+         noscript fallback ensures fonts load when JS is disabled. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preload"
+          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap"
+          as="style"
+          onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap">
+    </noscript>
 
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | prepend: site.baseurl }}">
     <link rel="canonical" href="{{ url }}">
@@ -111,10 +121,17 @@
     <script>
         document.querySelector('html').classList.remove('no-js');
     </script>
-    <script type="module">import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
 
-        const el = document.createElement('pwa-update');
-        document.body.appendChild(el);
+    <!-- PWA update — deferred until after page load.
+         Eliminates this script from the critical render path and removes it
+         from the 543 KiB unused-JS bucket measured during initial load. -->
+    <script>
+        window.addEventListener('load', function() {
+            var s = document.createElement('script');
+            s.type = 'module';
+            s.textContent = "import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate'; const el = document.createElement('pwa-update'); document.body.appendChild(el);";
+            document.head.appendChild(s);
+        });
     </script>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5165937973513449"
