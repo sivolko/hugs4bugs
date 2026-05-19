@@ -1,5 +1,7 @@
 <section class="share">
     <h3>{{ site.translations.text.share | default: "Share" }}</h3>
+
+    <!-- Twitter / X -->
     <a aria-label="{{ site.translations.button.share_on_twitter | default: 'Share on Twitter' }}"
         href="https://twitter.com/intent/tweet?text=&quot;{{ page.description }}&quot;%20{{ site.url }}{{ page.url }}%20via%20&#64;{{ site.twitter_username }}&hashtags={{ page.tags | join: ',' }}"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
@@ -8,20 +10,34 @@
             <use xlink:href="#icon-twitter"></use>
         </svg>
     </a>
-    <a aria-label="{{ site.translations.button.share_on_whatsApp | default: 'Share on WhatsApp' }}"
-        href="https://twitter.com/intent/tweet?text=&quot;{{ page.description }}&quot;%20{{ site.url }}{{ page.url }}%20via%20&#64;{{ site.twitter_username }}&hashtags={{ page.tags | join: ',' }}"
-        onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=235');return false;"
-        title="{{ site.translations.button.share_on_twitter | default: 'Share on Twitter' }}">
-        <svg class="icon icon-twitter">
-            <use xlink:href="#icon-twitter"></use>
+
+    <!-- LinkedIn -->
+    <a aria-label="Share on LinkedIn"
+        href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}"
+        onclick="window.open(this.href, 'linkedin-share', 'width=580,height=520');return false;"
+        title="Share on LinkedIn">
+        <svg class="icon icon-linkedin">
+            <use xlink:href="#icon-linkedin"></use>
         </svg>
     </a>
-    <a aria-label="{{ site.translations.button.share_on_facebook | default: 'Share on Facebook' }}"
-        href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
-        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
-        title="{{ site.translations.button.share_on_facebook | default: 'Share on Facebook' }}">
-        <svg class="icon icon-facebook">
-            <use xlink:href="#icon-facebook"></use>
+
+    <!-- Copy Link -->
+    <a aria-label="Copy link to clipboard"
+        href="#"
+        id="copy-link-btn"
+        title="Copy link"
+        onclick="
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                var btn = document.getElementById('copy-link-btn');
+                var tooltip = document.getElementById('copy-link-tooltip');
+                tooltip.style.display = 'inline';
+                setTimeout(function() { tooltip.style.display = 'none'; }, 2000);
+            });
+            return false;">
+        <svg class="icon icon-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
         </svg>
     </a>
+    <span id="copy-link-tooltip" style="display:none; font-size:0.75rem; margin-left:6px; color:#555;">Copied!</span>
 </section>
