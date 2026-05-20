@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 
 const STORAGE_KEY = "h4b_cms_config";
 const DRAFT_KEY = "h4b_cms_autosave";
-const defaultConfig = { owner: "sivolko", repo: "hugs4bugs", token: "", author: "Shubhendu Shubham" };
+const defaultConfig = { owner: "sivolko", repo: "hugs4bugs", token: "", author: "Shubhendu Shubham", cloudName: "hugs4bugs", uploadPreset: "" };
 
 const slugify = (str) =>
   str.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -27,11 +27,7 @@ const GH = (token) => ({
   async req(method, path, body) {
     const r = await fetch(`https://api.github.com${path}`, {
       method,
-      headers: {
-        Authorization: `token ${token}`,
-        "Content-Type": "application/json",
-        Accept: "application/vnd.github.v3+json",
-      },
+      headers: { Authorization: `token ${token}`, "Content-Type": "application/json", Accept: "application/vnd.github.v3+json" },
       body: body ? JSON.stringify(body) : undefined,
     });
     if (r.status === 204) return {};
@@ -74,7 +70,6 @@ export default function CMS() {
 
   const saveConfig = (c) => { setConfig(c); localStorage.setItem(STORAGE_KEY, JSON.stringify(c)); };
 
-  // Auto-save fields to localStorage whenever writing a NEW post (no editPost)
   useEffect(() => {
     if (view === VIEWS.EDITOR && !editPost) {
       localStorage.setItem(DRAFT_KEY, JSON.stringify(fields));
@@ -100,12 +95,9 @@ export default function CMS() {
   useEffect(() => { if (view === VIEWS.LIST) fetchAll(); }, [view, fetchAll]);
 
   const newPost = () => {
-    // Restore auto-saved content if available
     const saved = localStorage.getItem(DRAFT_KEY);
     let restored = { ...emptyFields, date: todayISO(), author: config.author };
-    if (saved) {
-      try { restored = { ...restored, ...JSON.parse(saved) }; } catch {}
-    }
+    if (saved) { try { restored = { ...restored, ...JSON.parse(saved) }; } catch {} }
     setFields(restored);
     setEditPost(null); setPreviewMode(false); setStatus(null);
     setActiveTab("content"); setAutoSaved(!!saved); setView(VIEWS.EDITOR);
@@ -153,10 +145,9 @@ export default function CMS() {
   };
 
   const deletePost = async (post) => {
-    if (!window.confirm(`Delete "${post.name}"? This will remove the post from the repo.`)) return;
+    if (!window.confirm(`Delete "${post.name}"?`)) return;
     setDeleting(post.name);
-    const gh = GH(config.token);
-    const { owner, repo } = config;
+    const gh = GH(config.token); const { owner, repo } = config;
     try {
       const data = await gh.get(`/repos/${owner}/${repo}/contents/_posts/${post.name}`);
       const branch = `cms/delete-${slugify(post.name)}-${Date.now()}`;
@@ -165,8 +156,7 @@ export default function CMS() {
       await gh.delete(`/repos/${owner}/${repo}/contents/_posts/${post.name}`, { message: `[CMS] Delete: ${post.name}`, sha: data.sha, branch });
       const pr = await gh.post(`/repos/${owner}/${repo}/pulls`, { title: `[CMS] Delete: ${post.name}`, body: "Deleted via hugs4bugs CMS.", head: branch, base: "main" });
       await gh.put(`/repos/${owner}/${repo}/pulls/${pr.number}/merge`, { merge_method: "squash", commit_title: `Delete: ${post.name}` });
-      setStatus({ type: "success", msg: `"${post.name}" deleted.` });
-      fetchAll();
+      setStatus({ type: "success", msg: `"${post.name}" deleted.` }); fetchAll();
     } catch (e) { setStatus({ type: "error", msg: e.message }); }
     finally { setDeleting(null); }
   };
@@ -174,26 +164,22 @@ export default function CMS() {
   const deleteDraft = async (pr) => {
     if (!window.confirm(`Discard draft "${pr.title.replace("[CMS] Draft: ", "")}"?`)) return;
     setDeleting(pr.number);
-    const gh = GH(config.token);
-    const { owner, repo } = config;
+    const gh = GH(config.token); const { owner, repo } = config;
     try {
       await gh.post(`/repos/${owner}/${repo}/issues/${pr.number}/comments`, { body: "Discarded via hugs4bugs CMS." });
       await gh.patch(`/repos/${owner}/${repo}/pulls/${pr.number}`, { state: "closed" });
       await gh.delete(`/repos/${owner}/${repo}/git/refs/heads/${pr.head.ref}`);
-      setStatus({ type: "success", msg: "Draft discarded." });
-      fetchAll();
+      setStatus({ type: "success", msg: "Draft discarded." }); fetchAll();
     } catch (e) { setStatus({ type: "error", msg: e.message }); }
     finally { setDeleting(null); }
   };
 
   const publishDraft = async (pr) => {
-    const gh = GH(config.token);
-    const { owner, repo } = config;
+    const gh = GH(config.token); const { owner, repo } = config;
     setPublishing(true);
     try {
       await gh.put(`/repos/${owner}/${repo}/pulls/${pr.number}/merge`, { merge_method: "squash", commit_title: pr.title.replace("[CMS] Draft:", "Publish:") });
-      setStatus({ type: "success", msg: "Draft published! Deploying to Firebase...", prUrl: pr.html_url });
-      fetchAll();
+      setStatus({ type: "success", msg: "Draft published! Deploying...", prUrl: pr.html_url }); fetchAll();
     } catch (e) { setStatus({ type: "error", msg: e.message }); }
     finally { setPublishing(false); }
   };
@@ -202,8 +188,7 @@ export default function CMS() {
     if (!fields.title.trim()) { setStatus({ type: "error", msg: "Title is required." }); return; }
     setPublishing(true);
     setStatus({ type: "info", msg: draft ? "Saving draft..." : "Publishing...", steps: [] });
-    const gh = GH(config.token);
-    const { owner, repo } = config;
+    const gh = GH(config.token); const { owner, repo } = config;
     const filename = filenameFromTitle(fields.title, fields.date);
     const branch = editPost?.branch || `cms/${slugify(fields.title)}-${Date.now()}`;
     const content = btoa(unescape(encodeURIComponent(buildFrontmatter(fields))));
@@ -211,10 +196,8 @@ export default function CMS() {
     try {
       let prNumber = editPost?.prNumber;
       if (!editPost?.isDraft) {
-        step("Getting main branch ref...");
-        const ref = await gh.get(`/repos/${owner}/${repo}/git/ref/heads/main`);
-        step("Creating branch...");
-        await gh.post(`/repos/${owner}/${repo}/git/refs`, { ref: `refs/heads/${branch}`, sha: ref.object.sha });
+        step("Getting main branch ref..."); const ref = await gh.get(`/repos/${owner}/${repo}/git/ref/heads/main`);
+        step("Creating branch..."); await gh.post(`/repos/${owner}/${repo}/git/refs`, { ref: `refs/heads/${branch}`, sha: ref.object.sha });
       }
       step(`Writing _posts/${filename}...`);
       const fileBody = { message: `[CMS] ${draft ? "Draft" : "Publish"}: ${fields.title}`, content, branch };
@@ -228,28 +211,20 @@ export default function CMS() {
           head: branch, base: "main",
         });
         prNumber = pr.number;
-        if (!draft) {
-          step("Merging PR -> triggering deploy...");
-          await gh.put(`/repos/${owner}/${repo}/pulls/${pr.number}/merge`, { merge_method: "squash", commit_title: `Publish: ${fields.title}` });
-        }
-        // Clear autosave on success
-        localStorage.removeItem(DRAFT_KEY);
-        setAutoSaved(false);
+        if (!draft) { step("Merging PR..."); await gh.put(`/repos/${owner}/${repo}/pulls/${pr.number}/merge`, { merge_method: "squash", commit_title: `Publish: ${fields.title}` }); }
+        localStorage.removeItem(DRAFT_KEY); setAutoSaved(false);
         setStatus({ type: "success", msg: draft ? `Draft PR #${prNumber} created!` : "Published! Deploying to Firebase...", prUrl: `https://github.com/${owner}/${repo}/pull/${prNumber}`, steps: [] });
       } else {
-        if (!draft) {
-          step("Merging draft PR...");
-          await gh.put(`/repos/${owner}/${repo}/pulls/${prNumber}/merge`, { merge_method: "squash", commit_title: `Publish: ${fields.title}` });
-        }
-        localStorage.removeItem(DRAFT_KEY);
-        setAutoSaved(false);
-        setStatus({ type: "success", msg: draft ? "Draft updated!" : "Draft published! Deploying to Firebase...", steps: [] });
+        if (!draft) { step("Merging draft PR..."); await gh.put(`/repos/${owner}/${repo}/pulls/${prNumber}/merge`, { merge_method: "squash", commit_title: `Publish: ${fields.title}` }); }
+        localStorage.removeItem(DRAFT_KEY); setAutoSaved(false);
+        setStatus({ type: "success", msg: draft ? "Draft updated!" : "Draft published! Deploying...", steps: [] });
       }
     } catch (e) { setStatus(s => ({ type: "error", msg: e.message, steps: s?.steps || [] })); }
     finally { setPublishing(false); }
   };
 
   const set = (k) => (e) => setFields(f => ({ ...f, [k]: e.target.value }));
+  const onImageUpload = (url) => setFields(f => ({ ...f, image: url, optimized_image: url }));
 
   return (
     <div style={{ minHeight: "100vh", background: "#f8f9fa", fontFamily: "'DM Sans', system-ui, sans-serif" }}>
@@ -277,6 +252,8 @@ export default function CMS() {
         .field-label { font-size: 11px; font-weight: 600; color: #888; margin-bottom: 5px; letter-spacing: 0.06em; text-transform: uppercase; }
         @keyframes spin { to { transform: rotate(360deg); } }
         .spinner { width: 14px; height: 14px; border: 2px solid #e2e8f0; border-top-color: #111; border-radius: 50%; animation: spin 0.6s linear infinite; }
+        .drop-zone { border: 2px dashed #e2e8f0; border-radius: 8px; padding: 16px; text-align: center; cursor: pointer; transition: all 0.15s; background: #fafafa; }
+        .drop-zone:hover, .drop-zone.dragging { border-color: #111; background: #f1f5f9; }
         .md-preview h1 { font-size: 24px; margin: 1.2em 0 0.5em; font-weight: 600; }
         .md-preview h2 { font-size: 20px; margin: 1em 0 0.4em; font-weight: 600; }
         .md-preview h3 { font-size: 17px; margin: 0.8em 0 0.3em; font-weight: 600; }
@@ -284,17 +261,10 @@ export default function CMS() {
         .md-preview code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; font-size: 13px; }
         .md-preview ul, .md-preview ol { padding-left: 1.5em; margin: 0.5em 0; line-height: 1.75; }
         .md-preview a { color: #2563eb; }
-        .token.comment,.token.prolog { color: #8b949e !important; }
-        .token.keyword { color: #ff7b72 !important; }
-        .token.string { color: #a5d6ff !important; }
-        .token.function { color: #d2a8ff !important; }
-        .token.number { color: #79c0ff !important; }
-        .token.operator { color: #ff7b72 !important; }
-        .token.class-name { color: #ffa657 !important; }
-        .token.attr-name { color: #79c0ff !important; }
-        .token.attr-value { color: #a5d6ff !important; }
-        .token.boolean { color: #79c0ff !important; }
-        .token.builtin { color: #ffa657 !important; }
+        .token.comment,.token.prolog { color: #8b949e !important; } .token.keyword { color: #ff7b72 !important; } .token.string { color: #a5d6ff !important; }
+        .token.function { color: #d2a8ff !important; } .token.number { color: #79c0ff !important; } .token.operator { color: #ff7b72 !important; }
+        .token.class-name { color: #ffa657 !important; } .token.attr-name { color: #79c0ff !important; } .token.attr-value { color: #a5d6ff !important; }
+        .token.boolean { color: #79c0ff !important; } .token.builtin { color: #ffa657 !important; }
         .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
       `}</style>
 
@@ -327,7 +297,7 @@ export default function CMS() {
               <PostsList posts={posts} drafts={drafts} loading={loadingPosts} onOpen={openPost} onOpenDraft={openDraft} onRefresh={fetchAll} onNew={newPost} onDelete={deletePost} onPublishDraft={publishDraft} onDeleteDraft={deleteDraft} deleting={deleting} status={status} activeListTab={activeListTab} setActiveListTab={setActiveListTab} />
             )}
             {view === VIEWS.EDITOR && (
-              <EditorView fields={fields} set={set} previewMode={previewMode} setPreviewMode={setPreviewMode} onPublish={publish} publishing={publishing} status={status} editPost={editPost} onBack={() => setView(VIEWS.LIST)} activeTab={activeTab} setActiveTab={setActiveTab} autoSaved={autoSaved} />
+              <EditorView fields={fields} set={set} previewMode={previewMode} setPreviewMode={setPreviewMode} onPublish={publish} publishing={publishing} status={status} editPost={editPost} onBack={() => setView(VIEWS.LIST)} activeTab={activeTab} setActiveTab={setActiveTab} autoSaved={autoSaved} config={config} onImageUpload={onImageUpload} />
             )}
           </main>
         </div>
@@ -353,25 +323,40 @@ function SetupScreen({ config, onSave }) {
   };
   return (
     <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#f8f9fa" }}>
-      <div style={{ background: "#fff", borderRadius: 16, border: "1px solid #e2e8f0", padding: 40, width: 460, boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}>
+      <div style={{ background: "#fff", borderRadius: 16, border: "1px solid #e2e8f0", padding: 40, width: 480, boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}>
         <h1 style={{ fontSize: 22, fontWeight: 600, color: "#111", marginBottom: 6 }}>hugs4bugs<span style={{ color: "#16a34a" }}>.</span>cms</h1>
-        <p style={{ color: "#888", fontSize: 14, marginBottom: 28, lineHeight: 1.6 }}>Connect your GitHub repo to start writing.</p>
+        <p style={{ color: "#888", fontSize: 14, marginBottom: 24, lineHeight: 1.6 }}>Connect your GitHub repo to start writing.</p>
+
+        <div style={{ fontSize: 12, fontWeight: 600, color: "#888", marginBottom: 12, textTransform: "uppercase", letterSpacing: "0.05em", borderBottom: "1px solid #f1f5f9", paddingBottom: 6 }}>GitHub</div>
         {[
-          { label: "GitHub Personal Access Token", key: "token", type: "password", placeholder: "ghp_...", hint: "repo + pull_requests scopes" },
+          { label: "Personal Access Token", key: "token", type: "password", placeholder: "ghp_...", hint: "repo + pull_requests scopes" },
           { label: "Repo Owner", key: "owner", placeholder: "sivolko" },
           { label: "Repository", key: "repo", placeholder: "hugs4bugs" },
           { label: "Default Author", key: "author", placeholder: "Shubhendu Shubham" },
         ].map(f => (
-          <div key={f.key} style={{ marginBottom: 14 }}>
+          <div key={f.key} style={{ marginBottom: 12 }}>
             <div className="field-label">{f.label}</div>
-            {f.hint && <div style={{ fontSize: 11, color: "#aaa", marginBottom: 4 }}>{f.hint}</div>}
-            <input className="input" type={f.type || "text"} placeholder={f.placeholder} value={form[f.key]} onChange={set(f.key)} />
+            {f.hint && <div style={{ fontSize: 11, color: "#aaa", marginBottom: 3 }}>{f.hint}</div>}
+            <input className="input" type={f.type || "text"} placeholder={f.placeholder} value={form[f.key] || ""} onChange={set(f.key)} />
           </div>
         ))}
-        {testResult && <div style={{ padding: "10px 14px", borderRadius: 8, marginBottom: 14, fontSize: 13, background: testResult.ok ? "#f0fdf4" : "#fef2f2", color: testResult.ok ? "#16a34a" : "#dc2626" }}>{testResult.msg}</div>}
-        <div style={{ display: "flex", gap: 10, marginTop: 24 }}>
+
+        <div style={{ fontSize: 12, fontWeight: 600, color: "#888", margin: "20px 0 12px", textTransform: "uppercase", letterSpacing: "0.05em", borderBottom: "1px solid #f1f5f9", paddingBottom: 6 }}>Cloudinary (Image Uploads)</div>
+        {[
+          { label: "Cloud Name", key: "cloudName", placeholder: "hugs4bugs" },
+          { label: "Upload Preset (unsigned)", key: "uploadPreset", placeholder: "my_preset", hint: "Cloudinary → Settings → Upload → Add upload preset → Mode: Unsigned" },
+        ].map(f => (
+          <div key={f.key} style={{ marginBottom: 12 }}>
+            <div className="field-label">{f.label}</div>
+            {f.hint && <div style={{ fontSize: 11, color: "#aaa", marginBottom: 3 }}>{f.hint}</div>}
+            <input className="input" placeholder={f.placeholder} value={form[f.key] || ""} onChange={set(f.key)} />
+          </div>
+        ))}
+
+        {testResult && <div style={{ padding: "10px 14px", borderRadius: 8, marginBottom: 12, fontSize: 13, background: testResult.ok ? "#f0fdf4" : "#fef2f2", color: testResult.ok ? "#16a34a" : "#dc2626" }}>{testResult.msg}</div>}
+        <div style={{ display: "flex", gap: 10, marginTop: 20 }}>
           <button className="btn btn-outline" onClick={test} disabled={testing || !form.token} style={{ flex: 1 }}>{testing ? "Testing..." : "Test Connection"}</button>
-          <button className="btn btn-primary" style={{ flex: 1 }} onClick={() => onSave(form)} disabled={!form.token}>Connect</button>
+          <button className="btn btn-primary" style={{ flex: 1 }} onClick={() => onSave(form)} disabled={!form.token}>Save & Connect</button>
         </div>
       </div>
     </div>
@@ -403,8 +388,7 @@ function PostsList({ posts, drafts, loading, onOpen, onOpenDraft, onRefresh, onN
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
             {filtered.length === 0 && <EmptyState text={search ? "No posts match." : "No published posts yet."} />}
             {filtered.map(post => {
-              const parts = post.name.replace(".md", "").split("-");
-              const date = parts.slice(0, 3).join("-");
+              const parts = post.name.replace(".md", "").split("-"); const date = parts.slice(0, 3).join("-");
               const title = parts.slice(3).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
               return (
                 <div key={post.name} className="post-row">
@@ -423,10 +407,9 @@ function PostsList({ posts, drafts, loading, onOpen, onOpenDraft, onRefresh, onN
         )}
         {activeListTab === "drafts" && !loading && (
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-            {filteredDrafts.length === 0 && <EmptyState text={search ? "No drafts match." : "No drafts yet. Use 'Save Draft' in the editor."} />}
+            {filteredDrafts.length === 0 && <EmptyState text={search ? "No drafts match." : "No drafts yet."} />}
             {filteredDrafts.map(pr => {
-              const title = pr.title.replace("[CMS] Draft: ", "");
-              const date = new Date(pr.created_at).toISOString().slice(0, 10);
+              const title = pr.title.replace("[CMS] Draft: ", ""); const date = new Date(pr.created_at).toISOString().slice(0, 10);
               return (
                 <div key={pr.number} className="post-row">
                   <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#f59e0b", flexShrink: 0 }} />
@@ -457,14 +440,13 @@ function EmptyState({ text }) {
 
 const LANGUAGES = ["bash","c","cpp","css","diff","docker","go","graphql","html","java","javascript","json","kotlin","kql","markdown","python","ruby","rust","shell","sql","swift","typescript","yaml"];
 
-function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publishing, status, editPost, onBack, activeTab, setActiveTab, autoSaved }) {
+function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publishing, status, editPost, onBack, activeTab, setActiveTab, autoSaved, config, onImageUpload }) {
   const textareaRef = useRef(null);
   const [showLangPicker, setShowLangPicker] = useState(false);
   const [langSearch, setLangSearch] = useState("");
 
   const insertAt = (before, after = "") => {
-    const ta = textareaRef.current;
-    if (!ta) return;
+    const ta = textareaRef.current; if (!ta) return;
     const start = ta.selectionStart, end = ta.selectionEnd;
     const selected = fields.body.slice(start, end);
     const newVal = fields.body.slice(0, start) + before + selected + after + fields.body.slice(end);
@@ -473,8 +455,7 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
   };
 
   const insertCodeBlock = (lang) => {
-    const ta = textareaRef.current;
-    if (!ta) return;
+    const ta = textareaRef.current; if (!ta) return;
     const start = ta.selectionStart, end = ta.selectionEnd;
     const selected = fields.body.slice(start, end);
     const block = "```" + lang + "\n" + (selected || "// your code here") + "\n```";
@@ -496,10 +477,8 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
         <div style={{ display: "flex", gap: 8, flexShrink: 0 }}>
           {publishing
             ? <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "#888", padding: "0 8px" }}><div className="spinner" /> Working...</div>
-            : <>
-                <button className="btn btn-outline" onClick={() => onPublish(true)} disabled={publishing}>Save Draft</button>
-                <button className="btn btn-green" onClick={() => onPublish(false)} disabled={publishing}>Publish</button>
-              </>
+            : <><button className="btn btn-outline" onClick={() => onPublish(true)} disabled={publishing}>Save Draft</button>
+                <button className="btn btn-green" onClick={() => onPublish(false)} disabled={publishing}>Publish</button></>
           }
         </div>
       </div>
@@ -526,14 +505,12 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
               { label: "> ", title: "Blockquote", before: "> ", after: "" },
             ].map(({ label, title, before, after, style }) => (
               <button key={label} title={title} onClick={() => insertAt(before, after)}
-                style={{ padding: "4px 9px", borderRadius: 6, border: "1px solid #e2e8f0", background: "#fff", cursor: "pointer", fontSize: 12, fontFamily: "inherit", color: "#555", ...style }}>
-                {label}
-              </button>
+                style={{ padding: "4px 9px", borderRadius: 6, border: "1px solid #e2e8f0", background: "#fff", cursor: "pointer", fontSize: 12, fontFamily: "inherit", color: "#555", ...style }}>{label}</button>
             ))}
             <div style={{ position: "relative" }}>
               <button title="Insert code block" onClick={() => setShowLangPicker(p => !p)}
                 style={{ padding: "4px 10px", borderRadius: 6, border: "1px solid #e2e8f0", background: showLangPicker ? "#111" : "#fff", color: showLangPicker ? "#fff" : "#555", cursor: "pointer", fontSize: 12, fontFamily: "'DM Mono', monospace", display: "flex", alignItems: "center", gap: 5 }}>
-                {"</>"}  v
+                {"</>"} v
               </button>
               {showLangPicker && (
                 <div style={{ position: "absolute", right: 0, top: "calc(100% + 6px)", background: "#fff", border: "1px solid #e2e8f0", borderRadius: 10, boxShadow: "0 8px 24px rgba(0,0,0,0.12)", zIndex: 100, width: 180 }}>
@@ -545,9 +522,7 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
                       <div key={lang} onClick={() => insertCodeBlock(lang)}
                         style={{ padding: "7px 14px", fontSize: 13, cursor: "pointer", fontFamily: "'DM Mono', monospace", color: "#333" }}
                         onMouseEnter={e => e.currentTarget.style.background = "#f8f9fa"}
-                        onMouseLeave={e => e.currentTarget.style.background = "transparent"}>
-                        {lang}
-                      </div>
+                        onMouseLeave={e => e.currentTarget.style.background = "transparent"}>{lang}</div>
                     ))}
                   </div>
                 </div>
@@ -575,22 +550,20 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
             value={fields.body} onChange={set("body")} />
         )}
         {activeTab === "content" && previewMode && <MarkdownPreview content={fields.body} />}
-        {activeTab === "meta" && <MetaPanel fields={fields} set={set} />}
+        {activeTab === "meta" && <MetaPanel fields={fields} set={set} config={config} onImageUpload={onImageUpload} />}
       </div>
       <div style={{ background: "#fff", borderTop: "1px solid #e2e8f0", padding: "5px 20px", display: "flex", alignItems: "center", gap: 20, flexShrink: 0 }}>
         <span style={{ fontSize: 11, color: "#ccc", fontFamily: "'DM Mono', monospace" }}>
           {fields.body.split(/\s+/).filter(Boolean).length} words - {fields.body.length} chars
         </span>
         {editPost && <span style={{ fontSize: 11, color: "#ccc", fontFamily: "'DM Mono', monospace" }}>editing: {editPost.name}</span>}
-        {autoSaved && !editPost && (
-          <span style={{ marginLeft: "auto", fontSize: 11, color: "#16a34a", fontFamily: "'DM Mono', monospace" }}>saved locally</span>
-        )}
+        {autoSaved && !editPost && <span style={{ marginLeft: "auto", fontSize: 11, color: "#16a34a", fontFamily: "'DM Mono', monospace" }}>saved locally</span>}
       </div>
     </div>
   );
 }
 
-function MetaPanel({ fields, set }) {
+function MetaPanel({ fields, set, config, onImageUpload }) {
   return (
     <div style={{ padding: 28, maxWidth: 680 }}>
       <div style={{ display: "grid", gap: 16 }}>
@@ -604,12 +577,22 @@ function MetaPanel({ fields, set }) {
         </div>
         <Field label="Tags (comma-separated)" value={fields.tags} onChange={set("tags")} placeholder="devops, linux, docker" />
         <Field label="Description (SEO)" value={fields.description} onChange={set("description")} placeholder="Brief description" textarea />
-        <Field label="Cover Image URL" value={fields.image} onChange={set("image")} placeholder="https://..." />
+
+        {/* Image upload section */}
+        <ImageUploadField
+          label="Cover Image"
+          value={fields.image}
+          onChange={set("image")}
+          cloudName={config?.cloudName}
+          uploadPreset={config?.uploadPreset}
+          onUpload={onImageUpload}
+        />
         <Field label="Optimized Image URL" value={fields.optimized_image} onChange={set("optimized_image")} placeholder="Leave blank to reuse cover image" />
+
         {fields.image && (
           <div style={{ border: "1px solid #e2e8f0", borderRadius: 10, overflow: "hidden" }}>
             <div className="field-label" style={{ padding: "8px 12px", background: "#f8f9fa" }}>Image Preview</div>
-            <img src={fields.image} alt="cover" style={{ width: "100%", maxHeight: 180, objectFit: "cover", display: "block" }} onError={e => e.target.style.display = "none"} />
+            <img src={fields.image} alt="cover" style={{ width: "100%", maxHeight: 200, objectFit: "cover", display: "block" }} onError={e => e.target.style.display = "none"} />
           </div>
         )}
         <div style={{ padding: 14, background: "#f8f9fa", borderRadius: 10, border: "1px solid #e2e8f0" }}>
@@ -619,6 +602,70 @@ function MetaPanel({ fields, set }) {
           </code>
         </div>
       </div>
+    </div>
+  );
+}
+
+function ImageUploadField({ label, value, onChange, cloudName, uploadPreset, onUpload }) {
+  const [dragging, setDragging] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [uploadMsg, setUploadMsg] = useState(null);
+  const fileRef = useRef(null);
+
+  const upload = async (file) => {
+    if (!file?.type.startsWith("image/")) { setUploadMsg({ ok: false, text: "Please drop an image file." }); return; }
+    if (!cloudName || !uploadPreset) {
+      setUploadMsg({ ok: false, text: "Add Cloudinary cloud name and upload preset in Settings first." }); return;
+    }
+    setUploading(true); setUploadMsg(null);
+    try {
+      const fd = new FormData();
+      fd.append("file", file);
+      fd.append("upload_preset", uploadPreset);
+      fd.append("folder", "hugs4bugs");
+      const r = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, { method: "POST", body: fd });
+      const data = await r.json();
+      if (!r.ok) throw new Error(data.error?.message || "Upload failed");
+      onUpload(data.secure_url);
+      setUploadMsg({ ok: true, text: "Uploaded! URL auto-filled below." });
+    } catch (e) { setUploadMsg({ ok: false, text: e.message }); }
+    finally { setUploading(false); }
+  };
+
+  return (
+    <div>
+      <div className="field-label">{label}</div>
+      <input className="input" placeholder="https://..." value={value} onChange={onChange} style={{ marginBottom: 8 }} />
+
+      {/* Drop zone */}
+      <div
+        className={`drop-zone${dragging ? " dragging" : ""}`}
+        onDragOver={e => { e.preventDefault(); setDragging(true); }}
+        onDragLeave={() => setDragging(false)}
+        onDrop={e => { e.preventDefault(); setDragging(false); upload(e.dataTransfer.files[0]); }}
+        onClick={() => fileRef.current?.click()}
+      >
+        <input ref={fileRef} type="file" accept="image/*" style={{ display: "none" }}
+          onChange={e => { const f = e.target.files[0]; if (f) upload(f); e.target.value = ""; }} />
+
+        {uploading ? (
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, color: "#888", fontSize: 13 }}>
+            <div className="spinner" style={{ borderTopColor: "#888" }} /> Uploading to Cloudinary...
+          </div>
+        ) : (
+          <div>
+            <div style={{ fontSize: 22, marginBottom: 6 }}>🖼️</div>
+            <div style={{ fontSize: 13, color: "#888", fontWeight: 500 }}>Drag & drop image here</div>
+            <div style={{ fontSize: 11, color: "#bbb", marginTop: 3 }}>or click to browse &mdash; uploads to Cloudinary, URL auto-filled</div>
+          </div>
+        )}
+      </div>
+
+      {uploadMsg && (
+        <div style={{ fontSize: 12, marginTop: 6, padding: "6px 10px", borderRadius: 6, background: uploadMsg.ok ? "#f0fdf4" : "#fef2f2", color: uploadMsg.ok ? "#16a34a" : "#dc2626" }}>
+          {uploadMsg.text}
+        </div>
+      )}
     </div>
   );
 }
@@ -648,20 +695,15 @@ function MarkdownPreview({ content }) {
         document.head.appendChild(autoloader);
       };
       document.head.appendChild(script);
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
+      const link = document.createElement("link"); link.rel = "stylesheet";
       link.href = "https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css";
       document.head.appendChild(link);
-    } else if (ref.current) {
-      window.Prism.highlightAllUnder(ref.current);
-    }
+    } else if (ref.current) { window.Prism.highlightAllUnder(ref.current); }
   }, [content]);
 
   const codeBlocks = [];
   const withPlaceholders = content.replace(/```(\w+)?\n([\s\S]*?)```/g, (_, lang, code) => {
-    const i = codeBlocks.length;
-    codeBlocks.push({ lang: lang || "plaintext", code: code.trim() });
-    return `%%CODE_BLOCK_${i}%%`;
+    const i = codeBlocks.length; codeBlocks.push({ lang: lang || "plaintext", code: code.trim() }); return `%%CODE_BLOCK_${i}%%`;
   });
 
   const tableRegex = /(\|.+\|\n)([\|\-: ]+\|\n)((?:\|.+\|\n?)*)/gm;
@@ -676,16 +718,12 @@ function MarkdownPreview({ content }) {
   });
 
   let html = withTables
-    .replace(/^### (.+)$/gm, "<h3>$1</h3>")
-    .replace(/^## (.+)$/gm, "<h2>$1</h2>")
-    .replace(/^# (.+)$/gm, "<h1>$1</h1>")
-    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-    .replace(/\*(.+?)\*/g, "<em>$1</em>")
+    .replace(/^### (.+)$/gm, "<h3>$1</h3>").replace(/^## (.+)$/gm, "<h2>$1</h2>").replace(/^# (.+)$/gm, "<h1>$1</h1>")
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>")
     .replace(/`([^`]+)`/g, "<code>$1</code>")
     .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" style="max-width:100%;border-radius:8px;margin:12px 0;display:block;" />')
     .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" target="_blank">$1</a>')
-    .replace(/^- (.+)$/gm, "<li>$1</li>")
-    .replace(/(<li>.*<\/li>\n?)+/g, m => `<ul>${m}</ul>`)
+    .replace(/^- (.+)$/gm, "<li>$1</li>").replace(/(<li>.*<\/li>\n?)+/g, m => `<ul>${m}</ul>`)
     .replace(/\n\n+/g, "</p><p>");
 
   codeBlocks.forEach(({ lang, code }, i) => {
