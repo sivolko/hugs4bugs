@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 
 const STORAGE_KEY = "h4b_cms_config";
 const DRAFT_KEY = "h4b_cms_autosave";
-const defaultConfig = { owner: "sivolko", repo: "hugs4bugs", token: "", author: "Shubhendu Shubham", cloudName: "hugs4bugs", uploadPreset: "" };
+const defaultConfig = { owner: "sivolko", repo: "hugs4bugs", token: "", author: "Shubhendu Shubham" };
 
 const slugify = (str) =>
   str.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -224,7 +224,6 @@ export default function CMS() {
   };
 
   const set = (k) => (e) => setFields(f => ({ ...f, [k]: e.target.value }));
-  const onImageUpload = (url) => setFields(f => ({ ...f, image: url, optimized_image: url, image_position: "50% 50%" }));
   const onPositionChange = (pos) => setFields(f => ({ ...f, image_position: pos }));
 
   return (
@@ -253,14 +252,12 @@ export default function CMS() {
         .field-label { font-size: 11px; font-weight: 600; color: #888; margin-bottom: 5px; letter-spacing: 0.06em; text-transform: uppercase; }
         @keyframes spin { to { transform: rotate(360deg); } }
         .spinner { width: 14px; height: 14px; border: 2px solid #e2e8f0; border-top-color: #111; border-radius: 50%; animation: spin 0.6s linear infinite; }
-        .drop-zone { border: 2px dashed #e2e8f0; border-radius: 8px; padding: 16px; text-align: center; cursor: pointer; transition: all 0.15s; background: #fafafa; }
-        .drop-zone:hover, .drop-zone.dragging { border-color: #111; background: #f1f5f9; }
         .focal-container { position: relative; height: 180px; border-radius: 10px; overflow: hidden; cursor: crosshair; border: 1px solid #e2e8f0; user-select: none; }
         .focal-container img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
-        .focal-dot { position: absolute; width: 22px; height: 22px; border: 2.5px solid #fff; border-radius: 50%; box-shadow: 0 0 0 1.5px rgba(0,0,0,0.35), 0 2px 10px rgba(0,0,0,0.3); transform: translate(-50%, -50%); pointer-events: none; transition: box-shadow 0.1s; }
+        .focal-dot { position: absolute; width: 22px; height: 22px; border: 2.5px solid #fff; border-radius: 50%; box-shadow: 0 0 0 1.5px rgba(0,0,0,0.35), 0 2px 10px rgba(0,0,0,0.3); transform: translate(-50%, -50%); pointer-events: none; }
         .focal-line-v { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(255,255,255,0.35); transform: translateX(-50%); pointer-events: none; }
         .focal-line-h { position: absolute; left: 0; right: 0; height: 1px; background: rgba(255,255,255,0.35); transform: translateY(-50%); pointer-events: none; }
-        .focal-badge { position: absolute; bottom: 7px; right: 10px; font-size: 10px; color: rgba(255,255,255,0.8); font-family: 'DM Mono', monospace; background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 4px; pointer-events: none; }
+        .focal-badge { position: absolute; bottom: 7px; right: 10px; font-size: 10px; color: rgba(255,255,255,0.85); font-family: 'DM Mono', monospace; background: rgba(0,0,0,0.35); padding: 2px 7px; border-radius: 4px; pointer-events: none; }
         .md-preview h1 { font-size: 24px; margin: 1.2em 0 0.5em; font-weight: 600; }
         .md-preview h2 { font-size: 20px; margin: 1em 0 0.4em; font-weight: 600; }
         .md-preview h3 { font-size: 17px; margin: 0.8em 0 0.3em; font-weight: 600; }
@@ -304,7 +301,7 @@ export default function CMS() {
               <PostsList posts={posts} drafts={drafts} loading={loadingPosts} onOpen={openPost} onOpenDraft={openDraft} onRefresh={fetchAll} onNew={newPost} onDelete={deletePost} onPublishDraft={publishDraft} onDeleteDraft={deleteDraft} deleting={deleting} status={status} activeListTab={activeListTab} setActiveListTab={setActiveListTab} />
             )}
             {view === VIEWS.EDITOR && (
-              <EditorView fields={fields} set={set} previewMode={previewMode} setPreviewMode={setPreviewMode} onPublish={publish} publishing={publishing} status={status} editPost={editPost} onBack={() => setView(VIEWS.LIST)} activeTab={activeTab} setActiveTab={setActiveTab} autoSaved={autoSaved} config={config} onImageUpload={onImageUpload} onPositionChange={onPositionChange} />
+              <EditorView fields={fields} set={set} previewMode={previewMode} setPreviewMode={setPreviewMode} onPublish={publish} publishing={publishing} status={status} editPost={editPost} onBack={() => setView(VIEWS.LIST)} activeTab={activeTab} setActiveTab={setActiveTab} autoSaved={autoSaved} onPositionChange={onPositionChange} />
             )}
           </main>
         </div>
@@ -330,37 +327,25 @@ function SetupScreen({ config, onSave }) {
   };
   return (
     <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#f8f9fa" }}>
-      <div style={{ background: "#fff", borderRadius: 16, border: "1px solid #e2e8f0", padding: 40, width: 480, boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}>
+      <div style={{ background: "#fff", borderRadius: 16, border: "1px solid #e2e8f0", padding: 40, width: 460, boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}>
         <h1 style={{ fontSize: 22, fontWeight: 600, color: "#111", marginBottom: 6 }}>hugs4bugs<span style={{ color: "#16a34a" }}>.</span>cms</h1>
-        <p style={{ color: "#888", fontSize: 14, marginBottom: 24, lineHeight: 1.6 }}>Connect your GitHub repo to start writing.</p>
-        <div style={{ fontSize: 12, fontWeight: 600, color: "#888", marginBottom: 12, textTransform: "uppercase", letterSpacing: "0.05em", borderBottom: "1px solid #f1f5f9", paddingBottom: 6 }}>GitHub</div>
+        <p style={{ color: "#888", fontSize: 14, marginBottom: 28, lineHeight: 1.6 }}>Connect your GitHub repo to start writing.</p>
         {[
-          { label: "Personal Access Token", key: "token", type: "password", placeholder: "ghp_...", hint: "repo + pull_requests scopes" },
+          { label: "GitHub Personal Access Token", key: "token", type: "password", placeholder: "ghp_...", hint: "repo + pull_requests scopes" },
           { label: "Repo Owner", key: "owner", placeholder: "sivolko" },
           { label: "Repository", key: "repo", placeholder: "hugs4bugs" },
           { label: "Default Author", key: "author", placeholder: "Shubhendu Shubham" },
         ].map(f => (
-          <div key={f.key} style={{ marginBottom: 12 }}>
+          <div key={f.key} style={{ marginBottom: 14 }}>
             <div className="field-label">{f.label}</div>
-            {f.hint && <div style={{ fontSize: 11, color: "#aaa", marginBottom: 3 }}>{f.hint}</div>}
+            {f.hint && <div style={{ fontSize: 11, color: "#aaa", marginBottom: 4 }}>{f.hint}</div>}
             <input className="input" type={f.type || "text"} placeholder={f.placeholder} value={form[f.key] || ""} onChange={set(f.key)} />
           </div>
         ))}
-        <div style={{ fontSize: 12, fontWeight: 600, color: "#888", margin: "20px 0 12px", textTransform: "uppercase", letterSpacing: "0.05em", borderBottom: "1px solid #f1f5f9", paddingBottom: 6 }}>Cloudinary (Image Uploads)</div>
-        {[
-          { label: "Cloud Name", key: "cloudName", placeholder: "hugs4bugs" },
-          { label: "Upload Preset (unsigned)", key: "uploadPreset", placeholder: "my_preset", hint: "Cloudinary → Settings → Upload → Add upload preset → Mode: Unsigned" },
-        ].map(f => (
-          <div key={f.key} style={{ marginBottom: 12 }}>
-            <div className="field-label">{f.label}</div>
-            {f.hint && <div style={{ fontSize: 11, color: "#aaa", marginBottom: 3 }}>{f.hint}</div>}
-            <input className="input" placeholder={f.placeholder} value={form[f.key] || ""} onChange={set(f.key)} />
-          </div>
-        ))}
-        {testResult && <div style={{ padding: "10px 14px", borderRadius: 8, marginBottom: 12, fontSize: 13, background: testResult.ok ? "#f0fdf4" : "#fef2f2", color: testResult.ok ? "#16a34a" : "#dc2626" }}>{testResult.msg}</div>}
-        <div style={{ display: "flex", gap: 10, marginTop: 20 }}>
+        {testResult && <div style={{ padding: "10px 14px", borderRadius: 8, marginBottom: 14, fontSize: 13, background: testResult.ok ? "#f0fdf4" : "#fef2f2", color: testResult.ok ? "#16a34a" : "#dc2626" }}>{testResult.msg}</div>}
+        <div style={{ display: "flex", gap: 10, marginTop: 24 }}>
           <button className="btn btn-outline" onClick={test} disabled={testing || !form.token} style={{ flex: 1 }}>{testing ? "Testing..." : "Test Connection"}</button>
-          <button className="btn btn-primary" style={{ flex: 1 }} onClick={() => onSave(form)} disabled={!form.token}>Save & Connect</button>
+          <button className="btn btn-primary" style={{ flex: 1 }} onClick={() => onSave(form)} disabled={!form.token}>Connect</button>
         </div>
       </div>
     </div>
@@ -444,7 +429,7 @@ function EmptyState({ text }) {
 
 const LANGUAGES = ["bash","c","cpp","css","diff","docker","go","graphql","html","java","javascript","json","kotlin","kql","markdown","python","ruby","rust","shell","sql","swift","typescript","yaml"];
 
-function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publishing, status, editPost, onBack, activeTab, setActiveTab, autoSaved, config, onImageUpload, onPositionChange }) {
+function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publishing, status, editPost, onBack, activeTab, setActiveTab, autoSaved, onPositionChange }) {
   const textareaRef = useRef(null);
   const [showLangPicker, setShowLangPicker] = useState(false);
   const [langSearch, setLangSearch] = useState("");
@@ -554,7 +539,7 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
             value={fields.body} onChange={set("body")} />
         )}
         {activeTab === "content" && previewMode && <MarkdownPreview content={fields.body} />}
-        {activeTab === "meta" && <MetaPanel fields={fields} set={set} config={config} onImageUpload={onImageUpload} onPositionChange={onPositionChange} />}
+        {activeTab === "meta" && <MetaPanel fields={fields} set={set} onPositionChange={onPositionChange} />}
       </div>
       <div style={{ background: "#fff", borderTop: "1px solid #e2e8f0", padding: "5px 20px", display: "flex", alignItems: "center", gap: 20, flexShrink: 0 }}>
         <span style={{ fontSize: 11, color: "#ccc", fontFamily: "'DM Mono', monospace" }}>
@@ -567,7 +552,7 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
   );
 }
 
-function MetaPanel({ fields, set, config, onImageUpload, onPositionChange }) {
+function MetaPanel({ fields, set, onPositionChange }) {
   return (
     <div style={{ padding: 28, maxWidth: 680 }}>
       <div style={{ display: "grid", gap: 16 }}>
@@ -581,18 +566,9 @@ function MetaPanel({ fields, set, config, onImageUpload, onPositionChange }) {
         </div>
         <Field label="Tags (comma-separated)" value={fields.tags} onChange={set("tags")} placeholder="devops, linux, docker" />
         <Field label="Description (SEO)" value={fields.description} onChange={set("description")} placeholder="Brief description" textarea />
-
-        <ImageUploadField
-          label="Cover Image"
-          value={fields.image}
-          onChange={set("image")}
-          cloudName={config?.cloudName}
-          uploadPreset={config?.uploadPreset}
-          onUpload={onImageUpload}
-        />
+        <Field label="Cover Image URL" value={fields.image} onChange={set("image")} placeholder="https://..." />
         <Field label="Optimized Image URL" value={fields.optimized_image} onChange={set("optimized_image")} placeholder="Leave blank to reuse cover image" />
 
-        {/* Focal point picker — appears when image URL is set */}
         {fields.image && (
           <FocalPointPicker
             imageUrl={fields.image}
@@ -632,7 +608,7 @@ function FocalPointPicker({ imageUrl, position, onChange }) {
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
-        <div className="field-label" style={{ margin: 0 }}>Cover Preview — drag to set focal point</div>
+        <div className="field-label" style={{ margin: 0 }}>Cover Preview — drag to adjust focal point</div>
         <span style={{ fontSize: 11, color: "#aaa", fontFamily: "'DM Mono', monospace" }}>{position}</span>
       </div>
       <div
@@ -646,56 +622,12 @@ function FocalPointPicker({ imageUrl, position, onChange }) {
         onTouchMove={e => { e.preventDefault(); updateFromEvent(e.touches[0]); }}
         onTouchEnd={() => setDragging(false)}
       >
-        <img src={imageUrl} alt="cover preview" style={{ objectPosition: position }} onError={e => e.target.style.opacity = 0.3} />
-        {/* Crosshair lines */}
+        <img src={imageUrl} alt="cover preview" style={{ objectPosition: position }} onError={e => e.target.style.opacity = "0.3"} />
         <div className="focal-line-v" style={{ left: `${px}%` }} />
         <div className="focal-line-h" style={{ top: `${py}%` }} />
-        {/* Focal point dot */}
-        <div className="focal-dot" style={{ left: `${px}%`, top: `${py}%`, background: dragging ? "rgba(255,255,255,0.15)" : "transparent" }} />
+        <div className="focal-dot" style={{ left: `${px}%`, top: `${py}%` }} />
         <div className="focal-badge">drag to adjust</div>
       </div>
-      <div style={{ fontSize: 11, color: "#bbb", marginTop: 5 }}>This sets <code style={{ fontSize: 10, background: "#f1f5f9", padding: "1px 4px", borderRadius: 3 }}>image_position</code> in frontmatter — controls which part of the image shows as the cover banner.</div>
-    </div>
-  );
-}
-
-function ImageUploadField({ label, value, onChange, cloudName, uploadPreset, onUpload }) {
-  const [dragging, setDragging] = useState(false);
-  const [uploading, setUploading] = useState(false);
-  const [uploadMsg, setUploadMsg] = useState(null);
-  const fileRef = useRef(null);
-
-  const upload = async (file) => {
-    if (!file?.type.startsWith("image/")) { setUploadMsg({ ok: false, text: "Please drop an image file." }); return; }
-    if (!cloudName || !uploadPreset) { setUploadMsg({ ok: false, text: "Add Cloudinary upload preset in Settings first." }); return; }
-    setUploading(true); setUploadMsg(null);
-    try {
-      const fd = new FormData();
-      fd.append("file", file); fd.append("upload_preset", uploadPreset); fd.append("folder", "hugs4bugs");
-      const r = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, { method: "POST", body: fd });
-      const data = await r.json();
-      if (!r.ok) throw new Error(data.error?.message || "Upload failed");
-      onUpload(data.secure_url);
-      setUploadMsg({ ok: true, text: "Uploaded! URL auto-filled." });
-    } catch (e) { setUploadMsg({ ok: false, text: e.message }); }
-    finally { setUploading(false); }
-  };
-
-  return (
-    <div>
-      <div className="field-label">{label}</div>
-      <input className="input" placeholder="https://..." value={value} onChange={onChange} style={{ marginBottom: 8 }} />
-      <div className={`drop-zone${dragging ? " dragging" : ""}`}
-        onDragOver={e => { e.preventDefault(); setDragging(true); }}
-        onDragLeave={() => setDragging(false)}
-        onDrop={e => { e.preventDefault(); setDragging(false); upload(e.dataTransfer.files[0]); }}
-        onClick={() => fileRef.current?.click()}>
-        <input ref={fileRef} type="file" accept="image/*" style={{ display: "none" }} onChange={e => { const f = e.target.files[0]; if (f) upload(f); e.target.value = ""; }} />
-        {uploading
-          ? <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, color: "#888", fontSize: 13 }}><div className="spinner" style={{ borderTopColor: "#888" }} /> Uploading...</div>
-          : <div><div style={{ fontSize: 20, marginBottom: 4 }}>🖼️</div><div style={{ fontSize: 13, color: "#888", fontWeight: 500 }}>Drag & drop or click to upload</div><div style={{ fontSize: 11, color: "#bbb", marginTop: 2 }}>Uploads to Cloudinary, URL auto-filled</div></div>}
-      </div>
-      {uploadMsg && <div style={{ fontSize: 12, marginTop: 6, padding: "6px 10px", borderRadius: 6, background: uploadMsg.ok ? "#f0fdf4" : "#fef2f2", color: uploadMsg.ok ? "#16a34a" : "#dc2626" }}>{uploadMsg.text}</div>}
     </div>
   );
 }
