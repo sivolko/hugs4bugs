@@ -272,32 +272,46 @@
     font-family: "DM Mono", monospace;
   }
 
+  // Responsive table wrapper
+  // display:block is required — display:table ignores overflow-x
   table {
     @include mainFont(400);
-    font-size: rem(15px);
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: rem(14px);
     line-height: 1.7;
     letter-spacing: 0;
     margin: rem(40px) auto;
     border-collapse: collapse;
+    border-radius: 8px;
 
     @include media(">=sm") {
-      font-size: rem(17px);
+      font-size: rem(16px);
     }
 
     th,
     td {
       border: rem(1px) solid #e2e8f0;
-      padding: rem(8px) rem(14px);
+      padding: rem(8px) rem(12px);
+      white-space: nowrap;
 
       @include media(">=sm") {
-        border: rem(1px) solid #e2e8f0;
-        padding: rem(12px) rem(20px);
+        padding: rem(10px) rem(18px);
+        white-space: normal;
       }
     }
 
     th {
       background: #f8f9fa;
       font-weight: 600;
+      text-align: left;
+    }
+
+    tr:nth-child(even) td {
+      background: #fafafa;
     }
   }
 
