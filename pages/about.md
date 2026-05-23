@@ -5,7 +5,7 @@ layout: page
 description: Some description.
 ---
 
-<img class="img-rounded" src="/assets/img/s.png" alt="Shubhendu" width="200">
+<img class="img-rounded" src="https://res.cloudinary.com/hugs4bugs/image/upload/v1779498681/IMG20260423174833_rb7gj1_f28591.jpg" alt="Shubhendu Shubham" width="200">
 
 # About
 
@@ -45,4 +45,5 @@ He is practictionar of Cyber Security with DevSecops, threat hunting, and RED Te
 
 <strong>
 I love to meet new people 👨‍⚕️, listen to their stories and discuss new ideas</strong>
-+
+
+{% include booking.html %}
