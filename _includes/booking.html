@@ -1,0 +1,71 @@
+<!-- Google Calendar Booking Widget -->
+<div class="booking-section">
+  <div class="booking-inner">
+    <div class="booking-text">
+      <h3 class="booking-title">Work with me</h3>
+      <p class="booking-subtitle">Got a security challenge, architecture review, or just want to talk through something? Book a free 30-min call.</p>
+    </div>
+    <div class="booking-button-wrap">
+      <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+      <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+      <script>
+      (function() {
+        var target = document.currentScript;
+        window.addEventListener('load', function() {
+          calendar.schedulingButton.load({
+            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ05D2qdlYrZbsiCbAMkjeXq7QyhjykQCJv4WKYylMgCA8j6_OiWBz19WsOoCvmnL3mpNSGHpBNp?gv=true',
+            color: '#111111',
+            label: 'Book a free call',
+            target,
+          });
+        });
+      })();
+      </script>
+    </div>
+  </div>
+</div>
+
+<style>
+.booking-section {
+  max-width: 800px;
+  margin: 48px auto 0;
+  padding: 0 20px;
+}
+.booking-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: #f8f9fa;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #111;
+  border-radius: 10px;
+  padding: 24px 28px;
+  flex-wrap: wrap;
+}
+.booking-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 6px;
+  padding: 0;
+  letter-spacing: -0.02em;
+}
+.booking-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  max-width: 480px;
+}
+.booking-button-wrap {
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .booking-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+</style>
