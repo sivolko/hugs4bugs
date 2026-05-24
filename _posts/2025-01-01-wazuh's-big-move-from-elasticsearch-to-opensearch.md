@@ -1,18 +1,19 @@
 ---
 layout: post
-title: Wazuh's Big Move:From Elasticsearch to OpenSearch 
-subtitle: Why it matters? 
-description: Enhance your security operations with wazuh for real time threat detection and complicane using open source SIEM wazuh using docker with kali. 
+title: "Wazuh vs Elasticsearch: Why Wazuh Moved to OpenSearch and What It Means for Your SIEM"
+subtitle: "The licensing change that forced the split and how security teams should evaluate both in 2026"
+description: "Wazuh dropped Elasticsearch for OpenSearch at v4.3 due to SSPL licensing. Here is why it happened, what changed technically, and how to choose between Wazuh and Elasticsearch for your SIEM."
 image: https://res.cloudinary.com/hugs4bugs/image/upload/v1735713838/IMG_5316_vrb0rb.jpg
 optimized_image: https://res.cloudinary.com/hugs4bugs/image/upload/v1735713838/IMG_5316_vrb0rb.jpg
 author: Shubhendu Shubham
 date: 2025-01-01 00:00:00 Z
 category: security
 tags:
-- Cyber Security
-- SIEM
-- blueteam
-- soc 
+- wazuh
+- elasticsearch
+- opensearch
+- siem
+- open-source-security
 ---
 Before, we jump to our topic let's recall what wazuh is? It's a popular open source security monitoring platfrom . It's HIDS aka host based intrusion Detection system. HIDs a Host-based Intrusion Detection System monitors and analyzes the internals of a computing system rather than the network packets on its external interfaces. It focuses on detecting unauthorized access and malicious activities on individual hosts or devices.
 
@@ -22,11 +23,11 @@ Wazuh has shifted to opensearch from elasticsearch since version4.3 and current 
 
  - Initially, Elasticsearch was a favorite among many open-source projects because it was licensed under Apache 2.0. This license is very permissive, allowing anyone to use, modify, and distribute the software freely.
 
- - However, Elasticsearch’s parent company, Elastic, decided to change the license to SSPL (Server Side Public License). This new license is more restrictive, especially for cloud service providers. It imposes additional rules on how the software can be used, which made it less attractive for open-source projects like Wazuh.
+ - However, Elasticsearch's parent company, Elastic, decided to change the license to SSPL (Server Side Public License). This new license is more restrictive, especially for cloud service providers. It imposes additional rules on how the software can be used, which made it less attractive for open-source projects like Wazuh.
 
 2.**OpenSearch** 
 
- - In response to these changes, OpenSearch was created. OpenSearch is a fork of Elasticsearch, meaning it started as a copy of Elasticsearch’s code but has since developed independently.
+ - In response to these changes, OpenSearch was created. OpenSearch is a fork of Elasticsearch, meaning it started as a copy of Elasticsearch's code but has since developed independently.
 
  - OpenSearch remains under the Apache 2.0 license, which is much more open and friendly for community-driven projects. This means that anyone can continue to use, modify, and share OpenSearch without worrying about the restrictive terms of SSPL.
 
@@ -60,4 +61,3 @@ Elasticsearch:
 **Conclusion** 
 
 For Security researchers, wazuh's move to openSearch means greater freedom, enhanced collaboration and access to a robust community driven platform. 
-

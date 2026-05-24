@@ -1,18 +1,19 @@
 ---
 layout: post
-title: Demystifying Log Analytics vs Log Analytics Workspace in MS Sentinel
-subtitle:  No More Confusions!
-description: Let's get concept clear what's Log analytics and log analytics workspace  
+title: "Log Analytics vs Log Analytics Workspace in Microsoft Sentinel: The Real Difference Explained"
+subtitle: "Why teams confuse these two and how to set up Sentinel correctly from day one"
+description: "Confused between Log Analytics and Log Analytics Workspace in Microsoft Sentinel? Clear breakdown of the architectural difference, cost implications, and correct deployment setup."
 image: https://res.cloudinary.com/hugs4bugs/image/upload/v1735797428/hugs4bugs/IMG20240824121111_d2qqef.jpg
 optimized_image: https://res.cloudinary.com/hugs4bugs/image/upload/v1735797428/hugs4bugs/IMG20240824121111_d2qqef.jpg
 author: Shubhendu Shubham
 date: 2025-01-02 00:00:00 Z
 category: azure
 tags:
-- Cyber Security
-- SIEM
-- sentinel 
-- soc 
+- microsoft-sentinel
+- log-analytics
+- azure-monitor
+- siem
+- soc
 ---
 
 **Problem Statement**

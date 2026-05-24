@@ -27,7 +27,7 @@
       "redirects": [
         {
           "source": "/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn",
-          "destination": "/snyk-saved-my-project-ft-uncontrolled-resource-consumption",
+          "destination": "/snyk-saved-my-project-ft-uncontrolled-resource-consumption/",
           "type": 301
         },
         {
@@ -37,7 +37,7 @@
         },
         {
           "source": "/stop-fighting-local-llm-docker-just-fixed-mess-model-runnner",
-          "destination": "/stop-fighting-local-llm-docker-just-fixed-mess-model-runner",
+          "destination": "/stop-fighting-local-llm-docker-just-fixed-mess-model-runner/",
           "type": 301
         },
         {
@@ -47,7 +47,7 @@
         },
         {
           "source": "/Your-AI-AgentExfiltrated-YourSSH-Keys",
-          "destination": "/your-ai-agent-exfiltrated-your-ssh-keys",
+          "destination": "/your-ai-agent-exfiltrated-your-ssh-keys/",
           "type": 301
         },
         {
@@ -57,12 +57,52 @@
         },
         {
           "source": "/category/Cyber%20Security",
-          "destination": "/category/cybersecurity",
+          "destination": "/category/cybersecurity/",
           "type": 301
         },
         {
           "source": "/category/Cyber%20Security/",
           "destination": "/category/cybersecurity/",
+          "type": 301
+        },
+        {
+          "source": "/how%20-to-manage-azure-active-directory-objects",
+          "destination": "/how-to-manage-azure-active-directory-objects/",
+          "type": 301
+        },
+        {
+          "source": "/how%20-to-manage-azure-active-directory-objects/",
+          "destination": "/how-to-manage-azure-active-directory-objects/",
+          "type": 301
+        },
+        {
+          "source": "/MPIC-for-All-An-Open-Approach-to-Certificate-Security",
+          "destination": "/mpic-for-all-an-open-approach-to-certificate-security/",
+          "type": 301
+        },
+        {
+          "source": "/MPIC-for-All-An-Open-Approach-to-Certificate-Security/",
+          "destination": "/mpic-for-all-an-open-approach-to-certificate-security/",
+          "type": 301
+        },
+        {
+          "source": "/Demystifying-Log-Analytics-vs-Log-Analytics-Workspace-in-MS-Sentinel",
+          "destination": "/log-analytics-vs-log-analytics-workspace-in-microsoft-sentinel-the-real-difference-explained/",
+          "type": 301
+        },
+        {
+          "source": "/Demystifying-Log-Analytics-vs-Log-Analytics-Workspace-in-MS-Sentinel/",
+          "destination": "/log-analytics-vs-log-analytics-workspace-in-microsoft-sentinel-the-real-difference-explained/",
+          "type": 301
+        },
+        {
+          "source": "/Install-Kali-Purple-tools-on-top-of-Normal-Kali",
+          "destination": "/how-to-install-kali-purple-soc-tools-on-existing-kali-linux-step-by-step-2026/",
+          "type": 301
+        },
+        {
+          "source": "/Install-Kali-Purple-tools-on-top-of-Normal-Kali/",
+          "destination": "/how-to-install-kali-purple-soc-tools-on-existing-kali-linux-step-by-step-2026/",
           "type": 301
         }
       ]
