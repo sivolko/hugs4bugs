@@ -25,9 +25,7 @@
                     <img src="{{ page.image }}"
                          alt="{{ page.title }}"
                          class="post-cover"
-                         loading="lazy"
-                         width="800"
-                         height="420">
+                         loading="lazy">
                 {% endif %}
 
                 {% include pagination-post.html progressBar=true %}
@@ -54,21 +52,15 @@
                                     {% if post.optimized_image %}
                                         <img src="{{ post.optimized_image }}"
                                              alt="{{ post.title }}"
-                                             loading="lazy"
-                                             width="300"
-                                             height="160">
+                                             loading="lazy">
                                     {% elsif post.image %}
                                         <img src="{{ post.image }}"
                                              alt="{{ post.title }}"
-                                             loading="lazy"
-                                             width="300"
-                                             height="160">
+                                             loading="lazy">
                                     {% else %}
                                         <img src="/assets/img/off.jpg"
                                              alt="{{ post.title }}"
-                                             loading="lazy"
-                                             width="300"
-                                             height="160">
+                                             loading="lazy">
                                     {% endif %}
                                     <h3>{{ post.title }}</h3>
                                 </a>

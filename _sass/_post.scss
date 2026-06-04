@@ -37,15 +37,24 @@
     padding: rem(60px) rem(10px) 0;
   }
 
+  // Fix stretched images — height:auto overrides any HTML height attribute
   img {
     max-width: 100%;
-    margin: rem(0px) auto;
+    height: auto;          // KEY FIX: preserves natural aspect ratio
+    width: auto;           // never force a width that distorts
+    max-height: 80vh;      // prevents very tall images from dominating layout
+    margin: rem(16px) auto;
     display: block;
-    padding: 10px 0;
+    padding: 0;
+    object-fit: contain;   // final safety net for any inline dimension conflict
   }
 
   figure {
     margin: rem(20px) auto 0;
+
+    img {
+      margin: 0 auto;
+    }
   }
 
   figcaption,
@@ -81,6 +90,17 @@
     }
   }
 
+  // Images inside paragraphs also need protection
+  p img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    display: block;
+    margin: rem(16px) auto;
+    padding: 0;
+    object-fit: contain;
+  }
+
   h1.post-title {
     line-height: 1.2;
     margin: rem(5px) auto rem(10px);
@@ -99,10 +119,17 @@
     }
   }
 
+  // Cover image: full-width banner, natural height from aspect ratio
   img.post-cover {
+    width: 100%;
+    height: auto;          // ignore the HTML width/height attributes
+    max-height: none;      // cover can be full-width tall
+    object-fit: cover;
+    object-position: var(--image-position, 50% 50%);
     padding: 0;
     margin-top: rem(20px);
     margin-bottom: rem(20px);
+    display: block;
 
     @include media(">=sm") {
       margin-top: rem(29px);
@@ -272,8 +299,7 @@
     font-family: "DM Mono", monospace;
   }
 
-  // Responsive table wrapper
-  // display:block is required — display:table ignores overflow-x
+  // Responsive table — display:block required for overflow-x to work
   table {
     @include mainFont(400);
     display: block;
@@ -350,6 +376,7 @@
 
       img {
         padding: 0;
+        max-height: none; // anchor icon should not be capped
       }
     }
 
