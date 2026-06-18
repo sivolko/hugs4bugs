@@ -20,7 +20,9 @@ const filenameFromTitle = (title, date) => {
 const buildFrontmatter = (fields) => {
   const tags = fields.tags.split(",").map((t) => t.trim()).filter(Boolean);
   const tagLines = tags.map((t) => `  - ${t}`).join("\n");
-  return `---\nlayout: post\ntitle: "${fields.title}"\ndate: ${fields.date}\ncategory: ${fields.category}\ntags:\n${tagLines}\nsubtitle: "${fields.subtitle}"\ndescription: "${fields.description}"\nimage: ${fields.image}\noptimized_image: ${fields.optimized_image || fields.image}\nimage_position: "${fields.image_position || "50% 50%"}"\nauthor: ${fields.author}\n---\n\n${fields.body}`;
+  // Only write discover: true when enabled — keeps frontmatter clean when off
+  const discoverLine = fields.discover ? "\ndiscover: true" : "";
+  return `---\nlayout: post\ntitle: "${fields.title}"\ndate: ${fields.date}\ncategory: ${fields.category}\ntags:\n${tagLines}\nsubtitle: "${fields.subtitle}"\ndescription: "${fields.description}"\nimage: ${fields.image}\noptimized_image: ${fields.optimized_image || fields.image}\nimage_position: "${fields.image_position || "50% 50%"}"${discoverLine}\nauthor: ${fields.author}\n---\n\n${fields.body}`;
 };
 
 const GH = (token) => ({
@@ -64,7 +66,9 @@ export default function CMS() {
 
   const emptyFields = {
     title: "", subtitle: "", date: todayISO(), category: "", tags: "",
-    description: "", image: "", optimized_image: "", image_position: "50% 50%", author: config.author, body: "",
+    description: "", image: "", optimized_image: "", image_position: "50% 50%",
+    discover: false,  // controls the Discover carousel
+    author: config.author, body: "",
   };
   const [fields, setFields] = useState(emptyFields);
 
@@ -115,7 +119,16 @@ export default function CMS() {
         const parse = (k) => { const m = raw.match(new RegExp(`^${k}:\\s*(.+)$`, "m")); return m ? m[1].replace(/^["']|["']$/g, "").trim() : ""; };
         const tagsMatch = raw.match(/^tags:\n((?:\s+-\s*.+\n?)*)/m);
         const tags = tagsMatch ? (tagsMatch[1].match(/-\s*(.+)/g)?.map(t => t.replace(/^-\s*/, "").trim()).join(", ") || "") : "";
-        setFields({ title: parse("title"), subtitle: parse("subtitle"), date: parse("date"), category: parse("category"), tags, description: parse("description"), image: parse("image"), optimized_image: parse("optimized_image"), image_position: parse("image_position") || "50% 50%", author: parse("author"), body });
+        // Parse discover: true/false from frontmatter
+        const discoverRaw = parse("discover");
+        setFields({
+          title: parse("title"), subtitle: parse("subtitle"), date: parse("date"),
+          category: parse("category"), tags, description: parse("description"),
+          image: parse("image"), optimized_image: parse("optimized_image"),
+          image_position: parse("image_position") || "50% 50%",
+          discover: discoverRaw === "true",
+          author: parse("author"), body,
+        });
       }
       setEditPost({ name: post.name, sha: data.sha });
       setStatus(null); setPreviewMode(false); setActiveTab("content"); setAutoSaved(false); setView(VIEWS.EDITOR);
@@ -137,7 +150,15 @@ export default function CMS() {
         const parse = (k) => { const m = raw.match(new RegExp(`^${k}:\\s*(.+)$`, "m")); return m ? m[1].replace(/^["']|["']$/g, "").trim() : ""; };
         const tagsMatch = raw.match(/^tags:\n((?:\s+-\s*.+\n?)*)/m);
         const tags = tagsMatch ? (tagsMatch[1].match(/-\s*(.+)/g)?.map(t => t.replace(/^-\s*/, "").trim()).join(", ") || "") : "";
-        setFields({ title: parse("title"), subtitle: parse("subtitle"), date: parse("date"), category: parse("category"), tags, description: parse("description"), image: parse("image"), optimized_image: parse("optimized_image"), image_position: parse("image_position") || "50% 50%", author: parse("author"), body });
+        const discoverRaw = parse("discover");
+        setFields({
+          title: parse("title"), subtitle: parse("subtitle"), date: parse("date"),
+          category: parse("category"), tags, description: parse("description"),
+          image: parse("image"), optimized_image: parse("optimized_image"),
+          image_position: parse("image_position") || "50% 50%",
+          discover: discoverRaw === "true",
+          author: parse("author"), body,
+        });
       }
       setEditPost({ name: postFile.filename.replace("_posts/", ""), sha: data.sha, prNumber: pr.number, branch: pr.head.ref, isDraft: true });
       setStatus(null); setPreviewMode(false); setActiveTab("content"); setAutoSaved(false); setView(VIEWS.EDITOR);
@@ -225,6 +246,7 @@ export default function CMS() {
 
   const set = (k) => (e) => setFields(f => ({ ...f, [k]: e.target.value }));
   const onPositionChange = (pos) => setFields(f => ({ ...f, image_position: pos }));
+  const onDiscoverToggle = () => setFields(f => ({ ...f, discover: !f.discover }));
 
   return (
     <div style={{ minHeight: "100vh", background: "#f8f9fa", fontFamily: "'DM Sans', system-ui, sans-serif" }}>
@@ -258,6 +280,9 @@ export default function CMS() {
         .focal-line-v { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(255,255,255,0.35); transform: translateX(-50%); pointer-events: none; }
         .focal-line-h { position: absolute; left: 0; right: 0; height: 1px; background: rgba(255,255,255,0.35); transform: translateY(-50%); pointer-events: none; }
         .focal-badge { position: absolute; bottom: 7px; right: 10px; font-size: 10px; color: rgba(255,255,255,0.85); font-family: 'DM Mono', monospace; background: rgba(0,0,0,0.35); padding: 2px 7px; border-radius: 4px; pointer-events: none; }
+        .discover-toggle { display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-radius:10px; border:1px solid; transition:all 0.2s; cursor:pointer; }
+        .toggle-track { width:44px; height:24px; border-radius:12px; border:none; cursor:pointer; position:relative; transition:background 0.2s; flex-shrink:0; }
+        .toggle-thumb { position:absolute; top:2px; width:20px; height:20px; border-radius:50%; background:#fff; transition:left 0.2s; box-shadow:0 1px 3px rgba(0,0,0,0.2); }
         .md-preview h1 { font-size: 24px; margin: 1.2em 0 0.5em; font-weight: 600; }
         .md-preview h2 { font-size: 20px; margin: 1em 0 0.4em; font-weight: 600; }
         .md-preview h3 { font-size: 17px; margin: 0.8em 0 0.3em; font-weight: 600; }
@@ -301,7 +326,7 @@ export default function CMS() {
               <PostsList posts={posts} drafts={drafts} loading={loadingPosts} onOpen={openPost} onOpenDraft={openDraft} onRefresh={fetchAll} onNew={newPost} onDelete={deletePost} onPublishDraft={publishDraft} onDeleteDraft={deleteDraft} deleting={deleting} status={status} activeListTab={activeListTab} setActiveListTab={setActiveListTab} />
             )}
             {view === VIEWS.EDITOR && (
-              <EditorView fields={fields} set={set} previewMode={previewMode} setPreviewMode={setPreviewMode} onPublish={publish} publishing={publishing} status={status} editPost={editPost} onBack={() => setView(VIEWS.LIST)} activeTab={activeTab} setActiveTab={setActiveTab} autoSaved={autoSaved} onPositionChange={onPositionChange} />
+              <EditorView fields={fields} set={set} previewMode={previewMode} setPreviewMode={setPreviewMode} onPublish={publish} publishing={publishing} status={status} editPost={editPost} onBack={() => setView(VIEWS.LIST)} activeTab={activeTab} setActiveTab={setActiveTab} autoSaved={autoSaved} onPositionChange={onPositionChange} onDiscoverToggle={onDiscoverToggle} />
             )}
           </main>
         </div>
@@ -429,7 +454,7 @@ function EmptyState({ text }) {
 
 const LANGUAGES = ["bash","c","cpp","css","diff","docker","go","graphql","html","java","javascript","json","kotlin","kql","markdown","python","ruby","rust","shell","sql","swift","typescript","yaml"];
 
-function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publishing, status, editPost, onBack, activeTab, setActiveTab, autoSaved, onPositionChange }) {
+function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publishing, status, editPost, onBack, activeTab, setActiveTab, autoSaved, onPositionChange, onDiscoverToggle }) {
   const textareaRef = useRef(null);
   const [showLangPicker, setShowLangPicker] = useState(false);
   const [langSearch, setLangSearch] = useState("");
@@ -463,6 +488,10 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
         <input className="input" style={{ flex: 1, fontSize: 15, fontWeight: 500, border: "none", padding: "6px 0", borderBottom: "2px solid #f1f5f9", borderRadius: 0, background: "transparent" }}
           placeholder="Post title..." value={fields.title} onChange={set("title")} />
         {editPost?.isDraft && <span style={{ fontSize: 11, background: "#fef9c3", color: "#a16207", padding: "3px 8px", borderRadius: 6, fontWeight: 500 }}>Draft</span>}
+        {/* Discover badge in header */}
+        {fields.discover && (
+          <span style={{ fontSize: 10, background: "#dcfce7", color: "#15803d", padding: "3px 8px", borderRadius: 6, fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase" }}>Trending</span>
+        )}
         <div style={{ display: "flex", gap: 8, flexShrink: 0 }}>
           {publishing
             ? <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "#888", padding: "0 8px" }}><div className="spinner" /> Working...</div>
@@ -539,7 +568,7 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
             value={fields.body} onChange={set("body")} />
         )}
         {activeTab === "content" && previewMode && <MarkdownPreview content={fields.body} />}
-        {activeTab === "meta" && <MetaPanel fields={fields} set={set} onPositionChange={onPositionChange} />}
+        {activeTab === "meta" && <MetaPanel fields={fields} set={set} onPositionChange={onPositionChange} onDiscoverToggle={onDiscoverToggle} />}
       </div>
       <div style={{ background: "#fff", borderTop: "1px solid #e2e8f0", padding: "5px 20px", display: "flex", alignItems: "center", gap: 20, flexShrink: 0 }}>
         <span style={{ fontSize: 11, color: "#ccc", fontFamily: "'DM Mono', monospace" }}>
@@ -552,10 +581,43 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
   );
 }
 
-function MetaPanel({ fields, set, onPositionChange }) {
+function MetaPanel({ fields, set, onPositionChange, onDiscoverToggle }) {
   return (
     <div style={{ padding: 28, maxWidth: 680 }}>
       <div style={{ display: "grid", gap: 16 }}>
+
+        {/* Discover Carousel Toggle — top of meta for visibility */}
+        <div
+          className="discover-toggle"
+          style={{
+            borderColor: fields.discover ? "#86efac" : "#e2e8f0",
+            background: fields.discover ? "#f0fdf4" : "#f8f9fa",
+          }}
+          onClick={onDiscoverToggle}
+        >
+          <div>
+            <div style={{ fontWeight: 600, fontSize: 13, color: "#111", display: "flex", alignItems: "center", gap: 6 }}>
+              <span style={{ fontSize: 15 }}>{fields.discover ? "🔥" : "⭐"}</span>
+              Add to Discover Carousel
+            </div>
+            <div style={{ fontSize: 11, color: "#64748b", marginTop: 3 }}>
+              {fields.discover
+                ? "This post will appear in the Trending strip at the top of the homepage"
+                : "Toggle on to feature this post in the homepage Trending carousel"}
+            </div>
+          </div>
+          <button
+            className="toggle-track"
+            style={{ background: fields.discover ? "#16a34a" : "#e2e8f0" }}
+            onClick={e => { e.stopPropagation(); onDiscoverToggle(); }}
+            type="button"
+            aria-pressed={fields.discover}
+            aria-label="Add to Discover carousel"
+          >
+            <span className="toggle-thumb" style={{ left: fields.discover ? 22 : 2 }} />
+          </button>
+        </div>
+
         <div className="field-grid">
           <Field label="Subtitle" value={fields.subtitle} onChange={set("subtitle")} placeholder="Short tagline" />
           <Field label="Author" value={fields.author} onChange={set("author")} placeholder="Name" />
