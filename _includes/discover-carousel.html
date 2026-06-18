@@ -1,0 +1,185 @@
+{% comment %}
+  PREVIEW MODE: shows latest 8 posts so you can see the carousel working.
+  On merge to main, replace the first assign line with:
+    {% assign discover_posts = site.posts | where: "discover", true | where_exp: "post", "post.is_generated != true" %}
+  Then add discover: true to whichever post frontmatters you want in the carousel.
+{% endcomment %}
+{% assign discover_posts = site.posts | where_exp: "post", "post.is_generated != true" | limit: 8 %}
+{% if discover_posts.size > 0 %}
+
+<style>
+.dc-wrap{
+  position:relative;background:#fff;
+  padding:18px 0 20px;border-bottom:1px solid #f1f5f9;overflow:hidden;
+}
+.dc-header{
+  display:flex;align-items:center;gap:10px;padding:0 20px 14px;
+}
+.dc-live-dot{
+  width:8px;height:8px;border-radius:50%;background:#ef4444;
+  flex-shrink:0;animation:dc-blink 2s ease-in-out infinite;
+}
+@keyframes dc-blink{
+  0%,100%{opacity:1;transform:scale(1);}
+  50%{opacity:.5;transform:scale(.75);}
+}
+.dc-label{
+  font-family:'DM Sans',system-ui,sans-serif;
+  font-size:12px;font-weight:700;color:#64748b;
+  text-transform:uppercase;letter-spacing:.1em;
+}
+.dc-hint{
+  margin-left:auto;
+  font-family:'DM Mono',monospace;
+  font-size:10px;color:#94a3b8;
+  background:#f8fafc;border:1px solid #e2e8f0;
+  padding:2px 8px;border-radius:20px;
+}
+.dc-track-outer{position:relative;}
+.dc-track{
+  display:flex;gap:10px;overflow-x:auto;
+  scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  padding:4px 20px 12px;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;-ms-overflow-style:none;
+}
+.dc-track::-webkit-scrollbar{display:none;}
+.dc-card{
+  flex:0 0 auto;width:130px;height:220px;
+  border-radius:16px;overflow:hidden;
+  scroll-snap-align:start;position:relative;
+  display:flex;flex-direction:column;
+  text-decoration:none;background-color:#0f172a;
+  background-size:cover;background-position:center;
+  box-shadow:0 2px 10px rgba(0,0,0,.14);
+  outline:2.5px solid var(--ring,#3b82f6);
+  outline-offset:2px;
+  transition:transform .18s ease,box-shadow .18s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.dc-card::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,0) 25%,rgba(0,0,0,.55) 65%,rgba(0,0,0,.85) 100%);
+  border-radius:inherit;
+}
+.dc-card:hover,.dc-card:focus-visible{
+  transform:translateY(-4px) scale(1.025);
+  box-shadow:0 10px 28px rgba(0,0,0,.22);
+}
+.dc-cat{
+  position:absolute;top:10px;left:10px;z-index:3;
+  font-family:'DM Sans',system-ui,sans-serif;
+  font-size:9px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.06em;
+  color:#fff;background:rgba(0,0,0,.42);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  padding:3px 7px;border-radius:20px;
+}
+.dc-body{
+  position:absolute;bottom:0;left:0;right:0;z-index:3;
+  padding:10px 10px 12px;
+}
+.dc-title{
+  font-family:'DM Sans',system-ui,sans-serif;
+  font-size:12px;font-weight:600;color:#fff;
+  line-height:1.35;margin:0 0 5px;
+  display:-webkit-box;-webkit-line-clamp:3;
+  -webkit-box-orient:vertical;overflow:hidden;
+}
+.dc-date{
+  font-family:'DM Mono',monospace;
+  font-size:9px;color:rgba(255,255,255,.6);display:block;
+}
+.dc-track-outer::before,.dc-track-outer::after{
+  content:'';position:absolute;top:0;bottom:12px;
+  width:36px;z-index:5;pointer-events:none;
+}
+.dc-track-outer::before{
+  left:0;background:linear-gradient(to right,rgba(255,255,255,.9),transparent);
+}
+.dc-track-outer::after{
+  right:0;background:linear-gradient(to left,rgba(255,255,255,.9),transparent);
+}
+.dc-nav{
+  display:none;position:absolute;
+  top:50%;transform:translateY(calc(-50% - 6px));
+  z-index:10;width:34px;height:34px;
+  border-radius:50%;border:1px solid #e2e8f0;
+  background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.12);
+  cursor:pointer;font-size:20px;font-weight:300;color:#1e293b;
+  align-items:center;justify-content:center;
+  line-height:1;transition:all .15s;
+  font-family:system-ui,sans-serif;padding:0;
+}
+.dc-nav:hover{background:#f8f9fa;box-shadow:0 4px 14px rgba(0,0,0,.16);}
+.dc-nav--prev{left:8px;}
+.dc-nav--next{right:8px;}
+.dc-nav[data-hidden="true"]{opacity:.25;pointer-events:none;}
+@media(min-width:600px){
+  .dc-nav{display:flex;}
+  .dc-card{width:148px;height:248px;}
+  .dc-track{padding:4px 52px 12px;gap:12px;}
+  .dc-header{padding:0 52px 14px;}
+  .dc-title{font-size:13px;}
+}
+@media(min-width:1024px){
+  .dc-card{width:160px;height:272px;}
+  .dc-track{gap:14px;}
+}
+@media(min-width:1280px){
+  .dc-card{width:172px;height:292px;}
+}
+</style>
+
+{% assign ring_colors = "#3b82f6,#10b981,#f59e0b,#ef4444,#8b5cf6,#06b6d4,#f97316,#ec4899,#14b8a6,#6366f1" | split: "," %}
+
+<section class="dc-wrap" aria-label="Trending on Discover">
+  <div class="dc-header">
+    <span class="dc-live-dot" aria-hidden="true"></span>
+    <span class="dc-label">Trending</span>
+    <span class="dc-hint">Swipe to explore</span>
+  </div>
+  <div class="dc-track-outer">
+    <button class="dc-nav dc-nav--prev" id="dcPrev" aria-label="Scroll left" type="button">&#8249;</button>
+    <div class="dc-track" id="dcTrack" role="list">
+      {% for post in discover_posts %}
+        {% assign ci = forloop.index0 | modulo: 10 %}
+        {% assign rc = ring_colors[ci] %}
+        {% assign img = post.image %}
+        {% if img == blank %}{% assign img = post.optimized_image %}{% endif %}
+        {% if img == blank %}{% assign img = '/assets/img/off.jpg' %}{% endif %}
+        <a class="dc-card"
+           href="{{ post.url | prepend: site.baseurl }}"
+           style="background-image:url('{{ img }}');--ring:{{ rc }};"
+           role="listitem"
+           title="{{ post.title }}">
+          {% if post.category %}<span class="dc-cat">{{ post.category }}</span>{% endif %}
+          <div class="dc-body">
+            <h3 class="dc-title">{{ post.title }}</h3>
+            <time class="dc-date" datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: "%b %d, %Y" }}
+            </time>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+    <button class="dc-nav dc-nav--next" id="dcNext" aria-label="Scroll right" type="button">&#8250;</button>
+  </div>
+</section>
+
+<script>
+(function(){
+  var t=document.getElementById('dcTrack'),p=document.getElementById('dcPrev'),n=document.getElementById('dcNext');
+  if(!t||!p||!n)return;
+  function cw(){var c=t.querySelector('.dc-card');return c?(c.offsetWidth+parseInt(getComputedStyle(t).gap||12)):162;}
+  function sc(d){t.scrollBy({left:d*cw()*3,behavior:'smooth'});}
+  p.addEventListener('click',function(){sc(-1);});
+  n.addEventListener('click',function(){sc(1);});
+  function sync(){var m=t.scrollWidth-t.clientWidth;p.dataset.hidden=t.scrollLeft<=4?'true':'false';n.dataset.hidden=t.scrollLeft>=m-4?'true':'false';}
+  t.addEventListener('scroll',sync,{passive:true});
+  window.addEventListener('resize',sync);
+  sync();
+})();
+</script>
+
+{% endif %}
