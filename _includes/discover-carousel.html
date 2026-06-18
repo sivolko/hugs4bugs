@@ -9,11 +9,16 @@
 
 <style>
 .dc-wrap{
-  position:relative;background:#fff;
-  padding:18px 0 20px;border-bottom:1px solid #f1f5f9;overflow:hidden;
+  position:relative;
+  background:#fff;
+  /* padding-top clears the fixed navbar (~62px) + breathing room */
+  padding:80px 0 20px;
+  border-bottom:1px solid #f1f5f9;
+  overflow:hidden;
 }
 .dc-header{
-  display:flex;align-items:center;gap:10px;padding:0 20px 14px;
+  display:flex;align-items:center;gap:10px;
+  padding:0 20px 14px;
 }
 .dc-live-dot{
   width:8px;height:8px;border-radius:50%;background:#ef4444;
@@ -115,7 +120,9 @@
 .dc-nav--prev{left:8px;}
 .dc-nav--next{right:8px;}
 .dc-nav[data-hidden="true"]{opacity:.25;pointer-events:none;}
+
 @media(min-width:600px){
+  .dc-wrap{ padding-top:72px; }  /* desktop header slightly shorter */
   .dc-nav{display:flex;}
   .dc-card{width:148px;height:248px;}
   .dc-track{padding:4px 52px 12px;gap:12px;}
@@ -179,6 +186,16 @@
   t.addEventListener('scroll',sync,{passive:true});
   window.addEventListener('resize',sync);
   sync();
+
+  // Auto-measure the actual header height so the carousel always clears it
+  var header = document.querySelector('header, .header, nav.nav, #header');
+  if(header){
+    var wrap = document.querySelector('.dc-wrap');
+    if(wrap){
+      var h = header.getBoundingClientRect().height;
+      wrap.style.paddingTop = (h + 16) + 'px';
+    }
+  }
 })();
 </script>
 
