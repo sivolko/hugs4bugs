@@ -15,6 +15,10 @@ layout: main
 {% endif %}
 
 <main class="home {% if site.show_hero and paginator == nil or paginator.page == 1 %}no-padding{% endif %}" role="main">
+
+    <!-- Discover Stories Carousel — pinned above hero as first visible element -->
+    {% include discover-carousel.html %}
+
     {% if site.show_hero and paginator == nil or paginator.page == 1 %}
         <!-- Hero -->
         {% assign featured = posts.first %}
@@ -40,9 +44,6 @@ layout: main
             </div>
         </section>
     {% endif %}
-
-    <!-- Discover Stories Carousel -->
-    {% include discover-carousel.html %}
 
     <!-- Posts -->
     <section id="grid" class="row flex-grid">
