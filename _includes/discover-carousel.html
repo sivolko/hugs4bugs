@@ -1,46 +1,56 @@
 {% comment %}
-  PREVIEW MODE: shows latest 8 posts so you can see the carousel working.
-  On merge to main, replace the first assign line with:
+  PREVIEW MODE: shows latest 8 posts.
+  For production, swap the assign below to:
     {% assign discover_posts = site.posts | where: "discover", true | where_exp: "post", "post.is_generated != true" %}
-  Then add discover: true to whichever post frontmatters you want in the carousel.
 {% endcomment %}
 {% assign discover_posts = site.posts | where_exp: "post", "post.is_generated != true" | limit: 8 %}
 {% if discover_posts.size > 0 %}
 
 <style>
+/* ── Discover Carousel — dark theme ───────────────────────── */
 .dc-wrap{
   position:relative;
-  background:#fff;
-  /* padding-top clears the fixed navbar (~62px) + breathing room */
-  padding:80px 0 20px;
-  border-bottom:1px solid #f1f5f9;
+  background:#141414;          /* matches site navbar */
+  padding:80px 0 24px;
+  border-bottom:1px solid #1e293b;
   overflow:hidden;
 }
+
 .dc-header{
   display:flex;align-items:center;gap:10px;
   padding:0 20px 14px;
 }
+
 .dc-live-dot{
-  width:8px;height:8px;border-radius:50%;background:#ef4444;
-  flex-shrink:0;animation:dc-blink 2s ease-in-out infinite;
+  width:8px;height:8px;border-radius:50%;
+  background:#ef4444;flex-shrink:0;
+  animation:dc-blink 2s ease-in-out infinite;
+  box-shadow:0 0 6px rgba(239,68,68,.5);
 }
 @keyframes dc-blink{
   0%,100%{opacity:1;transform:scale(1);}
-  50%{opacity:.5;transform:scale(.75);}
+  50%{opacity:.55;transform:scale(.75);}
 }
+
 .dc-label{
   font-family:'DM Sans',system-ui,sans-serif;
-  font-size:12px;font-weight:700;color:#64748b;
+  font-size:12px;font-weight:700;
+  color:#94a3b8;                /* muted light on dark */
   text-transform:uppercase;letter-spacing:.1em;
 }
+
 .dc-hint{
   margin-left:auto;
   font-family:'DM Mono',monospace;
-  font-size:10px;color:#94a3b8;
-  background:#f8fafc;border:1px solid #e2e8f0;
+  font-size:10px;color:#475569;
+  background:#1e293b;
+  border:1px solid #334155;
   padding:2px 8px;border-radius:20px;
 }
+
+/* Track */
 .dc-track-outer{position:relative;}
+
 .dc-track{
   display:flex;gap:10px;overflow-x:auto;
   scroll-snap-type:x mandatory;scroll-behavior:smooth;
@@ -49,14 +59,17 @@
   scrollbar-width:none;-ms-overflow-style:none;
 }
 .dc-track::-webkit-scrollbar{display:none;}
+
+/* Card */
 .dc-card{
   flex:0 0 auto;width:130px;height:220px;
   border-radius:16px;overflow:hidden;
   scroll-snap-align:start;position:relative;
   display:flex;flex-direction:column;
-  text-decoration:none;background-color:#0f172a;
+  text-decoration:none;
+  background-color:#1e293b;
   background-size:cover;background-position:center;
-  box-shadow:0 2px 10px rgba(0,0,0,.14);
+  box-shadow:0 2px 12px rgba(0,0,0,.45);
   outline:2.5px solid var(--ring,#3b82f6);
   outline-offset:2px;
   transition:transform .18s ease,box-shadow .18s ease;
@@ -64,65 +77,90 @@
 }
 .dc-card::after{
   content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,0) 25%,rgba(0,0,0,.55) 65%,rgba(0,0,0,.85) 100%);
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,.04) 0%,
+    rgba(0,0,0,0)   25%,
+    rgba(0,0,0,.55) 65%,
+    rgba(0,0,0,.88) 100%
+  );
   border-radius:inherit;
 }
 .dc-card:hover,.dc-card:focus-visible{
   transform:translateY(-4px) scale(1.025);
-  box-shadow:0 10px 28px rgba(0,0,0,.22);
+  box-shadow:0 12px 32px rgba(0,0,0,.6);
 }
+
+/* Category pill */
 .dc-cat{
   position:absolute;top:10px;left:10px;z-index:3;
   font-family:'DM Sans',system-ui,sans-serif;
   font-size:9px;font-weight:700;
   text-transform:uppercase;letter-spacing:.06em;
-  color:#fff;background:rgba(0,0,0,.42);
+  color:#fff;background:rgba(0,0,0,.5);
   backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
   padding:3px 7px;border-radius:20px;
 }
+
+/* Text overlay */
 .dc-body{
   position:absolute;bottom:0;left:0;right:0;z-index:3;
   padding:10px 10px 12px;
 }
 .dc-title{
   font-family:'DM Sans',system-ui,sans-serif;
-  font-size:12px;font-weight:600;color:#fff;
+  font-size:12px;font-weight:600;color:#f8fafc;
   line-height:1.35;margin:0 0 5px;
   display:-webkit-box;-webkit-line-clamp:3;
   -webkit-box-orient:vertical;overflow:hidden;
 }
 .dc-date{
   font-family:'DM Mono',monospace;
-  font-size:9px;color:rgba(255,255,255,.6);display:block;
+  font-size:9px;color:rgba(255,255,255,.5);display:block;
 }
-.dc-track-outer::before,.dc-track-outer::after{
+
+/* Dark fade edges matching bg */
+.dc-track-outer::before,
+.dc-track-outer::after{
   content:'';position:absolute;top:0;bottom:12px;
-  width:36px;z-index:5;pointer-events:none;
+  width:48px;z-index:5;pointer-events:none;
 }
 .dc-track-outer::before{
-  left:0;background:linear-gradient(to right,rgba(255,255,255,.9),transparent);
+  left:0;
+  background:linear-gradient(to right,rgba(20,20,20,1),rgba(20,20,20,0));
 }
 .dc-track-outer::after{
-  right:0;background:linear-gradient(to left,rgba(255,255,255,.9),transparent);
+  right:0;
+  background:linear-gradient(to left,rgba(20,20,20,1),rgba(20,20,20,0));
 }
+
+/* Nav arrows — dark theme */
 .dc-nav{
   display:none;position:absolute;
   top:50%;transform:translateY(calc(-50% - 6px));
   z-index:10;width:34px;height:34px;
-  border-radius:50%;border:1px solid #e2e8f0;
-  background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.12);
-  cursor:pointer;font-size:20px;font-weight:300;color:#1e293b;
+  border-radius:50%;
+  border:1px solid #334155;
+  background:#1e293b;
+  box-shadow:0 2px 8px rgba(0,0,0,.4);
+  cursor:pointer;font-size:20px;font-weight:300;
+  color:#e2e8f0;
   align-items:center;justify-content:center;
   line-height:1;transition:all .15s;
   font-family:system-ui,sans-serif;padding:0;
 }
-.dc-nav:hover{background:#f8f9fa;box-shadow:0 4px 14px rgba(0,0,0,.16);}
+.dc-nav:hover{
+  background:#334155;
+  box-shadow:0 4px 14px rgba(0,0,0,.5);
+  color:#fff;
+}
 .dc-nav--prev{left:8px;}
 .dc-nav--next{right:8px;}
-.dc-nav[data-hidden="true"]{opacity:.25;pointer-events:none;}
+.dc-nav[data-hidden="true"]{opacity:.2;pointer-events:none;}
 
+/* Responsive */
 @media(min-width:600px){
-  .dc-wrap{ padding-top:72px; }  /* desktop header slightly shorter */
+  .dc-wrap{padding-top:72px;}
   .dc-nav{display:flex;}
   .dc-card{width:148px;height:248px;}
   .dc-track{padding:4px 52px 12px;gap:12px;}
@@ -136,6 +174,7 @@
 @media(min-width:1280px){
   .dc-card{width:172px;height:292px;}
 }
+/* ──────────────────────────────────────────────────────── */
 </style>
 
 {% assign ring_colors = "#3b82f6,#10b981,#f59e0b,#ef4444,#8b5cf6,#06b6d4,#f97316,#ec4899,#14b8a6,#6366f1" | split: "," %}
@@ -146,8 +185,10 @@
     <span class="dc-label">Trending</span>
     <span class="dc-hint">Swipe to explore</span>
   </div>
+
   <div class="dc-track-outer">
     <button class="dc-nav dc-nav--prev" id="dcPrev" aria-label="Scroll left" type="button">&#8249;</button>
+
     <div class="dc-track" id="dcTrack" role="list">
       {% for post in discover_posts %}
         {% assign ci = forloop.index0 | modulo: 10 %}
@@ -170,6 +211,7 @@
         </a>
       {% endfor %}
     </div>
+
     <button class="dc-nav dc-nav--next" id="dcNext" aria-label="Scroll right" type="button">&#8250;</button>
   </div>
 </section>
@@ -186,16 +228,9 @@
   t.addEventListener('scroll',sync,{passive:true});
   window.addEventListener('resize',sync);
   sync();
-
-  // Auto-measure the actual header height so the carousel always clears it
-  var header = document.querySelector('header, .header, nav.nav, #header');
-  if(header){
-    var wrap = document.querySelector('.dc-wrap');
-    if(wrap){
-      var h = header.getBoundingClientRect().height;
-      wrap.style.paddingTop = (h + 16) + 'px';
-    }
-  }
+  // Measure actual header height and apply as padding-top
+  var hdr=document.querySelector('header,.header,nav.nav,#header,.has-push-menu > header');
+  if(hdr){var w=document.querySelector('.dc-wrap');if(w){var h=hdr.getBoundingClientRect().height;w.style.paddingTop=(h+16)+'px';}}
 })();
 </script>
 
