@@ -26,6 +26,36 @@
       ],
       "redirects": [
         {
+          "source": "/category/Security",
+          "destination": "/category/security/",
+          "type": 301
+        },
+        {
+          "source": "/category/Security/",
+          "destination": "/category/security/",
+          "type": 301
+        },
+        {
+          "source": "/category/cybersecurity",
+          "destination": "/category/security/",
+          "type": 301
+        },
+        {
+          "source": "/category/cybersecurity/",
+          "destination": "/category/security/",
+          "type": 301
+        },
+        {
+          "source": "/category/Cyber%20Security",
+          "destination": "/category/security/",
+          "type": 301
+        },
+        {
+          "source": "/category/Cyber%20Security/",
+          "destination": "/category/security/",
+          "type": 301
+        },
+        {
           "source": "/snyk-saved-my-project-ft-uncontrolled-resource-consumptionn",
           "destination": "/snyk-saved-my-project-ft-uncontrolled-resource-consumption/",
           "type": 301
@@ -53,16 +83,6 @@
         {
           "source": "/Your-AI-AgentExfiltrated-YourSSH-Keys/",
           "destination": "/your-ai-agent-exfiltrated-your-ssh-keys/",
-          "type": 301
-        },
-        {
-          "source": "/category/Cyber%20Security",
-          "destination": "/category/cybersecurity/",
-          "type": 301
-        },
-        {
-          "source": "/category/Cyber%20Security/",
-          "destination": "/category/cybersecurity/",
           "type": 301
         },
         {
