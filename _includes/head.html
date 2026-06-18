@@ -3,6 +3,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Google Discover + rich snippets: allow large image previews and full snippets -->
+    <meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
     {% assign title = '' %}
     {% if page.layout == 'author' %}
     {% assign title = page.display_name %}
@@ -16,7 +19,7 @@
     {% if page.image %}
     {% assign image = page.image %}
     {% else %}
-    {% assign image = "/assets/img/s.png" | prepend: site.baseurl | prepend: site.url %}
+    {% assign image = "https://res.cloudinary.com/hugs4bugs/image/upload/v1779498681/IMG20260423174833_rb7gj1_f28591.jpg" %}
     {% endif %}
 
     {% assign description = '' %}
@@ -39,10 +42,14 @@
     <meta name="keywords" content="{{ page.tags | join: ', ' }}">
     {% endif %}
 
+    <!-- Author attribution for every page -->
+    <meta name="author" content="Shubhendu Shubham">
+
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ title }}">
     <meta name="twitter:description" content="{{ description }}">
+    <meta name="twitter:creator" content="@myselfshubhendu">
 
     {% if image contains '://' %}
     <meta property="twitter:image" content="{{ image }}">
@@ -58,12 +65,19 @@
     <meta property="og:url" content="{{ url }}">
     <meta property="og:title" content="{{ title }}">
     <meta property="og:image" content="{{ image }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:description" content="{{ description }}">
     <meta property="og:site_name" content="{{ site.title }}">
     {% if page.layout == 'post' %}
     <meta property="og:type" content="article">
     <meta property="article:author" content="Shubhendu Shubham">
     <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+    {% if page.tags %}
+    {% for tag in page.tags %}
+    <meta property="article:tag" content="{{ tag }}">
+    {% endfor %}
+    {% endif %}
     {% else %}
     <meta property="og:type" content="website">
     {% endif %}
@@ -89,10 +103,7 @@
     <!-- Android Theme Color -->
     <meta name="theme-color" content="#141414">
 
-    <!-- Fonts: DM Sans + DM Mono
-         Non-blocking load: preload as style → swap to stylesheet on load.
-         This eliminates the render-blocking Google Fonts request (~1,600ms FCP savings).
-         noscript fallback ensures fonts load when JS is disabled. -->
+    <!-- Fonts: DM Sans + DM Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload"
@@ -112,19 +123,14 @@
     <link rel='wellknown' href='.well-known/assetlinks.json'>
     <link rel='ads' href='/ads.txt'>
 
-    <!-- Include extra styles -->
     {% include extra-css.html %}
 
     <link rel="alternate" hreflang="en" href="https://hugs4bugs.me">
 
-    <!-- JavaScript enabled/disabled -->
     <script>
         document.querySelector('html').classList.remove('no-js');
     </script>
 
-    <!-- PWA update — deferred until after page load.
-         Eliminates this script from the critical render path and removes it
-         from the 543 KiB unused-JS bucket measured during initial load. -->
     <script>
         window.addEventListener('load', function() {
             var s = document.createElement('script');
@@ -138,7 +144,6 @@
         crossorigin="anonymous">
     </script>
 
-    <!-- JSON-LD structured data -->
     {% include json-ld.html %}
 
 </head>

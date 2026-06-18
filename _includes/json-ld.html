@@ -13,19 +13,58 @@
   "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
   "url": "{{ page.url | absolute_url }}",
   "wordCount": {{ page.content | number_of_words }},
-  "inLanguage": "{{ site.language | default: 'en' }}",
+  "inLanguage": "en",
   "image": {
     "@type": "ImageObject",
-    "url": "{{ page.image | default: '/assets/img/s.png' | absolute_url }}"
+    "url": "{{ page.image | default: 'https://res.cloudinary.com/hugs4bugs/image/upload/v1779498681/IMG20260423174833_rb7gj1_f28591.jpg' | absolute_url }}",
+    "width": 1200,
+    "height": 630
   },
   "author": {
     "@type": "Person",
     "name": "Shubhendu Shubham",
     "url": "https://hugs4bugs.me/about",
+    "image": "https://res.cloudinary.com/hugs4bugs/image/upload/v1779498681/IMG20260423174833_rb7gj1_f28591.jpg",
+    "jobTitle": "Security Architect",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Merative"
+    },
+    "knowsAbout": [
+      "Cloud Security",
+      "Microsoft Sentinel",
+      "Threat Modeling",
+      "DevSecOps",
+      "Docker",
+      "Kubernetes Security",
+      "SIEM",
+      "Zero Trust Architecture",
+      "AI Agent Security",
+      "Supply Chain Security"
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "TOGAF",
+        "credentialCategory": "Enterprise Architecture"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "SABSA Practitioner",
+        "credentialCategory": "Security Architecture"
+      }
+    ],
+    "award": [
+      "Docker Captain",
+      "Snyk Ambassador",
+      "Kusto Golden Awardee",
+      "Azure Blog-A-Thon Ranked Contributor"
+    ],
     "sameAs": [
       "https://twitter.com/myselfshubhendu",
       "https://github.com/sivolko",
-      "https://linkedin.com/in/shubhendu-shubham"
+      "https://www.linkedin.com/in/shubhendu-shubham",
+      "https://medium.com/@shubhendushubham"
     ]
   },
   "publisher": {
@@ -75,6 +114,73 @@
   ]
 }
 </script>
+{% elsif page.url == '/about/' or page.title == 'About' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "dateCreated": "2023-01-01T00:00:00Z",
+  "dateModified": "{{ site.time | date_to_xmlschema }}",
+  "url": "https://hugs4bugs.me/about/",
+  "mainEntity": {
+    "@type": "Person",
+    "@id": "https://hugs4bugs.me/about/#shubhendu-shubham",
+    "name": "Shubhendu Shubham",
+    "url": "https://hugs4bugs.me/about",
+    "image": "https://res.cloudinary.com/hugs4bugs/image/upload/v1779498681/IMG20260423174833_rb7gj1_f28591.jpg",
+    "jobTitle": "Security Architect",
+    "description": "Security Architect with 7+ years across Healthcare, BFSI, and Energy sectors. TOGAF and SABSA Practitioner. Docker Captain. Snyk Ambassador. Writes about cloud security, Microsoft Sentinel, threat modeling, and DevSecOps.",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Merative"
+    },
+    "knowsAbout": [
+      "Cloud Security",
+      "Microsoft Sentinel",
+      "Threat Modeling",
+      "DevSecOps",
+      "Docker",
+      "Kubernetes Security",
+      "SIEM",
+      "Zero Trust Architecture",
+      "AI Agent Security",
+      "Supply Chain Security",
+      "KQL",
+      "YARA",
+      "Sigma Rules"
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "TOGAF",
+        "credentialCategory": "Enterprise Architecture"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "SABSA Practitioner",
+        "credentialCategory": "Security Architecture"
+      }
+    ],
+    "award": [
+      "Docker Captain",
+      "Snyk Ambassador",
+      "Kusto Golden Awardee",
+      "Azure Blog-A-Thon Ranked Contributor"
+    ],
+    "sameAs": [
+      "https://twitter.com/myselfshubhendu",
+      "https://github.com/sivolko",
+      "https://www.linkedin.com/in/shubhendu-shubham",
+      "https://medium.com/@shubhendushubham",
+      "https://hub.docker.com/u/sivolko"
+    ],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://hugs4bugs.me/about/"
+    }
+  }
+}
+</script>
 {% elsif page.layout == 'home' or page.url == '/' %}
 <script type="application/ld+json">
 {
@@ -95,10 +201,12 @@
     "@type": "Person",
     "name": "Shubhendu Shubham",
     "url": "https://hugs4bugs.me/about",
+    "image": "https://res.cloudinary.com/hugs4bugs/image/upload/v1779498681/IMG20260423174833_rb7gj1_f28591.jpg",
+    "jobTitle": "Security Architect",
     "sameAs": [
       "https://twitter.com/myselfshubhendu",
       "https://github.com/sivolko",
-      "https://linkedin.com/in/shubhendu-shubham"
+      "https://www.linkedin.com/in/shubhendu-shubham"
     ]
   }
 }
