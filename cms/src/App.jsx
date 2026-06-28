@@ -87,6 +87,7 @@ export default function CMS() {
   const [activeTab, setActiveTab] = useState("content");
   const [deleting, setDeleting] = useState(null);
   const [autoSaved, setAutoSaved] = useState(false);
+  const [savedSnapshot, setSavedSnapshot] = useState(null); // last-saved fields JSON; null = not yet saved this session
 
   // --- Frameworks state ---
   const [frameworks, setFrameworks] = useState([]);
@@ -227,7 +228,7 @@ export default function CMS() {
     if (saved) { try { restored = { ...restored, ...JSON.parse(saved) }; } catch {} }
     setFields(restored);
     setEditPost(null); setPreviewMode(false); setStatus(null);
-    setActiveTab("content"); setAutoSaved(!!saved); setView(VIEWS.EDITOR);
+    setActiveTab("content"); setAutoSaved(!!saved); setSavedSnapshot(null); setView(VIEWS.EDITOR);
   };
 
   const openPost = async (post) => {
@@ -254,7 +255,7 @@ export default function CMS() {
         });
       }
       setEditPost({ name: post.name, sha: data.sha });
-      setStatus(null); setPreviewMode(false); setActiveTab("content"); setAutoSaved(false); setView(VIEWS.EDITOR);
+      setStatus(null); setPreviewMode(false); setActiveTab("content"); setAutoSaved(false); setSavedSnapshot(null); setView(VIEWS.EDITOR);
     } catch (e) { setStatus({ type: "error", msg: e.message }); }
   };
 
@@ -284,7 +285,7 @@ export default function CMS() {
         });
       }
       setEditPost({ name: postFile.filename.replace("_posts/", ""), sha: data.sha, prNumber: pr.number, branch: pr.head.ref, isDraft: true });
-      setStatus(null); setPreviewMode(false); setActiveTab("content"); setAutoSaved(false); setView(VIEWS.EDITOR);
+      setStatus(null); setPreviewMode(false); setActiveTab("content"); setAutoSaved(false); setSavedSnapshot(null); setView(VIEWS.EDITOR);
     } catch (e) { setStatus({ type: "error", msg: e.message }); }
   };
 
@@ -332,6 +333,7 @@ export default function CMS() {
     if (!fields.title.trim()) { setStatus({ type: "error", msg: "Title is required." }); return; }
     setPublishing(true);
     setStatus({ type: "info", msg: draft ? "Saving draft..." : "Publishing...", steps: [] });
+    const fieldsSnapshot = JSON.stringify(fields); // capture state at click-time, not whatever fields becomes mid-request
     const gh = GH(config.token); const { owner, repo } = config;
     const filename = filenameFromTitle(fields.title, fields.date);
     const branch = editPost?.branch || `cms/${slugify(fields.title)}-${Date.now()}`;
@@ -357,10 +359,12 @@ export default function CMS() {
         prNumber = pr.number;
         if (!draft) { step("Merging PR..."); await gh.put(`/repos/${owner}/${repo}/pulls/${pr.number}/merge`, { merge_method: "squash", commit_title: `Publish: ${fields.title}` }); }
         localStorage.removeItem(DRAFT_KEY); setAutoSaved(false);
+        setSavedSnapshot(fieldsSnapshot);
         setStatus({ type: "success", msg: draft ? `Draft PR #${prNumber} created!` : "Published! Deploying to Firebase...", prUrl: `https://github.com/${owner}/${repo}/pull/${prNumber}`, steps: [] });
       } else {
         if (!draft) { step("Merging draft PR..."); await gh.put(`/repos/${owner}/${repo}/pulls/${prNumber}/merge`, { merge_method: "squash", commit_title: `Publish: ${fields.title}` }); }
         localStorage.removeItem(DRAFT_KEY); setAutoSaved(false);
+        setSavedSnapshot(fieldsSnapshot);
         setStatus({ type: "success", msg: draft ? "Draft updated!" : "Draft published! Deploying...", steps: [] });
       }
     } catch (e) { setStatus(s => ({ type: "error", msg: e.message, steps: s?.steps || [] })); }
@@ -370,6 +374,8 @@ export default function CMS() {
   const set = (k) => (e) => setFields(f => ({ ...f, [k]: e.target.value }));
   const onPositionChange = (pos) => setFields(f => ({ ...f, image_position: pos }));
   const onDiscoverToggle = () => setFields(f => ({ ...f, discover: !f.discover }));
+  // Buttons stay greyed out right after a successful save until the post is actually edited again
+  const isDirty = savedSnapshot === null || JSON.stringify(fields) !== savedSnapshot;
 
   return (
     <div style={{ minHeight: "100vh", background: "#f8f9fa", fontFamily: "'DM Sans', system-ui, sans-serif" }}>
@@ -453,7 +459,7 @@ export default function CMS() {
               <PostsList posts={posts} drafts={drafts} loading={loadingPosts} onOpen={openPost} onOpenDraft={openDraft} onRefresh={fetchAll} onNew={newPost} onDelete={deletePost} onPublishDraft={publishDraft} onDeleteDraft={deleteDraft} deleting={deleting} status={status} activeListTab={activeListTab} setActiveListTab={setActiveListTab} />
             )}
             {view === VIEWS.EDITOR && (
-              <EditorView fields={fields} set={set} previewMode={previewMode} setPreviewMode={setPreviewMode} onPublish={publish} publishing={publishing} status={status} editPost={editPost} onBack={() => setView(VIEWS.LIST)} activeTab={activeTab} setActiveTab={setActiveTab} autoSaved={autoSaved} onPositionChange={onPositionChange} onDiscoverToggle={onDiscoverToggle} />
+              <EditorView fields={fields} set={set} previewMode={previewMode} setPreviewMode={setPreviewMode} onPublish={publish} publishing={publishing} status={status} editPost={editPost} onBack={() => setView(VIEWS.LIST)} activeTab={activeTab} setActiveTab={setActiveTab} autoSaved={autoSaved} onPositionChange={onPositionChange} onDiscoverToggle={onDiscoverToggle} isDirty={isDirty} />
             )}
             {view === VIEWS.FW_LIST && (
               <FrameworksList frameworks={frameworks} loading={loadingFrameworks} onOpen={openFramework} onNew={newFramework} onDelete={deleteFramework} onRefresh={fetchFrameworks} deleting={fwDeleting} status={fwStatus} />
@@ -623,7 +629,7 @@ function EmptyState({ text }) {
 
 const LANGUAGES = ["bash","c","cpp","css","diff","docker","go","graphql","html","java","javascript","json","kotlin","kql","markdown","python","ruby","rust","shell","sql","swift","typescript","yaml"];
 
-function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publishing, status, editPost, onBack, activeTab, setActiveTab, autoSaved, onPositionChange, onDiscoverToggle }) {
+function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publishing, status, editPost, onBack, activeTab, setActiveTab, autoSaved, onPositionChange, onDiscoverToggle, isDirty }) {
   const textareaRef = useRef(null);
   const [showLangPicker, setShowLangPicker] = useState(false);
   const [langSearch, setLangSearch] = useState("");
@@ -664,8 +670,8 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
         <div style={{ display: "flex", gap: 8, flexShrink: 0 }}>
           {publishing
             ? <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "#888", padding: "0 8px" }}><div className="spinner" /> Working...</div>
-            : <><button className="btn btn-outline" onClick={() => onPublish(true)} disabled={publishing}>Save Draft</button>
-                <button className="btn btn-green" onClick={() => onPublish(false)} disabled={publishing}>Publish</button></>
+            : <><button className="btn btn-outline" onClick={() => onPublish(true)} disabled={!isDirty} title={!isDirty ? "No changes since last save" : undefined}>Save Draft</button>
+                <button className="btn btn-green" onClick={() => onPublish(false)} disabled={!isDirty} title={!isDirty ? "No changes since last save" : undefined}>Publish</button></>
           }
         </div>
       </div>
