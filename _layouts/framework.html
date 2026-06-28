@@ -1,0 +1,71 @@
+---
+layout: main
+---
+
+<div class="frameworks-page">
+
+  <a class="fw-back-link" href="{{ '/frameworks/' | prepend: site.baseurl }}">&larr; All frameworks</a>
+
+  <div class="fw-hero">
+    {% if page.badge %}<span class="fw-badge">{{ page.badge }}</span>{% endif %}
+    <h1>{{ page.title }}</h1>
+    {% if page.tagline %}<p class="fw-tagline">{{ page.tagline }}</p>{% endif %}
+  </div>
+
+  {% if page.layers %}
+  <div class="fw-layer-grid">
+    {% for layer in page.layers %}
+      <div class="fw-layer-card" style="--layer-color: {{ layer.color | default: '#ff0a16' }};">
+        <span class="fw-layer-index">L{{ forloop.index }}</span>
+        <p class="fw-layer-name">{{ layer.name }}</p>
+        {% if layer.description %}<p class="fw-layer-desc">{{ layer.description }}</p>{% endif %}
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if page.build_log %}
+  <div class="fw-buildlog">
+    <span class="fw-section-label">Build log</span>
+    {% for entry in page.build_log %}
+      <div class="fw-timeline-item">
+        <span class="fw-dot" style="--dot-color: {{ entry.color | default: '#ff0a16' }};"></span>
+        <span class="fw-timeline-date">{{ entry.date }}</span>
+        <span class="fw-timeline-text">
+          {% if entry.url %}<a href="{{ entry.url | prepend: site.baseurl }}">{{ entry.text }}</a>{% else %}{{ entry.text }}{% endif %}
+        </span>
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if page.speaking_badges %}
+  <div class="fw-badges">
+    {% for badge in page.speaking_badges %}
+      <span class="fw-badge-pill" style="--pill-color: {{ badge.color | default: '#ff0a16' }};">{{ badge.text }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if content and content != "" %}
+  <article class="fw-body">
+    {{ content }}
+  </article>
+  {% endif %}
+
+  {% if page.related_posts %}
+  <div class="fw-buildlog">
+    <span class="fw-section-label">Related posts</span>
+    {% for url in page.related_posts %}
+      {% assign related = site.posts | where: "url", url | first %}
+      {% if related %}
+      <div class="fw-timeline-item">
+        <span class="fw-dot" style="--dot-color: {{ page.accent | default: '#ff0a16' }};"></span>
+        <span class="fw-timeline-text"><a href="{{ related.url | prepend: site.baseurl }}">{{ related.title }}</a></span>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+</div>

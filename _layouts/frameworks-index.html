@@ -1,0 +1,30 @@
+---
+layout: main
+---
+
+<div class="frameworks-page">
+
+  <div class="fw-hero">
+    <span class="fw-badge">Original research</span>
+    <h1>{{ page.title | default: "Frameworks" }}</h1>
+    <p class="fw-tagline">{{ page.description | default: "Threat modeling and security architecture frameworks, built and maintained here." }}</p>
+  </div>
+
+  {% assign frameworks = site.frameworks | sort: "order" %}
+
+  {% if frameworks.size > 0 %}
+  <div class="fw-index-grid">
+    {% for fw in frameworks %}
+      <a class="fw-card" href="{{ fw.url | prepend: site.baseurl }}" style="--fw-accent: {{ fw.accent | default: '#ff0a16' }};">
+        {% if fw.badge %}<span class="fw-card-tag">{{ fw.badge }}</span>{% endif %}
+        <h3>{{ fw.title }}</h3>
+        <p>{{ fw.tagline }}</p>
+        {% if fw.layers %}<span class="fw-card-meta">{{ fw.layers.size }} layers</span>{% endif %}
+      </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="fw-empty">The first framework is on its way.</p>
+  {% endif %}
+
+</div>

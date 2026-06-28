@@ -1,0 +1,307 @@
+.frameworks-page {
+  padding-top: rem(80px);
+
+  @include media(">=sm") {
+    padding-top: rem(100px);
+  }
+}
+
+.fw-hero {
+  padding: rem(20px) rem(20px) rem(10px);
+  max-width: rem(900px);
+  margin: 0 auto;
+
+  @include media(">=sm") {
+    padding: rem(30px) rem(40px) rem(10px);
+  }
+
+  .fw-badge {
+    display: inline-block;
+    font-size: rem(11px);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: darken($lightGray, 40%);
+    margin-bottom: rem(10px);
+  }
+
+  h1 {
+    @include mainFont(600);
+    color: $accentDark;
+    font-size: rem(28px);
+    margin: 0 0 rem(8px);
+
+    @include media(">=sm") {
+      font-size: rem(38px);
+    }
+  }
+
+  p.fw-tagline {
+    @include mainFont(400);
+    color: darken($lightGray, 15%);
+    font-size: rem(15px);
+    max-width: rem(520px);
+    margin: 0;
+
+    @include media(">=sm") {
+      font-size: rem(17px);
+    }
+  }
+}
+
+// Index grid — one card per framework, scales automatically as more are added
+.fw-index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: rem(16px);
+  max-width: rem(900px);
+  margin: rem(10px) auto rem(40px);
+  padding: 0 rem(20px);
+
+  @include media(">=sm") {
+    padding: 0 rem(40px);
+  }
+}
+
+.fw-card {
+  display: block;
+  text-decoration: none;
+  background: #1a1a1a;
+  border: 1px solid #262626;
+  border-radius: rem(12px);
+  padding: rem(18px);
+  transition: all 0.2s;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: var(--fw-accent, $themeColor);
+  }
+
+  .fw-card-tag {
+    display: inline-block;
+    font-size: rem(10px);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--fw-accent, $themeColor);
+    margin-bottom: rem(8px);
+  }
+
+  h3 {
+    @include mainFont(600);
+    color: $accentDark;
+    font-size: rem(18px);
+    margin: 0 0 rem(6px);
+  }
+
+  p {
+    @include mainFont(400);
+    color: darken($lightGray, 25%);
+    font-size: rem(13px);
+    margin: 0 0 rem(12px);
+    line-height: 1.5;
+  }
+
+  .fw-card-meta {
+    font-size: rem(11px);
+    color: darken($lightGray, 40%);
+    font-family: "DM Mono", monospace;
+  }
+}
+
+.fw-empty {
+  text-align: center;
+  padding: rem(60px) rem(20px);
+  color: darken($lightGray, 35%);
+  font-size: rem(14px);
+  max-width: rem(500px);
+  margin: 0 auto;
+}
+
+// Single framework page — layer grid
+.fw-layer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem(8px);
+  max-width: rem(900px);
+  margin: 0 auto rem(20px);
+  padding: 0 rem(20px);
+
+  @include media(">=sm") {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 rem(40px);
+    gap: rem(10px);
+  }
+}
+
+.fw-layer-card {
+  border: 1.5px solid var(--layer-color, $themeColor);
+  border-radius: rem(10px);
+  background: #1a1a1a;
+  padding: rem(10px) rem(12px);
+
+  .fw-layer-index {
+    display: block;
+    font-family: "DM Mono", monospace;
+    font-size: rem(10px);
+    color: var(--layer-color, $themeColor);
+    margin-bottom: rem(4px);
+  }
+
+  .fw-layer-name {
+    @include mainFont(600);
+    color: $accentDark;
+    font-size: rem(13px);
+    margin: 0 0 rem(3px);
+  }
+
+  .fw-layer-desc {
+    @include mainFont(400);
+    color: darken($lightGray, 30%);
+    font-size: rem(11px);
+    line-height: 1.4;
+    margin: 0;
+  }
+}
+
+// Build log timeline
+.fw-buildlog {
+  max-width: rem(900px);
+  margin: rem(10px) auto rem(30px);
+  padding: 0 rem(20px);
+
+  @include media(">=sm") {
+    padding: 0 rem(40px);
+  }
+
+  .fw-section-label {
+    display: block;
+    font-size: rem(11px);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: darken($lightGray, 40%);
+    margin-bottom: rem(14px);
+  }
+}
+
+.fw-timeline-item {
+  position: relative;
+  padding-left: rem(20px);
+  margin-left: rem(4px);
+  border-left: 2px solid #262626;
+  padding-bottom: rem(16px);
+
+  &:last-child {
+    border-left-color: transparent;
+    padding-bottom: 0;
+  }
+
+  .fw-dot {
+    position: absolute;
+    left: rem(-5px);
+    top: rem(3px);
+    width: rem(8px);
+    height: rem(8px);
+    border-radius: 50%;
+    background: var(--dot-color, $themeColor);
+  }
+
+  .fw-timeline-date {
+    display: block;
+    font-family: "DM Mono", monospace;
+    font-size: rem(10px);
+    color: darken($lightGray, 40%);
+    margin-bottom: rem(2px);
+  }
+
+  .fw-timeline-text {
+    color: #e5e5e5;
+    font-size: rem(14px);
+
+    a {
+      color: $accentDark;
+      text-decoration: none;
+
+      &:hover {
+        color: $themeColor;
+      }
+    }
+  }
+}
+
+// Speaking / recognition badges
+.fw-badges {
+  max-width: rem(900px);
+  margin: 0 auto rem(40px);
+  padding: 0 rem(20px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(8px);
+
+  @include media(">=sm") {
+    padding: 0 rem(40px);
+  }
+}
+
+.fw-badge-pill {
+  font-size: rem(11px);
+  color: var(--pill-color, $accentDark);
+  background: #1a1a1a;
+  border: 1px solid var(--pill-color, $themeColor);
+  padding: rem(5px) rem(12px);
+  border-radius: rem(14px);
+}
+
+// Long-form body content rendered below the structured sections
+.fw-body {
+  max-width: rem(760px);
+  margin: 0 auto rem(50px);
+  padding: 0 rem(20px);
+  color: #d4d4d4;
+  @include mainFont(400);
+  font-size: rem(16px);
+  line-height: 1.8;
+
+  @include media(">=sm") {
+    padding: 0 rem(40px);
+  }
+
+  h2, h3 {
+    @include mainFont(600);
+    color: $accentDark;
+    margin: rem(28px) 0 rem(12px);
+  }
+
+  p { margin: 0 0 rem(16px); }
+
+  a {
+    color: $themeColor;
+  }
+
+  code {
+    font-family: "DM Mono", monospace;
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: rem(2px) rem(6px);
+    border-radius: 4px;
+    font-size: rem(14px);
+  }
+}
+
+.fw-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(6px);
+  max-width: rem(900px);
+  margin: rem(16px) auto 0;
+  padding: 0 rem(20px);
+  font-size: rem(13px);
+  color: darken($lightGray, 35%);
+  text-decoration: none;
+
+  @include media(">=sm") {
+    padding: 0 rem(40px);
+  }
+
+  &:hover {
+    color: $accentDark;
+  }
+}

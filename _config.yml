@@ -10,6 +10,9 @@ collections:
   uploads:
     title: Uploads
     output: true
+  frameworks:
+    title: Frameworks
+    output: true
 name: hugs4bugs
 description: Practical deep dives into cloud security, Microsoft Sentinel, Docker,
   and DevSecOps by Shubhendu Shubham. Updated weekly.
@@ -34,6 +37,8 @@ show_hero: true
 menu:
 - title: Home
   url: "/"
+- title: Frameworks
+  url: "/frameworks"
 - title: About
   url: "/about"
 - title: Project
@@ -124,3 +129,8 @@ defaults:
   values:
     author: "Shubhendu Shubham"
     image: "/assets/img/s.png"
+- scope:
+    path: ""
+    type: "frameworks"
+  values:
+    layout: "framework"
