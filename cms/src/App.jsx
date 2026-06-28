@@ -25,6 +25,30 @@ const buildFrontmatter = (fields) => {
   return `---\nlayout: post\ntitle: "${fields.title}"\ndate: ${fields.date}\ncategory: ${fields.category}\ntags:\n${tagLines}\nsubtitle: "${fields.subtitle}"\ndescription: "${fields.description}"\nimage: ${fields.image}\noptimized_image: ${fields.optimized_image || fields.image}\nimage_position: "${fields.image_position || "50% 50%"}"${discoverLine}\nauthor: ${fields.author}\n---\n\n${fields.body}`;
 };
 
+const TEMPLATE_FRAMEWORK_YAML = `permalink: "/frameworks/your-slug/"
+order: 2
+badge: "Original framework"
+accent: "#3b82f6"
+tagline: "One sentence describing what this framework does."
+layers:
+  - name: Layer 1
+    color: "#3b82f6"
+    description: "What this layer covers"
+  - name: Layer 2
+    color: "#10b981"
+    description: "What this layer covers"
+build_log:
+  - date: "Month Year"
+    text: "What happened"
+    color: "#3b82f6"
+speaking_badges:
+  - text: "Badge text"
+    color: "#f59e0b"
+related_posts:
+  - /your-related-post-slug/`;
+
+const TEMPLATE_FRAMEWORK_BODY = `Write the full explanation of this framework here. This renders below the structured sections on the page.`;
+
 const GH = (token) => ({
   async req(method, path, body) {
     const r = await fetch(`https://api.github.com${path}`, {
@@ -44,7 +68,7 @@ const GH = (token) => ({
   delete(path, body) { return this.req("DELETE", path, body); },
 });
 
-const VIEWS = { SETUP: "setup", LIST: "list", EDITOR: "editor" };
+const VIEWS = { SETUP: "setup", LIST: "list", EDITOR: "editor", FW_LIST: "fw_list", FW_EDITOR: "fw_editor" };
 
 export default function CMS() {
   const [config, setConfig] = useState(() => {
@@ -63,6 +87,17 @@ export default function CMS() {
   const [activeTab, setActiveTab] = useState("content");
   const [deleting, setDeleting] = useState(null);
   const [autoSaved, setAutoSaved] = useState(false);
+
+  // --- Frameworks state ---
+  const [frameworks, setFrameworks] = useState([]);
+  const [loadingFrameworks, setLoadingFrameworks] = useState(false);
+  const [editFramework, setEditFramework] = useState(null);
+  const [fwTitle, setFwTitle] = useState("");
+  const [fwFrontmatter, setFwFrontmatter] = useState(TEMPLATE_FRAMEWORK_YAML);
+  const [fwBody, setFwBody] = useState(TEMPLATE_FRAMEWORK_BODY);
+  const [fwStatus, setFwStatus] = useState(null);
+  const [fwSaving, setFwSaving] = useState(false);
+  const [fwDeleting, setFwDeleting] = useState(null);
 
   const emptyFields = {
     title: "", subtitle: "", date: todayISO(), category: "", tags: "",
@@ -97,6 +132,94 @@ export default function CMS() {
   }, [config]);
 
   useEffect(() => { if (view === VIEWS.LIST) fetchAll(); }, [view, fetchAll]);
+
+  // --- Frameworks: fetch list (with parsed titles) ---
+  const fetchFrameworks = useCallback(async () => {
+    if (!config.token) return;
+    setLoadingFrameworks(true);
+    try {
+      const gh = GH(config.token);
+      const list = await gh.get(`/repos/${config.owner}/${config.repo}/contents/_frameworks`);
+      const items = Array.isArray(list) ? list.filter(f => f.name.endsWith(".md")) : [];
+      const withTitles = await Promise.all(items.map(async (f) => {
+        try {
+          const data = await gh.get(`/repos/${config.owner}/${config.repo}/contents/_frameworks/${f.name}`);
+          const content = atob(data.content.replace(/\n/g, ""));
+          const m = content.match(/^title:\s*(.+)$/m);
+          const title = m ? m[1].replace(/^["']|["']$/g, "").trim() : "";
+          return { name: f.name, sha: data.sha, title };
+        } catch { return { name: f.name, sha: f.sha, title: "" }; }
+      }));
+      setFrameworks(withTitles.sort((a, b) => a.name.localeCompare(b.name)));
+    } catch (e) {
+      if (!String(e.message).toLowerCase().includes("not found")) setFwStatus({ type: "error", msg: e.message });
+      setFrameworks([]);
+    } finally { setLoadingFrameworks(false); }
+  }, [config]);
+
+  useEffect(() => { if (view === VIEWS.FW_LIST) fetchFrameworks(); }, [view, fetchFrameworks]);
+
+  const newFramework = () => {
+    setEditFramework(null);
+    setFwTitle("");
+    setFwFrontmatter(TEMPLATE_FRAMEWORK_YAML);
+    setFwBody(TEMPLATE_FRAMEWORK_BODY);
+    setFwStatus(null);
+    setView(VIEWS.FW_EDITOR);
+  };
+
+  const openFramework = async (fw) => {
+    setFwStatus({ type: "info", msg: "Loading framework..." });
+    try {
+      const gh = GH(config.token);
+      const data = await gh.get(`/repos/${config.owner}/${config.repo}/contents/_frameworks/${fw.name}`);
+      const content = atob(data.content.replace(/\n/g, ""));
+      const fmMatch = content.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+      if (fmMatch) {
+        const raw = fmMatch[1], body = fmMatch[2].trim();
+        const titleMatch = raw.match(/^title:\s*(.+)$/m);
+        const title = titleMatch ? titleMatch[1].replace(/^["']|["']$/g, "").trim() : "";
+        const rest = raw.replace(/^title:\s*.+$\n?/m, "").trim();
+        setFwTitle(title);
+        setFwFrontmatter(rest);
+        setFwBody(body);
+      }
+      setEditFramework({ name: fw.name, sha: data.sha });
+      setFwStatus(null);
+      setView(VIEWS.FW_EDITOR);
+    } catch (e) { setFwStatus({ type: "error", msg: e.message }); }
+  };
+
+  const saveFramework = async () => {
+    if (!fwTitle.trim()) { setFwStatus({ type: "error", msg: "Title is required." }); return; }
+    setFwSaving(true);
+    setFwStatus({ type: "info", msg: "Saving..." });
+    const gh = GH(config.token); const { owner, repo } = config;
+    const filename = editFramework?.name || `${slugify(fwTitle)}.md`;
+    const fileContent = `---\ntitle: "${fwTitle}"\n${fwFrontmatter.trim()}\n---\n\n${fwBody}`;
+    const content = btoa(unescape(encodeURIComponent(fileContent)));
+    try {
+      const body = { message: `[CMS] Framework: ${fwTitle}`, content };
+      if (editFramework?.sha) body.sha = editFramework.sha;
+      const res = await gh.put(`/repos/${owner}/${repo}/contents/_frameworks/${filename}`, body);
+      setEditFramework({ name: filename, sha: res?.content?.sha });
+      setFwStatus({ type: "success", msg: "Saved! Deploying to Firebase..." });
+    } catch (e) { setFwStatus({ type: "error", msg: e.message }); }
+    finally { setFwSaving(false); }
+  };
+
+  const deleteFramework = async (fw) => {
+    if (!window.confirm(`Delete framework "${fw.title || fw.name}"? This removes it from the live site.`)) return;
+    setFwDeleting(fw.name);
+    const gh = GH(config.token); const { owner, repo } = config;
+    try {
+      const data = await gh.get(`/repos/${owner}/${repo}/contents/_frameworks/${fw.name}`);
+      await gh.delete(`/repos/${owner}/${repo}/contents/_frameworks/${fw.name}`, { message: `[CMS] Delete framework: ${fw.name}`, sha: data.sha });
+      setFwStatus({ type: "success", msg: `"${fw.name}" deleted.` });
+      fetchFrameworks();
+    } catch (e) { setFwStatus({ type: "error", msg: e.message }); }
+    finally { setFwDeleting(null); }
+  };
 
   const newPost = () => {
     const saved = localStorage.getItem(DRAFT_KEY);
@@ -312,6 +435,10 @@ export default function CMS() {
               <GridIcon /> All Posts
               {drafts.length > 0 && <span style={{ marginLeft: "auto", background: "#f59e0b", color: "#fff", borderRadius: 10, fontSize: 10, padding: "1px 6px", fontWeight: 600 }}>{drafts.length}</span>}
             </div>
+            <div className={`sidebar-item ${view === VIEWS.FW_LIST || view === VIEWS.FW_EDITOR ? "active" : ""}`} onClick={() => setView(VIEWS.FW_LIST)}>
+              <LayersIcon /> Frameworks
+              {frameworks.length > 0 && <span style={{ marginLeft: "auto", background: "#8b5cf6", color: "#fff", borderRadius: 10, fontSize: 10, padding: "1px 6px", fontWeight: 600 }}>{frameworks.length}</span>}
+            </div>
             <div className={`sidebar-item ${view === VIEWS.EDITOR ? "active" : ""}`} onClick={() => view !== VIEWS.EDITOR && newPost()}>
               <EditIcon /> Editor
             </div>
@@ -327,6 +454,12 @@ export default function CMS() {
             )}
             {view === VIEWS.EDITOR && (
               <EditorView fields={fields} set={set} previewMode={previewMode} setPreviewMode={setPreviewMode} onPublish={publish} publishing={publishing} status={status} editPost={editPost} onBack={() => setView(VIEWS.LIST)} activeTab={activeTab} setActiveTab={setActiveTab} autoSaved={autoSaved} onPositionChange={onPositionChange} onDiscoverToggle={onDiscoverToggle} />
+            )}
+            {view === VIEWS.FW_LIST && (
+              <FrameworksList frameworks={frameworks} loading={loadingFrameworks} onOpen={openFramework} onNew={newFramework} onDelete={deleteFramework} onRefresh={fetchFrameworks} deleting={fwDeleting} status={fwStatus} />
+            )}
+            {view === VIEWS.FW_EDITOR && (
+              <FrameworkEditor title={fwTitle} setTitle={setFwTitle} frontmatter={fwFrontmatter} setFrontmatter={setFwFrontmatter} body={fwBody} setBody={setFwBody} onSave={saveFramework} saving={fwSaving} status={fwStatus} editFramework={editFramework} onBack={() => setView(VIEWS.FW_LIST)} />
             )}
           </main>
         </div>
@@ -443,6 +576,42 @@ function PostsList({ posts, drafts, loading, onOpen, onOpenDraft, onRefresh, onN
             })}
           </div>
         )}
+      </div>
+    </div>
+  );
+}
+
+function FrameworksList({ frameworks, loading, onOpen, onNew, onDelete, onRefresh, deleting, status }) {
+  return (
+    <div style={{ height: "100%", overflow: "auto", padding: 32 }}>
+      <div style={{ maxWidth: 760, margin: "0 auto" }}>
+        <div style={{ display: "flex", alignItems: "center", marginBottom: 20, gap: 12 }}>
+          <div style={{ flex: 1 }}><h2 style={{ fontSize: 20, fontWeight: 600, color: "#111" }}>Frameworks</h2></div>
+          <button className="btn btn-outline" onClick={onRefresh}>Refresh</button>
+          <button className="btn btn-primary" onClick={onNew}>+ New Framework</button>
+        </div>
+        {status && <div style={{ padding: "10px 14px", borderRadius: 8, marginBottom: 16, fontSize: 13, background: status.type === "error" ? "#fef2f2" : status.type === "success" ? "#f0fdf4" : "#eff6ff", color: status.type === "error" ? "#dc2626" : status.type === "success" ? "#16a34a" : "#1d4ed8" }}>{status.msg}</div>}
+        {loading && <div style={{ textAlign: "center", padding: 64, color: "#aaa" }}><div className="spinner" style={{ margin: "0 auto 12px" }} />Fetching from GitHub...</div>}
+        {!loading && (
+          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+            {frameworks.length === 0 && <EmptyState text="No frameworks yet. Create your first one." />}
+            {frameworks.map(fw => (
+              <div key={fw.name} className="post-row">
+                <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#8b5cf6", flexShrink: 0 }} />
+                <div style={{ flex: 1, minWidth: 0, cursor: "pointer" }} onClick={() => onOpen(fw)}>
+                  <div style={{ fontWeight: 500, fontSize: 14, color: "#111", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{fw.title || fw.name.replace(".md", "")}</div>
+                  <div style={{ fontSize: 12, color: "#aaa", marginTop: 2, fontFamily: "'DM Mono', monospace" }}>_frameworks/{fw.name}</div>
+                </div>
+                <button className="btn btn-red" style={{ padding: "5px 10px", fontSize: 12, flexShrink: 0 }} onClick={(e) => { e.stopPropagation(); onDelete(fw); }} disabled={deleting === fw.name}>
+                  {deleting === fw.name ? "..." : <TrashIcon />}
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
+        <div style={{ marginTop: 20, padding: 14, background: "#f8f9fa", borderRadius: 10, border: "1px solid #e2e8f0", fontSize: 12, color: "#888", lineHeight: 1.6 }}>
+          Frameworks power the <code style={{ fontFamily: "'DM Mono', monospace" }}>/frameworks/</code> hub page. Add a new one any time — it appears there automatically, no other changes needed.
+        </div>
       </div>
     </div>
   );
@@ -576,6 +745,43 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
         </span>
         {editPost && <span style={{ fontSize: 11, color: "#ccc", fontFamily: "'DM Mono', monospace" }}>editing: {editPost.name}</span>}
         {autoSaved && !editPost && <span style={{ marginLeft: "auto", fontSize: 11, color: "#16a34a", fontFamily: "'DM Mono', monospace" }}>saved locally</span>}
+      </div>
+    </div>
+  );
+}
+
+function FrameworkEditor({ title, setTitle, frontmatter, setFrontmatter, body, setBody, onSave, saving, status, editFramework, onBack }) {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+      <div style={{ background: "#fff", borderBottom: "1px solid #e2e8f0", padding: "10px 20px", display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
+        <button className="btn btn-outline" onClick={onBack} style={{ padding: "7px 11px" }}>Back</button>
+        <input className="input" style={{ flex: 1, fontSize: 15, fontWeight: 500, border: "none", padding: "6px 0", borderBottom: "2px solid #f1f5f9", borderRadius: 0, background: "transparent" }}
+          placeholder="Framework title (e.g. MAESTRO)" value={title} onChange={e => setTitle(e.target.value)} />
+        {editFramework && <span style={{ fontSize: 11, color: "#aaa", fontFamily: "'DM Mono', monospace", flexShrink: 0 }}>_frameworks/{editFramework.name}</span>}
+        {saving
+          ? <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "#888", padding: "0 8px", flexShrink: 0 }}><div className="spinner" /> Saving...</div>
+          : <button className="btn btn-green" onClick={onSave} style={{ flexShrink: 0 }}>Save Framework</button>
+        }
+      </div>
+      {status && (
+        <div style={{ margin: "10px 20px 0", flexShrink: 0, padding: "10px 14px", borderRadius: 8, fontSize: 13, background: status.type === "success" ? "#f0fdf4" : status.type === "error" ? "#fef2f2" : "#eff6ff", color: status.type === "success" ? "#15803d" : status.type === "error" ? "#b91c1c" : "#1d4ed8", border: `1px solid ${status.type === "success" ? "#bbf7d0" : status.type === "error" ? "#fecaca" : "#bfdbfe"}` }}>
+          {status.msg}
+        </div>
+      )}
+      <div style={{ flex: 1, overflow: "auto", padding: 24, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div className="field-label" style={{ marginBottom: 6 }}>Frontmatter (YAML, below title)</div>
+          <textarea className="input input-mono" style={{ flex: 1, minHeight: 420, resize: "vertical", fontSize: 12.5, lineHeight: 1.7 }}
+            value={frontmatter} onChange={e => setFrontmatter(e.target.value)} spellCheck={false} />
+          <div style={{ fontSize: 11, color: "#aaa", marginTop: 6, lineHeight: 1.5 }}>
+            Add as many entries to <code style={{ fontFamily: "'DM Mono', monospace" }}>layers</code>, <code style={{ fontFamily: "'DM Mono', monospace" }}>build_log</code>, and <code style={{ fontFamily: "'DM Mono', monospace" }}>speaking_badges</code> as needed — the page renders all of them automatically.
+          </div>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div className="field-label" style={{ marginBottom: 6 }}>Body content (Markdown)</div>
+          <textarea className="input input-mono" style={{ flex: 1, minHeight: 420, resize: "vertical", fontSize: 13, lineHeight: 1.7 }}
+            value={body} onChange={e => setBody(e.target.value)} placeholder="The full write-up rendered below the structured sections..." />
+        </div>
       </div>
     </div>
   );
@@ -768,3 +974,4 @@ const GridIcon = () => <svg width="14" height="14" fill="none" stroke="currentCo
 const EditIcon = () => <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>;
 const SettingsIcon = () => <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l-.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>;
 const TrashIcon = () => <svg width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>;
+const LayersIcon = () => <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>;
