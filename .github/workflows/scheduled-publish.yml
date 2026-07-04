@@ -1,0 +1,40 @@
+name: Scheduled publish
+
+on:
+  schedule:
+    - cron: '0 * * * *'   # every hour on the hour (UTC)
+  workflow_dispatch:       # manual trigger from Actions tab
+
+jobs:
+  scheduled_build_and_deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: false
+
+      - name: Install gems
+        run: bundle install --jobs 4 --retry 3
+
+      - name: Generate llms.txt
+        run: ruby scripts/generate-llms-txt.rb
+
+      - name: Build Jekyll
+        run: bundle exec jekyll build
+
+      - name: Deploy blog to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SHUBHENDU_SHUBHAM }}'
+          channelId: live
+          projectId: shubhendu-shubham
+          target: blog
