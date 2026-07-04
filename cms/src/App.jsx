@@ -20,7 +20,6 @@ const filenameFromTitle = (title, date) => {
 const buildFrontmatter = (fields) => {
   const tags = fields.tags.split(",").map((t) => t.trim()).filter(Boolean);
   const tagLines = tags.map((t) => `  - ${t}`).join("\n");
-  // Only write discover: true when enabled — keeps frontmatter clean when off
   const discoverLine = fields.discover ? "\ndiscover: true" : "";
   return `---\nlayout: post\ntitle: "${fields.title}"\ndate: ${fields.date}\ncategory: ${fields.category}\ntags:\n${tagLines}\nsubtitle: "${fields.subtitle}"\ndescription: "${fields.description}"\nimage: ${fields.image}\noptimized_image: ${fields.optimized_image || fields.image}\nimage_position: "${fields.image_position || "50% 50%"}"${discoverLine}\nauthor: ${fields.author}\n---\n\n${fields.body}`;
 };
@@ -87,9 +86,8 @@ export default function CMS() {
   const [activeTab, setActiveTab] = useState("content");
   const [deleting, setDeleting] = useState(null);
   const [autoSaved, setAutoSaved] = useState(false);
-  const [savedSnapshot, setSavedSnapshot] = useState(null); // last-saved fields JSON; null = not yet saved this session
+  const [savedSnapshot, setSavedSnapshot] = useState(null);
 
-  // --- Frameworks state ---
   const [frameworks, setFrameworks] = useState([]);
   const [loadingFrameworks, setLoadingFrameworks] = useState(false);
   const [editFramework, setEditFramework] = useState(null);
@@ -103,8 +101,7 @@ export default function CMS() {
   const emptyFields = {
     title: "", subtitle: "", date: todayISO(), category: "", tags: "",
     description: "", image: "", optimized_image: "", image_position: "50% 50%",
-    discover: false,  // controls the Discover carousel
-    author: config.author, body: "",
+    discover: false, author: config.author, body: "",
   };
   const [fields, setFields] = useState(emptyFields);
 
@@ -134,7 +131,6 @@ export default function CMS() {
 
   useEffect(() => { if (view === VIEWS.LIST) fetchAll(); }, [view, fetchAll]);
 
-  // --- Frameworks: fetch list (with parsed titles) ---
   const fetchFrameworks = useCallback(async () => {
     if (!config.token) return;
     setLoadingFrameworks(true);
@@ -161,12 +157,8 @@ export default function CMS() {
   useEffect(() => { if (view === VIEWS.FW_LIST) fetchFrameworks(); }, [view, fetchFrameworks]);
 
   const newFramework = () => {
-    setEditFramework(null);
-    setFwTitle("");
-    setFwFrontmatter(TEMPLATE_FRAMEWORK_YAML);
-    setFwBody(TEMPLATE_FRAMEWORK_BODY);
-    setFwStatus(null);
-    setView(VIEWS.FW_EDITOR);
+    setEditFramework(null); setFwTitle(""); setFwFrontmatter(TEMPLATE_FRAMEWORK_YAML);
+    setFwBody(TEMPLATE_FRAMEWORK_BODY); setFwStatus(null); setView(VIEWS.FW_EDITOR);
   };
 
   const openFramework = async (fw) => {
@@ -181,20 +173,16 @@ export default function CMS() {
         const titleMatch = raw.match(/^title:\s*(.+)$/m);
         const title = titleMatch ? titleMatch[1].replace(/^["']|["']$/g, "").trim() : "";
         const rest = raw.replace(/^title:\s*.+$\n?/m, "").trim();
-        setFwTitle(title);
-        setFwFrontmatter(rest);
-        setFwBody(body);
+        setFwTitle(title); setFwFrontmatter(rest); setFwBody(body);
       }
       setEditFramework({ name: fw.name, sha: data.sha });
-      setFwStatus(null);
-      setView(VIEWS.FW_EDITOR);
+      setFwStatus(null); setView(VIEWS.FW_EDITOR);
     } catch (e) { setFwStatus({ type: "error", msg: e.message }); }
   };
 
   const saveFramework = async () => {
     if (!fwTitle.trim()) { setFwStatus({ type: "error", msg: "Title is required." }); return; }
-    setFwSaving(true);
-    setFwStatus({ type: "info", msg: "Saving..." });
+    setFwSaving(true); setFwStatus({ type: "info", msg: "Saving..." });
     const gh = GH(config.token); const { owner, repo } = config;
     const filename = editFramework?.name || `${slugify(fwTitle)}.md`;
     const fileContent = `---\ntitle: "${fwTitle}"\n${fwFrontmatter.trim()}\n---\n\n${fwBody}`;
@@ -216,8 +204,7 @@ export default function CMS() {
     try {
       const data = await gh.get(`/repos/${owner}/${repo}/contents/_frameworks/${fw.name}`);
       await gh.delete(`/repos/${owner}/${repo}/contents/_frameworks/${fw.name}`, { message: `[CMS] Delete framework: ${fw.name}`, sha: data.sha });
-      setFwStatus({ type: "success", msg: `"${fw.name}" deleted.` });
-      fetchFrameworks();
+      setFwStatus({ type: "success", msg: `"${fw.name}" deleted.` }); fetchFrameworks();
     } catch (e) { setFwStatus({ type: "error", msg: e.message }); }
     finally { setFwDeleting(null); }
   };
@@ -243,15 +230,13 @@ export default function CMS() {
         const parse = (k) => { const m = raw.match(new RegExp(`^${k}:\\s*(.+)$`, "m")); return m ? m[1].replace(/^["']|["']$/g, "").trim() : ""; };
         const tagsMatch = raw.match(/^tags:\n((?:\s+-\s*.+\n?)*)/m);
         const tags = tagsMatch ? (tagsMatch[1].match(/-\s*(.+)/g)?.map(t => t.replace(/^-\s*/, "").trim()).join(", ") || "") : "";
-        // Parse discover: true/false from frontmatter
         const discoverRaw = parse("discover");
         setFields({
           title: parse("title"), subtitle: parse("subtitle"), date: parse("date"),
           category: parse("category"), tags, description: parse("description"),
           image: parse("image"), optimized_image: parse("optimized_image"),
           image_position: parse("image_position") || "50% 50%",
-          discover: discoverRaw === "true",
-          author: parse("author"), body,
+          discover: discoverRaw === "true", author: parse("author"), body,
         });
       }
       setEditPost({ name: post.name, sha: data.sha });
@@ -280,8 +265,7 @@ export default function CMS() {
           category: parse("category"), tags, description: parse("description"),
           image: parse("image"), optimized_image: parse("optimized_image"),
           image_position: parse("image_position") || "50% 50%",
-          discover: discoverRaw === "true",
-          author: parse("author"), body,
+          discover: discoverRaw === "true", author: parse("author"), body,
         });
       }
       setEditPost({ name: postFile.filename.replace("_posts/", ""), sha: data.sha, prNumber: pr.number, branch: pr.head.ref, isDraft: true });
@@ -332,13 +316,14 @@ export default function CMS() {
   const publish = async (draft = false) => {
     if (!fields.title.trim()) { setStatus({ type: "error", msg: "Title is required." }); return; }
     setPublishing(true);
-    setStatus({ type: "info", msg: draft ? "Saving draft..." : "Publishing...", steps: [] });
-    const fieldsSnapshot = JSON.stringify(fields); // capture state at click-time, not whatever fields becomes mid-request
+    setStatus({ type: "info", msg: draft ? "Saving draft..." : (new Date(fields.date) > new Date() ? "Scheduling..." : "Publishing..."), steps: [] });
+    const fieldsSnapshot = JSON.stringify(fields);
     const gh = GH(config.token); const { owner, repo } = config;
     const filename = filenameFromTitle(fields.title, fields.date);
     const branch = editPost?.branch || `cms/${slugify(fields.title)}-${Date.now()}`;
     const content = btoa(unescape(encodeURIComponent(buildFrontmatter(fields))));
     const step = (msg) => setStatus(s => ({ ...s, steps: [...(s.steps || []), msg] }));
+    const scheduled = new Date(fields.date) > new Date();
     try {
       let prNumber = editPost?.prNumber;
       if (!editPost?.isDraft) {
@@ -346,26 +331,26 @@ export default function CMS() {
         step("Creating branch..."); await gh.post(`/repos/${owner}/${repo}/git/refs`, { ref: `refs/heads/${branch}`, sha: ref.object.sha });
       }
       step(`Writing _posts/${filename}...`);
-      const fileBody = { message: `[CMS] ${draft ? "Draft" : "Publish"}: ${fields.title}`, content, branch };
+      const fileBody = { message: `[CMS] ${draft ? "Draft" : scheduled ? "Schedule" : "Publish"}: ${fields.title}`, content, branch };
       if (editPost?.sha) fileBody.sha = editPost.sha;
       await gh.put(`/repos/${owner}/${repo}/contents/_posts/${filename}`, fileBody);
       if (!editPost?.isDraft) {
         step("Creating Pull Request...");
         const pr = await gh.post(`/repos/${owner}/${repo}/pulls`, {
-          title: `[CMS] ${draft ? "Draft" : "Post"}: ${fields.title}`,
-          body: `Auto-generated by hugs4bugs CMS.\n\n**${draft ? "Draft - review before merging." : "Ready to publish - auto-merging."}**`,
+          title: `[CMS] ${draft ? "Draft" : scheduled ? "Schedule" : "Post"}: ${fields.title}`,
+          body: `Auto-generated by hugs4bugs CMS.\n\n**${draft ? "Draft - review before merging." : scheduled ? `Scheduled for ${fields.date} — publishes on next hourly rebuild after that date.` : "Ready to publish - auto-merging."}**`,
           head: branch, base: "main",
         });
         prNumber = pr.number;
-        if (!draft) { step("Merging PR..."); await gh.put(`/repos/${owner}/${repo}/pulls/${pr.number}/merge`, { merge_method: "squash", commit_title: `Publish: ${fields.title}` }); }
+        if (!draft) { step("Merging PR..."); await gh.put(`/repos/${owner}/${repo}/pulls/${pr.number}/merge`, { merge_method: "squash", commit_title: `${scheduled ? "Schedule" : "Publish"}: ${fields.title}` }); }
         localStorage.removeItem(DRAFT_KEY); setAutoSaved(false);
         setSavedSnapshot(fieldsSnapshot);
-        setStatus({ type: "success", msg: draft ? `Draft PR #${prNumber} created!` : "Published! Deploying to Firebase...", prUrl: `https://github.com/${owner}/${repo}/pull/${prNumber}`, steps: [] });
+        setStatus({ type: "success", msg: draft ? `Draft PR #${prNumber} created!` : scheduled ? `Scheduled! Publishes automatically after ${fields.date.slice(0, 10)}.` : "Published! Deploying to Firebase...", prUrl: `https://github.com/${owner}/${repo}/pull/${prNumber}`, steps: [] });
       } else {
-        if (!draft) { step("Merging draft PR..."); await gh.put(`/repos/${owner}/${repo}/pulls/${prNumber}/merge`, { merge_method: "squash", commit_title: `Publish: ${fields.title}` }); }
+        if (!draft) { step("Merging draft PR..."); await gh.put(`/repos/${owner}/${repo}/pulls/${prNumber}/merge`, { merge_method: "squash", commit_title: `${scheduled ? "Schedule" : "Publish"}: ${fields.title}` }); }
         localStorage.removeItem(DRAFT_KEY); setAutoSaved(false);
         setSavedSnapshot(fieldsSnapshot);
-        setStatus({ type: "success", msg: draft ? "Draft updated!" : "Draft published! Deploying...", steps: [] });
+        setStatus({ type: "success", msg: draft ? "Draft updated!" : scheduled ? `Scheduled! Publishes automatically after ${fields.date.slice(0, 10)}.` : "Published! Deploying...", steps: [] });
       }
     } catch (e) { setStatus(s => ({ type: "error", msg: e.message, steps: s?.steps || [] })); }
     finally { setPublishing(false); }
@@ -374,8 +359,9 @@ export default function CMS() {
   const set = (k) => (e) => setFields(f => ({ ...f, [k]: e.target.value }));
   const onPositionChange = (pos) => setFields(f => ({ ...f, image_position: pos }));
   const onDiscoverToggle = () => setFields(f => ({ ...f, discover: !f.discover }));
-  // Buttons stay greyed out right after a successful save until the post is actually edited again
   const isDirty = savedSnapshot === null || JSON.stringify(fields) !== savedSnapshot;
+  // True when the post date is in the future — Publish becomes Schedule
+  const isScheduled = (() => { try { return new Date(fields.date) > new Date(); } catch { return false; } })();
 
   return (
     <div style={{ minHeight: "100vh", background: "#f8f9fa", fontFamily: "'DM Sans', system-ui, sans-serif" }}>
@@ -388,6 +374,7 @@ export default function CMS() {
         .btn-primary { background: #111; color: #fff; } .btn-primary:hover:not(:disabled) { background: #333; }
         .btn-outline { background: #fff; color: #111; border: 1px solid #e2e8f0; } .btn-outline:hover:not(:disabled) { background: #f8f9fa; }
         .btn-green { background: #16a34a; color: #fff; } .btn-green:hover:not(:disabled) { background: #15803d; }
+        .btn-schedule { background: #2563eb; color: #fff; } .btn-schedule:hover:not(:disabled) { background: #1d4ed8; }
         .btn-red { background: #fff; color: #dc2626; border: 1px solid #fecaca; } .btn-red:hover:not(:disabled) { background: #fef2f2; }
         .btn:disabled { opacity: 0.5; cursor: not-allowed; }
         .input { width: 100%; padding: 9px 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 14px; outline: none; font-family: inherit; background: #fff; color: #111; transition: border 0.15s; }
@@ -459,7 +446,7 @@ export default function CMS() {
               <PostsList posts={posts} drafts={drafts} loading={loadingPosts} onOpen={openPost} onOpenDraft={openDraft} onRefresh={fetchAll} onNew={newPost} onDelete={deletePost} onPublishDraft={publishDraft} onDeleteDraft={deleteDraft} deleting={deleting} status={status} activeListTab={activeListTab} setActiveListTab={setActiveListTab} />
             )}
             {view === VIEWS.EDITOR && (
-              <EditorView fields={fields} set={set} previewMode={previewMode} setPreviewMode={setPreviewMode} onPublish={publish} publishing={publishing} status={status} editPost={editPost} onBack={() => setView(VIEWS.LIST)} activeTab={activeTab} setActiveTab={setActiveTab} autoSaved={autoSaved} onPositionChange={onPositionChange} onDiscoverToggle={onDiscoverToggle} isDirty={isDirty} />
+              <EditorView fields={fields} set={set} previewMode={previewMode} setPreviewMode={setPreviewMode} onPublish={publish} publishing={publishing} status={status} editPost={editPost} onBack={() => setView(VIEWS.LIST)} activeTab={activeTab} setActiveTab={setActiveTab} autoSaved={autoSaved} onPositionChange={onPositionChange} onDiscoverToggle={onDiscoverToggle} isDirty={isDirty} isScheduled={isScheduled} />
             )}
             {view === VIEWS.FW_LIST && (
               <FrameworksList frameworks={frameworks} loading={loadingFrameworks} onOpen={openFramework} onNew={newFramework} onDelete={deleteFramework} onRefresh={fetchFrameworks} deleting={fwDeleting} status={fwStatus} />
@@ -616,7 +603,7 @@ function FrameworksList({ frameworks, loading, onOpen, onNew, onDelete, onRefres
           </div>
         )}
         <div style={{ marginTop: 20, padding: 14, background: "#f8f9fa", borderRadius: 10, border: "1px solid #e2e8f0", fontSize: 12, color: "#888", lineHeight: 1.6 }}>
-          Frameworks power the <code style={{ fontFamily: "'DM Mono', monospace" }}>/frameworks/</code> hub page. Add a new one any time — it appears there automatically, no other changes needed.
+          Frameworks power the <code style={{ fontFamily: "'DM Mono', monospace" }}>/frameworks/</code> hub page. Add a new one any time — it appears there automatically.
         </div>
       </div>
     </div>
@@ -629,7 +616,7 @@ function EmptyState({ text }) {
 
 const LANGUAGES = ["bash","c","cpp","css","diff","docker","go","graphql","html","java","javascript","json","kotlin","kql","markdown","python","ruby","rust","shell","sql","swift","typescript","yaml"];
 
-function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publishing, status, editPost, onBack, activeTab, setActiveTab, autoSaved, onPositionChange, onDiscoverToggle, isDirty }) {
+function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publishing, status, editPost, onBack, activeTab, setActiveTab, autoSaved, onPositionChange, onDiscoverToggle, isDirty, isScheduled }) {
   const textareaRef = useRef(null);
   const [showLangPicker, setShowLangPicker] = useState(false);
   const [langSearch, setLangSearch] = useState("");
@@ -663,15 +650,19 @@ function EditorView({ fields, set, previewMode, setPreviewMode, onPublish, publi
         <input className="input" style={{ flex: 1, fontSize: 15, fontWeight: 500, border: "none", padding: "6px 0", borderBottom: "2px solid #f1f5f9", borderRadius: 0, background: "transparent" }}
           placeholder="Post title..." value={fields.title} onChange={set("title")} />
         {editPost?.isDraft && <span style={{ fontSize: 11, background: "#fef9c3", color: "#a16207", padding: "3px 8px", borderRadius: 6, fontWeight: 500 }}>Draft</span>}
-        {/* Discover badge in header */}
         {fields.discover && (
           <span style={{ fontSize: 10, background: "#dcfce7", color: "#15803d", padding: "3px 8px", borderRadius: 6, fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase" }}>Trending</span>
+        )}
+        {isScheduled && (
+          <span style={{ fontSize: 10, background: "#eff6ff", color: "#1d4ed8", padding: "3px 8px", borderRadius: 6, fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase" }}>Scheduled</span>
         )}
         <div style={{ display: "flex", gap: 8, flexShrink: 0 }}>
           {publishing
             ? <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "#888", padding: "0 8px" }}><div className="spinner" /> Working...</div>
             : <><button className="btn btn-outline" onClick={() => onPublish(true)} disabled={!isDirty} title={!isDirty ? "No changes since last save" : undefined}>Save Draft</button>
-                <button className="btn btn-green" onClick={() => onPublish(false)} disabled={!isDirty} title={!isDirty ? "No changes since last save" : undefined}>Publish</button></>
+                <button className={`btn ${isScheduled ? "btn-schedule" : "btn-green"}`} onClick={() => onPublish(false)} disabled={!isDirty} title={!isDirty ? "No changes since last save" : undefined}>
+                  {isScheduled ? "Schedule" : "Publish"}
+                </button></>
           }
         </div>
       </div>
@@ -780,7 +771,7 @@ function FrameworkEditor({ title, setTitle, frontmatter, setFrontmatter, body, s
           <textarea className="input input-mono" style={{ flex: 1, minHeight: 420, resize: "vertical", fontSize: 12.5, lineHeight: 1.7 }}
             value={frontmatter} onChange={e => setFrontmatter(e.target.value)} spellCheck={false} />
           <div style={{ fontSize: 11, color: "#aaa", marginTop: 6, lineHeight: 1.5 }}>
-            Add as many entries to <code style={{ fontFamily: "'DM Mono', monospace" }}>layers</code>, <code style={{ fontFamily: "'DM Mono', monospace" }}>build_log</code>, and <code style={{ fontFamily: "'DM Mono', monospace" }}>speaking_badges</code> as needed — the page renders all of them automatically.
+            Add as many entries to <code style={{ fontFamily: "'DM Mono', monospace" }}>layers</code>, <code style={{ fontFamily: "'DM Mono', monospace" }}>build_log</code>, and <code style={{ fontFamily: "'DM Mono', monospace" }}>speaking_badges</code> as needed.
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -794,17 +785,14 @@ function FrameworkEditor({ title, setTitle, frontmatter, setFrontmatter, body, s
 }
 
 function MetaPanel({ fields, set, onPositionChange, onDiscoverToggle }) {
+  const isScheduled = (() => { try { return new Date(fields.date) > new Date(); } catch { return false; } })();
   return (
     <div style={{ padding: 28, maxWidth: 680 }}>
       <div style={{ display: "grid", gap: 16 }}>
 
-        {/* Discover Carousel Toggle — top of meta for visibility */}
         <div
           className="discover-toggle"
-          style={{
-            borderColor: fields.discover ? "#86efac" : "#e2e8f0",
-            background: fields.discover ? "#f0fdf4" : "#f8f9fa",
-          }}
+          style={{ borderColor: fields.discover ? "#86efac" : "#e2e8f0", background: fields.discover ? "#f0fdf4" : "#f8f9fa" }}
           onClick={onDiscoverToggle}
         >
           <div>
@@ -813,19 +801,11 @@ function MetaPanel({ fields, set, onPositionChange, onDiscoverToggle }) {
               Add to Discover Carousel
             </div>
             <div style={{ fontSize: 11, color: "#64748b", marginTop: 3 }}>
-              {fields.discover
-                ? "This post will appear in the Trending strip at the top of the homepage"
-                : "Toggle on to feature this post in the homepage Trending carousel"}
+              {fields.discover ? "This post will appear in the Trending strip at the top of the homepage" : "Toggle on to feature this post in the homepage Trending carousel"}
             </div>
           </div>
-          <button
-            className="toggle-track"
-            style={{ background: fields.discover ? "#16a34a" : "#e2e8f0" }}
-            onClick={e => { e.stopPropagation(); onDiscoverToggle(); }}
-            type="button"
-            aria-pressed={fields.discover}
-            aria-label="Add to Discover carousel"
-          >
+          <button className="toggle-track" style={{ background: fields.discover ? "#16a34a" : "#e2e8f0" }}
+            onClick={e => { e.stopPropagation(); onDiscoverToggle(); }} type="button" aria-pressed={fields.discover} aria-label="Add to Discover carousel">
             <span className="toggle-thumb" style={{ left: fields.discover ? 22 : 2 }} />
           </button>
         </div>
@@ -834,21 +814,43 @@ function MetaPanel({ fields, set, onPositionChange, onDiscoverToggle }) {
           <Field label="Subtitle" value={fields.subtitle} onChange={set("subtitle")} placeholder="Short tagline" />
           <Field label="Author" value={fields.author} onChange={set("author")} placeholder="Name" />
         </div>
-        <div className="field-grid">
-          <Field label="Date (UTC)" value={fields.date} onChange={set("date")} placeholder="2024-01-01 10:00:00 UTC" mono />
-          <Field label="Category" value={fields.category} onChange={set("category")} placeholder="devops" />
+
+        {/* Date / scheduling — full width with quick-pick buttons */}
+        <div>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 5 }}>
+            <div className="field-label" style={{ margin: 0 }}>Date (UTC)</div>
+            {isScheduled && <span style={{ fontSize: 10, color: "#2563eb", fontWeight: 600, fontFamily: "'DM Mono', monospace" }}>Scheduled</span>}
+          </div>
+          <input className="input input-mono" placeholder="2024-01-01 10:00:00 UTC" value={fields.date} onChange={set("date")} />
+          <div style={{ marginTop: 7, display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
+            <span style={{ fontSize: 11, color: "#94a3b8" }}>Quick:</span>
+            {[{ label: "+1h", h: 1 }, { label: "+6h", h: 6 }, { label: "+1d", h: 24 }, { label: "+3d", h: 72 }, { label: "+1 week", h: 168 }].map(({ label, h }) => (
+              <button key={h} type="button"
+                onClick={() => {
+                  const d = new Date(Date.now() + h * 3600 * 1000);
+                  const iso = d.toISOString().slice(0, 19).replace("T", " ") + " UTC";
+                  set("date")({ target: { value: iso } });
+                }}
+                style={{ padding: "3px 9px", borderRadius: 6, border: "1px solid #e2e8f0", background: "#fff", cursor: "pointer", fontSize: 11, fontFamily: "inherit", color: "#555" }}>
+                {label}
+              </button>
+            ))}
+          </div>
+          {isScheduled && (
+            <div style={{ marginTop: 8, padding: "8px 11px", background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: 8, fontSize: 11, color: "#1d4ed8", lineHeight: 1.5 }}>
+              Publishes automatically on the next hourly site rebuild after this date passes. No further action needed.
+            </div>
+          )}
         </div>
+
+        <Field label="Category" value={fields.category} onChange={set("category")} placeholder="devops" />
         <Field label="Tags (comma-separated)" value={fields.tags} onChange={set("tags")} placeholder="devops, linux, docker" />
         <Field label="Description (SEO)" value={fields.description} onChange={set("description")} placeholder="Brief description" textarea />
         <Field label="Cover Image URL" value={fields.image} onChange={set("image")} placeholder="https://..." />
         <Field label="Optimized Image URL" value={fields.optimized_image} onChange={set("optimized_image")} placeholder="Leave blank to reuse cover image" />
 
         {fields.image && (
-          <FocalPointPicker
-            imageUrl={fields.image}
-            position={fields.image_position || "50% 50%"}
-            onChange={onPositionChange}
-          />
+          <FocalPointPicker imageUrl={fields.image} position={fields.image_position || "50% 50%"} onChange={onPositionChange} />
         )}
 
         <div style={{ padding: 14, background: "#f8f9fa", borderRadius: 10, border: "1px solid #e2e8f0" }}>
@@ -865,37 +867,27 @@ function MetaPanel({ fields, set, onPositionChange, onDiscoverToggle }) {
 function FocalPointPicker({ imageUrl, position, onChange }) {
   const containerRef = useRef(null);
   const [dragging, setDragging] = useState(false);
-
-  const parse = (pos) => {
-    const parts = (pos || "50% 50%").split(" ");
-    return [parseFloat(parts[0]) || 50, parseFloat(parts[1]) || 50];
-  };
+  const parse = (pos) => { const parts = (pos || "50% 50%").split(" "); return [parseFloat(parts[0]) || 50, parseFloat(parts[1]) || 50]; };
   const [px, py] = parse(position);
-
   const updateFromEvent = (e) => {
     const rect = containerRef.current.getBoundingClientRect();
     const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
     const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
     onChange(`${Math.round(x)}% ${Math.round(y)}%`);
   };
-
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
         <div className="field-label" style={{ margin: 0 }}>Cover Preview — drag to adjust focal point</div>
         <span style={{ fontSize: 11, color: "#aaa", fontFamily: "'DM Mono', monospace" }}>{position}</span>
       </div>
-      <div
-        ref={containerRef}
-        className="focal-container"
+      <div ref={containerRef} className="focal-container"
         onMouseDown={e => { setDragging(true); updateFromEvent(e); }}
         onMouseMove={e => { if (dragging) updateFromEvent(e); }}
-        onMouseUp={() => setDragging(false)}
-        onMouseLeave={() => setDragging(false)}
+        onMouseUp={() => setDragging(false)} onMouseLeave={() => setDragging(false)}
         onTouchStart={e => { setDragging(true); updateFromEvent(e.touches[0]); }}
         onTouchMove={e => { e.preventDefault(); updateFromEvent(e.touches[0]); }}
-        onTouchEnd={() => setDragging(false)}
-      >
+        onTouchEnd={() => setDragging(false)}>
         <img src={imageUrl} alt="cover preview" style={{ objectPosition: position }} onError={e => e.target.style.opacity = "0.3"} />
         <div className="focal-line-v" style={{ left: `${px}%` }} />
         <div className="focal-line-h" style={{ top: `${py}%` }} />
@@ -941,7 +933,6 @@ function MarkdownPreview({ content }) {
   const withPlaceholders = content.replace(/```(\w+)?\n([\s\S]*?)```/g, (_, lang, code) => {
     const i = codeBlocks.length; codeBlocks.push({ lang: lang || "plaintext", code: code.trim() }); return `%%CODE_BLOCK_${i}%%`;
   });
-
   const tableRegex = /(\|.+\|\n)([\|\-: ]+\|\n)((?:\|.+\|\n?)*)/gm;
   const withTables = withPlaceholders.replace(tableRegex, (_, header, separator, body) => {
     const parseRow = (row) => row.trim().replace(/^\||\|$/g, "").split("|").map(c => c.trim());
@@ -952,7 +943,6 @@ function MarkdownPreview({ content }) {
     const trs = rows.map(r => `<tr>${r.map((c, i) => `<td style="padding:9px 14px;text-align:${aligns[i] || "left"};border-top:1px solid #e2e8f0">${c}</td>`).join("")}</tr>`).join("");
     return `<div style="overflow-x:auto;margin:16px 0"><table style="width:100%;border-collapse:collapse;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;font-size:14px"><thead style="background:#f8f9fa"><tr>${ths}</tr></thead><tbody>${trs}</tbody></table></div>`;
   });
-
   let html = withTables
     .replace(/^### (.+)$/gm, "<h3>$1</h3>").replace(/^## (.+)$/gm, "<h2>$1</h2>").replace(/^# (.+)$/gm, "<h1>$1</h1>")
     .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>")
@@ -961,14 +951,12 @@ function MarkdownPreview({ content }) {
     .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" target="_blank">$1</a>')
     .replace(/^- (.+)$/gm, "<li>$1</li>").replace(/(<li>.*<\/li>\n?)+/g, m => `<ul>${m}</ul>`)
     .replace(/\n\n+/g, "</p><p>");
-
   codeBlocks.forEach(({ lang, code }, i) => {
     const escaped = code.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     const displayLang = lang === "kql" ? "plaintext" : lang;
     const block = `<div style="margin:20px 0;border-radius:10px;overflow:hidden;border:1px solid #2d2d2d;"><div style="background:#1a1a2e;padding:8px 16px;border-bottom:1px solid #2d2d2d;"><span style="font-size:11px;color:#7c8cf8;font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:0.08em;font-weight:600">${lang}</span></div><pre style="margin:0;padding:20px;background:#0d1117;overflow-x:auto;"><code class="language-${displayLang}" style="background:transparent;font-family:'DM Mono',monospace;font-size:13px;line-height:1.7;color:#c9d1d9;">${escaped}</code></pre></div>`;
     html = html.replace(`%%CODE_BLOCK_${i}%%`, block);
   });
-
   return (
     <div ref={ref} className="md-preview" style={{ padding: "28px 32px", fontSize: 15, color: "#1e293b", maxWidth: 720 }}
       dangerouslySetInnerHTML={{ __html: `<p>${html}</p>` }} />
