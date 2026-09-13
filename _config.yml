@@ -106,6 +106,7 @@ exclude:
 - gulpfile.js
 - README.md
 - vendor
+- agent
 comments:
   giscus:
   enabled: true
