@@ -64,9 +64,3 @@ node_modules/
 
 # dotenv environment variables file
 .env
-
-# Agent — Python virtual environment and cache
-agent/.venv/
-agent/__pycache__/
-agent/**/__pycache__/
-agent/logs/*.log
